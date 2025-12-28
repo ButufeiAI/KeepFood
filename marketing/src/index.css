@@ -1,0 +1,235 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
+    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
+    sans-serif;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  color: #333;
+  line-height: 1.6;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+a:hover {
+  opacity: 0.8;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.error-message-banner {
+  animation: slideDown 0.5s ease-out forwards;
+}
+
+/* ========================================
+   RESPONSIVE DESIGN - MOBILE FIRST
+   ======================================== */
+
+/* Tablettes et petits écrans (max-width: 768px) */
+@media (max-width: 768px) {
+  /* Header responsive */
+  header nav {
+    flex-wrap: wrap !important;
+    gap: 0.5rem !important;
+  }
+
+  header nav a,
+  header nav Link {
+    font-size: 0.85rem !important;
+    padding: 0.3rem 0.8rem !important;
+  }
+
+  /* Hero section responsive */
+  h1 {
+    font-size: 2rem !important;
+    line-height: 1.2 !important;
+  }
+
+  /* Sections padding */
+  section {
+    padding: 3rem 1rem !important;
+  }
+
+  /* Forms responsive */
+  input[type="text"],
+  input[type="email"],
+  input[type="tel"],
+  input[type="password"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 16px !important; /* Évite le zoom automatique sur iOS */
+    width: 100% !important;
+  }
+
+  /* Buttons responsive */
+  button {
+    width: 100% !important;
+    padding: 0.8rem 1rem !important;
+    font-size: 1rem !important;
+  }
+
+  /* Grid responsive - 1 colonne sur mobile */
+  .grid-2,
+  .grid-3,
+  .grid-4 {
+    grid-template-columns: 1fr !important;
+    gap: 1rem !important;
+  }
+
+  /* Cards responsive */
+  .card {
+    padding: 1.5rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  /* Flex responsive */
+  .flex-row {
+    flex-direction: column !important;
+  }
+
+  .flex-row > * {
+    width: 100% !important;
+    margin-bottom: 1rem !important;
+  }
+}
+
+/* Mobiles (max-width: 480px) */
+@media (max-width: 480px) {
+  /* Typography */
+  h1 {
+    font-size: 1.75rem !important;
+  }
+
+  h2 {
+    font-size: 1.5rem !important;
+  }
+
+  h3 {
+    font-size: 1.25rem !important;
+  }
+
+  p {
+    font-size: 0.9rem !important;
+  }
+
+  /* Header mobile */
+  header {
+    padding: 0.75rem 1rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  header > div:first-child {
+    font-size: 1.2rem !important;
+  }
+
+  header nav {
+    width: 100% !important;
+    margin-top: 0.5rem !important;
+    justify-content: center !important;
+  }
+
+  /* Hero section mobile */
+  .hero-section {
+    padding: 3rem 1rem !important;
+  }
+
+  .hero-section h1 {
+    font-size: 1.75rem !important;
+    margin-bottom: 1rem !important;
+  }
+
+  .hero-section p {
+    font-size: 1rem !important;
+    margin-bottom: 1.5rem !important;
+  }
+
+  /* Forms mobile */
+  form {
+    padding: 1rem !important;
+  }
+
+  .form-group {
+    margin-bottom: 1rem !important;
+  }
+
+  label {
+    font-size: 0.9rem !important;
+    margin-bottom: 0.4rem !important;
+  }
+
+  /* Buttons mobile */
+  .btn-group {
+    flex-direction: column !important;
+  }
+
+  .btn-group button {
+    width: 100% !important;
+    margin-bottom: 0.5rem !important;
+  }
+
+  /* Progress bar mobile */
+  .progress-steps {
+    font-size: 0.75rem !important;
+    flex-wrap: wrap !important;
+  }
+
+  /* Cards mobile */
+  .card {
+    padding: 1rem !important;
+  }
+
+  /* Footer mobile */
+  footer {
+    padding: 2rem 1rem !important;
+  }
+
+  footer .grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.5rem !important;
+  }
+}
+
+/* Très petits écrans (max-width: 360px) */
+@media (max-width: 360px) {
+  h1 {
+    font-size: 1.5rem !important;
+  }
+
+  h2 {
+    font-size: 1.3rem !important;
+  }
+
+  button {
+    font-size: 0.9rem !important;
+    padding: 0.7rem 0.8rem !important;
+  }
+
+  input,
+  select,
+  textarea {
+    font-size: 14px !important;
+    padding: 0.6rem !important;
+  }
+}
