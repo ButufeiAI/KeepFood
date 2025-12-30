@@ -45,7 +45,7 @@ export function Order() {
         navigate(`/menu/${restaurantId}`, { replace: true });
       } else {
         // Si aucun paramètre, afficher un message
-        navigate('/menu', { replace: true });
+        navigate('/', { replace: true });
       }
     };
 

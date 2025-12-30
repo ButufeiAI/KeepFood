@@ -21,6 +21,7 @@ import { UserRole } from '../common/enums/role.enum';
 import { OrderStatus } from '../common/enums/order-status.enum';
 import { NotificationsService } from '../notifications/notifications.service';
 import { FavoritesService } from '../favorites/favorites.service';
+import { OrdersGateway } from './orders.gateway';
 
 @Injectable()
 export class OrdersService {
@@ -42,6 +43,8 @@ export class OrdersService {
     private notificationsService: NotificationsService,
     @Inject(forwardRef(() => FavoritesService))
     private favoritesService: FavoritesService,
+    @Inject(forwardRef(() => OrdersGateway))
+    private ordersGateway: OrdersGateway,
   ) {}
 
   async create(createOrderDto: CreateOrderDto, user: User): Promise<Order> {
@@ -222,8 +225,31 @@ export class OrdersService {
   ): Promise<Order> {
     const order = await this.findOne(id, user);
 
+    const oldStatus = order.status;
     Object.assign(order, updateOrderDto);
-    return this.ordersRepository.save(order);
+    
+    // Sauvegarder
+    await this.ordersRepository.save(order);
+
+    // Notifier via WebSocket si le statut a changé
+    if (updateOrderDto.status && updateOrderDto.status !== oldStatus) {
+      this.ordersGateway.notifyOrderStatusChanged(
+        order.id,
+        updateOrderDto.status,
+      );
+      
+      // Notifier le restaurant si la commande est prête
+      if (updateOrderDto.status === OrderStatus.READY) {
+        const table = order.table;
+        this.ordersGateway.notifyFoodReady(
+          order.restaurantId,
+          order.id,
+          table?.number,
+        );
+      }
+    }
+
+    return this.findOne(id, user);
   }
 
   async updateItemStatus(

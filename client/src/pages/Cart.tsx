@@ -5,10 +5,13 @@ import { useAuthStore } from '../stores/auth.store';
 import { publicService } from '../services/public.service';
 import { paymentsService } from '../services/payments.service';
 import { useState, useEffect } from 'react';
+import { useToast, LazyImage } from '../components';
+import { handleApiError } from '../utils/errorHandler';
 
 export function Cart() {
   const { restaurantId, tableId } = useParams<{ restaurantId: string; tableId?: string }>();
   const navigate = useNavigate();
+  const toast = useToast();
   const { items, removeItem, updateQuantity, getTotal, clear, restaurantId: cartRestaurantId, tableId: cartTableId, tableSessionId, setTableSession } = useCartStore();
   const { identifier: clientIdentifier, name: clientName, generateIdentifier } = useClientStore();
   const { isAuthenticated, user } = useAuthStore();
@@ -31,12 +34,12 @@ export function Cart() {
 
   const handleCheckout = async () => {
     if (items.length === 0) {
-      alert('Votre panier est vide');
+      toast.warning('Votre panier est vide');
       return;
     }
 
     if (!cartRestaurantId) {
-      alert('Erreur: restaurant non défini');
+      toast.error('Erreur: restaurant non défini');
       return;
     }
 
@@ -49,7 +52,7 @@ export function Cart() {
     // Pour les commandes en ligne, ouvrir le modal de paiement
     if (isOnlineOrder) {
       if (orderType === 'DELIVERY' && !deliveryAddress.trim()) {
-        alert('Veuillez entrer une adresse de livraison');
+        toast.warning('Veuillez entrer une adresse de livraison');
         return;
       }
       setShowPaymentModal(true);
@@ -90,10 +93,11 @@ export function Cart() {
       });
 
       clear();
+      toast.success('Commande créée avec succès ! 🎉');
       navigate(`/order/${order.id}?restaurantId=${cartRestaurantId}&tableId=${tableId || cartTableId || ''}`);
     } catch (error: any) {
       console.error('Erreur lors de la commande:', error);
-      alert(error.response?.data?.message || 'Erreur lors de la création de la commande');
+      handleApiError(error, toast.error);
     } finally {
       setLoading(false);
     }
@@ -132,10 +136,11 @@ export function Cart() {
 
       clear();
       setShowPaymentModal(false);
+      toast.success('Paiement réussi ! Votre commande a été créée 🎉');
       navigate(`/order/${order.id}?restaurantId=${cartRestaurantId}`);
     } catch (error: any) {
       console.error('Erreur lors du paiement:', error);
-      alert(error.response?.data?.message || 'Erreur lors du paiement');
+      handleApiError(error, toast.error);
     } finally {
       setPaymentProcessing(false);
     }
@@ -182,13 +187,12 @@ export function Cart() {
             }}
           >
             {item.productImage && (
-              <img
+              <LazyImage
                 src={item.productImage}
                 alt={item.productName}
                 style={{
                   width: '80px',
                   height: '80px',
-                  objectFit: 'cover',
                   borderRadius: '4px',
                 }}
               />

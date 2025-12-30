@@ -1,6 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth.store';
+import { useToast } from '../components';
+import { handleApiError } from '../utils/errorHandler';
 
 export function Register() {
   const navigate = useNavigate();
@@ -17,7 +19,7 @@ export function Register() {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState('');
 
-  const redirectTo = searchParams.get('redirect') || '/menu';
+  const redirectTo = searchParams.get('redirect') || '/';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
@@ -241,7 +243,7 @@ export function Register() {
         <div style={{ textAlign: 'center', color: '#666', fontSize: '0.9rem' }}>
           Déjà un compte ?{' '}
           <Link
-            to={`/login${redirectTo !== '/menu' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`}
+            to={`/login${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`}
             style={{ color: '#007bff', textDecoration: 'none', fontWeight: '500' }}
           >
             Se connecter

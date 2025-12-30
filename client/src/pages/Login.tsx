@@ -1,29 +1,31 @@
 import { useState } from 'react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth.store';
+import { useToast } from '../components';
+import { handleApiError } from '../utils/errorHandler';
 
 export function Login() {
   const navigate = useNavigate();
   const [searchParams] = useSearchParams();
   const { login } = useAuthStore();
+  const toast = useToast();
   const [email, setEmail] = useState('');
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
-  const [error, setError] = useState('');
   const [useTestAccount, setUseTestAccount] = useState(false);
 
-  const redirectTo = searchParams.get('redirect') || '/menu';
+  const redirectTo = searchParams.get('redirect') || '/';
 
   const handleSubmit = async (e: React.FormEvent) => {
     e.preventDefault();
-    setError('');
     setLoading(true);
 
     try {
       await login(email, password);
+      toast.success('Connexion réussie ! 👋');
       navigate(redirectTo);
     } catch (err: any) {
-      setError(err.message || 'Erreur lors de la connexion');
+      handleApiError(err, toast.error);
     } finally {
       setLoading(false);
     }
@@ -172,7 +174,7 @@ export function Login() {
         <div style={{ textAlign: 'center', color: '#666', fontSize: '0.9rem' }}>
           Pas encore de compte ?{' '}
           <Link
-            to={`/register${redirectTo !== '/menu' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`}
+            to={`/register${redirectTo !== '/' ? `?redirect=${encodeURIComponent(redirectTo)}` : ''}`}
             style={{ color: '#007bff', textDecoration: 'none', fontWeight: '500' }}
           >
             S'inscrire

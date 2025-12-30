@@ -2,28 +2,21 @@ import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { publicService, Restaurant } from '../services/public.service';
 import { useAuthStore } from '../stores/auth.store';
-
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  return isMobile;
-};
+import { useIsMobile, useDebounce } from '../hooks';
+import { LoadingSpinner, useToast, LazyImage } from '../components';
+import { handleApiError } from '../utils/errorHandler';
 
 export function Home() {
   const navigate = useNavigate();
   const { isAuthenticated } = useAuthStore();
   const isMobile = useIsMobile();
+  const toast = useToast();
   const [restaurants, setRestaurants] = useState<Restaurant[]>([]);
   const [loading, setLoading] = useState(true);
   const [searchQuery, setSearchQuery] = useState('');
+  
+  // Debounce la recherche pour éviter trop d'appels API
+  const debouncedSearch = useDebounce(searchQuery, 300);
 
   useEffect(() => {
     loadRestaurants();
@@ -36,15 +29,16 @@ export function Home() {
       setRestaurants(data);
     } catch (error) {
       console.error('Erreur lors du chargement des restaurants:', error);
+      handleApiError(error, toast.error);
     } finally {
       setLoading(false);
     }
   };
 
   const filteredRestaurants = restaurants.filter(restaurant =>
-    restaurant.name.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    restaurant.city?.toLowerCase().includes(searchQuery.toLowerCase()) ||
-    restaurant.address?.toLowerCase().includes(searchQuery.toLowerCase())
+    restaurant.name.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+    restaurant.city?.toLowerCase().includes(debouncedSearch.toLowerCase()) ||
+    restaurant.address?.toLowerCase().includes(debouncedSearch.toLowerCase())
   );
 
   const handleOrderOnline = (restaurantId: string) => {
@@ -52,29 +46,7 @@ export function Home() {
   };
 
   if (loading) {
-    return (
-      <div style={{
-        minHeight: '100vh',
-        display: 'flex',
-        alignItems: 'center',
-        justifyContent: 'center',
-        backgroundColor: '#f8f9fa',
-      }}>
-        <div style={{ textAlign: 'center' }}>
-          <div style={{
-            width: '60px',
-            height: '60px',
-            border: '4px solid #f3f3f3',
-            borderTop: '4px solid #007bff',
-            borderRadius: '50%',
-            animation: 'spin 1s linear infinite',
-            margin: '0 auto 1rem',
-          }}></div>
-          <p style={{ color: '#666', fontSize: '1.1rem' }}>Chargement des restaurants...</p>
-        </div>
-        <style>{`@keyframes spin { 0% { transform: rotate(0deg); } 100% { transform: rotate(360deg); } }`}</style>
-      </div>
-    );
+    return <LoadingSpinner fullScreen message="Chargement des restaurants..." />;
   }
 
   return (
@@ -278,7 +250,7 @@ export function Home() {
                       justifyContent: 'center',
                       overflow: 'hidden',
                     }}>
-                      <img
+                      <LazyImage
                         src={restaurant.logo}
                         alt={restaurant.name}
                         style={{

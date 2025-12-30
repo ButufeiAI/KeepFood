@@ -3,21 +3,9 @@ import { useParams, useNavigate } from 'react-router-dom';
 import { publicService, Category, Restaurant, Product } from '../services/public.service';
 import { useCartStore } from '../stores/cart.store';
 import { useClientStore } from '../stores/client.store';
-
-// Hook pour détecter la taille d'écran
-const useIsMobile = () => {
-  const [isMobile, setIsMobile] = useState(window.innerWidth < 768);
-  
-  useEffect(() => {
-    const handleResize = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    window.addEventListener('resize', handleResize);
-    return () => window.removeEventListener('resize', handleResize);
-  }, []);
-  
-  return isMobile;
-};
+import { useIsMobile } from '../hooks';
+import { useToast, LazyImage } from '../components';
+import { handleApiError } from '../utils/errorHandler';
 
 export function MenuCard() {
   const { restaurantId, tableId } = useParams<{ restaurantId: string; tableId?: string }>();
@@ -52,6 +40,13 @@ export function MenuCard() {
     }
   }, [menu]);
 
+  useEffect(() => {
+    // Charger les favoris si l'utilisateur est identifié
+    if (restaurantId && clientIdentifier) {
+      loadFavorites();
+    }
+  }, [restaurantId, clientIdentifier]);
+
   const loadData = async () => {
     if (!restaurantId) return;
 
@@ -65,9 +60,47 @@ export function MenuCard() {
       setMenu(menuData);
     } catch (error) {
       console.error('Erreur lors du chargement:', error);
-      alert('Erreur lors du chargement du menu');
+      handleApiError(error, toast.error);
     } finally {
       setLoading(false);
+    }
+  };
+
+  const loadFavorites = async () => {
+    if (!clientIdentifier || !restaurantId) return;
+    
+    try {
+      setLoadingFavorites(true);
+      const favs = await publicService.getFavorites(clientIdentifier, restaurantId);
+      setFavorites(favs.map((f: any) => f.productId));
+    } catch (error) {
+      console.error('Erreur lors du chargement des favoris:', error);
+      // Ne pas afficher d'erreur pour les favoris (non critique)
+    } finally {
+      setLoadingFavorites(false);
+    }
+  };
+
+  const toggleFavorite = async (productId: string, e: React.MouseEvent) => {
+    e.stopPropagation();
+    
+    if (!clientIdentifier || !restaurantId) {
+      toast.warning('Connectez-vous pour gérer vos favoris');
+      return;
+    }
+
+    try {
+      if (favorites.includes(productId)) {
+        await publicService.removeFavorite(productId, clientIdentifier, restaurantId);
+        setFavorites(prev => prev.filter(id => id !== productId));
+        toast.success('Retiré des favoris');
+      } else {
+        await publicService.addFavorite(productId, clientIdentifier, restaurantId);
+        setFavorites(prev => [...prev, productId]);
+        toast.success('Ajouté aux favoris ⭐');
+      }
+    } catch (error) {
+      handleApiError(error, toast.error);
     }
   };
 
@@ -102,6 +135,9 @@ export function MenuCard() {
       price,
       quantity: 1,
     });
+
+    // Notification de succès
+    toast.success(`${product.name} ajouté au panier 🛒`);
   };
 
   const filteredMenu = menu.filter(category => {
@@ -192,7 +228,7 @@ export function MenuCard() {
           gap: '1rem',
         }}>
           {restaurant.logo && (
-            <img
+            <LazyImage
               src={restaurant.logo}
               alt={restaurant.name}
               style={{
@@ -476,7 +512,7 @@ export function MenuCard() {
                       overflow: 'hidden',
                       flexShrink: 0,
                     }}>
-                      <img
+                      <LazyImage
                         src={category.image}
                         alt={category.name}
                         style={{
@@ -544,29 +580,14 @@ export function MenuCard() {
                       >
                         {/* Image du produit */}
                         {imgSrc ? (
-                          <div style={{
-                            width: '100%',
-                            height: '200px',
-                            overflow: 'hidden',
-                            backgroundColor: '#f8f9fa',
-                          }}>
-                            <img
-                              src={imgSrc}
-                              alt={product.name}
-                              style={{
-                                width: '100%',
-                                height: '100%',
-                                objectFit: 'cover',
-                                transition: 'transform 0.3s ease',
-                              }}
-                              onMouseEnter={(e) => {
-                                e.currentTarget.style.transform = 'scale(1.1)';
-                              }}
-                              onMouseLeave={(e) => {
-                                e.currentTarget.style.transform = 'scale(1)';
-                              }}
-                            />
-                          </div>
+                          <LazyImage
+                            src={imgSrc}
+                            alt={product.name}
+                            style={{
+                              width: '100%',
+                              height: '200px',
+                            }}
+                          />
                         ) : (
                           <div style={{
                             width: '100%',
@@ -800,21 +821,14 @@ export function MenuCard() {
                 : null;
               
               return productImage ? (
-                <div style={{
-                  width: '100%',
-                  height: '300px',
-                  overflow: 'hidden',
-                }}>
-                  <img
-                    src={productImage}
-                    alt={selectedProduct.name}
-                    style={{
-                      width: '100%',
-                      height: '100%',
-                      objectFit: 'cover',
-                    }}
-                  />
-                </div>
+                <LazyImage
+                  src={productImage}
+                  alt={selectedProduct.name}
+                  style={{
+                    width: '100%',
+                    height: '300px',
+                  }}
+                />
               ) : null;
             })()}
 
