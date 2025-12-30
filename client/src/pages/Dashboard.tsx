@@ -3,6 +3,10 @@ import { useSearchParams, useNavigate } from 'react-router-dom';
 import { useClientStore } from '../stores/client.store';
 import api from '../services/api';
 import './Dashboard.css';
+import { useToast } from '../components/ToastContainer';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { LazyImage } from '../components/LazyImage';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 interface Order {
   id: string;
@@ -53,17 +57,18 @@ interface LoyaltyData {
 export function Dashboard() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
+  const toast = useToast();
+  const isMobile = useIsMobile();
   const { identifier } = useClientStore();
   const restaurantId = searchParams.get('restaurantId');
 
   const [orders, setOrders] = useState<Order[]>([]);
   const [loyalty, setLoyalty] = useState<LoyaltyData | null>(null);
   const [loading, setLoading] = useState(true);
-  const [error, setError] = useState('');
 
   useEffect(() => {
     if (!identifier) {
-      setError('Identifiant client non trouvé');
+      toast.error('Identifiant client non trouvé');
       setLoading(false);
       return;
     }
@@ -81,17 +86,16 @@ export function Dashboard() {
         const response = await api.get(`/public/clients/dashboard?${params.toString()}`);
         setOrders(response.data.orders || []);
         setLoyalty(response.data.loyalty);
-        setError('');
       } catch (err: any) {
         console.error('Erreur lors du chargement du tableau de bord:', err);
-        setError(err.response?.data?.message || 'Erreur lors du chargement des données');
+        toast.error(err.response?.data?.message || 'Erreur lors du chargement des données');
       } finally {
         setLoading(false);
       }
     };
 
     loadDashboard();
-  }, [identifier, restaurantId]);
+  }, [identifier, restaurantId, toast]);
 
   const formatDate = (dateString: string) => {
     const date = new Date(dateString);
@@ -133,31 +137,25 @@ export function Dashboard() {
   };
 
   if (loading) {
-    return (
-      <div className="dashboard-container">
-        <div className="loading">Chargement...</div>
-      </div>
-    );
+    return <LoadingSpinner fullscreen message="Chargement du tableau de bord..." />;
   }
 
-  if (error && !identifier) {
+  if (!identifier) {
     return (
       <div className="dashboard-container">
-        <div className="error">{error}</div>
+        <div className="error">Identifiant client non trouvé</div>
       </div>
     );
   }
 
   return (
-    <div className="dashboard-container">
-      <header className="dashboard-header">
-        <h1>Mon Tableau de Bord</h1>
+    <div className="dashboard-container" style={{ padding: isMobile ? '0.5rem' : '1rem' }}>
+      <header className="dashboard-header" style={{ flexDirection: isMobile ? 'column' : 'row', gap: isMobile ? '1rem' : '0', alignItems: isMobile ? 'flex-start' : 'center' }}>
+        <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem' }}>Mon Tableau de Bord</h1>
         <button onClick={() => navigate(-1)} className="back-button">
           ← Retour
         </button>
       </header>
-
-      {error && <div className="error-message">{error}</div>}
 
       {/* Section Points de Fidélité */}
       {loyalty && (
@@ -221,10 +219,11 @@ export function Dashboard() {
 
                 <div className="order-restaurant">
                   {order.restaurant.logo && (
-                    <img
+                    <LazyImage
                       src={order.restaurant.logo}
                       alt={order.restaurant.name}
                       className="restaurant-logo"
+                      style={{ width: '40px', height: '40px', borderRadius: '50%', objectFit: 'cover' }}
                     />
                   )}
                   <span>{order.restaurant.name}</span>

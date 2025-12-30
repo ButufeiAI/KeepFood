@@ -2,6 +2,10 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { publicService, Category, Restaurant } from '../services/public.service';
 import { useCartStore, CartItem } from '../stores/cart.store';
+import { useToast } from '../components/ToastContainer';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { LazyImage } from '../components/LazyImage';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 interface OrderStep {
   id: string;
@@ -14,6 +18,8 @@ interface OrderStep {
 export function StepByStepOrder() {
   const { restaurantId, tableId } = useParams<{ restaurantId: string; tableId?: string }>();
   const navigate = useNavigate();
+  const toast = useToast();
+  const isMobile = useIsMobile();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -42,9 +48,9 @@ export function StepByStepOrder() {
       if (menuData && menuData.length > 0) {
         buildSteps(menuData);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors du chargement:', error);
-      alert('Erreur lors du chargement du menu');
+      toast.error(error.response?.data?.message || 'Erreur lors du chargement du menu');
     } finally {
       setLoading(false);
     }
@@ -139,6 +145,7 @@ export function StepByStepOrder() {
     };
 
     addItem(cartItem);
+    toast.success(`${product.name} ajouté au panier !`);
   };
 
   const nextStep = () => {
@@ -164,11 +171,7 @@ export function StepByStepOrder() {
   const currentCategory = steps[currentStep] ? menu.find((c) => c.id === steps[currentStep]?.categoryId) : null;
 
   if (loading) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>Chargement du menu...</h2>
-      </div>
-    );
+    return <LoadingSpinner fullscreen message="Chargement du menu..." />;
   }
 
   if (!restaurant || menu.length === 0 || steps.length === 0) {
@@ -180,12 +183,12 @@ export function StepByStepOrder() {
   }
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem', paddingBottom: '100px' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0.5rem' : '1rem', paddingBottom: isMobile ? '120px' : '100px' }}>
       {/* Header */}
       <header
         style={{
           backgroundColor: '#fff',
-          padding: '1rem',
+          padding: isMobile ? '0.75rem' : '1rem',
           marginBottom: '1rem',
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -317,7 +320,7 @@ export function StepByStepOrder() {
                 </button>
               </div>
             ) : (
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1.5rem' }}>
+              <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))', gap: isMobile ? '1rem' : '1.5rem' }}>
                 {currentCategory.products.map((product) => (
                   <div
                     key={product.id}
@@ -330,21 +333,25 @@ export function StepByStepOrder() {
                       cursor: 'pointer',
                     }}
                     onMouseEnter={(e) => {
-                      e.currentTarget.style.transform = 'translateY(-4px)';
-                      e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                      if (!isMobile) {
+                        e.currentTarget.style.transform = 'translateY(-4px)';
+                        e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.15)';
+                      }
                     }}
                     onMouseLeave={(e) => {
-                      e.currentTarget.style.transform = 'translateY(0)';
-                      e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                      if (!isMobile) {
+                        e.currentTarget.style.transform = 'translateY(0)';
+                        e.currentTarget.style.boxShadow = '0 2px 4px rgba(0,0,0,0.1)';
+                      }
                     }}
                   >
                     {product.images[0] && (
-                      <img
+                      <LazyImage
                         src={product.images[0]}
                         alt={product.name}
                         style={{
                           width: '100%',
-                          height: '200px',
+                          height: isMobile ? '180px' : '200px',
                           objectFit: 'cover',
                         }}
                       />

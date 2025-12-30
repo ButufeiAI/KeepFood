@@ -2,10 +2,15 @@ import { useEffect, useState } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { publicService, TableSession, Order } from '../services/public.service';
 import { useClientStore } from '../stores/client.store';
+import { useToast } from '../components/ToastContainer';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export function TableSessionPage() {
   const { sessionId } = useParams<{ sessionId: string }>();
   const navigate = useNavigate();
+  const toast = useToast();
+  const isMobile = useIsMobile();
   const { identifier: clientIdentifier } = useClientStore();
   const [session, setSession] = useState<TableSession | null>(null);
   const [loading, setLoading] = useState(true);
@@ -28,9 +33,9 @@ export function TableSessionPage() {
         const myOrders = data.orders.filter((o) => o.clientIdentifier === clientIdentifier);
         setSelectedOrders(myOrders.map((o) => o.id));
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors du chargement de la session:', error);
-      alert('Erreur lors du chargement de la session');
+      toast.error(error.response?.data?.message || 'Erreur lors du chargement de la session');
     } finally {
       setLoading(false);
     }
@@ -41,29 +46,25 @@ export function TableSessionPage() {
 
     if (payFull) {
       // Paiement complet - tous paient ensemble
-      alert(`Paiement complet de ${session.totalAmount.toFixed(2)} €`);
+      toast.info(`Paiement complet de ${session.totalAmount.toFixed(2)} €`);
       // TODO: Intégrer avec le système de paiement
     } else {
       // Paiement séparé - chacun paie ses commandes
       if (selectedOrders.length === 0) {
-        alert('Veuillez sélectionner au moins une commande');
+        toast.warning('Veuillez sélectionner au moins une commande');
         return;
       }
 
       const selectedOrdersData = session.orders.filter((o) => selectedOrders.includes(o.id));
       const totalToPay = selectedOrdersData.reduce((sum, o) => sum + Number(o.totalAmount), 0);
 
-      alert(`Vous allez payer ${totalToPay.toFixed(2)} € pour ${selectedOrdersData.length} commande(s)`);
+      toast.info(`Vous allez payer ${totalToPay.toFixed(2)} € pour ${selectedOrdersData.length} commande(s)`);
       // TODO: Intégrer avec le système de paiement
     }
   };
 
   if (loading) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <p>Chargement...</p>
-      </div>
-    );
+    return <LoadingSpinner fullscreen message="Chargement de la session..." />;
   }
 
   if (!session) {
@@ -91,9 +92,9 @@ export function TableSessionPage() {
     .reduce((sum, o) => sum + Number(o.totalAmount), 0);
 
   return (
-    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: '1rem' }}>
-      <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-        <h1>Facture de la table</h1>
+    <div style={{ maxWidth: '1000px', margin: '0 auto', padding: isMobile ? '0.5rem' : '1rem' }}>
+      <div style={{ marginBottom: '2rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: isMobile ? 'wrap' : 'nowrap', gap: isMobile ? '1rem' : '0' }}>
+        <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', flex: isMobile ? '1 1 100%' : 'auto' }}>Facture de la table</h1>
         <button
           onClick={() => navigate(-1)}
           style={{
@@ -110,16 +111,16 @@ export function TableSessionPage() {
       </div>
 
       {/* Sélection du mode de paiement */}
-      <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: '1.5rem', marginBottom: '1.5rem' }}>
-        <h2 style={{ marginBottom: '1rem' }}>Mode de paiement</h2>
-        <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
+      <div style={{ backgroundColor: '#fff', borderRadius: '8px', padding: isMobile ? '1rem' : '1.5rem', marginBottom: '1.5rem' }}>
+        <h2 style={{ marginBottom: '1rem', fontSize: isMobile ? '1.25rem' : '1.5rem' }}>Mode de paiement</h2>
+        <div style={{ display: 'flex', flexDirection: isMobile ? 'column' : 'row', gap: '1rem', marginBottom: '1rem' }}>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
               type="radio"
               checked={paymentMode === 'full'}
               onChange={() => setPaymentMode('full')}
             />
-            <span>Paiement complet (tous ensemble)</span>
+            <span style={{ fontSize: isMobile ? '0.9rem' : '1rem' }}>Paiement complet (tous ensemble)</span>
           </label>
           <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', cursor: 'pointer' }}>
             <input
@@ -127,7 +128,7 @@ export function TableSessionPage() {
               checked={paymentMode === 'split'}
               onChange={() => setPaymentMode('split')}
             />
-            <span>Paiement séparé (chacun paie sa part)</span>
+            <span style={{ fontSize: isMobile ? '0.9rem' : '1rem' }}>Paiement séparé (chacun paie sa part)</span>
           </label>
         </div>
 

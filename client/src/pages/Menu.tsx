@@ -2,10 +2,16 @@ import { useState, useEffect } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { publicService, Category, Restaurant } from '../services/public.service';
 import { useCartStore, CartItem } from '../stores/cart.store';
+import { useToast } from '../components/ToastContainer';
+import { LoadingSpinner } from '../components/LoadingSpinner';
+import { LazyImage } from '../components/LazyImage';
+import { useIsMobile } from '../hooks/useIsMobile';
 
 export function Menu() {
   const { restaurantId, tableId } = useParams<{ restaurantId: string; tableId?: string }>();
   const navigate = useNavigate();
+  const toast = useToast();
+  const isMobile = useIsMobile();
   const [restaurant, setRestaurant] = useState<Restaurant | null>(null);
   const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
@@ -33,9 +39,9 @@ export function Menu() {
       if (menuData.length > 0) {
         setSelectedCategory(menuData[0].id);
       }
-    } catch (error) {
+    } catch (error: any) {
       console.error('Erreur lors du chargement:', error);
-      alert('Erreur lors du chargement du menu');
+      toast.error(error.response?.data?.message || 'Erreur lors du chargement du menu');
     } finally {
       setLoading(false);
     }
@@ -56,16 +62,13 @@ export function Menu() {
     };
 
     addItem(cartItem);
+    toast.success(`${product.name} ajouté au panier !`);
   };
 
   const itemCount = getItemCount();
 
   if (loading) {
-    return (
-      <div style={{ padding: '2rem', textAlign: 'center' }}>
-        <h2>Chargement du menu...</h2>
-      </div>
-    );
+    return <LoadingSpinner fullscreen message="Chargement du menu..." />;
   }
 
   if (!restaurant || menu.length === 0) {
@@ -79,12 +82,12 @@ export function Menu() {
   const currentCategory = menu.find((c) => c.id === selectedCategory);
 
   return (
-    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: '1rem' }}>
+    <div style={{ maxWidth: '1200px', margin: '0 auto', padding: isMobile ? '0.5rem' : '1rem' }}>
       {/* Header */}
       <header
         style={{
           backgroundColor: '#fff',
-          padding: '1rem',
+          padding: isMobile ? '0.75rem' : '1rem',
           marginBottom: '1rem',
           borderRadius: '8px',
           boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
@@ -93,9 +96,9 @@ export function Menu() {
           zIndex: 100,
         }}
       >
-        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center' }}>
-          <div>
-            <h1 style={{ margin: 0, fontSize: '1.5rem' }}>{restaurant.name}</h1>
+        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: isMobile ? 'wrap' : 'nowrap', gap: isMobile ? '0.5rem' : '0' }}>
+          <div style={{ flex: isMobile ? '1 1 100%' : 'auto' }}>
+            <h1 style={{ margin: 0, fontSize: isMobile ? '1.25rem' : '1.5rem' }}>{restaurant.name}</h1>
             {restaurant.address && (
               <p style={{ margin: '0.25rem 0 0 0', color: '#666', fontSize: '0.9rem' }}>
                 {restaurant.address}, {restaurant.city}
@@ -105,17 +108,18 @@ export function Menu() {
           <button
             onClick={() => navigate(`/cart/${restaurantId}${tableId ? `/${tableId}` : ''}`)}
             style={{
-              padding: '0.75rem 1.5rem',
+              padding: isMobile ? '0.5rem 1rem' : '0.75rem 1.5rem',
               backgroundColor: '#007bff',
               color: 'white',
               border: 'none',
               borderRadius: '8px',
-              fontSize: '1rem',
+              fontSize: isMobile ? '0.9rem' : '1rem',
               cursor: 'pointer',
               position: 'relative',
+              flex: isMobile ? '0 0 auto' : 'auto',
             }}
           >
-            🛒 Panier
+            🛒 {isMobile ? '' : 'Panier'}
             {itemCount > 0 && (
               <span
                 style={{
@@ -180,7 +184,7 @@ export function Menu() {
             <p style={{ marginBottom: '1rem', color: '#666' }}>{currentCategory.description}</p>
           )}
 
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(280px, 1fr))', gap: '1rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(280px, 1fr))', gap: isMobile ? '0.75rem' : '1rem' }}>
             {currentCategory.products.map((product) => (
               <div
                 key={product.id}
@@ -192,12 +196,12 @@ export function Menu() {
                 }}
               >
                 {product.images[0] && (
-                  <img
+                  <LazyImage
                     src={product.images[0]}
                     alt={product.name}
                     style={{
                       width: '100%',
-                      height: '200px',
+                      height: isMobile ? '180px' : '200px',
                       objectFit: 'cover',
                     }}
                   />
