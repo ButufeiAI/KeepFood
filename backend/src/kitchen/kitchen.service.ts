@@ -1,4 +1,4 @@
-import { Injectable, NotFoundException, ForbiddenException } from '@nestjs/common';
+import { Injectable, NotFoundException, ForbiddenException, Inject, forwardRef } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, In } from 'typeorm';
 import { Order } from '../entities/order.entity';
@@ -6,6 +6,7 @@ import { OrderItem } from '../entities/order-item.entity';
 import { User } from '../entities/user.entity';
 import { UserRole } from '../common/enums/role.enum';
 import { OrderStatus } from '../common/enums/order-status.enum';
+import { NotificationsService } from '../notifications/notifications.service';
 
 @Injectable()
 export class KitchenService {
@@ -14,6 +15,8 @@ export class KitchenService {
     private ordersRepository: Repository<Order>,
     @InjectRepository(OrderItem)
     private orderItemsRepository: Repository<OrderItem>,
+    @Inject(forwardRef(() => NotificationsService))
+    private notificationsService: NotificationsService,
   ) {}
 
   async getKitchenOrders(restaurantId: string, user: User): Promise<any[]> {
@@ -123,7 +126,16 @@ export class KitchenService {
 
         if (allReady) {
           order.status = OrderStatus.READY;
-          await this.ordersRepository.save(order);
+          const updatedOrder = await this.ordersRepository.save(order);
+          
+          // Envoyer une notification au client si la commande est prête
+          if (updatedOrder.clientIdentifier) {
+            try {
+              await this.notificationsService.notifyOrderReady(updatedOrder);
+            } catch (error) {
+              console.error('Erreur lors de l\'envoi de la notification:', error);
+            }
+          }
         }
       }
     }

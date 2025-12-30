@@ -11,6 +11,7 @@ import axios from 'axios';
 import { Restaurant } from '../entities/restaurant.entity';
 import { CreateRestaurantDto } from './dto/create-restaurant.dto';
 import { UpdateRestaurantDto } from './dto/update-restaurant.dto';
+import { UpdateRestaurantSettingsDto } from './dto/update-restaurant-settings.dto';
 import { User } from '../entities/user.entity';
 import { UsersService } from '../users/users.service';
 import { UserRole } from '../common/enums/role.enum';
@@ -120,23 +121,40 @@ export class RestaurantsService {
   }
 
   async findAll(user: User): Promise<Restaurant[]> {
+    let restaurants: Restaurant[];
+    
     // SUPER_ADMIN voit tous les restaurants
     if (user.role === UserRole.SUPER_ADMIN) {
-      return this.restaurantsRepository.find({
+      restaurants = await this.restaurantsRepository.find({
         relations: ['users'],
         order: { createdAt: 'DESC' },
       });
-    }
-
-    // Les autres voient uniquement leur restaurant
-    if (user.restaurantId) {
-      return this.restaurantsRepository.find({
+    } else if (user.restaurantId) {
+      // Les autres voient uniquement leur restaurant
+      restaurants = await this.restaurantsRepository.find({
         where: { id: user.restaurantId },
         relations: ['users', 'tables', 'categories'],
       });
+    } else {
+      return [];
     }
 
-    return [];
+    // Log pour debug
+    if (restaurants.length > 0) {
+      console.log('🔍 Premier restaurant (backend):', {
+        id: restaurants[0].id,
+        name: restaurants[0].name,
+        employeeCount: restaurants[0].employeeCount,
+        description: restaurants[0].description,
+        activities: restaurants[0].activities,
+        establishmentDate: restaurants[0].establishmentDate,
+        website: restaurants[0].website,
+        socialMedia: restaurants[0].socialMedia,
+        allKeys: Object.keys(restaurants[0]),
+      });
+    }
+
+    return restaurants;
   }
 
   async findOne(id: string, user: User): Promise<Restaurant> {
@@ -168,6 +186,53 @@ export class RestaurantsService {
     const restaurant = await this.findOne(id, user);
 
     Object.assign(restaurant, updateRestaurantDto);
+    return this.restaurantsRepository.save(restaurant);
+  }
+
+  async updateSettings(
+    id: string,
+    settingsDto: UpdateRestaurantSettingsDto,
+    user: User,
+  ): Promise<Restaurant> {
+    const restaurant = await this.findOne(id, user);
+
+    // Mettre à jour les champs de base
+    if (settingsDto.name !== undefined) restaurant.name = settingsDto.name;
+    if (settingsDto.logo !== undefined) restaurant.logo = settingsDto.logo;
+    if (settingsDto.address !== undefined) restaurant.address = settingsDto.address;
+    if (settingsDto.city !== undefined) restaurant.city = settingsDto.city;
+    if (settingsDto.zipCode !== undefined) restaurant.zipCode = settingsDto.zipCode;
+    if (settingsDto.country !== undefined) restaurant.country = settingsDto.country;
+    if (settingsDto.phone !== undefined) restaurant.phone = settingsDto.phone;
+    if (settingsDto.email !== undefined) restaurant.email = settingsDto.email;
+    if (settingsDto.vatNumber !== undefined) restaurant.vatNumber = settingsDto.vatNumber;
+
+    // Mettre à jour les horaires d'ouverture (JSON)
+    if (settingsDto.openingHours) {
+      restaurant.openingHours = JSON.stringify(settingsDto.openingHours);
+    }
+
+    // Mettre à jour les informations de facturation
+    if (settingsDto.billingInfo) {
+      const billingAddress = [
+        settingsDto.billingInfo.address,
+        settingsDto.billingInfo.city,
+        settingsDto.billingInfo.zipCode,
+        settingsDto.billingInfo.country,
+      ]
+        .filter(Boolean)
+        .join(', ');
+      restaurant.billingAddress = billingAddress || null;
+      if (settingsDto.billingInfo.vatNumber) {
+        restaurant.vatNumber = settingsDto.billingInfo.vatNumber;
+      }
+    }
+
+    // Mettre à jour les canaux activés
+    if (settingsDto.onSiteEnabled !== undefined) restaurant.onSiteEnabled = settingsDto.onSiteEnabled;
+    if (settingsDto.takeawayEnabled !== undefined) restaurant.takeawayEnabled = settingsDto.takeawayEnabled;
+    if (settingsDto.deliveryEnabled !== undefined) restaurant.deliveryEnabled = settingsDto.deliveryEnabled;
+
     return this.restaurantsRepository.save(restaurant);
   }
 

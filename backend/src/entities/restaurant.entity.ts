@@ -71,6 +71,24 @@ export class Restaurant {
   @Column({ type: 'text', nullable: true })
   billingAddress: string;
 
+  @Column({ type: 'int', nullable: true })
+  employeeCount: number; // Nombre de travailleurs/employés
+
+  @Column({ type: 'text', nullable: true })
+  description: string; // Description détaillée de ce que fait le restaurant
+
+  @Column({ type: 'text', nullable: true })
+  activities: string; // Activités principales (JSON array ou texte)
+
+  @Column({ type: 'date', nullable: true })
+  establishmentDate: Date; // Date de création de l'établissement
+
+  @Column({ type: 'text', nullable: true })
+  website: string; // Site web du restaurant
+
+  @Column({ type: 'text', nullable: true })
+  socialMedia: string; // Réseaux sociaux (JSON object)
+
   @OneToMany(() => User, (user) => user.restaurant)
   users: User[];
 

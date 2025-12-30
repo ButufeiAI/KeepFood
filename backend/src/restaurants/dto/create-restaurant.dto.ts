@@ -5,6 +5,8 @@ import {
   IsBoolean,
   IsEmail,
   MaxLength,
+  IsInt,
+  IsDateString,
 } from 'class-validator';
 import { PlanType } from '../../common/enums/plan.enum';
 
@@ -74,6 +76,30 @@ export class CreateRestaurantDto {
   @IsOptional()
   @IsString()
   billingAddress?: string;
+
+  @IsOptional()
+  @IsInt()
+  employeeCount?: number;
+
+  @IsOptional()
+  @IsString()
+  description?: string;
+
+  @IsOptional()
+  @IsString()
+  activities?: string;
+
+  @IsOptional()
+  @IsDateString()
+  establishmentDate?: string;
+
+  @IsOptional()
+  @IsString()
+  website?: string;
+
+  @IsOptional()
+  @IsString()
+  socialMedia?: string;
 }
 
 

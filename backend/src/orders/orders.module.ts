@@ -1,4 +1,4 @@
-import { Module } from '@nestjs/common';
+import { Module, forwardRef } from '@nestjs/common';
 import { TypeOrmModule } from '@nestjs/typeorm';
 import { OrdersService } from './orders.service';
 import { OrdersController } from './orders.controller';
@@ -8,6 +8,8 @@ import { Product } from '../entities/product.entity';
 import { ProductVariant } from '../entities/product-variant.entity';
 import { Restaurant } from '../entities/restaurant.entity';
 import { Table } from '../entities/table.entity';
+import { NotificationsModule } from '../notifications/notifications.module';
+import { FavoritesModule } from '../favorites/favorites.module';
 
 @Module({
   imports: [
@@ -19,6 +21,8 @@ import { Table } from '../entities/table.entity';
       Restaurant,
       Table,
     ]),
+    forwardRef(() => NotificationsModule),
+    forwardRef(() => FavoritesModule),
   ],
   controllers: [OrdersController],
   providers: [OrdersService],

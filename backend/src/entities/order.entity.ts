@@ -15,6 +15,7 @@ import { User } from './user.entity';
 import { OrderStatus } from '../common/enums/order-status.enum';
 import { OrderItem } from './order-item.entity';
 import { Payment } from './payment.entity';
+import { TableSession } from './table-session.entity';
 
 @Entity('orders')
 export class Order {
@@ -37,11 +38,24 @@ export class Order {
   table: Table;
 
   @Column({ type: 'uuid', nullable: true })
-  userId: string; // Client qui a commandé
+  tableSessionId: string; // Session de table pour grouper les commandes
+
+  @ManyToOne(() => TableSession, { nullable: true, onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'tableSessionId' })
+  tableSession: TableSession;
+
+  @Column({ type: 'uuid', nullable: true })
+  userId: string; // Client qui a commandé (peut être null si client anonyme)
 
   @ManyToOne(() => User, { nullable: true, onDelete: 'SET NULL' })
   @JoinColumn({ name: 'userId' })
   user: User;
+
+  @Column({ length: 255, nullable: true })
+  clientName: string; // Nom du client (pour les clients non enregistrés)
+
+  @Column({ length: 255, nullable: true })
+  clientIdentifier: string; // Identifiant unique client (généré côté client, stocké dans localStorage)
 
   @Column({ type: 'uuid', nullable: true })
   serverId: string; // Serveur qui a pris/géré la commande

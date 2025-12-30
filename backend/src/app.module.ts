@@ -17,6 +17,15 @@ import { Attendance } from './entities/attendance.entity';
 import { TableAssignment } from './entities/table-assignment.entity';
 import { Invoice } from './entities/invoice.entity';
 import { Transaction } from './entities/transaction.entity';
+import { TableSession } from './entities/table-session.entity';
+import { Client } from './entities/client.entity';
+import { LoyaltyAccount } from './entities/loyalty-account.entity';
+import { LoyaltyTransaction } from './entities/loyalty-transaction.entity';
+import { LoyaltyReward } from './entities/loyalty-reward.entity';
+import { Subscription } from './entities/subscription.entity';
+import { SubscriptionUsage } from './entities/subscription-usage.entity';
+import { FavoriteProduct } from './entities/favorite-product.entity';
+import { ClientNotification } from './entities/client-notification.entity';
 import { AuthModule } from './auth/auth.module';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { TablesModule } from './tables/tables.module';
@@ -30,6 +39,13 @@ import { AttendanceModule } from './attendance/attendance.module';
 import { TableAssignmentsModule } from './table-assignments/table-assignments.module';
 import { AccountingModule } from './accounting/accounting.module';
 import { EmployeesModule } from './employees/employees.module';
+import { TableSessionsModule } from './table-sessions/table-sessions.module';
+import { ClientsModule } from './clients/clients.module';
+import { PaymentsModule } from './payments/payments.module';
+import { LoyaltyModule } from './loyalty/loyalty.module';
+import { SubscriptionsModule } from './subscriptions/subscriptions.module';
+import { FavoritesModule } from './favorites/favorites.module';
+import { NotificationsModule } from './notifications/notifications.module';
 
 @Module({
   imports: [
@@ -59,6 +75,15 @@ import { EmployeesModule } from './employees/employees.module';
         TableAssignment,
         Invoice,
         Transaction,
+        TableSession,
+        Client,
+        LoyaltyAccount,
+        LoyaltyTransaction,
+        LoyaltyReward,
+        Subscription,
+        SubscriptionUsage,
+        FavoriteProduct,
+        ClientNotification,
       ],
       synchronize: process.env.NODE_ENV !== 'production', // Only in development
       logging: process.env.NODE_ENV === 'development',
@@ -76,6 +101,13 @@ import { EmployeesModule } from './employees/employees.module';
     TableAssignmentsModule,
     AccountingModule,
     EmployeesModule,
+    TableSessionsModule,
+    ClientsModule,
+    PaymentsModule,
+    LoyaltyModule,
+    SubscriptionsModule,
+    FavoritesModule,
+    NotificationsModule,
   ],
   controllers: [AppController],
   providers: [AppService],

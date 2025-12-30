@@ -8,6 +8,7 @@ import { Product } from '../entities/product.entity';
 import { Restaurant } from '../entities/restaurant.entity';
 import { Table } from '../entities/table.entity';
 import { User } from '../entities/user.entity';
+import { Payment } from '../entities/payment.entity';
 
 @Module({
   imports: [
@@ -18,6 +19,7 @@ import { User } from '../entities/user.entity';
       Restaurant,
       Table,
       User,
+      Payment,
     ]),
   ],
   controllers: [StatisticsController],

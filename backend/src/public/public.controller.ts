@@ -9,6 +9,8 @@ import { Order } from '../entities/order.entity';
 import { OrderItem } from '../entities/order-item.entity';
 import { ProductVariant } from '../entities/product-variant.entity';
 import { OrderStatus } from '../common/enums/order-status.enum';
+import { TableSessionsService } from '../table-sessions/table-sessions.service';
+import { ClientsService } from '../clients/clients.service';
 
 @Controller('public')
 export class PublicController {
@@ -28,7 +30,20 @@ export class PublicController {
     @InjectRepository(ProductVariant)
     private productVariantsRepository: Repository<ProductVariant>,
     private dataSource: DataSource,
+    private tableSessionsService: TableSessionsService,
+    private clientsService: ClientsService,
   ) {}
+
+  @Get('restaurants')
+  async getAllRestaurants() {
+    const restaurants = await this.restaurantsRepository.find({
+      where: { isActive: true },
+      select: ['id', 'name', 'address', 'city', 'zipCode', 'country', 'phone', 'email', 'logo', 'description'],
+      order: { name: 'ASC' },
+    });
+
+    return restaurants;
+  }
 
   @Get('restaurant/:id')
   async getRestaurant(@Param('id') id: string) {
@@ -40,7 +55,7 @@ export class PublicController {
       throw new NotFoundException('Restaurant not found');
     }
 
-    return {
+      return {
       id: restaurant.id,
       name: restaurant.name,
       address: restaurant.address,
@@ -49,6 +64,8 @@ export class PublicController {
       country: restaurant.country,
       phone: restaurant.phone,
       email: restaurant.email,
+      logo: restaurant.logo,
+      description: restaurant.description,
     };
   }
 
@@ -116,6 +133,9 @@ export class PublicController {
   async createOrder(@Body() body: {
     restaurantId: string;
     tableId?: string;
+    tableSessionId?: string; // ID de la session de table (optionnel, créera/récupérera une session si tableId fourni)
+    clientIdentifier?: string; // Identifiant unique du client (généré côté client)
+    clientName?: string; // Nom optionnel du client
     items: Array<{
       productId: string;
       variantId?: string;
@@ -134,6 +154,7 @@ export class PublicController {
     }
 
     // Vérifier la table si fournie
+    let tableSessionId = body.tableSessionId;
     if (body.tableId) {
       const table = await this.tablesRepository.findOne({
         where: { id: body.tableId, restaurantId: body.restaurantId, isActive: true },
@@ -141,6 +162,24 @@ export class PublicController {
       if (!table) {
         throw new BadRequestException('Invalid table for this restaurant');
       }
+
+      // Créer ou récupérer une session active pour cette table
+      if (!tableSessionId) {
+        const session = await this.tableSessionsService.getOrCreateActiveSession(
+          body.tableId,
+          body.restaurantId,
+        );
+        tableSessionId = session.id;
+      }
+    }
+
+    // Créer ou récupérer le client
+    if (body.clientIdentifier) {
+      await this.clientsService.getOrCreateClient(
+        body.clientIdentifier,
+        body.restaurantId,
+        body.clientName,
+      );
     }
 
     const queryRunner = this.dataSource.createQueryRunner();
@@ -193,6 +232,9 @@ export class PublicController {
       const order = this.ordersRepository.create({
         restaurantId: body.restaurantId,
         tableId: body.tableId,
+        tableSessionId: tableSessionId,
+        clientIdentifier: body.clientIdentifier || null,
+        clientName: body.clientName || null,
         orderType: 'ON_SITE',
         status: OrderStatus.PENDING,
         notes: body.notes,
@@ -210,10 +252,15 @@ export class PublicController {
 
       await queryRunner.commitTransaction();
 
+      // Mettre à jour le total de la session si applicable
+      if (tableSessionId) {
+        await this.tableSessionsService.updateSessionTotal(tableSessionId);
+      }
+
       // Récupérer la commande complète
       const completeOrder = await this.ordersRepository.findOne({
         where: { id: savedOrder.id },
-        relations: ['items', 'table', 'restaurant'],
+        relations: ['items', 'table', 'restaurant', 'tableSession'],
       });
 
       return completeOrder;
@@ -224,5 +271,13 @@ export class PublicController {
       await queryRunner.release();
     }
   }
-}
 
+  /**
+   * Obtenir toutes les commandes d'une session de table (pour voir qui a commandé quoi)
+   */
+  @Get('table-session/:sessionId/orders')
+  async getSessionOrders(@Param('sessionId') sessionId: string) {
+    const session = await this.tableSessionsService.getSessionWithOrders(sessionId);
+    return session;
+  }
+}

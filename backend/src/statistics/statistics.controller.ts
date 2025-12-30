@@ -41,6 +41,87 @@ export class StatisticsController {
   async getSuperAdminStats() {
     return this.statisticsService.getSuperAdminStats();
   }
+
+  // ========== STATISTIQUES AVANCÉES ==========
+
+  @Get('top-products')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getTopProducts(
+    @Query('restaurantId') restaurantId: string,
+    @Query('limit') limit: string,
+    @Query('period') period: 'day' | 'week' | 'month',
+    @CurrentUser() user: User,
+  ) {
+    return this.statisticsService.getTopProducts(
+      restaurantId || user.restaurantId,
+      user,
+      limit ? parseInt(limit) : 10,
+      period,
+    );
+  }
+
+  @Get('least-sold-products')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getLeastSoldProducts(
+    @Query('restaurantId') restaurantId: string,
+    @Query('limit') limit: string,
+    @Query('period') period: 'day' | 'week' | 'month',
+    @CurrentUser() user: User,
+  ) {
+    return this.statisticsService.getLeastSoldProducts(
+      restaurantId || user.restaurantId,
+      user,
+      limit ? parseInt(limit) : 10,
+      period,
+    );
+  }
+
+  @Get('average-preparation-time')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getAveragePreparationTime(
+    @Query('restaurantId') restaurantId: string,
+    @Query('period') period: 'day' | 'week' | 'month',
+    @CurrentUser() user: User,
+  ) {
+    return this.statisticsService.getAveragePreparationTime(
+      restaurantId || user.restaurantId,
+      user,
+      period,
+    );
+  }
+
+  @Get('payment-distribution')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getPaymentDistribution(
+    @Query('restaurantId') restaurantId: string,
+    @Query('period') period: 'day' | 'week' | 'month',
+    @CurrentUser() user: User,
+  ) {
+    return this.statisticsService.getPaymentDistribution(
+      restaurantId || user.restaurantId,
+      user,
+      period,
+    );
+  }
+
+  @Get('server-performance')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getServerPerformance(
+    @Query('restaurantId') restaurantId: string,
+    @Query('period') period: 'day' | 'week' | 'month',
+    @CurrentUser() user: User,
+  ) {
+    return this.statisticsService.getServerPerformance(
+      restaurantId || user.restaurantId,
+      user,
+      period,
+    );
+  }
 }
 
 

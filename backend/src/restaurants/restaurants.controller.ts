@@ -15,6 +15,7 @@ import {
 import { RestaurantsService } from './restaurants.service';
 import { CreateRestaurantDto } from './dto/create-restaurant.dto';
 import { UpdateRestaurantDto } from './dto/update-restaurant.dto';
+import { UpdateRestaurantSettingsDto } from './dto/update-restaurant-settings.dto';
 import { JwtAuthGuard } from '../auth/guards/jwt-auth.guard';
 import { RolesGuard } from '../auth/guards/roles.guard';
 import { Roles } from '../common/decorators/roles.decorator';
@@ -85,6 +86,17 @@ export class RestaurantsController {
     @CurrentUser() user: User,
   ) {
     return this.restaurantsService.update(id, updateRestaurantDto, user);
+  }
+
+  @Patch(':id/settings')
+  @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  @UseGuards(RolesGuard)
+  updateSettings(
+    @Param('id') id: string,
+    @Body() settingsDto: UpdateRestaurantSettingsDto,
+    @CurrentUser() user: User,
+  ) {
+    return this.restaurantsService.updateSettings(id, settingsDto, user);
   }
 
   @Delete(':id')

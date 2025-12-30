@@ -8,10 +8,14 @@ import { Table } from '../entities/table.entity';
 import { Order } from '../entities/order.entity';
 import { OrderItem } from '../entities/order-item.entity';
 import { ProductVariant } from '../entities/product-variant.entity';
+import { TableSessionsModule } from '../table-sessions/table-sessions.module';
+import { ClientsModule } from '../clients/clients.module';
 
 @Module({
   imports: [
     TypeOrmModule.forFeature([Restaurant, Category, Product, Table, Order, OrderItem, ProductVariant]),
+    TableSessionsModule,
+    ClientsModule,
   ],
   controllers: [PublicController],
 })

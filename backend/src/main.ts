@@ -21,6 +21,7 @@ async function bootstrap() {
   };
   
   const localIP = getLocalIP();
+  const publicIP = process.env.PUBLIC_IP || '91.178.47.136';
   const allowedOrigins = [
     process.env.FRONTEND_URL || 'http://localhost:5202',
     process.env.MARKETING_URL || 'http://localhost:5200',
@@ -28,6 +29,12 @@ async function bootstrap() {
     `http://${localIP}:5202`,
     `http://${localIP}:5200`,
     `http://${localIP}:5203`,
+    `http://${publicIP}:5202`,
+    `http://${publicIP}:5200`,
+    `http://${publicIP}:5203`,
+    `https://${publicIP}:5202`,
+    `https://${publicIP}:5200`,
+    `https://${publicIP}:5203`,
   ];
   
   app.enableCors({
@@ -35,7 +42,11 @@ async function bootstrap() {
       // Permettre les requêtes sans origine (mobile apps, Postman, etc.)
       if (!origin) return callback(null, true);
       // Vérifier si l'origine est autorisée
-      if (allowedOrigins.includes(origin) || origin.includes(`:5202`) || origin.includes(`:5200`) || origin.includes(`:5203`)) {
+      if (allowedOrigins.includes(origin) || 
+          origin.includes(`:5202`) || 
+          origin.includes(`:5200`) || 
+          origin.includes(`:5203`) ||
+          (publicIP && origin.includes(publicIP))) {
         callback(null, true);
       } else {
         callback(null, true); // En développement, accepter toutes les origines
@@ -80,6 +91,9 @@ async function bootstrap() {
   console.log(`🚀 KeepFood API is running on:`);
   console.log(`   - Local:   http://localhost:${port}/api`);
   console.log(`   - Network: http://${localIP}:${port}/api`);
+  if (publicIP) {
+    console.log(`   - Public:  http://${publicIP}:${port}/api`);
+  }
 }
 bootstrap();
 

@@ -3,6 +3,8 @@ import {
   NotFoundException,
   ForbiddenException,
   BadRequestException,
+  Inject,
+  forwardRef,
 } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DataSource, In } from 'typeorm';
@@ -17,6 +19,8 @@ import { UpdateOrderDto } from './dto/update-order.dto';
 import { User } from '../entities/user.entity';
 import { UserRole } from '../common/enums/role.enum';
 import { OrderStatus } from '../common/enums/order-status.enum';
+import { NotificationsService } from '../notifications/notifications.service';
+import { FavoritesService } from '../favorites/favorites.service';
 
 @Injectable()
 export class OrdersService {
@@ -34,6 +38,10 @@ export class OrdersService {
     @InjectRepository(Table)
     private tablesRepository: Repository<Table>,
     private dataSource: DataSource,
+    @Inject(forwardRef(() => NotificationsService))
+    private notificationsService: NotificationsService,
+    @Inject(forwardRef(() => FavoritesService))
+    private favoritesService: FavoritesService,
   ) {}
 
   async create(createOrderDto: CreateOrderDto, user: User): Promise<Order> {
@@ -126,10 +134,36 @@ export class OrdersService {
       const savedOrder = await queryRunner.manager.save(Order, order);
       await queryRunner.commitTransaction();
 
-      return this.ordersRepository.findOne({
+      const completeOrder = await this.ordersRepository.findOne({
         where: { id: savedOrder.id },
         relations: ['restaurant', 'table', 'items', 'items.product', 'items.variant'],
       });
+
+      // Envoyer une notification de confirmation si le client a un identifier
+      if (completeOrder?.clientIdentifier) {
+        try {
+          await this.notificationsService.notifyOrderConfirmed(completeOrder);
+        } catch (error) {
+          console.error('Erreur lors de l\'envoi de la notification:', error);
+        }
+
+        // Ajouter les produits aux favoris (incrémenter le compteur)
+        if (completeOrder.items) {
+          for (const item of completeOrder.items) {
+            try {
+              await this.favoritesService.addFavorite(
+                completeOrder.clientIdentifier,
+                completeOrder.restaurantId,
+                item.productId,
+              );
+            } catch (error) {
+              console.error('Erreur lors de l\'ajout aux favoris:', error);
+            }
+          }
+        }
+      }
+
+      return completeOrder!;
     } catch (error) {
       await queryRunner.rollbackTransaction();
       throw error;
