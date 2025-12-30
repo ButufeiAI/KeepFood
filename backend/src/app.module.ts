@@ -26,6 +26,8 @@ import { Subscription } from './entities/subscription.entity';
 import { SubscriptionUsage } from './entities/subscription-usage.entity';
 import { FavoriteProduct } from './entities/favorite-product.entity';
 import { ClientNotification } from './entities/client-notification.entity';
+import { EmployeeProfile } from './entities/employee-profile.entity';
+import { ClientProfile } from './entities/client-profile.entity';
 import { AuthModule } from './auth/auth.module';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { TablesModule } from './tables/tables.module';
@@ -84,6 +86,8 @@ import { NotificationsModule } from './notifications/notifications.module';
         SubscriptionUsage,
         FavoriteProduct,
         ClientNotification,
+        EmployeeProfile,
+        ClientProfile,
       ],
       synchronize: process.env.NODE_ENV !== 'production', // Only in development
       logging: process.env.NODE_ENV === 'development',

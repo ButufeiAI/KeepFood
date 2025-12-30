@@ -11,6 +11,8 @@ import { Products } from './pages/Products';
 import { Orders } from './pages/Orders';
 import { Server } from './pages/Server';
 import { Categories } from './pages/Categories';
+import { EmployeeManagement } from './pages/EmployeeManagement';
+import { TableAssignments } from './pages/TableAssignments';
 
 function App() {
   return (
@@ -73,6 +75,22 @@ function App() {
             element={
               <ProtectedRoute>
                 <Server />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/employees"
+            element={
+              <ProtectedRoute>
+                <EmployeeManagement />
+              </ProtectedRoute>
+            }
+          />
+          <Route
+            path="/table-assignments"
+            element={
+              <ProtectedRoute>
+                <TableAssignments />
               </ProtectedRoute>
             }
           />
