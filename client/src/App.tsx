@@ -5,11 +5,18 @@ import { StepByStepOrder } from './pages/StepByStepOrder';
 import { Cart } from './pages/Cart';
 import { OrderSuccess } from './pages/OrderSuccess';
 import { Order } from './pages/Order';
+import { TableSessionPage } from './pages/TableSession';
+import { Login } from './pages/Login';
+import { Register } from './pages/Register';
+import { Dashboard } from './pages/Dashboard';
+import { Home } from './pages/Home';
 
 function App() {
   return (
     <Router>
       <Routes>
+        {/* Route d'accueil */}
+        <Route path="/" element={<Home />} />
         {/* Route pour /order?tableId=xxx&restaurantId=yyy (QR code) */}
         <Route path="/order" element={<Order />} />
         {/* Route principale avec template interactif moderne */}
@@ -24,6 +31,10 @@ function App() {
         <Route path="/cart/:restaurantId" element={<Cart />} />
         <Route path="/cart/:restaurantId/:tableId" element={<Cart />} />
         <Route path="/order/:orderId" element={<OrderSuccess />} />
+        <Route path="/table-session/:sessionId" element={<TableSessionPage />} />
+        <Route path="/login" element={<Login />} />
+        <Route path="/register" element={<Register />} />
+        <Route path="/dashboard" element={<Dashboard />} />
       </Routes>
     </Router>
   );

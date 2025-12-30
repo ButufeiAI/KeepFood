@@ -2,6 +2,7 @@ import { useState, useEffect, useRef } from 'react';
 import { useParams, useNavigate } from 'react-router-dom';
 import { publicService, Category, Restaurant, Product } from '../services/public.service';
 import { useCartStore } from '../stores/cart.store';
+import { useClientStore } from '../stores/client.store';
 
 // Hook pour détecter la taille d'écran
 const useIsMobile = () => {
@@ -28,8 +29,11 @@ export function MenuCard() {
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
   const [selectedProduct, setSelectedProduct] = useState<Product | null>(null);
   const [searchQuery, setSearchQuery] = useState('');
+  const [favorites, setFavorites] = useState<string[]>([]);
+  const [loadingFavorites, setLoadingFavorites] = useState(false);
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const { addItem, setRestaurant: setCartRestaurant, getItemCount } = useCartStore();
+  const { identifier: clientIdentifier } = useClientStore();
 
   useEffect(() => {
     if (restaurantId) {
@@ -102,6 +106,10 @@ export function MenuCard() {
 
   const filteredMenu = menu.filter(category => {
     if (!searchQuery) return true;
+    if (searchQuery === '⭐ FAVORIS') {
+      // Afficher uniquement les catégories contenant des favoris
+      return category.products?.some(product => favorites.includes(product.id));
+    }
     const query = searchQuery.toLowerCase();
     return (
       category.name.toLowerCase().includes(query) ||
@@ -114,6 +122,10 @@ export function MenuCard() {
 
   const getFilteredProducts = (category: Category) => {
     if (!searchQuery) return category.products || [];
+    if (searchQuery === '⭐ FAVORIS') {
+      // Afficher uniquement les produits favoris
+      return (category.products || []).filter(product => favorites.includes(product.id));
+    }
     const query = searchQuery.toLowerCase();
     return (category.products || []).filter(product =>
       product.name.toLowerCase().includes(query) ||
@@ -331,6 +343,52 @@ export function MenuCard() {
           }}>
             Catégories
           </h3>
+          {/* Bouton Favoris */}
+          {clientIdentifier && favorites.length > 0 && (
+            <button
+              onClick={() => {
+                // Filtrer pour afficher uniquement les favoris
+                setSearchQuery('⭐ FAVORIS');
+              }}
+              style={{
+                padding: '0.75rem 1rem',
+                backgroundColor: '#ffc107',
+                color: '#1a1a1a',
+                border: 'none',
+                borderRadius: '10px',
+                fontSize: '0.95rem',
+                fontWeight: '600',
+                cursor: 'pointer',
+                textAlign: 'left',
+                transition: 'all 0.2s ease',
+                display: 'flex',
+                justifyContent: 'space-between',
+                alignItems: 'center',
+                marginBottom: '0.5rem',
+                width: '100%',
+              }}
+              onMouseEnter={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffb300';
+                e.currentTarget.style.transform = 'translateX(4px)';
+              }}
+              onMouseLeave={(e) => {
+                e.currentTarget.style.backgroundColor = '#ffc107';
+                e.currentTarget.style.transform = 'translateX(0)';
+              }}
+            >
+              <span>⭐ Mes Favoris</span>
+              <span style={{
+                backgroundColor: 'rgba(0,0,0,0.1)',
+                color: '#1a1a1a',
+                padding: '0.25rem 0.5rem',
+                borderRadius: '12px',
+                fontSize: '0.75rem',
+                fontWeight: '600',
+              }}>
+                {favorites.length}
+              </span>
+            </button>
+          )}
           <div style={{
             display: 'flex',
             flexDirection: 'column',
@@ -525,12 +583,48 @@ export function MenuCard() {
                         )}
 
                         {/* Contenu du produit */}
-                        <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column' }}>
+                        <div style={{ padding: '1.5rem', flex: 1, display: 'flex', flexDirection: 'column', position: 'relative' }}>
+                          {/* Bouton favori */}
+                          {clientIdentifier && (
+                            <button
+                              onClick={(e) => toggleFavorite(product.id, e)}
+                              style={{
+                                position: 'absolute',
+                                top: '1rem',
+                                right: '1rem',
+                                backgroundColor: favorites.includes(product.id) ? '#ffc107' : 'rgba(255, 255, 255, 0.9)',
+                                border: 'none',
+                                borderRadius: '50%',
+                                width: '40px',
+                                height: '40px',
+                                display: 'flex',
+                                alignItems: 'center',
+                                justifyContent: 'center',
+                                cursor: 'pointer',
+                                fontSize: '1.2rem',
+                                boxShadow: '0 2px 8px rgba(0,0,0,0.15)',
+                                transition: 'all 0.2s ease',
+                                zIndex: 10,
+                              }}
+                              onMouseEnter={(e) => {
+                                e.currentTarget.style.transform = 'scale(1.1)';
+                                e.currentTarget.style.boxShadow = '0 4px 12px rgba(0,0,0,0.2)';
+                              }}
+                              onMouseLeave={(e) => {
+                                e.currentTarget.style.transform = 'scale(1)';
+                                e.currentTarget.style.boxShadow = '0 2px 8px rgba(0,0,0,0.15)';
+                              }}
+                              title={favorites.includes(product.id) ? 'Retirer des favoris' : 'Ajouter aux favoris'}
+                            >
+                              {favorites.includes(product.id) ? '⭐' : '☆'}
+                            </button>
+                          )}
                           <h3 style={{
                             margin: '0 0 0.5rem 0',
                             fontSize: '1.3rem',
                             fontWeight: 'bold',
                             color: '#1a1a1a',
+                            paddingRight: clientIdentifier ? '3rem' : '0',
                           }}>
                             {product.name}
                           </h3>

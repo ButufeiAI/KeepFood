@@ -38,6 +38,13 @@ export interface Restaurant {
   takeawayEnabled?: boolean;
   deliveryEnabled?: boolean;
   isActive: boolean;
+  vatNumber?: string;
+  employeeCount?: number;
+  description?: string;
+  activities?: string;
+  establishmentDate?: string;
+  website?: string;
+  socialMedia?: string;
   createdAt: Date;
   updatedAt: Date;
 }

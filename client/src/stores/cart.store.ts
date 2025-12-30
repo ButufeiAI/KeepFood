@@ -16,11 +16,13 @@ interface CartStore {
   items: CartItem[];
   restaurantId?: string;
   tableId?: string;
+  tableSessionId?: string; // ID de la session de table (pour grouper les commandes)
   addItem: (item: CartItem) => void;
   removeItem: (productId: string, variantId?: string) => void;
   updateQuantity: (productId: string, variantId: string | undefined, quantity: number) => void;
   clear: () => void;
   setRestaurant: (restaurantId: string, tableId?: string) => void;
+  setTableSession: (tableSessionId: string) => void;
   getTotal: () => number;
   getItemCount: () => number;
 }
@@ -31,6 +33,7 @@ export const useCartStore = create<CartStore>()(
       items: [],
       restaurantId: undefined,
       tableId: undefined,
+      tableSessionId: undefined,
 
       addItem: (item) => {
         set((state) => {
@@ -72,11 +75,15 @@ export const useCartStore = create<CartStore>()(
       },
 
       clear: () => {
-        set({ items: [], restaurantId: undefined, tableId: undefined });
+        set({ items: [], restaurantId: undefined, tableId: undefined, tableSessionId: undefined });
       },
 
       setRestaurant: (restaurantId, tableId) => {
         set({ restaurantId, tableId });
+      },
+
+      setTableSession: (tableSessionId) => {
+        set({ tableSessionId });
       },
 
       getTotal: () => {

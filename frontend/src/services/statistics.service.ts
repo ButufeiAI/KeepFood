@@ -51,6 +51,13 @@ export interface SuperAdminStats {
   };
 }
 
+export interface ServerPerformance {
+  serverId: string;
+  serverName: string;
+  orderCount: number;
+  totalRevenue: number;
+}
+
 export const statisticsService = {
   async getDashboardStats(restaurantId?: string): Promise<DashboardStats> {
     const url = restaurantId
@@ -62,6 +69,11 @@ export const statisticsService = {
 
   async getSuperAdminStats(): Promise<SuperAdminStats> {
     const response = await api.get<SuperAdminStats>('/statistics/super-admin');
+    return response.data;
+  },
+
+  async getServerPerformance(restaurantId: string, period: 'day' | 'week' | 'month' = 'day'): Promise<ServerPerformance[]> {
+    const response = await api.get<ServerPerformance[]>(`/statistics/server-performance?restaurantId=${restaurantId}&period=${period}`);
     return response.data;
   },
 };

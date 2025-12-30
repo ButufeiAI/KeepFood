@@ -95,6 +95,12 @@ Write-Host "   Marketing:  http://$ip:5200" -ForegroundColor White
 Write-Host "   Frontend:   http://$ip:5202" -ForegroundColor White
 Write-Host "   Backend:    http://$ip:5201/api" -ForegroundColor White
 Write-Host ""
+$publicIP = "91.178.47.136"
+Write-Host "URLs d'acces public (IP: $publicIP):" -ForegroundColor Cyan
+Write-Host "   Marketing:  http://$publicIP:5200" -ForegroundColor White
+Write-Host "   Frontend:   http://$publicIP:5202" -ForegroundColor White
+Write-Host "   Backend:    http://$publicIP:5201/api" -ForegroundColor White
+Write-Host ""
 Write-Host "Pour arreter les serveurs, executez: .\stop-servers.ps1" -ForegroundColor Yellow
 Write-Host ""
 

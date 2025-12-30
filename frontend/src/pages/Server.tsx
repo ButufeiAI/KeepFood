@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useState, useEffect, useRef } from 'react';
 import { ordersService, Order, OrderStatus, UpdateOrderDto } from '../services/orders.service';
 import { tablesService, Table } from '../services/tables.service';
 import { useAuthStore } from '../stores/auth.store';
@@ -12,20 +12,72 @@ export function Server() {
   const [selectedOrder, setSelectedOrder] = useState<Order | null>(null);
   const [showPaymentModal, setShowPaymentModal] = useState(false);
   const [paymentMethod, setPaymentMethod] = useState<'CASH' | 'CARD_TERMINAL'>('CASH');
+  const [notifications, setNotifications] = useState<Array<{ id: string; orderId: string; tableName: string; timestamp: Date }>>([]);
+  const previousReadyOrdersRef = useRef<Set<string>>(new Set());
 
   useEffect(() => {
     loadData();
-    // Rafraîchir les données toutes les 5 secondes
-    const interval = setInterval(loadData, 5000);
+    // Rafraîchir les données toutes les 3 secondes pour les notifications en temps réel
+    const interval = setInterval(loadData, 3000);
     return () => clearInterval(interval);
-  }, []);
+  }, [user?.restaurantId]);
+
+  // Détecter les nouvelles commandes prêtes et créer des notifications
+  useEffect(() => {
+    const readyOrders = orders.filter((o) => o.status === OrderStatus.READY);
+    const currentReadyIds = new Set(readyOrders.map((o) => o.id));
+    const previousReadyIds = previousReadyOrdersRef.current;
+
+    // Trouver les nouvelles commandes prêtes (qui n'étaient pas prêtes avant)
+    const newReadyOrders = readyOrders.filter((o) => !previousReadyIds.has(o.id));
+
+    if (newReadyOrders.length > 0) {
+      // Créer des notifications pour les nouvelles commandes prêtes
+      const newNotifications = newReadyOrders.map((order) => ({
+        id: `${order.id}-${Date.now()}`,
+        orderId: order.id,
+        tableName: order.table?.name || `Table ${order.tableId?.slice(0, 4)}` || 'Sans table',
+        timestamp: new Date(),
+      }));
+
+      setNotifications((prev) => [...prev, ...newNotifications]);
+
+      // Jouer un son de notification
+      playNotificationSound();
+
+      // Demander la permission pour les notifications du navigateur
+      if ('Notification' in window && Notification.permission === 'default') {
+        Notification.requestPermission();
+      }
+
+      // Afficher une notification du navigateur si la permission est accordée
+      if ('Notification' in window && Notification.permission === 'granted') {
+        newReadyOrders.forEach((order) => {
+          new Notification(`🍽️ Commande prête - ${order.table?.name || 'Table'}`, {
+            body: `La commande pour ${order.table?.name || 'la table'} est prête à être servie`,
+            icon: '/favicon.ico',
+            tag: order.id,
+            requireInteraction: true,
+          });
+        });
+      }
+    }
+
+    previousReadyOrdersRef.current = currentReadyIds;
+  }, [orders]);
+
+
+  const removeNotification = (notificationId: string) => {
+    setNotifications((prev) => prev.filter((n) => n.id !== notificationId));
+  };
 
   const loadData = async () => {
+    if (!user?.restaurantId) return;
     try {
       setLoading(true);
       const [ordersData, tablesData] = await Promise.all([
-        ordersService.getActive(user?.restaurantId),
-        tablesService.getAll(user?.restaurantId),
+        ordersService.getActive(user.restaurantId),
+        tablesService.getAll(user.restaurantId),
       ]);
       setOrders(ordersData);
       setTables(tablesData);
@@ -91,9 +143,122 @@ export function Server() {
     return <div style={{ padding: '2rem', textAlign: 'center' }}>Chargement...</div>;
   }
 
+  const readyOrdersCount = orders.filter((o) => o.status === OrderStatus.READY).length;
+
   return (
     <div style={{ padding: '1rem', maxWidth: '1400px', margin: '0 auto' }}>
-      <h1 style={{ marginBottom: '1rem', fontSize: '1.75rem' }}>Service - Commandes</h1>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+        <h1 style={{ margin: 0, fontSize: '1.75rem' }}>Service - Commandes</h1>
+        {readyOrdersCount > 0 && (
+          <div
+            style={{
+              padding: '0.5rem 1.5rem',
+              backgroundColor: '#28a745',
+              color: 'white',
+              borderRadius: '25px',
+              fontSize: '1.1rem',
+              fontWeight: 'bold',
+              display: 'flex',
+              alignItems: 'center',
+              gap: '0.5rem',
+              animation: readyOrdersCount > 0 ? 'pulse 2s infinite' : 'none',
+            }}
+          >
+            <span>🔔</span>
+            <span>{readyOrdersCount} commande{readyOrdersCount > 1 ? 's' : ''} prête{readyOrdersCount > 1 ? 's' : ''}</span>
+          </div>
+        )}
+      </div>
+
+      {/* Notifications en haut de la page */}
+      {notifications.length > 0 && (
+        <div
+          style={{
+            position: 'fixed',
+            top: '1rem',
+            right: '1rem',
+            zIndex: 2000,
+            display: 'flex',
+            flexDirection: 'column',
+            gap: '0.5rem',
+            maxWidth: '400px',
+          }}
+        >
+          {notifications.map((notification) => {
+            const order = orders.find((o) => o.id === notification.orderId);
+            if (!order || order.status !== OrderStatus.READY) {
+              // Supprimer la notification si la commande n'est plus READY
+              setTimeout(() => removeNotification(notification.id), 100);
+              return null;
+            }
+            return (
+              <div
+                key={notification.id}
+                style={{
+                  backgroundColor: '#28a745',
+                  color: 'white',
+                  padding: '1rem 1.5rem',
+                  borderRadius: '12px',
+                  boxShadow: '0 4px 12px rgba(0,0,0,0.3)',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'space-between',
+                  gap: '1rem',
+                  animation: 'slideIn 0.3s ease-out',
+                }}
+              >
+                <div style={{ flex: 1 }}>
+                  <div style={{ fontWeight: 'bold', fontSize: '1.1rem', marginBottom: '0.25rem' }}>
+                    🍽️ Commande prête !
+                  </div>
+                  <div style={{ fontSize: '0.9rem', opacity: 0.9 }}>
+                    Table: <strong>{notification.tableName}</strong>
+                  </div>
+                  <div style={{ fontSize: '0.85rem', opacity: 0.8, marginTop: '0.25rem' }}>
+                    Total: {getTotal(order).toFixed(2)} €
+                  </div>
+                </div>
+                <button
+                  onClick={() => removeNotification(notification.id)}
+                  style={{
+                    backgroundColor: 'rgba(255,255,255,0.2)',
+                    border: 'none',
+                    color: 'white',
+                    borderRadius: '50%',
+                    width: '32px',
+                    height: '32px',
+                    cursor: 'pointer',
+                    fontSize: '1.2rem',
+                    display: 'flex',
+                    alignItems: 'center',
+                    justifyContent: 'center',
+                  }}
+                >
+                  ×
+                </button>
+              </div>
+            );
+          })}
+        </div>
+      )}
+
+      {/* Style CSS pour les animations */}
+      <style>{`
+        @keyframes pulse {
+          0%, 100% { transform: scale(1); }
+          50% { transform: scale(1.05); }
+        }
+        @keyframes slideIn {
+          from {
+            transform: translateX(400px);
+            opacity: 0;
+          }
+          to {
+            transform: translateX(0);
+            opacity: 1;
+          }
+        }
+      `}</style>
 
       {/* Filtre par table */}
       <div
@@ -154,14 +319,39 @@ export function Server() {
           <div
             key={order.id}
             style={{
-              backgroundColor: 'white',
+              backgroundColor: order.status === OrderStatus.READY ? '#f0fff4' : 'white',
               padding: '1.5rem',
               borderRadius: '8px',
-              boxShadow: '0 2px 8px rgba(0,0,0,0.1)',
-              border: '2px solid',
+              boxShadow: order.status === OrderStatus.READY 
+                ? '0 4px 16px rgba(40,167,69,0.3)' 
+                : '0 2px 8px rgba(0,0,0,0.1)',
+              border: '3px solid',
               borderColor: getStatusColor(order.status),
+              position: 'relative',
             }}
           >
+            {order.status === OrderStatus.READY && (
+              <div
+                style={{
+                  position: 'absolute',
+                  top: '-10px',
+                  right: '-10px',
+                  backgroundColor: '#28a745',
+                  color: 'white',
+                  borderRadius: '50%',
+                  width: '40px',
+                  height: '40px',
+                  display: 'flex',
+                  alignItems: 'center',
+                  justifyContent: 'center',
+                  fontSize: '1.5rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.2)',
+                  animation: 'pulse 2s infinite',
+                }}
+              >
+                🔔
+              </div>
+            )}
             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
               <div>
                 <h3 style={{ margin: 0, fontSize: '1.25rem' }}>
@@ -250,7 +440,11 @@ export function Server() {
             <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
               {order.status === OrderStatus.READY && !order.isPaid && (
                 <button
-                  onClick={() => handleMarkAsServed(order.id)}
+                  onClick={() => {
+                    handleMarkAsServed(order.id);
+                    // Supprimer les notifications liées à cette commande
+                    setNotifications((prev) => prev.filter((n) => n.orderId !== order.id));
+                  }}
                   style={{
                     flex: 1,
                     padding: '0.75rem',
@@ -261,9 +455,10 @@ export function Server() {
                     cursor: 'pointer',
                     fontSize: '1rem',
                     fontWeight: 'bold',
+                    boxShadow: '0 2px 8px rgba(23,162,184,0.3)',
                   }}
                 >
-                  Servie
+                  ✓ Marquer comme servie
                 </button>
               )}
               {!order.isPaid && (

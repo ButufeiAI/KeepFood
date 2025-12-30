@@ -44,15 +44,28 @@ export function CreateApp() {
     takeawayEnabled: false,
     deliveryEnabled: false,
 
-    // Étape 4: Employés
-    employees: [] as Array<{
-      firstName: string;
-      lastName: string;
-      email: string;
-      phone?: string;
-      role: string;
-    }>,
+    // Étape 4: Détails entreprise
+    employeeCount: '',
+    description: '',
+    activities: '',
+    establishmentDate: '',
+    website: '',
+    socialMedia: '',
   });
+
+  // Fonction helper pour obtenir l'URL de l'API
+  const getApiUrl = () => {
+    const envUrl = import.meta.env.VITE_API_URL;
+    if (envUrl) {
+      return envUrl;
+    }
+    // Si on est sur localhost, utiliser localhost
+    if (window.location.hostname === 'localhost' || window.location.hostname === '127.0.0.1') {
+      return 'http://localhost:5201/api';
+    }
+    // Sinon, utiliser l'IP du serveur actuel
+    return `http://${window.location.hostname}:5201/api`;
+  };
 
   const handleVatVerification = async () => {
     if (!formData.vatNumber) {
@@ -64,7 +77,7 @@ export function CreateApp() {
     try {
       // Appel à l'API backend pour vérifier le TVA
       const response = await fetch(
-        `http://localhost:5201/api/restaurants/vat/verify?vatNumber=${encodeURIComponent(formData.vatNumber)}`,
+        `${getApiUrl()}/restaurants/vat/verify?vatNumber=${encodeURIComponent(formData.vatNumber)}`,
       );
       
       if (!response.ok) {
@@ -156,9 +169,11 @@ export function CreateApp() {
     setLoading(true);
 
     try {
+      const apiBaseUrl = getApiUrl();
+      
       // Créer ou réutiliser le compte utilisateur
       // Si l'utilisateur existe déjà sans restaurant, il sera réutilisé automatiquement
-      const registerResponse = await fetch('http://localhost:5201/api/auth/register', {
+      const registerResponse = await fetch(`${apiBaseUrl}/auth/register`, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json' },
         body: JSON.stringify({
@@ -211,6 +226,12 @@ export function CreateApp() {
         onSiteEnabled: formData.onSiteEnabled ?? true,
         takeawayEnabled: formData.takeawayEnabled ?? false,
         deliveryEnabled: formData.deliveryEnabled ?? false,
+        employeeCount: formData.employeeCount ? parseInt(formData.employeeCount) : undefined,
+        description: formData.description?.trim() || undefined,
+        activities: formData.activities?.trim() || undefined,
+        establishmentDate: formData.establishmentDate || undefined,
+        website: formData.website?.trim() || undefined,
+        socialMedia: formData.socialMedia?.trim() || undefined,
       };
 
       // Valider que le nom est présent
@@ -220,7 +241,7 @@ export function CreateApp() {
 
       console.log('Données restaurant à envoyer:', JSON.stringify(restaurantData, null, 2));
 
-      const restaurantResponse = await fetch('http://localhost:5201/api/restaurants', {
+      const restaurantResponse = await fetch(`${apiBaseUrl}/restaurants`, {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
@@ -374,8 +395,8 @@ export function CreateApp() {
               Entreprise
             </span>
             <span style={{ color: step >= 2 ? '#007bff' : '#999', whiteSpace: 'nowrap' }}>Admin</span>
-            <span style={{ color: step >= 3 ? '#007bff' : '#999', whiteSpace: 'nowrap' }}>Config</span>
-            <span style={{ color: step >= 4 ? '#007bff' : '#999', whiteSpace: 'nowrap' }}>Employés</span>
+            <span style={{ color: step >= 3 ? '#007bff' : '#999', whiteSpace: 'nowrap' }}>Détails</span>
+            <span style={{ color: step >= 4 ? '#007bff' : '#999', whiteSpace: 'nowrap' }}>Config</span>
           </div>
           <div
             style={{
@@ -881,11 +902,189 @@ export function CreateApp() {
               </div>
             )}
 
-            {/* Étape 3: Configuration */}
+            {/* Étape 3: Détails entreprise */}
             {step === 3 && (
               <div>
                 <h2 style={{ marginBottom: '2rem', fontSize: '1.8rem', color: '#333' }}>
-                  3. Choisissez votre pack et configurez
+                  3. Détails de votre entreprise
+                </h2>
+                <p style={{ marginBottom: '2rem', color: '#666', fontSize: '0.95rem' }}>
+                  Complétez les informations sur votre restaurant pour une meilleure visibilité
+                </p>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                    Nombre de travailleurs/employés
+                  </label>
+                  <input
+                    type="number"
+                    min="1"
+                    value={formData.employeeCount}
+                    onChange={(e) => setFormData({ ...formData, employeeCount: e.target.value })}
+                    placeholder="Ex: 10"
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '2px solid #e0e0e0',
+                      borderRadius: '8px',
+                      fontSize: '1rem',
+                    }}
+                  />
+                  <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#666' }}>
+                    Nombre approximatif d'employés dans votre établissement
+                  </p>
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                    Description de votre restaurant
+                  </label>
+                  <textarea
+                    value={formData.description}
+                    onChange={(e) => setFormData({ ...formData, description: e.target.value })}
+                    placeholder="Décrivez votre restaurant, votre cuisine, vos spécialités..."
+                    rows={5}
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '2px solid #e0e0e0',
+                      borderRadius: '8px',
+                      fontSize: '1rem',
+                      fontFamily: 'inherit',
+                      resize: 'vertical',
+                    }}
+                  />
+                  <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#666' }}>
+                    Présentez votre établissement, votre concept, votre cuisine...
+                  </p>
+                </div>
+
+                <div style={{ marginBottom: '1.5rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                    Activités principales
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.activities}
+                    onChange={(e) => setFormData({ ...formData, activities: e.target.value })}
+                    placeholder="Ex: Restauration, Service traiteur, Événements..."
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '2px solid #e0e0e0',
+                      borderRadius: '8px',
+                      fontSize: '1rem',
+                    }}
+                  />
+                  <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#666' }}>
+                    Listez les principales activités de votre restaurant
+                  </p>
+                </div>
+
+                <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '1rem', marginBottom: '1.5rem' }}>
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                      Date de création
+                    </label>
+                    <input
+                      type="date"
+                      value={formData.establishmentDate}
+                      onChange={(e) => setFormData({ ...formData, establishmentDate: e.target.value })}
+                      style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        border: '2px solid #e0e0e0',
+                        borderRadius: '8px',
+                        fontSize: '1rem',
+                      }}
+                    />
+                  </div>
+                  <div>
+                    <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                      Site web
+                    </label>
+                    <input
+                      type="url"
+                      value={formData.website}
+                      onChange={(e) => setFormData({ ...formData, website: e.target.value })}
+                      placeholder="https://..."
+                      style={{
+                        width: '100%',
+                        padding: '0.75rem',
+                        border: '2px solid #e0e0e0',
+                        borderRadius: '8px',
+                        fontSize: '1rem',
+                      }}
+                    />
+                  </div>
+                </div>
+
+                <div style={{ marginBottom: '2rem' }}>
+                  <label style={{ display: 'block', marginBottom: '0.5rem', fontWeight: 'bold', color: '#333' }}>
+                    Réseaux sociaux (optionnel)
+                  </label>
+                  <input
+                    type="text"
+                    value={formData.socialMedia}
+                    onChange={(e) => setFormData({ ...formData, socialMedia: e.target.value })}
+                    placeholder='Ex: {"facebook": "https://facebook.com/...", "instagram": "https://instagram.com/..."}'
+                    style={{
+                      width: '100%',
+                      padding: '0.75rem',
+                      border: '2px solid #e0e0e0',
+                      borderRadius: '8px',
+                      fontSize: '1rem',
+                    }}
+                  />
+                  <p style={{ marginTop: '0.5rem', fontSize: '0.85rem', color: '#666' }}>
+                    Format JSON avec les liens de vos réseaux sociaux
+                  </p>
+                </div>
+
+                <div style={{ display: 'flex', gap: '1rem' }}>
+                  <button
+                    type="button"
+                    onClick={() => setStep(2)}
+                    style={{
+                      flex: 1,
+                      padding: '1rem',
+                      backgroundColor: '#6c757d',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '8px',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    ← Précédent
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setStep(4)}
+                    style={{
+                      flex: 1,
+                      padding: '1rem',
+                      backgroundColor: '#007bff',
+                      color: 'white',
+                      border: 'none',
+                      borderRadius: '8px',
+                      fontSize: '1.1rem',
+                      fontWeight: 'bold',
+                      cursor: 'pointer',
+                    }}
+                  >
+                    Suivant →
+                  </button>
+                </div>
+              </div>
+            )}
+
+            {/* Étape 4: Configuration */}
+            {step === 4 && (
+              <div>
+                <h2 style={{ marginBottom: '2rem', fontSize: '1.8rem', color: '#333' }}>
+                  4. Choisissez votre pack et configurez
                 </h2>
 
                 <div style={{ marginBottom: '2rem' }}>
@@ -957,7 +1156,7 @@ export function CreateApp() {
                 <div style={{ display: 'flex', gap: '1rem' }}>
                   <button
                     type="button"
-                    onClick={() => setStep(2)}
+                    onClick={() => setStep(3)}
                     style={{
                       flex: 1,
                       padding: '1rem',

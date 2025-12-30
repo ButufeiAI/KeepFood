@@ -9,6 +9,8 @@ export interface Restaurant {
   country?: string;
   phone?: string;
   email?: string;
+  logo?: string;
+  description?: string;
 }
 
 export interface ProductVariant {
@@ -55,11 +57,43 @@ export interface OrderItem {
 export interface CreateOrderDto {
   restaurantId: string;
   tableId?: string;
+  tableSessionId?: string;
+  clientIdentifier?: string;
+  clientName?: string;
   items: OrderItem[];
   notes?: string;
 }
 
+export interface TableSession {
+  id: string;
+  restaurantId: string;
+  tableId: string;
+  status: string;
+  totalAmount: number;
+  isPaid: boolean;
+  orders: Order[];
+  createdAt: string;
+}
+
+export interface Order {
+  id: string;
+  restaurantId: string;
+  tableId: string;
+  tableSessionId?: string;
+  clientIdentifier?: string;
+  clientName?: string;
+  totalAmount: number;
+  isPaid: boolean;
+  items: OrderItem[];
+  createdAt: string;
+}
+
 export const publicService = {
+  async getAllRestaurants(): Promise<Restaurant[]> {
+    const response = await api.get<Restaurant[]>('/public/restaurants');
+    return response.data;
+  },
+
   async getRestaurant(id: string): Promise<Restaurant> {
     const response = await api.get<Restaurant>(`/public/restaurant/${id}`);
     return response.data;
@@ -78,6 +112,36 @@ export const publicService = {
   async createOrder(order: CreateOrderDto) {
     const response = await api.post('/public/orders', order);
     return response.data;
+  },
+
+  async getTableSession(sessionId: string): Promise<TableSession> {
+    const response = await api.get<TableSession>(`/public/table-session/${sessionId}/orders`);
+    return response.data;
+  },
+
+  async getOrCreateTableSession(tableId: string, restaurantId: string): Promise<TableSession> {
+    const response = await api.post<TableSession>(`/table-sessions/table/${tableId}/restaurant/${restaurantId}`);
+    return response.data;
+  },
+
+  // Favoris
+  async getFavorites(clientIdentifier: string, restaurantId: string) {
+    const response = await api.get(`/public/favorites?clientIdentifier=${clientIdentifier}&restaurantId=${restaurantId}`);
+    return response.data;
+  },
+
+  async checkFavorite(productId: string, clientIdentifier: string, restaurantId: string) {
+    const response = await api.get(`/public/favorites/${productId}/check?clientIdentifier=${clientIdentifier}&restaurantId=${restaurantId}`);
+    return response.data;
+  },
+
+  async addFavorite(productId: string, clientIdentifier: string, restaurantId: string) {
+    const response = await api.post(`/public/favorites/${productId}?clientIdentifier=${clientIdentifier}&restaurantId=${restaurantId}`);
+    return response.data;
+  },
+
+  async removeFavorite(productId: string, clientIdentifier: string, restaurantId: string) {
+    await api.delete(`/public/favorites/${productId}?clientIdentifier=${clientIdentifier}&restaurantId=${restaurantId}`);
   },
 };
 

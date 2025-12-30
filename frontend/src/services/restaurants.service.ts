@@ -17,6 +17,12 @@ export interface CreateRestaurantDto {
   deliveryEnabled?: boolean;
   vatNumber?: string;
   billingAddress?: string;
+  employeeCount?: number;
+  description?: string;
+  activities?: string;
+  establishmentDate?: string;
+  website?: string;
+  socialMedia?: string;
 }
 
 export interface UpdateRestaurantDto extends Partial<CreateRestaurantDto> {}
