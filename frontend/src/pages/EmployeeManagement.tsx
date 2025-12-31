@@ -1,12 +1,9 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth.store';
-import { useToast } from '../components/ToastContainer';
-import { LoadingSpinner } from '../components/LoadingSpinner';
-import { LazyImage } from '../components/LazyImage';
 import { useIsMobile } from '../hooks/useIsMobile';
 import api from '../services/api';
-import { UserRole } from '../types';
+import { UserRole } from '../types/index';
 
 interface Employee {
   id: string;
@@ -38,19 +35,18 @@ interface Employee {
 }
 
 const ROLES = [
-  { value: 'ADMIN_RESTAURANT', label: 'Admin Restaurant', color: '#dc3545' },
-  { value: 'MANAGER', label: 'Manager', color: '#ffc107' },
-  { value: 'SERVEUR', label: 'Serveur', color: '#007bff' },
-  { value: 'CUISINE', label: 'Cuisine', color: '#28a745' },
-  { value: 'BAR', label: 'Bar', color: '#17a2b8' },
-  { value: 'LIVREUR', label: 'Livreur', color: '#6f42c1' },
-  { value: 'CAISSIER', label: 'Caissier', color: '#fd7e14' },
-  { value: 'STOCK', label: 'Stock', color: '#6c757d' },
+  { value: UserRole.ADMIN_RESTAURANT, label: 'Admin Restaurant', color: '#dc3545' },
+  { value: UserRole.MANAGER, label: 'Manager', color: '#ffc107' },
+  { value: UserRole.SERVEUR, label: 'Serveur', color: '#007bff' },
+  { value: UserRole.CUISINE, label: 'Cuisine', color: '#28a745' },
+  { value: UserRole.BAR, label: 'Bar', color: '#17a2b8' },
+  { value: UserRole.LIVREUR, label: 'Livreur', color: '#6f42c1' },
+  { value: UserRole.CAISSIER, label: 'Caissier', color: '#fd7e14' },
+  { value: UserRole.STOCK, label: 'Stock', color: '#6c757d' },
 ];
 
 export function EmployeeManagement() {
   const navigate = useNavigate();
-  const toast = useToast();
   const isMobile = useIsMobile();
   const { user } = useAuthStore();
 
@@ -65,12 +61,25 @@ export function EmployeeManagement() {
   const [isEditing, setIsEditing] = useState(false);
 
   // Formulaire
-  const [formData, setFormData] = useState({
+  const [formData, setFormData] = useState<{
+    email: string;
+    firstName: string;
+    lastName: string;
+    phone: string;
+    role: UserRole;
+    password: string;
+    hireDate: string;
+    contractType: string;
+    workSchedule: string;
+    hourlyRate: string;
+    monthlySalary: string;
+    department: string;
+  }>({
     email: '',
     firstName: '',
     lastName: '',
     phone: '',
-    role: 'SERVEUR' as UserRole,
+    role: UserRole.SERVEUR,
     password: '',
     hireDate: new Date().toISOString().split('T')[0],
     contractType: 'CDI',
@@ -81,8 +90,8 @@ export function EmployeeManagement() {
   });
 
   useEffect(() => {
-    if (user?.role !== 'ADMIN_RESTAURANT' && user?.role !== 'SUPER_ADMIN' && user?.role !== 'MANAGER') {
-      toast.error('Accès non autorisé');
+    if (user?.role !== UserRole.ADMIN_RESTAURANT && user?.role !== UserRole.SUPER_ADMIN && user?.role !== UserRole.MANAGER) {
+      alert('Accès non autorisé');
       navigate('/dashboard');
       return;
     }
@@ -100,7 +109,7 @@ export function EmployeeManagement() {
       setEmployees(response.data);
     } catch (error: any) {
       console.error('Erreur chargement employés:', error);
-      toast.error(error.response?.data?.message || 'Erreur lors du chargement');
+      alert(error.response?.data?.message || 'Erreur lors du chargement');
     } finally {
       setLoading(false);
     }
@@ -140,10 +149,10 @@ export function EmployeeManagement() {
     try {
       if (isEditing && selectedEmployee) {
         await api.put(`/employees/${selectedEmployee.id}`, formData);
-        toast.success('Employé modifié avec succès !');
+        alert('Employé modifié avec succès !');
       } else {
         await api.post('/employees', formData);
-        toast.success('Employé créé avec succès !');
+        alert('Employé créé avec succès !');
       }
       
       setShowModal(false);
@@ -151,7 +160,7 @@ export function EmployeeManagement() {
       loadEmployees();
     } catch (error: any) {
       console.error('Erreur:', error);
-      toast.error(error.response?.data?.message || 'Erreur lors de l\'opération');
+      alert(error.response?.data?.message || 'Erreur lors de l\'opération');
     }
   };
 
@@ -180,22 +189,22 @@ export function EmployeeManagement() {
 
     try {
       await api.delete(`/employees/${employeeId}`);
-      toast.success('Employé supprimé');
+      alert('Employé supprimé');
       loadEmployees();
     } catch (error: any) {
       console.error('Erreur suppression:', error);
-      toast.error(error.response?.data?.message || 'Erreur lors de la suppression');
+      alert(error.response?.data?.message || 'Erreur lors de la suppression');
     }
   };
 
   const toggleStatus = async (employeeId: string, currentStatus: boolean) => {
     try {
       await api.patch(`/employees/${employeeId}/status`, { isActive: !currentStatus });
-      toast.success(currentStatus ? 'Employé désactivé' : 'Employé activé');
+      alert(currentStatus ? 'Employé désactivé' : 'Employé activé');
       loadEmployees();
     } catch (error: any) {
       console.error('Erreur:', error);
-      toast.error(error.response?.data?.message || 'Erreur lors du changement de statut');
+      alert(error.response?.data?.message || 'Erreur lors du changement de statut');
     }
   };
 
@@ -205,7 +214,7 @@ export function EmployeeManagement() {
       firstName: '',
       lastName: '',
       phone: '',
-      role: 'SERVEUR',
+      role: UserRole.SERVEUR,
       password: '',
       hireDate: new Date().toISOString().split('T')[0],
       contractType: 'CDI',
@@ -223,7 +232,11 @@ export function EmployeeManagement() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement des employés..." />;
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div>Chargement des employés...</div>
+      </div>
+    );
   }
 
   return (
@@ -493,7 +506,7 @@ export function EmployeeManagement() {
               )}
 
               {/* Tables assignées (pour serveurs) */}
-              {employee.role === 'SERVEUR' && employee.assignedTables && employee.assignedTables.length > 0 && (
+              {employee.role === UserRole.SERVEUR && employee.assignedTables && employee.assignedTables.length > 0 && (
                 <div style={{ marginBottom: '1rem' }}>
                   <strong style={{ fontSize: '0.9rem' }}>📍 Tables assignées:</strong>
                   <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem', marginTop: '0.5rem' }}>

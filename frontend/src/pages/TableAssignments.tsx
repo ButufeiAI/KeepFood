@@ -1,8 +1,6 @@
 import { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth.store';
-import { useToast } from '../components/ToastContainer';
-import { LoadingSpinner } from '../components/LoadingSpinner';
 import { useIsMobile } from '../hooks/useIsMobile';
 import api from '../services/api';
 
@@ -47,7 +45,6 @@ const ZONE_COLORS: { [key: string]: string } = {
 
 export function TableAssignments() {
   const navigate = useNavigate();
-  const toast = useToast();
   const isMobile = useIsMobile();
   const { user } = useAuthStore();
 
@@ -61,12 +58,12 @@ export function TableAssignments() {
 
   useEffect(() => {
     if (user?.role !== 'ADMIN_RESTAURANT' && user?.role !== 'SUPER_ADMIN' && user?.role !== 'MANAGER') {
-      toast.error('Accès non autorisé');
+      alert('Accès non autorisé');
       navigate('/dashboard');
       return;
     }
     loadData();
-  }, []);
+  }, [user, navigate]);
 
   const loadData = async () => {
     try {
@@ -98,7 +95,7 @@ export function TableAssignments() {
       setZones(zonesArray);
     } catch (error: any) {
       console.error('Erreur chargement:', error);
-      toast.error('Erreur lors du chargement des données');
+      alert('Erreur lors du chargement des données');
     } finally {
       setLoading(false);
     }
@@ -106,7 +103,7 @@ export function TableAssignments() {
 
   const handleAssignTables = async () => {
     if (!selectedWaiter || selectedTables.length === 0) {
-      toast.warning('Veuillez sélectionner un serveur et au moins une table');
+      alert('Veuillez sélectionner un serveur et au moins une table');
       return;
     }
 
@@ -116,24 +113,24 @@ export function TableAssignments() {
         tableIds: selectedTables,
       });
 
-      toast.success(`${selectedTables.length} table(s) assignée(s) avec succès !`);
+      alert(`${selectedTables.length} table(s) assignée(s) avec succès !`);
       setSelectedWaiter(null);
       setSelectedTables([]);
       loadData();
     } catch (error: any) {
       console.error('Erreur attribution:', error);
-      toast.error(error.response?.data?.message || 'Erreur lors de l\'attribution');
+      alert(error.response?.data?.message || 'Erreur lors de l\'attribution');
     }
   };
 
   const handleUnassignTable = async (assignmentId: string) => {
     try {
       await api.delete(`/table-assignments/${assignmentId}`);
-      toast.success('Table retirée du serveur');
+      alert('Table retirée du serveur');
       loadData();
     } catch (error: any) {
       console.error('Erreur:', error);
-      toast.error('Erreur lors du retrait de la table');
+      alert('Erreur lors du retrait de la table');
     }
   };
 
@@ -144,11 +141,11 @@ export function TableAssignments() {
 
     try {
       await api.post('/table-assignments/auto-assign');
-      toast.success('Attribution automatique terminée !');
+      alert('Attribution automatique terminée !');
       loadData();
     } catch (error: any) {
       console.error('Erreur:', error);
-      toast.error('Erreur lors de l\'attribution automatique');
+      alert('Erreur lors de l\'attribution automatique');
     }
   };
 
@@ -159,11 +156,11 @@ export function TableAssignments() {
 
     try {
       await api.delete('/table-assignments/clear-all');
-      toast.success('Toutes les attributions ont été supprimées');
+      alert('Toutes les attributions ont été supprimées');
       loadData();
     } catch (error: any) {
       console.error('Erreur:', error);
-      toast.error('Erreur lors de la suppression');
+      alert('Erreur lors de la suppression');
     }
   };
 
@@ -187,7 +184,11 @@ export function TableAssignments() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement des attributions..." />;
+    return (
+      <div style={{ display: 'flex', justifyContent: 'center', alignItems: 'center', height: '100vh' }}>
+        <div>Chargement des attributions...</div>
+      </div>
+    );
   }
 
   return (
