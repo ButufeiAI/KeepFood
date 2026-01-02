@@ -1,0 +1,4 @@
+<template>
+    <UiInterfaceBaseuiUiButtons />
+</template>
+

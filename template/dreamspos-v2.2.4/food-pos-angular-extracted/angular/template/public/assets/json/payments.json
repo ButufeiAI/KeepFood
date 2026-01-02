@@ -1,0 +1,115 @@
+{
+    "data": [
+  {
+    "id":1,
+    "TransactionId": "#23588",
+    "OrderId": "#57005",
+    "TokenNo": "16",
+    "Customer": "Walk-in Customer",
+    "Type": "Dine In",
+    "Menus": "3",
+    "GrandTotal": "$34.50",
+    "img":"<i class='icon-user fs-16 text-dark'></i>"
+  },
+  {
+    "id":2,
+    "img":"<img src='assets/img/profiles/avatar-33.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23587",
+    "OrderId": "#57004",
+    "TokenNo": "15",
+    "Customer": "Sue Allen",
+    "Type": "Take Away",
+    "Menus": "7",
+    "GrandTotal": "$78.20"
+  },
+  {
+    "id":3,
+    "img":"<img src='assets/img/profiles/avatar-34.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23586",
+    "OrderId": "#57003",
+    "TokenNo": "14",
+    "Customer": "Frank Barrett",
+    "Type": "Delivery",
+    "Menus": "4",
+    "GrandTotal": "$45.10"
+  },
+  {
+    "id":4,
+    "img":"<img src='assets/img/profiles/avatar-35.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23585",
+    "OrderId": "#57002",
+    "TokenNo": "13",
+    "Customer": "Kelley Davis",
+    "Type": "Dine In",
+    "Menus": "9",
+    "GrandTotal": "$92.80"
+  },
+  {
+    "id":5,
+    "img":"<img src='assets/img/profiles/avatar-36.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23584",
+    "OrderId": "#57001",
+    "TokenNo": "12",
+    "Customer": "Jim Vickers",
+    "Type": "Take Away",
+    "Menus": "6",
+    "GrandTotal": "$61.40"
+  },
+  {
+    "id":6,
+    "img":"<img src='assets/img/profiles/avatar-37.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23583",
+    "OrderId": "#57000",
+    "TokenNo": "11",
+    "Customer": "Nancy Chapman",
+    "Type": "Take Away",
+    "Menus": "5",
+    "GrandTotal": "$57.20"
+  },
+  {
+    "id":7,
+    "img":"<img src='assets/img/profiles/avatar-38.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23582",
+    "OrderId": "#56999",
+    "TokenNo": "10",
+    "Customer": "Ron Jude",
+    "Type": "Take Away",
+    "Menus": "4",
+    "GrandTotal": "$45.30"
+  },
+  {
+    "id":8,
+    "img":"<img src='assets/img/profiles/avatar-39.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23581",
+    "OrderId": "#56998",
+    "TokenNo": "09",
+    "Customer": "Andrea Aponte",
+    "Type": "Take Away",
+    "Menus": "7",
+    "GrandTotal": "$72.60"
+  },
+  {
+    "id":9,
+    "img":"<img src='assets/img/profiles/avatar-40.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23580",
+    "OrderId": "#56997",
+    "TokenNo": "08",
+    "Customer": "David Belcher",
+    "Type": "Take Away",
+    "Menus": "3",
+    "GrandTotal": "$32.10"
+  },
+  {
+    "id":10,
+    "img":"<img src='assets/img/profiles/avatar-41.jpg' alt='category' class='img-fluid'>",
+    "TransactionId": "#23579",
+    "OrderId": "#56996",
+    "TokenNo": "07",
+    "Customer": "Julie Kangas",
+    "Type": "Take Away",
+    "Menus": "4",
+    "GrandTotal": "$40.30"
+  }
+],
+"totalData":10
+}

@@ -1,4 +1,4 @@
-import { Controller, Get, Param, Post, Body, NotFoundException, BadRequestException } from '@nestjs/common';
+import { Controller, Get, Param, Post, Body, Query, NotFoundException, BadRequestException } from '@nestjs/common';
 import { InjectRepository } from '@nestjs/typeorm';
 import { Repository, DataSource } from 'typeorm';
 import { Restaurant } from '../entities/restaurant.entity';
@@ -11,6 +11,9 @@ import { ProductVariant } from '../entities/product-variant.entity';
 import { OrderStatus } from '../common/enums/order-status.enum';
 import { TableSessionsService } from '../table-sessions/table-sessions.service';
 import { ClientsService } from '../clients/clients.service';
+import { LoyaltyService } from '../loyalty/loyalty.service';
+import { SubscriptionsService } from '../subscriptions/subscriptions.service';
+import { MarketingService } from '../marketing/marketing.service';
 
 @Controller('public')
 export class PublicController {
@@ -32,6 +35,9 @@ export class PublicController {
     private dataSource: DataSource,
     private tableSessionsService: TableSessionsService,
     private clientsService: ClientsService,
+    private loyaltyService: LoyaltyService,
+    private subscriptionsService: SubscriptionsService,
+    private marketingService: MarketingService,
   ) {}
 
   @Get('restaurants')
@@ -66,24 +72,32 @@ export class PublicController {
       email: restaurant.email,
       logo: restaurant.logo,
       description: restaurant.description,
+      paymentProvider: restaurant.paymentProvider || 'CASH_ONLY',
     };
   }
 
   @Get('restaurant/:restaurantId/menu')
   async getMenu(@Param('restaurantId') restaurantId: string) {
+    // Requête optimisée : charger uniquement les produits du restaurant avec une seule requête
+    const products = await this.productsRepository
+      .createQueryBuilder('product')
+      .leftJoinAndSelect('product.category', 'category')
+      .leftJoinAndSelect('product.images', 'images')
+      .leftJoinAndSelect('product.variants', 'variants')
+      .where('category.restaurantId = :restaurantId', { restaurantId })
+      .andWhere('product.isActive = :isActive', { isActive: true })
+      .andWhere('product.isAvailable = :isAvailable', { isAvailable: true })
+      .andWhere('category.isActive = :catActive', { catActive: true })
+      .orderBy('category.displayOrder', 'ASC')
+      .addOrderBy('product.displayOrder', 'ASC')
+      .getMany();
+
+    // Récupérer les catégories séparément (plus léger)
     const categories = await this.categoriesRepository.find({
       where: { restaurantId, isActive: true },
+      select: ['id', 'name', 'description', 'image', 'displayOrder'],
       order: { displayOrder: 'ASC', name: 'ASC' },
     });
-
-    const allProducts = await this.productsRepository.find({
-      where: { isActive: true },
-      relations: ['images', 'variants', 'category'],
-      order: { displayOrder: 'ASC', name: 'ASC' },
-    });
-
-    // Filtrer les produits pour ce restaurant uniquement
-    const products = allProducts.filter((p) => p.category?.restaurantId === restaurantId);
 
     // Organiser les produits par catégorie
     const menu = categories.map((category) => ({
@@ -97,10 +111,15 @@ export class PublicController {
           id: product.id,
           name: product.name,
           description: product.shortDescription || product.fullDescription || null,
-          price: product.price,
-          images: product.images?.map((img) => img.url) || [],
-          variants: product.variants || [],
+          price: Number(product.price),
+          images: product.images?.map((img) => img.url).filter(Boolean) || [],
+          variants: product.variants?.map((v) => ({
+            id: v.id,
+            name: v.name,
+            priceModifier: Number(v.priceModifier),
+          })) || [],
           type: product.type,
+          isAvailable: product.isAvailable,
         })),
     }));
 
@@ -279,5 +298,164 @@ export class PublicController {
   async getSessionOrders(@Param('sessionId') sessionId: string) {
     const session = await this.tableSessionsService.getSessionWithOrders(sessionId);
     return session;
+  }
+
+  /**
+   * Obtenir le compte de fidélité d'un client (public, sans auth)
+   */
+  @Get('loyalty/account')
+  async getLoyaltyAccount(
+    @Query('restaurantId') restaurantId: string,
+    @Query('clientIdentifier') clientIdentifier: string,
+  ) {
+    if (!restaurantId || !clientIdentifier) {
+      return { points: 0, totalPointsEarned: 0, totalPointsSpent: 0, transactions: [] };
+    }
+    const account = await this.loyaltyService.getAccountByClientIdentifier(
+      restaurantId,
+      clientIdentifier,
+    );
+    if (!account) {
+      return { points: 0, totalPointsEarned: 0, totalPointsSpent: 0, transactions: [] };
+    }
+    return account;
+  }
+
+  /**
+   * Obtenir les récompenses disponibles pour un client (public)
+   */
+  @Get('loyalty/rewards')
+  async getLoyaltyRewards(
+    @Query('restaurantId') restaurantId: string,
+    @Query('clientIdentifier') clientIdentifier: string,
+  ) {
+    if (!restaurantId || !clientIdentifier) {
+      return [];
+    }
+    const account = await this.loyaltyService.getAccountByClientIdentifier(
+      restaurantId,
+      clientIdentifier,
+    );
+    if (!account) {
+      return [];
+    }
+    return await this.loyaltyService.getAvailableRewards(restaurantId, account.clientId);
+  }
+
+  /**
+   * Utiliser une récompense (public, pour clients non authentifiés)
+   */
+  @Post('loyalty/rewards/use')
+  async useLoyaltyReward(
+    @Body() body: {
+      restaurantId: string;
+      clientIdentifier: string;
+      rewardId: string;
+      orderId?: string;
+    },
+  ) {
+    if (!body.restaurantId || !body.clientIdentifier || !body.rewardId) {
+      throw new BadRequestException('restaurantId, clientIdentifier et rewardId sont requis');
+    }
+    const account = await this.loyaltyService.getAccountByClientIdentifier(
+      body.restaurantId,
+      body.clientIdentifier,
+    );
+    if (!account) {
+      throw new NotFoundException('Compte client non trouvé');
+    }
+    return await this.loyaltyService.useReward(
+      body.restaurantId,
+      account.clientId,
+      { rewardId: body.rewardId, orderId: body.orderId },
+    );
+  }
+
+  /**
+   * Obtenir les abonnements d'un client (public)
+   */
+  @Get('subscriptions')
+  async getClientSubscriptions(
+    @Query('restaurantId') restaurantId: string,
+    @Query('clientIdentifier') clientIdentifier: string,
+  ) {
+    if (!restaurantId || !clientIdentifier) {
+      return [];
+    }
+    const client = await this.clientsService.getClientByIdentifier(restaurantId, clientIdentifier);
+    if (!client) {
+      return [];
+    }
+    return await this.subscriptionsService.findByClient(restaurantId, client.id);
+  }
+
+  /**
+   * Utiliser un repas d'abonnement (public)
+   */
+  @Post('subscriptions/use')
+  async useSubscriptionMeal(
+    @Body() body: {
+      restaurantId: string;
+      clientIdentifier: string;
+      subscriptionId: string;
+      orderId: string;
+      notes?: string;
+    },
+  ) {
+    if (!body.restaurantId || !body.clientIdentifier || !body.subscriptionId || !body.orderId) {
+      throw new BadRequestException('Tous les champs sont requis');
+    }
+    const client = await this.clientsService.getClientByIdentifier(body.restaurantId, body.clientIdentifier);
+    if (!client) {
+      throw new NotFoundException('Client non trouvé');
+    }
+    return await this.subscriptionsService.useSubscription(body.restaurantId, {
+      subscriptionId: body.subscriptionId,
+      orderId: body.orderId,
+      notes: body.notes,
+    });
+  }
+
+  /**
+   * Valider un code promo (public)
+   */
+  @Post('promo-codes/validate')
+  async validatePromoCode(
+    @Body() body: {
+      restaurantId: string;
+      code: string;
+      orderAmount?: number;
+    },
+  ) {
+    if (!body.restaurantId || !body.code) {
+      throw new BadRequestException('restaurantId et code sont requis');
+    }
+    return await this.marketingService.validatePromoCode(
+      body.restaurantId,
+      body.code,
+      body.orderAmount || 0,
+    );
+  }
+
+  /**
+   * Appliquer un code promo (public)
+   */
+  @Post('promo-codes/apply')
+  async applyPromoCode(
+    @Body() body: {
+      restaurantId: string;
+      code: string;
+      orderAmount: number;
+      clientIdentifier?: string;
+    },
+  ) {
+    if (!body.restaurantId || !body.code || !body.orderAmount) {
+      throw new BadRequestException('restaurantId, code et orderAmount sont requis');
+    }
+    return await this.marketingService.applyPromoCode(
+      body.restaurantId,
+      { code: body.code, clientIdentifier: body.clientIdentifier },
+      body.orderAmount,
+    );
   }
 }

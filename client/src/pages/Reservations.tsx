@@ -58,7 +58,7 @@ export function Reservations() {
   const maxDate = new Date(Date.now() + 90 * 24 * 60 * 60 * 1000).toISOString().split('T')[0]; // 90 jours
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Envoi de la réservation..." />;
+    return <LoadingSpinner fullScreen message="Envoi de la réservation..." />;
   }
 
   return (
@@ -183,7 +183,7 @@ export function Reservations() {
               }}
             >
               {[1, 2, 3, 4, 5, 6, 7, 8, 9, 10].map((num) => (
-                <key={num} value={num}>
+                <option key={num} value={num}>
                   {num} {num === 1 ? 'personne' : 'personnes'}
                 </option>
               ))}

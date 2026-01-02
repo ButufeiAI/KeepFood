@@ -69,6 +69,20 @@ export function Layout({ children }: LayoutProps) {
         Tables
       </Link>
       <Link
+        to="/employees"
+        style={{ color: 'white', textDecoration: 'none', padding: '0.5rem' }}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        👥 Employés
+      </Link>
+      <Link
+        to="/table-assignments"
+        style={{ color: 'white', textDecoration: 'none', padding: '0.5rem' }}
+        onClick={() => setIsMobileMenuOpen(false)}
+      >
+        📍 Attribution Tables
+      </Link>
+      <Link
         to="/orders"
         style={{ color: 'white', textDecoration: 'none', padding: '0.5rem' }}
         onClick={() => setIsMobileMenuOpen(false)}

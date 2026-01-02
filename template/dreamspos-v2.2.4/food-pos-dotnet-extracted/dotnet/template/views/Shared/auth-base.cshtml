@@ -1,0 +1,85 @@
+@{
+    var html_attributes = (ViewData["HTMLAttributes"] as string) ?? "";
+    var html_class = (ViewData["HTMLClass"] as string) ?? "";
+
+    // Get the current page name from the request path
+    var path = Context?.Request?.Path.Value ?? string.Empty;
+    var fileName = System.IO.Path.GetFileName(path);
+    var pageName = string.IsNullOrEmpty(fileName) ? "index" : System.IO.Path.GetFileNameWithoutExtension(fileName);
+    var route = pageName.ToLowerInvariant();
+
+    // Determine the body class based on the page route
+    var body_class = route switch
+    {
+        "under-maintenance" or
+        "coming-soon" or
+        "error-404" or
+        "error-500" => "error-page",
+
+        "two-step-verification" => "account-page",
+        "email-verification" => "account-page",
+        "reset-password" => "account-page",
+        "forgot-password" => "account-page",
+        "register" => "account-page",
+        "signin" => "account-page",
+        "success" => "account-page",
+        "two-step-verification-2" => "account-page bg-white",
+        "two-step-verification-3" => "account-page bg-white",
+        "email-verification-2" => "account-page bg-white",
+        "email-verification-3" => "account-page bg-white",
+        "reset-password-2" => "account-page bg-white",
+        "reset-password-3" => "account-page bg-white",
+        "forgot-password-2" => "account-page bg-white",
+        "forgot-password-3" => "account-page bg-white",
+        "register-2" => "account-page bg-white",
+        "register-3" => "account-page bg-white",
+        "signin-2" => "account-page bg-white",
+        "signin-3" => "account-page bg-white",
+        "success-2" => "account-page bg-white",
+        "success-3" => "account-page bg-white",
+
+        _ => ""
+    };
+
+    // Define pages excluded from additional body styling (if needed later)
+    var excludedPages = new HashSet<string> {
+        "under-maintenance", "coming-soon", "error-404", "error-500",
+        "two-step-verification-3", "two-step-verification-2", "two-step-verification",
+        "email-verification-3", "email-verification-2", "email-verification",
+        "reset-password-3", "reset-password-2", "reset-password",
+        "forgot-password-3", "forgot-password-2", "forgot-password",
+        "register-3", "register-2", "register",
+        "signin-3", "signin-2", "signin",
+        "success", "success-2", "success-3",
+        "layout-horizontal", "layout-hovered", "layout-boxed", "layout-rtl",
+        "pos", "pos-2", "pos-3", "pos-4", "pos-5"
+    };
+
+    // You can adjust classes if necessary based on excluded pages
+    // (currently not modifying since body_class is already set correctly)
+
+    ViewData["BodyClass"] = body_class;
+}
+
+<!DOCTYPE html>
+<html lang="en" class="@html_class" @Html.Raw(html_attributes)>
+<head>
+    @{
+        var pathBase = Context?.Request?.PathBase.Value ?? string.Empty;
+    }
+    <meta name="base-path" content="@pathBase" />
+    @await Html.PartialAsync("~/Views/Shared/Partials/_TitleMeta.cshtml")
+    @RenderSection("styles", false)
+    @await Html.PartialAsync("~/Views/Shared/Partials/_HeadCss.cshtml")
+</head>
+
+<body class="@body_class">
+
+    @RenderBody()
+
+    @RenderSection("scripts", required: false)
+    
+    <!-- Base Path URL Rewriter (same as in _FooterScripts) -->
+    @await Html.PartialAsync("~/Views/Shared/Partials/_BasePathScript.cshtml")
+</body>
+</html>

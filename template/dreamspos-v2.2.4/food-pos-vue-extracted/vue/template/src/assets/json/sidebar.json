@@ -1,0 +1,122 @@
+{
+  "sidebarTabs": [
+    {
+      "id": "dashboard",
+      "title": "MAIN",
+      "icon": "icon-layout-dashboard",
+      "activePaths": [
+        "/main-menu/dashboard",
+        "/main-menu/pos",
+        "/main-menu/orders",
+        "/main-menu/kanban-view",
+        "/main-menu/kitchen",
+        "/main-menu/reservations"
+      ],
+      "menu": [
+        { "label": "Dashboard", "icon": "icon-layout-dashboard", "to": "/main-menu/dashboard" },
+        { "label": "POS", "icon": "icon-combine", "to": "/main-menu/pos" },
+        { "label": "Orders", "icon": "icon-list-todo", "to": "/main-menu/orders", "activePaths": ["/main-menu/orders", "/main-menu/kanban-view"] },
+          
+        { "label": "Kitchen (KDS)", "icon": "icon-drumstick", "to": "/main-menu/kitchen" },
+        { "label": "Reservation", "icon": "icon-file-clock", "to": "/main-menu/reservations" }
+      ]
+    },
+    {
+      "id": "menu-management",
+      "title": "MENU MANAGEMENT",
+      "icon": "icon-layers",
+      "activePaths": [
+        "/menu-management/categories",
+        "/menu-management/items",
+        "/menu-management/addons",
+        "/menu-management/coupons"
+      ],
+      "menu": [
+        { "label": "Categories", "icon": "icon-layers", "to": "/menu-management/categories" },
+        { "label": "Items", "icon": "icon-layout-list", "to": "/menu-management/items" },
+        { "label": "Addons", "icon": "icon-text-select", "to": "/menu-management/addons" },
+        { "label": "Coupons", "icon": "icon-badge-percent", "to": "/menu-management/coupons" }
+      ]
+    },
+    {
+      "id": "operations",
+      "title": "OPERATIONS",
+      "icon": "icon-merge",
+      "activePaths": [
+        "/operations/table",
+        "/operations/customer",
+        "/operations/invoices",
+        "/operations/payments",
+        "/operations/invoice-details"
+      ],
+      "menu": [
+        { "label": "Tables", "icon": "icon-concierge-bell", "to": "/operations/table" },
+        { "label": "Customers", "icon": "icon-user-round", "to": "/operations/customer" },
+        { "label": "Invoices", "icon": "icon-file-spreadsheet", "to": "/operations/invoices", "activePaths": ["/operations/invoice-details"] },
+        { "label": "Payments", "icon": "icon-badge-dollar-sign", "to": "/operations/payments" }
+      ]
+    },
+    {
+      "id": "administration",
+      "title": "ADMINISTRATION",
+      "icon": "icon-user-cog",
+      "activePaths": [
+        "/administration/users",
+        "/administration/role-permission",
+        "/administration/earning-report",
+        "/administration/order-report",
+        "/administration/sales-report",
+        "/administration/customer-report",
+        "/administration/audit-report"
+      ],
+      "menu": [
+        { "label": "Users", "icon": "icon-users", "to": "/administration/users" },
+        { "label": "Permission", "icon": "icon-shield", "to": "/administration/role-permission" },
+        { "label": "Reports", "icon": "icon-file-spreadsheet", "to": "/administration/earning-report", "activePaths": ["/administration/earning-report", "/administration/order-report", "/administration/sales-report", "/administration/customer-report", "/administration/audit-report"] }
+      ]
+    },
+    {
+      "id": "pages",
+      "title": "PAGES",
+      "icon": "icon-library-big", 
+      "activePaths": [
+        "/login",
+        "/register",
+        "/forgot-password",
+        "/email-verification",
+        "/otp"
+      ],
+      "menu": [
+        { "label": "Login", "icon": "icon-lock-keyhole", "to": "/login" },
+        { "label": "Register", "icon": "icon-user-round-plus", "to": "/register" },
+        { "label": "Forgot Password", "icon": "icon-lock-keyhole-open", "to": "/forgot-password" },
+        { "label": "Email Verification", "icon": "icon-mail", "to": "/email-verification" },
+        { "label": "OTP", "icon": "icon-blocks", "to": "/otp" },
+        { "label": "Reset Password", "icon": "icon-lock-keyhole", "to": "/reset-password" }
+      ]
+    },
+    {
+      "id": "settings",
+      "title": "SETTINGS",
+      "icon": "icon-cog",
+      "activePaths": [
+        "/settings/store-settings",
+        "/settings/tax-settings",
+        "/settings/print-settings",
+        "/settings/payment-settings",
+        "/settings/delivery-settings",
+        "/settings/notifications-settings",
+        "/settings/integrations-settings"
+      ],
+      "menu": [
+        { "label": "Store Settings", "icon": "icon-warehouse", "to": "/settings/store-settings" },
+        { "label": "Tax", "icon": "icon-diamond-percent", "to": "/settings/tax-settings" },
+        { "label": "Print", "icon": "icon-printer", "to": "/settings/print-settings" },
+        { "label": "Payment Types", "icon": "icon-circle-dollar-sign", "to": "/settings/payment-settings" },
+        { "label": "Delivery", "icon": "icon-bike", "to": "/settings/delivery-settings" },
+        { "label": "Notifications", "icon": "icon-bell", "to": "/settings/notifications-settings" },
+        { "label": "Integrations/API", "icon": "icon-pin", "to": "/settings/integrations-settings" }
+      ]
+    }
+  ]
+}

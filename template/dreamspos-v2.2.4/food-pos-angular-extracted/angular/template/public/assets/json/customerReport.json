@@ -1,0 +1,85 @@
+{
+    "data":[
+  {
+    "id": 1,
+    "Ids": "#CUS0016",
+    "Customer": "Walk-in Customer",
+    "TotalOrders": "32",
+    "GrandTotal": "$1000",
+    "Image": "<i class='icon-user fs-16 text-dark'></i>"
+  },
+  {
+    "id": 2,
+    "Ids": "#CUS0015",
+    "Customer": "Sue Allen",
+    "TotalOrders": "45",
+    "GrandTotal": "$1500",
+    "Image": "<img src='assets/img/profiles/avatar-33.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 3,
+    "Ids": "#CUS0014",
+    "Customer": "Frank Barrett",
+    "TotalOrders": "70",
+    "GrandTotal": "$1200",
+    "Image": "<img src='assets/img/profiles/avatar-34.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 4,
+    "Ids": "#CUS0013",
+    "Customer": "Kelley Davis",
+    "TotalOrders": "53",
+    "GrandTotal": "$800",
+    "Image": "<img src='assets/img/profiles/avatar-35.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 5,
+    "Ids": "#CUS0012",
+    "Customer": "Jim Vickers",
+    "TotalOrders": "34",
+    "GrandTotal": "$750",
+    "Image": "<img src='assets/img/profiles/avatar-36.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 6,
+    "Ids": "#CUS0011",
+    "Customer": "Nancy Chapman",
+    "TotalOrders": "40",
+    "GrandTotal": "$1300",
+    "Image": "<img src='assets/img/profiles/avatar-37.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 7,
+    "Ids": "#CUS0010",
+    "Customer": "Ron Jude",
+    "TotalOrders": "55",
+    "GrandTotal": "$1100",
+    "Image": "<img src='assets/img/profiles/avatar-38.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 8,
+    "Ids": "#CUS0009",
+    "Customer": "Andrea Aponte",
+    "TotalOrders": "35",
+    "GrandTotal": "$600",
+    "Image": "<img src='assets/img/profiles/avatar-39.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 9,
+    "Ids": "#CUS0008",
+    "Customer": "David Belcher",
+    "TotalOrders": "27",
+    "GrandTotal": "$1300",
+    "Image": "<img src='assets/img/profiles/avatar-40.jpg' alt='category' class='img-fluid'>"
+  },
+  {
+    "id": 10,
+    "Ids": "#CUS0007",
+    "Customer": "Julie Kangas",
+    "TotalOrders": "22",
+    "GrandTotal": "$800",
+    "Image": "<img src='assets/img/profiles/avatar-41.jpg' alt='category' class='img-fluid'>"
+  }
+],
+"totalData":10
+}

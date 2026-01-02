@@ -1,0 +1,74 @@
+@{
+	var path = Context?.Request?.Path.Value ?? string.Empty;
+	var fileName = System.IO.Path.GetFileName(path);
+	var pageNoExt = (string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName)).ToLowerInvariant();
+
+	bool IsPage(params string[] names)
+	{
+		if (string.IsNullOrEmpty(pageNoExt)) return false;
+		foreach (var n in names)
+		{
+			var name = (n ?? string.Empty).ToLowerInvariant();
+			if (name.EndsWith(".cshtml")) name = System.IO.Path.GetFileNameWithoutExtension(name);
+			if (pageNoExt == name) return true;
+		}
+		return false;
+	}
+
+	bool IsNotAny(params string[] names) => !IsPage(names);
+
+	string[] excludedSimplePages = new[] {
+		"login","register","email-verification","forgot-password","reset-password","otp"
+	};
+}
+
+	<!-- Favicon -->
+    <link rel="shortcut icon" href="~/assets/img/favicon.png">
+
+    <!-- Apple Icon -->
+    <link rel="apple-touch-icon" href="~/assets/img/apple-icon.png">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.min.css">
+
+	@if (IsNotAny("login","register","email-verification","forgot-password","reset-password","otp")) {
+		<!-- Theme Script -->
+		<script src="~/assets/js/theme-script.js"></script>
+
+		<!-- Lucide Icon CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/lucide/lucide.css">
+	}
+
+	@if (IsNotAny("login","register","email-verification","forgot-password","reset-password","otp")) {
+		<!-- Simplebar CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/simplebar/simplebar.min.css">
+	}
+
+	@if (IsPage("addons","pos","coupons","index","invoices","kanban-view","orders","payments","role-permission","users")) {
+		<!-- Daterangepikcer CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/daterangepicker/daterangepicker.css">
+	}
+
+	@if (IsPage("addons","pos","audit-report","categories","coupons","customer-report","customer","delivery-settings","earning-report","integrations-settings","invoices","items","notifications-settings","order-report","payment-settings","payments","print-settings","role-permission","sales-report","store-settings","table","users")) {
+		<!-- Datatable CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/datatables/dataTables.bootstrap5.min.css">
+	}
+
+	@if (IsPage("audit-report","pos","coupons","customer-report","customer","delivery-settings","earning-report","integrations-settings","kitchen","notifications-settings","order-report","orders","payment-settings","print-settings","reservations","sales-report","store-settings","table")) {
+		<!-- Flatpickr CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/flatpickr/flatpickr.min.css">
+	}
+
+	@if (IsPage("pos")) {
+		<!-- Slick CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/slick/slick.css">
+		<link rel="stylesheet" href="~/assets/plugins/slick/slick-theme.css">
+	}
+
+	@if (IsPage("addons","pos","audit-report","categories","coupons","customer-report","customer","delivery-settings","earning-report","index","integrations-settings","invoices","items","kitchen","notifications-settings","order-report","orders","payment-settings","payments","print-settings","reservations","role-permission","sales-report","store-settings","table","tax-settings","users")) {
+		<!-- Select2 CSS -->
+		<link rel="stylesheet" href="~/assets/plugins/select2/css/select2.min.css">
+	}
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="~/assets/css/style.css">

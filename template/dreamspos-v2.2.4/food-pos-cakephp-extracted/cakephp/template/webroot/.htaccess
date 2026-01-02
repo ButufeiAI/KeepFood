@@ -1,0 +1,23 @@
+<IfModule mod_rewrite.c>
+    RewriteEngine On
+    RewriteCond %{REQUEST_FILENAME} !-f
+    RewriteCond %{REQUEST_FILENAME} !-d
+    RewriteRule ^ index.php [L]
+</IfModule>
+
+# Ensure SVGs are served as static files, not processed
+<FilesMatch "\.svg$">
+    SetHandler default-handler
+</FilesMatch>
+
+# Optional: Set correct MIME type for SVG if not already
+AddType image/svg+xml .svg .svgz
+AddEncoding gzip .svgz
+
+# Optional: Fix SVG CORS issues (if loading across origins)
+<IfModule mod_headers.c>
+    <FilesMatch "\.svg$">
+        Header set Access-Control-Allow-Origin "*"
+    </FilesMatch>
+</IfModule>
+

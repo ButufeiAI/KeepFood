@@ -1,0 +1,53 @@
+{% set page = app.request.attributes.get('_route') %}
+
+    <!-- Favicon -->
+    <link rel="shortcut icon" href="{{ asset('build/img/favicon.png')}}">
+
+    <!-- Apple Icon -->
+    <link rel="apple-touch-icon" href="{{ asset('build/img/apple-icon.png')}}">
+
+    <!-- Bootstrap CSS -->
+    <link rel="stylesheet" href="{{ asset('build/css/bootstrap.min.css')}}">
+
+{% if page not in ['login', 'register', 'email-verification', 'forgot-password', 'otp', 'reset-password'] %}
+    <!-- Theme Script -->
+    <script src="{{ asset('build/js/theme-script.js')}}"></script>
+{% endif %}
+
+    <!-- Lucide Icon CSS -->
+    <link rel="stylesheet" href="{{ asset('build/plugins/lucide/lucide.css')}}">
+
+{% if page not in ['login', 'register', 'email-verification', 'forgot-password', 'otp', 'reset-password'] %}
+    <!-- Simplebar CSS -->
+    <link rel="stylesheet" href="{{ asset('build/plugins/simplebar/simplebar.min.css')}}">
+{% endif %}
+
+{% if page in ['addons', 'coupons', 'index', 'home', 'invoices', 'kanban-view', 'payments', 'orders', 'role-permission', 'users'] %}
+    <!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="{{ asset('build/plugins/daterangepicker/daterangepicker.css')}}">
+{% endif %}
+
+{% if page in ['addons', 'audit-report', 'categories', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'integrations-settings', 'invoices', 'items', 'notifications-settings', 'order-report', 'payment-settings', 'payments', 'print-settings', 'role-permission', 'sales-report', 'store-settings', 'table', 'users'] %}
+    <!-- Datatable CSS -->
+	<link rel="stylesheet" href="{{ asset('build/plugins/datatables/dataTables.bootstrap5.min.css')}}">
+{% endif %}
+
+{% if page in ['audit-report', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'integrations-settings', 'kitchen', 'pos', 'notifications-settings', 'order-report', 'orders', 'payment-settings', 'print-settings', 'reservations', 'sales-report', 'store-settings', 'table'] %}
+    <!-- Flatpickr CSS -->
+    <link rel="stylesheet" href="{{ asset('build/plugins/flatpickr/flatpickr.min.css')}}">
+{% endif %}
+
+{% if page in ['pos'] %}
+    <!-- Slick CSS -->
+    <link rel="stylesheet" href="{{ asset('build/plugins/slick/slick.css')}}">
+    <link rel="stylesheet" href="{{ asset('build/plugins/slick/slick-theme.css')}}">
+{% endif %}
+
+{% if page in ['addons', 'audit-report', 'categories', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'index', 'home', 'integrations-settings', 'invoices', 'items', 'kitchen', 'pos', 'notifications-settings', 'order-report', 'orders', 'payment-settings', 'payments', 'print-settings', 'reservations', 'role-permission', 'sales-report', 'store-settings', 'table', 'tax-settings', 'users'] %}
+    <!-- Select2 CSS -->
+    <link rel="stylesheet" href="{{ asset('build/plugins/select2/css/select2.min.css')}}">
+{% endif %}
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{{ asset('build/css/style.css')}}">
+

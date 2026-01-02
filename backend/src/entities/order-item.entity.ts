@@ -5,6 +5,7 @@ import {
   CreateDateColumn,
   ManyToOne,
   JoinColumn,
+  Index,
 } from 'typeorm';
 import { Order } from './order.entity';
 import { Product } from './product.entity';
@@ -15,6 +16,7 @@ export class OrderItem {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Index()
   @Column({ type: 'uuid' })
   orderId: string;
 
@@ -22,6 +24,7 @@ export class OrderItem {
   @JoinColumn({ name: 'orderId' })
   order: Order;
 
+  @Index()
   @Column({ type: 'uuid' })
   productId: string;
 

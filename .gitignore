@@ -50,3 +50,7 @@ yarn-error.log*
 tmp/
 temp/
 
+# Template large files (zip archives)
+template/**/*.zip
+template/dreamspos-v2.2.4/**/*.zip
+

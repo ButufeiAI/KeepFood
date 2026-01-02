@@ -1,0 +1,11 @@
+{
+  "version": 2,
+  "dgSpecHash": "sb7QrdI3FVs=",
+  "success": true,
+  "projectFilePath": "C:\\projects\\New folder\\dreamspos\\dotnet\\template\\template.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\DreamsTechnologies\\.nuget\\packages\\microsoft.aspnetcore.openapi\\9.0.10\\microsoft.aspnetcore.openapi.9.0.10.nupkg.sha512",
+    "C:\\Users\\DreamsTechnologies\\.nuget\\packages\\microsoft.openapi\\1.6.17\\microsoft.openapi.1.6.17.nupkg.sha512"
+  ],
+  "logs": []
+}

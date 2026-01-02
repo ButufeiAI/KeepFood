@@ -1,0 +1,620 @@
+{% load static %}
+{% load sidebar_tags %}
+
+{% if request.path|normalize_path != '/pos' and request.path|normalize_path != '/pos-2' and request.path|normalize_path != '/pos-3' and request.path|normalize_path != '/pos-4' and request.path|normalize_path != '/pos-5' %}
+	<!-- Horizontal Sidebar -->
+	<div class="sidebar sidebar-horizontal" id="horizontal-menu">
+{% endif %}	
+{% if request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' %}
+	<!-- Horizontal Sidebar -->
+	<div class="sidebar sidebar-horizontal d-none" id="horizontal-menu">
+{% endif %}
+		<div id="sidebar-menu-3" class="sidebar-menu">
+			<div class="main-menu">
+				<ul class="nav-menu">
+					<li class="submenu">
+						<a href="index"><i class="ti ti-layout-grid fs-16 me-2"></i><span> Main Menu</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/index' or request.path|normalize_path == '/admin-dashboard' or request.path|normalize_path == '/sales-dashboard' %}active subdrop{% else %}{% endif %}"><span>Dashboard</span> <span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="index" class="{% if request.path|normalize_path == '/index' %}active{% endif %}">Admin Dashboard</a></li>
+									<li><a href="admin-dashboard" class="{% if request.path|normalize_path == '/admin-dashboard' %}active{% endif %}">Admin Dashboard 2</a></li>
+									<li><a href="sales-dashboard" class="{% if request.path|normalize_path == '/sales-dashboard' %}active{% endif %}">Sales Dashboard</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/companies' or request.path|normalize_path == '/subscription' or request.path|normalize_path == '/packages' or request.path|normalize_path == '/domain' or request.path|normalize_path == '/purchase-transaction' %}active subdrop{% else %}{% endif %}"><span>Super Admin</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="dashboard" class="{% if request.path|normalize_path == '/dashboard' %}active{% endif %}">Dashboard</a></li>
+									<li><a href="companies" class="{% if request.path|normalize_path == '/companies' %}active{% endif %}">Companies</a></li>
+									<li><a href="subscription" class="{% if request.path|normalize_path == '/subscription' %}active{% endif %}">Subscriptions</a></li>
+									<li><a href="packages" class="{% if request.path|normalize_path == '/packages' %}active{% endif %}">Packages</a></li>
+									<li><a href="domain" class="{% if request.path|normalize_path == '/domain' %}active{% endif %}">Domain</a></li>
+									<li><a href="purchase-transaction" class="{% if request.path|normalize_path == '/purchase-transaction' %}active{% endif %}">Purchase Transaction</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/chat' or request.path|normalize_path == '/video-call' or request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/call-history' or request.path|normalize_path == '/calendar' or request.path|normalize_path == '/contacts' or request.path|normalize_path == '/email' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/todo' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/file-manager' or request.path|normalize_path == '/projects' or request.path|normalize_path == '/products' or request.path|normalize_path == '/orders' or request.path|normalize_path == '/customers' or request.path|normalize_path == '/cart' or request.path|normalize_path == '/checkout' or request.path|normalize_path == '/wishlist' or request.path|normalize_path == '/reviews' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/search-list' %}active subdrop{% else %}{% endif %}"><span>Application</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="chat" class="{% if request.path|normalize_path == '/chat' %}active{% endif %}">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/video-call' or request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/call-history' %}active subdrop{% else %}{% endif %}">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="video-call" class="{% if request.path|normalize_path == '/video-call' %}active{% endif %}">Video Call</a></li>
+											<li><a href="audio-call" class="{% if request.path|normalize_path == '/audio-call' %}active{% endif %}">Audio Call</a></li>
+											<li><a href="call-history" class="{% if request.path|normalize_path == '/call-history' %}active{% endif %}">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="calendar" class="{% if request.path|normalize_path == '/calendar' %}active{% endif %}">Calendar</a></li>
+									<li><a href="contacts" class="{% if request.path|normalize_path == '/contacts' %}active{% endif %}">Contacts</a></li>
+									<li><a href="email" class="{% if request.path|normalize_path == '/email' or request.path|normalize_path == '/email-reply' %}active{% endif %}">Email</a></li>
+									<li><a href="todo" class="{% if request.path|normalize_path == '/todo' or request.path|normalize_path == '/todo-list' %}active{% endif %}">To Do</a></li>
+									<li><a href="notes" class="{% if request.path|normalize_path == '/notes' %}active{% endif %}">Notes</a></li>
+									<li><a href="file-manager" class="{% if request.path|normalize_path == '/file-manager' %}active{% endif %}">File Manager</a></li>
+									<li><a href="projects" class="{% if request.path|normalize_path == '/projects' %}active{% endif %}">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/products' or request.path|normalize_path == '/orders' or request.path|normalize_path == '/customers' or request.path|normalize_path == '/cart' or request.path|normalize_path == '/checkout' or request.path|normalize_path == '/wishlist' or request.path|normalize_path == '/reviews' %}active subdrop{% else %}{% endif %}">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="products" class="{% if request.path|normalize_path == '/products' %}active{% endif %}">Products</a></li>
+											<li><a href="orders" class="{% if request.path|normalize_path == '/orders' %}active{% endif %}">Orders</a></li>
+											<li><a href="customers" class="{% if request.path|normalize_path == '/customers' %}active{% endif %}">Customers</a></li>
+											<li><a href="cart" class="{% if request.path|normalize_path == '/cart' %}active{% endif %}">Cart</a></li>
+											<li><a href="checkout" class="{% if request.path|normalize_path == '/checkout' %}active{% endif %}">Checkout</a></li>
+											<li><a href="wishlist" class="{% if request.path|normalize_path == '/wishlist' %}active{% endif %}">Wishlist</a></li>
+											<li><a href="reviews" class="{% if request.path|normalize_path == '/reviews' %}active{% endif %}">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="social-feed" class="{% if request.path|normalize_path == '/social-feed' %}active{% endif %}">Social Feed</a></li>
+									<li><a href="search-list" class="{% if request.path|normalize_path == '/search-list' %}active{% endif %}">Search List</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/layout-horizontal' or request.path|normalize_path == '/layout-detached' or request.path|normalize_path == '/layout-two-column' or request.path|normalize_path == '/layout-hovered' or request.path|normalize_path == '/layout-boxed' or request.path|normalize_path == '/layout-rtl' or request.path|normalize_path == '/layout-dark' %}active subdrop{% else %}{% endif %}"><span>Layouts</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="layout-horizontal" class="{% if request.path|normalize_path == '/layout-horizontal' %}active{% endif %}">Horizontal</a></li>
+									<li><a href="layout-detached" class="{% if request.path|normalize_path == '/layout-detached' %}active{% endif %}">Detached</a></li>
+									<li><a href="layout-two-column" class="{% if request.path|normalize_path == '/layout-two-column' %}active{% endif %}">Two Column</a></li>
+									<li><a href="layout-hovered" class="{% if request.path|normalize_path == '/layout-hovered' %}active{% endif %}">Hovered</a></li>
+									<li><a href="layout-boxed" class="{% if request.path|normalize_path == '/layout-boxed' %}active{% endif %}">Boxed</a></li>
+									<li><a href="layout-rtl" class="{% if request.path|normalize_path == '/layout-rtl' %}active{% endif %}">RTL</a></li>
+									<li><a href="layout-dark" class="{% if request.path|normalize_path == '/layout-dark' %}active{% endif %}">Dark</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/product-list' or request.path|normalize_path == '/add-product' or request.path|normalize_path == '/expired-products' or request.path|normalize_path == '/low-stocks' or request.path|normalize_path == '/category-list' or request.path|normalize_path == '/sub-categories' or request.path|normalize_path == '/brand-list' or request.path|normalize_path == '/units' or request.path|normalize_path == '/varriant-attributes' or request.path|normalize_path == '/warranty' or request.path|normalize_path == '/barcode' or request.path|normalize_path == '/qrcode' %}active subdrop{% else %}{% endif %}"><i class="ti ti-brand-unity fs-16 me-2"></i><span> Inventory
+							</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li><a href="product-list" class="{% if request.path|normalize_path == '/product-list' or request.path|normalize_path == '/edit-product' or request.path|normalize_path == '/product-details' %}active{% endif %}"><span>Products</span></a></li>
+							<li><a href="add-product" class="{% if request.path|normalize_path == '/add-product' %}active{% endif %}"><span>Create Product</span></a></li>
+							<li><a href="expired-products" class="{% if request.path|normalize_path == '/expired-products' %}active{% endif %}"><span>Expired Products</span></a></li>
+							<li><a href="low-stocks" class="{% if request.path|normalize_path == '/low-stocks' %}active{% endif %}"><span>Low Stocks</span></a></li>
+							<li><a href="category-list" class="{% if request.path|normalize_path == '/category-list' %}active{% endif %}"><span>Category</span></a></li>
+							<li><a href="sub-categories" class="{% if request.path|normalize_path == '/sub-categories' %}active{% endif %}"><span>Sub Category</span></a></li>
+							<li><a href="brand-list" class="{% if request.path|normalize_path == '/brand-list' %}active{% endif %}"><span>Brands</span></a></li>
+							<li><a href="units" class="{% if request.path|normalize_path == '/units' %}active{% endif %}"><span>Units</span></a></li>
+							<li><a href="varriant-attributes" class="{% if request.path|normalize_path == '/varriant-attributes' %}active{% endif %}"><span>Variant Attributes</span></a></li>
+							<li><a href="warranty" class="{% if request.path|normalize_path == '/warranty' %}active{% endif %}"><span>Warranties</span></a></li>
+							<li><a href="barcode" class="{% if request.path|normalize_path == '/barcode' %}active{% endif %}"><span>Print Barcode</span></a></li>
+							<li><a href="qrcode" class="{% if request.path|normalize_path == '/qrcode' %}active{% endif %}"><span>Print QR Code</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/manage-stocks' or request.path|normalize_path == '/stock-adjustment' or request.path|normalize_path == '/stock-transfer' or request.path|normalize_path == '/online-orders' or request.path|normalize_path == '/pos-orders' or request.path|normalize_path == '/invoice' or request.path|normalize_path == '/invoice-details' or request.path|normalize_path == '/sales-returns' or request.path|normalize_path == '/quotation-list' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/coupons' or request.path|normalize_path == '/gift-cards' or request.path|normalize_path == '/discount-plan' or request.path|normalize_path == '/discount' or request.path|normalize_path == '/purchase-list' or request.path|normalize_path == '/purchase-order-report' or request.path|normalize_path == '/purchase-returns' or request.path|normalize_path == '/expense-list' or request.path|normalize_path == '/expense-category' or request.path|normalize_path == '/income' or request.path|normalize_path == '/income-category' or request.path|normalize_path == '/account-list' or request.path|normalize_path == '/money-transfer' or request.path|normalize_path == '/balance-sheet' or request.path|normalize_path == '/balance-sheet-v2' or request.path|normalize_path == '/trial-balance' or request.path|normalize_path == '/cash-flow' or request.path|normalize_path == '/cash-flow-v2' or request.path|normalize_path == '/account-statement' %}active subdrop{% else %}{% endif %}"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Sales &amp; Purchase</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/manage-stocks' or request.path|normalize_path == '/stock-adjustment' or request.path|normalize_path == '/stock-transfer' %}active subdrop{% else %}{% endif %}"><span>Stock</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="manage-stocks" class="{% if request.path|normalize_path == '/manage-stocks' %}active{% endif %}"><span>Manage Stock</span></a></li>
+									<li><a href="stock-adjustment" class="{% if request.path|normalize_path == '/stock-adjustment' %}active{% endif %}"><span>Stock Adjustment</span></a></li>
+									<li><a href="stock-transfer" class="{% if request.path|normalize_path == '/stock-transfer' %}active{% endif %}"><span>Stock Transfer</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/online-orders' or request.path|normalize_path == '/pos-orders' or request.path|normalize_path == '/invoice' or request.path|normalize_path == '/invoice-details' or request.path|normalize_path == '/sales-returns' or request.path|normalize_path == '/quotation-list' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' %}active subdrop{% else %}{% endif %}"><span>Sales</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/online-orders' or request.path|normalize_path == '/pos-orders' %}active subdrop{% else %}{% endif %}"><span>Sales</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="online-orders" class="{% if request.path|normalize_path == '/online-orders' %}active{% endif %}">Online Orders</a></li>
+											<li><a href="pos-orders" class="{% if request.path|normalize_path == '/pos-orders' %}active{% endif %}">POS Orders</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice" class="{% if request.path|normalize_path == '/invoice' or request.path|normalize_path == '/invoice-details' %}active{% endif %}"><span>Invoices</span></a></li>
+									<li><a href="sales-returns" class="{% if request.path|normalize_path == '/sales-returns' %}active{% endif %}"><span>Sales Return</span></a></li>
+									<li><a href="quotation-list" class="{% if request.path|normalize_path == '/quotation-list' %}active{% endif %}"><span>Quotation</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' %}active subdrop{% else %}{% endif %}"><span>POS</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pos" class="{% if request.path|normalize_path == '/pos' %}active{% endif %}">POS 1</a></li>
+											<li><a href="pos-2" class="{% if request.path|normalize_path == '/pos-2' %}active{% endif %}">POS 2</a></li>
+											<li><a href="pos-3" class="{% if request.path|normalize_path == '/pos-3' %}active{% endif %}">POS 3</a></li>
+											<li><a href="pos-4" class="{% if request.path|normalize_path == '/pos-4' %}active{% endif %}">POS 4</a></li>
+											<li><a href="pos-5" class="{% if request.path|normalize_path == '/pos-5' %}active{% endif %}">POS 5</a></li>
+											<li><a href="https://django.dreamstechnologies.com/food-pos/template/index" target="_blank">POS 6</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/coupons' or request.path|normalize_path == '/gift-cards' or request.path|normalize_path == '/discount-plan' or request.path|normalize_path == '/discount' %}active subdrop{% else %}{% endif %}"><span>Promo</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="coupons" class="{% if request.path|normalize_path == '/coupons' %}active{% endif %}"><span>Coupons</span></a></li>
+									<li><a href="gift-cards" class="{% if request.path|normalize_path == '/gift-cards' %}active{% endif %}"><span>Gift Cards</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/discount-plan' or request.path|normalize_path == '/discount' %}active subdrop{% else %}{% endif %}"><span>Discount</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="discount-plan" class="{% if request.path|normalize_path == '/discount-plan' %}active{% endif %}">Discount Plan</a></li>
+											<li><a href="discount" class="{% if request.path|normalize_path == '/discount' %}active{% endif %}">Discount</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/purchase-list' or request.path|normalize_path == '/purchase-order-report' or request.path|normalize_path == '/purchase-returns' %}active subdrop{% else %}{% endif %}"><span>Purchase</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="purchase-list" class="{% if request.path|normalize_path == '/purchase-list' %}active{% endif %}"><span>Purchases</span></a></li>
+									<li><a href="purchase-order-report" class="{% if request.path|normalize_path == '/purchase-order-report' %}active{% endif %}"><span>Purchase Order</span></a></li>
+									<li><a href="purchase-returns" class="{% if request.path|normalize_path == '/purchase-returns' %}active{% endif %}"><span>Purchase Return</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/expense-list' or request.path|normalize_path == '/expense-category' %}active subdrop{% else %}{% endif %}"><span>Expenses</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="expense-list" class="{% if request.path|normalize_path == '/expense-list' %}active{% endif %}">Expenses</a></li>
+									<li><a href="expense-category" class="{% if request.path|normalize_path == '/expense-category' %}active{% endif %}">Expense Category</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/income' or request.path|normalize_path == '/income-category' %}active subdrop{% else %}{% endif %}"><span>Income</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="income" class="{% if request.path|normalize_path == '/income' %}active{% endif %}">Income</a></li>
+									<li><a href="income-category" class="{% if request.path|normalize_path == '/income-category' %}active{% endif %}">Income Category</a></li>
+								</ul>
+							</li>
+							<li><a href="account-list" class="{% if request.path|normalize_path == '/account-list' %}active{% endif %}"><span>Bank Accounts</span></a></li>
+							<li><a href="money-transfer" class="{% if request.path|normalize_path == '/money-transfer' %}active{% endif %}"><span>Money Transfer</span></a></li>
+							<li><a href="balance-sheet" class="{% if request.path|normalize_path == '/balance-sheet' or request.path|normalize_path == '/balance-sheet-v2' %}active{% endif %}"><span>Balance Sheet</span></a></li>
+							<li><a href="trial-balance" class="{% if request.path|normalize_path == '/trial-balance' %}active{% endif %}"><span>Trial Balance</span></a></li>
+							<li><a href="cash-flow" class="{% if request.path|normalize_path == '/cash-flow' or request.path|normalize_path == '/cash-flow-v2' %}active{% endif %}"><span>Cash Flow</span></a></li>
+							<li><a href="account-statement" class="{% if request.path|normalize_path == '/account-statement' %}active{% endif %}"><span>Account Statement</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/ui-alerts' or request.path|normalize_path == '/ui-accordion' or request.path|normalize_path == '/ui-avatar' or request.path|normalize_path == '/ui-badges' or request.path|normalize_path == '/ui-borders' or request.path|normalize_path == '/ui-buttons' or request.path|normalize_path == '/ui-buttons-group' or request.path|normalize_path == '/ui-breadcrumb' or request.path|normalize_path == '/ui-cards' or request.path|normalize_path == '/ui-carousel' or request.path|normalize_path == '/ui-colors' or request.path|normalize_path == '/ui-dropdowns' or request.path|normalize_path == '/ui-grid' or request.path|normalize_path == '/ui-images' or request.path|normalize_path == '/ui-lightbox' or request.path|normalize_path == '/ui-media' or request.path|normalize_path == '/ui-modals' or request.path|normalize_path == '/ui-offcanvas' or request.path|normalize_path == '/ui-pagination' or request.path|normalize_path == '/ui-popovers' or request.path|normalize_path == '/ui-progress' or request.path|normalize_path == '/ui-placeholders' or request.path|normalize_path == '/ui-spinner' or request.path|normalize_path == '/ui-sweetalerts' or request.path|normalize_path == '/ui-nav-tabs' or request.path|normalize_path == '/ui-toasts' or request.path|normalize_path == '/ui-tooltips' or request.path|normalize_path == '/ui-typography' or request.path|normalize_path == '/ui-video' or request.path|normalize_path == '/ui-sortable' or request.path|normalize_path == '/ui-swiperjs' or request.path|normalize_path == '/ui-ribbon' or request.path|normalize_path == '/ui-clipboard' or request.path|normalize_path == '/ui-drag-drop' or request.path|normalize_path == '/ui-rangeslider' or request.path|normalize_path == '/ui-rating' or request.path|normalize_path == '/ui-text-editor' or request.path|normalize_path == '/ui-counter' or request.path|normalize_path == '/ui-scrollbar' or request.path|normalize_path == '/ui-stickynote' or request.path|normalize_path == '/ui-timeline' or request.path|normalize_path == '/chart-apex' or request.path|normalize_path == '/chart-c3' or request.path|normalize_path == '/chart-js' or request.path|normalize_path == '/chart-morris' or request.path|normalize_path == '/chart-flot' or request.path|normalize_path == '/chart-peity' or request.path|normalize_path == '/icon-fontawesome' or request.path|normalize_path == '/icon-feather' or request.path|normalize_path == '/icon-ionic' or request.path|normalize_path == '/icon-material' or request.path|normalize_path == '/icon-pe7' or request.path|normalize_path == '/icon-simpleline' or request.path|normalize_path == '/icon-themify' or request.path|normalize_path == '/icon-weather' or request.path|normalize_path == '/icon-typicon' or request.path|normalize_path == '/icon-flag' or request.path|normalize_path == '/icon-tabler' or request.path|normalize_path == '/icon-bootstrap' or request.path|normalize_path == '/icon-remix' or request.path|normalize_path == '/form-basic-inputs' or request.path|normalize_path == '/form-checkbox-radios' or request.path|normalize_path == '/form-input-groups' or request.path|normalize_path == '/form-grid-gutters' or request.path|normalize_path == '/form-select' or request.path|normalize_path == '/form-mask' or request.path|normalize_path == '/form-fileupload' or request.path|normalize_path == '/form-horizontal' or request.path|normalize_path == '/form-vertical' or request.path|normalize_path == '/form-floating-labels' or request.path|normalize_path == '/form-validation' or request.path|normalize_path == '/form-select2' or request.path|normalize_path == '/form-wizard' or request.path|normalize_path == '/form-pickers' or request.path|normalize_path == '/tables-basic' or request.path|normalize_path == '/data-tables' or request.path|normalize_path == '/maps-vector' or request.path|normalize_path == '/maps-leaflet' %}active subdrop{% else %}{% endif %}"><i class="ti ti-users-group fs-16 me-2"></i><span>UI Interface</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/ui-alerts' or request.path|normalize_path == '/ui-accordion' or request.path|normalize_path == '/ui-avatar' or request.path|normalize_path == '/ui-badges' or request.path|normalize_path == '/ui-borders' or request.path|normalize_path == '/ui-buttons' or request.path|normalize_path == '/ui-buttons-group' or request.path|normalize_path == '/ui-breadcrumb' or request.path|normalize_path == '/ui-cards' or request.path|normalize_path == '/ui-carousel' or request.path|normalize_path == '/ui-colors' or request.path|normalize_path == '/ui-dropdowns' or request.path|normalize_path == '/ui-grid' or request.path|normalize_path == '/ui-images' or request.path|normalize_path == '/ui-lightbox' or request.path|normalize_path == '/ui-media' or request.path|normalize_path == '/ui-modals' or request.path|normalize_path == '/ui-offcanvas' or request.path|normalize_path == '/ui-pagination' or request.path|normalize_path == '/ui-popovers' or request.path|normalize_path == '/ui-progress' or request.path|normalize_path == '/ui-placeholders' or request.path|normalize_path == '/ui-spinner' or request.path|normalize_path == '/ui-sweetalerts' or request.path|normalize_path == '/ui-nav-tabs' or request.path|normalize_path == '/ui-toasts' or request.path|normalize_path == '/ui-tooltips' or request.path|normalize_path == '/ui-typography' or request.path|normalize_path == '/ui-video' or request.path|normalize_path == '/ui-sortable' or request.path|normalize_path == '/ui-swiperjs' %}active subdrop{% else %}{% endif %}"><span>Base UI</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="ui-alerts" class="{% if request.path|normalize_path == '/ui-alerts' %}active{% endif %}">Alerts</a></li>
+									<li><a href="ui-accordion" class="{% if request.path|normalize_path == '/ui-accordion' %}active{% endif %}">Accordion</a></li>
+									<li><a href="ui-avatar" class="{% if request.path|normalize_path == '/ui-avatar' %}active{% endif %}">Avatar</a></li>
+									<li><a href="ui-badges" class="{% if request.path|normalize_path == '/ui-badges' %}active{% endif %}">Badges</a></li>
+									<li><a href="ui-borders" class="{% if request.path|normalize_path == '/ui-borders' %}active{% endif %}">Border</a></li>
+									<li><a href="ui-buttons" class="{% if request.path|normalize_path == '/ui-buttons' %}active{% endif %}">Buttons</a></li>
+									<li><a href="ui-buttons-group" class="{% if request.path|normalize_path == '/ui-buttons-group' %}active{% endif %}">Button Group</a></li>
+									<li><a href="ui-breadcrumb" class="{% if request.path|normalize_path == '/ui-breadcrumb' %}active{% endif %}">Breadcrumb</a></li>
+									<li><a href="ui-cards" class="{% if request.path|normalize_path == '/ui-cards' %}active{% endif %}">Card</a></li>
+									<li><a href="ui-carousel" class="{% if request.path|normalize_path == '/ui-carousel' %}active{% endif %}">Carousel</a></li>
+									<li><a href="ui-colors" class="{% if request.path|normalize_path == '/ui-colors' %}active{% endif %}">Colors</a></li>
+									<li><a href="ui-dropdowns" class="{% if request.path|normalize_path == '/ui-dropdowns' %}active{% endif %}">Dropdowns</a></li>
+									<li><a href="ui-grid" class="{% if request.path|normalize_path == '/ui-grid' %}active{% endif %}">Grid</a></li>
+									<li><a href="ui-images" class="{% if request.path|normalize_path == '/ui-images' %}active{% endif %}">Images</a></li>
+									<li><a href="ui-lightbox" class="{% if request.path|normalize_path == '/ui-lightbox' %}active{% endif %}">Lightbox</a></li>
+									<li><a href="ui-media" class="{% if request.path|normalize_path == '/ui-media' %}active{% endif %}">Media</a></li>
+									<li><a href="ui-modals" class="{% if request.path|normalize_path == '/ui-modals' %}active{% endif %}">Modals</a></li>
+									<li><a href="ui-offcanvas" class="{% if request.path|normalize_path == '/ui-offcanvas' %}active{% endif %}">Offcanvas</a></li>
+									<li><a href="ui-pagination" class="{% if request.path|normalize_path == '/ui-pagination' %}active{% endif %}">Pagination</a></li>
+									<li><a href="ui-popovers" class="{% if request.path|normalize_path == '/ui-popovers' %}active{% endif %}">Popovers</a></li>
+									<li><a href="ui-progress" class="{% if request.path|normalize_path == '/ui-progress' %}active{% endif %}">Progress</a></li>
+									<li><a href="ui-placeholders" class="{% if request.path|normalize_path == '/ui-placeholders' %}active{% endif %}">Placeholders</a></li>
+									<li><a href="ui-rangeslider" class="{% if request.path|normalize_path == '/ui-rangeslider' %}active{% endif %}">Range Slider</a></li>
+									<li><a href="ui-spinner" class="{% if request.path|normalize_path == '/ui-spinner' %}active{% endif %}">Spinner</a></li>
+									<li><a href="ui-sweetalerts" class="{% if request.path|normalize_path == '/ui-sweetalerts' %}active{% endif %}">Sweet Alerts</a></li>
+									<li><a href="ui-nav-tabs" class="{% if request.path|normalize_path == '/ui-nav-tabs' %}active{% endif %}">Tabs</a></li>
+									<li><a href="ui-toasts" class="{% if request.path|normalize_path == '/ui-toasts' %}active{% endif %}">Toasts</a></li>
+									<li><a href="ui-tooltips" class="{% if request.path|normalize_path == '/ui-tooltips' %}active{% endif %}">Tooltips</a></li>
+									<li><a href="ui-typography" class="{% if request.path|normalize_path == '/ui-typography' %}active{% endif %}">Typography</a></li>
+									<li><a href="ui-video" class="{% if request.path|normalize_path == '/ui-video' %}active{% endif %}">Video</a></li>
+									<li><a href="ui-sortable" class="{% if request.path|normalize_path == '/ui-sortable' %}active{% endif %}">Sortable</a></li>
+									<li><a href="ui-swiperjs" class="{% if request.path|normalize_path == '/ui-swiperjs' %}active{% endif %}">Swiperjs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/ui-ribbon' or request.path|normalize_path == '/ui-clipboard' or request.path|normalize_path == '/ui-drag-drop' or request.path|normalize_path == '/ui-rangeslider' or request.path|normalize_path == '/ui-rating' or request.path|normalize_path == '/ui-text-editor' or request.path|normalize_path == '/ui-counter' or request.path|normalize_path == '/ui-scrollbar' or request.path|normalize_path == '/ui-stickynote' or request.path|normalize_path == '/ui-timeline' %}active subdrop{% else %}{% endif %}"><span>Advanced UI</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="ui-ribbon" class="{% if request.path|normalize_path == '/ui-ribbon' %}active{% endif %}">Ribbon</a></li>
+									<li><a href="ui-clipboard" class="{% if request.path|normalize_path == '/ui-clipboard' %}active{% endif %}">Clipboard</a></li>
+									<li><a href="ui-drag-drop" class="{% if request.path|normalize_path == '/ui-drag-drop' %}active{% endif %}">Drag & Drop</a></li>
+									<li><a href="ui-rangeslider" class="{% if request.path|normalize_path == '/ui-rangeslider' %}active{% endif %}">Range Slider</a></li>
+									<li><a href="ui-rating" class="{% if request.path|normalize_path == '/ui-rating' %}active{% endif %}">Rating</a></li>
+									<li><a href="ui-text-editor" class="{% if request.path|normalize_path == '/ui-text-editor' %}active{% endif %}">Text Editor</a></li>
+									<li><a href="ui-counter" class="{% if request.path|normalize_path == '/ui-counter' %}active{% endif %}">Counter</a></li>
+									<li><a href="ui-scrollbar" class="{% if request.path|normalize_path == '/ui-scrollbar' %}active{% endif %}">Scrollbar</a></li>
+									<li><a href="ui-stickynote" class="{% if request.path|normalize_path == '/ui-stickynote' %}active{% endif %}">Sticky Note</a></li>
+									<li><a href="ui-timeline" class="{% if request.path|normalize_path == '/ui-timeline' %}active{% endif %}">Timeline</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/chart-apex' or request.path|normalize_path == '/chart-c3' or request.path|normalize_path == '/chart-js' or request.path|normalize_path == '/chart-morris' or request.path|normalize_path == '/chart-flot' or request.path|normalize_path == '/chart-peity' %}active subdrop{% else %}{% endif %}"><span>Charts</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="chart-apex" class="{% if request.path|normalize_path == '/chart-apex' %}active{% endif %}">Apex Charts</a></li>
+									<li><a href="chart-c3" class="{% if request.path|normalize_path == '/chart-c3' %}active{% endif %}">Chart C3</a></li>
+									<li><a href="chart-js" class="{% if request.path|normalize_path == '/chart-js' %}active{% endif %}">Chart Js</a></li>
+									<li><a href="chart-morris" class="{% if request.path|normalize_path == '/chart-morris' %}active{% endif %}">Morris Charts</a></li>
+									<li><a href="chart-flot" class="{% if request.path|normalize_path == '/chart-flot' %}active{% endif %}">Flot Charts</a></li>
+									<li><a href="chart-peity" class="{% if request.path|normalize_path == '/chart-peity' %}active{% endif %}">Peity Charts</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/icon-fontawesome' or request.path|normalize_path == '/icon-feather' or request.path|normalize_path == '/icon-ionic' or request.path|normalize_path == '/icon-material' or request.path|normalize_path == '/icon-pe7' or request.path|normalize_path == '/icon-simpleline' or request.path|normalize_path == '/icon-themify' or request.path|normalize_path == '/icon-weather' or request.path|normalize_path == '/icon-typicon' or request.path|normalize_path == '/icon-flag' or request.path|normalize_path == '/icon-tabler' or request.path|normalize_path == '/icon-bootstrap' or request.path|normalize_path == '/icon-remix' %}active subdrop{% else %}{% endif %}"><span>Icons</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="icon-fontawesome" class="{% if request.path|normalize_path == '/icon-fontawesome' %}active{% endif %}">Fontawesome Icons</a></li>
+									<li><a href="icon-feather" class="{% if request.path|normalize_path == '/icon-feather' %}active{% endif %}">Feather Icons</a></li>
+									<li><a href="icon-ionic" class="{% if request.path|normalize_path == '/icon-ionic' %}active{% endif %}">Ionic Icons</a></li>
+									<li><a href="icon-material" class="{% if request.path|normalize_path == '/icon-material' %}active{% endif %}">Material Icons</a></li>
+									<li><a href="icon-pe7" class="{% if request.path|normalize_path == '/icon-pe7' %}active{% endif %}">Pe7 Icons</a></li>
+									<li><a href="icon-simpleline" class="{% if request.path|normalize_path == '/icon-simpleline' %}active{% endif %}">Simpleline Icons</a></li>
+									<li><a href="icon-themify" class="{% if request.path|normalize_path == '/icon-themify' %}active{% endif %}">Themify Icons</a></li>
+									<li><a href="icon-weather" class="{% if request.path|normalize_path == '/icon-weather' %}active{% endif %}">Weather Icons</a></li>
+									<li><a href="icon-typicon" class="{% if request.path|normalize_path == '/icon-typicon' %}active{% endif %}">Typicon Icons</a></li>
+									<li><a href="icon-flag" class="{% if request.path|normalize_path == '/icon-flag' %}active{% endif %}">Flag Icons</a></li>
+									<li><a href="icon-tabler" class="{% if request.path|normalize_path == '/icon-tabler' %}active{% endif %}">Tabler Icons</a></li>
+									<li><a href="icon-bootstrap" class="{% if request.path|normalize_path == '/icon-bootstrap' %}active{% endif %}">Bootstrap Icons</a></li>
+									<li><a href="icon-remix" class="{% if request.path|normalize_path == '/icon-remix' %}active{% endif %}">Remix Icons</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/form-basic-inputs' or request.path|normalize_path == '/form-checkbox-radios' or request.path|normalize_path == '/form-input-groups' or request.path|normalize_path == '/form-grid-gutters' or request.path|normalize_path == '/form-select' or request.path|normalize_path == '/form-mask' or request.path|normalize_path == '/form-fileupload' or request.path|normalize_path == '/form-horizontal' or request.path|normalize_path == '/form-vertical' or request.path|normalize_path == '/form-floating-labels' or request.path|normalize_path == '/form-validation' or request.path|normalize_path == '/form-select2' or request.path|normalize_path == '/form-wizard' or request.path|normalize_path == '/form-pickers' %}active subdrop{% else %}{% endif %}"><span> Forms</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/form-basic-inputs' or request.path|normalize_path == '/form-checkbox-radios' or request.path|normalize_path == '/form-input-groups' or request.path|normalize_path == '/form-grid-gutters' or request.path|normalize_path == '/form-select' or request.path|normalize_path == '/form-mask' or request.path|normalize_path == '/form-fileupload' %}active subdrop{% else %}{% endif %}"><span>Form Elements</span><span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="form-basic-inputs" class="{% if request.path|normalize_path == '/form-basic-inputs' %}active{% endif %}">Basic Inputs</a></li>
+											<li><a href="form-checkbox-radios" class="{% if request.path|normalize_path == '/form-checkbox-radios' %}active{% endif %}">Checkbox & Radios</a></li>
+											<li><a href="form-input-groups" class="{% if request.path|normalize_path == '/form-input-groups' %}active{% endif %}">Input Groups</a></li>
+											<li><a href="form-grid-gutters" class="{% if request.path|normalize_path == '/form-grid-gutters' %}active{% endif %}">Grid & Gutters</a></li>
+											<li><a href="form-select" class="{% if request.path|normalize_path == '/form-select' %}active{% endif %}">Form Select</a></li>
+											<li><a href="form-mask" class="{% if request.path|normalize_path == '/form-mask' %}active{% endif %}">Input Masks</a></li>
+											<li><a href="form-fileupload" class="{% if request.path|normalize_path == '/form-fileupload' %}active{% endif %}">File Uploads</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/form-horizontal' or request.path|normalize_path == '/form-vertical' or request.path|normalize_path == '/form-floating-labels' %}active subdrop{% else %}{% endif %}"><span> Layouts</span><span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="form-horizontal" class="{% if request.path|normalize_path == '/form-horizontal' %}active{% endif %}">Horizontal Form</a></li>
+											<li><a href="form-vertical" class="{% if request.path|normalize_path == '/form-vertical' %}active{% endif %}">Vertical Form</a></li>
+											<li><a href="form-floating-labels" class="{% if request.path|normalize_path == '/form-floating-labels' %}active{% endif %}">Floating Labels</a></li>
+										</ul>
+									</li>
+									<li><a href="form-validation" class="{% if request.path|normalize_path == '/form-validation' %}active{% endif %}">Form Validation</a></li>
+									<li><a href="form-select2" class="{% if request.path|normalize_path == '/form-select2' %}active{% endif %}">Select2</a></li>
+									<li><a href="form-wizard" class="{% if request.path|normalize_path == '/form-wizard' %}active{% endif %}">Form Wizard</a></li>
+									<li><a href="form-pickers" class="{% if request.path|normalize_path == '/form-pickers' %}active{% endif %}">Form Picker</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/tables-basic' or request.path|normalize_path == '/data-tables' %}active subdrop{% else %}{% endif %}"><span>Tables</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="tables-basic" class="{% if request.path|normalize_path == '/tables-basic' %}active{% endif %}">Basic Tables </a></li>
+									<li><a href="data-tables" class="{% if request.path|normalize_path == '/data-tables' %}active{% endif %}">Data Table </a></li>
+								</ul>
+							</li>
+							<li  class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/maps-vector' or request.path|normalize_path == '/maps-leaflet' %}active subdrop{% else %}{% endif %}"><span>Maps</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="maps-vector" class="{% if request.path|normalize_path == '/maps-vector' %}active{% endif %}">Vector</a></li>
+									<li><a href="maps-leaflet" class="{% if request.path|normalize_path == '/maps-leaflet' %}active{% endif %}">Leaflet</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/profile' or request.path|normalize_path == '/signin' or request.path|normalize_path == '/signin-2' or request.path|normalize_path == '/signin-3' or request.path|normalize_path == '/register' or request.path|normalize_path == '/register-2' or request.path|normalize_path == '/register-3' or request.path|normalize_path == '/forgot-password' or request.path|normalize_path == '/forgot-password-2' or request.path|normalize_path == '/forgot-password-3' or request.path|normalize_path == '/reset-password' or request.path|normalize_path == '/reset-password-2' or request.path|normalize_path == '/reset-password-3' or request.path|normalize_path == '/email-verification' or request.path|normalize_path == '/email-verification-2' or request.path|normalize_path == '/email-verification-3' or request.path|normalize_path == '/two-step-verification' or request.path|normalize_path == '/two-step-verification-2' or request.path|normalize_path == '/two-step-verification-3' or request.path|normalize_path == '/lock-screen' or request.path|normalize_path == '/error-404' or request.path|normalize_path == '/error-500' or request.path|normalize_path == '/blank-page' or request.path|normalize_path == '/pricing' or request.path|normalize_path == '/coming-soon' or request.path|normalize_path == '/under-maintenance' or request.path|normalize_path == '/pages' or request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/blog-categories' or request.path|normalize_path == '/blog-comments' or request.path|normalize_path == '/countries' or request.path|normalize_path == '/states' or request.path|normalize_path == '/cities' or request.path|normalize_path == '/testimonials' or request.path|normalize_path == '/faq' or request.path|normalize_path == '/employees-grid' or request.path|normalize_path == '/employee-details' or request.path|normalize_path == '/edit-employee' or request.path|normalize_path == '/add-employee' or request.path|normalize_path == '/employees-list' or request.path|normalize_path == '/department-grid' or request.path|normalize_path == '/department-list' or request.path|normalize_path == '/designation' or request.path|normalize_path == '/shift' or request.path|normalize_path == '/attendance-employee' or request.path|normalize_path == '/attendance-admin' or request.path|normalize_path == '/leaves-admin' or request.path|normalize_path == '/leaves-employee' or request.path|normalize_path == '/leave-types' or request.path|normalize_path == '/holidays' or request.path|normalize_path == '/employee-salary' or request.path|normalize_path == '/payslip' %}active subdrop{% else %}{% endif %}"><i class="ti ti-page-break fs-16 me-2"></i><span>Pages</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li><a href="profile" class="{% if request.path|normalize_path == '/profile' %}active{% endif %}"><span>Profile</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/signin' or request.path|normalize_path == '/signin-2' or request.path|normalize_path == '/signin-3' or request.path|normalize_path == '/register' or request.path|normalize_path == '/register-2' or request.path|normalize_path == '/register-3' or request.path|normalize_path == '/forgot-password' or request.path|normalize_path == '/forgot-password-2' or request.path|normalize_path == '/forgot-password-3' or request.path|normalize_path == '/reset-password' or request.path|normalize_path == '/reset-password-2' or request.path|normalize_path == '/reset-password-3' or request.path|normalize_path == '/email-verification' or request.path|normalize_path == '/email-verification-2' or request.path|normalize_path == '/email-verification-3' or request.path|normalize_path == '/two-step-verification' or request.path|normalize_path == '/two-step-verification-2' or request.path|normalize_path == '/two-step-verification-3' or request.path|normalize_path == '/lock-screen' %}active subdrop{% else %}{% endif %}"><span>Authentication</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/signin' or request.path|normalize_path == '/signin-2' or request.path|normalize_path == '/signin-3' %}active subdrop{% else %}{% endif %}">Login<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="signin" class="{% if request.path|normalize_path == '/signin' %}active{% endif %}">Cover</a></li>
+											<li><a href="signin-2" class="{% if request.path|normalize_path == '/signin-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="signin-3" class="{% if request.path|normalize_path == '/signin-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/register' or request.path|normalize_path == '/register-2' or request.path|normalize_path == '/register-3' %}active subdrop{% else %}{% endif %}">Register<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="register" class="{% if request.path|normalize_path == '/register' %}active{% endif %}">Cover</a></li>
+											<li><a href="register-2" class="{% if request.path|normalize_path == '/register-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="register-3" class="{% if request.path|normalize_path == '/register-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/forgot-password' or request.path|normalize_path == '/forgot-password-2' or request.path|normalize_path == '/forgot-password-3' %}active subdrop{% else %}{% endif %}">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="forgot-password" class="{% if request.path|normalize_path == '/forgot-password' %}active{% endif %}">Cover</a></li>
+											<li><a href="forgot-password-2" class="{% if request.path|normalize_path == '/forgot-password-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="forgot-password-3" class="{% if request.path|normalize_path == '/forgot-password-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/reset-password' or request.path|normalize_path == '/reset-password-2' or request.path|normalize_path == '/reset-password-3' %}active subdrop{% else %}{% endif %}">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="reset-password" class="{% if request.path|normalize_path == '/reset-password' %}active{% endif %}">Cover</a></li>
+											<li><a href="reset-password-2" class="{% if request.path|normalize_path == '/reset-password-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="reset-password-3" class="{% if request.path|normalize_path == '/reset-password-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/email-verification' or request.path|normalize_path == '/email-verification-2' or request.path|normalize_path == '/email-verification-3' %}active subdrop{% else %}{% endif %}">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="email-verification" class="{% if request.path|normalize_path == '/email-verification' %}active{% endif %}">Cover</a></li>
+											<li><a href="email-verification-2" class="{% if request.path|normalize_path == '/email-verification-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="email-verification-3" class="{% if request.path|normalize_path == '/email-verification-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/two-step-verification' or request.path|normalize_path == '/two-step-verification-2' or request.path|normalize_path == '/two-step-verification-3' %}active subdrop{% else %}{% endif %}">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="two-step-verification" class="{% if request.path|normalize_path == '/two-step-verification' %}active{% endif %}">Cover</a></li>
+											<li><a href="two-step-verification-2" class="{% if request.path|normalize_path == '/two-step-verification-2' %}active{% endif %}">Illustration</a></li>
+											<li><a href="two-step-verification-3" class="{% if request.path|normalize_path == '/two-step-verification-3' %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li><a href="lock-screen" class="{% if request.path|normalize_path == '/lock-screen' %}active{% endif %}">Lock Screen</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/error-404' or request.path|normalize_path == '/error-500' %}active subdrop{% else %}{% endif %}"><span>Error</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="error-404" class="{% if request.path|normalize_path == '/error-404' %}active{% endif %}">404 Error </a></li>
+									<li><a href="error-500" class="{% if request.path|normalize_path == '/error-500' %}active{% endif %}">500 Error </a></li>
+								</ul>
+							</li>
+							<li><a href="blank-page" class="{% if request.path|normalize_path == '/blank-page' %}active{% endif %}"><span>Blank Page</span> </a></li>
+							<li><a href="pricing" class="{% if request.path|normalize_path == '/pricing' %}active{% endif %}"><span>Pricing</span> </a></li>
+							<li><a href="coming-soon" class="{% if request.path|normalize_path == '/coming-soon' %}active{% endif %}"><span>Coming Soon</span> </a></li>
+							<li><a href="under-maintenance" class="{% if request.path|normalize_path == '/under-maintenance' %}active{% endif %}"><span>Under Maintenance</span> </a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/pages' or request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/blog-categories' or request.path|normalize_path == '/blog-comments' or request.path|normalize_path == '/countries' or request.path|normalize_path == '/states' or request.path|normalize_path == '/cities' or request.path|normalize_path == '/testimonials' or request.path|normalize_path == '/faq' %}active subdrop{% else %}{% endif %}"><span>Content</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/pages' %}active subdrop{% else %}{% endif %}"><span>Pages</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pages" class="{% if request.path|normalize_path == '/pages' %}active{% endif %}">Pages</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/blog-categories' or request.path|normalize_path == '/blog-comments' %}active subdrop{% else %}{% endif %}"><span>Blog</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="all-blog" class="{% if request.path|normalize_path == '/all-blog' %}active{% endif %}">All Blog</a></li>
+											<li><a href="blog-tag" class="{% if request.path|normalize_path == '/blog-tag' %}active{% endif %}">Blog Tags</a></li>
+											<li><a href="blog-categories" class="{% if request.path|normalize_path == '/blog-categories' %}active{% endif %}">Categories</a></li>
+											<li><a href="blog-comments" class="{% if request.path|normalize_path == '/blog-comments' %}active{% endif %}">Blog Comments</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/countries' or request.path|normalize_path == '/states' or request.path|normalize_path == '/cities' %}active subdrop{% else %}{% endif %}"><span>Location</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="countries" class="{% if request.path|normalize_path == '/countries' %}active{% endif %}">Countries</a></li>
+											<li><a href="states" class="{% if request.path|normalize_path == '/states' %}active{% endif %}">States</a></li>
+											<li><a href="cities" class="{% if request.path|normalize_path == '/cities' %}active{% endif %}">Cities</a></li>
+										</ul>
+									</li>
+									<li><a href="testimonials" class="{% if request.path|normalize_path == '/testimonials' %}active{% endif %}"><span>Testimonials</span></a></li>
+									<li><a href="faq" class="{% if request.path|normalize_path == '/faq' %}active{% endif %}"><span>FAQ</span></a></li>
+
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/employees-grid' or request.path|normalize_path == '/employee-details' or request.path|normalize_path == '/edit-employee' or request.path|normalize_path == '/add-employee' or request.path|normalize_path == '/employees-list' or request.path|normalize_path == '/department-grid' or request.path|normalize_path == '/department-list' or request.path|normalize_path == '/designation' or request.path|normalize_path == '/shift' %}active subdrop{% else %}{% endif %}"><span>Employees</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="employees-grid" class="{% if request.path|normalize_path == '/employees-grid' or request.path|normalize_path == '/employee-details' or request.path|normalize_path == '/edit-employee' or request.path|normalize_path == '/add-employee' or request.path|normalize_path == '/employees-list' %}active{% endif %}"><span>Employees</span></a></li>
+									<li><a href="department-grid" class="{% if request.path|normalize_path == '/department-grid' or request.path|normalize_path == '/department-list' %}active{% endif %}"><span>Departments</span></a></li>
+									<li><a href="designation" class="{% if request.path|normalize_path == '/designation' %}active{% endif %}"><span>Designation</span></a></li>
+									<li><a href="shift" class="{% if request.path|normalize_path == '/shift' %}active{% endif %}"><span>Shifts</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/attendance-employee' or request.path|normalize_path == '/attendance-admin' %}active subdrop{% else %}{% endif %}"><span>Attendence</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="attendance-employee" class="{% if request.path|normalize_path == '/attendance-employee' %}active{% endif %}">Employee Attendence</a></li>
+									<li><a href="attendance-admin" class="{% if request.path|normalize_path == '/attendance-admin' %}active{% endif %}">Admin Attendence</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/leaves-admin' or request.path|normalize_path == '/leaves-employee' or request.path|normalize_path == '/leave-types' or request.path|normalize_path == '/holidays' %}active subdrop{% else %}{% endif %}"><span>Leaves &amp; Holidays</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="leaves-admin" class="{% if request.path|normalize_path == '/leaves-admin' %}active{% endif %}">Admin Leaves</a></li>
+									<li><a href="leaves-employee" class="{% if request.path|normalize_path == '/leaves-employee' %}active{% endif %}">Employee Leaves</a></li>
+									<li><a href="leave-types" class="{% if request.path|normalize_path == '/leave-types' %}active{% endif %}">Leave Types</a></li>
+									<li><a href="holidays" class="{% if request.path|normalize_path == '/holidays' %}active{% endif %}"><span>Holidays</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/employee-salary' or request.path|normalize_path == '/payslip' %}active subdrop{% else %}{% endif %}"><span>Payroll</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="employee-salary" class="{% if request.path|normalize_path == '/employee-salary' %}active{% endif %}">Employee Salary</a></li>
+									<li><a href="payslip" class="{% if request.path|normalize_path == '/payslip' %}active{% endif %}">Payslip</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/sales-report' or request.path|normalize_path == '/best-seller' or request.path|normalize_path == '/purchase-report' or request.path|normalize_path == '/inventory-report' or request.path|normalize_path == '/stock-history' or request.path|normalize_path == '/sold-stock' or request.path|normalize_path == '/invoice-report' or request.path|normalize_path == '/supplier-report' or request.path|normalize_path == '/supplier-due-report' or request.path|normalize_path == '/customer-report' or request.path|normalize_path == '/customer-due-report' or request.path|normalize_path == '/product-report' or request.path|normalize_path == '/product-expiry-report' or request.path|normalize_path == '/product-quantity-alert' or request.path|normalize_path == '/expense-report' or request.path|normalize_path == '/income-report' or request.path|normalize_path == '/tax-reports' or request.path|normalize_path == '/sales-tax' or request.path|normalize_path == '/profit-and-loss' or request.path|normalize_path == '/annual-report' %}active subdrop{% else %}{% endif %}"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Reports</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/sales-report' or request.path|normalize_path == '/best-seller' %}active subdrop{% else %}{% endif %}"><span>Sales Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="sales-report" class="{% if request.path|normalize_path == '/sales-report' %}active{% endif %}">Sales Report</a></li>
+									<li><a href="best-seller" class="{% if request.path|normalize_path == '/best-seller' %}active{% endif %}">Best Seller</a></li>
+								</ul>
+							</li>
+							<li><a href="purchase-report" class="{% if request.path|normalize_path == '/purchase-report' %}active{% endif %}"><span>Purchase report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/inventory-report' or request.path|normalize_path == '/stock-history' or request.path|normalize_path == '/sold-stock' %}active subdrop{% else %}{% endif %}"><span>Inventory Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="inventory-report" class="{% if request.path|normalize_path == '/inventory-report' %}active{% endif %}">Inventory Report</a></li>
+									<li><a href="stock-history" class="{% if request.path|normalize_path == '/stock-history' %}active{% endif %}">Stock History</a></li>
+									<li><a href="sold-stock" class="{% if request.path|normalize_path == '/sold-stock' %}active{% endif %}">Sold Stock</a></li>
+								</ul>
+							</li>
+							<li><a href="invoice-report" class="{% if request.path|normalize_path == '/invoice-report' %}active{% endif %}"><span>Invoice Report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/supplier-report' or request.path|normalize_path == '/supplier-due-report' %}active subdrop{% else %}{% endif %}"><span>Supplier Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="supplier-report" class="{% if request.path|normalize_path == '/supplier-report' %}active{% endif %}">Supplier Report</a></li>
+									<li><a href="supplier-due-report" class="{% if request.path|normalize_path == '/supplier-due-report' %}active{% endif %}">Supplier Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/customer-report' or request.path|normalize_path == '/customer-due-report' %}active subdrop{% else %}{% endif %}"><span>Customer Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="customer-report" class="{% if request.path|normalize_path == '/customer-report' %}active{% endif %}">Customer Report</a></li>
+									<li><a href="customer-due-report" class="{% if request.path|normalize_path == '/customer-due-report' %}active{% endif %}">Customer Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/product-report' or request.path|normalize_path == '/product-expiry-report' or request.path|normalize_path == '/product-quantity-alert' %}active subdrop{% else %}{% endif %}"><span>Product Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="product-report" class="{% if request.path|normalize_path == '/product-report' %}active{% endif %}">Product Report</a></li>
+									<li><a href="product-expiry-report" class="{% if request.path|normalize_path == '/product-expiry-report' %}active{% endif %}">Product Expiry Report</a></li>
+									<li><a href="product-quantity-alert" class="{% if request.path|normalize_path == '/product-quantity-alert' %}active{% endif %}">Product Quantity Alert</a></li>
+								</ul>
+							</li>
+							<li><a href="expense-report" class="{% if request.path|normalize_path == '/expense-report' %}active{% endif %}"><span>Expense Report</span></a></li>
+							<li><a href="income-report" class="{% if request.path|normalize_path == '/income-report' %}active{% endif %}"><span>Income Report</span></a></li>
+							<li><a href="tax-reports" class="{% if request.path|normalize_path == '/tax-reports' or request.path|normalize_path == '/sales-tax' %}active{% endif %}"><span>Tax Report</span></a></li>
+							<li><a href="profit-and-loss" class="{% if request.path|normalize_path == '/profit-and-loss' %}active{% endif %}"><span>Profit & Loss</span></a></li>
+							<li><a href="annual-report" class="{% if request.path|normalize_path == '/annual-report' %}active{% endif %}"><span>Annual Report</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/general-settings' or request.path|normalize_path == '/security-settings' or request.path|normalize_path == '/notification' or request.path|normalize_path == '/connected-apps' or request.path|normalize_path == '/system-settings' or request.path|normalize_path == '/company-settings' or request.path|normalize_path == '/localization-settings' or request.path|normalize_path == '/prefixes' or request.path|normalize_path == '/preference' or request.path|normalize_path == '/appearance' or request.path|normalize_path == '/social-authentication' or request.path|normalize_path == '/language-settings' or request.path|normalize_path == '/language-settings-web' or request.path|normalize_path == '/invoice-settings' or request.path|normalize_path == '/invoice-template' or request.path|normalize_path == '/printer-settings' or request.path|normalize_path == '/pos-settings' or request.path|normalize_path == '/custom-fields' or request.path|normalize_path == '/email-settings' or request.path|normalize_path == '/email-template' or request.path|normalize_path == '/sms-settings' or request.path|normalize_path == '/sms-template' or request.path|normalize_path == '/otp-settings' or request.path|normalize_path == '/gdpr-settings' or request.path|normalize_path == '/payment-gateway-settings' or request.path|normalize_path == '/bank-settings-grid' or request.path|normalize_path == '/tax-rates' or request.path|normalize_path == '/currency-settings' or request.path|normalize_path == '/storage-settings' or request.path|normalize_path == '/ban-ip-address' %}active subdrop{% else %}{% endif %}"><i class="ti ti-settings fs-16 me-2"></i><span>Settings</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/general-settings' or request.path|normalize_path == '/security-settings' or request.path|normalize_path == '/notification' or request.path|normalize_path == '/connected-apps' %}active subdrop{% else %}{% endif %}"><span>General Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="general-settings" class="{% if request.path|normalize_path == '/general-settings' %}active{% endif %}">Profile</a></li>
+									<li><a href="security-settings" class="{% if request.path|normalize_path == '/security-settings' %}active{% endif %}">Security</a></li>
+									<li><a href="notification" class="{% if request.path|normalize_path == '/notification' %}active{% endif %}">Notifications</a></li>
+									<li><a href="connected-apps" class="{% if request.path|normalize_path == '/connected-apps' %}active{% endif %}">Connected Apps</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/system-settings' or request.path|normalize_path == '/company-settings' or request.path|normalize_path == '/localization-settings' or request.path|normalize_path == '/prefixes' or request.path|normalize_path == '/preference' or request.path|normalize_path == '/appearance' or request.path|normalize_path == '/social-authentication' or request.path|normalize_path == '/language-settings' or request.path|normalize_path == '/language-settings-web' %}active subdrop{% else %}{% endif %}"><span>Website Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="system-settings" class="{% if request.path|normalize_path == '/system-settings' %}active{% endif %}">System Settings</a></li>
+									<li><a href="company-settings" class="{% if request.path|normalize_path == '/company-settings' %}active{% endif %}">Company Settings </a></li>
+									<li><a href="localization-settings" class="{% if request.path|normalize_path == '/localization-settings' %}active{% endif %}">Localization</a></li>
+									<li><a href="prefixes" class="{% if request.path|normalize_path == '/prefixes' %}active{% endif %}">Prefixes</a></li>
+									<li><a href="preference" class="{% if request.path|normalize_path == '/preference' %}active{% endif %}">Preference</a></li>
+									<li><a href="appearance" class="{% if request.path|normalize_path == '/appearance' %}active{% endif %}">Appearance</a></li>
+									<li><a href="social-authentication" class="{% if request.path|normalize_path == '/social-authentication' %}active{% endif %}">Social Authentication</a></li>
+									<li><a href="language-settings" class="{% if request.path|normalize_path == '/language-settings' or request.path|normalize_path == '/language-settings-web' %}active{% endif %}">Language</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/invoice-settings' or request.path|normalize_path == '/invoice-template' or request.path|normalize_path == '/printer-settings' or request.path|normalize_path == '/pos-settings' or request.path|normalize_path == '/custom-fields' %}active subdrop{% else %}{% endif %}"><span>App Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/invoice-settings' or request.path|normalize_path == '/invoice-template' %}active subdrop{% else %}{% endif %}">Invoice<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="invoice-settings" class="{% if request.path|normalize_path == '/invoice-settings' %}active{% endif %}">Invoice Settings</a></li>
+											<li><a href="invoice-template" class="{% if request.path|normalize_path == '/invoice-template' %}active{% endif %}">Invoice Template</a></li>
+										</ul>
+									</li>
+									<li><a href="printer-settings" class="{% if request.path|normalize_path == '/printer-settings' %}active{% endif %}">Printer</a></li>
+									<li><a href="pos-settings" class="{% if request.path|normalize_path == '/pos-settings' %}active{% endif %}">POS</a></li>
+									<li><a href="custom-fields" class="{% if request.path|normalize_path == '/custom-fields' %}active{% endif %}">Custom Fields</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/email-settings' or request.path|normalize_path == '/email-template' or request.path|normalize_path == '/sms-settings' or request.path|normalize_path == '/sms-template' or request.path|normalize_path == '/otp-settings' or request.path|normalize_path == '/gdpr-settings' %}active subdrop{% else %}{% endif %}"><span>System Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/email-settings' or request.path|normalize_path == '/email-template' %}active subdrop{% else %}{% endif %}">Email<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="email-settings" class="{% if request.path|normalize_path == '/email-settings' %}active{% endif %}">Email Settings</a></li>
+											<li><a href="email-template" class="{% if request.path|normalize_path == '/email-template' %}active{% endif %}">Email Template</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if request.path|normalize_path == '/sms-settings' or request.path|normalize_path == '/sms-template' %}active subdrop{% else %}{% endif %}">SMS<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="sms-settings" class="{% if request.path|normalize_path == '/sms-settings' %}active{% endif %}">SMS Settings</a></li>
+											<li><a href="sms-template" class="{% if request.path|normalize_path == '/sms-template' %}active{% endif %}">SMS Template</a></li>
+										</ul>
+									</li>
+									<li><a href="otp-settings" class="{% if request.path|normalize_path == '/otp-settings' %}active{% endif %}">OTP</a></li>
+									<li><a href="gdpr-settings" class="{% if request.path|normalize_path == '/gdpr-settings' %}active{% endif %}">GDPR Cookies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/payment-gateway-settings' or request.path|normalize_path == '/bank-settings-grid' or request.path|normalize_path == '/tax-rates' or request.path|normalize_path == '/currency-settings' %}active subdrop{% else %}{% endif %}"><span>Financial Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="payment-gateway-settings" class="{% if request.path|normalize_path == '/payment-gateway-settings' %}active{% endif %}">Payment Gateway</a></li>
+									<li><a href="bank-settings-grid" class="{% if request.path|normalize_path == '/bank-settings-grid' %}active{% endif %}">Bank Accounts</a></li>
+									<li><a href="tax-rates" class="{% if request.path|normalize_path == '/tax-rates' %}active{% endif %}">Tax Rates</a></li>
+									<li><a href="currency-settings" class="{% if request.path|normalize_path == '/currency-settings' %}active{% endif %}">Currencies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/storage-settings' or request.path|normalize_path == '/ban-ip-address' %}active subdrop{% else %}{% endif %}"><span>Other Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="storage-settings" class="{% if request.path|normalize_path == '/storage-settings' %}active{% endif %}">Storage</a></li>
+									<li><a href="ban-ip-address" class="{% if request.path|normalize_path == '/ban-ip-address' %}active{% endif %}">Ban IP Address</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="signin" class="{% if request.path|normalize_path == '/signin' %}active{% endif %}"><span>Logout</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/customers' or request.path|normalize_path == '/billers' or request.path|normalize_path == '/suppliers' or request.path|normalize_path == '/store-list' or request.path|normalize_path == '/warehouse' or request.path|normalize_path == '/users' or request.path|normalize_path == '/roles-permissions' or request.path|normalize_path == '/permissions' or request.path|normalize_path == '/delete-account' %}active subdrop{% else %}{% endif %}"><i class="ti ti-circle-plus fs-16 me-2"></i><span>More</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/customers' or request.path|normalize_path == '/billers' or request.path|normalize_path == '/suppliers' or request.path|normalize_path == '/store-list' or request.path|normalize_path == '/warehouse' %}active subdrop{% else %}{% endif %}"><span>People</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="customers" class="{% if request.path|normalize_path == '/customers' %}active{% endif %}"><span>Customers</span></a></li>
+									<li><a href="billers" class="{% if request.path|normalize_path == '/billers' %}active{% endif %}"><span>Billers</span></a></li>
+									<li><a href="suppliers" class="{% if request.path|normalize_path == '/suppliers' %}active{% endif %}"><span>Suppliers</span></a></li>
+									<li><a href="store-list" class="{% if request.path|normalize_path == '/store-list' %}active{% endif %}"><span>Stores</span></a></li>
+									<li><a href="warehouse" class="{% if request.path|normalize_path == '/warehouse' %}active{% endif %}"><span>Warehouses</span></a>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if request.path|normalize_path == '/users' or request.path|normalize_path == '/roles-permissions' or request.path|normalize_path == '/permissions' or request.path|normalize_path == '/delete-account' %}active subdrop{% else %}{% endif %}"><span>User Management</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="users" class="{% if request.path|normalize_path == '/users' %}active{% endif %}"><span>Users</span></a></li>
+									<li><a href="roles-permissions" class="{% if request.path|normalize_path == '/roles-permissions' or request.path|normalize_path == '/permissions' %}active{% endif %}"><span>Roles & Permissions</span></a></li>
+									<li><a href="delete-account" class="{% if request.path|normalize_path == '/delete-account' %}active{% endif %}"><span>Delete Account Request</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><span>Help</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="https://dreamspos.dreamstechnologies.com/documentation/django.html"><span>Documentation</span></a></li>
+									<li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html"><span>Changelog v.2.2.4</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 1.1</a></li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 2.1</a></li>
+													<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+														<ul>
+															<li><a href="javascript:void(0);">Level 3.1</a></li>
+															<li><a href="javascript:void(0);">Level 3.2</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Horizontal Sidebar -->

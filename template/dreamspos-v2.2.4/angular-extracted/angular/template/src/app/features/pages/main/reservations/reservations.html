@@ -1,0 +1,1041 @@
+<!-- Start Content -->
+<div class="content">
+  <!-- Page Header -->
+  <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+    <div class="flex-grow-1">
+      <h3 class="mb-0">
+        Reservations
+        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"
+          ><i class="icon-refresh-ccw"></i
+        ></a>
+      </h3>
+    </div>
+    <div class="gap-3 d-flex align-items-center flex-wrap">
+      <div class="page-search">
+        <input type="search" class="form-control form-control-sm" placeholder="Search" />
+        <i class="icon-search fs-14"></i>
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="btn btn-primary d-inline-flex align-items-center"
+        data-bs-toggle="modal"
+        data-bs-target="#add_reservation"
+        ><i class="icon-circle-plus me-1"></i>Add New</a
+      >
+    </div>
+  </div>
+  <!-- End Page Header -->
+
+  <!-- start row -->
+  <div class="row">
+    <!-- Item 1 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 mb-3 flex-wrap">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Dec 15 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">John Doe</h6>
+              <div class="d-flex align-items-center gap-2 flex-wrap">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:45
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 5
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 4
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">9 Nov 2025, 2:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 2 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center flex-wrap gap-2 mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 08 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Christopher Adams</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:10
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 5
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 7
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">16 Nov 2025, 2:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-danger">Cancelled</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 3 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 07 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Daniel Mitchell</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:31
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 9
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 3
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">02 Aug 2025, 2:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-danger">Cancelled</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 4 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 06 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Emily Parker</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:40
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 2
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 3
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">02 Aug 2025, 2:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 5 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 05 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Jennifer Brooks</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:45
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 2
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 1
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">11 Nov 2025, 4:00PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 6 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 04 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Matthew Collins</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:43
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 4
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 3
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">12 Nov 2025, 4:00PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 7 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 03 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Jacob Morgan</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:15
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 5
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 4
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">15 Dec 2025, 3:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 8 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 02 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Olivia Reed</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:45
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 12
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 8
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">22 Jan 2026, 2:00PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 9 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Nov 01 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Ethan Sullivan</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:49
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 7
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 5
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">28 Feb 2026, 4:15PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 10 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Oct 28 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">John Morgan</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:00
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 5
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 4
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">15 Dec 2025, 3:30PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-success">Booked</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 11 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Oct 27 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Steave Rogers</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:30
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 7
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 7
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">22 Jan 2026, 2:00PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-purple">Paid</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Item 12 -->
+    <div class="col-xxl-4 col-xl-6 col-sm-6">
+      <div class="card">
+        <div class="card-body">
+          <div class="d-flex align-items-center gap-2 flex-wrap mb-3">
+            <div class="bg-dark reservation-date rounded p-2 text-center flex-shrink-0">
+              <p class="text-white fw-semibold mb-0 position-relative">
+                Oct 26 <span class="fs-13 fw-normal d-block mt-1">2025</span>
+              </p>
+            </div>
+            <div>
+              <h6 class="mb-2 fw-semibold">Ethan Royond</h6>
+              <div class="d-flex align-items-center flex-wrap gap-2">
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-clock me-1 text-dark me-1"></i> 10:30
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-sofa me-1 text-dark me-1"></i> Table : 3
+                </p>
+                <span class="even-line"></span>
+                <p class="d-flex align-items-center mb-0">
+                  <i class="icon-users-round me-1 text-dark me-1"></i> Guests : 3
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="mb-3 pb-3 border-bottom-dashed">
+            <p class="mb-3 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Created on <span class="text-dark">28 Feb 2026, 4:15PM</span>
+            </p>
+            <p class="mb-0 d-flex align-items-center justify-content-between gap-2 flex-wrap">
+              Status <span class="badge badge-soft-purple">Paid</span>
+            </p>
+          </div>
+          <div class="d-flex align-items-center justify-content-between">
+            <a href="javascript:void(0);" class="btn btn-outline-light">View Note</a>
+            <div class="d-flex align-items-center gap-2">
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-dark"
+                data-bs-toggle="modal"
+                data-bs-target="#edit_reservation"
+                ><i class="icon-pencil-line"></i
+              ></a>
+              <a
+                href="javascript:void(0);"
+                class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                data-bs-toggle="modal"
+                data-bs-target="#delete_modal"
+                ><i class="icon-trash-2"></i
+              ></a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- end row -->
+
+  <!-- Pagination start -->
+  <nav class="pagination-nav">
+    <ul class="pagination justify-content-center">
+      <li class="page-item">
+        <a
+          class="page-link d-flex align-items-center"
+          href="javascript:void(0);"
+          aria-label="Previous"
+        >
+          <span aria-hidden="true" class="me-1"><i class="icon-chevron-left"></i></span>
+          Pre
+        </a>
+      </li>
+      <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+      <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+      <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+      <li class="page-item">
+        <a
+          class="page-link d-flex align-items-center"
+          href="javascript:void(0);"
+          aria-label="Previous"
+        >
+          Next
+          <span aria-hidden="true" class="ms-1"><i class="icon-chevron-right"></i></span>
+        </a>
+      </li>
+    </ul>
+  </nav>
+  <!-- Pagination end -->
+</div>
+<!-- End Content -->
+
+<!-- Add reservation modal -->
+<div class="modal fade" id="add_reservation">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Add Reservation</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="row g-4">
+            <div class="col-lg-12">
+              <div>
+                <label class="form-label">Customer <span class="text-danger"> *</span></label>
+                <mat-select class="select custom-mat-select" placeholder="Select">
+                  <mat-option value="1">Select</mat-option>
+                  <mat-option value="1">Adrian Hawk ( +1 66898 98985 )</mat-option>
+                  <mat-option value="1">Adam Clark - +1 45474 21456</mat-option>
+                  <mat-option value="1">Create “Ad”</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Date & Time <span class="text-danger ms-1">*</span></label>
+              <div class="input-group w-auto input-group-flat">
+                <p-datepicker
+                  class="form-control"
+                  [(ngModel)]="dates[2]"
+                  placeholder="dd/mm/yyyy"
+                  dateFormat="dd/mm/yy"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+                <span class="input-group-text">
+                  <i class="icon-calendar-fold"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Table <span class="text-danger"> *</span></label>
+              <mat-select class="select custom-mat-select" placeholder="Select">
+                <mat-option value="1">Select</mat-option>
+                <mat-option value="1">Ethan Sullivan</mat-option>
+                <mat-option value="1">Matthew Collins</mat-option>
+                <mat-option value="1">Olivia Reed</mat-option>
+              </mat-select>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">No of Guests <span class="text-danger"> *</span></label>
+              <input type="number" class="form-control" />
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Status <span class="text-danger"> *</span></label>
+              <mat-select class="select custom-mat-select" placeholder="Select">
+                <mat-option value="1">Select</mat-option>
+                <mat-option value="1">Booked</mat-option>
+                <mat-option value="1">Cancelled</mat-option>
+                <mat-option value="1">Paid</mat-option>
+              </mat-select>
+            </div>
+
+            <div class="col-lg-12">
+              <label class="form-label">Notes<span class="text-danger"> *</span></label>
+              <textarea rows="4" class="form-control"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer d-flex align-items-center justify-content-between flex-nowrap gap-2">
+        <button type="button" class="btn btn-light w-100 m-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary w-100 m-0">Save Reservation</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Edit reservation modal -->
+<div class="modal fade" id="edit_reservation">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Edit Reservation</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="row g-4">
+            <div class="col-lg-12">
+              <div>
+                <label class="form-label">Customer <span class="text-danger"> *</span></label>
+                <mat-select
+                  class="select custom-mat-select"
+                  placeholder="Adam Clark - +1 45474 21456"
+                >
+                  <mat-option value="1">Select</mat-option>
+                  <mat-option value="1">Adrian Hawk ( +1 66898 98985 )</mat-option>
+                  <mat-option value="1">Adam Clark - +1 45474 21456</mat-option>
+                  <mat-option value="1">Create “Ad”</mat-option>
+                </mat-select>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Date & Time <span class="text-danger ms-1">*</span></label>
+              <div class="input-group w-auto input-group-flat">
+                <p-datepicker
+                  class="form-control"
+                  [(ngModel)]="dates[3]"
+                  placeholder="10/05/2025"
+                  dateFormat="dd/mm/yy"
+                  [ngModelOptions]="{ standalone: true }"
+                />
+                <span class="input-group-text">
+                  <i class="icon-calendar-fold"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Table <span class="text-danger"> *</span></label>
+              <mat-select class="select custom-mat-select" placeholder="Matthew Collins">
+                <mat-option value="1">Select</mat-option>
+                <mat-option value="1">Ethan Sullivan</mat-option>
+                <mat-option value="1">Matthew Collins</mat-option>
+                <mat-option value="1">Olivia Reed</mat-option>
+              </mat-select>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">No of Guests <span class="text-danger"> *</span></label>
+              <input type="number" class="form-control" value="10" />
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Status <span class="text-danger"> *</span></label>
+              <mat-select class="select custom-mat-select" placeholder="Booked">
+                <mat-option value="1">Select</mat-option>
+                <mat-option value="1">Booked</mat-option>
+                <mat-option value="1">Cancelled</mat-option>
+                <mat-option value="1">Paid</mat-option>
+              </mat-select>
+            </div>
+
+            <div class="col-lg-12">
+              <label class="form-label">Notes<span class="text-danger"> *</span></label>
+              <textarea rows="4" class="form-control"></textarea>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer d-flex align-items-center justify-content-between flex-nowrap gap-2">
+        <button type="button" class="btn btn-light w-100 m-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary w-100 m-0">Save Reservation</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Add Customer modal -->
+<div class="modal fade" id="add_customer">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Add Customer</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <form action="#">
+          <div class="row g-4">
+            <div class="col-lg-12">
+              <div>
+                <label class="form-label">Customer Name <span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div>
+                <label class="form-label">Phone <span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-lg-12">
+              <div>
+                <label class="form-label">Email <span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Date Of Birth<span class="text-danger ms-1">*</span></label>
+              <div class="input-group w-auto input-group-flat">
+                <input
+                  type="text"
+                  class="form-control"
+                  data-provider="flatpickr"
+                  data-date-format="d/m/Y"
+                  placeholder="dd/mm/yyyy"
+                />
+                <span class="input-group-text">
+                  <i class="icon-calendar-fold"></i>
+                </span>
+              </div>
+            </div>
+
+            <div class="col-lg-6">
+              <label class="form-label">Gneder<span class="text-danger"> *</span></label>
+              <mat-select class="select custom-mat-select" placeholder="Select">
+                <mat-option value="1">Select</mat-option>
+                <mat-option value="1">Male</mat-option>
+                <mat-option value="1">Female</mat-option>
+                <mat-option value="1">Otherwise</mat-option>
+              </mat-select>
+            </div>
+          </div>
+        </form>
+      </div>
+
+      <div class="modal-footer d-flex align-items-center justify-content-between flex-nowrap gap-2">
+        <button type="button" class="btn btn-light w-100 m-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary w-100 m-0">Save Customer</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Start Modal  -->
+<div class="modal fade" id="delete_modal">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <div class="mb-4">
+          <span class="avatar avatar-xxl rounded-circle bg-danger-subtle">
+            <img
+              src="assets/img/icons/trash-icon.svg"
+              alt="trash"
+              class="img-fluid w-auto h-auto"
+            />
+          </span>
+        </div>
+        <h4 class="mb-1">Delete Confirmation</h4>
+        <p class="mb-4">Are you sure you want to delete?</p>
+        <div class="d-flex justify-content-between gap-2">
+          <a href="javascript:void(0);" class="btn btn-light w-100" data-bs-dismiss="modal"
+            >Close</a
+          >
+          <a href="javascript:void(0);" class="btn btn-danger w-100">Delete</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal  -->

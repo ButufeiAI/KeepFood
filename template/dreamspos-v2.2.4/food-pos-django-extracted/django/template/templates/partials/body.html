@@ -1,0 +1,9 @@
+{% load sidebar_tags %}
+
+{% if '/login' in request.path or '/register' in request.path or '/reset-password' in request.path or '/email-verification' in request.path or '/forgot-password' in request.path or '/otp' in request.path %}
+    <body class="bg-white">
+{% elif '/pos' in request.path %}
+    <body class="pos-page">
+{% else %}
+    <body>
+{% endif %}

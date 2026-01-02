@@ -22,6 +22,7 @@ export function MenuCard() {
   const categoryRefs = useRef<{ [key: string]: HTMLDivElement | null }>({});
   const { addItem, setRestaurant: setCartRestaurant, getItemCount } = useCartStore();
   const { identifier: clientIdentifier } = useClientStore();
+  const toast = useToast();
 
   useEffect(() => {
     if (restaurantId) {

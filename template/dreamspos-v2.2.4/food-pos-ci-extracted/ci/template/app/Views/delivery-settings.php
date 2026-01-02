@@ -1,0 +1,96 @@
+<?= $this->extend('layouts/mainlayout') ?>
+
+<?= $this->section('content') ?>
+
+    <!-- ========================
+        Start Page Content
+    ========================= -->
+
+    <div class="page-wrapper">
+
+        <!-- Start Content -->
+        <div class="content">
+
+            <!-- Page Header -->
+            <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">Delivery <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <div>
+                <!-- card start -->
+                <div class="card mb-0">
+                    <div class="card-body">
+                        <form action="<?php echo base_url('delivery-settings'); ?>">
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3 d-flex align-items-center justify-content-between ps-0">
+                                        <label class="form-check-label fs-16 fw-bold text-dark" for="switchCheckChecked">Free Delivery</label>
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked" checked>
+                                    </div>
+                                    <div class="mb-0">
+                                        <label class="form-label">Free Delivery Over ($)<span class="text-danger ms-1">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div><!-- card-body -->
+                            </div><!-- card end -->
+
+                            <div class="card">
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3 d-flex align-items-center justify-content-between ps-0">
+                                        <label class="form-check-label fs-16 fw-bold text-dark" for="switchCheckChecked1">Fixed Delivery Charges</label>
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked1" checked>
+                                    </div>
+                                    <div class="mb-0">
+                                        <label class="form-label">Fixed Delivery Amount ($)<span class="text-danger ms-1">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div><!-- card-body -->
+                            </div><!-- card end -->
+
+                            <div class="card mb-0">
+                                <div class="card-body">
+                                    <div class="form-check form-switch mb-3 d-flex align-items-center justify-content-between ps-0">
+                                        <label class="form-check-label fs-16 fw-bold text-dark" for="switchCheckChecked2">Kilometer Based Delivery Charges</label>
+                                        <input class="form-check-input" type="checkbox" role="switch" id="switchCheckChecked2" checked>
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Per KM Delivery Charge ($)<span class="text-danger ms-1">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-3">
+                                        <label class="form-label">Minimum Delivery Over ($)<span class="text-danger ms-1">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                    <div class="mb-0">
+                                        <label class="form-label">Minimum Distance for Free Delivery (KM)<span class="text-danger ms-1">*</span></label>
+                                        <input type="text" class="form-control">
+                                    </div>
+                                </div><!-- card-body -->
+                            </div><!-- card end -->
+
+                            <div class="d-flex align-items-center justify-content-end flex-wrap row-gap-2 border-top mt-4 pt-4">
+                                <button type="button" class="btn btn-light me-2">Cancel</button>
+                                <button type="submit" class="btn btn-primary">Save Changes</button>
+                            </div>
+
+                        </form>
+                    </div> <!-- end card body -->
+
+                </div>
+                <!-- card start -->
+            </div>
+
+        </div>
+        <!-- End Content -->
+
+    </div>
+
+    <!-- ========================
+        End Page Content
+    ========================= -->
+
+<?= $this->endSection() ?>

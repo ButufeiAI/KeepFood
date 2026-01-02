@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceFormsFormElementsFormSelect />
+</template>

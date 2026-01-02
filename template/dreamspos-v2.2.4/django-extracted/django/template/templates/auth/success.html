@@ -1,0 +1,34 @@
+{% extends 'partials/auth_base.html' %}
+{% load static %}
+
+{% block content %}
+
+    <div class="account-content">
+        <div class="login-wrapper register-wrap bg-img">
+            <div class="login-content authent-content">
+                <div class="login-userset">
+                    <div class="login-userset">
+                        <div class="login-logo logo-normal">
+                            <img src="{% static 'assets/img/logo.svg' %}" alt="img">
+                        </div>
+                    </div>    
+                    <a href="index" class="login-logo logo-white">
+                        <img src="{% static 'assets/img/logo-white.svg' %}" alt="Img">
+                    </a>
+                    <div class="login-userheading text-center">
+                        <img src="{% static 'assets/img/icons/check-icon.svg' %}" alt="Icon">
+                        <h3 class="text-center">Success</h3>
+                        <h4 class="verfy-mail-content text-center">Your Passwrod Reset Successfully!</h4>
+                    </div>
+                    <div class="form-login">
+                        <a class="btn btn-login mt-0" href="signin">Back to Login</a>
+                    </div>
+                    <div class="my-4 d-flex justify-content-center align-items-center copyright-text">
+                        <p>Copyright &copy; 2025 DreamsPOS</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+
+{% endblock %} 

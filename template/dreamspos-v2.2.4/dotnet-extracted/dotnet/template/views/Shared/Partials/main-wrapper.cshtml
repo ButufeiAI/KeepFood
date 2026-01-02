@@ -1,0 +1,17 @@
+@{
+	var path = Context?.Request?.Path.Value ?? string.Empty;
+	var fileName = System.IO.Path.GetFileName(path);
+	var pageNoExt = string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName);
+	var page = string.IsNullOrEmpty(pageNoExt) ? "index" : pageNoExt.ToLowerInvariant();
+
+	var wrapperClass = page switch
+	{
+		"lock-screen" => "main-wrapper login-body",
+		"pos" => "main-wrapper pos-five",
+		"pos-3" => "main-wrapper pos-two",
+		"pos-4" => "main-wrapper pos-three",
+		"pos-5" => "main-wrapper pos-three pos-four",
+		_ => "main-wrapper"
+	};
+}
+<div class="@wrapperClass">

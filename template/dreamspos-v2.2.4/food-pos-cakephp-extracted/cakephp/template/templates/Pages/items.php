@@ -1,0 +1,477 @@
+    <!-- ========================
+        Start Page Content
+    ========================= -->
+
+    <div class="page-wrapper">
+
+        <!-- Start Content -->
+        <div class="content">
+
+            <!-- Page Header -->
+            <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">Items<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+                </div>
+                <div class="gap-2 d-flex align-items-center flex-wrap">
+                    <div class="input-group input-group-flat w-auto">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-text">
+                            <i class="icon-search text-dark"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_item"><i class="icon-circle-plus me-1"></i>Add New</a>
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <!-- Row start -->
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-01.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Salmon Steak</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$80</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-02.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Cheese Burst Pizza</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$66</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-03.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Garlic Butter Shrimp</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$25</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-04.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Chicken Taco</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$38</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-05.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Chicken</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$49</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-06.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Veggie Taco</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$69</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-07.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Chicken Noodle Soup</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$45</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-08.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Corn Pizza</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$96</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-09.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Shrimp Tom Yum</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$25</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-10.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Tomato Basil Soup</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$44</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-11.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Hot Chocolate</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$94</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-12.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Pumpkin Soup</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$78</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-13.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Al Pastor Taco</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$48</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-14.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Caesar Salad</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$69</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-15.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Quinoa Salad</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$110</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="food-items">
+                                <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                                    <?= $this->Html->image('items/food-16.jpg', ['alt' => 'item', 'class' => 'img-fluid mb-3 w-100 rounded']) ?>
+                                </a>
+                                <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                                    <i class="icon-ellipsis-vertical" ></i>
+                                </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                                </ul>
+                            </div>
+                            <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Lemon Mint Juice</a></h6>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <p class="mb-0">$96</p>
+                                <div>
+                                    <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Pagination start -->
+            <nav class="pagination-nav">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                            <span aria-hidden="true" class="me-1"><i class="icon-chevron-left"></i></span>
+                            Pre
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                            Next
+                            <span aria-hidden="true" class="ms-1"><i class="icon-chevron-right"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Pagination end -->
+
+        </div>
+        <!-- End Content -->
+
+    </div>
+
+    <!-- ========================
+        End Page Content
+    ========================= -->

@@ -1,0 +1,929 @@
+<!-- Start Content -->
+<div class="content">
+  <!-- Page Header -->
+  <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+    <div class="flex-grow-1">
+      <h3 class="mb-0">
+        Users
+        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"
+          ><i class="icon-refresh-ccw"></i
+        ></a>
+      </h3>
+    </div>
+    <div class="gap-2 d-flex align-items-center flex-wrap">
+      <div class="dropdown">
+        <a
+          href="javascript:void(0);"
+          class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+          data-bs-toggle="dropdown"
+        >
+          <i class="icon-upload me-2"></i>Export
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-3">
+          <li>
+            <a href="javascript:void(0);" class="dropdown-item rounded">Export as PDF</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="dropdown-item rounded">Export as Excel</a>
+          </li>
+        </ul>
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="btn btn-primary d-inline-flex align-items-center"
+        data-bs-toggle="modal"
+        data-bs-target="#add_users"
+        ><i class="icon-circle-plus me-1"></i>Add New</a
+      >
+    </div>
+  </div>
+  <!-- End Page Header -->
+
+  <!-- card start -->
+  <div class="card mb-0">
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3 justify-content-between mb-4">
+        <app-common-search
+          [totalData]="totalData()"
+          [pageSize]="pageSize()"
+          [tableDataCopy]="tableDataCopy()"
+          [serialNumberArray]="serialNumberArray()"
+          (dataChange)="updateTable($any($event))"
+        ></app-common-search>
+
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <!-- filter -->
+          <a
+            href="javascript:void(0);"
+            class="btn btn-white d-inline-flex align-items-center"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#filter-offcanvas"
+            aria-controls="filter-offcanvas"
+          >
+            <i class="icon-funnel me-2"></i>Filter
+          </a>
+
+          <!-- column -->
+          <div class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-icon btn-white"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              ><i class="icon-columns-3"></i
+            ></a>
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-3">
+              <h5 class="mb-3">Column</h5>
+              <div cdkDropList>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Name
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Role
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Phone Number
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Status
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Actions
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sort by -->
+          <div class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+              data-bs-toggle="dropdown"
+            >
+              Sort by : Newest
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end p-3">
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Newest</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Oldest</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Ascending</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Descending</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- table start -->
+      <div class="table-responsive table-nowrap">
+        <table
+          matSort
+          (matSortChange)="sortData($any($event))"
+          class="table mb-0 border datatable dataTable"
+        >
+          <thead>
+            <tr>
+              <th mat-sort-header="name">Name</th>
+              <th>Role</th>
+              <th>Phone Number</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (data of tableData(); track $index ) {
+            <tr>
+              <td>
+                <div class="d-flex align-items-center">
+                  <a
+                    href="javascript:void(0);"
+                    class="avatar avatar-sm avatar-rounded flex-shrink-0 me-2"
+                  >
+                    <img src="assets/img/users/{{ data.Image }}" alt="category" class="img-fluid" />
+                  </a>
+                  <h6 class="fs-14 fw-normal mb-0">
+                    <a href="javascript:void(0);">{{ data.Name }}</a>
+                  </h6>
+                </div>
+              </td>
+              <td>{{ data.Role }}</td>
+              <td>
+                <p class="text-dark mb-0">{{ data.PhoneNumber }}</p>
+              </td>
+              <td>
+                <span class="badge badge-soft-success">{{ data.Status }}</span>
+              </td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#user_permission"
+                  [class.disabled]="data.Role == 'Admin / Owner'"
+                  ><i class="icon-shield"></i
+                ></a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_users"
+                  [class.disabled]="data.Role == 'Admin / Owner'"
+                  ><i class="icon-pencil-line"></i
+                ></a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_modal"
+                  [class.disabled]="data.Role == 'Admin / Owner'"
+                  (click)="deleteData(data)"
+                  ><i class="icon-trash-2"></i
+                ></a>
+              </td>
+            </tr>
+            } @if(totalData() === 0){
+            <tr class="tex-center">
+              <td colspan="12" class="text-center">No Matching records found</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <app-custom-pagination [hidden]="totalData() === 0" />
+      <!-- table end -->
+    </div>
+  </div>
+  <!-- card start -->
+</div>
+<!-- End Content -->
+
+<!-- Add users -->
+<div class="modal fade" id="add_users">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Add New User</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+            <div class="avatar avatar-3xl border bg-light">
+              <i class="icon-images fs-28 text-dark"></i>
+            </div>
+            <div>
+              <label class="form-label">User Image<span class="text-danger"> *</span></label>
+              <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+              <div class="d-flex align-items-center">
+                <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                  <input
+                    type="file"
+                    class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0"
+                  />
+                  <i class="icon-upload"></i>
+                </div>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                  ><i class="icon-trash-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="row algin-items-center justify-content-center">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">First Name<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Last Name<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Role<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Select">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Admin / Owner</mat-option>
+              <mat-option value="1">Supervisor</mat-option>
+              <mat-option value="1">Cashier</mat-option>
+              <mat-option value="1">Chef</mat-option>
+              <mat-option value="1">Waiter</mat-option>
+            </mat-select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Select">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Active</mat-option>
+              <mat-option value="1">Inactive</mat-option>
+            </mat-select>
+          </div>
+          <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+            <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Add users End -->
+
+<!-- Edit users -->
+<div class="modal fade" id="edit_users">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Edit User</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div class="d-flex align-items-center gap-3 flex-wrap mb-4">
+            <div class="avatar avatar-3xl border bg-light mb-3">
+              <img src="assets/img/profiles/avatar-03.jpg" alt="item" class="img-fluid rounded" />
+            </div>
+            <div>
+              <label class="form-label">User Image<span class="text-danger"> *</span></label>
+              <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+              <div class="d-flex align-items-center">
+                <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                  <input
+                    type="file"
+                    class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0"
+                  />
+                  <i class="icon-pencil-line"></i>
+                </div>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle text-danger"
+                  ><i class="icon-trash-2"></i
+                ></a>
+              </div>
+            </div>
+          </div>
+          <div class="row algin-items-center justify-content-center">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">First Name<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" value="Emily" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Last Name<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" value="Johnson" />
+              </div>
+            </div>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Role<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Supervisor">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Admin / Owner</mat-option>
+              <mat-option value="1">Supervisor</mat-option>
+              <mat-option value="1">Cashier</mat-option>
+              <mat-option value="1">Chef</mat-option>
+              <mat-option value="1">Waiter</mat-option>
+            </mat-select>
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Phone Number<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control" value="+1 34567 89012" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Status<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Active">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Active</mat-option>
+              <mat-option value="1">Inactive</mat-option>
+            </mat-select>
+          </div>
+          <div class="d-flex align-items-center justify-content-end gap-2 pt-1">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Edit users End -->
+
+<!-- Start Modal  -->
+<div class="modal fade" id="delete_modal">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <div class="mb-4">
+          <span class="avatar avatar-xxl rounded-circle bg-danger-subtle">
+            <img
+              src="assets/img/icons/trash-icon.svg"
+              alt="trash"
+              class="img-fluid w-auto h-auto"
+            />
+          </span>
+        </div>
+        <h4 class="mb-1">Delete Confirmation</h4>
+        <p class="mb-4">
+          Are you sure you want to delete <br /><strong>{{ selectedRowToDelete()?.Name }}</strong
+          >?
+        </p>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="javascript:void(0);" class="btn btn-light w-100" data-bs-dismiss="modal"
+            >Close</a
+          >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-danger w-100"
+            data-bs-dismiss="modal"
+            (click)="confirmDeleteData()"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal  -->
+
+<!-- Start Filter -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="filter-offcanvas">
+  <div class="offcanvas-header pb-0">
+    <div class="border-bottom d-flex align-items-center justify-content-between w-100 pb-3">
+      <h4 class="offcanvas-title mb-0">Filter</h4>
+      <button
+        type="button"
+        class="btn-close btn-close-modal"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      >
+        <i class="icon-x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="offcanvas-body d-flex flex-column pt-3">
+    <div>
+      <div class="mb-3">
+        <label class="form-label">Name<span class="text-danger"> *</span></label>
+        <div class="dropdown">
+          <a
+            href="javascript:void(0);"
+            class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >
+            Select
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+            <h6 class="fs-14 fw-semibold mb-3">Name</h6>
+            <div class="input-icon-end input-icon position-relative mb-3">
+              <span class="input-icon-addon">
+                <i class="icon-search text-dark"></i>
+              </span>
+              <input type="text" class="form-control form-control-md" placeholder="Search" />
+            </div>
+            <div class="vstack gap-2">
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />John Smith
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Emily Johnson
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />David Williams
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Ashley Brown
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Michael Davis
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Role<span class="text-danger"> *</span></label>
+        <div class="dropdown">
+          <a
+            href="javascript:void(0);"
+            class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >
+            Select
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+            <h6 class="fs-14 fw-semibold mb-3">Role</h6>
+            <div class="input-icon-end input-icon position-relative mb-3">
+              <span class="input-icon-addon">
+                <i class="icon-search text-dark"></i>
+              </span>
+              <input type="text" class="form-control form-control-md" placeholder="Search" />
+            </div>
+            <div class="vstack gap-2">
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Admin / Owner
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Supervisor
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Cashier
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Chef
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Waiter
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Delivery
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-0">
+        <label class="form-label">Status<span class="text-danger"> *</span></label>
+        <mat-select class="select custom-mat-select" placeholder="Select">
+          <mat-option value="1">Select</mat-option>
+          <mat-option value="1">Active</mat-option>
+          <mat-option value="1">Inactive</mat-option>
+        </mat-select>
+      </div>
+    </div>
+    <div class="d-flex align-items-center gap-2 mt-auto offcanvas-footer border-0">
+      <a href="javascript:void(0);" class="btn btn-light w-100">Reset</a>
+      <a href="javascript:void(0);" class="btn btn-primary w-100">Apply</a>
+    </div>
+  </div>
+</div>
+<!-- End Filter -->
+
+<!-- User Permission -->
+<div class="modal fade" id="user_permission">
+  <div class="modal-dialog modal-dialog-centered modal-lg">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Permissions</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div class="d-flex justify-content-end mb-3">
+            <div class="form-check form-check-md">
+              <input
+                class="form-check-input"
+                type="checkbox"
+                id="select-all"
+                (click)="toggleSelectAll()"
+              />
+              <label for="select-all">Revert All</label>
+            </div>
+          </div>
+          <div class="table-responsive mb-3">
+            <table class="table m-0 table-nowrap bg-white border">
+              <thead>
+                <tr>
+                  <th>Module</th>
+                  <th>View</th>
+                  <th>Add</th>
+                  <th>Edit</th>
+                  <th>Delete</th>
+                  <th>Export</th>
+                  <th>Approved/Void</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td class="text-dark fw-medium">Dashboard</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">POS</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Hold/Resume Sale</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Refund / Return</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Products</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Categories</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Customers</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Reports</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+                <tr>
+                  <td class="text-dark fw-medium">Settings</td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                  <td>
+                    <div class="form-check form-check-md ps-0">
+                      <input class="form-check-input ms-0" type="checkbox" />
+                    </div>
+                  </td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="d-flex align-items-center justify-content-end gap-2 pt-1">
+            <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+            <button type="submit" class="btn btn-primary">Save Permission</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>

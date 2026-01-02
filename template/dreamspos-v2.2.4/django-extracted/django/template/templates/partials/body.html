@@ -1,0 +1,42 @@
+{% load static %}
+{% load sidebar_tags %}
+
+{% if request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' and request.path|normalize_path != '/layout-horizontal' and request.path|normalize_path != '/layout-hovered' and request.path|normalize_path != '/layout-boxed' and request.path|normalize_path != '/layout-rtl' and request.path|normalize_path != '/pos' and request.path|normalize_path != '/pos-2' and request.path|normalize_path != '/pos-3' and request.path|normalize_path != '/pos-4' and request.path|normalize_path != '/pos-5' %}
+    <body>
+{% endif %}
+
+{% if request.path|normalize_path == '/layout-horizontal' %}
+    <body class="menu-horizontal">
+{% endif %}
+
+{% if request.path|normalize_path == '/layout-hovered' %}
+    <body class="mini-sidebar expand-menu">
+{% endif %}
+
+{% if request.path|normalize_path == '/layout-boxed' %}
+    <body class="mini-sidebar layout-box-mode">
+{% endif %}
+
+{% if request.path|normalize_path == '/layout-rtl' %}
+    <body class="layout-mode-rtl">
+{% endif %}
+
+{% if request.path|normalize_path == '/under-maintenance' or request.path|normalize_path == '/coming-soon' or request.path|normalize_path == '/error-404' or request.path|normalize_path == '/error-500' %}
+    <body class="error-page">
+{% endif %}
+
+{% if request.path|normalize_path == '/two-step-verification' or request.path|normalize_path == '/email-verification' or request.path|normalize_path == '/reset-password' or request.path|normalize_path == '/forgot-password' or request.path|normalize_path == '/register-2' or request.path|normalize_path == '/register' or request.path|normalize_path == '/signin' or request.path|normalize_path == '/success' %}
+    <body class="account-page">
+{% endif %}
+
+{% if request.path|normalize_path == '/two-step-verification-3' or request.path|normalize_path == '/two-step-verification-2' or request.path|normalize_path == '/success-2' or request.path|normalize_path == '/success-3' or request.path|normalize_path == '/signin-3' or request.path|normalize_path == '/signin-2' or request.path|normalize_path == '/reset-password-3' or request.path|normalize_path == '/reset-password-2' or request.path|normalize_path == '/forgot-password-3' or request.path|normalize_path == '/forgot-password-2' or request.path|normalize_path == '/email-verification-3' or request.path|normalize_path == '/email-verification-2' or request.path|normalize_path == '/register-3' %}
+    <body class="account-page bg-white">
+{% endif %}
+
+{% if request.path|normalize_path == '/lock-screen' %}
+    <img src="{% static 'assets/img/bg/lock-screen-bg.png' %}" alt="bg" class="lock-screen-bg position-absolute img-fluid d-sm-none d-md-none d-lg-flex">
+{% endif %}
+
+{% if request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' %}
+    <body class="pos-page">
+{% endif %}

@@ -1,0 +1,226 @@
+{% load static %}
+{% load sidebar_tags %}
+    <!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="{% static 'assets/img/favicon.png' %}">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="{% static 'assets/img/apple-touch-icon.png' %}">
+
+
+
+{% if request.path|normalize_path != '/layout-rtl' %}
+    <!-- Bootstrap CSS -->
+    <link rel = 'stylesheet' href ="{% static 'assets/css/bootstrap.min.css' %}">
+{% endif %} 
+
+{% if request.path|normalize_path == '/layout-rtl' %}
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/bootstrap.rtl.min.css' %}">
+{% endif %}  
+
+{% if request.path|normalize_path != 'signin' and request.path|normalize_path != 'signin-2' and request.path|normalize_path != 'signin-3' and request.path|normalize_path != 'register' and request.path|normalize_path != 'register-2' and request.path|normalize_path != 'register-3' and request.path|normalize_path != 'forgot-password' and request.path|normalize_path != 'forgot-password-2' and request.path|normalize_path != 'forgot-password-3' and request.path|normalize_path != 'reset-password' and request.path|normalize_path != 'reset-password-2' and request.path|normalize_path != 'reset-password-3' and request.path|normalize_path != 'email-verification' and request.path|normalize_path != 'email-verification-2' and request.path|normalize_path != 'email-verification-3' and request.path|normalize_path != 'two-step-verification' and request.path|normalize_path != 'two-step-verification-2' and request.path|normalize_path != 'two-step-verification-3' and request.path|normalize_path != 'lock-screen' and request.path|normalize_path != 'error-404' and request.path|normalize_path != 'error-500' and request.path|normalize_path != 'coming-soon' and request.path|normalize_path != 'under-maintenance' and request.path|normalize_path != 'success' and request.path|normalize_path != 'success-2' and request.path|normalize_path != 'success-3' %} 
+    <!-- animation CSS -->
+    <link rel = 'stylesheet' href="{% static 'assets/css/animate.css' %}">
+{% endif %} 
+
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/tabler-icons/tabler-icons.min.css' %}">
+
+    <!-- Fontawesome CSS -->
+    <link rel = 'stylesheet' href = "{% static 'assets/plugins/fontawesome/css/fontawesome.min.css' %}">
+    <link rel = 'stylesheet' href = "{% static 'assets/plugins/fontawesome/css/all.min.css' %}">
+
+{% if request.path|normalize_path == '/add-product' or request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/edit-product' or request.path|normalize_path == '/domain' or request.path|normalize_path == '/form-vertical' or request.path|normalize_path == '/packages' or request.path|normalize_path == '/product-list' or request.path|normalize_path == '/purchase-transaction' or request.path|normalize_path == '/reviews' or request.path|normalize_path == '/subscription' or request.path|normalize_path == '/tables-basic' or request.path|normalize_path == '/ui-alerts' or request.path|normalize_path == '/ui-nav-tabs' or request.path|normalize_path == '/video-call' %}
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/feather.css' %}">
+{% endif %}  
+
+{% if request.path|normalize_path == '/icon-feather' or request.path|normalize_path == '/icon-ionic' %}
+<!-- Feathericon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/feather/feather.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %}
+    <!-- Datatable CSS -->
+    <link rel = 'stylesheet' href="{% static 'assets/css/dataTables.bootstrap5.min.css' %}">
+
+    <!-- Quill CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/quill/quill.snow.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/icon-tabler' or request.path|normalize_path == '/projects' %}    
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/tabler-icons/tabler-icons.css' %}">
+{% endif %}
+         
+{% if request.path|normalize_path != 'signin' and request.path|normalize_path != 'signin-2' and request.path|normalize_path != 'signin-3' and request.path|normalize_path != 'register' and request.path|normalize_path != 'register-2' and request.path|normalize_path != 'register-3' and request.path|normalize_path != 'forgot-password' and request.path|normalize_path != 'forgot-password-2' and request.path|normalize_path != 'forgot-password-3' and request.path|normalize_path != 'reset-password' and request.path|normalize_path != 'reset-password-2' and request.path|normalize_path != 'reset-password-3' and request.path|normalize_path != 'email-verification' and request.path|normalize_path != 'email-verification-2' and request.path|normalize_path != 'email-verification-3' and request.path|normalize_path != 'two-step-verification' and request.path|normalize_path != 'two-step-verification-2' and request.path|normalize_path != 'two-step-verification-3' and request.path|normalize_path != 'lock-screen' and request.path|normalize_path != 'error-404' and request.path|normalize_path != 'error-500' and request.path|normalize_path != 'coming-soon' and request.path|normalize_path != 'under-maintenance' and request.path|normalize_path != 'success' and request.path|normalize_path != 'success-2' and request.path|normalize_path != 'success-3' %}
+    <!-- Datetimepicker CSS -->
+    <link rel = 'stylesheet' href = "{% static 'assets/css/bootstrap-datetimepicker.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/product-details' or request.path|normalize_path == '/video-call' %}
+    <link rel = 'stylesheet' href = "{% static 'assets/plugins/owlcarousel/owl.carousel.min.css' %}">
+    <link rel = 'stylesheet' href = "{% static 'assets/plugins/owlcarousel/owl.theme.default.min.css' %}">
+{% endif %}  
+
+{% if request.path|normalize_path == '/barcode' or request.path|normalize_path == '/file-manager' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/plugin' or request.path|normalize_path == '/qrcode' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <!-- Owl Carousel CSS -->
+    <link rel = "stylesheet" href="{% static 'assets/css/owl.carousel.min.css' %}">
+{% endif %}  
+
+{% if request.path|normalize_path == '/file-manager' %}
+    <!-- Player CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/plyr.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path != 'signin' and request.path|normalize_path != 'signin-2' and request.path|normalize_path != 'signin-3' and request.path|normalize_path != 'register' and request.path|normalize_path != 'register-2' and request.path|normalize_path != 'register-3' and request.path|normalize_path != 'forgot-password' and request.path|normalize_path != 'forgot-password-2' and request.path|normalize_path != 'forgot-password-3' and request.path|normalize_path != 'reset-password' and request.path|normalize_path != 'reset-password-2' and request.path|normalize_path != 'reset-password-3' and request.path|normalize_path != 'email-verification' and request.path|normalize_path != 'email-verification-2' and request.path|normalize_path != 'email-verification-3' and request.path|normalize_path != 'two-step-verification' and request.path|normalize_path != 'two-step-verification-2' and request.path|normalize_path != 'two-step-verification-3' and request.path|normalize_path != 'lock-screen' and request.path|normalize_path != 'error-404' and request.path|normalize_path != 'error-500' and request.path|normalize_path != 'coming-soon' and request.path|normalize_path != 'under-maintenance' and request.path|normalize_path != 'success' and request.path|normalize_path != 'success-2' and request.path|normalize_path != 'success-3' %}
+    <!-- Select2 CSS -->
+    <link rel = 'stylesheet' href="{% static 'assets/plugins/select2/css/select2.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/icon-flag' %}
+    <!-- Flag Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/flags/flags.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/icon-ionic' %}
+	<!-- Ionic CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/ionic/ionicons.css' %}">
+{% endif %}    
+
+{% if request.path|normalize_path == '/icon-material' %}
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/material/materialdesignicons.css' %}">
+{% endif %} 
+
+{% if request.path|normalize_path == '/icon-pe7' %}
+    <!-- Pe7 CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/pe7/pe-icon-7.css' %}">       
+{% endif %} 
+
+{% if request.path|normalize_path == '/icon-simpleline' %}
+    <!-- Simpleline Icons CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/simpleline/simple-line-icons.css' %}">
+{% endif %}   
+
+{% if request.path|normalize_path == '/icon-themify' %}
+    <!-- Themify Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/themify/themify.css' %}">
+{% endif %} 
+
+{% if request.path|normalize_path == '/icon-typicon' %}
+    <!-- Typicon icons CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/typicons/typicons.css' %}">
+{% endif %} 
+
+{% if request.path|normalize_path == '/icon-weather' %}
+    <!-- Weather CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/weather/weathericons.css' %}">
+{% endif %}   
+
+{% if request.path|normalize_path == '/form-wizard' %}
+    <!-- Wizard CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/twitter-bootstrap-wizard/form-wizard.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/call-history' or request.path|normalize_path == '/chat' or request.path|normalize_path == '/video-call' %}
+    <!-- Boxicons CSS -->
+    <link rel = 'stylesheet' href="{% static 'assets/plugins/boxicons/css/boxicons.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/billers' or request.path|normalize_path == '/blog-comments' or request.path|normalize_path == '/chat' or request.path|normalize_path == '/contacts' or request.path|normalize_path == '/customers' or request.path|normalize_path == '/expired-products' or request.path|normalize_path == '/security-settings' or request.path|normalize_path == '/warehouse' or request.path|normalize_path == '/form-mask' %}
+    <!-- Mobile CSS-->
+    <link rel="stylesheet" href="{% static 'assets/plugins/intltelinput/css/intlTelInput.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/intltelinput/css/demo.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/add-product' or request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/domain' or request.path|normalize_path == '/edit-product' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/localization-settings' or request.path|normalize_path == '/otp-settings' or request.path|normalize_path == '/packages' or request.path|normalize_path == '/product-list' or request.path|normalize_path == '/purchase-transaction' or request.path|normalize_path == '/reviews' or request.path|normalize_path == '/subscription' or request.path|normalize_path == '/varriant-attributes' %}
+    <!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/sales-dashboard' %}
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/jvectormap/jquery-jvectormap-2.0.5.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-categories' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/best-seller' or request.path|normalize_path == '/calendar' or request.path|normalize_path == '/companies' or request.path|normalize_path == '/customer-due-report' or request.path|normalize_path == '/customer-report' or request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/expense-report' or request.path|normalize_path == '/form-pickers' or request.path|normalize_path == '/income-report' or request.path|normalize_path == '/income' or request.path|normalize_path == '/index' or request.path|normalize_path == '/inventory-report' or request.path|normalize_path == '/invoice-report' or request.path|normalize_path == '/layout-boxed' or request.path|normalize_path == '/layout-dark' or request.path|normalize_path == '/layout-detached' or request.path|normalize_path == '/layout-rtl' or request.path|normalize_path == '/layout-horizontal' or request.path|normalize_path == '/layout-two-column' or request.path|normalize_path == '/layout-hovered' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/product-expiry-report' or request.path|normalize_path == '/product-quantity-alert' or request.path|normalize_path == '/product-report' or request.path|normalize_path == '/profit-and-loss' or request.path|normalize_path == '/projects' or request.path|normalize_path == '/purchase-report' or request.path|normalize_path == '/sales-dashboard' or request.path|normalize_path == '/sales-report' or request.path|normalize_path == '/sales-tax' or request.path|normalize_path == '/search-list' or request.path|normalize_path == '/sold-stock' or request.path|normalize_path == '/stock-history' or request.path|normalize_path == '/supplier-due-report' or request.path|normalize_path == '/supplier-report' or request.path|normalize_path == '/tax-reports' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-rangeslider' or request.path|normalize_path == '/ui-ratings' %}
+    <!-- Rangeslider CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/ion-rangeslider/css/ion.rangeSlider.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-drag-drop' or request.path|normalize_path == '/ui-clipboard' or request.path|normalize_path == '/ui-sortable' %}
+    <!-- Dragula CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/dragula/css/dragula.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-lightbox' %}
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/lightbox/glightbox.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-scrollbar' %}
+    <!-- Scrollbar CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/scrollbar/scroll.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-toasts' %}
+    <!-- Toatr CSS -->		
+    <link rel="stylesheet" href="{% static 'assets/plugins/toastr/toatr.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-swiperjs' or request.path|normalize_path == '/chat' or request.path|normalize_path == '/video-call' %}
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/swiper/swiper-bundle.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-stickynote' or request.path|normalize_path == '/ui-timeline' %}
+    <!-- Sticky CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/stickynote/sticky.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/icon-bootstrap' %}
+    <!-- Bootstrap Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/bootstrap/bootstrap-icons.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/icon-remix' %}
+    <!-- Remix Icon CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/icons/remix/fonts/remixicon.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/form-pickers' %}
+    <!-- Form Date PIckers CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/flatpickr/flatpickr.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/jquery-timepicker/jquery-timepicker.css' %}">
+    <link rel="stylesheet" href="{% static 'assets/plugins/pickr/pickr-themes.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/maps-vector' %}
+    <!-- Jsvector Maps -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/jsvectormap/css/jsvectormap.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/maps-leaflet' %}
+    <!-- Leaflet Maps CSS -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/leaflet/leaflet.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path == '/chat' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/search-list' %}
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/fancybox/jquery.fancybox.min.css' %}">
+{% endif %}
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %}
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="{% static 'assets/plugins/@simonwep/pickr/themes/nano.min.css' %}">
+{% endif %}
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="{% static 'assets/css/style.css' %}">

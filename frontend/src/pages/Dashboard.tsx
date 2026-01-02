@@ -31,6 +31,8 @@ export function Dashboard() {
     { path: '/categories', label: 'Catégories', icon: '📂', description: 'Gérer les catégories et sous-catégories' },
     { path: '/products', label: 'Produits', icon: '🍕', description: 'Gérer le menu et produits' },
     { path: '/tables', label: 'Tables', icon: '🪑', description: 'Gérer les tables et QR codes' },
+    { path: '/employees', label: 'Employés', icon: '👥', description: 'Gérer les employés et leurs profils' },
+    { path: '/table-assignments', label: 'Attribution Tables', icon: '📍', description: 'Attribuer les tables aux serveurs' },
     { path: '/orders', label: 'Commandes', icon: '📋', description: 'Voir et gérer les commandes' },
     { path: '/server', label: 'Service', icon: '👨‍💼', description: 'Interface serveur - Gérer les commandes actives' },
   ];

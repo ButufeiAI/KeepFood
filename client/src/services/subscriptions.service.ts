@@ -1,60 +1,62 @@
 import api from './api';
 
+export type SubscriptionType = 'THREE_DAYS' | 'FIVE_DAYS' | 'MONTHLY';
+export type SubscriptionStatus = 'ACTIVE' | 'PAUSED' | 'EXPIRED' | 'CANCELLED';
+
 export interface Subscription {
   id: string;
-  clientId: string;
-  type: 'THREE_DAYS' | 'FIVE_DAYS' | 'MONTHLY';
-  status: 'ACTIVE' | 'PAUSED' | 'EXPIRED';
-  startDate: string;
-  endDate?: string;
-  mealsRemaining: number;
+  type: SubscriptionType;
+  price: number;
+  startDate: Date;
+  endDate?: Date;
   totalMeals: number;
-  restaurant: {
-    id: string;
-    name: string;
-    logo?: string;
-  };
+  consumedMeals: number;
+  mealsPerWeek?: number;
+  preferredDays?: string[];
+  isRecurring: boolean;
+  status: SubscriptionStatus;
+  pauseStartDate?: Date;
+  pauseEndDate?: Date;
+  pauseReason?: string;
 }
 
 export interface SubscriptionUsage {
   id: string;
   subscriptionId: string;
-  orderId: string;
-  usedAt: string;
-  order: {
-    id: string;
-    totalAmount: number;
-    createdAt: string;
-  };
+  orderId?: string;
+  usedDate: Date;
+  mealType?: string;
+  notes?: string;
 }
 
 export const subscriptionsService = {
-  async getClientSubscriptions(clientIdentifier: string, restaurantId?: string): Promise<Subscription[]> {
-    const params = new URLSearchParams({ clientIdentifier });
-    if (restaurantId) {
-      params.append('restaurantId', restaurantId);
+  async getMySubscriptions(restaurantId: string, clientIdentifier: string): Promise<Subscription[]> {
+    try {
+      const response = await api.get('/public/subscriptions', {
+        params: { restaurantId, clientIdentifier },
+      });
+      return response.data;
+    } catch (error) {
+      return [];
     }
-    const response = await api.get(`/public/subscriptions/client?${params.toString()}`);
-    return response.data;
   },
 
-  async pauseSubscription(subscriptionId: string, startDate: string, endDate?: string, reason?: string) {
-    const response = await api.post(`/public/subscriptions/${subscriptionId}/pause`, {
-      startDate,
-      endDate,
-      reason,
+  async useSubscriptionMeal(
+    restaurantId: string,
+    clientIdentifier: string,
+    subscriptionId: string,
+    orderId: string,
+    mealType?: string,
+    notes?: string,
+  ): Promise<SubscriptionUsage> {
+    const response = await api.post('/public/subscriptions/use', {
+      restaurantId,
+      clientIdentifier,
+      subscriptionId,
+      orderId,
+      mealType,
+      notes,
     });
     return response.data;
   },
-
-  async resumeSubscription(subscriptionId: string) {
-    const response = await api.post(`/public/subscriptions/${subscriptionId}/resume`);
-    return response.data;
-  },
-
-  async getUsageHistory(subscriptionId: string): Promise<SubscriptionUsage[]> {
-    const response = await api.get(`/public/subscriptions/${subscriptionId}/usage`);
-    return response.data;
-  },
 };
-

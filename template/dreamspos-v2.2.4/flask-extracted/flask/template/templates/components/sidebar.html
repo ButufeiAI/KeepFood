@@ -1,0 +1,713 @@
+{% if page not in ['pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5'] %}
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+{% endif %}	
+{% if page in ['pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5'] %}
+	<!-- Sidebar -->
+	<div class="sidebar d-none" id="sidebar">
+{% endif %}
+		<!-- Logo -->
+		<div class="sidebar-logo">
+			<a href="{{ url_for('index') }}" class="logo logo-normal">
+				<img src="{{ url_for('static', filename='assets/img/logo.svg')}}" alt="Img">
+			</a>
+			<a href="{{ url_for('index') }}" class="logo logo-white">
+				<img src="{{ url_for('static', filename='assets/img/logo-white.svg')}}" alt="Img">
+			</a>
+			<a href="{{ url_for('index') }}" class="logo-small">
+				<img src="{{ url_for('static', filename='assets/img/logo-small.png')}}" alt="Img">
+			</a>
+			<a href="{{ url_for('index') }}" class="logo-small-white">
+				<img src="{{ url_for('static', filename='assets/img/logo-small-white.png')}}" alt="Img">
+			</a>			
+			<a id="toggle_btn" href="javascript:void(0);">
+				<i data-feather="chevrons-left" class="feather-16"></i>
+			</a>
+		</div>
+		<!-- /Logo -->
+		<div class="modern-profile p-3 pb-0">
+			<div class="text-center rounded bg-light p-3 mb-4 user-profile">
+				<div class="avatar avatar-lg online mb-3">
+					<img src="{{ url_for('static', filename='assets/img/customer/customer15.jpg')}}" alt="Img" class="img-fluid rounded-circle">
+				</div>
+				<h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
+				<p class="fs-12 mb-0">System Admin</p>
+			</div>
+			<div class="sidebar-nav mb-3">
+				<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
+					<li class="nav-item"><a class="nav-link active border-0" href="#">Menu</a></li>
+					<li class="nav-item"><a class="nav-link border-0" href="{{ url_for('chat') }}">Chats</a></li>
+					<li class="nav-item"><a class="nav-link border-0" href="{{ url_for('email') }}">Inbox</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="sidebar-header p-3 pb-0 pt-2">
+			<div class="text-center rounded bg-light p-2 mb-4 sidebar-profile d-flex align-items-center">
+				<div class="avatar avatar-md onlin">
+					<img src="{{ url_for('static', filename='assets/img/customer/customer15.jpg')}}" alt="Img" class="img-fluid rounded-circle">
+				</div>
+				<div class="text-start sidebar-profile-info ms-2">
+					<h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
+					<p class="fs-12">System Admin</p>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-content-between menu-item mb-3">
+				<div>
+					<a href="{{ url_for('index') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-layout-grid-remove"></i>
+					</a>
+				</div>
+				<div>
+					<a href="{{ url_for('chat') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-brand-hipchat"></i>
+					</a>
+				</div>
+				<div>
+					<a href="{{ url_for('email') }}" class="btn btn-sm btn-icon bg-light position-relative">
+						<i class="ti ti-message"></i>
+					</a>
+				</div>
+				<div class="notification-item">
+					<a href="{{ url_for('activities') }}" class="btn btn-sm btn-icon bg-light position-relative">
+						<i class="ti ti-bell"></i>
+						<span class="notification-status-dot"></span>
+					</a>
+				</div>
+				<div class="me-0">
+					<a href="{{ url_for('general-settings') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-settings"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar-inner slimscroll">
+			<div id="sidebar-menu" class="sidebar-menu">
+				<ul>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Main</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['index', '/','admin-dashboard','sales-dashboard'] %}active subdrop{% endif %}"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('index') }}" class="{% if page in ['index', '/'] %}active{% endif %}">Admin Dashboard</a></li>
+									<li><a href="{{ url_for('admin-dashboard') }}" class="{% if page in ['admin-dashboard'] %}active{% endif %}">Admin Dashboard 2</a></li>
+									<li><a href="{{ url_for('sales-dashboard') }}" class="{% if page in ['sales-dashboard'] %}active{% endif %}">Sales Dashboard</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['dashboard', 'companies', 'subscription', 'packages', 'domain', 'purchase-transaction'] %}active subdrop{% endif %}"><i class="ti ti-user-edit fs-16 me-2"></i><span>Super Admin</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('dashboard') }}" class="{% if page in ['dashboard'] %}active{% endif %}">Dashboard</a></li>
+									<li><a href="{{ url_for('companies') }}" class="{% if page in ['companies'] %}active{% endif %}">Companies</a></li>
+									<li><a href="{{ url_for('subscription') }}" class="{% if page in ['subscription'] %}active{% endif %}">Subscriptions</a></li>
+									<li><a href="{{ url_for('packages') }}" class="{% if page in ['packages'] %}active{% endif %}">Packages</a></li>
+									<li><a href="{{ url_for('domain') }}" class="{% if page in ['domain'] %}active{% endif %}">Domain</a></li>
+									<li><a href="{{ url_for('purchase-transaction') }}" class="{% if page in ['purchase-transaction'] %}active{% endif %}">Purchase Transaction</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['chat','audio-call','call-history','video-call','calendar','contacts','email' , 'email-reply','todo' , 'todo-list' ,'notes','file-manager','projects','products','orders','customers','cart','checkout','wishlist','reviews','social-feed','search-list'] %}active subdrop{% endif %}"><i class="ti ti-brand-apple-arcade fs-16 me-2"></i><span>Application</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('chat') }}" class="{% if page in ['chat'] %}active{% endif %}">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['video-call' , 'call-history' , 'audio-call'] %}active subdrop{% endif %}">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('video-call') }}" class="{% if page in ['video-call'] %}active{% endif %}">Video Call</a></li>
+											<li><a href="{{ url_for('audio-call') }}" class="{% if page in ['audio-call'] %}active{% endif %}">Audio Call</a></li>
+											<li><a href="{{ url_for('call-history') }}" class="{% if page in ['call-history'] %}active{% endif %}">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('calendar') }}" class="{% if page in ['calendar'] %}active{% endif %}">Calendar</a></li>
+									<li><a href="{{ url_for('contacts') }}" class="{% if page in ['contacts'] %}active{% endif %}">Contacts</a></li>
+									<li><a href="{{ url_for('email') }}" class="{% if page in ['email', 'email-reply'] %}active{% endif %}">Email</a></li>
+									<li><a href="{{ url_for('todo') }}" class="{% if page in ['todo', 'todo-list'] %}active{% endif %}">To Do</a></li>
+									<li><a href="{{ url_for('notes') }}" class="{% if page in ['notes'] %}active{% endif %}">Notes</a></li>
+									<li><a href="{{ url_for('file-manager') }}" class="{% if page in ['file-manager'] %}active{% endif %}">File Manager</a></li>
+									<li><a href="{{ url_for('projects') }}" class="{% if page in ['projects'] %}active{% endif %}">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['products', 'orders', 'customers', 'cart', 'checkout', 'wishlist', 'reviews'] %}active subdrop{% endif %}">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('products') }}" class="{% if page in ['products'] %}active{% endif %}">Products</a></li>
+											<li><a href="{{ url_for('orders') }}" class="{% if page in ['orders'] %}active{% endif %}">Orders</a></li>
+											<li><a href="{{ url_for('customers') }}" class="{% if page in ['customers'] %}active{% endif %}">Customers</a></li>
+											<li><a href="{{ url_for('cart') }}" class="{% if page in ['cart'] %}active{% endif %}">Cart</a></li>
+											<li><a href="{{ url_for('checkout') }}" class="{% if page in ['checkout'] %}active{% endif %}">Checkout</a></li>
+											<li><a href="{{ url_for('wishlist') }}" class="{% if page in ['wishlist'] %}active{% endif %}">Wishlist</a></li>
+											<li><a href="{{ url_for('reviews') }}" class="{% if page in ['reviews'] %}active{% endif %}">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('social-feed') }}" class="{% if page in ['social-feed'] %}active{% endif %}">Social Feed</a></li>
+									<li><a href="{{ url_for('search-list') }}" class="{% if page in ['search-list'] %}active{% endif %}">Search List</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['layout-horizontal', 'layout-detached', 'layout-two-column', 'layout-hovered', 'layout-boxed', 'layout-rtl', 'layout-dark'] %}active subdrop{% endif %}"><i class="ti ti-layout-sidebar-right-collapse fs-16 me-2"></i><span>Layouts</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('layout-horizontal') }}" class="{% if page in ['layout-horizontal'] %}active{% endif %}">Horizontal</a></li>
+									<li><a href="{{ url_for('layout-detached') }}" class="{% if page in ['layout-detached'] %}active{% endif %}">Detached</a></li>
+									<li><a href="{{ url_for('layout-two-column') }}" class="{% if page in ['layout-two-column'] %}active{% endif %}">Two Column</a></li>
+									<li><a href="{{ url_for('layout-hovered') }}" class="{% if page in ['layout-hovered'] %}active{% endif %}">Hovered</a></li>
+									<li><a href="{{ url_for('layout-boxed') }}" class="{% if page in ['layout-boxed'] %}active{% endif %}">Boxed</a></li>
+									<li><a href="{{ url_for('layout-rtl') }}" class="{% if page in ['layout-rtl'] %}active{% endif %}">RTL</a></li>
+									<li><a href="{{ url_for('layout-dark') }}" class="{% if page in ['layout-dark'] %}active{% endif %}">Dark</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Inventory</h6>
+						<ul>
+							<li class="{% if page in ['product-list', 'product-details', 'edit-product'] %}active{% endif %}"><a href="{{ url_for('product-list') }}"><i data-feather="box"></i><span>Products</span></a></li>
+							<li class="{% if page in ['add-product'] %}active{% endif %}"><a href="{{ url_for('add-product') }}"><i class="ti ti-table-plus fs-16 me-2"></i><span>Create Product</span></a></li>
+							<li class="{% if page in ['expired-products'] %}active{% endif %}"><a href="{{ url_for('expired-products') }}"><i class="ti ti-progress-alert fs-16 me-2"></i><span>Expired Products</span></a></li>
+							<li class="{% if page in ['low-stocks'] %}active{% endif %}"><a href="{{ url_for('low-stocks') }}"><i class="ti ti-trending-up-2 fs-16 me-2"></i><span>Low Stocks</span></a></li>
+							<li class="{% if page in ['category-list'] %}active{% endif %}"><a href="{{ url_for('category-list') }}"><i class="ti ti-list-details fs-16 me-2"></i><span>Category</span></a></li>
+							<li class="{% if page in ['sub-categories'] %}active{% endif %}"><a href="{{ url_for('sub-categories') }}"><i class="ti ti-carousel-vertical fs-16 me-2"></i><span>Sub Category</span></a></li>
+							<li class="{% if page in ['brand-list'] %}active{% endif %}"><a href="{{ url_for('brand-list') }}"><i class="ti ti-triangles fs-16 me-2"></i><span>Brands</span></a></li>
+							<li class="{% if page in ['units'] %}active{% endif %}"><a href="{{ url_for('units') }}"><i class="ti ti-brand-unity fs-16 me-2"></i><span>Units</span></a></li>
+							<li class="{% if page in ['varriant-attributes'] %}active{% endif %}"><a href="{{ url_for('varriant-attributes') }}"><i class="ti ti-checklist fs-16 me-2"></i><span>Variant Attributes</span></a></li>
+							<li class="{% if page in ['warranty'] %}active{% endif %}"><a href="{{ url_for('warranty') }}"><i class="ti ti-certificate fs-16 me-2"></i><span>Warranties</span></a></li>
+							<li class="{% if page in ['barcode'] %}active{% endif %}"><a href="{{ url_for('barcode') }}"><i class="ti ti-barcode fs-16 me-2"></i><span>Print Barcode</span></a></li>
+							<li class="{% if page in ['qrcode'] %}active{% endif %}"><a href="{{ url_for('qrcode') }}"><i class="ti ti-qrcode fs-16 me-2"></i><span>Print QR Code</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Stock</h6>
+						<ul>
+							<li class="{% if page in ['manage-stocks'] %}active{% endif %}"><a href="{{ url_for('manage-stocks') }}"><i class="ti ti-stack-3 fs-16 me-2"></i><span>Manage Stock</span></a></li>
+							<li class="{% if page in ['stock-adjustment'] %}active{% endif %}"><a href="{{ url_for('stock-adjustment') }}"><i class="ti ti-stairs-up fs-16 me-2"></i><span>Stock Adjustment</span></a></li>
+							<li class="{% if page in ['stock-transfer'] %}active{% endif %}"><a href="{{ url_for('stock-transfer') }}"><i class="ti ti-stack-pop fs-16 me-2"></i><span>Stock Transfer</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Sales</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['online-orders', 'pos-orders'] %}active subdrop{% endif %}"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Sales</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('online-orders') }}" class="{% if page in ['online-orders'] %}active{% endif %}">Online Orders</a></li>
+									<li><a href="{{ url_for('pos-orders') }}" class="{% if page in ['pos-orders'] %}active{% endif %}">POS Orders</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['invoice', 'invoice-details'] %}active{% endif %}"><a href="{{ url_for('invoice') }}"><i class="ti ti-file-invoice fs-16 me-2"></i><span>Invoices</span></a></li>
+							<li class="{% if page in ['sales-returns'] %}active{% endif %}"><a href="{{ url_for('sales-returns') }}"><i class="ti ti-receipt-refund fs-16 me-2"></i><span>Sales Return</span></a></li>
+							<li class="{% if page in ['quotation-list'] %}active{% endif %}"><a href="{{ url_for('quotation-list') }}"><i class="ti ti-files fs-16 me-2"></i><span>Quotation</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5'] %}active subdrop{% endif %}"><i class="ti ti-device-laptop fs-16 me-2"></i><span>POS</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('pos') }}" class="{% if page in ['pos'] %}active{% endif %}">POS 1</a></li>
+									<li><a href="{{ url_for('pos-2') }}" class="{% if page in ['pos-2'] %}active{% endif %}">POS 2</a></li>
+									<li><a href="{{ url_for('pos-3') }}" class="{% if page in ['pos-3'] %}active{% endif %}">POS 3</a></li>
+									<li><a href="{{ url_for('pos-4') }}" class="{% if page in ['pos-4'] %}active{% endif %}">POS 4</a></li>
+									<li><a href="{{ url_for('pos-5') }}" class="{% if page in ['pos-5'] %}active{% endif %}">POS 5</a></li>
+									<li><a href="https://dreamspos.dreamstechnologies.com/food-pos/flask/template/index" target="_blank">POS 6</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Promo</h6>
+						<ul>
+							<li class="{% if page in ['coupons'] %}active{% endif %}"><a href="{{ url_for('coupons') }}"><i class="ti ti-ticket fs-16 me-2"></i><span>Coupons</span></a></li>
+							<li class="{% if page in ['gift-cards'] %}active{% endif %}"><a href="{{ url_for('gift-cards') }}"><i class="ti ti-cards fs-16 me-2"></i><span>Gift Cards</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['discount-plan', 'discount'] %}active subdrop{% endif %}"><i class="ti ti-file-percent fs-16 me-2"></i><span>Discount</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('discount-plan') }}" class="{% if page in ['discount-plan'] %}active{% endif %}">Discount Plan</a></li>
+									<li><a href="{{ url_for('discount') }}" class="{% if page in ['discount'] %}active{% endif %}">Discount</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Purchases</h6>
+						<ul>
+							<li class="{% if page in ['purchase-list'] %}active{% endif %}"><a href="{{ url_for('purchase-list') }}"><i class="ti ti-shopping-bag fs-16 me-2"></i><span>Purchases</span></a></li>
+							<li class="{% if page in ['purchase-order-report'] %}active{% endif %}"><a href="{{ url_for('purchase-order-report') }}"><i class="ti ti-file-unknown fs-16 me-2"></i><span>Purchase Order</span></a></li>
+							<li class="{% if page in ['purchase-returns'] %}active{% endif %}"><a href="{{ url_for('purchase-returns') }}"><i class="ti ti-file-upload fs-16 me-2"></i><span>Purchase Return</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Finance & Accounts</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['expense-list', 'expense-category'] %}active subdrop{% endif %}"><i class="ti ti-file-stack fs-16 me-2"></i><span>Expenses</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('expense-list') }}" class="{% if page in ['expense-list'] %}active{% endif %}">Expenses</a></li>
+									<li><a href="{{ url_for('expense-category') }}" class="{% if page in ['expense-category'] %}active{% endif %}">Expense Category</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['income', 'income-category'] %}active subdrop{% endif %}"><i class="ti ti-file-pencil fs-16 me-2"></i><span>Income</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('income') }}" class="{% if page in ['income'] %}active{% endif %}">Income</a></li>
+									<li><a href="{{ url_for('income-category') }}" class="{% if page in ['income-category'] %}active{% endif %}">Income Category</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['account-list'] %}active{% endif %}"><a href="{{ url_for('account-list') }}"><i class="ti ti-building-bank fs-16 me-2"></i><span>Bank Accounts</span></a></li>
+							<li class="{% if page in ['money-transfer'] %}active{% endif %}"><a href="{{ url_for('money-transfer') }}"><i class="ti ti-moneybag fs-16 me-2"></i><span>Money Transfer</span></a></li>
+							<li class="{% if page in ['balance-sheet', 'balance-sheet-v2'] %}active{% endif %}"><a href="{{ url_for('balance-sheet') }}"><i class="ti ti-report-money fs-16 me-2"></i><span>Balance Sheet</span></a></li>
+							<li class="{% if page in ['trial-balance'] %}active{% endif %}"><a href="{{ url_for('trial-balance') }}"><i class="ti ti-alert-circle fs-16 me-2"></i><span>Trial Balance</span></a></li>
+							<li class="{% if page in ['cash-flow', 'cash-flow-v2'] %}active{% endif %}"><a href="{{ url_for('cash-flow') }}"><i class="ti ti-zoom-money fs-16 me-2"></i><span>Cash Flow</span></a></li>
+							<li class="{% if page in ['account-statement'] %}active{% endif %}"><a href="{{ url_for('account-statement') }}"><i class="ti ti-file-infinity fs-16 me-2"></i><span>Account Statement</span></a></li>
+
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Peoples</h6>
+						<ul>
+							<li class="{% if page in ['customers'] %}active{% endif %}"><a href="{{ url_for('customers') }}"><i class="ti ti-users-group fs-16 me-2"></i><span>Customers</span></a></li>
+							<li class="{% if page in ['billers'] %}active{% endif %}"><a href="{{ url_for('billers') }}"><i class="ti ti-user-up fs-16 me-2"></i><span>Billers</span></a></li>
+							<li class="{% if page in ['suppliers'] %}active{% endif %}"><a href="{{ url_for('suppliers') }}"><i class="ti ti-user-dollar fs-16 me-2"></i><span>Suppliers</span></a></li>
+							<li class="{% if page in ['store-list'] %}active{% endif %}"><a href="{{ url_for('store-list') }}"><i class="ti ti-home-bolt fs-16 me-2"></i><span>Stores</span></a></li>
+							<li class="{% if page in ['warehouse'] %}active{% endif %}"><a href="{{ url_for('warehouse') }}"><i class="ti ti-archive fs-16 me-2"></i><span>Warehouses</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">HRM</h6>
+						<ul>
+							<li class="{% if page in ['employees-grid', 'add-employee', 'edit-employee', 'employee-details', 'employees-list'] %}active{% endif %}"><a href="{{ url_for('employees-grid') }}"><i class="ti ti-user fs-16 me-2"></i><span>Employees</span></a></li>
+							<li class="{% if page in ['department-grid', 'department-list'] %}active{% endif %}"><a href="{{ url_for('department-grid') }}"><i class="ti ti-compass fs-16 me-2"></i><span>Departments</span></a></li>
+							<li class="{% if page in ['designation'] %}active{% endif %}"><a href="{{ url_for('designation') }}"><i class="ti ti-git-merge fs-16 me-2"></i><span>Designation</span></a></li>
+							<li class="{% if page in ['shift'] %}active{% endif %}"><a href="{{ url_for('shift') }}"><i class="ti ti-arrows-shuffle fs-16 me-2"></i><span>Shifts</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['attendance-employee', 'attendance-admin'] %}active subdrop{% endif %}"><i class="ti ti-user-cog fs-16 me-2"></i><span>Attendence</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('attendance-employee') }}" class="{% if page in ['attendance-employee'] %}active{% endif %}">Employee</a></li>
+									<li><a href="{{ url_for('attendance-admin') }}" class="{% if page in ['attendance-admin'] %}active{% endif %}">Admin</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['leaves-admin', 'leaves-employee', 'leave-types'] %}active subdrop{% endif %}"><i class="ti ti-calendar fs-16 me-2"></i><span>Leaves</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('leaves-admin') }}" class="{% if page in ['leaves-admin'] %}active{% endif %}">Admin Leaves</a></li>
+									<li><a href="{{ url_for('leaves-employee') }}" class="{% if page in ['leaves-employee'] %}active{% endif %}">Employee Leaves</a></li>
+									<li><a href="{{ url_for('leave-types') }}" class="{% if page in ['leave-types'] %}active{% endif %}">Leave Types</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['holidays'] %}active{% endif %}"><a href="{{ url_for('holidays') }}"><i class="ti ti-calendar-share fs-16 me-2"></i><span>Holidays</span></a>
+							</li>
+							<li class="submenu">
+								<a href="{{ url_for('employee-salary') }}" class="{% if page in ['employee-salary', 'payslip'] %}active subdrop{% endif %}"><i class="ti ti-file-dollar fs-16 me-2"></i><span>Payroll</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('employee-salary') }}" class="{% if page in ['employee-salary'] %}active{% endif %}">Employee Salary</a></li>
+									<li><a href="{{ url_for('payslip') }}" class="{% if page in ['payslip'] %}active{% endif %}">Payslip</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Reports</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['sales-report', 'best-seller'] %}active subdrop{% endif %}"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Sales Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('sales-report') }}" class="{% if page in ['sales-report'] %}active{% endif %}">Sales Report</a></li>
+									<li><a href="{{ url_for('best-seller') }}" class="{% if page in ['best-seller'] %}active{% endif %}">Best Seller</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['purchase-report'] %}active{% endif %}"><a href="{{ url_for('purchase-report') }}"><i class="ti ti-chart-pie-2 fs-16 me-2"></i><span>Purchase report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['inventory-report', 'stock-history', 'sold-stock'] %}active subdrop{% endif %}"><i class="ti ti-triangle-inverted fs-16 me-2"></i><span>Inventory Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('inventory-report') }}" class="{% if page in ['inventory-report'] %}active{% endif %}">Inventory Report</a></li>
+									<li><a href="{{ url_for('stock-history') }}" class="{% if page in ['stock-history'] %}active{% endif %}">Stock History</a></li>
+									<li><a href="{{ url_for('sold-stock') }}" class="{% if page in ['sold-stock'] %}active{% endif %}">Sold Stock</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['invoice-report'] %}active{% endif %}"><a href="{{ url_for('invoice-report') }}"><i class="ti ti-businessplan fs-16 me-2"></i><span>Invoice Report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['supplier-report', 'supplier-due-report'] %}active subdrop{% endif %}"><i class="ti ti-user-star fs-16 me-2"></i><span>Supplier Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('supplier-report') }}" class="{% if page in ['supplier-report'] %}active{% endif %}">Supplier Report</a></li>
+									<li><a href="{{ url_for('supplier-due-report') }}" class="{% if page in ['supplier-due-report'] %}active{% endif %}">Supplier Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['customer-report', 'customer-due-report'] %}active subdrop{% endif %}"><i class="ti ti-report fs-16 me-2"></i><span>Customer Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('customer-report') }}" class="{% if page in ['customer-report'] %}active{% endif %}">Customer Report</a></li>
+									<li><a href="{{ url_for('customer-due-report') }}" class="{% if page in ['customer-due-report'] %}active{% endif %}">Customer Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['product-report', 'product-expiry-report', 'product-quantity-alert'] %}active subdrop{% endif %}"><i class="ti ti-report-analytics fs-16 me-2"></i><span>Product Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('product-report') }}" class="{% if page in ['product-report'] %}active{% endif %}">Product Report</a></li>
+									<li><a href="{{ url_for('product-expiry-report') }}" class="{% if page in ['product-expiry-report'] %}active{% endif %}">Product Expiry Report</a></li>
+									<li><a href="{{ url_for('product-quantity-alert') }}" class="{% if page in ['product-quantity-alert'] %}active{% endif %}">Product Quantity Alert</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['expense-report'] %}active{% endif %}"><a href="{{ url_for('expense-report') }}"><i class="ti ti-file-vector fs-16 me-2"></i><span>Expense Report</span></a></li>
+							<li class="{% if page in ['income-report'] %}active{% endif %}"><a href="{{ url_for('income-report') }}"><i class="ti ti-chart-ppf fs-16 me-2"></i><span>Income Report</span></a></li>
+							<li class="{% if page in ['tax-reports', 'sales-tax'] %}active{% endif %}"><a href="{{ url_for('tax-reports') }}"><i class="ti ti-chart-dots-2 fs-16 me-2"></i><span>Tax Report</span></a></li>
+							<li class="{% if page in ['profit-and-loss'] %}active{% endif %}"><a href="{{ url_for('profit-and-loss') }}"><i class="ti ti-chart-donut fs-16 me-2"></i><span>Profit & Loss</span></a></li>
+							<li class="{% if page in ['annual-report'] %}active{% endif %}"><a href="{{ url_for('annual-report') }}"><i class="ti ti-report-search fs-16 me-2"></i><span>Annual Report</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Content (CMS)</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['pages'] %}active subdrop{% endif %}"><i class="ti ti-page-break fs-16 me-2"></i><span>Pages</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('pages') }}" class="{% if page in ['pages'] %}active{% endif %}">Pages</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['all-blog', 'blog-details', 'blog-tag', 'blog-categories', 'blog-comments'] %}active subdrop{% endif %}"><i class="ti ti-wallpaper fs-16 me-2"></i><span>Blog</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('all-blog') }}" class="{% if page in ['all-blog', 'blog-details'] %}active{% endif %}">All Blog</a></li>
+									<li><a href="{{ url_for('blog-tag') }}" class="{% if page in ['blog-tag'] %}active{% endif %}">Blog Tags</a></li>
+									<li><a href="{{ url_for('blog-categories') }}" class="{% if page in ['blog-categories'] %}active{% endif %}">Categories</a></li>
+									<li><a href="{{ url_for('blog-comments') }}" class="{% if page in ['blog-comments'] %}active{% endif %}">Blog Comments</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['countries', 'states', 'cities'] %}active subdrop{% endif %}"><i class="ti ti-map-pin fs-16 me-2"></i><span>Location</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('countries') }}" class="{% if page in ['countries'] %}active{% endif %}">Countries</a></li>
+									<li><a href="{{ url_for('states') }}" class="{% if page in ['states'] %}active{% endif %}">States</a></li>
+									<li><a href="{{ url_for('cities') }}" class="{% if page in ['cities'] %}active{% endif %}">Cities</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['testimonials'] %}active{% endif %}"><a href="{{ url_for('testimonials') }}"><i class="ti ti-star fs-16 me-2"></i><span>Testimonials</span></a></li>
+							<li class="{% if page in ['faq'] %}active{% endif %}"><a href="{{ url_for('faq') }}"><i class="ti ti-help-circle fs-16 me-2"></i><span>FAQ</span></a></li>
+
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">User Management</h6>
+						<ul>
+							<li class="{% if page in ['users'] %}active{% endif %}"><a href="{{ url_for('users') }}"><i class="ti ti-shield-up fs-16 me-2"></i><span>Users</span></a></li>
+							<li class="{% if page in ['roles-permissions', 'permissions'] %}active{% endif %}"><a href="{{ url_for('roles-permissions') }}"><i class="ti ti-jump-rope fs-16 me-2"></i><span>Roles & Permissions</span></a></li>
+							<li class="{% if page in ['delete-account'] %}active{% endif %}"><a href="{{ url_for('delete-account') }}"><i class="ti ti-trash-x fs-16 me-2"></i><span>Delete Account Request</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Pages</h6>
+						<ul>
+							<li class="{% if page in ['profile'] %}active{% endif %}"><a href="{{ url_for('profile') }}"><i class="ti ti-user-circle fs-16 me-2"></i><span>Profile</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['signin', 'signin-2', 'signin-3', 'register', 'register-2', 'register-3', 'forgot-password', 'forgot-password-2', 'forgot-password-3', 'reset-password', 'reset-password-2', 'reset-password-3', 'email-verification', 'email-verification-2', 'email-verification-3', 'two-step-verification', 'two-step-verification-2', 'two-step-verification-3'] %}active subdrop{% endif %}"><i class="ti ti-shield fs-16 me-2"></i><span>Authentication</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['signin', 'signin-2', 'signin-3'] %}active subdrop{% endif %}">Login<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('signin') }}" class="{% if page in ['signin'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('signin-2') }}" class="{% if page in ['signin-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('signin-3') }}" class="{% if page in ['signin-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['register', 'register-2', 'register-3'] %}active subdrop{% endif %}">Register<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('register') }}" class="{% if page in ['register'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('register-2') }}" class="{% if page in ['register-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('register-3') }}" class="{% if page in ['register-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['forgot-password', 'forgot-password-2', 'forgot-password-3'] %}active subdrop{% endif %}">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('forgot-password') }}" class="{% if page in ['forgot-password'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('forgot-password-2') }}" class="{% if page in ['forgot-password-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('forgot-password-3') }}" class="{% if page in ['forgot-password-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['reset-password', 'reset-password-2', 'reset-password-3'] %}active subdrop{% endif %}">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('reset-password') }}" class="{% if page in ['reset-password'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('reset-password-2') }}" class="{% if page in ['reset-password-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('reset-password-3') }}" class="{% if page in ['reset-password-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['email-verification', 'email-verification-2', 'email-verification-3'] %}active subdrop{% endif %}">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('email-verification') }}" class="{% if page in ['email-verification'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('email-verification-2') }}" class="{% if page in ['email-verification-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('email-verification-3') }}" class="{% if page in ['email-verification-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['two-step-verification', 'two-step-verification-2', 'two-step-verification-3'] %}active subdrop{% endif %}">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('two-step-verification') }}" class="{% if page in ['two-step-verification'] %}active{% endif %}">Cover</a></li>
+											<li><a href="{{ url_for('two-step-verification-2') }}" class="{% if page in ['two-step-verification-2'] %}active{% endif %}">Illustration</a></li>
+											<li><a href="{{ url_for('two-step-verification-3') }}" class="{% if page in ['two-step-verification-3'] %}active{% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('lock-screen') }}" class="{% if page in ['lock-screen'] %}active{% endif %}">Lock Screen</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['error-404', 'error-500'] %}active subdrop{% endif %}"><i class="ti ti-file-x fs-16 me-2"></i><span>Error Pages</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('error-404') }}" class="{% if page in ['error-404'] %}active{% endif %}">404 Error </a></li>
+									<li><a href="{{ url_for('error-500') }}" class="{% if page in ['error-500'] %}active{% endif %}">500 Error </a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['blank-page'] %}active{% endif %}">
+								<a href="{{ url_for('blank-page') }}"><i class="ti ti-file fs-16 me-2"></i><span>Blank Page</span> </a>
+							</li>
+							<li class="{% if page in ['pricing'] %}active{% endif %}">
+								<a href="{{ url_for('pricing') }}"><i class="ti ti-currency-dollar fs-16 me-2"></i><span>Pricing</span> </a>
+							</li>
+							<li class="{% if page in ['coming-soon'] %}active{% endif %}">
+								<a href="{{ url_for('coming-soon') }}"><i class="ti ti-send fs-16 me-2"></i><span>Coming Soon</span> </a>
+							</li>
+							<li class="{% if page in ['under-maintenance'] %}active{% endif %}">
+								<a href="{{ url_for('under-maintenance') }}"><i class="ti ti-alert-triangle fs-16 me-2"></i><span>Under Maintenance</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Settings</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['general-settings', 'security-settings', 'notification', 'activities', 'connected-apps'] %}active subdrop{% endif %}"><i class="ti ti-settings fs-16 me-2"></i><span>General Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('general-settings') }}" class="{% if page in ['general-settings'] %}active{% endif %}">Profile</a></li>
+									<li><a href="{{ url_for('security-settings') }}" class="{% if page in ['security-settings'] %}active{% endif %}">Security</a></li>
+									<li><a href="{{ url_for('notification') }}" class="{% if page in ['notification', 'activities'] %}active{% endif %}">Notifications</a></li>
+									<li><a href="{{ url_for('connected-apps') }}" class="{% if page in ['connected-apps'] %}active{% endif %}">Connected Apps</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['system-settings', 'company-settings', 'localization-settings', 'prefixes', 'preference', 'appearance', 'social-authentication', 'language-settings', 'language-settings-web'] %}active subdrop{% endif %}"><i class="ti ti-world fs-16 me-2"></i><span>Website Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('system-settings') }}" class="{% if page in ['system-settings'] %}active{% endif %}">System Settings</a></li>
+									<li><a href="{{ url_for('company-settings') }}" class="{% if page in ['company-settings'] %}active{% endif %}">Company Settings </a></li>
+									<li><a href="{{ url_for('localization-settings') }}" class="{% if page in ['localization-settings'] %}active{% endif %}">Localization</a></li>
+									<li><a href="{{ url_for('prefixes') }}" class="{% if page in ['prefixes'] %}active{% endif %}">Prefixes</a></li>
+									<li><a href="{{ url_for('preference') }}" class="{% if page in ['preference'] %}active{% endif %}">Preference</a></li>
+									<li><a href="{{ url_for('appearance') }}" class="{% if page in ['appearance'] %}active{% endif %}">Appearance</a></li>
+									<li><a href="{{ url_for('social-authentication') }}" class="{% if page in ['social-authentication'] %}active{% endif %}">Social Authentication</a></li>
+									<li><a href="{{ url_for('language-settings') }}" class="{% if page in ['language-settings', 'language-settings-web'] %}active{% endif %}">Language</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['invoice-settings', 'invoice-templates', 'printer-settings', 'pos-settings', 'signatures', 'custom-fields'] %}active subdrop{% endif %}"><i class="ti ti-device-mobile fs-16 me-2"></i>
+									<span>App Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['invoice-settings', 'invoice-templates'] %}active subdrop{% endif %}">Invoice<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('invoice-settings') }}" class="{% if page in ['invoice-settings'] %}active{% endif %}">Invoice Settings</a></li>
+											<li><a href="{{ url_for('invoice-templates') }}" class="{% if page in ['invoice-templates'] %}active{% endif %}">Invoice Template</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('printer-settings') }}" class="{% if page in ['printer-settings'] %}active{% endif %}">Printer</a></li>
+									<li><a href="{{ url_for('pos-settings') }}" class="{% if page in ['pos-settings'] %}active{% endif %}">POS</a></li>
+									<li><a href="{{ url_for('signatures') }}" class="{% if page in ['signatures'] %}active{% endif %}">Signatures</a></li>
+									<li><a href="{{ url_for('custom-fields') }}" class="{% if page in ['custom-fields'] %}active{% endif %}">Custom Fields</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['email-settings', 'email-templates', 'sms-settings', 'sms-templates', 'otp-settings', 'gdpr-settings'] %}active subdrop{% endif %}"><i class="ti ti-device-desktop fs-16 me-2"></i>
+									<span>System Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['email-settings', 'email-templates'] %}active subdrop{% endif %}">Email<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('email-settings') }}" class="{% if page in ['email-settings'] %}active{% endif %}">Email Settings</a></li>
+											<li><a href="{{ url_for('email-templates') }}" class="{% if page in ['email-templates'] %}active{% endif %}">Email Template</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['sms-settings', 'sms-templates'] %}active subdrop{% endif %}">SMS<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('sms-settings') }}" class="{% if page in ['sms-settings'] %}active{% endif %}">SMS Settings</a></li>
+											<li><a href="{{ url_for('sms-templates') }}" class="{% if page in ['sms-templates'] %}active{% endif %}">SMS Template</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('otp-settings') }}" class="{% if page in ['otp-settings'] %}active{% endif %}">OTP</a></li>
+									<li><a href="{{ url_for('gdpr-settings') }}" class="{% if page in ['gdpr-settings'] %}active{% endif %}">GDPR Cookies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['payment-gateway-settings', 'bank-settings-grid', 'bank-settings-list', 'tax-rates', 'currency-settings'] %}active subdrop{% endif %}"><i class="ti ti-settings-dollar fs-16 me-2"></i>
+									<span>Financial Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('payment-gateway-settings') }}" class="{% if page in ['payment-gateway-settings'] %}active{% endif %}">Payment Gateway</a></li>
+									<li><a href="{{ url_for('bank-settings-grid') }}" class="{% if page in ['bank-settings-grid', 'bank-settings-list'] %}active{% endif %}">Bank Accounts</a></li>
+									<li><a href="{{ url_for('tax-rates') }}" class="{% if page in ['tax-rates'] %}active{% endif %}">Tax Rates</a></li>
+									<li><a href="{{ url_for('currency-settings') }}" class="{% if page in ['currency-settings'] %}active{% endif %}">Currencies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['storage-settings', 'ban-ip-address'] %}active subdrop{% endif %}"><i class="ti ti-settings-2 fs-16 me-2"></i>
+									<span>Other Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('storage-settings') }}" class="{% if page in ['storage-settings'] %}active{% endif %}">Storage</a></li>
+									<li><a href="{{ url_for('ban-ip-address') }}" class="{% if page in ['ban-ip-address'] %}active{% endif %}">Ban IP Address</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['signin'] %}active{% endif %}">
+								<a href="{{ url_for('signin') }}"><i class="ti ti-logout fs-16 me-2"></i><span>Logout</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">UI Interface</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['ui-alerts', 'ui-accordion', 'ui-avatar', 'ui-badges', 'ui-borders', 'ui-buttons', 'ui-buttons-group', 'ui-breadcrumb', 'ui-cards', 'ui-carousel', 'ui-colors', 'ui-dropdowns', 'ui-grid', 'ui-images', 'ui-lightbox', 'ui-media', 'ui-modals', 'ui-offcanvas', 'ui-pagination', 'ui-popovers', 'ui-progress', 'ui-placeholders', 'ui-rangeslider', 'ui-spinner', 'ui-sweetalerts', 'ui-nav-tabs', 'ui-toasts', 'ui-tooltips', 'ui-typography', 'ui-video', 'ui-sortable', 'ui-swiperjs'] %}active subdrop{% endif %}"><i class="ti ti-vector-bezier fs-16 me-2"></i><span>Base UI</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('ui-alerts') }}" class="{% if page in ['ui-alerts'] %}active{% endif %}">Alerts</a></li>
+									<li><a href="{{ url_for('ui-accordion') }}" class="{% if page in ['ui-accordion'] %}active{% endif %}">Accordion</a></li>
+									<li><a href="{{ url_for('ui-avatar') }}" class="{% if page in ['ui-avatar'] %}active{% endif %}">Avatar</a></li>
+									<li><a href="{{ url_for('ui-badges') }}" class="{% if page in ['ui-badges'] %}active{% endif %}">Badges</a></li>
+									<li><a href="{{ url_for('ui-borders') }}" class="{% if page in ['ui-borders'] %}active{% endif %}">Border</a></li>
+									<li><a href="{{ url_for('ui-buttons') }}" class="{% if page in ['ui-buttons'] %}active{% endif %}">Buttons</a></li>
+									<li><a href="{{ url_for('ui-buttons-group') }}" class="{% if page in ['ui-buttons-group'] %}active{% endif %}">Button Group</a></li>
+									<li><a href="{{ url_for('ui-breadcrumb') }}" class="{% if page in ['ui-breadcrumb'] %}active{% endif %}">Breadcrumb</a></li>
+									<li><a href="{{ url_for('ui-cards') }}" class="{% if page in ['ui-cards'] %}active{% endif %}">Card</a></li>
+									<li><a href="{{ url_for('ui-carousel') }}" class="{% if page in ['ui-carousel'] %}active{% endif %}">Carousel</a></li>
+									<li><a href="{{ url_for('ui-colors') }}" class="{% if page in ['ui-colors'] %}active{% endif %}">Colors</a></li>
+									<li><a href="{{ url_for('ui-dropdowns') }}" class="{% if page in ['ui-dropdowns'] %}active{% endif %}">Dropdowns</a></li>
+									<li><a href="{{ url_for('ui-grid') }}" class="{% if page in ['ui-grid'] %}active{% endif %}">Grid</a></li>
+									<li><a href="{{ url_for('ui-images') }}" class="{% if page in ['ui-images'] %}active{% endif %}">Images</a></li>
+									<li><a href="{{ url_for('ui-lightbox') }}" class="{% if page in ['ui-lightbox'] %}active{% endif %}">Lightbox</a></li>
+									<li><a href="{{ url_for('ui-media') }}" class="{% if page in ['ui-media'] %}active{% endif %}">Media</a></li>
+									<li><a href="{{ url_for('ui-modals') }}" class="{% if page in ['ui-modals'] %}active{% endif %}">Modals</a></li>
+									<li><a href="{{ url_for('ui-offcanvas') }}" class="{% if page in ['ui-offcanvas'] %}active{% endif %}">Offcanvas</a></li>
+									<li><a href="{{ url_for('ui-pagination') }}" class="{% if page in ['ui-pagination'] %}active{% endif %}">Pagination</a></li>
+									<li><a href="{{ url_for('ui-popovers') }}" class="{% if page in ['ui-popovers'] %}active{% endif %}">Popovers</a></li>
+									<li><a href="{{ url_for('ui-progress') }}" class="{% if page in ['ui-progress'] %}active{% endif %}">Progress</a></li>
+									<li><a href="{{ url_for('ui-placeholders') }}" class="{% if page in ['ui-placeholders'] %}active{% endif %}">Placeholders</a></li>
+									<li><a href="{{ url_for('ui-rangeslider') }}" class="{% if page in ['ui-rangeslider'] %}active{% endif %}">Range Slider</a></li>
+									<li><a href="{{ url_for('ui-spinner') }}" class="{% if page in ['ui-spinner'] %}active{% endif %}">Spinner</a></li>
+									<li><a href="{{ url_for('ui-sweetalerts') }}" class="{% if page in ['ui-sweetalerts'] %}active{% endif %}">Sweet Alerts</a></li>
+									<li><a href="{{ url_for('ui-nav-tabs') }}" class="{% if page in ['ui-nav-tabs'] %}active{% endif %}">Tabs</a></li>
+									<li><a href="{{ url_for('ui-toasts') }}" class="{% if page in ['ui-toasts'] %}active{% endif %}">Toasts</a></li>
+									<li><a href="{{ url_for('ui-tooltips') }}" class="{% if page in ['ui-tooltips'] %}active{% endif %}">Tooltips</a></li>
+									<li><a href="{{ url_for('ui-typography') }}" class="{% if page in ['ui-typography'] %}active{% endif %}">Typography</a></li>
+									<li><a href="{{ url_for('ui-video') }}" class="{% if page in ['ui-video'] %}active{% endif %}">Video</a></li>
+									<li><a href="{{ url_for('ui-sortable') }}" class="{% if page in ['ui-sortable'] %}active{% endif %}">Sortable</a></li>
+									<li><a href="{{ url_for('ui-swiperjs') }}" class="{% if page in ['ui-swiperjs'] %}active{% endif %}">Swiperjs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['ui-ribbon', 'ui-clipboard', 'ui-drag-drop', 'ui-rangeslider', 'ui-rating', 'ui-text-editor', 'ui-counter', 'ui-scrollbar', 'ui-stickynote', 'ui-timeline'] %}active subdrop{% endif %}">
+									<i data-feather="layers"></i><span>Advanced UI</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('ui-ribbon') }}" class="{% if page in ['ui-ribbon'] %}active{% endif %}">Ribbon</a></li>
+									<li><a href="{{ url_for('ui-clipboard') }}" class="{% if page in ['ui-clipboard'] %}active{% endif %}">Clipboard</a></li>
+									<li><a href="{{ url_for('ui-drag-drop') }}" class="{% if page in ['ui-drag-drop'] %}active{% endif %}">Drag & Drop</a></li>
+									<li><a href="{{ url_for('ui-rangeslider') }}" class="{% if page in ['ui-rangeslider'] %}active{% endif %}">Range Slider</a></li>
+									<li><a href="{{ url_for('ui-rating') }}" class="{% if page in ['ui-rating'] %}active{% endif %}">Rating</a></li>
+									<li><a href="{{ url_for('ui-text-editor') }}" class="{% if page in ['ui-text-editor'] %}active{% endif %}">Text Editor</a></li>
+									<li><a href="{{ url_for('ui-counter') }}" class="{% if page in ['ui-counter'] %}active{% endif %}">Counter</a></li>
+									<li><a href="{{ url_for('ui-scrollbar') }}" class="{% if page in ['ui-scrollbar'] %}active{% endif %}">Scrollbar</a></li>
+									<li><a href="{{ url_for('ui-stickynote') }}" class="{% if page in ['ui-stickynote'] %}active{% endif %}">Sticky Note</a></li>
+									<li><a href="{{ url_for('ui-timeline') }}" class="{% if page in ['ui-timeline'] %}active{% endif %}">Timeline</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['chart-apex', 'chart-c3', 'chart-js', 'chart-morris', 'chart-flot', 'chart-peity'] %}active subdrop{% endif %}"><i class="ti ti-chart-infographic fs-16 me-2"></i>
+									<span>Charts</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('chart-apex') }}" class="{% if page in ['chart-apex'] %}active{% endif %}">Apex Charts</a></li>
+									<li><a href="{{ url_for('chart-c3') }}" class="{% if page in ['chart-c3'] %}active{% endif %}">Chart C3</a></li>
+									<li><a href="{{ url_for('chart-js') }}" class="{% if page in ['chart-js'] %}active{% endif %}">Chart Js</a></li>
+									<li><a href="{{ url_for('chart-morris') }}" class="{% if page in ['chart-morris'] %}active{% endif %}">Morris Charts</a></li>
+									<li><a href="{{ url_for('chart-flot') }}" class="{% if page in ['chart-flot'] %}active{% endif %}">Flot Charts</a></li>
+									<li><a href="{{ url_for('chart-peity') }}" class="{% if page in ['chart-peity'] %}active{% endif %}">Peity Charts</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['icon-fontawesome', 'icon-feather', 'icon-ionic', 'icon-material', 'icon-pe7', 'icon-simpleline', 'icon-themify', 'icon-weather', 'icon-typicon', 'icon-flag', 'icon-tabler', 'icon-bootstrap', 'icon-remix'] %}active subdrop{% endif %}"><i class="ti ti-icons fs-16 me-2"></i>
+									<span>Icons</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ url_for('icon-fontawesome') }}" class="{% if page in ['icon-fontawesome'] %}active{% endif %}">Fontawesome Icons</a></li>
+									<li><a href="{{ url_for('icon-feather') }}" class="{% if page in ['icon-feather'] %}active{% endif %}">Feather Icons</a></li>
+									<li><a href="{{ url_for('icon-ionic') }}" class="{% if page in ['icon-ionic'] %}active{% endif %}">Ionic Icons</a></li>
+									<li><a href="{{ url_for('icon-material') }}" class="{% if page in ['icon-material'] %}active{% endif %}">Material Icons</a></li>
+									<li><a href="{{ url_for('icon-pe7') }}" class="{% if page in ['icon-pe7'] %}active{% endif %}">Pe7 Icons</a></li>
+									<li><a href="{{ url_for('icon-simpleline') }}" class="{% if page in ['icon-simpleline'] %}active{% endif %}">Simpleline Icons</a></li>
+									<li><a href="{{ url_for('icon-themify') }}" class="{% if page in ['icon-themify'] %}active{% endif %}">Themify Icons</a></li>
+									<li><a href="{{ url_for('icon-weather') }}" class="{% if page in ['icon-weather'] %}active{% endif %}">Weather Icons</a></li>
+									<li><a href="{{ url_for('icon-typicon') }}" class="{% if page in ['icon-typicon'] %}active{% endif %}">Typicon Icons</a></li>
+									<li><a href="{{ url_for('icon-flag') }}" class="{% if page in ['icon-flag'] %}active{% endif %}">Flag Icons</a></li>
+									<li><a href="{{ url_for('icon-tabler') }}" class="{% if page in ['icon-tabler'] %}active{% endif %}">Tabler Icons</a></li>
+									<li><a href="{{ url_for('icon-bootstrap') }}" class="{% if page in ['icon-bootstrap'] %}active{% endif %}">Bootstrap Icons</a></li>
+									<li><a href="{{ url_for('icon-remix') }}" class="{% if page in ['icon-remix'] %}active{% endif %}">Remix Icons</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['form-basic-inputs', 'form-checkbox-radios', 'form-input-groups', 'form-grid-gutters', 'form-select', 'form-fileupload', 'form-mask', 'form-horizontal', 'form-vertical', 'form-floating-labels', 'form-mask', 'form-validation', 'form-select2', 'form-wizard', 'form-pickers'] %}active subdrop{% endif %}">
+									<i class="ti ti-input-search fs-16 me-2"></i><span>Forms</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if page in ['form-basic-inputs', 'form-checkbox-radios', 'form-input-groups', 'form-grid-gutters', 'form-select', 'form-fileupload', 'form-mask'] %}active subdrop{% endif %}">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('form-basic-inputs') }}" class="{% if page in ['form-basic-inputs'] %}active{% endif %}">Basic Inputs</a></li>
+											<li><a href="{{ url_for('form-checkbox-radios') }}" class="{% if page in ['form-checkbox-radios'] %}active{% endif %}">Checkbox & Radios</a></li>
+											<li><a href="{{ url_for('form-input-groups') }}" class="{% if page in ['form-input-groups'] %}active{% endif %}">Input Groups</a></li>
+											<li><a href="{{ url_for('form-grid-gutters') }}" class="{% if page in ['form-grid-gutters'] %}active{% endif %}">Grid & Gutters</a></li>
+											<li><a href="{{ url_for('form-select') }}" class="{% if page in ['form-select'] %}active{% endif %}">Form Select</a></li>
+											<li><a href="{{ url_for('form-mask') }}" class="{% if page in ['form-mask'] %}active{% endif %}">Input Masks</a></li>
+											<li><a href="{{ url_for('form-fileupload') }}" class="{% if page in ['form-fileupload'] %}active{% endif %}">File Uploads</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if page in ['form-horizontal', 'form-vertical', 'form-floating-labels'] %}active subdrop{% endif %}">Layouts<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ url_for('form-horizontal') }}" class="{% if page in ['form-horizontal'] %}active{% endif %}">Horizontal Form</a></li>
+											<li><a href="{{ url_for('form-vertical') }}" class="{% if page in ['form-vertical'] %}active{% endif %}">Vertical Form</a></li>
+											<li><a href="{{ url_for('form-floating-labels') }}" class="{% if page in ['form-floating-labels'] %}active{% endif %}">Floating Labels</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ url_for('form-validation') }}" class="{% if page in ['form-validation'] %}active{% endif %}">Form Validation</a></li>
+									<li><a href="{{ url_for('form-select2') }}" class="{% if page in ['form-select2'] %}active{% endif %}">Select2</a></li>
+									<li><a href="{{ url_for('form-wizard') }}" class="{% if page in ['form-wizard'] %}active{% endif %}">Form Wizard</a></li>
+									<li><a href="{{ url_for('form-pickers') }}" class="{% if page in ['form-pickers'] %}active{% endif %}">Form Picker</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['tables-basic', 'data-tables'] %}active subdrop{% endif %}"><i class="ti ti-table fs-16 me-2"></i><span>Tables</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('tables-basic') }}" class="{% if page in ['tables-basic'] %}active{% endif %}">Basic Tables </a></li>
+									<li><a href="{{ url_for('data-tables') }}" class="{% if page in ['data-tables'] %}active{% endif %}">Data Table </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['maps-vector', 'maps-leaflet'] %}active subdrop{% endif %}"><i class="ti ti-map-pin-pin fs-16 me-2"></i><span>Maps</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ url_for('maps-vector') }}" class="{% if page in ['maps-vector'] %}active{% endif %}">Vector</a></li>
+									<li><a href="{{ url_for('maps-leaflet') }}" class="{% if page in ['maps-leaflet'] %}active{% endif %}">Leaflet</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Help</h6>
+						<ul>
+							<li><a href="https://dreamspos.dreamstechnologies.com/documentation/flask.html" target="_blank"><i class="ti ti-file-text fs-16 me-2"></i><span>Documentation</span></a></li>
+							<li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html" target="_blank"><i class="ti ti-exchange fs-16 me-2"></i><span>Changelog </span><span class="badge bg-primary badge-xs text-white fs-10 ms-2">v2.2.4</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="ti ti-menu-2 fs-16 me-2"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="javascript:void(0);">Level 1.1</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 2.1</a></li>
+											<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 3.1</a></li>
+													<li><a href="javascript:void(0);">Level 3.2</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Sidebar -->

@@ -1,0 +1,21 @@
+{% set page = app.request.attributes.get('_route') %}
+
+{% if page == 'layout-horizontal' %}
+    <html lang="en" data-layout="horizontal">
+{% elseif page == 'layout-detached' %}
+    <html lang="en" data-layout="detached">
+{% elseif page == 'layout-modern' %}
+    <html lang="en" data-layout="modern">
+{% elseif page == 'layout-two-column' %}
+    <html lang="en" data-layout="twocolumn">
+{% elseif page == 'layout-hovered' %}
+    <html lang="en" data-layout="layout-hovered">
+{% elseif page == 'layout-boxed' %}
+    <html lang="en" data-layout="default" data-width="box">
+{% elseif page == 'layout-rtl' %}
+    <html lang="en" data-layout-mode="light_mode">
+{% elseif page == 'layout-dark' %}
+    <html lang="en" data-theme="dark">
+{% else %}
+    <html lang="en">
+{% endif %}

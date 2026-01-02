@@ -44,7 +44,7 @@ export function Profile() {
   const navigate = useNavigate();
   const toast = useToast();
   const isMobile = useIsMobile();
-  const { user, isAuthenticated, logout } = useAuthStore();
+  const { isAuthenticated, logout } = useAuthStore();
 
   const [loading, setLoading] = useState(true);
   const [saving, setSaving] = useState(false);
@@ -143,7 +143,7 @@ export function Profile() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement du profil..." />;
+    return <LoadingSpinner fullScreen message="Chargement du profil..." />;
   }
 
   if (!profile) {

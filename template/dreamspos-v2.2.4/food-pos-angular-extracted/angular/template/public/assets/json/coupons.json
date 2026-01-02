@@ -1,0 +1,95 @@
+{
+    "data": [
+  {
+    "id":1,
+    "couponCode": "SEAFOOD10",
+    "validCategory": "Sea Foods",
+    "discountType": "Percentage",
+    "discountAmount": "10%",
+    "duration": "01 Jan 2025 - 31 Dec 2025",
+    "status": "Active"
+  },
+  { 
+    "id":2,
+    "couponCode": "PIZZA20",
+    "validCategory": "Pizza Orders",
+    "discountType": "Fixed Amount",
+    "discountAmount": "20%",
+    "duration": "15 Feb 2025 - 20 Nov 2025",
+    "status": "Active"
+  },
+  { 
+    "id":3,
+    "couponCode": "SALAD15",
+    "validCategory": "Salads",
+    "discountType": "Percentage",
+    "discountAmount": "15%",
+    "duration": "22 Mar 2025 - 25 Nov 2025",
+    "status": "Active"
+  },
+  {
+    "id":4,
+    "couponCode": "TACO5",
+    "validCategory": "Salads",
+    "discountType": "Percentage",
+    "discountAmount": "$5",
+    "duration": "15 Apr 2025 - 10 Oct 2025",
+    "status": "Expired"
+  },
+  { 
+    "id":5,
+    "couponCode": "WEEKEND25",
+    "validCategory": "All Categories",
+    "discountType": "Percentage",
+    "discountAmount": "25%",
+    "duration": "03 May 2025 - 13 Nov 2025",
+    "status": "Active"
+  },
+  { 
+    "id":6,
+    "couponCode": "COMBO50",
+    "validCategory": "Combo Meals",
+    "discountType": "Percentage",
+    "discountAmount": "5%",
+    "duration": "05 Jun 2025 - 20 Dec 2025",
+    "status": "Active"
+  },
+  { 
+    "id":7,
+    "couponCode": "HOLIDAY30",
+    "validCategory": "All Categories",
+    "discountType": "Fixed Amount",
+    "discountAmount": "$30",
+    "duration": "10 Jul 2025 - 15 Dec 2025",
+    "status": "Active"
+  },
+  {   
+    "id":8,
+    "couponCode": "SWEET10",
+    "validCategory": "Desserts",
+    "discountType": "Percentage",
+    "discountAmount": "10%",
+    "duration": "18 Aug 2025 - 25 Dec 2025",
+    "status": "Active"
+  },
+  { 
+    "id":9,
+    "couponCode": "FAMILYFEAST",
+    "validCategory": "All Categories",
+    "discountType": "Fixed Amount",
+    "discountAmount": "$100",
+    "duration": "04 Sep 2025 - 10 Oct 2025",
+    "status": "Expired"
+  },
+  { 
+    "id":10,
+    "couponCode": "FIRSTORDER",
+    "validCategory": "All Categories",
+    "discountType": "Fixed Amount",
+    "discountAmount": "$50",
+    "duration": "01 Nov 2025 - 31 Dec 2025",
+    "status": "Active"
+  }
+],
+"totalData":10
+}

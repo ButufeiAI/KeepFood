@@ -21,7 +21,7 @@ export function MenuSelector() {
   const [menu, setMenu] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [selectedCategory, setSelectedCategory] = useState<string | null>(null);
-  const [currentStep, setCurrentStep] = useState(0);
+  // const [currentStep, setCurrentStep] = useState(0); // Non utilisé
   const [searchQuery, setSearchQuery] = useState('');
   const debouncedSearch = useDebounce(searchQuery, 300);
   
@@ -107,7 +107,7 @@ export function MenuSelector() {
   const itemCount = getItemCount();
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement du menu..." />;
+    return <LoadingSpinner fullScreen message="Chargement du menu..." />;
   }
 
   if (!restaurant || menu.length === 0) {

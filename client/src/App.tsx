@@ -10,6 +10,9 @@ import { Login } from './pages/Login';
 import { Register } from './pages/Register';
 import { Dashboard } from './pages/Dashboard';
 import { Home } from './pages/Home';
+import ClientMenu from './pages/ClientMenu';
+import { LoyaltyHistory } from './pages/LoyaltyHistory';
+import { MySubscriptions } from './pages/MySubscriptions';
 
 function App() {
   return (
@@ -19,6 +22,8 @@ function App() {
         <Route path="/" element={<Home />} />
         {/* Route pour /order?tableId=xxx&restaurantId=yyy (QR code) */}
         <Route path="/order" element={<Order />} />
+        {/* NOUVELLE ROUTE - Menu style Delyss */}
+        <Route path="/client-menu/:restaurantId" element={<ClientMenu />} />
         {/* Route principale avec template interactif moderne */}
         <Route path="/menu/:restaurantId" element={<MenuCard />} />
         <Route path="/menu/:restaurantId/:tableId" element={<MenuCard />} />
@@ -32,6 +37,8 @@ function App() {
         <Route path="/cart/:restaurantId/:tableId" element={<Cart />} />
         <Route path="/order/:orderId" element={<OrderSuccess />} />
         <Route path="/table-session/:sessionId" element={<TableSessionPage />} />
+        <Route path="/loyalty/:restaurantId" element={<LoyaltyHistory />} />
+        <Route path="/subscriptions/:restaurantId" element={<MySubscriptions />} />
         <Route path="/login" element={<Login />} />
         <Route path="/register" element={<Register />} />
         <Route path="/dashboard" element={<Dashboard />} />

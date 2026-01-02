@@ -4,7 +4,9 @@ import { AppModule } from './app.module';
 import * as cookieParser from 'cookie-parser';
 
 async function bootstrap() {
-  const app = await NestFactory.create(AppModule);
+  const app = await NestFactory.create(AppModule, {
+    rawBody: true, // Nécessaire pour les webhooks Stripe
+  });
 
   // CORS configuration - Accepter les requêtes depuis localhost et l'IP locale
   const getLocalIP = () => {

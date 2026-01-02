@@ -9,6 +9,8 @@ import { Product } from '../entities/product.entity';
 import { ProductVariant } from '../entities/product-variant.entity';
 import { Restaurant } from '../entities/restaurant.entity';
 import { LoyaltyModule } from '../loyalty/loyalty.module';
+import { VivaWalletService } from './providers/viva-wallet.service';
+import { StripeService } from './providers/stripe.service';
 
 @Module({
   imports: [
@@ -23,7 +25,7 @@ import { LoyaltyModule } from '../loyalty/loyalty.module';
     LoyaltyModule,
   ],
   controllers: [PaymentsController],
-  providers: [PaymentsService],
+  providers: [PaymentsService, VivaWalletService, StripeService],
   exports: [PaymentsService],
 })
 export class PaymentsModule {}

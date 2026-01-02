@@ -28,6 +28,12 @@ import { FavoriteProduct } from './entities/favorite-product.entity';
 import { ClientNotification } from './entities/client-notification.entity';
 import { EmployeeProfile } from './entities/employee-profile.entity';
 import { ClientProfile } from './entities/client-profile.entity';
+import { ZoneAssignment } from './entities/zone-assignment.entity';
+import { PromoCode } from './entities/promo-code.entity';
+import { PromoCodeUsage } from './entities/promo-code-usage.entity';
+import { Addon } from './entities/addon.entity';
+import { TaxSetting } from './entities/tax-setting.entity';
+import { EstablishmentType } from './entities/establishment-type.entity';
 import { AuthModule } from './auth/auth.module';
 import { RestaurantsModule } from './restaurants/restaurants.module';
 import { TablesModule } from './tables/tables.module';
@@ -48,6 +54,9 @@ import { LoyaltyModule } from './loyalty/loyalty.module';
 import { SubscriptionsModule } from './subscriptions/subscriptions.module';
 import { FavoritesModule } from './favorites/favorites.module';
 import { NotificationsModule } from './notifications/notifications.module';
+import { ZoneAssignmentsModule } from './zone-assignments/zone-assignments.module';
+import { MarketingModule } from './marketing/marketing.module';
+import { EstablishmentTypesModule } from './establishment-types/establishment-types.module';
 
 @Module({
   imports: [
@@ -88,6 +97,12 @@ import { NotificationsModule } from './notifications/notifications.module';
         ClientNotification,
         EmployeeProfile,
         ClientProfile,
+        ZoneAssignment,
+        PromoCode,
+        PromoCodeUsage,
+        Addon,
+        TaxSetting,
+        EstablishmentType,
       ],
       synchronize: process.env.NODE_ENV !== 'production', // Only in development
       logging: process.env.NODE_ENV === 'development',
@@ -112,6 +127,9 @@ import { NotificationsModule } from './notifications/notifications.module';
     SubscriptionsModule,
     FavoritesModule,
     NotificationsModule,
+    ZoneAssignmentsModule,
+    MarketingModule,
+    EstablishmentTypesModule,
   ],
   controllers: [AppController],
   providers: [AppService],

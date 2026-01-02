@@ -1,0 +1,316 @@
+<?= $this->extend('layouts/mainlayout') ?>
+
+<?= $this->section('content') ?>
+
+    <!-- ========================
+        Start Page Content
+    ========================= -->
+
+    <div class="page-wrapper">
+
+        <!-- Start Content -->
+        <div class="content">
+
+            <!-- Page Header -->
+            <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">Coupons<a href="#" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+                </div>
+                <div class="gap-2 d-flex align-items-center flex-wrap">
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
+                            <i class="icon-upload me-1"></i>Export
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                                <a href="#" class="dropdown-item rounded">Export as PDF</a>
+                            </li>
+                            <li>
+                                <a href="#" class="dropdown-item rounded">Export as Excel</a>
+                            </li>
+                        </ul>
+                    </div>
+                    <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_coupon"><i class="icon-circle-plus me-1"></i>Add New</a>
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <!-- card start -->
+            <div class="card mb-0">
+                <div class="card-body">
+                    <div class="d-flex align-items-center flex-wrap gap-3 justify-content-between mb-4">
+
+                        <div class="search-input">
+                            <span class="btn-searchset"><i class="icon-search fs-14"></i></span>
+                        </div>
+
+                        <div class="d-flex align-items-center gap-2 flex-wrap">
+
+                            <!-- filter -->
+                            <a href="#" class="btn btn-white d-inline-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#filter-offcanvas" aria-controls="filter-offcanvas">
+                                <i class="icon-funnel me-2"></i>Filter
+                            </a>
+
+                            <!-- column -->
+                            <div class="dropdown">
+                                <a href="#" class="btn btn-icon btn-white" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="icon-columns-3"></i></a>
+                                <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-3 pb-0">
+                                    <h5 class="mb-3">Column</h5>
+                                    <div>
+                                        <div id="drag-container">
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                                    Coupon Code
+                                                </label>
+                                            </div>
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                                    Valid Category
+                                                </label>
+                                            </div>
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox">
+                                                    Discount Type
+                                                </label>
+                                            </div>
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                                    Discount Amount
+                                                </label>
+                                            </div>
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                                    Duration
+                                                </label>
+                                            </div>
+                                            <div class="mb-3 drag-item" draggable="true">
+                                                <label class="d-flex align-items-center">
+                                                    <i class="icon-grip-vertical me-2"></i>
+                                                    <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                                    Actions
+                                                </label>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+
+                            <!-- sort by -->
+                            <div class="dropdown">
+                                <a href="#" class="dropdown-toggle btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
+                                    Sort by : Newest
+                                </a>
+                                <ul class="dropdown-menu dropdown-menu-end p-3">
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">Newest</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">Oldest</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">Ascending</a>
+                                    </li>
+                                    <li>
+                                        <a href="javascript:void(0);" class="dropdown-item">Descending</a>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- table start -->
+                    <div class="table-responsive table-nowrap">
+                        <table class="table mb-0 border datatable">
+                            <thead>
+                                <tr>
+                                    <th>Coupon Code</th>
+                                    <th>Valid Category</th>
+                                    <th>Discount Type</th>
+                                    <th>Discount Amount</th>
+                                    <th>Duration</th>
+                                        <th>Status</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>SEAFOOD10</td>
+                                    <td>Sea Foods</td>
+                                    <td>Percentage</td>
+                                    <td>10%</td>
+                                    <td>01 Jan 2025 - 31 Dec 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>PIZZA20</td>
+                                    <td>Pizza Orders</td>
+                                    <td>Fixed Amount</td>
+                                    <td>20%</td>
+                                    <td>15 Feb 2025 - 20 Nov 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SALAD15</td>
+                                    <td>Salads</td>
+                                    <td>Percentage</td>
+                                    <td>15%</td>
+                                    <td>22 Mar 2025 - 25 Nov 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>TACO5</td>
+                                    <td>Salads</td>
+                                    <td>Percentage</td>
+                                    <td>$5</td>
+                                    <td>15 Apr 2025 - 10 Oct 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-danger">Expired</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>WEEKEND25</td>
+                                    <td>All Categories</td>
+                                    <td>Percentage</td>
+                                    <td>25%</td>
+                                    <td>03 May 2025 - 13 Nov 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>COMBO50</td>
+                                    <td>Combo Meals</td>
+                                    <td>Percentage</td>
+                                    <td>5%</td>
+                                    <td>05 Jun 2025 - 20 Dec 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>HOLIDAY30</td>
+                                    <td>All Categories</td>
+                                    <td>Fixed Amount</td>
+                                    <td>$30</td>
+                                    <td>10 Jul 2025 - 15 Dec 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>SWEET10</td>
+                                    <td>Desserts</td>
+                                    <td>Percentage</td>
+                                    <td>10%</td>
+                                    <td>18 Aug 2025 - 25 Dec 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>FAMILYFEAST</td>
+                                    <td>All Categories</td>
+                                    <td>Fixed Amount</td>
+                                    <td>$100</td>
+                                    <td>04 Sep 2025 - 10 Oct 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-danger">Expired</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>FIRSTORDER</td>
+                                    <td>All Categories</td>
+                                    <td>Fixed Amount</td>
+                                    <td>$50</td>
+                                    <td>01 Nov 2025 - 31 Dec 2025</td>
+                                    <td>
+                                        <span class="badge badge-soft-success">Active</span>
+                                    </td>
+                                        <td>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#show_coupon"><i class="icon-eye"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_coupon"><i class="icon-pencil-line"></i></a>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+
+
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- table end -->
+                </div>
+
+            </div>
+            <!-- card start -->
+
+        </div>
+        <!-- End Content -->
+
+    </div>
+
+    <!-- ========================
+        End Page Content
+    ========================= -->
+
+<?= $this->endSection() ?>

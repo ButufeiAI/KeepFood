@@ -1,22 +1,28 @@
 import { useState, useEffect } from 'react';
 import { categoriesService, CreateCategoryDto, Category } from '../services/categories.service';
 import { useAuthStore } from '../stores/auth.store';
-import { useIsMobile } from '../hooks/useIsMobile';
 
 export function Categories() {
   const { user } = useAuthStore();
-  const isMobile = useIsMobile();
   const [categories, setCategories] = useState<Category[]>([]);
   const [mainCategories, setMainCategories] = useState<Category[]>([]);
   const [loading, setLoading] = useState(true);
   const [showForm, setShowForm] = useState(false);
   const [initializing, setInitializing] = useState(false);
+  const [isMobile, setIsMobile] = useState(false);
   const [formData, setFormData] = useState<Omit<CreateCategoryDto, 'restaurantId'>>({
     name: '',
     description: '',
     isActive: true,
   });
   const [categoryImageUrl, setCategoryImageUrl] = useState<string>('');
+
+  useEffect(() => {
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
 
   useEffect(() => {
     loadData();
@@ -69,7 +75,7 @@ export function Categories() {
   };
 
   const handleInitializeDefaults = async () => {
-    if (!confirm('Cela va créer des catégories par défaut (Restaurant, Friterie, Fast Food, Boissons, Desserts) avec leurs sous-catégories. Continuer ?')) {
+    if (!confirm('Cela va créer des catégories par défaut. Continuer ?')) {
       return;
     }
     try {
@@ -89,21 +95,39 @@ export function Categories() {
   };
 
   if (loading) {
-    return <div style={{ padding: '2rem', textAlign: 'center' }}>Chargement...</div>;
+    return (
+      <div style={{ padding: '2rem', textAlign: 'center' }}>
+        <p>Chargement...</p>
+      </div>
+    );
   }
 
   return (
-    <div>
+    <div style={{ padding: isMobile ? '1.5rem 1rem' : '2rem', backgroundColor: '#f8f9fa', minHeight: '100vh' }}>
+      {/* Header */}
       <div style={{
         display: 'flex',
-        flexDirection: isMobile ? 'column' : 'row',
-        justifyContent: isMobile ? 'flex-start' : 'space-between',
-        alignItems: isMobile ? 'flex-start' : 'center',
-        gap: isMobile ? '1rem' : '0',
+        justifyContent: 'space-between', 
+        alignItems: 'center', 
         marginBottom: '2rem',
+        flexWrap: 'wrap',
+        gap: '1rem'
       }}>
-        <h1 style={{ fontSize: isMobile ? '1.5rem' : '2rem', margin: 0 }}>Catégories</h1>
-        <div style={{ display: 'flex', gap: '1rem', flexWrap: 'wrap' }}>
+        <div>
+          <h1 style={{ 
+            fontSize: isMobile ? '1.5rem' : '2rem', 
+            fontWeight: '700', 
+            color: '#212529', 
+            margin: 0,
+            marginBottom: '0.25rem'
+          }}>
+            Categories
+          </h1>
+          <p style={{ color: '#6c757d', margin: 0, fontSize: '0.875rem' }}>
+            Organisez vos produits par catégories
+          </p>
+        </div>
+        <div style={{ display: 'flex', gap: '0.75rem', flexWrap: 'wrap' }}>
           {categories.length === 0 && (
             <button
               onClick={handleInitializeDefaults}
@@ -113,11 +137,13 @@ export function Categories() {
                 backgroundColor: initializing ? '#6c757d' : '#28a745',
                 color: 'white',
                 border: 'none',
-                borderRadius: '4px',
+                borderRadius: '8px',
                 cursor: initializing ? 'not-allowed' : 'pointer',
+                fontSize: '0.875rem',
+                fontWeight: '600'
               }}
             >
-              {initializing ? 'Création...' : '📋 Créer catégories par défaut'}
+              {initializing ? 'Création...' : 'Init Defaults'}
             </button>
           )}
           <button
@@ -127,49 +153,36 @@ export function Categories() {
               backgroundColor: '#007bff',
               color: 'white',
               border: 'none',
-              borderRadius: '4px',
+              borderRadius: '8px',
               cursor: 'pointer',
+              fontSize: '0.875rem',
+              fontWeight: '600',
+              boxShadow: '0 2px 4px rgba(0,123,255,0.2)'
             }}
           >
-            {showForm ? 'Annuler' : '+ Nouvelle catégorie'}
+            {showForm ? 'Cancel' : '+ Add New'}
           </button>
         </div>
       </div>
 
+      {/* Form */}
       {showForm && (
-        <form
-          onSubmit={handleSubmit}
-          style={{
+        <div style={{
             backgroundColor: 'white',
-            padding: '2rem',
-            borderRadius: '8px',
+          borderRadius: '12px',
+          padding: '1.5rem',
             marginBottom: '2rem',
-            boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-          }}
-        >
-          <h2 style={{ marginBottom: '1.5rem' }}>Nouvelle catégorie</h2>
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          border: '1px solid #f0f0f0'
+        }}>
+          <h2 style={{ fontSize: '1.25rem', fontWeight: '600', marginBottom: '1.5rem', color: '#212529' }}>
+            New Category
+          </h2>
+          <form onSubmit={handleSubmit}>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Type de catégorie</label>
-            <select
-              value={formData.parentCategoryId || ''}
-              onChange={(e) => setFormData({ ...formData, parentCategoryId: e.target.value || undefined })}
-              style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #ddd',
-                borderRadius: '4px',
-              }}
-            >
-              <option value="">Catégorie principale</option>
-              {mainCategories.map((cat) => (
-                <option key={cat.id} value={cat.id}>
-                  Sous-catégorie de: {cat.name}
-                </option>
-              ))}
-            </select>
-          </div>
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Nom *</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: '500', color: '#495057' }}>
+                Name *
+              </label>
             <input
               type="text"
               value={formData.name}
@@ -178,13 +191,16 @@ export function Categories() {
               style={{
                 width: '100%',
                 padding: '0.75rem',
-                border: '1px solid #ddd',
-                borderRadius: '4px',
+                  border: '1px solid #dee2e6',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem'
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Description</label>
+              <label style={{ display: 'block', marginBottom: '0.5rem', fontSize: '0.875rem', fontWeight: '500', color: '#495057' }}>
+                Description
+              </label>
             <textarea
               value={formData.description || ''}
               onChange={(e) => setFormData({ ...formData, description: e.target.value })}
@@ -192,48 +208,16 @@ export function Categories() {
               style={{
                 width: '100%',
                 padding: '0.75rem',
-                border: '1px solid #ddd',
-                borderRadius: '4px',
-                resize: 'vertical',
+                  border: '1px solid #dee2e6',
+                  borderRadius: '8px',
+                  fontSize: '0.875rem',
+                  fontFamily: 'inherit',
+                  resize: 'vertical'
               }}
             />
           </div>
           <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'block', marginBottom: '0.5rem' }}>Image de la catégorie (URL)</label>
-            <input
-              type="url"
-              value={categoryImageUrl}
-              onChange={(e) => setCategoryImageUrl(e.target.value)}
-              placeholder="https://exemple.com/image.jpg"
-              style={{
-                width: '100%',
-                padding: '0.75rem',
-                border: '1px solid #ddd',
-                borderRadius: '4px',
-                marginBottom: '0.5rem',
-              }}
-            />
-            {categoryImageUrl && (
-              <div style={{ marginTop: '0.5rem' }}>
-                <img
-                  src={categoryImageUrl}
-                  alt="Aperçu"
-                  onError={(e) => {
-                    (e.target as HTMLImageElement).style.display = 'none';
-                  }}
-                  style={{
-                    maxWidth: '200px',
-                    maxHeight: '200px',
-                    objectFit: 'cover',
-                    borderRadius: '8px',
-                    border: '2px solid #007bff',
-                  }}
-                />
-              </div>
-            )}
-          </div>
-          <div style={{ marginBottom: '1rem' }}>
-            <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+              <label style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', fontSize: '0.875rem' }}>
               <input
                 type="checkbox"
                 checked={formData.isActive}
@@ -242,23 +226,64 @@ export function Categories() {
               Active
             </label>
           </div>
+            <div style={{ display: 'flex', gap: '0.75rem' }}>
           <button
             type="submit"
             style={{
               padding: '0.75rem 1.5rem',
-              backgroundColor: '#28a745',
+                  backgroundColor: '#007bff',
               color: 'white',
               border: 'none',
-              borderRadius: '4px',
+                  borderRadius: '8px',
+                  cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  fontWeight: '600'
+                }}
+              >
+                Create
+              </button>
+              <button
+                type="button"
+                onClick={() => setShowForm(false)}
+                style={{
+                  padding: '0.75rem 1.5rem',
+                  backgroundColor: '#f8f9fa',
+                  color: '#495057',
+                  border: '1px solid #dee2e6',
+                  borderRadius: '8px',
               cursor: 'pointer',
+                  fontSize: '0.875rem',
+                  fontWeight: '500'
             }}
           >
-            Créer
+                Cancel
           </button>
+            </div>
         </form>
+        </div>
       )}
 
-      <div style={{ display: 'grid', gap: '1.5rem' }}>
+      {/* Liste des catégories */}
+      {mainCategories.length === 0 ? (
+        <div style={{
+          backgroundColor: 'white',
+          padding: '4rem 2rem',
+          borderRadius: '12px',
+          textAlign: 'center',
+          boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+          border: '1px solid #f0f0f0'
+        }}>
+          <div style={{ fontSize: '4rem', marginBottom: '1rem' }}>📂</div>
+          <p style={{ fontSize: '1.125rem', color: '#6c757d', margin: 0 }}>
+            Aucune catégorie pour le moment
+          </p>
+        </div>
+      ) : (
+        <div style={{
+          display: 'grid',
+          gridTemplateColumns: isMobile ? '1fr' : 'repeat(auto-fill, minmax(300px, 1fr))',
+          gap: '1.5rem'
+        }}>
         {mainCategories.map((category) => {
           const subcategories = getSubcategories(category.id);
           return (
@@ -266,48 +291,89 @@ export function Categories() {
               key={category.id}
               style={{
                 backgroundColor: 'white',
-                padding: isMobile ? '1rem' : '1.5rem',
-                borderRadius: '8px',
-                boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
+                  borderRadius: '12px',
+                  padding: '1.5rem',
+                  boxShadow: '0 2px 8px rgba(0,0,0,0.08)',
+                  border: '1px solid #f0f0f0'
               }}
             >
-              <div style={{ display: 'flex', gap: '1rem', marginBottom: '1rem' }}>
-                {category.image && (
-                  <img
-                    src={category.image}
-                    alt={category.name}
-                    style={{
-                      width: isMobile ? '80px' : '100px',
-                      height: isMobile ? '80px' : '100px',
-                      objectFit: 'cover',
-                      borderRadius: '8px',
-                      flexShrink: 0,
-                      boxShadow: '0 2px 4px rgba(0,0,0,0.1)',
-                    }}
-                  />
-                )}
+                <div style={{ 
+                  display: 'flex', 
+                  justifyContent: 'space-between', 
+                  alignItems: 'flex-start',
+                  marginBottom: '1rem'
+                }}>
                 <div style={{ flex: 1 }}>
-                  <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '0.5rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    <div>
-                      <h3 style={{ margin: 0, fontSize: isMobile ? '1.1rem' : '1.25rem' }}>{category.name}</h3>
+                    <h3 style={{
+                      fontSize: '1.125rem',
+                      fontWeight: '600',
+                      color: '#212529',
+                      margin: 0,
+                      marginBottom: '0.5rem'
+                    }}>
+                      {category.name}
+                    </h3>
                       {category.description && (
-                        <p style={{ margin: '0.5rem 0 0 0', color: '#666', fontSize: '0.9rem' }}>
+                      <p style={{
+                        fontSize: '0.875rem',
+                        color: '#6c757d',
+                        margin: 0,
+                        lineHeight: '1.5'
+                      }}>
                           {category.description}
                         </p>
                       )}
                     </div>
-                    <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
-                      <span
-                        style={{
+                  <span style={{
                           padding: '0.25rem 0.75rem',
-                          borderRadius: '12px',
-                          fontSize: '0.85rem',
-                          backgroundColor: category.isActive ? '#d4edda' : '#f8d7da',
-                          color: category.isActive ? '#155724' : '#721c24',
-                        }}
-                      >
+                    borderRadius: '6px',
+                    fontSize: '0.75rem',
+                    fontWeight: '600',
+                    backgroundColor: category.isActive ? '#d4edda' : '#e2e3e5',
+                    color: category.isActive ? '#155724' : '#383d41',
+                    whiteSpace: 'nowrap'
+                  }}>
                         {category.isActive ? 'Active' : 'Inactive'}
                       </span>
+                </div>
+
+                {subcategories.length > 0 && (
+                  <div style={{
+                    paddingTop: '1rem',
+                    borderTop: '1px solid #f0f0f0'
+                  }}>
+                    <p style={{
+                      fontSize: '0.75rem',
+                      fontWeight: '600',
+                      color: '#6c757d',
+                      marginBottom: '0.75rem',
+                      textTransform: 'uppercase'
+                    }}>
+                      Subcategories ({subcategories.length})
+                    </p>
+                    <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
+                      {subcategories.map(sub => (
+                        <span key={sub.id} style={{
+                          padding: '0.375rem 0.75rem',
+                          backgroundColor: '#f8f9fa',
+                          borderRadius: '6px',
+                          fontSize: '0.75rem',
+                          color: '#495057'
+                        }}>
+                          {sub.name}
+                        </span>
+                      ))}
+                    </div>
+                  </div>
+                )}
+
+                <div style={{
+                  marginTop: '1rem',
+                  paddingTop: '1rem',
+                  borderTop: '1px solid #f0f0f0',
+                  display: 'flex',
+                  gap: '0.5rem'
+                }}>
                       <button
                         onClick={() => handleDelete(category.id)}
                         style={{
@@ -315,77 +381,21 @@ export function Categories() {
                           backgroundColor: '#dc3545',
                           color: 'white',
                           border: 'none',
-                          borderRadius: '4px',
+                      borderRadius: '6px',
                           cursor: 'pointer',
-                          fontSize: isMobile ? '0.85rem' : '0.9rem',
+                      fontSize: '0.75rem',
+                      fontWeight: '500',
+                      flex: 1
                         }}
                       >
-                        Supprimer
+                    Delete
                       </button>
-                    </div>
-                  </div>
                 </div>
-              </div>
-              {subcategories.length > 0 && (
-                <div style={{ marginTop: '1rem', paddingLeft: isMobile ? '0.5rem' : '1rem', borderLeft: '3px solid #007bff' }}>
-                  <h4 style={{ marginBottom: '0.75rem', color: '#666', fontSize: '0.9rem', fontWeight: '500' }}>Sous-catégories:</h4>
-                  <div style={{ display: 'flex', flexWrap: 'wrap', gap: '0.5rem' }}>
-                    {subcategories.map((sub) => (
-                      <div
-                        key={sub.id}
-                        style={{
-                          padding: '0.5rem 1rem',
-                          backgroundColor: '#f8f9fa',
-                          borderRadius: '4px',
-                          display: 'flex',
-                          alignItems: 'center',
-                          gap: '0.5rem',
-                          border: '1px solid #e0e0e0',
-                        }}
-                      >
-                        {sub.image && (
-                          <img
-                            src={sub.image}
-                            alt={sub.name}
-                            style={{
-                              width: '30px',
-                              height: '30px',
-                              objectFit: 'cover',
-                              borderRadius: '4px',
-                            }}
-                          />
-                        )}
-                        <span style={{ fontSize: '0.9rem' }}>{sub.name}</span>
-                        <button
-                          onClick={() => handleDelete(sub.id)}
-                          style={{
-                            padding: '0.25rem 0.5rem',
-                            backgroundColor: '#dc3545',
-                            color: 'white',
-                            border: 'none',
-                            borderRadius: '4px',
-                            cursor: 'pointer',
-                            fontSize: '0.75rem',
-                          }}
-                        >
-                          ×
-                        </button>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
             </div>
           );
         })}
-        {mainCategories.length === 0 && (
-          <div style={{ textAlign: 'center', padding: '3rem', backgroundColor: 'white', borderRadius: '8px' }}>
-            <p style={{ color: '#666', fontSize: '1.1rem' }}>Aucune catégorie pour le moment</p>
-            <p style={{ color: '#999', marginTop: '0.5rem' }}>Créez votre première catégorie ci-dessus</p>
           </div>
         )}
-      </div>
     </div>
   );
 }
-

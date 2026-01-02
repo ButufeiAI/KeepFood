@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceIconsIconFontawesome />
+</template>

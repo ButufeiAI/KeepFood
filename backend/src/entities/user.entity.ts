@@ -32,6 +32,9 @@ export class User {
   @Column({ length: 100 })
   lastName: string;
 
+  @Column({ length: 500, nullable: true })
+  avatar: string; // URL de l'image de profil
+
   @Column({
     type: 'enum',
     enum: UserRole,

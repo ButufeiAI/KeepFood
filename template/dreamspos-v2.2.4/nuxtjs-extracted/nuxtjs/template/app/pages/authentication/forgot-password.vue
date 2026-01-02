@@ -1,0 +1,3 @@
+<template>
+    <ModulesAuthenticationForgotPassword />
+</template>

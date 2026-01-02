@@ -129,7 +129,7 @@ export const subscribeToPushNotifications = async (
     
     const subscription = await registration.pushManager.subscribe({
       userVisibleOnly: true,
-      applicationServerKey: urlBase64ToUint8Array(vapidPublicKey),
+      applicationServerKey: urlBase64ToUint8Array(vapidPublicKey) as any,
     });
 
     console.log('[PWA] Abonnement aux notifications:', subscription);
@@ -180,7 +180,7 @@ export const showNotification = async (
       await registration.showNotification(title, {
         icon: '/icons/icon-192x192.png',
         badge: '/icons/badge-72x72.png',
-        vibrate: [200, 100, 200],
+        // vibrate: [200, 100, 200],
         ...options,
       });
     } else {
@@ -192,7 +192,7 @@ export const showNotification = async (
 /**
  * Convertir une clé VAPID Base64 en Uint8Array
  */
-function urlBase64ToUint8Array(base64String: string): Uint8Array {
+function urlBase64ToUint8Array(base64String: string): BufferSource {
   const padding = '='.repeat((4 - (base64String.length % 4)) % 4);
   const base64 = (base64String + padding).replace(/-/g, '+').replace(/_/g, '/');
   const rawData = window.atob(base64);
@@ -200,7 +200,7 @@ function urlBase64ToUint8Array(base64String: string): Uint8Array {
   for (let i = 0; i < rawData.length; ++i) {
     outputArray[i] = rawData.charCodeAt(i);
   }
-  return outputArray;
+  return outputArray as BufferSource;
 }
 
 /**

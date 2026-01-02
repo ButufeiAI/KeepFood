@@ -1,0 +1,3 @@
+<template>
+    <ContentBlogsBlogCategories />
+</template>

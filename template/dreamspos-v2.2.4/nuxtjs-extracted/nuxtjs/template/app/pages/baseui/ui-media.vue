@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceBaseuiUiMedia />
+</template>

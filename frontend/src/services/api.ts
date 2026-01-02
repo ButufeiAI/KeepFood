@@ -2,7 +2,7 @@ import axios from 'axios';
 
 // Fonction pour obtenir l'URL de l'API
 // Si on est sur localhost, utilise localhost, sinon utilise l'IP du serveur
-const getApiUrl = () => {
+export const getApiUrl = () => {
   const envUrl = import.meta.env.VITE_API_URL;
   if (envUrl) {
     return envUrl;

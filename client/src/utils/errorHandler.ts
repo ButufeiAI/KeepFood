@@ -1,4 +1,4 @@
-import { AxiosError } from 'axios';
+// import { AxiosError } from 'axios';
 
 /**
  * Gère les erreurs API de manière centralisée

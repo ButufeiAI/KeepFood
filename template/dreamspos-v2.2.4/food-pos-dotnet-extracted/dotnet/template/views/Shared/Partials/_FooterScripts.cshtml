@@ -1,0 +1,89 @@
+@{
+    var path = Context?.Request?.Path.Value ?? string.Empty;
+    var fileName = System.IO.Path.GetFileName(path);
+    var pageNoExt = (string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName)).ToLowerInvariant();
+
+    bool IsPage(params string[] names)
+    {
+        if (string.IsNullOrEmpty(pageNoExt)) return false;
+        foreach (var n in names)
+        {
+            var name = (n ?? string.Empty).ToLowerInvariant();
+            if (name.EndsWith(".cshtml")) name = System.IO.Path.GetFileNameWithoutExtension(name);
+            if (pageNoExt == name) return true;
+        }
+        return false;
+    }
+
+    bool IsNotAny(params string[] names) => !IsPage(names);
+
+    string[] excludedSimplePages = new[] {
+        "login","register","email-verification","forgot-password","reset-password","otp"
+    };
+}
+    
+
+    <!-- jQuery -->
+    <script src="~/assets/js/jquery-3.7.1.min.js"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="~/assets/js/bootstrap.bundle.min.js"></script>
+
+    @if (IsNotAny("login","register","email-verification","forgot-password","reset-password","otp")) {
+        <!-- Simplebar JS -->
+        <script src="~/assets/plugins/simplebar/simplebar.min.js"></script>
+    }
+
+    @if (IsPage("addons","pos","coupons","index","invoices","kanban-view","orders","payments","role-permission","users")) {
+        <!-- Daterangepikcer JS -->
+        <script src="~/assets/js/moment.min.js"></script>
+        <script src="~/assets/plugins/daterangepicker/daterangepicker.js"></script>
+    }
+
+    @if (IsPage("addons","pos","audit-report","categories","coupons","customer-report","customer","delivery-settings","earning-report","integrations-settings","invoices","items","notifications-settings","order-report","payment-settings","payments","print-settings","role-permission","sales-report","store-settings","table","users")) {
+        <!-- Datatable JS -->
+        <script src="~/assets/plugins/datatables/js/jquery.dataTables.min.js"></script>
+        <script src="~/assets/plugins/datatables/dataTables.bootstrap5.min.js"></script>
+    }
+
+    @if (IsPage("audit-report","pos","coupons","customer-report","customer","delivery-settings","earning-report","integrations-settings","kitchen","notifications-settings","order-report","orders","payment-settings","print-settings","reservations","sales-report","store-settings","table")) {
+        <!-- Flatpickr JS -->
+        <script src="~/assets/plugins/flatpickr/flatpickr.min.js"></script>
+    }
+
+    @if (IsPage("pos")) {
+        <!-- Slick Js -->
+        <script src="~/assets/plugins/slick/slick.min.js"></script>
+    }
+
+    @if (IsPage("index")) {
+        <!-- ApexChart JS -->
+        <script src="~/assets/plugins/apexchart/apexcharts.min.js"></script>
+        <script src="~/assets/plugins/apexchart/chart-data.js"></script>
+    }
+
+    @if (IsPage("kanban-view")) {
+        <!-- Dragula Js-->
+        <script src="~/assets/plugins/dragula/dragula.min.js"></script>
+        <script src="~/assets/js/dragula.js"></script>
+    }
+
+    @if (IsPage("orders","kanban-view")) {
+        <!-- Calculator JS -->
+        <script src="~/assets/js/calculator.js"></script>
+    }
+
+    @if (IsPage("otp")) {
+        <!-- OTP JS -->
+        <script src="~/assets/js/otp.js"></script>
+    }
+
+    @if (IsPage("addons","pos","audit-report","categories","coupons","customer-report","customer","delivery-settings","earning-report","index","integrations-settings","invoices","items","kitchen","notifications-settings","order-report","orders","payment-settings","payments","print-settings","reservations","role-permission","sales-report","store-settings","table","tax-settings","users")) {
+        <!-- Select2 Js -->
+        <script src="~/assets/plugins/select2/js/select2.min.js"></script>
+    }
+
+    <!-- Main JS -->
+    <script src="~/assets/js/script.js"></script>
+
+

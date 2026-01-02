@@ -158,7 +158,7 @@ export const calculateLevel = (xp: number): { level: number; xpToNextLevel: numb
   // Formule: Level = floor(sqrt(XP / 100))
   // XP nécessaire pour level N = N² * 100
   const level = Math.floor(Math.sqrt(xp / 100)) + 1;
-  const xpForCurrentLevel = Math.pow(level - 1, 2) * 100;
+  // const xpForCurrentLevel = Math.pow(level - 1, 2) * 100; // Non utilisé mais gardé pour référence
   const xpForNextLevel = Math.pow(level, 2) * 100;
   const xpToNextLevel = xpForNextLevel - xp;
   

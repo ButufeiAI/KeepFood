@@ -1,0 +1,2421 @@
+﻿<!DOCTYPE html>
+<html lang="en" dir="ltr">
+
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<meta name="keywords" content="">
+	<meta name="description" content="KeepFood - Multi Vendor Ecommerce System.">
+	<meta name="author" content="keepfood">
+
+	<title>KEEPFood - Online Documentation.</title>
+
+	<!-- App favicon -->
+	<link rel="shortcut icon" href="assets/img/logo/favicon.png">
+
+	<!-- Vendor -->
+	<link href="assets/css_new/bootstrap.min.css" rel="stylesheet">
+	<link href="assets/css_new/prism.css" rel="stylesheet">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+	
+	<link rel="stylesheet" href="assets/css_new/magnific-popup.css">
+
+	<!-- Main CSS -->
+	<link id="mainCss" href="assets/css_new/style.css" rel="stylesheet">
+	
+	
+</head>
+
+<body>
+	<main class="wrapper sb-default">
+		<!-- Loader -->
+		<div id="loader-wrapper">
+			<div class="loader-ellipsis">
+				<div></div>
+				<div></div>
+				<div></div>
+				<div></div>
+			</div>
+		</div>
+
+		<!-- Header -->
+		<header class="header">
+			<div class="container-fluid">
+				<div class="header-left">
+					<div class="left-header me-2">
+						<a href="javascript:void(0)" class="sidebar-toggle">
+							<span class="outer-ring">
+								<span class="inner-ring"></span>
+							</span>
+						</a>
+					</div>
+					<ul class="nav col-12 col-lg-auto me-lg-auto mb-2 justify-content-center mb-md-0">
+						<li><a href="#" target="_blank" class="nav-link px-2 link-body-emphasis"><i class="fa-solid fa-headset me-2"></i>Support</a></li>
+						<li><a href="https://calendly.com/keepfood" class="nav-link px-2 link-body-emphasis" target="_blank"><i class="fa-brands fa-hire-a-helper me-2"></i>Hire Us</a></li>
+						<li><a href="changelog.html" class="nav-link px-2 link-body-emphasis"><i class="fa-brands fa-hire-a-helper me-2"></i>Changelog</a></li>					
+					</ul> 
+					
+					<div class="right-header">
+						<div class="me-2 header-item theme-light">
+							<button type="button" class="btn-topbar tools-item mode" data-bs-theme-tool="light">
+								<span class="feather-icon"><i data-feather="moon"></i></span>
+							</button>
+						</div>
+						<div class="me-2 header-item theme-dark">
+							<button type="button" class="btn-topbar tools-item mode active" data-bs-theme-tool="dark">
+								<span class="feather-icon"><i data-feather="sun"></i></span>
+							</button>
+						</div>
+					</div>
+					<div class="text-end">
+						<a href="https://KeepFood.keepfood.com/" target="_blank" class="btn btn-white btn-sm me-2"><i class="fa-solid fa-link me-2"></i>Live Demo</a>
+						<!-- <a href="#" class="btn btn-primary btn-sm" target="_blank"><i class="fa-solid fa-cart-plus me-2"></i>Buy Now</a> -->
+					</div>
+				</div>
+			</div>
+		</header>
+		
+
+         <div class="doc-progress">
+           <div class="doc-progress-inner" id="scrollProgress">
+
+           </div>
+         </div>
+		 
+		<div class="sidebar-overlay"></div>
+		<div class="sidebar" data-mode="light">
+			<div class="sidebar-logo">
+				<a href="index.html" class="sb-full white-logo"><img src="assets/img/logo/logo.svg" alt="logo"><span class="badge badge-soft-danger fs-14 ms-1">CodeIgniter</span></a>
+				<a href="index.html" class="sb-full dark-logo"><img src="assets/img/logo/logo-white.svg" alt="logo"><span class="badge badge-soft-danger fs-14 ms-1">CodeIgniter</span></a>
+				<a href="index.html" class="sb-collapse"><img src="assets/img/logo/favicon.png" alt="logo" class="img-fluid"></a>
+			</div>
+			 <div class="sidebar-inner">
+				 <div class="sidebar-menu">
+				   <ul id="menu-main-menu" class="sidebar-nav">
+						<li class="menu-item submenu">
+							<a href="#instructions" class="active menu-link">
+								<span class="feather-icon"><i data-feather="box"></i></span>
+								<span class="condense">Getting Started</span>
+							</a>
+							<ul class="sidebar-dropdown condense active">
+								<li>
+									<a href="#instructions" class="page-link drop">
+										<span class="menu-dash"><span></span></span>Introduction
+									</a>
+								</li>
+								<li><a href="#requirement" class="page-link drop"><span class="menu-dash"><span></span></span>Requirement</a></li>
+								<li><a href="#features" class="page-link drop"><span class="menu-dash"><span></span></span>Features</a></li>
+								<li><a href="#file_structure" class="page-link drop"><span class="menu-dash"><span></span></span>File Structure</a></li>
+								<li><a href="#ci_structure" class="page-link drop"><span class="menu-dash"><span></span></span>CodeIgniter Structure</a></li>								
+							</ul>
+						</li>
+						<li class="menu-item-separator"></li>
+						<li class="menu-title condense">Configuration</li>
+						<li class="menu-item submenu">
+							<a href="#html_config" class=" menu-link">
+								<span class="feather-icon"><i data-feather="pie-chart"></i></span>
+								<span class="condense">Installation</span>
+							</a>
+							<ul class="sidebar-dropdown condense">
+								<li><a href="#html_config" class="page-link drop"><span class="menu-dash"><span></span></span>Installation Guide</a></li>
+								<li><a href="#scss_install" class="page-link drop"><span class="menu-dash"><span></span></span>Scss Installation</a></li>
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#dynamic_title" class="page-link">
+								<span class="feather-icon"><i data-feather="sliders"></i></span><span class="condense"><span class="hover-title">Dynamic Title</span> </span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="#rtl_layout" class="page-link">
+								<span class="feather-icon"><i data-feather="globe"></i></span><span class="condense"><span class="hover-title">RTL Layout</span> </span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="#change_logo" class="page-link">
+								<span class="feather-icon"><i data-feather="command"></i></span><span class="condense"><span class="hover-title">Change Logo</span> </span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="#typography" class="page-link">
+								<span class="feather-icon"><i data-feather="type"></i></span><span class="condense"><span class="hover-title">Typography</span> </span>
+							</a>
+						</li>
+						<li class="menu-item-separator"></li>
+						<li class="menu-title condense">Info</li>
+						<li class="menu-item">
+							<a href="#faq" class="page-link">
+								<span class="feather-icon"><i data-feather="star"></i></span><span class="condense"><span class="hover-title">FAQs</span> </span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="#support" class="page-link">
+								<span class="feather-icon"><i data-feather="star"></i></span><span class="condense"><span class="hover-title">Support</span> </span>
+							</a>
+						</li>
+						<li class="menu-item submenu">
+							<a href="#license" class="page-link">
+								<span class="feather-icon"><i data-feather="settings"></i></span>
+								<span class="condense">License & Credits</span>
+							</a>
+							<ul class="sidebar-dropdown condense">
+								<li><a href="#license" class="page-link drop"><span class="menu-dash"><span></span></span>License</a></li>
+								<!-- <li><a href="#credits" class="page-link drop"><span class="menu-dash"><span></span></span>Credits</a></li> -->
+								
+							</ul>
+						</li>
+						<li class="menu-item">
+							<a href="#customwork" class="page-link">
+								<span class="feather-icon"><i data-feather="briefcase"></i></span><span class="condense"><span class="hover-title">Custom Work</span> </span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="changelog.html" class="page-link">
+								<span class="feather-icon"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-hexagon"><path d="M21 16V8a2 2 0 0 0-1-1.73l-7-4a2 2 0 0 0-2 0l-7 4A2 2 0 0 0 3 8v8a2 2 0 0 0 1 1.73l7 4a2 2 0 0 0 2 0l7-4A2 2 0 0 0 21 16z"></path></svg></span>
+								<span class="condense"><span class="hover-title">Change Log</span> </span>
+								<span class="badge badge-changelog badge-soft-danger fw-semibold fs-8 px-2 ms-2 condense">v2.2.4</span>
+							</a>
+						</li>
+						<li class="menu-item">
+							<a href="#thanks" class="page-link">
+								<span class="feather-icon"><i data-feather="smile"></i></span><span class="condense"><span class="hover-title">Thank
+										You</span> </span>
+							</a>
+						</li>
+				   </ul>
+				 </div>
+			 </div>
+         </div>
+		<!-- main content -->
+		<div class="main-content">
+			<div class="container-fluid">
+				<!-- Page title & breadcrumb -->
+				<div class="page-title">
+					<div class="breadcrumb">
+						<h1>Getting Started</h1>
+						<ul>
+							<li><a href="index.html">KeepFood</a></li>
+							<li>Getting Started</li>
+						</ul>
+					</div>
+				</div>
+				<div class="row sections">
+					<div class="col-xl-12 col-md-12">
+						<!-- Introduction -->
+						<section class="section-block hentry" id="instructions">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Introduction<a class="anchor-link ms-2" href="#instructions"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span>
+										</a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="intro">
+										<div class="item-details mb-3">
+										<div class="row">
+										<div class="col-md-6">
+											<ul class="auth-detail">
+												<li><strong>Item Name : </strong>KeepFood - POS & Inventory Management Admin Dashboard Template </li>
+												<li><strong>Item Version : </strong><span class="badge badge-changelog badge-soft-danger fw-semibold fs-8 px-2 ms-2">v2.2.4</span></li>
+												<li><strong>Author : </strong><a target="_blank" href="https://keepfood.com">KeepFood</a></li>
+												<li>Support via email: <a href="mailto:support@keepfood.com">support@keepfood.com</a></li>
+												<li>Support via themeforest: <a target="_blank" href="https://themeforest.net/item/KeepFood-pos-inventory-management-admin-dashboard-template/38834413/support">Take me there</a></li>
+											</ul>
+										</div>
+										<div class="col-md-6">
+											<a class="gallery-thumb" href="assets/img/banners/banner.png">
+												<img src="assets/img/banners/banner.png" class="img-fluid" alt="Banner">
+											</a>
+										</div>
+										</div>
+										</div>
+										<h5>
+											<a href="#" class="pro-thumbnail me-2" target="_blank">
+												<img src="assets/img/logo/favicon.png" class="img-fluid" alt="Dreams Money Thumbnail">
+											</a>  KeepFood - POS & Inventory Management Admin Dashboard Template 
+										</h5>
+											<p>A point of sale admin template can help organize and track inventory in a business. The template includes fields for items, quantities, prices, and descriptions. It also includes fields for customer information.</p>
+										
+									</div>
+									<a href="mailto:support@keepfood.com" class="btn btn-primary rounded-pill me-2" target="_blank">Contact Support</a>
+									<a href="https://themeforest.net/item/KeepFood-pos-inventory-management-admin-dashboard-template/38834413/support" class="btn btn-soft-primary rounded-pill" target="_blank" rel="noreferrer">Create Support ticket</a>
+								</div>
+							</div>
+						</section>
+						<!-- /Introduction -->
+
+						<!-- Requirements -->
+						<section class="section-block hentry" id="requirement">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Requirements<a class="anchor-link ms-2" href="#requirement"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<!-- Overview -->
+									<div class="row mb-3">
+										<div class="col-12">
+											<div class="alert alert-info mb-3">
+												<div class="d-flex align-items-start">
+													<div class="me-3">
+														<i class="fas fa-info-circle text-info fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-1">System Overview</h6>
+														<p class="mb-0">The KEEPFood template requires a modern web server environment with CodeIgniter 4 framework support, PHP 8.1+ compatibility, essential extensions, and development tools for optimal performance and development experience.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Core Technologies -->
+									<div class="row mb-3">
+										<div class="col-12">
+											<h5 class="mb-2"><i class="fas fa-code text-primary me-2"></i>Core Technologies</h5>
+											<div class="row">
+												<div class="col-md-4 mb-2">
+													<div class="card border-0 bg-light">
+														<div class="card-body text-center">
+															<div class="mb-2">
+																<i class="fas fa-fire-alt text-danger fs-1"></i>
+															</div>
+															<h6 class="mb-1">Backend Framework</h6>
+															<p class="text-muted mb-0">CodeIgniter 4.6.4</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-2">
+													<div class="card border-0 bg-light">
+														<div class="card-body text-center">
+															<div class="mb-2">
+																<i class="fab fa-bootstrap text-primary fs-1"></i>
+															</div>
+															<h6 class="mb-1">Frontend Framework</h6>
+															<p class="text-muted mb-0">Bootstrap 5.3.8</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-2">
+													<div class="card border-0 bg-light">
+														<div class="card-body text-center">
+															<div class="mb-2">
+																<i class="fab fa-php text-primary fs-1"></i>
+															</div>
+															<h6 class="mb-1">Core Language</h6>
+															<p class="text-muted mb-0">PHP 8.4</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- System Requirements -->
+									<div class="row mb-3">
+										<div class="col-12">
+											<h5 class="mb-3">System Requirements</h5>
+											<div class="row">
+												<div class="col-md-6 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fab fa-node-js text-success"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Node.js</h6>
+																<p class="text-muted mb-0">For SCSS compilation</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-puzzle-piece text-warning"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">PHP Extensions</h6>
+																<p class="text-muted mb-0">mysql, curl, json, mbstring, xml</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-box text-danger"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Composer</h6>
+																<p class="text-muted mb-0">For PHP package dependency management</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-edit text-info"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Text Editor</h6>
+																<p class="text-muted mb-0">VS Code, Sublime Text, or any code editor</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Development Tools -->
+									<div class="row mb-3">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-tools text-warning me-2"></i>Development Tools</h5>
+											<div class="row">
+												<div class="col-md-4 mb-3">
+													<div class="card border-0 bg-light h-100">
+														<div class="card-body text-center">
+															<div class="mb-3">
+																<i class="fas fa-database text-warning fs-1"></i>
+															</div>
+															<h6 class="mb-2">Local Server</h6>
+															<p class="text-muted mb-0">XAMPP/WAMP/MAMP</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-3">
+													<div class="card border-0 bg-light h-100">
+														<div class="card-body text-center">
+															<div class="mb-3">
+																<i class="fab fa-git-alt text-warning fs-1"></i>
+															</div>
+															<h6 class="mb-2">Version Control</h6>
+															<p class="text-muted mb-0">Git</p>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-3">
+													<div class="card border-0 bg-light h-100">
+														<div class="card-body text-center">
+															<div class="mb-3">
+																<i class="fas fa-globe text-warning fs-1"></i>
+															</div>
+															<h6 class="mb-2">Web Browser</h6>
+															<p class="text-muted mb-0">Any modern browser</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Installation Note -->
+									<div class="row mb-0">
+										<div class="col-12">
+											<div class="alert alert-warning mb-0">
+												<div class="d-flex align-items-start">
+													<div class="me-2">
+														<i class="fas fa-exclamation-triangle text-warning"></i>
+													</div>
+													<div>
+														<h6 class="mb-1">Important Note</h6>
+														<p class="mb-0">Ensure all PHP extensions are enabled in your server configuration. For production deployment, consider using a managed hosting service that supports CodeIgniter 4 and PHP 8.2+.</p>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /Requirements -->
+
+						<!-- Features -->
+						<section class="section-block hentry" id="features">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Features<a class="anchor-link ms-2" href="#features"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<!-- Core Features -->
+									<div class="row mb-4">
+										<div class="col-12">
+											<h5 class="mb-3">
+												<i class="fas fa-star text-warning me-2"></i>Core Features
+											</h5>
+											<div class="row">
+											<!-- Product Management -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fas fa-box text-primary fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Product Management</h6>
+														<p class="text-muted mb-0">Seamless product browsing with dynamic search, smart filters, and visually rich catalogs.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											
+											<!-- Inventory Control -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fas fa-warehouse text-success fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Inventory Control</h6>
+														<p class="text-muted mb-0">Real-time stock tracking, batch management, and low-stock notifications.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											
+											<!-- Billing & Invoices -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fas fa-file-invoice-dollar text-warning fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Billing & Invoices</h6>
+														<p class="text-muted mb-0">Generate professional invoices, manage payments, and track sales history.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											
+											<!-- Point of Sale -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fas fa-cash-register text-danger fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Point of Sale</h6>
+														<p class="text-muted mb-0">Fast checkout process with barcode scanning, discounts, and multiple payment options.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											
+											<!-- Supplier & Purchase Management -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fa fa-shopping-cart text-info fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Supplier & Purchase Management</h6>
+														<p class="text-muted mb-0">Manage suppliers, track purchase orders, and maintain procurement records.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											
+											<!-- Reports & Analytics -->
+											<div class="col-md-6 mb-3">
+												<div class="card border-0 bg-light h-100">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+													<div class="feature-icon me-3">
+														<i class="fas fa-chart-line text-primary fs-4"></i>
+													</div>
+													<div>
+														<h6 class="mb-2">Reports & Analytics</h6>
+														<p class="text-muted mb-0">Detailed sales, purchase, and inventory reports with real-time business insights.</p>
+													</div>
+													</div>
+												</div>
+												</div>
+											</div>
+											</div>
+											  
+										</div>
+									</div>
+
+									<!-- Technical Features -->
+									<div class="row mb-4">
+										<div class="col-12">
+											<h5 class="mb-3">Technical Features</h5>
+											<div class="row">
+												<div class="col-md-4 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-code text-success"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">CodeIgniter 4 Framework</h6>
+																<p class="text-muted mb-0">Modern MVC architecture</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-box text-primary"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Composer Management</h6>
+																<p class="text-muted mb-0">Dependency & autoloading</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-vial text-info"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Database ORM</h6>
+																<p class="text-muted mb-0">Active Record & Query Builder</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-database text-secondary"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Database Migrations</h6>
+																<p class="text-muted mb-0">Version control for database schema</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-puzzle-piece text-danger"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Modular Structure</h6>
+																<p class="text-muted mb-0">Libraries, Helpers & Filters</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-route text-primary"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Routing System</h6>
+																<p class="text-muted mb-0">Flexible URL routing & middleware</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-cogs text-warning"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Configuration</h6>
+																<p class="text-muted mb-0">Environment-based config</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-bug text-success"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Debugging Tools</h6>
+																<p class="text-muted mb-0">Built-in debug bar & logging</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-rocket text-danger"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Performance</h6>
+																<p class="text-muted mb-0">Optimized for speed & caching</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- UI/UX Features -->
+									<div class="row mb-0">
+										<div class="col-12 mb-0">
+											<h5 class="mb-3">UI/UX Features</h5>
+											<div class="row mb-0">
+												<div class="col-md-4 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-paint-brush text-primary"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Modern Design</h6>
+																<p class="text-muted mb-0">Creative and contemporary UI</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-3">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-mobile-alt text-success"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Responsive Bootstrap 5.3.8</h6>
+																<p class="text-muted mb-0">Mobile-first responsive design</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fab fa-sass text-danger"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">SCSS Styling</h6>
+																<p class="text-muted mb-0">Advanced CSS preprocessing</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-icons text-info"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Font Awesome & Tabler</h6>
+																<p class="text-muted mb-0">Comprehensive icon libraries</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-palette text-success"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">Easy Customization</h6>
+																<p class="text-muted mb-0">Color and font customization</p>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-4 mb-0">
+													<div class="feature-item">
+														<div class="d-flex align-items-start">
+															<div class="feature-icon me-3">
+																<i class="fas fa-check-circle text-danger"></i>
+															</div>
+															<div>
+																<h6 class="mb-1">W3C Validated</h6>
+																<p class="text-muted mb-0">Cross-browser compatibility</p>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /Features -->
+
+						<!-- File Structure -->
+						<section class="section-block hentry" id="file_structure">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">CodeIgniter Project Structure<a class="anchor-link ms-2" href="#file_structure"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="file-structure">
+										<div class="project-overview mb-4">
+											<h5 class="text-primary mb-3"><i class="fa-solid fa-info-circle me-2"></i>Project Overview</h5>
+											<p class="mb-0">This CodeIgniter 4 project follows the standard MVC architecture with clear separation of concerns, organized into logical directories for controllers, models, views, and configuration files.</p>
+										</div>
+
+										<div class="structure-tree">
+											<div class="root-item">
+												<div class="folder-item expanded">
+													<i class="fa-solid fa-chevron-down me-2 text-primary"></i>
+													<i class="fa-solid fa-folder-open me-2 text-warning"></i>
+													<span class="fw-bold">KeepFood/</span>
+													<span class="text-muted ms-2">(Root Project)</span>
+												</div>
+
+												<div class="sub-structure ms-4">
+													<div class="folder-item">
+														<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+														<i class="fa-solid fa-folder me-2 text-primary"></i>
+														<span class="fw-semibold">ci/</span>
+														<span class="text-muted ms-2">(Main Application)</span>
+													</div>
+
+													<div class="sub-structure ms-4">
+														<div class="folder-item">
+															<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+															<i class="fa-solid fa-folder me-2 text-primary"></i>
+															<span class="fw-semibold">template/</span>
+															<span class="text-muted ms-2">(template files)</span>
+														</div>
+
+														<div class="sub-structure ms-4">
+															<div class="folder-item">
+																<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																<i class="fa-solid fa-folder me-2 text-primary"></i>
+																<span class="fw-semibold">app/</span>
+																<span class="text-muted ms-2">(Application Core)</span>
+															</div>
+
+															<div class="sub-structure ms-4">
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-primary"></i>
+																	<span class="fw-semibold">Config/</span>
+																	<span class="text-muted ms-2">(Configuration Files)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>App.php</span>
+																		<span class="text-muted ms-2">(App Configuration)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>Database.php</span>
+																		<span class="text-muted ms-2">(Database Config)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>Routes.php</span>
+																		<span class="text-muted ms-2">(URL Routing)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>Autoload.php</span>
+																		<span class="text-muted ms-2">(Class Autoloading)</span>
+																	</div>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-success"></i>
+																	<span class="fw-semibold">Controllers/</span>
+																	<span class="text-muted ms-2">(MVC Controllers)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>BaseController.php</span>
+																		<span class="text-muted ms-2">(Base Controller)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>Home.php</span>
+																		<span class="text-muted ms-2">(Home Controller)</span>
+																	</div>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-info"></i>
+																	<span class="fw-semibold">Database/</span>
+																	<span class="text-muted ms-2">(Database Files)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">Migrations/</span>
+																		<span class="text-muted ms-2">(Database Migrations)</span>
+																	</div>
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">Seeds/</span>
+																		<span class="text-muted ms-2">(Database Seeders)</span>
+																	</div>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-warning"></i>
+																	<span class="fw-semibold">Filters/</span>
+																	<span class="text-muted ms-2">(Request Filters)</span>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-info"></i>
+																	<span class="fw-semibold">Helpers/</span>
+																	<span class="text-muted ms-2">(Helper Functions)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>title_helper.php</span>
+																		<span class="text-muted ms-2">(Title Management)</span>
+																	</div>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-success"></i>
+																	<span class="fw-semibold">Language/</span>
+																	<span class="text-muted ms-2">(Localization Files)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>en/</span>
+																		<span class="text-muted ms-2">(English Language)</span>
+																	</div>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-danger"></i>
+																	<span class="fw-semibold">Libraries/</span>
+																	<span class="text-muted ms-2">(Custom Libraries)</span>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-danger"></i>
+																	<span class="fw-semibold">Models/</span>
+																	<span class="text-muted ms-2">(Data Models)</span>
+																</div>
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-primary"></i>
+																	<span class="fw-semibold">ThirdParty/</span>
+																	<span class="text-muted ms-2">(Third-party Libraries)</span>
+																</div>
+
+
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-warning"></i>
+																	<span class="fw-semibold">Views/</span>
+																	<span class="text-muted ms-2">(View Templates)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">layouts/</span>
+																		<span class="text-muted ms-2">(Layout Templates)</span>
+																	</div>
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>mainlayout.php</span>
+																			<span class="text-muted ms-2">(Main Layout Template)</span>
+																		</div>
+																	</div>
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">partials/</span>
+																		<span class="text-muted ms-2">(Reusable Components)</span>
+																	</div>
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>body.php</span>
+																			<span class="text-muted ms-2">(Body Section)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>sidebar.php</span>
+																			<span class="text-muted ms-2">(Navigation Sidebar)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>horizontal-sidebar.php</span>
+																			<span class="text-muted ms-2">(Horizontal Sidebar)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>loader.php</span>
+																			<span class="text-muted ms-2">(Loader)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>footer.php</span>
+																			<span class="text-muted ms-2">(Page Footer)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>main-wrapper.php</span>
+																			<span class="text-muted ms-2">(Main Wrapper)</span>
+																		</div>																		
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>menu.php</span>
+																			<span class="text-muted ms-2">(Menu Navigation)</span>
+																		</div>																		
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>head-css.php</span>
+																			<span class="text-muted ms-2">(CSS Includes)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>theme-settings.php</span>
+																			<span class="text-muted ms-2">(Theme Settings)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>topbar.php</span>
+																			<span class="text-muted ms-2">(Sidebar Component)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>twocolumn-sidebar.php</span>
+																			<span class="text-muted ms-2">(Two Column Sidebar)</span>
+																		</div>
+																		<div class="file-item">
+																			<i class="fab fa-php me-2 text-info"></i>
+																			<span>vendor-scripts.php</span>
+																			<span class="text-muted ms-2">(JavaScript Libraries)</span>
+																		</div>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>index.php</span>
+																		<span class="text-muted ms-2">(Dashboard Home)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>login.php</span>
+																		<span class="text-muted ms-2">(Login Page)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>users.php</span>
+																		<span class="text-muted ms-2">(Users Management)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>products.php</span>
+																		<span class="text-muted ms-2">(Products Management)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>projects.php</span>
+																		<span class="text-muted ms-2">(Projects Management)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>employees-list.php</span>
+																		<span class="text-muted ms-2">(Employees Management)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>ui-*.php</span>
+																		<span class="text-muted ms-2">(UI Components)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>layout-*.php</span>
+																		<span class="text-muted ms-2">(Layout Variations)</span>
+																	</div>
+																	<div class="file-item">
+																		<i class="fab fa-php me-2 text-info"></i>
+																		<span>*.php</span>
+																		<span class="text-muted ms-2">(Additional View Files)</span>
+																	</div>
+																</div>
+
+															</div>
+														</div>
+
+														<div class="sub-structure ms-4">
+															<div class="folder-item">
+																<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																<i class="fa-solid fa-folder me-2 text-primary"></i>
+																<span class="fw-semibold">public/</span>
+																<span class="text-muted ms-2">(Public Assets)</span>
+															</div>
+
+															<div class="sub-structure ms-4">
+																<div class="folder-item">
+																	<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																	<i class="fa-solid fa-folder me-2 text-primary"></i>
+																	<span class="fw-semibold">assets/</span>
+																	<span class="text-muted ms-2">(Static Resources)</span>
+																</div>
+
+																<div class="sub-structure ms-4">
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">css/</span>
+																	</div>
+
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fab fa-css3-alt me-2 text-primary"></i>
+																			<span>Stylesheets</span>
+																		</div>
+																	</div>
+
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-success"></i>
+																		<span class="fw-semibold">img/</span>
+																	</div>
+
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fa-solid fa-file-image me-2 text-success"></i>
+																			<span>Images & Icons</span>
+																		</div>
+																	</div>
+
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-warning"></i>
+																		<span class="fw-semibold">js/</span>
+																	</div>
+
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fab fa-js-square me-2 text-warning"></i>
+																			<span>JavaScript Files</span>
+																		</div>
+																	</div>
+
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-danger"></i>
+																		<span class="fw-semibold">scss/</span>
+																	</div>
+
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fab fa-sass me-2 text-danger"></i>
+																			<span>Sass Source Files</span>
+																		</div>
+																	</div>
+
+																	<div class="folder-item">
+																		<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																		<i class="fa-solid fa-folder me-2 text-primary"></i>
+																		<span class="fw-semibold">plugins/</span>
+																	</div>
+
+																	<div class="sub-structure ms-4">
+																		<div class="file-item">
+																			<i class="fa-solid fa-file-code me-2 text-primary"></i>
+																			<span>Third-party Libraries</span>
+																		</div>
+																	</div>
+																</div>
+
+																<div class="file-item">
+																	<i class="fa-solid fa-server me-2 text-warning"></i>
+																	<span>.htaccess</span>
+																	<span class="text-muted ms-2">(Apache Configuration)</span>
+																</div>
+
+																<div class="file-item">
+																	<i class="fab fa-php me-2 text-info"></i>
+																	<span>index.php</span>
+																	<span class="text-muted ms-2">(Front Controller)</span>
+																</div>
+															</div>
+														</div>
+
+														<div class="sub-structure ms-4">
+															<div class="folder-item">
+																<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																<i class="fa-solid fa-folder me-2 text-primary"></i>
+																<span class="fw-semibold">vendor/</span>
+																<span class="text-muted ms-2">(Composer Dependencies)</span>
+
+															</div>
+
+															<div class="sub-structure ms-4">
+																<div class="file-item">
+																	<i class="fa-solid fa-box me-2 text-warning"></i>
+																	<span>codeigniter4/framework</span>
+																	<span class="text-muted ms-2">(CodeIgniter Core)</span>
+																</div>
+																<div class="file-item">
+																	<i class="fa-solid fa-box me-2 text-info"></i>
+																	<span>Other PHP packages</span>
+																	<span class="text-muted ms-2">(Dependencies)</span>
+																</div>
+															</div>
+
+
+														</div>
+
+														<div class="sub-structure ms-4">
+															<div class="folder-item">
+																<i class="fa-solid fa-chevron-right me-2 text-muted"></i>
+																<i class="fa-solid fa-folder me-2 text-warning"></i>
+																<span class="fw-semibold">writable/</span>
+																<span class="text-muted ms-2">(Runtime Files)</span>
+															</div>
+
+															<div class="sub-structure ms-4">
+																<div class="file-item">
+																	<i class="fa-solid fa-folder me-2 text-info"></i>
+																	<span>cache/</span>
+																	<span class="text-muted ms-2">(Application Cache)</span>
+																</div>
+																<div class="file-item">
+																	<i class="fa-solid fa-folder me-2 text-warning"></i>
+																	<span>logs/</span>
+																	<span class="text-muted ms-2">(Application Logs)</span>
+																</div>
+																<div class="file-item">
+																	<i class="fa-solid fa-folder me-2 text-success"></i>
+																	<span>uploads/</span>
+																	<span class="text-muted ms-2">(File Uploads)</span>
+																</div>
+															</div>
+														</div>
+
+														<div class="sub-structure ms-4">
+															<div class="file-item">
+																<i class="fa-brands fa-git-alt me-2 text-danger"></i>
+																<span>.gitignore</span>
+																<span class="text-muted ms-2">(Git Exclusions)</span>
+															</div>
+															<div class="file-item">
+																<i class="fa-solid fa-server me-2 text-warning"></i>
+																<span>.htaccess</span>
+																<span class="text-muted ms-2">(Apache Configuration)</span>
+															</div>
+															<div class="file-item">
+																<i class="fa-solid fa-box-open me-2 text-primary"></i>
+																<span>composer.json</span>
+																<span class="text-muted ms-2">(PHP Dependencies)</span>
+															</div>
+															<div class="file-item">
+																<i class="fa-brands fa-node-js me-2 text-success"></i>
+																<span>package.json</span>
+																<span class="text-muted ms-2">(Node.js Dependencies)</span>
+															</div>
+															<div class="file-item">
+																<i class="fa-solid fa-shield-alt me-2 text-info"></i>
+																<span>spark</span>
+																<span class="text-muted ms-2">(CodeIgniter CLI Tool)</span>
+															</div>
+															<div class="file-item">
+																<i class="fa-solid fa-file-code me-2 text-warning"></i>
+																<span>env</span>
+																<span class="text-muted ms-2">(Environment Variables)</span>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="structure-legend mt-4">
+											<h6 class="text-muted mb-3"><i class="fa-solid fa-legend me-2"></i>Legend</h6>
+											<div class="row">
+												<div class="col-md-6">
+													<div class="legend-item mb-2">
+														<i class="fa-solid fa-folder me-2 text-primary"></i>
+														<span>Directories</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fab fa-php me-2 text-info"></i>
+														<span>PHP Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fab fa-js-square me-2 text-warning"></i>
+														<span>JavaScript Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fab fa-css3-alt me-2 text-primary"></i>
+														<span>CSS Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fab fa-git-alt me-2 text-danger"></i>
+														<span>Git Files</span>
+													</div>
+												</div>
+												<div class="col-md-6">
+													<div class="legend-item mb-2">
+														<i class="fab fa-sass me-2 text-danger"></i>
+														<span>SCSS Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fa-solid fa-file-code me-2 text-warning"></i>
+														<span>JSON Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fa-brands fa-node-js me-2 text-success"></i>
+														<span>Node.js Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fa-solid fa-file-image me-2 text-success"></i>
+														<span>Image Files</span>
+													</div>
+													<div class="legend-item mb-2">
+														<i class="fa-solid fa-file-code me-2 text-primary"></i>
+														<span>Other Files</span>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- PHP Structure -->
+						<section class="section-block hentry" id="ci_structure">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">CodeIgniter PHP Structure<a class="anchor-link ms-2" href="#ci_structure"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="file-structure">
+										<div class="row">
+                                            <div class="col-12">
+                                                <h4 class="mb-2 text-dark fw-bold"><code class="language-markup">Views/layouts/mainlayout.php</code>: Main Application Layout</h4>
+                                                <p class="mb-3">This is the primary layout for authenticated pages, including the sidebar and top navigation.</p>
+<pre class="language-php mb-3">
+<code class="language-php">&lt;!DOCTYPE html&gt;
+&lt;?= $this->include('partials/theme-settings') ?&gt;
+
+&lt;head&gt;
+    &lt;?= $this->include('partials/title-meta') ?&gt;
+    &lt;?= $this->include('partials/head-css') ?&gt;
+&lt;/head&gt;
+
+&lt;?= $this->include('partials/body') ?&gt;
+
+	&lt;?= $this->include('partials/loader') ?&gt;
+
+	&lt;!-- Start Main Wrapper --&gt;
+    &lt;?= $this->include('partials/main-wrapper') ?&gt;
+
+        &lt;?= $this->include('partials/menu') ?&gt;
+
+        &lt;?= $this->renderSection('content') ?&gt;
+
+    &lt;/div&gt;
+	&lt;!-- End Main Wrapper --&gt;
+
+    &lt;?= $this->include('partials/modal-popup') ?&gt;
+    &lt;?= $this->include('partials/vendor-scripts') ?&gt;
+&lt;/body&gt;
+&lt;/html&gt;</code>
+</pre>
+                                            </div>
+
+                                        </div>
+
+                                        <h4 class="mb-3 text-dark fw-bold">Using the Layouts in Views</h4>
+
+                                        <div class="row">
+                                            <div class="col-12">
+                                                <h5 class="mb-2">For Pages</h5>
+<pre class="language-php">
+<code class="language-php">&lt;?= $this->extend('layouts/mainlayout') ?&gt;
+
+&lt;?= $this->section('content') ?&gt;
+
+	&lt;!-- Your page content here --&gt;
+
+&lt;?= $this->endSection() ?&gt;</code>
+</pre>
+                                            </div>
+                                        </div>
+
+                                        <div class="alert alert-info mt-4 mb-0">
+                                            <div class="d-flex align-items-start">
+                                                <div class="me-3">
+                                                    <i class="fas fa-info-circle text-info fs-4"></i>
+                                                </div>
+                                                <div>
+                                                    <h6 class="text-info mb-2">Layout System Benefits</h6>
+                                                    <ul class="mb-0">                            
+                                                        <li><strong>Consistent Structure:</strong> Shared partials for common elements (head, scripts, etc.)</li>
+                                                        <li><strong>Flexible Content:</strong> Easy content injection with <code>renderSection</code></li>
+                                                        <li><strong>Clean Organization:</strong> All layout files are stored in <code>views/layouts/</code></li>
+                                                        <li><strong>Reusable Components:</strong> Partials for repeated elements (header, sidebar, etc.)</li>
+                                                    </ul>
+                                                </div>
+                                            </div>
+                                        </div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /PHP Structure -->
+
+						<!-- Installation -->
+						<section class="section-block hentry" id="html_config">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Installation Guide<a class="anchor-link ms-2" href="#html_config"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<!-- Overview -->
+									<div class="alert alert-info mb-4">
+										<div class="d-flex align-items-start">
+											<div class="me-3">
+												<i class="fas fa-info-circle text-info fs-4"></i>
+											</div>
+											<div>
+												<p class="mb-0">Follow these steps to set up KEEPFood CodeIgniter 4 application on your local development environment. This guide covers environment setup, CodeIgniter installation, and configuration.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Installation Steps -->
+									<div class="row mb-0">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-server text-primary me-2"></i>Installation Steps</h5>
+
+											<!-- Step 1 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">1</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Environment Setup</h6>
+															<p class="text-muted mb-2">Ensure you have the required software installed for CodeIgniter 4:</p>
+															<div class="row">
+																<div class="col-md-4 mb-2">
+																	<div class="d-flex align-items-center">
+																		<i class="fas fa-database text-info me-2"></i>
+																		<span>MySQL 5.7+</span>
+																	</div>
+																</div>
+																<div class="col-md-4 mb-2">
+																	<div class="d-flex align-items-center">
+																		<i class="fas fa-globe text-warning me-2"></i>
+																		<span>Web Server (Apache/Nginx)</span>
+																	</div>
+																</div>
+																<div class="col-md-4 mb-2">
+																	<div class="d-flex align-items-center">
+																		<i class="fas fa-cogs text-primary me-2"></i>
+																		<span>Composer</span>
+																	</div>
+																</div>
+															</div>
+															<div class="alert alert-light border-start border-success border-3 mt-2 mb-0">
+																<small><i class="fas fa-lightbulb text-success me-1"></i><strong>Tip:</strong> Use XAMPP, WAMP, or MAMP for local development</small>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 2 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">2</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Project Setup</h6>
+															<p class="text-muted mb-2">Extract the KEEPFood CodeIgniter project to your web server directory:</p>
+															<div class="row">
+																<div class="col-md-6">
+																	<div class="d-flex align-items-center mb-2">
+																		<i class="fas fa-folder text-primary me-2"></i>
+																		<span><strong>XAMPP:</strong> htdocs/KeepFood/</span>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="d-flex align-items-center mb-2">
+																		<i class="fas fa-folder text-success me-2"></i>
+																		<span><strong>WAMP:</strong> www/KeepFood/</span>
+																	</div>
+																</div>
+															</div>
+															<div class="alert alert-light border-start border-info border-3 mt-2 mb-0">
+																<small><i class="fas fa-info-circle text-info me-1"></i><strong>Note:</strong> The project should be in the <code>KeepFood/ci/template/</code> folder structure</small>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 3 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">3</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Install Dependencies</h6>
+															<p class="text-muted mb-2">Open terminal/command prompt in the <code>ci/template/</code> directory and run:</p>
+															<pre class="language-bash mb-2" style="position: relative;"><code class="language-bash">composer install</code><button class="code-copy-btn" onclick="copyToClipboard(this)"><i class="fas fa-copy"></i>Copy</button></pre>
+															<div class="alert alert-light border-start border-info border-3 mb-0">
+																<small><i class="fas fa-terminal text-info me-1"></i><strong>Note:</strong> This will install CodeIgniter 4 framework and all required PHP dependencies</small>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 4 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">4</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Database Configuration</h6>
+															<p class="text-muted mb-2">Create a MySQL database and configure CodeIgniter database settings:</p>
+															<div class="row d-flex align-items-center justify-content-between">
+																<div class="col-md-6">
+																	<div class="d-flex align-items-center mb-0">
+																		<i class="fas fa-database text-warning me-2"></i>
+																		<span>Create MySQL database</span>
+																	</div>
+																</div>
+																<div class="col-md-6">
+																	<div class="d-flex align-items-center mb-0">
+																		<i class="fas fa-cog text-info me-2"></i>
+																		<span class="d-flex align-items-center mb-0">Update <code class="ms-1">app/Config/Database.php</code></span>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 5 -->
+											<div class="card border-0 bg-light mb-0">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">5</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Access Application</h6>
+															<p class="text-muted mb-2">Start your web server and access the CodeIgniter application via browser:</p>
+															<pre class="language-bash mb-2" style="position: relative;"><code class="language-bash">php spark serve</code><button class="code-copy-btn" onclick="copyToClipboard(this)"><i class="fas fa-copy"></i>Copy</button></pre>
+															<div class="alert alert-success border-start border-success border-3 mb-0">
+																<div class="d-block">
+																	<div>
+																		<strong><i class="fas fa-link text-success me-2"></i>Example URLs:</strong>
+																		<div class="row">
+																			<div class="col-6">
+																				<strong>Spark Server:</strong> <code>http://localhost:8080/</code>
+																			</div>
+																			<div class="col-6">
+																				<strong>Live Server:</strong> <code>yourdomain.com/ci/template/public</code>
+																			</div>
+																		</div>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /Installation -->
+
+						<!-- Scss Installation -->
+						<section class="section-block hentry" id="scss_install">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Sass, Scss Installation<a class="anchor-link ms-2" href="#scss_install"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<!-- Overview -->
+									<div class="alert alert-info mb-4">
+										<div class="d-flex align-items-start">
+											<div class="me-3">
+												<i class="fas fa-info-circle text-info fs-4"></i>
+											</div>
+											<div>
+												<h6 class="mb-2">Overview</h6>
+												<p class="mb-0">Sass (Syntactically Awesome Style Sheets) is a CSS preprocessor that extends CSS with variables, nesting, mixins, and more. This guide covers the installation and setup of Sass for the KEEPFood template.</p>
+											</div>
+										</div>
+									</div>
+
+									<!-- Prerequisites -->
+									<div class="row mb-4">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-check-circle text-success me-2"></i>Prerequisites</h5>
+											<div class="card border-0 bg-light">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<i class="fas fa-download text-primary fs-4"></i>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Node.js Installation</h6>
+															<p class="text-muted mb-2">Before installing Sass, ensure you have Node.js installed on your system:</p>
+															<div class="alert alert-light border-start border-primary border-3 mb-0">
+																<div class="d-flex align-items-center">
+																	<i class="fas fa-link text-primary me-2"></i>
+																	<div>
+																		<strong>Download Node.js:</strong>
+																		<br><a href="https://nodejs.org/en/download/" target="_blank" class="text-decoration-none">https://nodejs.org/en/download/</a>
+																	</div>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Installation Steps -->
+									<div class="row mb-4">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-cogs text-primary me-2"></i>Installation Steps</h5>
+
+											<!-- Step 1 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">1</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Install NPM Package Manager</h6>
+															<p class="text-muted mb-2">Install the latest version of npm package manager:</p>
+															<pre class="language-bash mb-2" style="position: relative;"><code class="language-bash">npm install -g npm@latest</code><button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i>Copy</button></pre>
+															<div class="alert alert-light border-start border-info border-3 mb-0">
+																<small><i class="fas fa-terminal text-info me-1"></i><strong>Note:</strong> This ensures you have the latest npm version</small>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 2 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">2</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Install Sass Globally</h6>
+															<p class="text-muted mb-2">Install Dart Sass globally using npm:</p>
+															<pre class="language-bash mb-0" style="position: relative;"><code class="language-bash">npm install -g sass</code><button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i>Copy</button></pre>
+															<!-- <div class="alert alert-light border-start border-success border-3 mb-0">
+																<small><i class="fas fa-check text-success me-1"></i><strong>Success:</strong> Dart Sass is the recommended Sass implementation</small>
+															</div> -->
+														</div>
+													</div>
+												</div>
+											</div>
+
+											<!-- Step 3 -->
+											<div class="card border-0 bg-light mb-3">
+												<div class="card-body">
+													<div class="d-flex align-items-start">
+														<div class="me-3">
+															<span class="badge bg-primary rounded-circle p-2">3</span>
+														</div>
+														<div class="flex-grow-1">
+															<h6 class="mb-2">Verify Installation</h6>
+															<p class="text-muted mb-2">Check if Sass is installed correctly:</p>
+															<pre class="language-bash mb-0" style="position: relative;"><code class="language-bash">sass --version</code><button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i>Copy</button></pre>
+															<!-- <div class="alert alert-light border-start border-warning border-3 mb-0">
+																<small><i class="fas fa-info text-warning me-1"></i><strong>Expected Output:</strong> Should display the Sass version number</small>
+															</div> -->
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+
+									<!-- Compilation Methods -->
+									<div class="row mb-3">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-code text-success me-2"></i>Compilation Methods</h5>
+
+											<div class="table-responsive">
+												<table class="table table-hover table-bordered">
+													<thead class="table-light">
+														<tr>
+															<th class="text-center" style="width: 80px;">
+																<i class="fas fa-icons text-primary"></i>
+															</th>
+															<th style="width: 180px;" class="text-center align-middle">Method</th>
+															<th style="width: 200px;" class="text-center align-middle">Description</th>
+															<th style="width: 280px;" class="text-center align-middle">Default Sass Command</th>
+															<th style="width: 140px;" class="text-center align-middle">npm Script Command</th>
+														</tr>
+													</thead>
+													<tbody>
+														<tr class="align-middle">
+															<td class="text-center">
+																<i class="fas fa-play text-primary fs-4"></i>
+															</td>
+															<td class="align-middle">
+																<strong class="d-block mb-1">One-time Compilation</strong>
+																<small class="text-muted">(Production)</small>
+															</td>
+															<td class="align-middle">
+																<p class="mb-0">Compile SCSS files once for production with minified output</p>
+															</td>
+															<td class="text-start align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">sass public/assets/scss/main.scss:public/assets/css/style.css<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+															<td class="align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">npm run sass<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+														</tr>
+														<tr class="align-middle">
+															<td class="text-center">
+																<i class="fas fa-redo text-success fs-4"></i>
+															</td>
+															<td class="align-middle">
+																<strong class="d-block mb-1">Watch Mode</strong>
+																<small class="text-muted">(Development)</small>
+															</td>
+															<td class="align-middle">
+																<p class="mb-0">Automatically recompile on file changes for real-time development</p>
+															</td>
+															<td class="text-center align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">sass public/assets/scss/main.scss:public/assets/css/style.css --watch<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+															<td class="align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">npm run sass:watch<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+														</tr>
+														<tr class="align-middle">
+															<td class="text-center">
+																<i class="fas fa-layer-group text-warning fs-4"></i>
+															</td>
+															<td class="align-middle">
+																<strong class="d-block mb-1">Run Without Source Map</strong>
+																<small class="text-muted">(Production/Optional)</small>
+															</td>
+															<td class="align-middle">
+																<p class="mb-0">Compile SCSS without generating source maps, ideal for production builds</p>
+															</td>
+															<td class="text-center align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">sass public/assets/scss/main.scss:public/assets/css/style.css --style=compressed --no-source-map<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+															<td class="align-middle">
+																<code class="language-bash d-block p-2 bg-light rounded mb-0" style="position: relative;">npm run sass:no-map<button class="code-copy-btn" onclick="copyToClipboard(this)" title="Copy to clipboard"><i class="fas fa-copy"></i></button></code>
+															</td>
+														</tr>
+
+													</tbody>
+												</table>
+											</div>
+
+										</div>
+									</div>
+
+									<!-- Best Practices -->
+									<div class="row mb-0">
+										<div class="col-12">
+											<h5 class="mb-3"><i class="fas fa-star text-warning me-2"></i>Best Practices</h5>
+											<div class="row mb-0">
+												<div class="col-md-6 mb-0">
+													<div class="card border-0 bg-light h-100">
+														<div class="card-body">
+															<div class="d-flex align-items-start">
+																<div class="me-3">
+																	<i class="fas fa-laptop text-primary fs-4"></i>
+																</div>
+																<div>
+																	<h6 class="mb-2">Development</h6>
+																	<ul class="list-unstyled mb-0">
+																		<li><i class="fas fa-check text-success me-1"></i>Use watch mode for real-time updates</li>
+																		<li><i class="fas fa-check text-success me-1"></i>Enable source maps for debugging</li>
+																		<li><i class="fas fa-check text-success me-1"></i>Organize SCSS with partials</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+												<div class="col-md-6 mb-0">
+													<div class="card border-0 bg-light h-100">
+														<div class="card-body">
+															<div class="d-flex align-items-start">
+																<div class="me-3">
+																	<i class="fas fa-rocket text-success fs-4"></i>
+																</div>
+																<div>
+																	<h6 class="mb-2">Production</h6>
+																	<ul class="list-unstyled mb-0">
+																		<li><i class="fas fa-check text-success me-1"></i>Use compressed output style</li>
+																		<li><i class="fas fa-check text-success me-1"></i>Minimize file size</li>
+																		<li><i class="fas fa-check text-success me-1"></i>Optimize for performance</li>
+																	</ul>
+																</div>
+															</div>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /Scss Installation -->
+
+						<!-- Dynamic Title Feature -->
+						<section class="section-block hentry" id="dynamic_title">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Dynamic Title Feature<a class="anchor-link ms-2" href="#dynamic_title"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="server">
+										<!-- Overview Section -->
+										<div class="row mb-3">
+											<div class="col-12">
+												<h5 class="mb-2">
+													<i class="fas fa-info-circle text-info me-2"></i>
+													Overview
+												</h5>
+												<p class="mb-0">The KEEPFood CodeIgniter application implements an intelligent title generation system using CodeIgniter helpers that analyzes URI segments and converts them into user-friendly page titles. This system processes URL segments through multiple transformation steps to create readable, properly formatted titles.</p>
+
+
+											</div>
+										</div>
+
+										<div class="row mb-3">
+											<div class="col-md-8">
+												<div class="alert alert-light border-start border-primary border-4 mb-2">
+													<div class="d-flex align-items-start">
+														<i class="fas fa-file-code text-primary me-2 mt-1"></i>
+														<div>
+															<strong>File Location:</strong> <code>app/Helpers/title_helper.php</code>
+															<br><small class="text-muted">This helper contains the title generation logic</small>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Key Features Section -->
+										<h5 class="mb-3">
+											Key Features
+										</h5>
+										<div class="row mb-3">
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-font text-success"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">Smart Acronym Detection</h6>
+															<p class="text-muted mb-0">Converts acronyms to uppercase</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-icons text-info"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">Smart Suffix Detection</h6>
+															<p class="text-muted mb-0">Automatically adds "Icons" and "Charts" suffixes</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-edit text-primary"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">Word Processing</h6>
+															<p class="text-muted mb-0">Converts URI segments to proper title case</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-search text-warning"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">SEO Optimized</h6>
+															<p class="text-muted mb-0">Creates search-engine friendly titles</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-tools text-secondary"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">CodeIgniter Integration</h6>
+															<p class="text-muted mb-0">Uses CodeIgniter URI service and helper system</p>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="col-md-4">
+												<div class="feature-item mb-2">
+													<div class="d-flex align-items-start">
+														<div class="feature-icon me-2">
+															<i class="fas fa-star text-warning"></i>
+														</div>
+														<div>
+															<h6 class="mb-1">Professional Appearance</h6>
+															<p class="text-muted mb-0">Consistent and polished title formatting</p>
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<!-- Examples Section -->
+
+										<div class="row mb-3 examples-how-it-works">
+											<div class="col-md-6">
+												<h5 class="mb-2">
+													<i class="fas fa-code text-secondary me-2"></i>
+													Examples
+												</h5>
+												<div class="alert alert-secondary">
+													<ul class="mb-0">
+														<li class="mt-0">index → "Admin Dashboard"</li>
+														<li class="mb-1">account-settings → "Account Settings"</li>
+														<li class="mb-1">ui-alerts → "Alerts"</li>
+														<li class="mb-1">forgot-password-2→ "Forgot Password"</li>
+														<li class="mb-0">chart-js → "JS Charts"</li>
+													</ul>
+												</div>
+											</div>
+											<div class="col-md-6">
+												<h5 class="mb-2">
+													<i class="fas fa-lightbulb text-warning me-2"></i>
+													How It Works
+												</h5>
+												<div class="alert alert-info">
+													<ol class="mb-0">
+														<li class="mt-0">CodeIgniter URI service reads current URL segments</li>
+														<li class="mb-1">Gets the last segment from the URI</li>
+														<li class="mb-1">Converts hyphens to spaces</li>
+														<li class="mb-1">Applies smart acronym detection</li>
+														<li>Generates final title</li>
+													</ol>
+												</div>
+											</div>
+										</div>
+
+										<!-- Title Format Section -->
+										<h5 class="mb-2">
+											<i class="fas fa-tag text-primary me-2"></i>
+											Title Format
+										</h5>
+										<div class="row mb-3">
+											<div class="col-12">
+												<p class="mb-2">All generated titles follow this consistent format:</p>
+												<pre class="language-html mb-3"><code class="language-html">&lt;title&gt; {Generated Title} | KEEPFood - Inventory Management & Admin Dashboard Template&lt;/title&gt;</code></pre>
+												<div class="card border-primary mt-3">
+													<div class="card-header bg-primary text-white">
+														<i class="fas fa-eye me-2"></i>
+														Example Output
+													</div>
+													<div class="card-body">
+														<p class="text-muted mb-1">For <code>file-manager</code> URI segment:</p>
+														<p class="mb-0 fw-bold">File Manager | KEEPFood - Inventory Management & Admin Dashboard Template</p>
+													</div>
+												</div>
+											</div>
+										</div>
+
+										<div class="alert alert-info mb-0">
+											<span class="badge rounded-pill text-bg-info text-uppercase">
+												<i class="fas fa-info-circle me-1"></i>
+												Note
+											</span>
+											<p class="mb-0 mt-2">The system automatically handles title generation using CodeIgniter helpers. For custom acronyms and suffixes like "Icons" or "Charts", you may need to manually add them to the title generation logic in <code>app/Helpers/title_helper.php</code>.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /Dynamic Title Feature -->
+
+						<!-- RTL Layout Feature -->
+						<section class="section-block hentry" id="rtl_layout">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">RTL Language Support<a class="anchor-link ms-2" href="#rtl_layout"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="server">
+										<h5 class="mb-2">Overview</h5>
+										<p class="mb-3">This application supports RTL (Right-to-Left) languages like Arabic and Hebrew. It uses conditional CSS and RTL layout templates to provide proper RTL support</p>
+										<h5 class="mb-2">Conditional CSS Loading</h5>
+										<p class="mb-2">RTL-specific CSS is conditionally loaded based on the current page in <code>head-css.php</code>:</p>
+										<pre class="language-php mb-4"><code class="language-php">// Regular Bootstrap CSS for non-RTL pages
+&lt;?php if ($page !== 'layout-rtl') {   ?&gt;
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="&lt;?php echo base_url('assets/css/bootstrap.min.css'); ?&gt;"&gt;
+&lt;?php }?&gt;
+
+// RTL Bootstrap CSS for RTL pages
+&lt;?php if ($page === 'layout-rtl') {   ?&gt;
+    &lt;!-- Bootstrap CSS --&gt;
+    &lt;link rel="stylesheet" href="&lt;?php echo base_url('assets/css/bootstrap.rtl.min.css'); ?&gt;"&gt;
+&lt;?php }?&gt;</code></pre>
+
+										<h5 class="mb-2">Key Features</h5>
+										<ul class="custom-list mb-3">
+											<li><i class="fa-solid fa-check text-success me-2"></i><strong>Conditional CSS Loading</strong> - Automatically switches between regular and RTL Bootstrap CSS based on page type</li>
+											<li><i class="fa-solid fa-check text-success me-2"></i><strong>CodeIgniter View System</strong> - Uses CodeIgniter's partial system for dynamic CSS loading</li>
+											<li><i class="fa-solid fa-check text-success me-2"></i><strong>Bootstrap RTL Support</strong> - Leverages Bootstrap's built-in RTL CSS framework</li>
+											<li><i class="fa-solid fa-check text-success me-2"></i><strong>Page-Based Detection</strong> - Automatically detects RTL pages and loads appropriate stylesheets</li>
+										</ul>
+
+										<div class="alert alert-info mb-0">
+											<span class="badge rounded-pill text-bg-info text-uppercase">Note</span>
+											<p class="mb-0">The conditional CSS loading automatically detects RTL pages and loads appropriate Bootstrap stylesheets. This approach ensures that RTL-specific styles are only loaded when needed, improving performance and maintainability.</p>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						<!-- /RTL Layout Feature -->
+
+						<!-- Change Logo -->
+						<section class="section-block hentry" id="change_logo">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">How to change Logo ? <a class="anchor-link ms-2" href="#file_structure"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><svg xmlns="http://www.w3.org/2000/svg" width="18px" height="18px" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-maximize"><path d="M8 3H5a2 2 0 0 0-2 2v3m18 0V5a2 2 0 0 0-2-2h-3m0 18h3a2 2 0 0 0 2-2v-3M3 16v3a2 2 0 0 0 2 2h3"></path></svg></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="file-structure">
+										<p>You can change the logo or replace it from img folder or you can edit it from PHP file.</p>
+<pre class="language-javascript mb-0"><code class="language-javascript">&lt;div class="header"&gt;
+	&lt;a href="&lt;?php echo base_url('index'); ?&gt;" class="logo"&gt;
+		&lt;img src="&lt;?php echo base_url('assets/img/logo.svg'); ?&gt;" alt="logo"&gt;
+	&lt;a&gt;
+&lt;/div&gt; </code></pre>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- Typography -->
+						<section class="section-block hentry" id="typography">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Typography<a class="anchor-link ms-2" href="#typography"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="#" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="server typography">
+										<h1>h1. Bootstrap heading</h1>
+										<h2>h2. Bootstrap heading</h2>
+										<h3>h3. Bootstrap heading</h3>
+										<h4>h4. Bootstrap heading</h4>
+										<h5>h5. Bootstrap heading</h5>
+										<h6>h6. Bootstrap heading</h6>
+									</div>
+									</div>
+								</div>
+
+						</section>
+						<!-- /Typography -->
+
+						<section class="section-block hentry" id="faq">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">FAQs<a class="anchor-link ms-2" href="#faq"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="javascript:void(0)" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+	<div class="accordion" id="faq_list">
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+        Can I use this platform on multiple domains?
+      </button>
+    </h2>
+    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#faq_list">
+      <div class="accordion-body">
+         With one purchase code you can use it on one domain name. You need to get new license for every new domain name, please check <a href="https://themeforest.net/licenses/standard" target="_blank">Envato Help Page</a> for more information about licenses. </div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+        I got a problem, How can I get support?
+      </button>
+    </h2>
+    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#faq_list">
+      <div class="accordion-body">
+         If you need support, or if you're facing any problems, please contact us via <a href="#">Envato Support</a>
+													<br> Please note that our respond can take up to 2 business days.
+												</div>
+    </div>
+  </div>
+  <div class="accordion-item">
+    <h2 class="accordion-header">
+      <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+        What does the support include?
+      </button>
+    </h2>
+    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#faq_list">
+      <div class="accordion-body">
+		<ul class="list-disc">
+			<li>Availability to answer questions, Answering technical questions about item’s features, Assistance with reported bugs and issues, Help with included 3rd party assets.</li>
+			<li>Any customization request will be ignored.</li>
+			<li>Please make sure to read more about the <a href="https://themeforest.net/page/item_support_policy" target="_blank">support policy</a>. </li>
+		</ul>
+      </div>
+    </div>
+  </div>
+</div>
+								</div>
+							</div>
+						</section>
+						
+						<section class="section-block page-block hentry" id="support">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Support<a class="anchor-link ms-2" href="#support"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="javascript:void(0)" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+
+							<p>If this documentation does not address your questions, please feel free to contact us via email at <a class="btn btn-primary btn-sm" target="_blank" href="https://themeforest.net/item/KeepFood-pos-inventory-management-admin-dashboard-template/38834413/support">Item Support Page</a>
+							</p>
+							<p>We are in the GMT+5:30 time zone and typically respond to inquiries on weekdays within 12-24 hours. Please note that in rare cases, the response time may extend to 48 hours, especially during holiday seasons.</p>
+							<div class="alert alert-warning mb-4">
+								<span class="badge rounded-pill text-bg-danger text-uppercase">Note:</span> 
+								<p class="mb-0">We strive to offer top-notch support, but it's only available to verified buyers and for template-related issues such as bugs and errors. Custom changes and third-party module setups are not covered.</p>
+							</div>
+							<h5>Don’t forget to Rate KeepFood! <i class="fas fa-star text-warning"></i>
+								<i class="fas fa-star text-warning"></i>
+								<i class="fas fa-star text-warning"></i>
+								<i class="fas fa-star text-warning"></i>
+								<i class="fas fa-star text-warning"></i>
+							</h5>
+							<div class="alert alert-success mb-0">Please take a moment to rate our product on Themeforest. Your support means a lot to us. Just go to your <strong>Themeforest Profile > Downloads Tab</strong>, and you can leave a review for our script. Thank you!</div>
+						
+								</div>
+							</div>
+						</section>
+						
+						<section class="section-block page-block hentry" id="license">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">License<a class="anchor-link ms-2" href="#license"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="javascript:void(0)" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<p>KeepFood is developed by <a href="https://themeforest.net/user/keepfood/portfolio" target="_blank">KeepFood</a> and is available under both <a href="https://themeforest.net/licenses/standard" target="_blank">Envato Extended &amp; Regular License</a> options.</p>
+									<h6>Regular License</h6>
+									<p>Usage by either yourself or a single client is permitted for a single end product, provided that end users are not subject to any charges.</p>
+									<h6>Extended License</h6>
+									<p>For use by you or one client in a single end product for which end users may be charged.</p>
+									<p><a href="https://themeforest.net/licenses/faq#main-differences-licenses-a" target="_blank">What are the main differences between the Regular License and the Extended License?</a></p>
+									<div class="alert alert-info mb-0">
+										<span class="badge rounded-pill text-bg-danger text-uppercase">Note</span>
+										<p class="mb-0">If you operate as a freelancer or agency, you have the option to acquire the Extended License, which permits you to utilize the item across multiple projects on behalf of your clients.</p>
+									</div>
+								</div>
+							</div>
+						</section>
+
+						<!-- <section class="section-block page-block hentry" id="credits">
+							<div class="custom-card">
+								<div class="card-header">
+									<h4 class="card-title">Credits<a class="anchor-link ms-2" href="#credits"><i class="fa-solid fa-hashtag"></i></a></h4>
+									<div class="header-tools">
+										<a href="javascript:void(0)" class="card-maximize">
+											<span class="feather-icon" title="Full Screen"><i data-feather="maximize"></i></span></a>
+									</div>
+								</div>
+								<div class="card-body">
+									<div class="table-responsive ref-table">
+										<table class="table table-borderless mb-0">
+											<thead class="thead-light">
+												<tr>
+													<th class="w-20">Plugin Name</th>
+													<th class="w-80">URL</th>
+												</tr>
+											</thead>
+											<tbody>
+												<tr>
+													<td><span class="text-high-em">Bootstrap</span></td>
+													<td><a href="https://getbootstrap.com/docs/5.3/getting-started/introduction/" class="link-high-em" target="_blank">https://getbootstrap.com/docs/</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">jQuery</span></td>
+													<td><a href="https://jquery.com/" class="link-high-em" target="_blank">https://jquery.com/</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Fontawesome</span></td>
+													<td><a href="https://fontawesome.com/" class="link-high-em" target="_blank">https://fontawesome.com/</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Select2</span></td>
+													<td><a href="https://github.com/select2/select2" class="link-high-em" target="_blank">https://github.com/select2/select2</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Date Timepicker</span></td>
+													<td><a href="https://cdnjs.com/libraries/jquery-datetimepicker" class="link-high-em" target="_blank">https://cdnjs.com/libraries/jquery-datetimepicker</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Google Fonts</span></td>
+													<td><a href="https://fonts.google.com/" class="link-high-em" target="_blank">https://fonts.google.com/</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Fancy Box</span></td>
+													<td><a href="http://fancybox.net/" class="link-high-em" target="_blank">http://fancybox.net/</a></td>
+												</tr>
+												<tr>
+													<td><span class="text-high-em">Moment JS</span></td>
+													<td><a href="https://momentjs.com/" class="link-high-em" target="_blank">https://momentjs.com/</a></td>
+												</tr>
+												<tr>
+                                                    <td><span class="text-high-em">Full Calendar</span></td>
+                                                    <td><a href="https://fullcalendar.io/" class="link-high-em" target="_blank">https://fullcalendar.io/</a></td>
+                                                </tr>
+												<tr>
+                                                    <td><span class="text-high-em">Morris</span></td>
+                                                    <td><a href="https://morrisjs.github.io/morris.js/" class="link-high-em" target="_blank">https://morrisjs.github.io/morris.js/</a></td>
+                                                </tr>
+												<tr>
+                                                    <td><span class="text-high-em">Owl Carousel</span></td>
+                                                    <td><a href="https://www.npmjs.com/package/ngx-owl-carousel-o" class="link-high-em" target="_blank">https://www.npmjs.com/package/ngx-owl-carousel-o</a></td>
+                                                </tr>
+												<tr>
+													<td><span class="text-high-em">Range-Slider</span></td>
+													<td><a href="https://momentjs.com/" class="link-high-em" target="_blank">https://ionicframework.com/docs/api/range</a></td>
+												</tr>
+											</tbody>
+										</table>
+									</div>	
+								</div>
+							</div>
+						</section> -->
+
+						<section class="section-block page-block hentry" id="customwork">
+							<div class="custom-card bg-gr-1 text-center">
+								<div class="card-body">
+									<h4 class="card-title">Do you need a customized application for your business?</h4>
+									<p>If you need a customized application for your business depends on your specific requirements and goals, Please contact us.</p>
+									<p>Customization can be the key to success, ensuring your project perfectly aligns with your unique goals and requirements.</p>
+									<div class="hire">
+										<h6>Don't Miss Out on the Benefits of Customization!</h6>
+										<p>Unlock the potential of your project. It's time to ensure that your project isn't just another cookie-cutter solution but a truly unique and effective one.</p>
+										<p>Discover how customization can make a difference in your project's success. Let's create a solution that's as unique as your vision!</p>
+										<ul>
+											<li>We'll tailor the application to meet your specific needs and preferences.</li>
+											<li>We will upload your website to the server and ensure it is live.</li>
+										</ul>
+										<div class="contact-btn mb-3">
+											<a target="_blank" href="https://calendly.com/keepfood" class="btn btn-primary me-2"><i class="fa-solid fa-calendar-days me-2"></i>Book an Appointment</a>
+											<a href="mailto:support@keepfood.com" class="btn btn-primary"><i class="fa-solid fa-calendar-days me-2"></i>Get a Free Quote</a>
+										</div>
+										<div class="contact-link">											
+											<a target="_blank" href="mailto:business@keepfood.com" class="px-2 link-body-emphasis"><i class="fa fa-envelope me-1"></i> business@keepfood.com</a>
+										</div>
+									</div>
+								</div>
+							</div>
+						</section>
+						
+						<section class="custom-card page-block hentry  min-h-100" id="thanks">
+							<div class="card-body">
+								<div class="thanks">
+									<img src="assets/img/banners/ratings.svg" alt="thanks">
+									<h2>Thank You</h2>
+									<p>Thank you once again for downloading <strong>KeepFood</strong>.<br>
+									We hope you're enjoying your experience, and we kindly request that you take a moment to share your valuable review and rating with us.</p>
+									<strong>Review Link:</strong><a href="https://themeforest.net/downloads" class="text-primary fw-bold fs-5" target="_blank">https://themeforest.net/downloads</a>
+								</div>
+							</div>
+						</section>
+					</div>
+				</div>
+			</div><footer class="content-footer footer">
+  <div class="container-fluid d-flex flex-wrap justify-content-between align-items-center text-center py-3">
+    <div>
+      &copy; 2015- <script>
+      document.write(new Date().getFullYear())
+
+      </script>
+      
+      <a href="https://keepfood.com/" class="footer-text fw-medium text-primary" target="_blank">KeepFood</a>
+      
+    </div>
+    <div class="social-icons">
+		<a href="https://www.facebook.com/keepfoodlimited/" class="footer-link me-2"
+			target="_blank"><i class="fa-brands fa-facebook"></i></a>
+		<a href="https://twitter.com/dreamstechltd" class="footer-link me-2" target="_blank"><i
+				class="fa-brands fa-twitter"></i></a>
+		<a href="https://www.behance.net/keepfood" class="footer-link me-2" target="_blank"><i
+				class="fa-brands fa-behance"></i></a>
+		<a href="https://dribbble.com/keepfood" class="footer-link me-2" target="_blank"><i
+				class="fa-brands fa-dribbble"></i></a>
+		<a href="https://www.instagram.com/keepfoodlimited/" class="footer-link"
+			target="_blank"><i class="fa-brands fa-instagram"></i></a>
+	</div>
+  </div>
+</footer>
+		</div>	
+
+	</main>
+
+<script src="assets/js_new/jquery-3.7.1.min.js"></script>
+<script src="assets/js_new/bootstrap.bundle.min.js"></script>
+<script src="assets/js_new/prism.js"></script>
+<script src="assets/js_new/feather.min.js"></script>
+<script src="assets/js_new/jquery.zoom.min.js"></script>
+
+<script src="assets/js_new/jquery.magnific-popup.min.js"></script>
+<script src="assets/js_new/isotope.pkgd.min.js"></script>
+<script src="assets/js_new/main.js"></script>
+</body>
+
+
+</html>

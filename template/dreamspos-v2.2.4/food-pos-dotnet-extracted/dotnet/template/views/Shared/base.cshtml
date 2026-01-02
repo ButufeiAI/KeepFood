@@ -1,0 +1,47 @@
+@{
+
+    // Get the current page name from the request path
+    var path = Context?.Request?.Path.Value ?? string.Empty;
+    var fileName = System.IO.Path.GetFileName(path);
+    var pageName = string.IsNullOrEmpty(fileName) ? "index" : System.IO.Path.GetFileNameWithoutExtension(fileName);
+    var route = pageName.ToLowerInvariant();
+
+    // Determine the body class based on the page route
+    var body_class = route switch
+    {
+        "login" => "bg-white",
+        "register" => "bg-white",
+        "email-verification" => "bg-white",
+        "forgot-password" => "bg-white",
+        "otp" => "bg-white",
+        "pos" => "pos-page",
+        _ => ""
+    };
+    ViewData["BodyClass"] = body_class;
+}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    @{
+        var pathBase = Context?.Request?.PathBase.Value ?? string.Empty;
+    }
+    <meta name="base-path" content="@pathBase" />
+    @await Html.PartialAsync("~/Views/Shared/Partials/_TitleMeta.cshtml")
+    @RenderSection("styles", false)
+    @await Html.PartialAsync("~/Views/Shared/Partials/_HeadCss.cshtml")
+</head>
+
+<body class="@body_class">
+
+    @await Html.PartialAsync("~/Views/Shared/Partials/main-wrapper.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Partials/_Topbar.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Partials/_Sidenav.cshtml")
+
+    @RenderBody()
+
+    @await Html.PartialAsync("~/Views/Shared/Partials/modal-popup.cshtml")
+    @await Html.PartialAsync("~/Views/Shared/Partials/_FooterScripts.cshtml")
+    @RenderSection("scripts", required: false)
+</body>
+</html>

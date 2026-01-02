@@ -59,7 +59,7 @@ export function Gamification() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement de votre profil..." />;
+    return <LoadingSpinner fullScreen message="Chargement de votre profil..." />;
   }
 
   if (!profile) {

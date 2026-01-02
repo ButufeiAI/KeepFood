@@ -1,0 +1,3 @@
+<template>
+    <ApplicationContacts />
+</template>

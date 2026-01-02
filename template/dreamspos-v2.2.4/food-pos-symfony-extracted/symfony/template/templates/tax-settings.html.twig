@@ -1,0 +1,110 @@
+{% extends 'layouts/base.html.twig' %}
+
+{% block content %}
+
+    <!-- ========================
+        Start Page Content
+    ========================= -->
+
+    <div class="page-wrapper">
+
+        <!-- Start Content -->
+        <div class="content">
+
+            <!-- Page Header -->
+            <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">Store Settings <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+                </div>
+                <div class="gap-2 d-flex align-items-center flex-wrap">
+                    <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_tax"><i class="icon-circle-plus me-1"></i>Add New</a>
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <!-- card start -->
+            <div class="card mb-0">
+                <div class="card-body">
+
+                    <!-- table start -->
+                    <div class="table-responsive table-nowrap">
+                        <table class="table mb-0 border">
+                            <thead>
+                                <tr>
+                                    <th>#</th>
+                                    <th>Tax Name</th>
+                                    <th>Rate</th>
+                                    <th>Type</th>
+                                    <th>Actions</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                <tr>
+                                    <td>1</td>
+                                    <td>CGST</td>
+                                    <td>9%</td>
+                                    <td>Inclusive / Exclusive</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_tax"><i class="icon-pencil-line"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>2</td>
+                                    <td>SGST</td>
+                                    <td>9%</td>
+                                    <td>Inclusive / Exclusive</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_tax"><i class="icon-pencil-line"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>3</td>
+                                    <td>IGST</td>
+                                    <td>18%</td>
+                                    <td>Inclusive / Exclusive</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_tax"><i class="icon-pencil-line"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>4</td>
+                                    <td>VAT</td>
+                                    <td>10%</td>
+                                    <td>Exclusive</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_tax"><i class="icon-pencil-line"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                                <tr>
+                                    <td>5</td>
+                                    <td>Service Tax</td>
+                                    <td>15%</td>
+                                    <td>Exclusive</td>
+                                    <td>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_tax"><i class="icon-pencil-line"></i></a>
+                                        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle text-danger" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                                    </td>
+                                </tr>
+                            </tbody>
+                        </table>
+                    </div>
+                    <!-- table end -->
+                </div>
+
+            </div>
+            <!-- card start -->
+
+        </div>
+        <!-- End Content -->
+
+    </div>
+
+    <!-- ========================
+        End Page Content
+    ========================= -->
+
+{% endblock %}

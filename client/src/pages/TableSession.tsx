@@ -64,7 +64,7 @@ export function TableSessionPage() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement de la session..." />;
+    return <LoadingSpinner fullScreen message="Chargement de la session..." />;
   }
 
   if (!session) {

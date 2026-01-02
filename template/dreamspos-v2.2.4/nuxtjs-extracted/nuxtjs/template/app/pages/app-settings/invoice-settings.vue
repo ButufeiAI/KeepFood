@@ -1,0 +1,3 @@
+<template>
+    <SettingsAppSettingsInvoiceSettings/>
+</template>

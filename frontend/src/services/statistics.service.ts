@@ -76,6 +76,30 @@ export const statisticsService = {
     const response = await api.get<ServerPerformance[]>(`/statistics/server-performance?restaurantId=${restaurantId}&period=${period}`);
     return response.data;
   },
+
+  async getAllEmployeesStats(restaurantId: string, period: 'day' | 'week' | 'month' | 'year' = 'month'): Promise<any[]> {
+    const response = await api.get(`/statistics/all-employees?restaurantId=${restaurantId}&period=${period}`);
+    return response.data;
+  },
+
+  async getEmployeeStats(restaurantId: string, employeeId: string, startDate?: string, endDate?: string): Promise<any> {
+    let url = `/statistics/employee?restaurantId=${restaurantId}&employeeId=${employeeId}`;
+    if (startDate) url += `&startDate=${startDate}`;
+    if (endDate) url += `&endDate=${endDate}`;
+    const response = await api.get(url);
+    return response.data;
+  },
+
+  async getRestaurantEvolution(
+    restaurantId: string,
+    period: 'week' | 'month' | 'year' = 'month',
+    metric: 'revenue' | 'orders' | 'avg' = 'revenue'
+  ): Promise<Array<{ date: string; value: number }>> {
+    const response = await api.get(
+      `/statistics/restaurant-evolution?restaurantId=${restaurantId}&period=${period}&metric=${metric}`
+    );
+    return response.data;
+  },
 };
 
 

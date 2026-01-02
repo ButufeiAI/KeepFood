@@ -1,0 +1,111 @@
+<html>
+    <body>
+        <div th:fragment="settings-sidebar" th:remove="tag">
+            <div class="settings-sidebar" id="sidebar2">
+                <div class="sidebar-inner slimscroll">
+                    <div id="sidebar-menu5" class="sidebar-menu">
+                        <h4 class="fw-bold fs-18 mb-2 pb-2">Settings</h4>
+                        <ul>
+                            <li class="submenu-open">
+                                <ul>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'generals-settings'? 'active subdrop':''}">
+                                            <i class="ti ti-settings fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">General Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="general-settings" th:classappend="${activePage == 'general-settings'?'active':''}">Profile</a></li>
+                                            <li><a href="security-settings" th:classappend="${activePage == 'security-settings'?'active':''}">Security</a></li>
+                                            <li><a href="notification" th:classappend="${activePage == 'notification'?'active':''}">Notifications</a></li>
+                                            <li><a href="connected-apps" th:classappend="${activePage == 'connected-apps'?'active':''}">Connected Apps</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'website-settings'? 'active subdrop':''}">
+                                            <i class="ti ti-world fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">Website Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="system-settings" th:classappend="${activePage == 'system-settings'?'active':''}">System Settings</a></li>
+                                            <li><a href="company-settings" th:classappend="${activePage == 'company-settings'?'active':''}">Company Settings </a></li>
+                                            <li><a href="localization-settings" th:classappend="${activePage == 'localization-settings'?'active':''}">Localization</a></li>
+                                            <li><a href="prefixes" th:classappend="${activePage == 'prefixes'?'active':''}">Prefixes</a></li>
+                                            <li><a href="preference" th:classappend="${activePage == 'preference'?'active':''}">Preference</a></li>
+                                            <li><a href="appearance" th:classappend="${activePage == 'appearance'?'active':''}">Appearance</a></li>
+                                            <li><a href="social-authentication" th:classappend="${activePage == 'social-authentication'?'active':''}">Social Authentication</a></li>
+                                            <li><a href="language-settings" th:classappend="${activePage == 'language-settings' or activePage == 'language-settings-web'?'active':''}">Language</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'app-settings'? 'active subdrop':''}">
+                                            <i class="ti ti-device-mobile fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">App Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="invoice-settings" th:classappend="${activePage == 'invoice-settings'?'active':''}">Invoice Settings</a></li>
+                                            <li><a href="invoice-templates" th:classappend="${activePage == 'invoice-templates'?'active':''}">Invoice Templates</a></li>
+                                            <li><a href="printer-settings" th:classappend="${activePage == 'printer-settings'?'active':''}">Printer </a></li>
+                                            <li><a href="pos-settings" th:classappend="${activePage == 'pos-settings'?'active':''}">POS</a></li>
+                                            <li><a href="signatures" th:classappend="${activePage == 'signatures'?'active':''}">Signatures</a></li>
+                                            <li><a href="custom-fields" th:classappend="${activePage == 'custom-fields'?'active':''}">Custom Fields</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'system-settings'? 'active subdrop':''}">
+                                            <i class="ti ti-device-desktop fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">System Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li class="submenu submenu-two" ><a href="javascript:void(0);" th:classappend="${activeSubGroup == 'emails'?'active subdrop':''}">Email<span class="menu-arrow inside-submenu"></span></a>
+                                                <ul>
+                                                    <li><a href="email-settings" th:classappend="${activePage == 'email-settings'?'active':''}">Email Settings</a></li>
+                                                    <li><a href="email-template" th:classappend="${activePage == 'email-template'?'active':''}">Email Templates</a></li>
+                                                </ul>
+                                            </li>
+                                            <li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeSubGroup == 'sms'?'active subdrop':''}">SMS<span class="menu-arrow inside-submenu"></span></a>
+                                                <ul>
+                                                    <li><a href="sms-settings" th:classappend="${activePage == 'sms-settings'? 'active' : ''}">SMS Settings</a></li>
+                                                    <li><a href="sms-template" th:classappend="${activePage == 'sms-template'?'active':''}">SMS Templates</a></li>
+                                                </ul>
+                                            </li>
+                                            <li><a href="otp-settings" th:classappend="${activePage == 'otp-settings'?'active':''}">OTP</a></li>
+                                            <li><a href="gdpr-settings" th:classappend="${activePage == 'gdpr-settings'?'active':''}">GDPR Cookies</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'financial-settings'?'active subdrop':''}">
+                                            <i class="ti ti-settings-dollar fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">Financial Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="payment-gateway-settings" th:classappend="${activePage == 'payment-gateway-settings'?'active':''}">Payment Gateway</a></li>
+                                            <li><a href="bank-settings-grid" th:classappend="${activePage == 'bank-settings-grid'?'active':''}">Bank Accounts </a></li>
+                                            <li><a href="tax-rates" th:classappend="${activePage == 'tax-rates'?'active':''}">Tax Rates</a></li>
+                                            <li><a href="currency-settings" th:classappend="${activePage == 'currency-settings'?'active':''}">Currencies</a></li>
+                                        </ul>
+                                    </li>
+                                    <li class="submenu">
+                                        <a href="javascript:void(0);" th:classappend="${activeGroup == 'other-settings'?'active subdrop':''}">
+                                            <i class="ti ti-settings-2 fs-18"></i>
+                                            <span class="fs-14 fw-medium ms-2">Other Settings</span>
+                                            <span class="menu-arrow"></span>
+                                        </a>
+                                        <ul>
+                                            <li><a href="storage-settings" th:classappend="${activePage == 'storage-settings'?'active':''}">Storage</a></li>
+                                            <li><a href="ban-ip-address" th:classappend="${activePage == 'ban-ip-address'?'active':''}">Ban IP Address </a></li>
+                                        </ul>
+                                    </li>
+                                </ul>								
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </body>
+</html>

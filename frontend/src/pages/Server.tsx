@@ -1,9 +1,11 @@
 import { useState, useEffect, useRef } from 'react';
+import { useNavigate } from 'react-router-dom';
 import { ordersService, Order, OrderStatus, UpdateOrderDto } from '../services/orders.service';
 import { tablesService, Table } from '../services/tables.service';
 import { useAuthStore } from '../stores/auth.store';
 
 export function Server() {
+  const navigate = useNavigate();
   const { user } = useAuthStore();
   const [orders, setOrders] = useState<Order[]>([]);
   const [tables, setTables] = useState<Table[]>([]);
@@ -147,27 +149,59 @@ export function Server() {
 
   return (
     <div style={{ padding: '1rem', maxWidth: '1400px', margin: '0 auto' }}>
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem' }}>
+      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1rem', flexWrap: 'wrap', gap: '1rem' }}>
         <h1 style={{ margin: 0, fontSize: '1.75rem' }}>Service - Commandes</h1>
-        {readyOrdersCount > 0 && (
-          <div
+        
+        {/* Boutons d'accès rapide */}
+        <div style={{ display: 'flex', gap: '0.5rem', flexWrap: 'wrap' }}>
+          <button
+            onClick={() => navigate('/bar-pos')}
             style={{
-              padding: '0.5rem 1.5rem',
-              backgroundColor: '#28a745',
+              padding: '0.75rem 1.5rem',
+              backgroundColor: '#8b5cf6',
               color: 'white',
-              borderRadius: '25px',
-              fontSize: '1.1rem',
+              border: 'none',
+              borderRadius: '12px',
+              fontSize: '1rem',
               fontWeight: 'bold',
+              cursor: 'pointer',
               display: 'flex',
               alignItems: 'center',
               gap: '0.5rem',
-              animation: readyOrdersCount > 0 ? 'pulse 2s infinite' : 'none',
+              transition: 'all 0.3s',
+            }}
+            onMouseOver={(e) => {
+              e.currentTarget.style.backgroundColor = '#7c3aed';
+              e.currentTarget.style.transform = 'scale(1.05)';
+            }}
+            onMouseOut={(e) => {
+              e.currentTarget.style.backgroundColor = '#8b5cf6';
+              e.currentTarget.style.transform = 'scale(1)';
             }}
           >
-            <span>🔔</span>
-            <span>{readyOrdersCount} commande{readyOrdersCount > 1 ? 's' : ''} prête{readyOrdersCount > 1 ? 's' : ''}</span>
-          </div>
-        )}
+            🍸 Interface Bar/Caisse
+          </button>
+          
+          {readyOrdersCount > 0 && (
+            <div
+              style={{
+                padding: '0.75rem 1.5rem',
+                backgroundColor: '#28a745',
+                color: 'white',
+                borderRadius: '25px',
+                fontSize: '1.1rem',
+                fontWeight: 'bold',
+                display: 'flex',
+                alignItems: 'center',
+                gap: '0.5rem',
+                animation: readyOrdersCount > 0 ? 'pulse 2s infinite' : 'none',
+              }}
+            >
+              <span>🔔</span>
+              <span>{readyOrdersCount} commande{readyOrdersCount > 1 ? 's' : ''} prête{readyOrdersCount > 1 ? 's' : ''}</span>
+            </div>
+          )}
+        </div>
       </div>
 
       {/* Notifications en haut de la page */}
@@ -288,22 +322,56 @@ export function Server() {
           Toutes les tables
         </button>
         {tables.map((table) => (
-          <button
-            key={table.id}
-            onClick={() => setSelectedTable(table.id)}
-            style={{
-              padding: '0.75rem 1.5rem',
-              backgroundColor: selectedTable === table.id ? '#007bff' : '#fff',
-              color: selectedTable === table.id ? '#fff' : '#333',
-              border: '1px solid #ddd',
-              borderRadius: '8px',
-              cursor: 'pointer',
-              fontSize: '1rem',
-              fontWeight: selectedTable === table.id ? 'bold' : 'normal',
-            }}
-          >
-            {table.name}
-          </button>
+          <div key={table.id} style={{ position: 'relative', display: 'inline-block' }}>
+            <button
+              onClick={() => setSelectedTable(table.id)}
+              style={{
+                padding: '0.75rem 1.5rem',
+                paddingRight: '3.5rem',
+                backgroundColor: selectedTable === table.id ? '#007bff' : '#fff',
+                color: selectedTable === table.id ? '#fff' : '#333',
+                border: '1px solid #ddd',
+                borderRadius: '8px',
+                cursor: 'pointer',
+                fontSize: '1rem',
+                fontWeight: selectedTable === table.id ? 'bold' : 'normal',
+              }}
+            >
+              {table.name}
+            </button>
+            <button
+              onClick={() => navigate(`/server-order/${table.id}`)}
+              title="Nouvelle commande par étapes"
+              style={{
+                position: 'absolute',
+                right: '5px',
+                top: '50%',
+                transform: 'translateY(-50%)',
+                backgroundColor: '#28a745',
+                color: 'white',
+                border: 'none',
+                borderRadius: '6px',
+                width: '32px',
+                height: '32px',
+                cursor: 'pointer',
+                fontSize: '1.2rem',
+                display: 'flex',
+                alignItems: 'center',
+                justifyContent: 'center',
+                transition: 'all 0.2s',
+              }}
+              onMouseOver={(e) => {
+                e.currentTarget.style.backgroundColor = '#218838';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1.1)';
+              }}
+              onMouseOut={(e) => {
+                e.currentTarget.style.backgroundColor = '#28a745';
+                e.currentTarget.style.transform = 'translateY(-50%) scale(1)';
+              }}
+            >
+              +
+            </button>
+          </div>
         ))}
       </div>
 

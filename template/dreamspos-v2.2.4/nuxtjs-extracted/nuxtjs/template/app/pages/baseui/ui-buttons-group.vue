@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceBaseuiUiButtonsGroup />
+</template>

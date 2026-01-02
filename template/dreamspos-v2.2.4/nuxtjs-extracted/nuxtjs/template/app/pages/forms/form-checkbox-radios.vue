@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceFormsFormElementsFormCheckboxRadios />
+</template>

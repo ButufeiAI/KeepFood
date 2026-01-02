@@ -1,0 +1,62 @@
+    <!-- jQuery -->
+    <script src="{{url_for('static', filename='assets/js/jquery-3.7.1.min.js')}}"></script>
+
+    <!-- Bootstrap Core JS -->
+    <script src="{{url_for('static', filename='assets/js/bootstrap.bundle.min.js')}}"></script>
+
+{% if page not in ['login', 'register', 'email-verification', 'forgot-password', 'otp','reset-password'] %}
+	<!-- Simplebar JS -->
+	<script src="{{url_for('static', filename='assets/plugins/simplebar/simplebar.min.js')}}"></script>
+{% endif %}
+
+{% if page in ['addons', 'coupons', 'index', 'invoices', 'kanban-view', 'payments', 'orders', 'role-permission', 'users'] %}
+    <!-- Daterangepikcer JS -->
+    <script src="{{url_for('static', filename='assets/js/moment.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/plugins/daterangepicker/daterangepicker.js')}}"></script>
+{% endif %}
+
+{% if page in ['addons', 'audit-report', 'categories', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'integrations-settings', 'invoices', 'items', 'notifications-settings', 'order-report', 'payment-settings', 'payments', 'print-settings', 'role-permission', 'sales-report', 'store-settings', 'table', 'users'] %}
+	<!-- Datatable JS -->
+    <script src="{{url_for('static', filename='assets/plugins/datatables/js/jquery.dataTables.min.js')}}"></script>
+	<script src="{{url_for('static', filename='assets/plugins/datatables/dataTables.bootstrap5.min.js')}}"></script>
+{% endif %}
+
+{% if page in ['audit-report', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'integrations-settings', 'kitchen', 'pos', 'notifications-settings', 'order-report', 'orders', 'payment-settings', 'print-settings', 'reservations', 'sales-report', 'store-settings', 'table'] %}
+    <!-- Flatpickr JS -->
+	<script src="{{url_for('static', filename='assets/plugins/flatpickr/flatpickr.min.js')}}"></script>
+{% endif %}
+
+{% if page in ['pos'] %}
+    <!-- Slick Js -->
+    <script src="{{url_for('static', filename='assets/plugins/slick/slick.min.js')}}"></script>
+{% endif %}
+
+{% if page in ['index'] %}
+    <!-- ApexChart JS -->
+    <script src="{{url_for('static', filename='assets/plugins/apexchart/apexcharts.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/plugins/apexchart/chart-data.js')}}"></script>
+{% endif %}
+
+{% if page in ['kanban-view'] %}
+    <!-- Dragula Js-->
+    <script src="{{url_for('static', filename='assets/plugins/dragula/dragula.min.js')}}"></script>
+    <script src="{{url_for('static', filename='assets/js/dragula.js')}}"></script>
+{% endif %}
+
+{% if page in ['orders', 'kanban-view'] %}
+    <!-- Calculator JS -->
+    <script src="{{url_for('static', filename='assets/js/calculator.js')}}"></script>
+{% endif %}
+
+{% if page in ['otp'] %}
+	<!-- OTP JS -->
+	<script src="{{url_for('static', filename='assets/js/otp.js')}}"></script>
+{% endif %}
+
+{% if page in ['addons', 'audit-report', 'categories', 'coupons', 'customer-report', 'customer', 'delivery-settings', 'earning-report', 'index', 'integrations-settings', 'invoices', 'items', 'kitchen', 'pos', 'notifications-settings', 'order-report', 'orders', 'payment-settings', 'payments', 'print-settings', 'reservations', 'role-permission', 'sales-report', 'store-settings', 'table', 'tax-settings', 'users'] %}
+    <!-- Select2 Js -->
+    <script src="{{url_for('static', filename='assets/plugins/select2/js/select2.min.js')}}"></script>
+{% endif %}
+
+    <!-- Main JS -->
+    <script src="{{url_for('static', filename='assets/js/script.js')}}"></script>

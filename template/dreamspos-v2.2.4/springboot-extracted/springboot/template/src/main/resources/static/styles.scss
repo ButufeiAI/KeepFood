@@ -1,0 +1,53 @@
+textarea.form-control {
+    min-height: auto !important;
+}
+.datepicker .table-condensed .prev{
+    position: absolute;
+    left: 5px;
+    top:16px;
+span{
+    color:#646B72 !important;
+}    
+}
+[data-theme=dark] .datepicker .table-condensed .prev span,.datepicker .table-condensed .next span{
+    color:#D8DFEE !important;
+}
+.datepicker .table-condensed .next{
+    position: absolute;
+    right: 5px;
+    top:16px;
+span{
+    color:#646B72 !important;
+    
+}    
+}
+.accordion-header{
+  cursor: pointer;
+}
+[data-theme=dark] .product-quantity input {
+    width: 37px;
+}
+.modal-content{
+    .content{
+      padding: 0;
+      min-height: auto;
+    }
+    .page-wrapper.details-blk{
+        min-height: auto !important;
+    }
+  }
+  [data-theme=dark]{
+    .device-management-modal .device-management-table .table-responsive{
+        border-color: #1F2228 !important;
+      }
+      .device-management-modal .device-management-table .table-responsive .table thead tr th {
+        background: #1F2228 !important;
+      
+      }
+        .sidebar.sidebar-horizontal .main-menu ul li.submenu > ul li.submenu > ul
+ {
+  background-color: #0D0D0D;
+  color: #D8DFEE;
+ }
+  }
+  

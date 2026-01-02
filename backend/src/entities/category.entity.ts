@@ -11,18 +11,28 @@ import {
 } from 'typeorm';
 import { Restaurant } from './restaurant.entity';
 import { Product } from './product.entity';
+import { EstablishmentType } from './establishment-type.entity';
 
 @Entity('categories')
 export class Category {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Index()
   @Column({ type: 'uuid' })
   restaurantId: string;
 
   @ManyToOne(() => Restaurant, { onDelete: 'CASCADE' })
   @JoinColumn({ name: 'restaurantId' })
   restaurant: Restaurant;
+
+  @Index()
+  @Column({ type: 'uuid', nullable: true })
+  establishmentTypeId: string;
+
+  @ManyToOne(() => EstablishmentType, { nullable: true, onDelete: 'SET NULL' })
+  @JoinColumn({ name: 'establishmentTypeId' })
+  establishmentType: EstablishmentType;
 
   @Index()
   @Column({ length: 255 })
@@ -42,6 +52,14 @@ export class Category {
 
   @Column({ type: 'boolean', default: true })
   isActive: boolean;
+
+  @Column({
+    type: 'enum',
+    enum: ['ACTIVE', 'EXPIRED'],
+    default: 'ACTIVE',
+    nullable: true,
+  })
+  status: 'ACTIVE' | 'EXPIRED'; // Status pour compatibilité template
 
   @OneToMany(() => Product, (product) => product.category)
   products: Product[];

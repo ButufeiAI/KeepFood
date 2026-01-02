@@ -1,0 +1,9 @@
+{% set page = app.request.attributes.get('_route') %}
+
+{% if page in ['login', 'register', 'email-verification', 'forgot-password', 'otp', 'reset-password'] %}
+    <body class="bg-white">
+{% elseif page in ['pos'] %}
+    <body class="pos-page">
+{% else %}
+    <body>
+{% endif %}

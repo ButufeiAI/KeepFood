@@ -1,0 +1,3 @@
+<template>
+    <HrmDesignation />
+</template>

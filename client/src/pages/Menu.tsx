@@ -68,7 +68,7 @@ export function Menu() {
   const itemCount = getItemCount();
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement du menu..." />;
+    return <LoadingSpinner fullScreen message="Chargement du menu..." />;
   }
 
   if (!restaurant || menu.length === 0) {

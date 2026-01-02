@@ -1,0 +1,3 @@
+<template>
+    <UsersPermissions />
+</template>

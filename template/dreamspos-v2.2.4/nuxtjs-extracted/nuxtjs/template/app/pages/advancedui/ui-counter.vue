@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceAdvanceduiUiCounter />
+</template>

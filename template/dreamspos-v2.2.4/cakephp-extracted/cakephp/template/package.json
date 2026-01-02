@@ -1,0 +1,9 @@
+{
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "sass": "sass webroot/scss/main.scss:webroot/css/style.css",
+    "sass:watch": "sass webroot/scss/main.scss:webroot/css/style.css --watch",
+    "sass:no-map": "sass webroot/scss/main.scss:webroot/css/style.css --style=compressed --no-source-map"
+  }
+}

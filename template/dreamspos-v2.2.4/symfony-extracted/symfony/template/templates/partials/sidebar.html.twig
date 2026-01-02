@@ -1,0 +1,716 @@
+{% set page = app.request.attributes.get('_route') %}
+
+{% if page not in [ 'pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5' ] %}
+	<!-- Sidebar -->
+	<div class="sidebar" id="sidebar">
+{% endif %}	
+{% if page in [ 'pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5' ] %}
+	<!-- Sidebar -->
+	<div class="sidebar d-none" id="sidebar">
+{% endif %}	
+		<!-- Logo -->
+		<div class="sidebar-logo">
+			<a href="{{ path ('index') }}" class="logo logo-normal">
+				<img src="{{ asset('build/img/logo.svg')}}" alt="Img">
+			</a>
+			<a href="{{ path ('index') }}" class="logo logo-white">
+				<img src="{{ asset('build/img/logo-white.svg')}}" alt="Img">
+			</a>
+			<a href="{{ path ('index') }}" class="logo-small">
+				<img src="{{ asset('build/img/logo-small.png')}}" alt="Img">
+			</a>
+			<a href="{{ path ('index') }}" class="logo-small-white">
+				<img src="{{ asset('build/img/logo-small-white.png')}}" alt="Img">
+			</a>			
+			<a id="toggle_btn" href="javascript:void(0);">
+				<i data-feather="chevrons-left" class="feather-16"></i>
+			</a>
+		</div>
+		<!-- /Logo -->
+		<div class="modern-profile p-3 pb-0">
+			<div class="text-center rounded bg-light p-3 mb-4 user-profile">
+				<div class="avatar avatar-lg online mb-3">
+					<img src="{{ asset('build/img/customer/customer15.jpg')}}" alt="Img" class="img-fluid rounded-circle">
+				</div>
+				<h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
+				<p class="fs-12 mb-0">System Admin</p>
+			</div>
+			<div class="sidebar-nav mb-3">
+				<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
+					<li class="nav-item"><a class="nav-link active border-0" href="#">Menu</a></li>
+					<li class="nav-item"><a class="nav-link border-0" href="{{ path ('chat') }}">Chats</a></li>
+					<li class="nav-item"><a class="nav-link border-0" href="{{ path ('email') }}">Inbox</a></li>
+				</ul>
+			</div>
+		</div>
+		<div class="sidebar-header p-3 pb-0 pt-2">
+			<div class="text-center rounded bg-light p-2 mb-4 sidebar-profile d-flex align-items-center">
+				<div class="avatar avatar-md onlin">
+					<img src="{{ asset('build/img/customer/customer15.jpg')}}" alt="Img" class="img-fluid rounded-circle">
+				</div>
+				<div class="text-start sidebar-profile-info ms-2">
+					<h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
+					<p class="fs-12">System Admin</p>
+				</div>
+			</div>
+			<div class="d-flex align-items-center justify-content-between menu-item mb-3">
+				<div>
+					<a href="{{ path ('index') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-layout-grid-remove"></i>
+					</a>
+				</div>
+				<div>
+					<a href="{{ path ('chat') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-brand-hipchat"></i>
+					</a>
+				</div>
+				<div>
+					<a href="{{ path ('email') }}" class="btn btn-sm btn-icon bg-light position-relative">
+						<i class="ti ti-message"></i>
+					</a>
+				</div>
+				<div class="notification-item">
+					<a href="{{ path ('activities') }}" class="btn btn-sm btn-icon bg-light position-relative">
+						<i class="ti ti-bell"></i>
+						<span class="notification-status-dot"></span>
+					</a>
+				</div>
+				<div class="me-0">
+					<a href="{{ path ('general-settings') }}" class="btn btn-sm btn-icon bg-light">
+						<i class="ti ti-settings"></i>
+					</a>
+				</div>
+			</div>
+		</div>
+		<div class="sidebar-inner slimscroll">
+			<div id="sidebar-menu" class="sidebar-menu">
+				<ul>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Main</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['index', '/', 'home', 'admin-dashboard', 'sales-dashboard'] %} active subdrop {% endif %}"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('index') }}" class="{% if page in ['index', '/' , 'home'] %} active {% endif %}">Admin Dashboard</a></li>
+									<li><a href="{{ path ('admin-dashboard') }}" class="{% if page == 'admin-dashboard' %} active {% endif %}">Admin Dashboard 2</a></li>
+									<li><a href="{{ path ('sales-dashboard') }}" class="{% if page == 'sales-dashboard' %} active {% endif %}">Sales Dashboard</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['dashboard', 'companies', 'subscription', 'packages', 'domain', 'purchase-transaction'] %} active subdrop {% endif %}"><i class="ti ti-user-edit fs-16 me-2"></i><span>Super Admin</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('dashboard') }}" class="{% if page == 'dashboard' %} active {% endif %}">Dashboard</a></li>
+									<li><a href="{{ path ('companies') }}" class="{% if page == 'companies' %} active {% endif %}">Companies</a></li>
+									<li><a href="{{ path ('subscription') }}" class="{% if page == 'subscription' %} active {% endif %}">Subscriptions</a></li>
+									<li><a href="{{ path ('packages') }}" class="{% if page == 'packages' %} active {% endif %}">Packages</a></li>
+									<li><a href="{{ path ('domain') }}" class="{% if page == 'domain' %} active {% endif %}">Domain</a></li>
+									<li><a href="{{ path ('purchase-transaction') }}" class="{% if page == 'purchase-transaction' %} active {% endif %}">Purchase Transaction</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['chat', 'audio-call', 'call-history', 'video-call', 'calendar', 'contacts', 'email', 'email-reply', 'todo', 'todo-list', 'notes', 'file-manager', 'projects', 'products', 'orders', 'customers', 'cart', 'checkout', 'wishlist', 'reviews', 'social-feed', 'search-list'] %} active subdrop {% endif %}"><i class="ti ti-brand-apple-arcade fs-16 me-2"></i><span>Application</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('chat') }}" class="{% if page == 'chat' %} active {% endif %}">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['video-call', 'call-history', 'audio-call'] %} active subdrop {% endif %}">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('video-call') }}" class="{% if page == 'video-call' %} active {% endif %}">Video Call</a></li>
+											<li><a href="{{ path ('audio-call') }}" class="{% if page == 'audio-call' %} active {% endif %}">Audio Call</a></li>
+											<li><a href="{{ path ('call-history') }}" class="{% if page == 'call-history' %} active {% endif %}">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('calendar') }}" class="{% if page == 'calendar' %} active {% endif %}">Calendar</a></li>
+									<li><a href="{{ path ('contacts') }}" class="{% if page == 'contacts' %} active {% endif %}">Contacts</a></li>
+									<li><a href="{{ path ('email') }}" class="{% if page in ['email', 'email-reply'] %} active {% endif %}">Email</a></li>
+									<li><a href="{{ path ('todo') }}" class="{% if page in ['todo', 'todo-list'] %} active {% endif %}">To Do</a></li>
+									<li><a href="{{ path ('notes') }}" class="{% if page == 'notes' %} active {% endif %}">Notes</a></li>
+									<li><a href="{{ path ('file-manager') }}" class="{% if page == 'file-manager' %} active {% endif %}">File Manager</a></li>
+									<li><a href="{{ path ('projects') }}" class="{% if page == 'projects' %} active {% endif %}">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['products', 'orders', 'customers', 'cart', 'checkout', 'wishlist', 'reviews'] %} active subdrop {% endif %}">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('products') }}" class="{% if page == 'products' %} active {% endif %}">Products</a></li>
+											<li><a href="{{ path ('orders') }}" class="{% if page == 'orders' %} active {% endif %}">Orders</a></li>
+											<li><a href="{{ path ('customers') }}" class="{% if page == 'customers' %} active {% endif %}">Customers</a></li>
+											<li><a href="{{ path ('cart') }}" class="{% if page == 'cart' %} active {% endif %}">Cart</a></li>
+											<li><a href="{{ path ('checkout') }}" class="{% if page == 'checkout' %} active {% endif %}">Checkout</a></li>
+											<li><a href="{{ path ('wishlist') }}" class="{% if page == 'wishlist' %} active {% endif %}">Wishlist</a></li>
+											<li><a href="{{ path ('reviews') }}" class="{% if page == 'reviews' %} active {% endif %}">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('social-feed') }}" class="{% if page == 'social-feed' %} active {% endif %}">Social Feed</a></li>
+									<li><a href="{{ path ('search-list') }}" class="{% if page == 'search-list' %} active {% endif %}">Search List</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['layout-horizontal', 'layout-detached', 'layout-two-column', 'layout-hovered', 'layout-boxed', 'layout-rtl', 'layout-dark'] %} active subdrop {% endif %}"><i class="ti ti-layout-sidebar-right-collapse fs-16 me-2"></i><span>Layouts</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('layout-horizontal') }}" class="{% if page == 'layout-horizontal' %} active {% endif %}">Horizontal</a></li>
+									<li><a href="{{ path ('layout-detached') }}" class="{% if page == 'layout-detached' %} active {% endif %}">Detached</a></li>
+									<li><a href="{{ path ('layout-two-column') }}" class="{% if page == 'layout-two-column' %} active {% endif %}">Two Column</a></li>
+									<li><a href="{{ path ('layout-hovered') }}" class="{% if page == 'layout-hovered' %} active {% endif %}">Hovered</a></li>
+									<li><a href="{{ path ('layout-boxed') }}" class="{% if page == 'layout-boxed' %} active {% endif %}">Boxed</a></li>
+									<li><a href="{{ path ('layout-rtl') }}" class="{% if page == 'layout-rtl' %} active {% endif %}">RTL</a></li>
+									<li><a href="{{ path ('layout-dark') }}" class="{% if page == 'layout-dark' %} active {% endif %}">Dark</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Inventory</h6>
+						<ul>
+							<li class="{% if page in ['product-list', 'product-details', 'edit-product'] %} active {% endif %}"><a href="{{ path ('product-list') }}"><i data-feather="box"></i><span>Products</span></a></li>
+							<li class="{% if page == 'add-product' %} active {% endif %}"><a href="{{ path ('add-product') }}"><i class="ti ti-table-plus fs-16 me-2"></i><span>Create Product</span></a></li>
+							<li class="{% if page == 'expired-products' %} active {% endif %}"><a href="{{ path ('expired-products') }}"><i class="ti ti-progress-alert fs-16 me-2"></i><span>Expired Products</span></a></li>
+							<li class="{% if page == 'low-stocks' %} active {% endif %}"><a href="{{ path ('low-stocks') }}"><i class="ti ti-trending-up-2 fs-16 me-2"></i><span>Low Stocks</span></a></li>
+							<li class="{% if page == 'category-list' %} active {% endif %}"><a href="{{ path ('category-list') }}"><i class="ti ti-list-details fs-16 me-2"></i><span>Category</span></a></li>
+							<li class="{% if page == 'sub-categories' %} active {% endif %}"><a href="{{ path ('sub-categories') }}"><i class="ti ti-carousel-vertical fs-16 me-2"></i><span>Sub Category</span></a></li>
+							<li class="{% if page == 'brand-list' %} active {% endif %}"><a href="{{ path ('brand-list') }}"><i class="ti ti-triangles fs-16 me-2"></i><span>Brands</span></a></li>
+							<li class="{% if page == 'units' %} active {% endif %}"><a href="{{ path ('units') }}"><i class="ti ti-brand-unity fs-16 me-2"></i><span>Units</span></a></li>
+							<li class="{% if page == 'varriant-attributes' %} active {% endif %}"><a href="{{ path ('varriant-attributes') }}"><i class="ti ti-checklist fs-16 me-2"></i><span>Variant Attributes</span></a></li>
+							<li class="{% if page == 'warranty' %} active {% endif %}"><a href="{{ path ('warranty') }}"><i class="ti ti-certificate fs-16 me-2"></i><span>Warranties</span></a></li>
+							<li class="{% if page == 'barcode' %} active {% endif %}"><a href="{{ path ('barcode') }}"><i class="ti ti-barcode fs-16 me-2"></i><span>Print Barcode</span></a></li>
+							<li class="{% if page == 'qrcode' %} active {% endif %}"><a href="{{ path ('qrcode') }}"><i class="ti ti-qrcode fs-16 me-2"></i><span>Print QR Code</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Stock</h6>
+						<ul>
+							<li class="{% if page == 'manage-stocks' %} active {% endif %}"><a href="{{ path ('manage-stocks') }}"><i class="ti ti-stack-3 fs-16 me-2"></i><span>Manage Stock</span></a></li>
+							<li class="{% if page == 'stock-adjustment' %} active {% endif %}"><a href="{{ path ('stock-adjustment') }}"><i class="ti ti-stairs-up fs-16 me-2"></i><span>Stock Adjustment</span></a></li>
+							<li class="{% if page == 'stock-transfer' %} active {% endif %}"><a href="{{ path ('stock-transfer') }}"><i class="ti ti-stack-pop fs-16 me-2"></i><span>Stock Transfer</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Sales</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['online-orders', 'pos-orders'] %} active subdrop {% endif %}"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Sales</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('online-orders') }}" class="{% if page == 'online-orders' %} active {% endif %}">Online Orders</a></li>
+									<li><a href="{{ path ('pos-orders') }}" class="{% if page == 'pos-orders' %} active {% endif %}">POS Orders</a></li>
+								</ul>
+							</li>
+							<li class="{% if page in ['invoice', 'invoice-details'] %} active {% endif %}"><a href="{{ path ('invoice') }}"><i class="ti ti-file-invoice fs-16 me-2"></i><span>Invoices</span></a></li>
+							<li class="{% if page == 'sales-returns' %} active {% endif %}"><a href="{{ path ('sales-returns') }}"><i class="ti ti-receipt-refund fs-16 me-2"></i><span>Sales Return</span></a></li>
+							<li class="{% if page == 'quotation-list' %} active {% endif %}"><a href="{{ path ('quotation-list') }}"><i class="ti ti-files fs-16 me-2"></i><span>Quotation</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['pos', 'pos-2', 'pos-3', 'pos-4', 'pos-5'] %} active subdrop {% endif %}"><i class="ti ti-device-laptop fs-16 me-2"></i><span>POS</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('pos') }}" class="{% if page == 'pos' %} active {% endif %}">POS 1</a></li>
+									<li><a href="{{ path ('pos-2') }}" class="{% if page == 'pos-2' %} active {% endif %}">POS 2</a></li>
+									<li><a href="{{ path ('pos-3') }}" class="{% if page == 'pos-3' %} active {% endif %}">POS 3</a></li>
+									<li><a href="{{ path ('pos-4') }}" class="{% if page == 'pos-4' %} active {% endif %}">POS 4</a></li>
+									<li><a href="{{ path ('pos-5') }}" class="{% if page == 'pos-5' %} active {% endif %}">POS 5</a></li>
+									<li><a href="https://dreamspos.dreamstechnologies.com/food-pos/symfony/template/public/index" target="_blank">POS 6</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Promo</h6>
+						<ul>
+							<li class="{% if page == 'coupons' %} active {% endif %}"><a href="{{ path ('coupons') }}"><i class="ti ti-ticket fs-16 me-2"></i><span>Coupons</span></a></li>
+							<li class="{% if page == 'gift-cards' %} active {% endif %}"><a href="{{ path ('gift-cards') }}"><i class="ti ti-cards fs-16 me-2"></i><span>Gift Cards</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['discount-plan', 'discount'] %} active subdrop {% endif %}"><i class="ti ti-file-percent fs-16 me-2"></i><span>Discount</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('discount-plan') }}" class="{% if page == 'discount-plan' %} active {% endif %}">Discount Plan</a></li>
+									<li><a href="{{ path ('discount') }}" class="{% if page == 'discount' %} active {% endif %}">Discount</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Purchases</h6>
+						<ul>
+							<li class="{% if page == 'purchase-list' %} active {% endif %}"><a href="{{ path ('purchase-list') }}"><i class="ti ti-shopping-bag fs-16 me-2"></i><span>Purchases</span></a></li>
+							<li class="{% if page == 'purchase-order-report' %} active {% endif %}"><a href="{{ path ('purchase-order-report') }}"><i class="ti ti-file-unknown fs-16 me-2"></i><span>Purchase Order</span></a></li>
+							<li class="{% if page == 'purchase-returns' %} active {% endif %}"><a href="{{ path ('purchase-returns') }}"><i class="ti ti-file-upload fs-16 me-2"></i><span>Purchase Return</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Finance & Accounts</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['expense-list', 'expense-category'] %} active subdrop {% endif %}"><i class="ti ti-file-stack fs-16 me-2"></i><span>Expenses</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('expense-list') }}" class="{% if page == 'expense-list' %} active {% endif %}">Expenses</a></li>
+									<li><a href="{{ path ('expense-category') }}" class="{% if page == 'expense-category' %} active {% endif %}">Expense Category</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['income', 'income-category'] %} active subdrop {% endif %}"><i class="ti ti-file-pencil fs-16 me-2"></i><span>Income</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('income') }}" class="{% if page == 'income' %} active {% endif %}">Income</a></li>
+									<li><a href="{{ path ('income-category') }}" class="{% if page == 'income-category' %} active {% endif %}">Income Category</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'account-list' %} active {% endif %}"><a href="{{ path ('account-list') }}"><i class="ti ti-building-bank fs-16 me-2"></i><span>Bank Accounts</span></a></li>
+							<li class="{% if page == 'money-transfer' %} active {% endif %}"><a href="{{ path ('money-transfer') }}"><i class="ti ti-moneybag fs-16 me-2"></i><span>Money Transfer</span></a></li>
+							<li class="{% if page in ['balance-sheet', 'balance-sheet-v2'] %} active {% endif %}"><a href="{{ path ('balance-sheet') }}"><i class="ti ti-report-money fs-16 me-2"></i><span>Balance Sheet</span></a></li>
+							<li class="{% if page == 'trial-balance' %} active {% endif %}"><a href="{{ path ('trial-balance') }}"><i class="ti ti-alert-circle fs-16 me-2"></i><span>Trial Balance</span></a></li>
+							<li class="{% if page in ['cash-flow', 'cash-flow-v2'] %} active {% endif %}"><a href="{{ path ('cash-flow') }}"><i class="ti ti-zoom-money fs-16 me-2"></i><span>Cash Flow</span></a></li>
+							<li class="{% if page == 'account-statement' %} active {% endif %}"><a href="{{ path ('account-statement') }}"><i class="ti ti-file-infinity fs-16 me-2"></i><span>Account Statement</span></a></li>
+
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Peoples</h6>
+						<ul>
+							<li class="{% if page == 'customers' %} active {% endif %}"><a href="{{ path ('customers') }}"><i class="ti ti-users-group fs-16 me-2"></i><span>Customers</span></a></li>
+							<li class="{% if page == 'billers' %} active {% endif %}"><a href="{{ path ('billers') }}"><i class="ti ti-user-up fs-16 me-2"></i><span>Billers</span></a></li>
+							<li class="{% if page == 'suppliers' %} active {% endif %}"><a href="{{ path ('suppliers') }}"><i class="ti ti-user-dollar fs-16 me-2"></i><span>Suppliers</span></a></li>
+							<li class="{% if page == 'store-list' %} active {% endif %}"><a href="{{ path ('store-list') }}"><i class="ti ti-home-bolt fs-16 me-2"></i><span>Stores</span></a></li>
+							<li class="{% if page == 'warehouse' %} active {% endif %}"><a href="{{ path ('warehouse') }}"><i class="ti ti-archive fs-16 me-2"></i><span>Warehouses</span></a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">HRM</h6>
+						<ul>
+							<li class="{% if page in ['employees-grid', 'add-employee', 'edit-employee', 'employee-details', 'employees-list'] %} active {% endif %}"><a href="{{ path ('employees-grid') }}"><i class="ti ti-user fs-16 me-2"></i><span>Employees</span></a></li>
+							<li class="{% if page in ['department-grid', 'department-list'] %} active {% endif %}"><a href="{{ path ('department-grid') }}"><i class="ti ti-compass fs-16 me-2"></i><span>Departments</span></a></li>
+							<li class="{% if page == 'designation' %} active {% endif %}"><a href="{{ path ('designation') }}"><i class="ti ti-git-merge fs-16 me-2"></i><span>Designation</span></a></li>
+							<li class="{% if page == 'shift' %} active {% endif %}"><a href="{{ path ('shift') }}"><i class="ti ti-arrows-shuffle fs-16 me-2"></i><span>Shifts</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['attendance-employee', 'attendance-admin'] %} active subdrop {% endif %}"><i class="ti ti-user-cog fs-16 me-2"></i><span>Attendence</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('attendance-employee') }}" class="{% if page == 'attendance-employee' %} active {% endif %}">Employee</a></li>
+									<li><a href="{{ path ('attendance-admin') }}" class="{% if page == 'attendance-admin' %} active {% endif %}">Admin</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['leaves-admin', 'leaves-employee', 'leave-types'] %} active subdrop {% endif %}"><i class="ti ti-calendar fs-16 me-2"></i><span>Leaves</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('leaves-admin') }}" class="{% if page == 'leaves-admin' %} active {% endif %}">Admin Leaves</a></li>
+									<li><a href="{{ path ('leaves-employee') }}" class="{% if page == 'leaves-employee' %} active {% endif %}">Employee Leaves</a></li>
+									<li><a href="{{ path ('leave-types') }}" class="{% if page == 'leave-types' %} active {% endif %}">Leave Types</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'holidays' %} active {% endif %}"><a href="{{ path ('holidays') }}"><i class="ti ti-calendar-share fs-16 me-2"></i><span>Holidays</span></a>
+							</li>
+							<li class="submenu">
+								<a href="{{ path ('employee-salary') }}" class="{% if page in ['employee-salary', 'payslip'] %} active subdrop {% endif %}"><i class="ti ti-file-dollar fs-16 me-2"></i><span>Payroll</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('employee-salary') }}" class="{% if page == 'employee-salary' %} active {% endif %}">Employee Salary</a></li>
+									<li><a href="{{ path ('payslip') }}" class="{% if page == 'payslip' %} active {% endif %}">Payslip</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Reports</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['sales-report', 'best-seller'] %} active subdrop {% endif %}"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Sales Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('sales-report') }}" class="{% if page == 'sales-report' %} active {% endif %}">Sales Report</a></li>
+									<li><a href="{{ path ('best-seller') }}" class="{% if page == 'best-seller' %} active {% endif %}">Best Seller</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'purchase-report' %} active {% endif %}"><a href="{{ path ('purchase-report') }}"><i class="ti ti-chart-pie-2 fs-16 me-2"></i><span>Purchase report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['inventory-report', 'stock-history', 'sold-stock'] %} active subdrop {% endif %}"><i class="ti ti-triangle-inverted fs-16 me-2"></i><span>Inventory Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('inventory-report') }}" class="{% if page == 'inventory-report' %} active {% endif %}">Inventory Report</a></li>
+									<li><a href="{{ path ('stock-history') }}" class="{% if page == 'stock-history' %} active {% endif %}">Stock History</a></li>
+									<li><a href="{{ path ('sold-stock') }}" class="{% if page == 'sold-stock' %} active {% endif %}">Sold Stock</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'invoice-report' %} active {% endif %}"><a href="{{ path ('invoice-report') }}"><i class="ti ti-businessplan fs-16 me-2"></i><span>Invoice Report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['supplier-report', 'supplier-due-report'] %} active subdrop {% endif %}"><i class="ti ti-user-star fs-16 me-2"></i><span>Supplier Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('supplier-report') }}" class="{% if page == 'supplier-report' %} active {% endif %}">Supplier Report</a></li>
+									<li><a href="{{ path ('supplier-due-report') }}" class="{% if page == 'supplier-due-report' %} active {% endif %}">Supplier Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['customer-report', 'customer-due-report'] %} active subdrop {% endif %}"><i class="ti ti-report fs-16 me-2"></i><span>Customer Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('customer-report') }}" class="{% if page == 'customer-report' %} active {% endif %}">Customer Report</a></li>
+									<li><a href="{{ path ('customer-due-report') }}" class="{% if page == 'customer-due-report' %} active {% endif %}">Customer Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['product-report', 'product-expiry-report', 'product-quantity-alert'] %} active subdrop {% endif %}"><i class="ti ti-report-analytics fs-16 me-2"></i><span>Product Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('product-report') }}" class="{% if page == 'product-report' %} active {% endif %}">Product Report</a></li>
+									<li><a href="{{ path ('product-expiry-report') }}" class="{% if page == 'product-expiry-report' %} active {% endif %}">Product Expiry Report</a></li>
+									<li><a href="{{ path ('product-quantity-alert') }}" class="{% if page == 'product-quantity-alert' %} active {% endif %}">Product Quantity Alert</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'expense-report' %} active {% endif %}"><a href="{{ path ('expense-report') }}"><i class="ti ti-file-vector fs-16 me-2"></i><span>Expense Report</span></a></li>
+							<li class="{% if page == 'income-report' %} active {% endif %}"><a href="{{ path ('income-report') }}"><i class="ti ti-chart-ppf fs-16 me-2"></i><span>Income Report</span></a></li>
+							<li class="{% if page in ['tax-reports', 'sales-tax'] %} active {% endif %}"><a href="{{ path ('tax-reports') }}"><i class="ti ti-chart-dots-2 fs-16 me-2"></i><span>Tax Report</span></a></li>
+							<li class="{% if page == 'profit-and-loss' %} active {% endif %}"><a href="{{ path ('profit-and-loss') }}"><i class="ti ti-chart-donut fs-16 me-2"></i><span>Profit & Loss</span></a></li>
+							<li class="{% if page == 'annual-report' %} active {% endif %}"><a href="{{ path ('annual-report') }}"><i class="ti ti-report-search fs-16 me-2"></i><span>Annual Report</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Content (CMS)</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['pages'] %} active subdrop {% endif %}"><i class="ti ti-page-break fs-16 me-2"></i><span>Pages</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('pages') }}" class="{% if page == 'pages' %} active {% endif %}">Pages</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['all-blog', 'blog-details', 'blog-tag', 'blog-categories', 'blog-comments'] %} active subdrop {% endif %}"><i class="ti ti-wallpaper fs-16 me-2"></i><span>Blog</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('all-blog') }}" class="{% if page in ['all-blog', 'blog-details'] %} active {% endif %}">All Blog</a></li>
+									<li><a href="{{ path ('blog-tag') }}" class="{% if page == 'blog-tag' %} active {% endif %}">Blog Tags</a></li>
+									<li><a href="{{ path ('blog-categories') }}" class="{% if page == 'blog-categories' %} active {% endif %}">Categories</a></li>
+									<li><a href="{{ path ('blog-comments') }}" class="{% if page == 'blog-comments' %} active {% endif %}">Blog Comments</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['countries', 'states', 'cities'] %} active subdrop {% endif %}"><i class="ti ti-map-pin fs-16 me-2"></i><span>Location</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('countries') }}" class="{% if page == 'countries' %} active {% endif %}">Countries</a></li>
+									<li><a href="{{ path ('states') }}" class="{% if page == 'states' %} active {% endif %}">States</a></li>
+									<li><a href="{{ path ('cities') }}" class="{% if page == 'cities' %} active {% endif %}">Cities</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'testimonials' %} active {% endif %}"><a href="{{ path ('testimonials') }}"><i class="ti ti-star fs-16 me-2"></i><span>Testimonials</span></a></li>
+							<li class="{% if page == 'faq' %} active {% endif %}"><a href="{{ path ('faq') }}"><i class="ti ti-help-circle fs-16 me-2"></i><span>FAQ</span></a></li>
+
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">User Management</h6>
+						<ul>
+							<li class="{% if page == 'users' %} active {% endif %}"><a href="{{ path ('users') }}"><i class="ti ti-shield-up fs-16 me-2"></i><span>Users</span></a></li>
+							<li class="{% if page in ['roles-permissions', 'permissions'] %} active {% endif %}"><a href="{{ path ('roles-permissions') }}"><i class="ti ti-jump-rope fs-16 me-2"></i><span>Roles & Permissions</span></a></li>
+							<li class="{% if page == 'delete-account' %} active {% endif %}"><a href="{{ path ('delete-account') }}"><i class="ti ti-trash-x fs-16 me-2"></i><span>Delete Account Request</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Pages</h6>
+						<ul>
+							<li class="{% if page == 'profile' %} active {% endif %}"><a href="{{ path ('profile') }}"><i class="ti ti-user-circle fs-16 me-2"></i><span>Profile</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['signin', 'signin-2', 'signin-3', 'register', 'register-2', 'register-3', 'forgot-password', 'forgot-password-2', 'forgot-password-3', 'reset-password', 'reset-password-2', 'reset-password-3', 'email-verification', 'email-verification-2', 'email-verification-3', 'two-step-verification', 'two-step-verification-2', 'two-step-verification-3'] %} active subdrop {% endif %}"><i class="ti ti-shield fs-16 me-2"></i><span>Authentication</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['signin', 'signin-2', 'signin-3'] %} active subdrop {% endif %}">Login<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('signin') }}" class="{% if page == 'signin' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('signin-2') }}" class="{% if page == 'signin-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('signin-3') }}" class="{% if page == 'signin-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['register', 'register-2', 'register-3'] %} active subdrop {% endif %}">Register<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('register') }}" class="{% if page == 'register' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('register-2') }}" class="{% if page == 'register-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('register-3') }}" class="{% if page == 'register-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['forgot-password', 'forgot-password-2', 'forgot-password-3'] %} active subdrop {% endif %}">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('forgot-password') }}" class="{% if page == 'forgot-password' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('forgot-password-2') }}" class="{% if page == 'forgot-password-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('forgot-password-3') }}" class="{% if page == 'forgot-password-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['reset-password', 'reset-password-2', 'reset-password-3'] %} active subdrop {% endif %}">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('reset-password') }}" class="{% if page == 'reset-password' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('reset-password-2') }}" class="{% if page == 'reset-password-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('reset-password-3') }}" class="{% if page == 'reset-password-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['email-verification', 'email-verification-2', 'email-verification-3'] %} active subdrop {% endif %}">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('email-verification') }}" class="{% if page == 'email-verification' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('email-verification-2') }}" class="{% if page == 'email-verification-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('email-verification-3') }}" class="{% if page == 'email-verification-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['two-step-verification', 'two-step-verification-2', 'two-step-verification-3'] %} active subdrop {% endif %}">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('two-step-verification') }}" class="{% if page == 'two-step-verification' %} active {% endif %}">Cover</a></li>
+											<li><a href="{{ path ('two-step-verification-2') }}" class="{% if page == 'two-step-verification-2' %} active {% endif %}">Illustration</a></li>
+											<li><a href="{{ path ('two-step-verification-3') }}" class="{% if page == 'two-step-verification-3' %} active {% endif %}">Basic</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('lock-screen') }}" class="{% if page == 'lock-screen' %} active {% endif %}">Lock Screen</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['error-404', 'error-500'] %} active subdrop {% endif %}"><i class="ti ti-file-x fs-16 me-2"></i><span>Error Pages</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('error-404') }}" class="{% if page == 'error-404' %} active {% endif %}">404 Error </a></li>
+									<li><a href="{{ path ('error-500') }}" class="{% if page == 'error-500' %} active {% endif %}">500 Error </a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'blank-page' %} active {% endif %}">
+								<a href="{{ path ('blank-page') }}"><i class="ti ti-file fs-16 me-2"></i><span>Blank Page</span> </a>
+							</li>
+							<li class="{% if page == 'pricing' %} active {% endif %}">
+								<a href="{{ path ('pricing') }}"><i class="ti ti-currency-dollar fs-16 me-2"></i><span>Pricing</span> </a>
+							</li>
+							<li class="{% if page == 'coming-soon' %} active {% endif %}">
+								<a href="{{ path ('coming-soon') }}"><i class="ti ti-send fs-16 me-2"></i><span>Coming Soon</span> </a>
+							</li>
+							<li class="{% if page == 'under-maintenance' %} active {% endif %}">
+								<a href="{{ path ('under-maintenance') }}"><i class="ti ti-alert-triangle fs-16 me-2"></i><span>Under Maintenance</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Settings</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['general-settings', 'security-settings', 'notification', 'activities', 'connected-apps'] %} active subdrop {% endif %}"><i class="ti ti-settings fs-16 me-2"></i><span>General Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('general-settings') }}" class="{% if page == 'general-settings' %} active {% endif %}">Profile</a></li>
+									<li><a href="{{ path ('security-settings') }}" class="{% if page == 'security-settings' %} active {% endif %}">Security</a></li>
+									<li><a href="{{ path ('notification') }}" class="{% if page in ['notification', 'activities'] %} active {% endif %}">Notifications</a></li>
+									<li><a href="{{ path ('connected-apps') }}" class="{% if page == 'connected-apps' %} active {% endif %}">Connected Apps</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['system-settings', 'company-settings', 'localization-settings', 'prefixes', 'preference', 'appearance', 'social-authentication', 'language-settings', 'language-settings-web'] %} active subdrop {% endif %}"><i class="ti ti-world fs-16 me-2"></i><span>Website Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('system-settings') }}" class="{% if page == 'system-settings' %} active {% endif %}">System Settings</a></li>
+									<li><a href="{{ path ('company-settings') }}" class="{% if page == 'company-settings' %} active {% endif %}">Company Settings </a></li>
+									<li><a href="{{ path ('localization-settings') }}" class="{% if page == 'localization-settings' %} active {% endif %}">Localization</a></li>
+									<li><a href="{{ path ('prefixes') }}" class="{% if page == 'prefixes' %} active {% endif %}">Prefixes</a></li>
+									<li><a href="{{ path ('preference') }}" class="{% if page == 'preference' %} active {% endif %}">Preference</a></li>
+									<li><a href="{{ path ('appearance') }}" class="{% if page == 'appearance' %} active {% endif %}">Appearance</a></li>
+									<li><a href="{{ path ('social-authentication') }}" class="{% if page == 'social-authentication' %} active {% endif %}">Social Authentication</a></li>
+									<li><a href="{{ path ('language-settings') }}" class="{% if page in ['language-settings', 'language-settings-web'] %} active {% endif %}">Language</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['invoice-settings', 'invoice-templates', 'printer-settings', 'pos-settings', 'signatures', 'custom-fields'] %} active subdrop {% endif %}"><i class="ti ti-device-mobile fs-16 me-2"></i>
+									<span>App Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['invoice-settings', 'invoice-templates'] %} active subdrop {% endif %}">Invoice<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('invoice-settings') }}" class="{% if page == 'invoice-settings' %} active {% endif %}">Invoice Settings</a></li>
+											<li><a href="{{ path ('invoice-templates') }}" class="{% if page == 'invoice-templates' %} active {% endif %}">Invoice Template</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('printer-settings') }}" class="{% if page == 'printer-settings' %} active {% endif %}">Printer</a></li>
+									<li><a href="{{ path ('pos-settings') }}" class="{% if page == 'pos-settings' %} active {% endif %}">POS</a></li>
+									<li><a href="{{ path ('signatures') }}" class="{% if page == 'signatures' %} active {% endif %}">Signatures</a></li>
+									<li><a href="{{ path ('custom-fields') }}" class="{% if page == 'custom-fields' %} active {% endif %}">Custom Fields</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['email-settings', 'email-templates', 'sms-settings', 'sms-templates', 'otp-settings', 'gdpr-settings'] %} active subdrop {% endif %}"><i class="ti ti-device-desktop fs-16 me-2"></i>
+									<span>System Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['email-settings', 'email-templates'] %} active subdrop {% endif %}">Email<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('email-settings') }}" class="{% if page == 'email-settings' %} active {% endif %}">Email Settings</a></li>
+											<li><a href="{{ path ('email-templates') }}" class="{% if page == 'email-templates' %} active {% endif %}">Email Template</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="{% if page in ['sms-settings', 'sms-templates'] %} active subdrop {% endif %}">SMS<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('sms-settings') }}" class="{% if page == 'sms-settings' %} active {% endif %}">SMS Settings</a></li>
+											<li><a href="{{ path ('sms-templates') }}" class="{% if page == 'sms-templates' %} active {% endif %}">SMS Template</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('otp-settings') }}" class="{% if page == 'otp-settings' %} active {% endif %}">OTP</a></li>
+									<li><a href="{{ path ('gdpr-settings') }}" class="{% if page == 'gdpr-settings' %} active {% endif %}">GDPR Cookies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['payment-gateway-settings', 'bank-settings-grid', 'bank-settings-list', 'tax-rates', 'currency-settings'] %} active subdrop {% endif %}"><i class="ti ti-settings-dollar fs-16 me-2"></i>
+									<span>Financial Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('payment-gateway-settings') }}" class="{% if page == 'payment-gateway-settings' %} active {% endif %}">Payment Gateway</a></li>
+									<li><a href="{{ path ('bank-settings-grid') }}" class="{% if page in ['bank-settings-grid', 'bank-settings-list'] %} active {% endif %}">Bank Accounts</a></li>
+									<li><a href="{{ path ('tax-rates') }}" class="{% if page == 'tax-rates' %} active {% endif %}">Tax Rates</a></li>
+									<li><a href="{{ path ('currency-settings') }}" class="{% if page == 'currency-settings' %} active {% endif %}">Currencies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['storage-settings', 'ban-ip-address'] %} active subdrop {% endif %}"><i class="ti ti-settings-2 fs-16 me-2"></i>
+									<span>Other Settings</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('storage-settings') }}" class="{% if page == 'storage-settings' %} active {% endif %}">Storage</a></li>
+									<li><a href="{{ path ('ban-ip-address') }}" class="{% if page == 'ban-ip-address' %} active {% endif %}">Ban IP Address</a></li>
+								</ul>
+							</li>
+							<li class="{% if page == 'signin' %} active {% endif %}">
+								<a href="{{ path ('signin') }}"><i class="ti ti-logout fs-16 me-2"></i><span>Logout</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">UI Interface</h6>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['ui-alerts', 'ui-accordion', 'ui-avatar', 'ui-badges', 'ui-borders', 'ui-buttons', 'ui-buttons-group', 'ui-breadcrumb', 'ui-cards', 'ui-carousel', 'ui-colors', 'ui-dropdowns', 'ui-grid', 'ui-images', 'ui-lightbox', 'ui-media', 'ui-modals', 'ui-offcanvas', 'ui-pagination', 'ui-popovers', 'ui-progress', 'ui-placeholders', 'ui-rangeslider', 'ui-spinner', 'ui-sweetalerts', 'ui-nav-tabs', 'ui-toasts', 'ui-tooltips', 'ui-typography', 'ui-video', 'ui-sortable', 'ui-swiperjs'] %} active subdrop {% endif %}"><i class="ti ti-vector-bezier fs-16 me-2"></i><span>Base UI</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('ui-alerts') }}" class="{% if page == 'ui-alerts' %} active {% endif %}">Alerts</a></li>
+									<li><a href="{{ path ('ui-accordion') }}" class="{% if page == 'ui-accordion' %} active {% endif %}">Accordion</a></li>
+									<li><a href="{{ path ('ui-avatar') }}" class="{% if page == 'ui-avatar' %} active {% endif %}">Avatar</a></li>
+									<li><a href="{{ path ('ui-badges') }}" class="{% if page == 'ui-badges' %} active {% endif %}">Badges</a></li>
+									<li><a href="{{ path ('ui-borders') }}" class="{% if page == 'ui-borders' %} active {% endif %}">Border</a></li>
+									<li><a href="{{ path ('ui-buttons') }}" class="{% if page == 'ui-buttons' %} active {% endif %}">Buttons</a></li>
+									<li><a href="{{ path ('ui-buttons-group') }}" class="{% if page == 'ui-buttons-group' %} active {% endif %}">Button Group</a></li>
+									<li><a href="{{ path ('ui-breadcrumb') }}" class="{% if page == 'ui-breadcrumb' %} active {% endif %}">Breadcrumb</a></li>
+									<li><a href="{{ path ('ui-cards') }}" class="{% if page == 'ui-cards' %} active {% endif %}">Card</a></li>
+									<li><a href="{{ path ('ui-carousel') }}" class="{% if page == 'ui-carousel' %} active {% endif %}">Carousel</a></li>
+									<li><a href="{{ path ('ui-colors') }}" class="{% if page == 'ui-colors' %} active {% endif %}">Colors</a></li>
+									<li><a href="{{ path ('ui-dropdowns') }}" class="{% if page == 'ui-dropdowns' %} active {% endif %}">Dropdowns</a></li>
+									<li><a href="{{ path ('ui-grid') }}" class="{% if page == 'ui-grid' %} active {% endif %}">Grid</a></li>
+									<li><a href="{{ path ('ui-images') }}" class="{% if page == 'ui-images' %} active {% endif %}">Images</a></li>
+									<li><a href="{{ path ('ui-lightbox') }}" class="{% if page == 'ui-lightbox' %} active {% endif %}">Lightbox</a></li>
+									<li><a href="{{ path ('ui-media') }}" class="{% if page == 'ui-media' %} active {% endif %}">Media</a></li>
+									<li><a href="{{ path ('ui-modals') }}" class="{% if page == 'ui-modals' %} active {% endif %}">Modals</a></li>
+									<li><a href="{{ path ('ui-offcanvas') }}" class="{% if page == 'ui-offcanvas' %} active {% endif %}">Offcanvas</a></li>
+									<li><a href="{{ path ('ui-pagination') }}" class="{% if page == 'ui-pagination' %} active {% endif %}">Pagination</a></li>
+									<li><a href="{{ path ('ui-popovers') }}" class="{% if page == 'ui-popovers' %} active {% endif %}">Popovers</a></li>
+									<li><a href="{{ path ('ui-progress') }}" class="{% if page == 'ui-progress' %} active {% endif %}">Progress</a></li>
+									<li><a href="{{ path ('ui-placeholders') }}" class="{% if page == 'ui-placeholders' %} active {% endif %}">Placeholders</a></li>
+									<li><a href="{{ path ('ui-rangeslider') }}" class="{% if page == 'ui-rangeslider' %} active {% endif %}">Range Slider</a></li>
+									<li><a href="{{ path ('ui-spinner') }}" class="{% if page == 'ui-spinner' %} active {% endif %}">Spinner</a></li>
+									<li><a href="{{ path ('ui-sweetalerts') }}" class="{% if page == 'ui-sweetalerts' %} active {% endif %}">Sweet Alerts</a></li>
+									<li><a href="{{ path ('ui-nav-tabs') }}" class="{% if page == 'ui-nav-tabs' %} active {% endif %}">Tabs</a></li>
+									<li><a href="{{ path ('ui-toasts') }}" class="{% if page == 'ui-toasts' %} active {% endif %}">Toasts</a></li>
+									<li><a href="{{ path ('ui-tooltips') }}" class="{% if page == 'ui-tooltips' %} active {% endif %}">Tooltips</a></li>
+									<li><a href="{{ path ('ui-typography') }}" class="{% if page == 'ui-typography' %} active {% endif %}">Typography</a></li>
+									<li><a href="{{ path ('ui-video') }}" class="{% if page == 'ui-video' %} active {% endif %}">Video</a></li>
+									<li><a href="{{ path ('ui-sortable') }}" class="{% if page == 'ui-sortable' %} active {% endif %}">Sortable</a></li>
+									<li><a href="{{ path ('ui-swiperjs') }}" class="{% if page == 'ui-swiperjs' %} active {% endif %}">Swiperjs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['ui-ribbon', 'ui-clipboard', 'ui-drag-drop', 'ui-rangeslider', 'ui-rating', 'ui-text-editor', 'ui-counter', 'ui-scrollbar', 'ui-stickynote', 'ui-timeline'] %} active subdrop {% endif %}">
+									<i data-feather="layers"></i><span>Advanced UI</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('ui-ribbon') }}" class="{% if page == 'ui-ribbon' %} active {% endif %}">Ribbon</a></li>
+									<li><a href="{{ path ('ui-clipboard') }}" class="{% if page == 'ui-clipboard' %} active {% endif %}">Clipboard</a></li>
+									<li><a href="{{ path ('ui-drag-drop') }}" class="{% if page == 'ui-drag-drop' %} active {% endif %}">Drag & Drop</a></li>
+									<li><a href="{{ path ('ui-rangeslider') }}" class="{% if page == 'ui-rangeslider' %} active {% endif %}">Range Slider</a></li>
+									<li><a href="{{ path ('ui-rating') }}" class="{% if page == 'ui-rating' %} active {% endif %}">Rating</a></li>
+									<li><a href="{{ path ('ui-text-editor') }}" class="{% if page == 'ui-text-editor' %} active {% endif %}">Text Editor</a></li>
+									<li><a href="{{ path ('ui-counter') }}" class="{% if page == 'ui-counter' %} active {% endif %}">Counter</a></li>
+									<li><a href="{{ path ('ui-scrollbar') }}" class="{% if page == 'ui-scrollbar' %} active {% endif %}">Scrollbar</a></li>
+									<li><a href="{{ path ('ui-stickynote') }}" class="{% if page == 'ui-stickynote' %} active {% endif %}">Sticky Note</a></li>
+									<li><a href="{{ path ('ui-timeline') }}" class="{% if page == 'ui-timeline' %} active {% endif %}">Timeline</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['chart-apex', 'chart-c3', 'chart-js', 'chart-morris', 'chart-flot', 'chart-peity'] %} active subdrop {% endif %}"><i class="ti ti-chart-infographic fs-16 me-2"></i>
+									<span>Charts</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('chart-apex') }}" class="{% if page == 'chart-apex' %} active {% endif %}">Apex Charts</a></li>
+									<li><a href="{{ path ('chart-c3') }}" class="{% if page == 'chart-c3' %} active {% endif %}">Chart C3</a></li>
+									<li><a href="{{ path ('chart-js') }}" class="{% if page == 'chart-js' %} active {% endif %}">Chart Js</a></li>
+									<li><a href="{{ path ('chart-morris') }}" class="{% if page == 'chart-morris' %} active {% endif %}">Morris Charts</a></li>
+									<li><a href="{{ path ('chart-flot') }}" class="{% if page == 'chart-flot' %} active {% endif %}">Flot Charts</a></li>
+									<li><a href="{{ path ('chart-peity') }}" class="{% if page == 'chart-peity' %} active {% endif %}">Peity Charts</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['icon-fontawesome', 'icon-feather', 'icon-ionic', 'icon-material', 'icon-pe7', 'icon-simpleline', 'icon-themify', 'icon-weather', 'icon-typicon', 'icon-flag', 'icon-tabler', 'icon-bootstrap', 'icon-remix'] %} active subdrop {% endif %}"><i class="ti ti-icons fs-16 me-2"></i>
+									<span>Icons</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li><a href="{{ path ('icon-fontawesome') }}" class="{% if page == 'icon-fontawesome' %} active {% endif %}">Fontawesome Icons</a></li>
+									<li><a href="{{ path ('icon-feather') }}" class="{% if page == 'icon-feather' %} active {% endif %}">Feather Icons</a></li>
+									<li><a href="{{ path ('icon-ionic') }}" class="{% if page == 'icon-ionic' %} active {% endif %}">Ionic Icons</a></li>
+									<li><a href="{{ path ('icon-material') }}" class="{% if page == 'icon-material' %} active {% endif %}">Material Icons</a></li>
+									<li><a href="{{ path ('icon-pe7') }}" class="{% if page == 'icon-pe7' %} active {% endif %}">Pe7 Icons</a></li>
+									<li><a href="{{ path ('icon-simpleline') }}" class="{% if page == 'icon-simpleline' %} active {% endif %}">Simpleline Icons</a></li>
+									<li><a href="{{ path ('icon-themify') }}" class="{% if page == 'icon-themify' %} active {% endif %}">Themify Icons</a></li>
+									<li><a href="{{ path ('icon-weather') }}" class="{% if page == 'icon-weather' %} active {% endif %}">Weather Icons</a></li>
+									<li><a href="{{ path ('icon-typicon') }}" class="{% if page == 'icon-typicon' %} active {% endif %}">Typicon Icons</a></li>
+									<li><a href="{{ path ('icon-flag') }}" class="{% if page == 'icon-flag' %} active {% endif %}">Flag Icons</a></li>
+									<li><a href="{{ path ('icon-tabler') }}" class="{% if page == 'icon-tabler' %} active {% endif %}">Tabler Icons</a></li>
+									<li><a href="{{ path ('icon-bootstrap') }}" class="{% if page == 'icon-bootstrap' %} active {% endif %}">Bootstrap Icons</a></li>
+									<li><a href="{{ path ('icon-remix') }}" class="{% if page == 'icon-remix' %} active {% endif %}">Remix Icons</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['form-basic-inputs', 'form-checkbox-radios', 'form-input-groups', 'form-grid-gutters', 'form-select', 'form-fileupload', 'form-mask', 'form-horizontal', 'form-vertical', 'form-floating-labels', 'form-mask', 'form-validation', 'form-select2', 'form-wizard', 'form-pickers'] %} active subdrop {% endif %}">
+									<i class="ti ti-input-search fs-16 me-2"></i><span>Forms</span><span class="menu-arrow"></span>
+								</a>
+								<ul>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if page in ['form-basic-inputs', 'form-checkbox-radios', 'form-input-groups', 'form-grid-gutters', 'form-select', 'form-fileupload', 'form-mask'] %} active subdrop {% endif %}">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('form-basic-inputs') }}" class="{% if page == 'form-basic-inputs' %} active {% endif %}">Basic Inputs</a></li>
+											<li><a href="{{ path ('form-checkbox-radios') }}" class="{% if page == 'form-checkbox-radios' %} active {% endif %}">Checkbox & Radios</a></li>
+											<li><a href="{{ path ('form-input-groups') }}" class="{% if page == 'form-input-groups' %} active {% endif %}">Input Groups</a></li>
+											<li><a href="{{ path ('form-grid-gutters') }}" class="{% if page == 'form-grid-gutters' %} active {% endif %}">Grid & Gutters</a></li>
+											<li><a href="{{ path ('form-select') }}" class="{% if page == 'form-select' %} active {% endif %}">Form Select</a></li>
+											<li><a href="{{ path ('form-mask') }}" class="{% if page == 'form-mask' %} active {% endif %}">Input Masks</a></li>
+											<li><a href="{{ path ('form-fileupload') }}" class="{% if page == 'form-fileupload' %} active {% endif %}">File Uploads</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="{% if page in ['form-horizontal', 'form-vertical', 'form-floating-labels'] %} active subdrop {% endif %}">Layouts<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="{{ path ('form-horizontal') }}" class="{% if page == 'form-horizontal' %} active {% endif %}">Horizontal Form</a></li>
+											<li><a href="{{ path ('form-vertical') }}" class="{% if page == 'form-vertical' %} active {% endif %}">Vertical Form</a></li>
+											<li><a href="{{ path ('form-floating-labels') }}" class="{% if page == 'form-floating-labels' %} active {% endif %}">Floating Labels</a></li>
+										</ul>
+									</li>
+									<li><a href="{{ path ('form-validation') }}" class="{% if page == 'form-validation' %} active {% endif %}">Form Validation</a></li>
+									<li><a href="{{ path ('form-select2') }}" class="{% if page == 'form-select2' %} active {% endif %}">Select2</a></li>
+									<li><a href="{{ path ('form-wizard') }}" class="{% if page == 'form-wizard' %} active {% endif %}">Form Wizard</a></li>
+									<li><a href="{{ path ('form-pickers') }}" class="{% if page == 'form-pickers' %} active {% endif %}">Form Picker</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['tables-basic', 'data-tables'] %} active subdrop {% endif %}"><i class="ti ti-table fs-16 me-2"></i><span>Tables</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('tables-basic') }}" class="{% if page == 'tables-basic' %} active {% endif %}">Basic Tables </a></li>
+									<li><a href="{{ path ('data-tables') }}" class="{% if page == 'data-tables' %} active {% endif %}">Data Table </a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="{% if page in ['maps-vector', 'maps-leaflet'] %} active subdrop {% endif %}"><i class="ti ti-map-pin-pin fs-16 me-2"></i><span>Maps</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="{{ path ('maps-vector') }}" class="{% if page == 'maps-vector' %} active {% endif %}">Vector</a></li>
+									<li><a href="{{ path ('maps-leaflet') }}" class="{% if page == 'maps-leaflet' %} active {% endif %}">Leaflet</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu-open">
+						<h6 class="submenu-hdr">Help</h6>
+						<ul>
+							<li><a href="https://dreamspos.dreamstechnologies.com/documentation/symfony.html" target="_blank"><i class="ti ti-file-text fs-16 me-2"></i><span>Documentation</span></a></li>
+							<li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html" target="_blank"><i class="ti ti-exchange fs-16 me-2"></i><span>Changelog </span><span class="badge bg-primary badge-xs text-white fs-10 ms-2">v2.2.4</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><i class="ti ti-menu-2 fs-16 me-2"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="javascript:void(0);">Level 1.1</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 2.1</a></li>
+											<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 3.1</a></li>
+													<li><a href="javascript:void(0);">Level 3.2</a></li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>
+	<!-- /Sidebar -->
+

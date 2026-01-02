@@ -1,0 +1,87 @@
+{
+    "data":[
+  {
+    "id":1,
+    "image": "category-01.png",
+    "category": "Sea Food",
+    "noOfItems": "28",
+    "createdOn": "February 15, 2025",
+    "status": "Active"
+  },
+  {
+    "id":2,
+    "image": "category-02.png",
+    "category": "Pizza",
+    "noOfItems": "42",
+    "createdOn": "March 10, 2025",
+    "status": "Active"
+  },
+  {
+    "id":3,
+    "image": "category-03.png",
+    "category": "Salads",
+    "noOfItems": "66",
+    "createdOn": "April 5, 2025",
+    "status": "Active"
+  },
+  {
+    "id":4,
+    "image": "category-04.png",
+    "category": "Tacos",
+    "noOfItems": "48",
+    "createdOn": "May 20, 2025",
+    "status": "Expired"
+  },
+  {
+    "id":5,
+    "image": "category-05.png",
+    "category": "Burgers",
+    "noOfItems": "24",
+    "createdOn": "June 30, 2025",
+    "status": "Active"
+  },
+  {
+    "id":6,
+    "image": "category-06.png",
+    "category": "Ice Cream",
+    "noOfItems": "36",
+    "createdOn": "July 18, 2025",
+    "status": "Active"
+  },
+  {
+    "id":7,
+    "image": "category-07.png",
+    "category": "Pasta",
+    "noOfItems": "48",
+    "createdOn": "August 12, 2025",
+    "status": "Active"
+  },
+  {
+    "id":8,
+    "image": "category-08.png",
+    "category": "Beverages",
+    "noOfItems": "32",
+    "createdOn": "September 19, 2025",
+    "status": "Active"
+  },
+  {
+    "id":9,
+    "image": "category-09.png",
+    "category": "Steaks",
+    "noOfItems": "22",
+    "createdOn": "October 7, 2025",
+    "status": "Expired"
+  }
+  ,
+  {
+    "id":10,
+    "image": "category-10.png",
+    "category": "Soups",
+    "noOfItems": "18",
+    "createdOn": "November 25, 2025",
+    "status": "Active"
+  }
+ 
+],
+"totalData":10
+}

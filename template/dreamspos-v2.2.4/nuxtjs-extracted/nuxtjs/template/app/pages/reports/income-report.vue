@@ -1,0 +1,3 @@
+<template>
+    <ReportsIncomeReport />
+</template>

@@ -1,0 +1,978 @@
+<!-- Start Content -->
+<div class="content">
+
+    <!-- Page Header -->
+    <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+        <div class="flex-grow-1">
+            <h3 class="mb-0">Items<a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+        </div>
+        <div class="gap-2 d-flex align-items-center flex-wrap">
+            <div class="input-group input-group-flat w-auto">
+                <input type="text" class="form-control" placeholder="Search">
+                <span class="input-group-text">
+                    <i class="icon-search text-dark"></i>
+                </span>
+            </div>
+            <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_item"><i class="icon-circle-plus me-1"></i>Add New</a>
+        </div>
+</div>
+<!-- End Page Header -->
+
+    <!-- Row start -->
+    <div class="row">
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-01.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Salmon Steak</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$80</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-02.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Cheese Burst Pizza</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$66</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-03.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Garlic Butter Shrimp</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$25</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-04.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Chicken Taco</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$38</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-05.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Chicken</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$49</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-06.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Grilled Veggie Taco</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$69</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-07.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Chicken Noodle Soup</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$45</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-08.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Corn Pizza</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$96</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-09.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Shrimp Tom Yum</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$25</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-danger me-1"></i>Non Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-10.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Tomato Basil Soup</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$44</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-11.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Hot Chocolate</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$94</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-12.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Pumpkin Soup</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$78</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-13.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Al Pastor Taco</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$48</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-14.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Caesar Salad</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$69</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-15.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Quinoa Salad</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$110</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="col-lg-3 col-md-4 col-sm-6">
+            <div class="card">
+                <div class="card-body">
+                    <div class="food-items">
+                        <a href="#" data-bs-toggle="modal" data-bs-target="#items_details">
+                            <img src="assets/img/items/food-16.jpg" alt="item" class="img-fluid mb-3 w-100 rounded">
+                        </a>
+                        <a class="food-items-menu" href="#" data-bs-toggle="dropdown">
+                            <i class="icon-ellipsis-vertical" ></i>
+                        </a>
+                          <ul class="dropdown-menu dropdown-menu-split">
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_item"><i class="icon-pencil-line me-2"></i>Edit Item</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_item"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                            <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#hide_item"><i class="icon-eye-off me-2"></i>Hide Item</a></li>
+                        </ul>
+                    </div>
+                    <h6 class="fs-14 fw-semibold"><a href="#" data-bs-toggle="modal" data-bs-target="#items_details">Lemon Mint Juice</a></h6>
+                    <div class="d-flex align-items-center justify-content-between">
+                        <p class="mb-0">$96</p>
+                        <div>
+                            <span class="d-flex align-items-center"><i class="icon-square-dot text-success me-1"></i>Veg</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Row end -->
+
+    <!-- Pagination start -->
+    <nav class="pagination-nav">
+        <ul class="pagination justify-content-center">
+            <li class="page-item">
+                <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                    <span aria-hidden="true" class="me-1"><i class="icon-chevron-left"></i></span>
+                    Pre
+                </a>
+            </li>
+            <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+            <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+            <li class="page-item">
+                <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                    Next
+                    <span aria-hidden="true" class="ms-1"><i class="icon-chevron-right"></i></span>
+                </a>
+            </li>
+        </ul>
+    </nav>
+    <!-- Pagination end -->
+                    
+</div>
+<!-- End Content -->  
+
+<!-- Items Details -->
+<div class="modal fade" id="items_details">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header p-4 pb-0 border-0 mb-3">
+                <div class="border-bottom d-flex align-items-center justify-content-between flex-fill  pb-3 ">
+                    <h4 class="modal-title">Item Details</h4>
+                    <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="icon-x"></i></button>
+                </div>
+            </div>
+            <form action="items">                             
+                <div class="modal-body p-4 pt-1">             
+                    <div class="row row-gap-3">
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="bg-light p-3 rounded">
+                                <img src="assets/img/items/food-17.jpg" alt="item" class="img-fluid w-100">
+                            </div>
+                        </div>
+                        <div class="col-lg-6 col-sm-12">
+                            <div class="mb-3">
+                                <h5>Chicken Taco</h5>
+                                <p>Tender grilled chicken wrapped in soft tortillas, topped with fresh lettuce, salsa, and creamy sauce.</p>
+                            </div>
+                            <div class="mb-3 pb-3 border-bottom size-tabs">
+                                <h6>Sizes</h6>
+                                <div class="d-flex gap-3">
+                                    <div class="size-tab">
+                                        <h6 class="fs-13 mb-0 fw-medium">Small</h6>
+                                    </div>
+                                    <div class="size-tab">
+                                        <h6 class="fs-13 mb-0 fw-medium">Medium</h6>
+                                    </div>
+                                    <div class="size-tab">
+                                        <h6 class="fs-13 mb-0 fw-medium">Regular</h6>
+                                    </div>
+                                </div>
+                                
+                            </div>
+                            <div>
+                                <h6 class="mb-3">Add-ons & Upgrades</h6>
+                                <div class="row row-gap-md-4 row-gap-sm-3">
+                                    <div class="col-lg-6">
+                                        <div class="items-card">  
+                                            <div class="d-flex align-items-center">
+                                                <span class="avatar avatar-lg border rounded-circle me-1"><img src="assets/img/items/food-17.jpg" alt="item" class="img-fluid rounded-circle"></span>
+                                                <h6 class="fs-12 fw-medium mb-0">Extra Chicken</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="items-card">  
+                                            <div class="d-flex align-items-center">
+                                                <span class="avatar avatar-lg border rounded-circle me-1"><img src="assets/img/items/food-18.jpg" alt="item" class="img-fluid rounded-circle"></span>
+                                                <h6 class="fs-12 fw-medium mb-0 text-nowrap">Premium Tortilla</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-6">
+                                        <div class="items-card">  
+                                            <div class="d-flex align-items-center">
+                                                <span class="avatar avatar-lg border rounded-circle me-1"><img src="assets/img/items/food-19.jpg" alt="item" class="img-fluid rounded-circle"></span>
+                                                <h6 class="fs-12 fw-medium mb-0 text-nowrap">Cheese Upgrade</h6>
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<!-- Items Details End -->
+
+<!-- Add Item -->
+<div class="modal fade" id="add_item">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header border-0 p-4">
+                <div class="d-flex align-items-center justify-content-between flex-fill pb-3 border-bottom">
+                    <h4 class="modal-title">Add Item</h4>
+                    <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="icon-x"></i></button>
+                </div>
+            </div>
+            <form action="items">                             
+                <div class="modal-body p-4 pt-1">   
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-3 d-flex align-items-center flex-wrap gap-3">
+                                <div class="avatar avatar-3xl border bg-light">
+                                    <i class="icon-images fs-28 text-dark"></i>
+                                </div>
+                                <div>
+                                    <label class="form-label">Item Image<span class="text-danger"> *</span></label>
+                                    <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                                            <input type="file" class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0">
+                                            <i class="icon-upload"></i>
+                                        </div>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle text-danger"><i class="icon-trash-2"></i></a>
+                                    </div>
+                                </div>                                        
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label">Item Name<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                <label class="form-label">Description<span class="text-danger"> *</span></label>
+                                <textarea  rows="4" class="form-control mb-2"></textarea>
+                                <span>Add Minimum 200 Characters</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Price<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Net Price<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Category<span class="text-danger"> *</span></label>
+                                <select class="select">
+                                    <option>Select</option>
+                                    <option>Sea Food</option>
+                                    <option>Pizza</option>
+                                    <option>Salads</option>
+                                    <option>Tacos</option>
+                                    <option>Burgers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                <label class="form-label">Tax<span class="text-danger"> *</span></label>
+                                <select class="select">
+                                    <option>Select</option>
+                                    <option>CGST(9%)</option>
+                                    <option>SGST(9%)</option>
+                                    <option>IGST(18%)</option>
+                                    <option>VAT(10%)</option>
+                                    <option>Service Tax(15%)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-card-one accordion mb-3" id="accordionExample">
+                        <div class="accordion-item pb-3">
+                            <div class="accordion-header" id="headingOne">
+                                <div class="accordion-button p-3 pb-0" data-bs-toggle="collapse" data-bs-target="#collapseOne"  aria-controls="collapseOne">
+                                    <div class="addproduct-icon d-flex align-items-center justify-content-between w-100">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0"><span>Variations</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapseOne" class="accordion-collapse collapse show" aria-labelledby="headingOne" data-bs-parent="#accordionExample">
+                            <div class="accordion-body border-0 pb-0">
+                                <div id="group1" class="rowsContainer"></div>
+                                <!-- TEMPLATE for this group -->
+                                <div id="group1-template" class="row d-none rowTemplate">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Size<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="addRowBtn btn btn-light btn-sm" data-target="group1">
+                                    <i class="icon-plus"></i>Add
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-card-one accordion mb-3" id="accordionExample2">
+                        <div class="accordion-item pb-3">
+                            <div class="accordion-header" id="heading2">
+                                <div class="accordion-button p-3 pb-0" data-bs-toggle="collapse" data-bs-target="#collapse2"  aria-controls="collapse2">
+                                    <div class="addproduct-icon d-flex align-items-center justify-content-between w-100">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0"><span>Add Ons</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse2" class="accordion-collapse collapse" aria-labelledby="heading2" data-bs-parent="#accordionExample2">
+                            <div class="accordion-body border-0 pb-0">
+                                <div id="group2" class="rowsContainer"></div>
+                                <!-- TEMPLATE for this group -->
+                                <div id="group2-template" class="row d-none rowTemplate">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Name<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price($)<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="addRowBtn btn btn-light btn-sm" data-target="group2">
+                                    <i class="icon-plus"></i>Add
+                                </a>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-end gap-2">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Item</button>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<!-- Add Item End -->
+
+<!-- Edit Item -->
+<div class="modal fade" id="edit_item">
+    <div class="modal-dialog modal-dialog-centered modal-lg">
+        <div class="modal-content">
+            <div class="modal-header border-0 p-4">
+                <div class="d-flex align-items-center justify-content-between flex-fill pb-3 border-bottom">
+                    <h4 class="modal-title">Edit Item</h4>
+                    <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="icon-x"></i></button>
+                </div>
+            </div>
+            <form action="items">                             
+                <div class="modal-body p-4 pt-1">   
+                    <div class="row">
+                        <div class="col-lg-12">
+                            <div class="mb-3 d-flex align-items-center flex-wrap gap-3">
+                                <div class="avatar avatar-3xl border bg-light mb-3">
+                                    <img src="assets/img/items/food-10.jpg" alt="item" class="img-fluid rounded">
+                                </div>
+                                <div>
+                                    <label class="form-label">Item Image<span class="text-danger"> *</span></label>
+                                    <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+                                    <div class="d-flex align-items-center">
+                                        <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                                            <input type="file" class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0">
+                                            <i class="icon-pencil-line"></i>
+                                        </div>
+                                        <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle text-danger"><i class="icon-trash-2"></i></a>
+                                    </div>
+                                </div>                                        
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                  <label class="form-label">Item Name<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control" value="Pasta">
+                            </div>
+                        </div>
+                        <div class="col-lg-12">
+                            <div class="mb-3">
+                                  <label class="form-label">Description<span class="text-danger"> *</span></label>
+                                <textarea  rows="4" class="form-control mb-2">Pasta is a traditional Italian dish made from wheat flour, water, or eggs, shaped into a variety of forms.
+                                </textarea>
+                                <span>Add Minimum 200 Characters</span>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                  <label class="form-label">Price<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control" value="$96">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                  <label class="form-label">Net Price<span class="text-danger"> *</span></label>
+                                <input type="text" class="form-control" value="$96">
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                  <label class="form-label">Category<span class="text-danger"> *</span></label>
+                                  <select class="select">
+                                    <option>Select</option>
+                                    <option>Sea Food</option>
+                                    <option>Pizza</option>
+                                    <option selected>Salads</option>
+                                    <option>Tacos</option>
+                                    <option>Burgers</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="col-lg-6">
+                            <div class="mb-3">
+                                  <label class="form-label">Tax<span class="text-danger"> *</span></label>
+                                  <select class="select">
+                                    <option>Select</option>
+                                    <option selected>CGST(9%)</option>
+                                    <option>SGST(9%)</option>
+                                    <option>IGST(18%)</option>
+                                    <option>VAT(10%)</option>
+                                    <option>Service Tax(15%)</option>
+                                </select>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-card-one accordion mb-3" id="accordionExample3">
+                        <div class="accordion-item pb-3">
+                            <div class="accordion-header" id="heading3">
+                                <div class="accordion-button p-3 pb-0" data-bs-toggle="collapse" data-bs-target="#collapse3"  aria-controls="collapse3">
+                                    <div class="addproduct-icon d-flex align-items-center justify-content-between w-100">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0"><span>Variations</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse3" class="accordion-collapse collapse show" aria-labelledby="heading3" data-bs-parent="#accordionExample3">
+                            <div class="accordion-body border-0 pb-0">
+                                <div id="group3" class="rowsContainer"></div>
+                                <!-- TEMPLATE for this group -->
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Size<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" value="M">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" value="22.25">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="group3-template" class="row d-none rowTemplate">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Size<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price($)<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="addRowBtn btn btn-light btn-sm" data-target="group3">
+                                    <i class="icon-plus"></i>Add
+                                </a>
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="accordion-card-one accordion mb-3" id="accordionExample4">
+                        <div class="accordion-item pb-3">
+                            <div class="accordion-header" id="heading4">
+                                <div class="accordion-button p-3 pb-0" data-bs-toggle="collapse" data-bs-target="#collapse4"  aria-controls="collapse4">
+                                    <div class="addproduct-icon d-flex align-items-center justify-content-between w-100">
+                                        <div class="d-flex align-items-center">
+                                            <h5 class="mb-0"><span>Add Ons</span></h5>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                            <div id="collapse4" class="accordion-collapse collapse show" aria-labelledby="heading4" data-bs-parent="#accordionExample4">
+                            <div class="accordion-body border-0 pb-0">
+                                <div id="group4" class="rowsContainer"></div>
+                                <!-- TEMPLATE for this group -->
+                                <div class="row">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Name<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" value="Extra Cheese">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price($)<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control" value="2.50">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <div id="group4-template" class="row d-none rowTemplate">
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Name<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-5">
+                                        <div class="mb-3">
+                                            <label class="form-label">Price($)<span class="text-danger"> *</span></label>
+                                            <input type="text" class="form-control">
+                                        </div>
+                                    </div>
+                                    <div class="col-lg-2 d-flex align-items-center gap-2 mt-3">
+                                        <span class="btn btn-icon btn-sm btn-white rounded-circle deleteRowBtn">
+                                            <i class="icon-trash-2 text-danger"></i>
+                                        </span>
+                                    </div>
+                                </div>
+                                <a href="javascript:void(0);" class="addRowBtn btn btn-light btn-sm" data-target="group4">
+                                    <i class="icon-plus"></i>Add
+                                </a>
+                                
+                            </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-end gap-2">
+                        <button type="button" class="btn btn-light" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary">Save Item</button>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<!-- Edit Item end -->
+
+<!-- Start Modal  -->
+<div class="modal fade" id="delete_item">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-body text-center p-4">
+                <div class="mb-4">
+                    <span class="avatar avatar-xxl rounded-circle bg-danger-subtle">
+                        <img src="assets/img/icons/trash-icon.svg" alt="trash" class="img-fluid w-auto h-auto">
+                    </span>
+                </div>
+                <h4 class="mb-1">Delete Confirmation</h4>
+                <p class="mb-4">Are you sure you want to delete?</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="btn btn-light w-100" data-bs-dismiss="modal">Close</a>
+                    <a href="items" class="btn btn-danger w-100">Delete</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal  -->     
+
+<!-- Start Modal  -->
+<div class="modal fade" id="hide_item">
+    <div class="modal-dialog modal-dialog-centered modal-sm">
+        <div class="modal-content">
+            <div class="modal-body text-center p-4">
+                <div class="mb-4">
+                    <span class="avatar avatar-xxl rounded-circle bg-info-subtle">
+                        <img src="assets/img/icons/hide.svg" alt="trash" class="img-fluid w-auto h-auto">
+                    </span>
+                </div>
+                <h4 class="mb-1">Hide Item Confirmation</h4>
+                <p class="mb-4">Are you sure you want to hide?</p>
+                <div class="d-flex justify-content-center gap-2">
+                    <a href="#" class="btn btn-light w-100" data-bs-dismiss="modal">Close</a>
+                    <a href="items" class="btn btn-info w-100">Hide</a>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<!-- End Modal  --> 

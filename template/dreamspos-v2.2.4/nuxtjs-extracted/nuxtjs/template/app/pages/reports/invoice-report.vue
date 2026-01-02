@@ -1,0 +1,3 @@
+<template>
+    <ReportsInvoiceReport />    
+</template>

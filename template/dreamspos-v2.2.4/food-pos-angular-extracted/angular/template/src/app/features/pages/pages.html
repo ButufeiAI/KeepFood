@@ -1,0 +1,21 @@
+    
+    <!-- Begin Wrapper -->
+    <div class="main-wrapper" [class]="{'slide-nav':mobileSidebar, 'pos-wrapper':base === 'pos'}">
+    
+        <app-header/>
+     
+         @if(base !== 'pos'){
+        <app-two-col-sidebar/>
+        }
+        <div class="page-wrapper">
+            @if(!loading){
+                <div class="table-loader"></div>
+            } 
+            @else{
+                <router-outlet/>
+            }
+        </div>
+    </div>
+<div class="sidebar-overlay" [class]="{'opened':mobileSidebar}" (click)="closeOverlay()"></div>
+     
+        

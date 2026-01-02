@@ -13,6 +13,7 @@ export function Login() {
   const [password, setPassword] = useState('');
   const [loading, setLoading] = useState(false);
   const [useTestAccount, setUseTestAccount] = useState(false);
+  const [error, setError] = useState<string | null>(null);
 
   const redirectTo = searchParams.get('redirect') || '/';
 
@@ -21,11 +22,13 @@ export function Login() {
     setLoading(true);
 
     try {
+      setError(null);
       await login(email, password);
       toast.success('Connexion réussie ! 👋');
       navigate(redirectTo);
     } catch (err: any) {
-      handleApiError(err, toast.error);
+      const errorMessage = handleApiError(err, toast.error);
+      setError(errorMessage);
     } finally {
       setLoading(false);
     }

@@ -1,0 +1,147 @@
+<html>
+
+<body>
+    <div th:fragment="head-css" th:remove="tag">
+
+	<script th:if="${activeGroup != 'layout-pages' }" th:src="@{/js/theme-script.js}"></script>
+
+	<!-- Bootstrap CSS -->
+	<link th:if="${activePage != 'layout-rtl'}" rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+
+	<link th:if="${activePage == 'layout-rtl'}" rel="stylesheet" th:href="@{/css/bootstrap.rtl.min.css}">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap-datetimepicker.min.css}">
+
+	<!-- Toatr CSS -->		
+		<link rel="stylesheet" th:href="@{/plugins/toastr/toatr.css}">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" th:href="@{/css/animate.css}">
+	
+	<!-- Scrollbar CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/scrollbar/scroll.min.css}">	
+
+	<!-- Sticky CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/stickynote/sticky.css}">
+
+ 	<!-- Quill CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/quill/quill.core.css}">
+	<link rel="stylesheet" th:href="@{/plugins/quill/quill.snow.css}"> 
+
+			<!-- Fancybox -->
+		<link rel="stylesheet" th:href="@{/plugins/fancybox/jquery.fancybox.min.css}">
+
+	<!-- Leaflet Maps CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/leaflet/leaflet.css}">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/select2/css/select2.min.css}">
+
+	<!-- Owl Carousel -->
+	<link rel="stylesheet" th:href="@{/css/owl.carousel.min.css}">
+
+			<!-- Bootstrap Tagsinput CSS -->
+		<link rel="stylesheet" th:href="@{/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css}">
+
+	<!-- Player CSS -->
+	<link rel="stylesheet" th:href="@{/css/plyr.css}">
+
+	<!-- Map CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/jvectormap/jquery-jvectormap-2.0.5.css}">
+
+	<!-- Lightbox CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/lightbox/glightbox.min.css}">
+
+	<!-- Toatr CSS -->		
+	<link rel="stylesheet" th:href="@{/plugins/toastr/toatr.css}">
+
+	<!-- Rangeslider CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/ion-rangeslider/css/ion.rangeSlider.min.css}">
+
+	<!-- Datatable CSS -->
+	<link rel="stylesheet" th:href="@{/css/dataTables.bootstrap5.min.css}">
+
+	<!-- Dragula CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/dragula/css/dragula.min.css}">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" th:href="@{/plugins/@simonwep/pickr/themes/nano.min.css}">
+        
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/daterangepicker/daterangepicker.css}">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/select2/css/select2.min.css}">
+
+ 	<!-- Feather CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/feather/feather.css}">
+
+	 <!-- Flag CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/flags/flags.css}">
+
+	 <!-- Ionic CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/ionic/ionicons.css}">
+
+	 <!-- Material CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/material/materialdesignicons.css}">
+
+	 <!-- Pe7 CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/pe7/pe-icon-7.css}">
+
+	<!-- Remix Icon CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/remix/fonts/remixicon.css}">
+
+	<!-- Bootstrap Icon CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/bootstrap/bootstrap-icons.min.css}">
+
+	<!-- Simpleline CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/simpleline/simple-line-icons.css}">
+
+	 <!-- Themify CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/themify/themify.css}">		
+
+	<!-- Typicons CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/typicons/typicons.css}">
+
+	<!-- Weather CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/weather/weathericons.css}">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/tabler-icons/tabler-icons.min.css}">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/fontawesome/css/fontawesome.min.css}">
+	<link rel="stylesheet" th:href="@{/plugins/fontawesome/css/all.min.css}">
+
+	<!-- Swiper CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/swiper/swiper-bundle.min.css}">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/daterangepicker/daterangepicker.css}">
+
+	<!-- Mobile CSS-->
+		<link rel="stylesheet" th:href="@{/plugins/intltelinput/css/intlTelInput.css}">
+    	<link rel="stylesheet" th:href="@{/plugins/intltelinput/css/demo.css}">
+
+	<!-- Wizard CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/twitter-bootstrap-wizard/form-wizard.css}">
+
+	<!-- Form Date PIckers CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/flatpickr/flatpickr.css}">
+	<link rel="stylesheet" th:href="@{/plugins/bootstrap-datepicker/bootstrap-datepicker.css}">
+	<link rel="stylesheet" th:href="@{/plugins/daterangepicker/daterangepicker.css}">
+	<link rel="stylesheet" th:href="@{/plugins/jquery-timepicker/jquery-timepicker.css}">
+	<link rel="stylesheet" th:href="@{/plugins/pickr/pickr-themes.css}">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" th:href="@{/plugins/@simonwep/pickr/themes/nano.min.css}">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" th:href="@{/css/style.css}">
+    
+
+    </div>
+</body>
+
+</html>

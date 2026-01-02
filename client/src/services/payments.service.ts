@@ -1,12 +1,23 @@
 import api from './api';
 
 export const paymentsService = {
-  async createPaymentIntent(amount: number, restaurantId: string) {
+  async createPaymentIntent(amount: number, restaurantId: string, currency: string = 'EUR', description?: string) {
     const response = await api.post('/payments/create-intent', {
       amount,
       restaurantId,
+      currency,
+      description,
     });
     return response.data;
+  },
+
+  async getRestaurantPaymentProvider(restaurantId: string): Promise<string> {
+    try {
+      const response = await api.get(`/public/restaurant/${restaurantId}`);
+      return response.data.paymentProvider || 'CASH_ONLY';
+    } catch (error) {
+      return 'CASH_ONLY';
+    }
   },
 
   async confirmPaymentAndCreateOrder(data: {

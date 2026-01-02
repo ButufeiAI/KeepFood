@@ -1,0 +1,542 @@
+<!-- Start Content -->
+<div class="content">
+
+    <!-- Page Header -->
+    <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+        <div class="flex-grow-1">
+            <h3 class="mb-0">Addons<a href="#" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+        </div>
+        <div class="gap-2 d-flex align-items-center flex-wrap">
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
+                    <i class="icon-upload me-1"></i>Export
+                </a>
+                <ul class="dropdown-menu dropdown-menu-end p-3">
+                    <li>
+                        <a href="#" class="dropdown-item rounded">Export as PDF</a>
+                    </li>
+                    <li>
+                        <a href="#" class="dropdown-item rounded">Export as Excel</a>
+                    </li>
+                </ul>
+            </div>
+            <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_modifier"><i class="icon-circle-plus me-1"></i>Add New</a>
+        </div>
+    </div>
+    <!-- End Page Header -->
+
+    <!-- card start -->
+    <div class="card mb-0">
+        <div class="card-body">
+            <div class="d-flex align-items-center flex-wrap gap-3 justify-content-between mb-4">
+
+                <div class="search-input">
+                    <span class="btn-searchset"><i class="icon-search fs-14"></i></span>
+                </div>
+
+                <div class="d-flex align-items-center gap-2 flex-wrap">      
+                    
+                    <!-- filter -->
+                    <a href="#" class="btn btn-white d-inline-flex align-items-center" data-bs-toggle="offcanvas" data-bs-target="#filter-offcanvas" aria-controls="filter-offcanvas">
+                        <i class="icon-funnel me-2"></i>Filter
+                    </a>
+
+                    <!-- column -->
+                    <div class="dropdown">
+                        <a href="#" class="btn btn-icon btn-white" data-bs-toggle="dropdown" data-bs-auto-close="outside"><i class="icon-columns-3"></i></a>
+                        <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-3 pb-0">
+                            <h5 class="mb-3">Column</h5>
+                            <div>
+                                <div id="drag-container">
+                                    <div class="mb-3 drag-item" draggable="true">
+                                        <label class="d-flex align-items-center">
+                                            <i class="icon-grip-vertical me-2"></i>
+                                            <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                        Item
+                                        </label>
+                                    </div>
+                                    <div class="mb-3 drag-item" draggable="true">
+                                        <label class="d-flex align-items-center">
+                                            <i class="icon-grip-vertical me-2"></i>
+                                            <input class="form-check-input m-0 me-2" type="checkbox" checked>
+                                            Addon
+                                        </label>
+                                    </div>
+                                    <div class="mb-3 drag-item" draggable="true">
+                                        <label class="d-flex align-items-center">
+                                            <i class="icon-grip-vertical me-2"></i>
+                                            <input class="form-check-input m-0 me-2" type="checkbox">
+                                            Price
+                                        </label>
+                                    </div>
+                                    <div class="mb-3 drag-item" draggable="true">
+                                        <label class="d-flex align-items-center">
+                                            <i class="icon-grip-vertical me-2"></i>
+                                            <input class="form-check-input m-0 me-2" type="checkbox">
+                                            Status
+                                        </label>
+                                    </div>
+                                    <div class="mb-3 drag-item" draggable="true">
+                                        <label class="d-flex align-items-center">
+                                            <i class="icon-grip-vertical me-2"></i>
+                                            <input class="form-check-input m-0 me-2" type="checkbox">
+                                            Actions
+                                        </label>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- sort by -->
+                    <div class="dropdown">
+                        <a href="#" class="dropdown-toggle btn btn-white d-inline-flex align-items-center" data-bs-toggle="dropdown">
+                            Sort by : Newest
+                        </a>
+                        <ul class="dropdown-menu dropdown-menu-end p-3">
+                            <li>
+                                <a href="javascript:void(0);" class="dropdown-item">Newest</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="dropdown-item">Oldest</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="dropdown-item">Ascending</a>
+                            </li>
+                            <li>
+                                <a href="javascript:void(0);" class="dropdown-item">Descending</a>
+                            </li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <!-- table start -->
+            <div class="table-responsive table-nowrap">
+                <table class="table mb-0 border datatable">
+                    <thead>
+                        <tr>
+                            <th>Item</th>
+                            <th>Addon</th>
+                            <th>Price</th>
+                                <th>Status</th>
+                            <th>Actions</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr>
+                            <td>
+                                Pizza
+                            </td>
+                            <td>Extra Cheese</td>
+                            <td>
+                                $10
+                            </td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sauce</td>
+                            <td>Garlic Butter Sauce</td>
+                            <td>$5</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sea Food</td>
+                            <td>Grilled Shrimp</td>
+                            <td>$20</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Salad</td>
+                            <td>Avocado Slices</td>
+                            <td>$5</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sauce</td>
+                            <td>Spicy Mayo</td>
+                            <td>$10</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Topping</td>
+                            <td>Crispy Bacon Bits</td>
+                            <td>$5</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Side Dish</td>
+                            <td>Side Fries</td>
+                            <td>$10</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Topping</td>
+                            <td>Guacamole</td>
+                            <td>$12</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Sauce</td>
+                            <td>Extra Dressing</td>
+                            <td>$15</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>Garnish</td>
+                            <td>Lemon Wedge</td>
+                            <td>$10</td>
+                            <td>
+                                <span class="badge badge-soft-success">Active</span>
+                            </td>
+                                <td>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle me-2" data-bs-toggle="modal" data-bs-target="#edit_modifier"><i class="icon-pencil-line"></i></a>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2"></i></a>
+                            </td>
+                        </tr>
+                        
+                    </tbody>
+                </table>
+            </div>
+            <!-- table end -->
+        </div>
+
+    </div>
+    <!-- card start -->
+                    
+</div>
+<!-- End Content --> 
+
+<!-- Add Addon -->
+<div class="modal fade" id="add_modifier">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 p-4 pb-3">
+                <h4 class="modal-title">Add Addon</h4>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="icon-x"></i></button>
+            </div>
+            <form action="addons">                             
+                <div class="modal-body p-4 pt-1">             
+                    <div class="mb-3 d-flex align-items-center flex-wrap gap-3">
+                        <div class="avatar avatar-3xl border bg-light">
+                            <i class="icon-images fs-28 text-dark"></i>
+                        </div>
+                        <div>
+                            <label class="form-label">Category Image<span class="text-danger"> *</span></label>
+                            <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+                            <div class="d-flex align-items-center">
+                                <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                                    <input type="file" class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0">
+                                    <i class="icon-pencil-line"></i>
+                                </div>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle text-danger"><i class="icon-trash-2"></i></a>
+                            </div>
+                        </div>                                        
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item<span class="text-danger"> *</span></label>
+                        <select class="select">
+                            <option>Select</option>
+                            <option>Pizza</option>
+                            <option>Sea Food</option>
+                            <option>Salad</option>
+                            <option>Sauce</option>
+                            <option>Topping</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Addon<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description<span class="text-danger"> *</span></label>
+                        <textarea rows="4" class="form-control"></textarea>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+                        <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary w-100">Save</button>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<!-- Add Addon End -->
+
+<!-- Edit Addon -->
+    <div class="modal fade" id="edit_modifier">
+    <div class="modal-dialog modal-dialog-centered">
+        <div class="modal-content">
+            <div class="modal-header border-0 p-4 pb-3">
+                <h4 class="modal-title">Edit Addon</h4>
+                <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="modal" aria-label="Close"><i class="icon-x"></i></button>
+            </div>
+            <form action="addons">                             
+                <div class="modal-body p-4 pt-1">             
+                    <div class="mb-3 d-flex align-items-center flex-wrap gap-3">
+                        <div class="avatar avatar-3xl border bg-light">
+                            <img src="assets/img/items/food-02.jpg" alt="addon" class="img-fluid">
+                        </div>
+                        <div>
+                            <label class="form-label">Category Image<span class="text-danger"> *</span></label>
+                            <p class="fs-13 mb-3">Image should be with in 5 MB</p>
+                            <div class="d-flex align-items-center">
+                                <div class="btn btn-icon btn-sm btn-white rounded-circle position-relative me-2">
+                                    <input type="file" class="form-control position-absolute w-100 h-100 top-0 start-0 opacity-0">
+                                    <i class="icon-pencil-line"></i>
+                                </div>
+                                <a href="#" class="btn btn-icon btn-sm btn-white rounded-circle text-danger"><i class="icon-trash-2"></i></a>
+                            </div>
+                        </div>                                        
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Item<span class="text-danger"> *</span></label>
+                        <select class="select">
+                            <option>Select</option>
+                            <option selected>Pizza</option>
+                            <option>Sea Food</option>
+                            <option>Salad</option>
+                            <option>Sauce</option>
+                            <option>Topping</option>
+                        </select>
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Addon<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" value="Extra Cheese">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Price<span class="text-danger"> *</span></label>
+                        <input type="text" class="form-control" value="$10">
+                    </div>
+                    <div class="mb-3">
+                        <label class="form-label">Description<span class="text-danger"> *</span></label>
+                        <textarea rows="4" class="form-control">Extra cheese for your pizza.</textarea>
+                    </div>
+                    <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+                        <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">Cancel</button>
+                        <button type="submit" class="btn btn-primary w-100">Save</button>
+                    </div>
+                </div>
+            </form>     
+        </div>
+    </div>
+</div>
+<!-- Edit Addon End -->
+
+<!-- Start Modal  -->
+<div class="modal fade" id="delete_modal">
+<div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+        <div class="modal-body text-center p-4">
+            <div class="mb-4">
+                <span class="avatar avatar-xxl rounded-circle bg-danger-subtle">
+                    <img src="assets/img/icons/trash-icon.svg" alt="trash" class="img-fluid w-auto h-auto">
+                </span>
+            </div>
+            <h4 class="mb-1">Delete Confirmation</h4>
+            <p class="mb-4">Are you sure you want to delete?</p>
+            <div class="d-flex justify-content-center gap-2">
+                <a href="#" class="btn btn-light w-100" data-bs-dismiss="modal">Close</a>
+                <a href="addons" class="btn btn-danger w-100">Delete</a>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+<!-- End Modal  -->    
+
+<!-- Start Filter -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="filter-offcanvas">
+<div class="offcanvas-header pb-0">
+    <div class="border-bottom d-flex align-items-center justify-content-between w-100 pb-3">
+        <h4 class="offcanvas-title mb-0">Filter</h4>
+        <button type="button" class="btn-close btn-close-modal" data-bs-dismiss="offcanvas" aria-label="Close"><i class="icon-x"></i></button>
+    </div>
+</div>
+<div class="offcanvas-body d-flex flex-column pt-3">
+    <div>
+        <div class="mb-3">
+            <label class="form-label">Item<span class="text-danger"> *</span></label>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                    Select
+                </a>
+                <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+                    <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+                    <div class="input-icon-end input-icon position-relative mb-3">
+                        <span class="input-icon-addon">
+                            <i class="icon-search text-dark"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-md" placeholder="Search">
+                    </div>  
+                    <div class="vstack gap-2">
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Pizza
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Sea Food
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Salad
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Sauce
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Topping
+                            </label>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="mb-3">
+            <label class="form-label">Addon<span class="text-danger"> *</span></label>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                    Select
+                </a>
+                <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+                    <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+                    <div class="input-icon-end input-icon position-relative mb-3">
+                        <span class="input-icon-addon">
+                            <i class="icon-search text-dark"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-md" placeholder="Search">
+                    </div>  
+                    <div class="vstack gap-2">
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Extra Cheese
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Grilled Shrimp
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Avocado Slices
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Spicy Mayo
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Crispy Bacon Bits
+                            </label>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+        <div class="mb-0">
+            <label class="form-label">Status<span class="text-danger"> *</span></label>
+            <div class="dropdown">
+                <a href="#" class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between" data-bs-toggle="dropdown" data-bs-auto-close="outside">
+                    Select
+                </a>
+                <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+                    <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+                    <div class="input-icon-end input-icon position-relative mb-3">
+                        <span class="input-icon-addon">
+                            <i class="icon-search text-dark"></i>
+                        </span>
+                        <input type="text" class="form-control form-control-md" placeholder="Search">
+                    </div>  
+                    <div class="vstack gap-2">
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Active
+                            </label>
+                        </div>
+                        <div>
+                            <label class="d-flex align-items-center">
+                                <input class="form-check-input m-0 me-2" type="checkbox">Expired
+                            </label>
+                        </div>
+                    </div>  
+                </div>
+            </div>
+        </div>
+    </div>
+    
+        <div class="d-flex align-items-center gap-2 mt-auto border-0">
+            <a href="#" class="btn btn-light w-100">Reset</a>
+            <a href="#" class="btn btn-primary w-100">Apply</a>
+        </div>
+    
+</div>
+</div>
+<!-- End Filter -->

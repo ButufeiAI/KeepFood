@@ -1,0 +1,3 @@
+<template>
+    <SettingsOtherSettingsStorageSettings/>
+</template>

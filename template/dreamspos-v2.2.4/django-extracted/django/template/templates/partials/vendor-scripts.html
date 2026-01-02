@@ -1,0 +1,310 @@
+{% load static %}
+{% load sidebar_tags %}    
+    <!-- jQuery -->
+    <script src = "{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+
+    <!-- Feather Icon JS -->
+    <script src = "{% static 'assets/js/feather.min.js' %}"></script>
+
+    <!-- Slimscroll JS -->
+    <script src = "{% static 'assets/js/jquery.slimscroll.min.js' %}"></script>
+
+{% if request.path|normalize_path == '/chat' %}    
+    <!-- Slimscroll JS -->
+    <script src="{% static 'assets/plugins/slimscroll/jquery.slimscroll.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %}   
+    <!-- Datatable JS -->
+    <script src = "{% static 'assets/js/jquery.dataTables.min.js' %}"></script>
+    <script src = "{% static 'assets/js/dataTables.bootstrap5.min.js' %}"></script>
+
+    <!-- Datetimepicker JS -->
+    <script src = "{% static 'assets/js/moment.min.js' %}"></script>
+    <script src = "{% static 'assets/js/bootstrap-datetimepicker.min.js' %}"></script>
+{% endif %}
+
+    <!-- Bootstrap Core JS -->
+    <script src = "{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %}     
+    <!-- Quill JS -->
+    <script src="{% static 'assets/plugins/quill/quill.min.js' %}"></script>
+{% endif %}   
+
+{% if request.path|normalize_path == '/chart-c3' %}
+    <!-- Chart c3 JS -->
+    <script src="{% static 'assets/plugins/c3-chart/d3.v5.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/c3-chart/c3.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/c3-chart/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/form-fileupload' %}
+    <!-- Fileupload JS -->
+    <script src="{% static 'assets/plugins/fileupload/fileupload.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/form-mask' %}
+    <!-- Mask JS -->
+    <script src="{% static 'assets/js/jquery.maskedinput.min.js' %}"></script>
+    <script src="{% static 'assets/js/mask.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/chart-flot' %}
+    <!-- Chart flot JS -->
+    <script src="{% static 'assets/plugins/flot/jquery.flot.js' %}"></script>
+    <script src="{% static 'assets/plugins/flot/jquery.flot.pie.js' %}"></script>
+    <script src="{% static 'assets/plugins/flot/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/chart-js' or request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/index' or request.path|normalize_path == '/layout-boxed' or request.path|normalize_path == '/layout-dark' or request.path|normalize_path == '/layout-detached' or request.path|normalize_path == '/layout-horizontal' or request.path|normalize_path == '/layout-hovered' or request.path|normalize_path == '/layout-rtl' or request.path|normalize_path == '/layout-two-column' or request.path|normalize_path == '/subscription' %}
+    <!-- Chart JS -->
+    <script src="{% static 'assets/plugins/chartjs/chart.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/chartjs/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/chart-morris' %}
+    <!-- Chart JS -->
+    <script src="{% static 'assets/plugins/morris/raphael-min.js' %}"></script>
+    <script src="{% static 'assets/plugins/morris/morris.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/morris/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/chart-peity' or request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/subscription' %}
+    <!-- Chart JS -->
+    <script src="{% static 'assets/plugins/peity/jquery.peity.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/peity/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/calendar' %}
+    <!-- Fullcalendar JS -->
+    <script src="{% static 'assets/plugins/fullcalendar/index.global.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/fullcalendar/calendar-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/add-product' or request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/domain' or request.path|normalize_path == '/edit-product' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/localization-settings' or request.path|normalize_path == '/otp-settings' or request.path|normalize_path == '/packages' or request.path|normalize_path == '/product-list' or request.path|normalize_path == '/purchase-transaction' or request.path|normalize_path == '/reviews' or request.path|normalize_path == '/subscription' or request.path|normalize_path == '/varriant-attributes' %}
+    <!-- Bootstrap Tagsinput JS -->
+    <script src="{% static 'assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/admin-dashboard' or request.path|normalize_path == '/barcode' or request.path|normalize_path == '/calendar' or request.path|normalize_path == '/chart-apex' or request.path|normalize_path == '/companies' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/email' or request.path|normalize_path == '/file-manager' or request.path|normalize_path == '/form-elements' or request.path|normalize_path == '/icon-feather' or request.path|normalize_path == '/icon-flag' or request.path|normalize_path == '/icon-fontawesome' or request.path|normalize_path == '/icon-ionic' or request.path|normalize_path == '/icon-material' or request.path|normalize_path == '/icon-pe7' or request.path|normalize_path == '/icon-remix' or request.path|normalize_path == '/icon-simpleline' or request.path|normalize_path == '/icon-tabler' or request.path|normalize_path == '/icon-themify' or request.path|normalize_path == '/icon-typicon' or request.path|normalize_path == '/icon-weather' or request.path|normalize_path == '/index' or request.path|normalize_path == '/layout-boxed' or request.path|normalize_path == '/layout-dark' or request.path|normalize_path == '/layout-detached' or request.path|normalize_path == '/layout-horizontal' or request.path|normalize_path == '/layout-hovered' or request.path|normalize_path == '/layout-rtl' or request.path|normalize_path == '/layout-two-column' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/qrcode' or request.path|normalize_path == '/sales-dashboard' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <!-- Chart Apex JS -->
+    <script src="{% static 'assets/plugins/apexchart/apexcharts.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/apexchart/chart-data.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/sales-dashboard' %}
+    <!-- Map JS -->
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-2.0.5.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-world-mill.js' %}"></script>
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-ru-mill.js' %}"></script>
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-us-aea.js' %}"></script>
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-uk_countries-mill.js' %}"></script>        
+    <script src="{% static 'assets/plugins/jvectormap/jquery-jvectormap-in-mill.js' %}"></script>
+    <script src="{% static 'assets/js/jvectormap.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %} 
+    <!-- Select2 JS -->
+    <script src = "{% static 'assets/plugins/select2/js/select2.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/billers' or request.path|normalize_path == '/blog-comments' or request.path|normalize_path == '/chat' or request.path|normalize_path == '/contacts' or request.path|normalize_path == '/customers' or request.path|normalize_path == '/expired-products' or request.path|normalize_path == '/security-settings' or request.path|normalize_path == '/warehouse' or request.path|normalize_path == '/form-mask' %}
+    <!-- Mobile Input -->
+    <script src="{% static 'assets/plugins/intltelinput/js/intlTelInput.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-swiperjs' or request.path|normalize_path == '/chat' or request.path|normalize_path == '/video-call' %}
+    <!-- Swiper JS -->
+    <script src="{% static 'assets/plugins/swiper/swiper-bundle.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-swiperjs' %}
+    <!-- Internal Swiper JS -->
+    <script src="{% static 'assets/js/swiper.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/chat' or request.path|normalize_path == '/email-reply' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/search-list' %}
+    <!-- FancyBox JS -->
+    <script src="{% static 'assets/plugins/fancybox/jquery.fancybox.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/file-manager' %}
+    <!-- Player JS -->
+    <script src="{% static 'assets/js/plyr-js.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-drag-drop' or request.path|normalize_path == '/ui-clipboard' or request.path|normalize_path == '/ui-stickynote' or request.path|normalize_path == '/projects' or request.path|normalize_path == '/search-list' %}
+    <!-- Drag Card -->
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/js/jquery.ui.touch-punch.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' %}
+    <!-- Calculator JS -->
+    <script src="{% static 'assets/js/calculator.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-lightbox' %}
+    <!-- Lightbox JS -->
+    <script src="{% static 'assets/plugins/lightbox/glightbox.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/lightbox/lightbox.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-modals' %}
+    <!-- Modal JS -->
+    <script src="{% static 'assets/js/modal.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-rangeslider' %}
+    <!-- Rangeslider JS -->
+    <script src="{% static 'assets/plugins/ion-rangeslider/js/ion.rangeSlider.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/ion-rangeslider/js/custom-rangeslider.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/calendar' or request.path|normalize_path == '/form-pickers' or request.path|normalize_path == '/projects' or request.path|normalize_path == '/search-list' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <script src="{% static 'assets/plugins/moment/moment.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/all-blog' or request.path|normalize_path == '/blog-categories' or request.path|normalize_path == '/blog-tag' or request.path|normalize_path == '/best-seller' or request.path|normalize_path == '/calendar' or request.path|normalize_path == '/companies' or request.path|normalize_path == '/customer-due-report' or request.path|normalize_path == '/customer-report' or request.path|normalize_path == '/dashboard' or request.path|normalize_path == '/expense-report' or request.path|normalize_path == '/form-pickers' or request.path|normalize_path == '/income-report' or request.path|normalize_path == '/index' or request.path|normalize_path == '/inventory-report' or request.path|normalize_path == '/invoice-report' or request.path|normalize_path == '/layout-boxed' or request.path|normalize_path == '/layout-dark' or request.path|normalize_path == '/layout-detached' or request.path|normalize_path == '/layout-rtl' or request.path|normalize_path == '/layout-horizontal' or request.path|normalize_path == '/layout-two-column' or request.path|normalize_path == '/layout-hovered' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/product-expiry-report' or request.path|normalize_path == '/product-quantity-alert' or request.path|normalize_path == '/product-report' or request.path|normalize_path == '/profit-and-loss' or request.path|normalize_path == '/projects' or request.path|normalize_path == '/purchase-report' or request.path|normalize_path == '/sales-dashboard' or request.path|normalize_path == '/sales-report' or request.path|normalize_path == '/sales-tax' or request.path|normalize_path == '/search-list' or request.path|normalize_path == '/sold-stock' or request.path|normalize_path == '/stock-history' or request.path|normalize_path == '/supplier-due-report' or request.path|normalize_path == '/supplier-report' or request.path|normalize_path == '/tax-reports' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <!-- Daterangepicker JS -->
+    <script src="{% static 'assets/plugins/daterangepicker/daterangepicker.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-rating' %}
+    <!-- Rater JS -->
+    <script src="{% static 'assets/plugins/rater-js/index.js' %}"></script>
+
+    <!-- Internal Ratings JS -->
+    <script src="{% static 'assets/js/ratings.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-sortable' %}
+    <!-- Sortable JS -->
+    <script src="{% static 'assets/plugins/sortablejs/Sortable.min.js' %}"></script>
+
+    <!-- Internal Sortable JS -->
+    <script src="{% static 'assets/js/sortable.js' %}"></script>
+{% endif %}	
+	
+{% if request.path|normalize_path == '/ui-clipboard' %}
+    <!-- Clipboard JS -->
+    <script src="{% static 'assets/plugins/clipboard/clipboard.min.js' %}"></script>
+{% endif %}
+   
+{% if request.path|normalize_path == '/ui-drag-drop' %}
+    <!-- Dragula JS -->
+    <script src="{% static 'assets/plugins/dragula/js/dragula.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/dragula/js/drag-drop.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/dragula/js/draggable-cards.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-counter' %}
+    <!-- Counter JS -->
+    <script src="{% static 'assets/plugins/countup/jquery.counterup.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/countup/jquery.waypoints.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/countup/jquery.missofis-countdown.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-scrollbar' %}
+    <!-- Scrollbar JS -->
+    <script src="{% static 'assets/plugins/scrollbar/scrollbar.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/scrollbar/custom-scroll.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-stickynote' or request.path|normalize_path == '/search-list' %}
+    <!-- Stickynote JS -->
+    <script src="{% static 'assets/js/jquery-ui.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/stickynote/sticky.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-sweetalerts' %}
+    <!-- Sweetalerts JS -->
+    <script src="{% static 'assets/plugins/sweetalert/sweetalert2.all.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/sweetalert/sweetalerts.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/ui-toasts' %}
+    <!-- Toatr JS -->		
+    <script src="{% static 'assets/plugins/toastr/toastr.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/toastr/toastr.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/form-select' or request.path|normalize_path == '/form-select2' or request.path|normalize_path == '/form-pickers' %}
+    <!-- Custom Select JS -->
+    <script src="{% static 'assets/js/custom-select2.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/form-wizard' %}
+    <!-- Wizard JS -->
+    <script src="{% static 'assets/plugins/vanilla-wizard/js/wizard.min.js' %}"></script>
+    <script src="{% static 'assets/js/form-wizard.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/form-pickers' %}
+    <!-- Form Date PIckers JS -->
+    <script src="{% static 'assets/plugins/flatpickr/flatpickr.js' %}"></script>
+    <script src="{% static 'assets/plugins/bootstrap-datepicker/bootstrap-datepicker.js' %}"></script>
+    <script src="{% static 'assets/plugins/jquery-timepicker/jquery-timepicker.js' %}"></script>
+    <script src="{% static 'assets/plugins/pickr/pickr.js' %}"></script>
+    <script src="{% static 'assets/plugins/@simonwep/pickr/pickr.min.js' %}"></script>
+    <script src="{% static 'assets/js/forms-pickers.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/maps-vector' %}
+    <!-- JSVector Maps MapsJS -->
+    <script src="{% static 'assets/plugins/jsvectormap/js/jsvectormap.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/jsvectormap/maps/world-merc.js' %}"></script>
+    <script src="{% static 'assets/js/us-merc-en.js' %}"></script>
+    <script src="{% static 'assets/js/russia.js' %}"></script>
+    <script src="{% static 'assets/js/spain.js' %}"></script>
+    <script src="{% static 'assets/js/canada.js' %}"></script>
+    <script src="{% static 'assets/js/jsvectormap.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/maps-leaflet' %}
+    <!-- Leaflet Maps JS -->
+    <script src="{% static 'assets/plugins/leaflet/leaflet.js' %}"></script>
+    <script src="{% static 'assets/js/leaflet.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/appearance' or request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/ban-ip-address' or request.path|normalize_path == '/bank-settings-grid' or request.path|normalize_path == '/barcode' or request.path|normalize_path == '/blog-details' or request.path|normalize_path == '/company-settings' or request.path|normalize_path == '/connected-apps' or request.path|normalize_path == '/currency-settings' or request.path|normalize_path == '/custom-fields' or request.path|normalize_path == '/email-settings' or request.path|normalize_path == '/email-templates' or request.path|normalize_path == '/employee-details' or request.path|normalize_path == '/file-manager' or request.path|normalize_path == '/gdpr-settings' or request.path|normalize_path == '/general-settings' or request.path|normalize_path == '/invoice-settings' or request.path|normalize_path == '/invoice-templates' or request.path|normalize_path == '/language-settings-web' or request.path|normalize_path == '/language-settings' or request.path|normalize_path == '/localization-settings' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/notification' or request.path|normalize_path == '/otp-settings' or request.path|normalize_path == '/payment-gateway-settings' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/pos-settings' or request.path|normalize_path == '/preference' or request.path|normalize_path == '/prefixes' or request.path|normalize_path == '/qrcode' or request.path|normalize_path == '/security-settings' or request.path|normalize_path == '/signatures' or request.path|normalize_path == '/sms-templates' or request.path|normalize_path == '/sms-settings' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/social-authentication' or request.path|normalize_path == '/storage-settings' or request.path|normalize_path == '/system-settings' or request.path|normalize_path == '/tax-rates' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' or request.path|normalize_path == '/video-call' %}
+    <!-- Sticky-sidebar -->
+    <script src="{% static 'assets/plugins/theia-sticky-sidebar/ResizeSensor.js' %}"></script>
+    <script src="{% static 'assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/calendar' or request.path|normalize_path == '/file-manager' %}
+    <!-- Theiastickysidebar JS -->
+    <script src="{% static 'assets/plugins/theia-sticky-sidebar/theia-sticky-sidebar.min.js' %}"></script>
+    <script src="{% static 'assets/plugins/theia-sticky-sidebar/ResizeSensor.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/audio-call' or request.path|normalize_path == '/pos' or request.path|normalize_path == '/pos-2' or request.path|normalize_path == '/pos-3' or request.path|normalize_path == '/pos-4' or request.path|normalize_path == '/pos-5' or request.path|normalize_path == '/product-details' or request.path|normalize_path == '/video-call' %}
+    <!-- Owl JS -->
+    <script src = "{% static 'assets/plugins/owlcarousel/owl.carousel.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/barcode' or request.path|normalize_path == '/file-manager' or request.path|normalize_path == '/notes' or request.path|normalize_path == '/qrcode' or request.path|normalize_path == '/social-feed' or request.path|normalize_path == '/todo-list' or request.path|normalize_path == '/todo' %}
+    <!-- Owl JS -->
+    <script src="{% static 'assets/js/owl.carousel.min.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/security-settings' %}
+    <!-- Validation-->
+    <script src="{% static 'assets/js/validation.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path == '/video-call' or request.path|normalize_path == '/chat' %}
+    <!-- Validation-->
+    <script src="{% static 'assets/js/chat.js' %}"></script>
+{% endif %}
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %} 
+    <!-- Color Picker JS -->
+    <script src="{% static 'assets/plugins/@simonwep/pickr/pickr.es5.min.js' %}"></script>
+
+    <script src="{% static 'assets/js/theme-colorpicker.js' %}"></script>
+{% endif %}    
+
+    <script src = "{% static 'assets/js/script.js' %}"></script>

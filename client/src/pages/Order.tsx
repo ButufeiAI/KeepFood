@@ -25,7 +25,7 @@ export function Order() {
       if (tableId && restaurantId) {
         try {
           // Récupérer les infos de la table
-          const table = await publicService.getTable(tableId);
+          await publicService.getTable(tableId);
           
           // Créer ou récupérer une session de table active
           const session = await publicService.getOrCreateTableSession(tableId, restaurantId);

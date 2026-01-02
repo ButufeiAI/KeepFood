@@ -1,0 +1,64 @@
+{% load static %}
+
+        <!-- jQuery -->
+        <script src="{% static 'assets/js/jquery-3.7.1.min.js' %}"></script>
+
+        <!-- Bootstrap Core JS -->
+        <script src="{% static 'assets/js/bootstrap.bundle.min.js' %}"></script>
+    
+    {% if '/login' not in request.path and '/register' not in request.path and '/reset-password' not in request.path and '/email-verification' not in request.path and '/forgot-password' not in request.path and '/otp' not in request.path %}
+        <!-- Simplebar JS -->
+        <script src="{% static 'assets/plugins/simplebar/simplebar.min.js' %}"></script>
+    {% endif %}
+    
+    {% if '/addons' in request.path or '/coupons' in request.path or '/index' in request.path or '/invoices' in request.path or '/kanban-view' in request.path or '/payments' in request.path or '/role-permission' in request.path or '/users' in request.path %}
+        <!-- Daterangepikcer JS -->
+        <script src="{% static 'assets/js/moment.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/daterangepicker/daterangepicker.js' %}"></script>
+    {% endif %}
+    
+    {% if '/addons' in request.path or '/audit-report' in request.path or '/categories' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/integrations-settings' in request.path or '/invoices' in request.path or '/items' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/payment-settings' in request.path or '/payments' in request.path or '/print-settings' in request.path or '/role-permission' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path or '/users' in request.path %}
+        <!-- Datatable JS -->
+        <script src="{% static 'assets/plugins/datatables/js/jquery.dataTables.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/datatables/dataTables.bootstrap5.min.js' %}"></script>
+    {% endif %}
+    
+    {% if '/audit-report' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/integrations-settings' in request.path or '/kitchen' in request.path or '/pos' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/orders' in request.path or '/payment-settings' in request.path or '/print-settings' in request.path or '/reservations' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path %}
+        <!-- Flatpickr JS -->
+        <script src="{% static 'assets/plugins/flatpickr/flatpickr.min.js' %}"></script>
+    {% endif %}
+    
+    {% if '/pos' in request.path %}
+        <!-- Slick Js -->
+        <script src="{% static 'assets/plugins/slick/slick.min.js' %}"></script>
+    {% endif %}
+    
+    {% if '/index' in request.path %}
+        <!-- ApexChart JS -->
+        <script src="{% static 'assets/plugins/apexchart/apexcharts.min.js' %}"></script>
+        <script src="{% static 'assets/plugins/apexchart/chart-data.js' %}"></script>
+    {% endif %}
+    
+    {% if '/kanban-view' in request.path %}
+        <!-- Dragula Js-->
+        <script src="{% static 'assets/plugins/dragula/dragula.min.js' %}"></script>
+        <script src="{% static 'assets/js/dragula.js' %}"></script>
+    {% endif %}
+    
+    {% if '/orders' in request.path or '/kanban-view' in request.path %}
+        <!-- Calculator JS -->
+        <script src="{% static 'assets/js/calculator.js' %}"></script>
+    {% endif %}
+    
+    {% if '/otp' in request.path %}
+        <!-- OTP JS -->
+        <script src="{% static 'assets/js/otp.js' %}"></script>
+    {% endif %}
+    
+    {% if '/addons' in request.path or '/audit-report' in request.path or '/categories' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/index' in request.path or '/integrations-settings' in request.path or '/invoices' in request.path or '/items' in request.path or '/kitchen' in request.path or '/pos' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/orders' in request.path or '/payment-settings' in request.path or '/payments' in request.path or '/print-settings' in request.path or '/reservations' in request.path or '/role-permission' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path or '/tax-settings' in request.path or '/users' in request.path %}
+        <!-- Select2 Js -->
+        <script src="{% static 'assets/plugins/select2/js/select2.min.js' %}"></script>
+    {% endif %}
+    
+        <!-- Main JS -->
+        <script src="{% static 'assets/js/script.js' %}"></script>

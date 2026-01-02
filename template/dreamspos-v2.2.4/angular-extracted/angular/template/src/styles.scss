@@ -1,0 +1,336 @@
+/* You can add global styles to this file, and also import other style files */
+// Then load Bootstrap
+@use 'bootstrap/scss/bootstrap';
+@use 'assets/scss/main';
+
+.custom-pagination-top{
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  @media (max-width:767.98px){
+    flex-direction: column;
+  }
+}
+.common-pagination{
+    margin-right:9.5px;;
+    padding: 8px 22px 8px 12px;
+    font-size: 13px;
+}
+.dataTables_length label{
+  color: #0F172A
+;
+}
+
+//Table Loader
+.table-loader {
+  width: 30px;
+  aspect-ratio: 1;
+  border-radius: 50%;
+  border: 4px solid #0D76E1;
+  margin: auto;
+  animation:
+    l20-1 0.8s infinite linear alternate,
+    l20-2 1.6s infinite linear;
+}
+@keyframes l20-1{
+   0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+   12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+   25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+   50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+   75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+   100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+}
+@keyframes l20-2{ 
+  0%    {transform:scaleY(1)  rotate(0deg)}
+  49.99%{transform:scaleY(1)  rotate(135deg)}
+  50%   {transform:scaleY(-1) rotate(0deg)}
+  100%  {transform:scaleY(-1) rotate(-135deg)}
+}
+
+//MAT SELECT
+mat-select.custom-mat-select .mat-mdc-select-trigger {
+  border: 1px solid #E2E8F0
+  ;
+  color: #334155;
+  line-height: 38px;
+  border-radius: 6px;
+  font-family: "Noto Sans", sans-serif;
+  font-size: 14px;
+  padding-left: 12px;
+  padding-right: 15px;
+  background: #fff;
+  height: 38px;
+}
+
+.custom-mat-select.space-mat-select .mat-mdc-select-value {
+  padding-left: 15px;
+}
+mat-select.custom-mat-select .mat-mdc-select-trigger{
+  font-family: "Inter", sans-serif !important;
+}
+mat-option.mat-mdc-option.mdc-list-item--selected:not(
+    .mdc-list-item--disabled
+  ):not(.mat-mdc-option-multiple) {
+  background-color: #0D76E1;
+}
+
+mat-option.mat-mdc-option.mdc-list-item--selected:not(.mdc-list-item--disabled)
+  .mdc-list-item__primary-text {
+  color: #fff !important;
+}
+div.mat-mdc-select-panel {
+  padding:0px !important;
+}
+mat-option.mat-mdc-option.mdc-list-item {
+  min-height: 35px;
+}
+.mat-mdc-select-placeholder {
+  color: #334155 !important;
+}
+mat-option.mat-mdc-option:hover:not(.mdc-list-item--disabled) {
+  background-color: #0D76E1;
+  color: #fff;
+}
+mat-option mat-pseudo-checkbox.mat-pseudo-checkbox {
+  display: none;
+}
+.mat-mdc-option.mdc-list-item.mat-mdc-option-active.mdc-list-item--selected {
+  .mdc-list-item__primary-text{
+    color: #fff;
+  }
+}
+div.mat-mdc-select-panel {
+  background-color: #fff !important;
+}
+
+.mat-mdc-option {
+  padding: 6px 12px !important;
+}
+
+//Authentication pages
+.login-alert{
+    position: absolute;
+    top: 10px;
+    left: auto;
+    right: 10px;
+    z-index: 9;
+    .btn-close {
+      top: 4px;
+    }
+}
+.remember-alert{
+  position: absolute;
+    top: 20%;
+    left: 15%;
+    right: auto;
+}
+.p-inputotp {
+  .p-inputotp-input{
+    margin-right: 16px;
+    border-radius: 6px;
+  }
+}
+//Date picker
+.custom-rangePicker{
+  .daterangepicker.double {
+    width: auto;
+    left: auto !important;
+    right: 30px !important;
+}
+}
+.date-range.bookingrange{
+  width: 140px;
+}
+.timepick.p-datepicker .p-datepicker-panel {
+    height: auto !important;
+  }
+  .custom-filter-daterange{
+     .daterangepicker.double {
+        left: auto !important;
+        right: 10px !important;
+     }
+  }
+.p-datepicker{
+  .p-inputtext{
+    font-size: 14px;
+  }
+}
+.p-datepicker-month , .p-datepicker-year {
+  padding: 10px !important;
+}
+.p-datepicker-select-month{
+  margin-right: 10px !important;
+}
+.p-datepicker .p-datepicker-panel{
+
+  background: #ffffff;
+  padding: 10px;
+  border:1px solid #e0e0e0;
+  border-radius: 5px;
+  height: 300px;
+  .p-datepicker-header{
+    height: 50px;
+  }
+  tbody{
+    height: 200px;
+  }
+  table tr th,table tr td{
+    span{
+      margin-right: 4px;
+      padding: 5px;
+    }
+  }
+
+}
+.custom-date{
+  .p-datepicker{
+    padding: 6px 12px 6px 6px;
+    border-radius: 5px;
+  }
+}
+.custom-left-pdate{
+  .p-datepicker .p-datepicker-panel{
+    left: -150px !important;
+  }
+}
+.p-datepicker-day.p-datepicker-day-selected{
+  background-color: #0D76E1 !important;
+  color: #fff !important;
+  border-radius: 10px;
+}
+.category-tab.category-slider{
+  overflow: hidden;
+}
+//Mat Table
+.custom-mat-table{
+  .mat-mdc-paginator-container{
+    justify-content: space-between;
+    padding-left: 0;
+  }
+  .mat-mdc-paginator-page-size-label,.mat-mdc-notch-piece.mdc-notched-outline__leading,.mat-mdc-notch-piece.mdc-notched-outline__notch,.mat-mdc-notch-piece.mdc-notched-outline__trailing,.mat-mdc-button-touch-target,.mat-mdc-button-touch-target,
+  .mat-mdc-paginator-navigation-first,.mat-mdc-paginator-navigation-last{
+    display: none;
+  }
+  .mdc-text-field--outlined .mat-mdc-form-field-infix, .mdc-text-field--no-label .mat-mdc-form-field-infix
+ {
+    border: 1px solid #E2E8F0;
+    border-radius: 4px;
+    padding: 8px 10px;
+}
+
+
+
+}
+
+//Prime select
+.custom-prime-input{
+  padding: 8px 28px 8px 12px;
+}
+.custom-prime-select{
+  width: 100%;
+  .p-select-dropdown,.p-inputicon,.p-select-clear-icon.p-icon{
+    display: none;
+  }
+  .p-select-label{
+    font-size: 14px;
+    color: #0F172A;
+  }
+  .p-component.p-overlay{
+    background: white;
+    padding: 6px 0 0 0;
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+  }
+  .p-iconfield.p-iconfield-left{
+     padding: 0px 12px 10px 12px;
+  }
+  .p-select-filter.p-component.p-inputtext{
+    border: 1px solid #E2E8F0;
+    border-radius: 6px;
+    padding: 4px !important;
+   
+  }
+  .p-ripple.p-select-option.p-focus{
+     &:hover{
+      background: #0D76E1;
+      color: #ffffff;
+    }
+  }
+  .p-ripple.p-select-option{
+    padding: 6px 12px;
+   
+  }
+}
+.custom-swiper-slide {
+    width: 184px !important;
+    margin-right: 16px;
+    @media (max-width:1024.98px){
+    width: 202px !important;
+    }
+    @media (max-width:991.98px){
+    width: 306px !important;
+    }
+    @media (max-width:768.98px){
+    width: 233px !important;
+    }
+    @media (max-width:425.98px){
+      width: 383px !important;
+      margin-right: 22px;
+    }
+    @media (max-width:375.98px){
+      width: 333px !important;
+      margin-right: 22px;
+    }
+    @media (max-width:320.98px){
+      width: 279px !important;
+      margin-right: 22px;
+    }
+}
+.pos-wrapper .page-wrapper .pos-left {
+    overflow: auto;
+}
+.notification-body{
+  overflow: auto;
+  scrollbar-width: none;
+}
+.cdk-drag label{
+  &:hover{
+    cursor: grab;
+  }
+}
+.cdk-drag.cdk-drag-placeholder label{
+  &:focus{
+    cursor: grabbing;
+  }
+  
+}
+//Dark Mode
+[data-bs-theme=dark] {
+  .p-datepicker .p-datepicker-panel{
+    background-color: #01060B;
+    border-color: #272828;
+
+  }
+  .table-condensed.calendar-table{
+    background-color: #01060B;
+    border-color: #272828;
+  }
+    mat-select.custom-mat-select .mat-mdc-select-trigger {
+    background-color: #01060B;
+    
+    border-color:#272828;
+  }
+  .mat-mdc-select-placeholder,.mat-mdc-select-min-line{
+    color: #dee2e6 !important;
+  }
+  div.mat-mdc-select-panel {
+    background-color: #01060B !important;
+    border-color: #272828;
+;
+  }
+  .accordion-item {
+    border: 1px solid #272828;
+  }
+
+}

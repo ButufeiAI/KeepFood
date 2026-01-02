@@ -117,5 +117,13 @@ export class UpdateRestaurantSettingsDto {
   @IsOptional()
   @IsBoolean()
   deliveryEnabled?: boolean;
+
+  @IsOptional()
+  @IsString()
+  paymentProvider?: string; // 'VIVA_WALLET' | 'STRIPE' | 'CASH_ONLY'
+
+  @IsOptional()
+  @IsString()
+  paymentConfig?: string; // JSON avec les clés API
 }
 

@@ -18,14 +18,24 @@ export class StatisticsController {
     @CurrentUser() user: User,
   ) {
     try {
+      console.log('Dashboard stats requested by:', user.email, 'role:', user.role, 'userRestaurantId:', user.restaurantId, 'queryRestaurantId:', restaurantId);
+      
       const userRestaurantId = user.restaurantId || restaurantId;
 
+      // Super admin peut voir n'importe quel restaurant
       if (user.role === UserRole.SUPER_ADMIN && restaurantId) {
         return this.statisticsService.getDashboardStats(restaurantId, user);
       }
 
+      // Si super admin sans restaurantId spécifique, on retourne les stats globales
+      if (user.role === UserRole.SUPER_ADMIN && !restaurantId) {
+        return this.statisticsService.getSuperAdminStats();
+      }
+
+      // Pour les autres rôles, le restaurantId est obligatoire
       if (!userRestaurantId) {
-        throw new BadRequestException('Restaurant ID is required');
+        console.error('No restaurant ID found for user:', user.email);
+        throw new BadRequestException('Restaurant ID is required. Please ensure your user account is linked to a restaurant.');
       }
 
       return this.statisticsService.getDashboardStats(userRestaurantId, user);
@@ -120,6 +130,56 @@ export class StatisticsController {
       restaurantId || user.restaurantId,
       user,
       period,
+    );
+  }
+
+  @Get('employee')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getEmployeeStats(
+    @Query('restaurantId') restaurantId: string,
+    @Query('employeeId') employeeId: string,
+    @Query('startDate') startDate?: string,
+    @Query('endDate') endDate?: string,
+    @CurrentUser() user?: User,
+  ) {
+    const start = startDate ? new Date(startDate) : undefined;
+    const end = endDate ? new Date(endDate) : undefined;
+    return this.statisticsService.getEmployeeStats(
+      restaurantId || user.restaurantId,
+      employeeId,
+      start,
+      end,
+    );
+  }
+
+  @Get('all-employees')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getAllEmployeesStats(
+    @Query('restaurantId') restaurantId: string,
+    @Query('period') period: 'day' | 'week' | 'month' | 'year',
+    @CurrentUser() user?: User,
+  ) {
+    return this.statisticsService.getAllEmployeesStats(
+      restaurantId || user.restaurantId,
+      period || 'month',
+    );
+  }
+
+  @Get('restaurant-evolution')
+  @UseGuards(RolesGuard)
+  @Roles(UserRole.SUPER_ADMIN, UserRole.ADMIN_RESTAURANT, UserRole.MANAGER)
+  async getRestaurantEvolution(
+    @Query('restaurantId') restaurantId: string,
+    @Query('period') period: 'week' | 'month' | 'year',
+    @Query('metric') metric: 'revenue' | 'orders' | 'avg',
+    @CurrentUser() user?: User,
+  ) {
+    return this.statisticsService.getRestaurantEvolution(
+      restaurantId || user.restaurantId,
+      period || 'month',
+      metric || 'revenue',
     );
   }
 }

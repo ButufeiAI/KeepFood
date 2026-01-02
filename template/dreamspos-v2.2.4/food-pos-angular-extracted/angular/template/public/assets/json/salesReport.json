@@ -1,0 +1,105 @@
+{
+    "data":[
+  {
+    "id": 1,
+    "Ids": "#SA0016",
+    "Date": "01 Nov 2025",
+    "Category": "Sea Food",
+    "ItemsSold": "28",
+    "TotalOrders": "32",
+    "GrandTotal": "$1000",
+    "Status": "Completed"
+  },
+  {
+    "id": 2,
+    "Ids": "#SA0015",
+    "Date": "01 Nov 2025",
+    "Category": "Pizza",
+    "ItemsSold": "42",
+    "TotalOrders": "45",
+    "GrandTotal": "$1500",
+    "Status": "Completed"
+  },
+  {
+    "id": 3,
+    "Ids": "#SA0014",
+    "Date": "01 Nov 2025",
+    "Category": "Salads",
+    "ItemsSold": "66",
+    "TotalOrders": "70",
+    "GrandTotal": "$1200",
+    "Status": "Completed"
+  },
+  {
+    "id": 4,
+    "Ids": "#SA0013",
+    "Date": "01 Nov 2025",
+    "Category": "Tacos",
+    "ItemsSold": "48",
+    "TotalOrders": "53",
+    "GrandTotal": "$800",
+    "Status": "Completed"
+  },
+  {
+    "id": 5,
+    "Ids": "#SA0012",
+    "Date": "01 Nov 2025",
+    "Category": "Burgers",
+    "ItemsSold": "24",
+    "TotalOrders": "34",
+    "GrandTotal": "$750",
+    "Status": "Completed"
+  },
+  {
+    "id": 6,
+    "Ids": "#SA0010",
+    "Date": "01 Nov 2025",
+    "Category": "Ice Cream",
+    "ItemsSold": "36",
+    "TotalOrders": "40",
+    "GrandTotal": "$1300",
+    "Status": "Completed"
+  },
+  {
+    "id": 7,
+    "Ids": "#SA0009",
+    "Date": "31 Oct 2025",
+    "Category": "Pasta",
+    "ItemsSold": "48",
+    "TotalOrders": "55",
+    "GrandTotal": "$1100",
+    "Status": "Completed"
+  },
+  {
+    "id": 8,
+    "Ids": "#SA0008",
+    "Date": "31 Oct 2025",
+    "Category": "Beverages",
+    "ItemsSold": "32",
+    "TotalOrders": "35",
+    "GrandTotal": "$600",
+    "Status": "Completed"
+  },
+  {
+    "id": 9,
+    "Ids": "#SA0007",
+    "Date": "31 Oct 2025",
+    "Category": "Steaks",
+    "ItemsSold": "22",
+    "TotalOrders": "27",
+    "GrandTotal": "$1300",
+    "Status": "Completed"
+  },
+  {
+    "id": 10,
+    "Ids": "#SA0006",
+    "Date": "31 Oct 2025",
+    "Category": "Soups",
+    "ItemsSold": "18",
+    "TotalOrders": "22",
+    "GrandTotal": "$800",
+    "Status": "Completed"
+  }
+],
+"totalData":10
+}

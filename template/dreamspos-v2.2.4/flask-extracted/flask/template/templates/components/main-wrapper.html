@@ -1,0 +1,13 @@
+{% if page == 'lock-screen' %}
+    <div class="main-wrapper login-body">
+{% elif page == 'pos' %}
+    <div class="main-wrapper pos-five">
+{% elif page == 'pos-3' %}
+    <div class="main-wrapper pos-two">
+{% elif page == 'pos-4' %}
+    <div class="main-wrapper pos-three">
+{% elif page == 'pos-5' %}
+    <div class="main-wrapper pos-three pos-four">
+{% else %}
+    <div class="main-wrapper">
+{% endif %}

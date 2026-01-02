@@ -166,6 +166,16 @@ export class OrdersService {
         }
       }
 
+      // Notifier via WebSocket la nouvelle commande
+      try {
+        this.ordersGateway.notifyNewOrder(
+          createOrderDto.restaurantId,
+          completeOrder,
+        );
+      } catch (error) {
+        console.error('Erreur lors de la notification WebSocket:', error);
+      }
+
       return completeOrder!;
     } catch (error) {
       await queryRunner.rollbackTransaction();
@@ -244,7 +254,7 @@ export class OrdersService {
         this.ordersGateway.notifyFoodReady(
           order.restaurantId,
           order.id,
-          table?.number,
+          table?.name,
         );
       }
     }

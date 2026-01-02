@@ -1,8 +1,8 @@
 import { useState } from 'react';
 import { useNavigate, Link, useSearchParams } from 'react-router-dom';
 import { useAuthStore } from '../stores/auth.store';
-import { useToast } from '../components';
-import { handleApiError } from '../utils/errorHandler';
+// import { useToast } from '../components';
+// import { handleApiError } from '../utils/errorHandler';
 
 export function Register() {
   const navigate = useNavigate();

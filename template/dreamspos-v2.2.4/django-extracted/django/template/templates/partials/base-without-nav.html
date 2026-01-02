@@ -1,0 +1,24 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+  {% block head %}
+    {% include 'partials/head-css.html' %}
+  {% endblock %}
+
+  {% include 'partials/body.html' %}
+  {% include 'partials/main-wrapper.html' %}
+
+    {% include 'partials/topbar.html' %}
+    {% include 'partials/sidebar.html' %}
+    {% include 'partials/horizontal-sidebar.html' %}
+    {% include 'partials/twocolumn-sidebar.html' %}
+
+    {% block content %}
+      
+    {% endblock %}
+
+    {% include 'partials/modal-popup.html' %}
+
+    {% include 'partials/vendor-scripts.html' %}
+  </body>
+</html>

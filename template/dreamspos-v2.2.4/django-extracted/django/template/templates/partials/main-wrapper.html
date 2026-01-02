@@ -1,0 +1,16 @@
+{% load sidebar_tags %}
+{% if request.path|normalize_path == '/lock-screen' %}
+    <div class="main-wrapper login-body">
+{% elif request.path|normalize_path == '/pos' %}
+    <div class="main-wrapper pos-five">
+{% elif request.path|normalize_path == '/pos-2' %}
+    <div class="main-wrapper pos-five">
+{% elif request.path|normalize_path == '/pos-3' %}
+    <div class="main-wrapper pos-two">
+{% elif request.path|normalize_path == '/pos-4' %}
+    <div class="main-wrapper pos-three">
+{% elif request.path|normalize_path == '/pos-5' %}
+    <div class="main-wrapper pos-three pos-four">
+{% else %}
+    <div class="main-wrapper">
+{% endif %}

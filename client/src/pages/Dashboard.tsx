@@ -220,7 +220,7 @@ export function Dashboard() {
   };
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement du tableau de bord..." />;
+    return <LoadingSpinner fullScreen message="Chargement du tableau de bord..." />;
   }
 
   if (!identifier) {

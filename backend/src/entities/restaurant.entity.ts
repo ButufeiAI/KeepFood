@@ -89,6 +89,13 @@ export class Restaurant {
   @Column({ type: 'text', nullable: true })
   socialMedia: string; // Réseaux sociaux (JSON object)
 
+  // Configuration paiements
+  @Column({ length: 50, nullable: true })
+  paymentProvider: string; // 'VIVA_WALLET' | 'STRIPE' | 'CASH_ONLY'
+
+  @Column({ type: 'text', nullable: true })
+  paymentConfig: string; // JSON avec les clés API, merchant ID, etc.
+
   @OneToMany(() => User, (user) => user.restaurant)
   users: User[];
 

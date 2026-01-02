@@ -1,0 +1,15 @@
+{% set page = app.request.attributes.get('_route') %}
+
+{% if page == 'lock-screen' %}
+    <div class="main-wrapper login-body">
+{% elseif page == 'pos' %}
+    <div class="main-wrapper pos-five">
+{% elseif page == 'pos-3' %}
+    <div class="main-wrapper pos-two">
+{% elseif page == 'pos-4' %}
+    <div class="main-wrapper pos-three">
+{% elseif page == 'pos-5' %}
+    <div class="main-wrapper pos-three pos-four">
+{% else %}
+    <div class="main-wrapper">
+{% endif %}

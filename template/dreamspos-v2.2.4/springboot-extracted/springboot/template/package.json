@@ -1,0 +1,11 @@
+{
+  "name": "springboot-sass",
+  "version": "1.0.0",
+  "private": true,
+  "devDependencies": {
+    "sass": "^1.94.0"
+  },
+  "scripts": {
+    "sass": "sass --watch src/main/resources/static/scss/main.scss:src/main/resources/static/css/style.css"
+  }
+}

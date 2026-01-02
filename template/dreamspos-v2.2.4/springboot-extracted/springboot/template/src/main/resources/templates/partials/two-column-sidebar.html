@@ -1,0 +1,675 @@
+<html>
+  <body>
+    <div th:fragment="two-column-sidebar" th:remove="tag">
+    <!-- Two Col Sidebar -->
+		<div class="two-col-sidebar" id="two-col-sidebar">
+			<div class="sidebar sidebar-twocol">
+				<div class="twocol-mini">
+					<div class="sidebar-left slimscroll">
+						<div class="nav flex-column align-items-center nav-pills" id="sidebar-tabs" role="tablist"
+							aria-orientation="vertical">
+							<a href="#" class="nav-link " th:classappend="${activeGroup == 'dashboard' ? 'active' : ''}" title="Dashboard" data-bs-toggle="tab" data-bs-target="#dashboard">
+								<i class="ti ti-smart-home"></i>
+							</a>
+							<a href="#" class="nav-link " th:classappend="${activeGroup == 'super-admin' ? 'active' : ''}" title="Super Admin" data-bs-toggle="tab" data-bs-target="#super-admin">
+								<i class="ti ti-user-star"></i>
+							</a>
+							<a href="#" class="nav-link " th:classappend="${activeGroup == 'application' ? 'active' : ''}" title="Apps" data-bs-toggle="tab" data-bs-target="#application">
+								<i class="ti ti-layout-grid-add"></i>
+							</a>
+							<a href="#" class="nav-link" th:classappend="${activeGroup == 'layout' ? 'active' : ''}" title="Layout" data-bs-toggle="tab" data-bs-target="#layout">
+								<i class="ti ti-layout-board-split"></i>
+							</a>
+							<a href="#" class="nav-link" th:classappend="${activeGroup == 'inventory' ? 'active' : ''}" title="Inventory" data-bs-toggle="tab" data-bs-target="#inventory">
+								<i class="ti ti-table-plus"></i>
+							</a>
+							<a href="#" class="nav-link" th:classappend="${activeGroup == 'stocks' ? 'active' : ''}" title="Stock" data-bs-toggle="tab" data-bs-target="#stock">
+								<i class="ti ti-stack-3"></i>
+							</a>
+							<a href="#" class="nav-link" title="Sales" th:classappend="${activeHorizontal == 'sales' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#sales">
+								<i class="ti ti-device-laptop"></i>
+							</a>
+							<a href="#" class="nav-link" title="Finance" th:classappend="${activetwocolumn == 'finance' or activeHorizontal == 'promo' or activeHorizontal == 'purchase' or activeHorizontal == 'peoples' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#finance">
+								<i class="ti ti-shopping-cart-dollar"></i>
+							</a>
+							<a href="#" class="nav-link" title="Hrm" th:classappend="${activetwocolumn == 'hrm' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#hrm">
+								<i class="ti ti-cash"></i>
+							</a>
+							<a href="#" class="nav-link" title="Reports" th:classappend="${activetwocolumn == 'reports' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#reports">
+								<i class="ti ti-license"></i>
+							</a>
+							<a href="#" class="nav-link" title="Pages" th:classappend="${activeHorizontal == 'content' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#pages">
+								<i class="ti ti-page-break"></i>
+							</a>
+							<a href="#" class="nav-link" title="Settings" data-bs-toggle="tab" data-bs-target="#settings" th:classappend="${activeGroup == 'generals-settings' or activeGroup == 'website-settings' or activeGroup == 'app-settings' or activeGroup == 'other-settings' or activeGroup == 'finance-settings' ? 'active' : ''}">
+								<i class="ti ti-lock-check"></i>
+							</a>
+							<a href="#" class="nav-link " title="UI Elements" th:classappend="${activeGroup == 'baseui' or activeGroup == 'advancedui' or activeGroup == 'forms' or activeGroup == 'tables' or activeGroup == 'icons' or activeGroup == 'charts' or activeGroup == 'maps' ? 'active' : ''}" data-bs-toggle="tab" data-bs-target="#ui-elements">
+								<i class="ti ti-ux-circle"></i>
+							</a>
+							<a href="#" class="nav-link" title="Extras" data-bs-toggle="tab" data-bs-target="#extras">
+								<i class="ti ti-vector-triangle"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-right">
+					<!-- Logo -->
+					<div class="sidebar-logo">
+						<a href="index" class="logo logo-normal">
+							<img th:src="@{/img/logo.svg}" alt="Img">
+						</a>
+						<a href="index" class="logo logo-white">
+							<img th:src="@{/img/logo-white.svg}" alt="Img">
+						</a>
+						<a href="index" class="logo-small">
+							<img th:src="@{img/logo-small.png}" alt="Img">
+						</a>
+						<a href="index" class="logo-small-white">
+                            <img th:src="@{/img/logo-small-white.png}" alt="Img">
+                        </a>
+					</div>
+					<!-- /Logo -->
+					<div class="sidebar-scroll">
+						<div class="text-center rounded bg-light p-3 mb-3 border">
+							<div class="avatar avatar-lg online mb-3">
+								<img th:src="@{/img/customer/customer15.jpg}" alt="Img" class="img-fluid rounded-circle">
+							</div>
+							<h6 class="fs-14 fw-bold mb-1">Adrian Herman</h6>
+							<p class="fs-12 mb-0">System Admin</p>
+						</div>
+						<div class="tab-content" id="v-pills-tabContent" >
+							<div class="tab-pane fade" id="dashboard" th:classappend="${activeGroup == 'dashboard' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>MAIN</span></li>
+									<li><a href="index" th:classappend="${activePage == 'index' ? 'active' : ''}">Admin Dashboard</a></li>
+									<li><a href="admin-dashboard" th:classappend="${activePage == 'admin-dashboard' ? 'active' : ''}">Admin Dashboard 2</a></li>
+									<li><a href="sales-dashboard" th:classappend="${activePage == 'sales-dashboard' ? 'active' : ''}">Sales Dashboard</a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="super-admin" th:classappend="${activeGroup == 'super-admin' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>SUPER ADMIN</span></li>
+									<li><a href="dashboard" th:classappend="${activePage == 'dashboard' ? 'active' : ''}">Dashboard</a></li>
+									<li><a href="companies" th:classappend="${activePage == 'companies' ? 'active' : ''}">Companies</a></li>
+									<li><a href="subscription" th:classappend="${activePage == 'subscription' ? 'active' : ''}">Subscriptions</a></li>
+									<li><a href="packages" th:classappend="${activePage == 'packages' ? 'active' : ''}">Packages</a></li>
+									<li><a href="domain" th:classappend="${activePage == 'domain' ? 'active' : ''}">Domain</a></li>
+									<li><a href="purchase-transaction" th:classappend="${activePage == 'purchase-transaction' ? 'active' : ''}">Purchase Transaction</a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="application" th:classappend="${activeGroup == 'application' ? 'show active' : ''}">
+								<ul>
+									<li><a href="chat" th:classappend="${activePage == 'chat' ? 'active' : ''}">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeSubGroup == 'calls' ? 'active' : ''}">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="video-call" th:classappend="${activePage == 'video-call' ? 'active' : ''}">Video Call</a></li>
+											<li><a href="audio-call" th:classappend="${activePage == 'audio-call' ? 'active' : ''}">Audio Call</a></li>
+											<li><a href="call-history" th:classappend="${activePage == 'call-history' ? 'active' : ''}">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="calendar" th:classappend="${activePage == 'calendar' ? 'active' : ''}">Calendar</a></li>
+									<li><a href="contacts" th:classappend="${activePage == 'contacts' ? 'active' : ''}">Contacts</a></li>
+									<li><a href="email" th:classappend="${activePage == 'email' ? 'active' : ''}">Email</a></li>
+									<li><a href="todo" th:classappend="${activePage == 'todo' ? 'active' : ''}">To Do</a></li>
+									<li><a href="notes" th:classappend="${activePage == 'notes' ? 'active' : ''}">Notes</a></li>
+									<li><a href="file-manager" th:classappend="${activePage == 'file-manager' ? 'active' : ''}">File Manager</a></li>
+									<li><a href="projects" th:classappend="${activePage == 'projects' ? 'active' : ''}">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeSubGroup == 'ecommerce' ? 'active' : ''}">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="products" th:classappend="${activePage == 'products' ? 'active' : ''}">Products</a></li>
+											<li><a href="orders" th:classappend="${activePage == 'orders' ? 'active' : ''}">Orders</a></li>
+											<li><a href="customers" th:classappend="${activePage == 'customers' ? 'active' : ''}">Customers</a></li>
+											<li><a href="cart" th:classappend="${activePage == 'cart' ? 'active' : ''}">Cart</a></li>
+											<li><a href="checkout" th:classappend="${activePage == 'checkout' ? 'active' : ''}">Checkout</a></li>
+											<li><a href="wishlist" th:classappend="${activePage == 'wishlist' ? 'active' : ''}">Wishlist</a></li>
+											<li><a href="reviews" th:classappend="${activePage == 'reviews' ? 'active' : ''}">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="social-feed" th:classappend="${activePage == 'social-feed' ? 'active' : ''}">Social Feed</a></li>
+									<li><a href="search-list" th:classappend="${activePage == 'search-list' ? 'active' : ''}">Search List</a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="layout">
+								<ul>
+									<li class="menu-title"><span>LAYOUT</span></li>
+									<li><a href="layout-horizontal">Horizontal</a></li>
+									<li><a href="layout-detached">Detached</a></li>
+									<li><a href="layout-two-column" class="active">Two Column</a></li>
+									<li><a href="layout-hovered">Hovered</a></li>
+									<li><a href="layout-boxed">Boxed</a></li>
+									<li><a href="layout-rtl">RTL</a></li>
+									<li><a href="layout-dark">Dark</a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="inventory" th:classappend="${activeGroup == 'inventory' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Inventory</span></li>
+									<li><a href="product-list" th:classappend="${activePage == 'product-list' ? 'active' : ''}"><span>Products</span></a></li>
+									<li><a href="add-product" th:classappend="${activePage == 'add-product' ? 'active' : ''}"><span>Create Product</span></a></li>
+									<li><a href="expired-products" th:classappend="${activePage == 'expired-products' ? 'active' : ''}"><span>Expired Products</span></a></li>
+									<li><a href="low-stocks" th:classappend="${activePage == 'low-stocks' ? 'active' : ''}"><span>Low Stocks</span></a></li>
+									<li><a href="category-list" th:classappend="${activePage == 'category-list' ? 'active' : ''}"><span>Category</span></a></li>
+									<li><a href="sub-categories" th:classappend="${activePage == 'sub-categories' ? 'active' : ''}"><span>Sub Category</span></a></li>
+									<li><a href="brand-list" th:classappend="${activePage == 'brand-list' ? 'active' : ''}"><span>Brands</span></a></li>
+									<li><a href="units" th:classappend="${activePage == 'units' ? 'active' : ''}"><span>Units</span></a></li>
+									<li><a href="varriant-attributes" th:classappend="${activePage == 'varriant-attributes' ? 'active' : ''}"><span>Variant Attributes</span></a></li>
+									<li><a href="warranty" th:classappend="${activePage == 'warranty' ? 'active' : ''}"><span>Warranties</span></a></li>
+									<li><a href="barcode" th:classappend="${activePage == 'barcode' ? 'active' : ''}"><span>Print Barcode</span></a></li>
+									<li><a href="qrcode" th:classappend="${activePage == 'qrcode' ? 'active' : ''}"><span>Print QR Code</span></a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" th:classappend="${activeGroup == 'stocks' ? 'show active' : ''}" id="stock">
+								<ul>
+									<li class="menu-title"><span>Stock</span></li>
+									<li><a href="manage-stocks" th:classappend="${activePage == 'manage-stocks' ? 'active' : ''}"><span>Manage Stock</span></a></li>
+									<li><a href="stock-adjustment" th:classappend="${activePage == 'stock-adjustment' ? 'active' : ''}"><span>Stock Adjustment</span></a></li>
+									<li><a href="stock-transfer" th:classappend="${activePage == 'stock-transfer' ? 'active' : ''}"><span>Stock Transfer</span></a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" th:classappend="${activeHorizontal == 'sales' ? 'show active' : ''}" id="sales">
+								<ul>
+									<li class="menu-title"><span>Sales</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeHorizontal == 'sales' ? 'active' : ''}"><span>Sales</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="online-orders" th:classappend="${activePage == 'online-orders' ? 'active' : ''}">Online Orders</a></li>
+											<li><a href="pos-orders" th:classappend="${activePage == 'pos-orders' ? 'active' : ''}">POS Orders</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice" th:classappend="${activePage == 'invoice' ? 'active' : ''}"><span>Invoices</span></a></li>
+									<li><a href="sales-returns" th:classappend="${activePage == 'sales-returns' ? 'active' : ''}"><span>Sales Return</span></a></li>
+									<li><a href="quotation-list" th:classappend="${activePage == 'quotation-list' ? 'active' : ''}"><span>Quotation</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activePage == 'pos' ? 'active' : ''}"><span>POS</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pos-1" th:classappend="${activePage == 'pos-1' ? 'active' : ''}">POS 1</a></li>
+											<li><a href="pos-2" th:classappend="${activePage == 'pos-2' ? 'active' : ''}">POS 2</a></li>
+											<li><a href="pos-3" th:classappend="${activePage == 'pos-3' ? 'active' : ''}">POS 3</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" th:classappend="${activetwocolumn == 'finance' or activeHorizontal == 'promo' or activeHorizontal == 'purchase' or activeHorizontal == 'peoples' ? 'show active' : ''}" id="finance">
+								<ul>
+									<li class="menu-title"><span>FINANCE & ACCOUNTS</span></li>
+									<li><a href="coupons" th:classappend="${activePage == 'coupons' ? 'active' : ''}"><span>Coupons</span></a></li>
+									<li><a href="gift-cards" th:classappend="${activePage == 'gift-cards' ? 'active' : ''}"><span>Gift Cards</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'discount' ? 'active' : ''}"><span>Discount</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="discount-plan" th:classappend="${activePage == 'discount-plan' ? 'active' : ''}">Discount Plan</a></li>
+											<li><a href="discount" th:classappend="${activePage == 'discount' ? 'active' : ''}">Discount</a></li>
+										</ul>
+									</li>
+									<li><a href="purchase-list" th:classappend="${activePage == 'purchase-list' ? 'active' : ''}"><span>Purchases</span></a></li>
+									<li><a href="purchase-order-report" th:classappend="${activePage == 'purchase-order-report' ? 'active' : ''}"><span>Purchase Order</span></a></li>
+									<li><a href="purchase-returns" th:classappend="${activePage == 'purchase-returns' ? 'active' : ''}"><span>Purchase Return</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'expense' ? 'active' : ''}"><span>Expenses</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="expense-list" th:classappend="${activePage == 'expense-list' ? 'active' : ''}">Expenses</a></li>
+											<li><a href="expense-category" th:classappend="${activePage == 'expense-category' ? 'active' : ''}">Expense Category</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'income' ? 'active' : ''}"><span>Income</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="income" th:classappend="${activePage == 'income' ? 'active' : ''}">Income</a></li>
+											<li><a href="income-category" th:classappend="${activePage == 'income-category' ? 'active' : ''}">Income Category</a></li>
+										</ul>
+									</li>
+									<li><a href="account-list" th:classappend="${activePage == 'account-list' ? 'active' : ''}"><span>Bank Accounts</span></a></li>
+									<li><a href="money-transfer" th:classappend="${activePage == 'money-transfer' ? 'active' : ''}"><span>Money Transfer</span></a></li>
+									<li><a href="balance-sheet" th:classappend="${activePage == 'balance-sheet' ? 'active' : ''}"><span>Balance Sheet</span></a></li>
+									<li><a href="trial-balance" th:classappend="${activePage == 'trial-balance' ? 'active' : ''}"><span>Trial Balance</span></a></li>
+									<li><a href="cash-flow" th:classappend="${activePage == 'cash-flow' ? 'active' : ''}"><span>Cash Flow</span></a></li>
+									<li><a href="account-statement" th:classappend="${activePage == 'account-statement' ? 'active' : ''}"><span>Account Statement</span></a></li>
+									<li><a href="customers" th:classappend="${activePage == 'customers' ? 'active' : ''}"><span>Customers</span></a></li>
+									<li><a href="billers" th:classappend="${activePage == 'billers' ? 'active' : ''}"><span>Billers</span></a></li>
+									<li><a href="suppliers" th:classappend="${activePage == 'suppliers' ? 'active' : ''}"><span>Suppliers</span></a></li>
+									<li><a href="store-list" th:classappend="${activePage == 'store-list' ? 'active' : ''}"><span>Stores</span></a></li>
+									<li><a href="warehouse" th:classappend="${activePage == 'warehouse' ? 'active' : ''}"><span>Warehouses</span></a></li>							
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="hrm" th:classappend="${activetwocolumn == 'hrm' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Hrm</span></li>
+									<li><a href="employees-grid" th:classappend="${activePage == 'employees-grid' ? 'active' : ''}" title="Employees"><span>Employees</span></a></li>
+									<li><a href="department-grid" th:classappend="${activePage == 'department-grid' ? 'active' : ''}" title="Departments"><span>Departments</span></a></li>
+									<li><a href="designation" th:classappend="${activePage == 'designation' ? 'active' : ''}" title="Designation">Designation</a></li>
+									<li><a href="shift" th:classappend="${activePage == 'shift' ? 'active' : ''}" title="Shifts"><span>Shifts</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'attendance' ? 'active' : ''}" title="Attendence"><span>Attendence</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="attendance-employee" th:classappend="${activePage == 'attendance-employee' ? 'active' : ''}">Employee</a></li>
+											<li><a href="attendance-admin" th:classappend="${activePage == 'attendance-admin' ? 'active' : ''}">Admin</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'leaves' ? 'active' : ''}" title="Leaves"><span>Leaves</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="leaves-admin" th:classappend="${activePage == 'leaves-admin' ? 'active' : ''}">Admin Leaves</a></li>
+											<li><a href="leaves-employee" th:classappend="${activePage == 'leaves-employee' ? 'active' : ''}">Employee Leaves</a></li>
+											<li><a href="leave-types" th:classappend="${activePage == 'leave-types' ? 'active' : ''}">Leave Types</a></li>
+										</ul>
+									</li>
+									<li><a href="holidays" th:classappend="${activePage == 'holidays' ? 'active' : ''}"><span>Holidays</span></a>
+									</li>
+									<li class="submenu">
+										<a href="employee-salary" th:classappend="${activeGroup == 'payroll' ? 'active' : ''}"><span>Payroll</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="employee-salary" th:classappend="${activePage == 'employee-salary' ? 'active' : ''}">Employee Salary</a></li>
+											<li><a href="payslip" th:classappend="${activePage == 'payslip' ? 'active' : ''}">Payslip</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="reports" th:classappend="${activetwocolumn == 'reports' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Reports</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'sales-report' ? 'active' : ''}"><span>Sales Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="sales-report" th:classappend="${activePage == 'sales-report' ? 'active' : ''}">Sales Report</a></li>
+											<li><a href="best-seller" th:classappend="${activePage == 'best-seller' ? 'active' : ''}">Best Seller</a></li>
+										</ul>
+									</li>
+									<li><a href="purchase-report" th:classappend="${activePage == 'purchase-report' ? 'active' : ''}"><span>Purchase report</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'inventory-report' ? 'active' : ''}"><span>Inventory Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="inventory-report" th:classappend="${activePage == 'inventory-report' ? 'active' : ''}">Inventory Report</a></li>
+											<li><a href="stock-history" th:classappend="${activePage == 'stock-history' ? 'active' : ''}">Stock History</a></li>
+											<li><a href="sold-stock" th:classappend="${activePage == 'sold-stock' ? 'active' : ''}">Sold Stock</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice-report" th:classappend="${activePage == 'invoice-report' ? 'active' : ''}"><span>Invoice Report</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'supplier-report' ? 'active' : ''}"><span>Supplier Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="supplier-report" th:classappend="${activePage == 'supplier-report' ? 'active' : ''}">Supplier Report</a></li>
+											<li><a href="supplier-due-report" th:classappend="${activePage == 'supplier-due-report' ? 'active' : ''}">Supplier Due Report</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'customer-report' ? 'active' : ''}"><span>Customer Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="customer-report" th:classappend="${activePage == 'customer-report' ? 'active' : ''}">Customer Report</a></li>
+											<li><a href="customer-due-report" th:classappend="${activePage == 'customer-due-report' ? 'active' : ''}">Customer Due Report</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'product-report' ? 'active' : ''}"><span>Product Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="product-report" th:classappend="${activePage == 'product-report' ? 'active' : ''}">Product Report</a></li>
+											<li><a href="product-expiry-report" th:classappend="${activePage == 'product-expiry-report' ? 'active' : ''}">Product Expiry Report</a></li>
+											<li><a href="product-quantity-alert" th:classappend="${activePage == 'product-quantity-alert' ? 'active' : ''}">Product Quantity Alert</a></li>
+										</ul>
+									</li>
+									<li><a href="expense-report" th:classappend="${activePage == 'expense-report' ? 'active' : ''}"><span>Expense Report</span></a></li>
+									<li><a href="income-report" th:classappend="${activePage == 'income-report' ? 'active' : ''}"><span>Income Report</span></a></li>
+									<li><a href="tax-reports" th:classappend="${activePage == 'tax-reports' ? 'active' : ''}"><span>Tax Report</span></a></li>
+									<li><a href="profit-and-loss" th:classappend="${activePage == 'profit-and-loss' ? 'active' : ''}"><span>Profit & Loss</span></a></li>
+									<li><a href="annual-report" th:classappend="${activePage == 'annual-report' ? 'active' : ''}"><span>Annual Report</span></a></li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="pages" th:classappend="${activeHorizontal == 'content' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Pages</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activePage == 'pages' ? 'active' : ''}"><span>Pages</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pages" th:classappend="${activePage == 'pages' ? 'active' : ''}">Pages</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'blog' ? 'active' : ''}"><span>Blog</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="all-blog" th:classappend="${activePage == 'all-blog' ? 'active' : ''}">All Blog</a></li>
+											<li><a href="blog-tag" th:classappend="${activePage == 'blog-tag' ? 'active' : ''}">Blog Tags</a></li>
+											<li><a href="blog-categories" th:classappend="${activePage == 'blog-categories' ? 'active' : ''}">Categories</a></li>
+											<li><a href="blog-comments" th:classappend="${activePage == 'blog-comments' ? 'active' : ''}">Blog Comments</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'location' ? 'active' : ''}"><span>Location</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="countries" th:classappend="${activePage == 'countries' ? 'active' : ''}">Countries</a></li>
+											<li><a href="states" th:classappend="${activePage == 'states' ? 'active' : ''}">States</a></li>
+											<li><a href="cities" th:classappend="${activePage == 'cities' ? 'active' : ''}">Cities</a></li>
+										</ul>
+									</li>
+									<li><a href="testimonials" th:classappend="${activePage == 'testimonials' ? 'active' : ''}"><span>Testimonials</span></a></li>
+									<li><a href="faq" th:classappend="${activePage == 'faq' ? 'active' : ''}"><span>FAQ</span></a></li>
+									<li><a href="users" th:classappend="${activePage == 'users' ? 'active' : ''}"><span>Users</span></a></li>
+									<li><a href="roles-permissions" th:classappend="${activePage == 'roles-permissions' ? 'active' : ''}"><span>Roles & Permissions</span></a></li>
+									<li><a href="delete-account" th:classappend="${activePage == 'delete-account' ? 'active' : ''}"><span>Delete Account Request</span></a></li>
+									<li><a href="profile" th:classappend="${activePage == 'profile' ? 'active' : ''}"><span>Profile</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="signin">Cover</a></li>
+												<li><a href="signin-2">Illustration</a></li>
+												<li><a href="signin-3">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="register">Cover</a></li>
+												<li><a href="register-2">Illustration</a></li>
+												<li><a href="register-3">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="forgot-password">Cover</a></li>
+												<li><a href="forgot-password-2">Illustration</a></li>
+												<li><a href="forgot-password-3">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="reset-password">Cover</a></li>
+												<li><a href="reset-password-2">Illustration</a></li>
+												<li><a href="reset-password-3">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="email-verification">Cover</a></li>
+												<li><a href="email-verification-2">Illustration</a></li>
+												<li><a href="email-verification-3">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="two-step-verification">Cover</a></li>
+												<li><a href="two-step-verification-2">Illustration</a></li>
+												<li><a href="two-step-verification-3">Basic</a></li>
+											</ul>
+										</li>
+										<li><a href="lock-screen">Lock Screen</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Error Pages</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="error-404">404 Error </a></li>
+										<li><a href="error-500">500 Error </a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="blank-page" th:classappend="${activePage == 'blank-page' ? 'active' : ''}"><span>Blank Page</span> </a>
+								</li>
+								<li>
+									<a href="pricing" th:classappend="${activePage == 'pricing' ? 'active' : ''}"><span>Pricing</span> </a>
+								</li>
+								<li>
+									<a href="coming-soon"><span>Coming Soon</span> </a>
+								</li>
+								<li>
+									<a href="under-maintenance"><span>Under Maintenance</span> </a>
+								</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="settings" th:classappend="${activeGroup == 'generals-settings' or activeGroup == 'website-settings' or activeGroup == 'app-settings' or activeGroup == 'other-settings' or activeGroup == 'finance-settings' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Settings</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'generals-settings' ? 'active' : ''}"><span>General Settings</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="general-settings" th:classappend="${activePage == 'general-settings' ? 'active' : ''}">Profile</a></li>
+											<li><a href="security-settings" th:classappend="${activePage == 'security-settings' ? 'active' : ''}">Security</a></li>
+											<li><a href="notification" th:classappend="${activePage == 'notification' ? 'active' : ''}">Notifications</a></li>
+											<li><a href="connected-apps" th:classappend="${activePage == 'connected-apps' ? 'active' : ''}">Connected Apps</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'website-settings' ? 'active' : ''}"><span>Website Settings</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="system-settings" th:classappend="${activePage == 'system-settings' ? 'active' : ''}">System Settings</a></li>
+											<li><a href="company-settings" th:classappend="${activePage == 'company-settings' ? 'active' : ''}">Company Settings </a></li>
+											<li><a href="localization-settings" th:classappend="${activePage == 'localization-settings' ? 'active' : ''}">Localization</a></li>
+											<li><a href="prefixes" th:classappend="${activePage == 'prefixes' ? 'active' : ''}">Prefixes</a></li>
+											<li><a href="preference" th:classappend="${activePage == 'preference' ? 'active' : ''}">Preference</a></li>
+											<li><a href="social-authentication" th:classappend="${activePage == 'social-authentication' ? 'active' : ''}">Social Authentication</a></li>
+											<li><a href="language-settings" th:classappend="${activePage == 'language-settings' ? 'active' : ''}">Language</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'app-settings' ? 'active' : ''}">
+											<span>App Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeGroup == 'invoice' ? 'active' : ''}">Invoice<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="invoice-settings" th:classappend="${activePage == 'invoice-settings' ? 'active' : ''}">Invoice Settings</a></li>
+													<li><a href="invoice-template" th:classappend="${activePage == 'invoice-template' ? 'active' : ''}">Invoice Template</a></li>
+												</ul>
+											</li>
+											<li><a href="printer-settings" th:classappend="${activePage == 'printer-settings' ? 'active' : ''}">Printer</a></li>
+											<li><a href="pos-settings" th:classappend="${activePage == 'pos-settings' ? 'active' : ''}">POS</a></li>
+											<li><a href="custom-fields" th:classappend="${activePage == 'custom-fields' ? 'active' : ''}">Custom Fields</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'system-settings' ? 'active' : ''}">
+											<span>System Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeGroup == 'email' ? 'active' : ''}">Email<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="email-settings" th:classappend="${activePage == 'email-settings' ? 'active' : ''}">Email Settings</a></li>
+													<li><a href="email-template" th:classappend="${activePage == 'email-template' ? 'active' : ''}">Email Template</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);" th:classappend="${activeGroup == 'sms' ? 'active' : ''}">SMS<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="sms-settings" th:classappend="${activePage == 'sms-settings' ? 'active' : ''}">SMS Settings</a></li>
+													<li><a href="sms-template" th:classappend="${activePage == 'sms-template' ? 'active' : ''}">SMS Template</a></li>
+												</ul>
+											</li>
+											<li><a href="otp-settings" th:classappend="${activePage == 'otp-settings' ? 'active' : ''}">OTP</a></li>
+											<li><a href="gdpr-settings" th:classappend="${activePage == 'gdpr-settings' ? 'active' : ''}">GDPR Cookies</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'financial-settings' ? 'active' : ''}">
+											<span>Financial Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="payment-gateway-settings" th:classappend="${activePage == 'payment-gateway-settings' ? 'active' : ''}">Payment Gateway</a></li>
+											<li><a href="bank-settings-grid" th:classappend="${activePage == 'bank-settings-grid' ? 'active' : ''}">Bank Accounts</a></li>
+											<li><a href="tax-rates" th:classappend="${activePage == 'tax-rates' ? 'active' : ''}">Tax Rates</a></li>
+											<li><a href="currency-settings" th:classappend="${activePage == 'currency-settings' ? 'active' : ''}">Currencies</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'other-settings' ? 'active' : ''}">
+											<span>Other Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="storage-settings" th:classappend="${activePage == 'storage-settings' ? 'active' : ''}">Storage</a></li>
+											<li><a href="ban-ip-address" th:classappend="${activePage == 'ban-ip-address' ? 'active' : ''}">Ban IP Address</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="signin"><span>Logout</span> </a>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="ui-elements" th:classappend="${activeGroup == 'baseui' or activeGroup == 'advancedui' or activeGroup == 'forms' or activeGroup == 'tables' or activeGroup == 'icons' or activeGroup == 'charts' or activeGroup == 'maps' ? 'show active' : ''}">
+								<ul>
+									<li class="menu-title"><span>Ui Interface</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'base-ui' ? 'active' : ''}">
+											<span>Base UI</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="ui-alerts" th:classappend="${activePage == 'ui-alerts' ? 'active' : ''}">Alerts</a></li>
+											<li><a href="ui-accordion" th:classappend="${activePage == 'ui-accordion' ? 'active' : ''}">Accordion</a></li>
+											<li><a href="ui-avatar" th:classappend="${activePage == 'ui-avatar' ? 'active' : ''}">Avatar</a></li>
+											<li><a href="ui-badges" th:classappend="${activePage == 'ui-badges' ? 'active' : ''}">Badges</a></li>
+											<li><a href="ui-borders" th:classappend="${activePage == 'ui-borders' ? 'active' : ''}">Border</a></li>
+											<li><a href="ui-buttons" th:classappend="${activePage == 'ui-buttons' ? 'active' : ''}">Buttons</a></li>
+											<li><a href="ui-buttons-group" th:classappend="${activePage == 'ui-buttons-group' ? 'active' : ''}">Button Group</a></li>
+											<li><a href="ui-breadcrumb" th:classappend="${activePage == 'ui-breadcrumb' ? 'active' : ''}">Breadcrumb</a></li>
+											<li><a href="ui-cards" th:classappend="${activePage == 'ui-cards' ? 'active' : ''}">Card</a></li>
+											<li><a href="ui-carousel" th:classappend="${activePage == 'ui-carousel' ? 'active' : ''}">Carousel</a></li>
+											<li><a href="ui-colors" th:classappend="${activePage == 'ui-colors' ? 'active' : ''}">Colors</a></li>
+											<li><a href="ui-dropdowns" th:classappend="${activePage == 'ui-dropdowns' ? 'active' : ''}">Dropdowns</a></li>
+											<li><a href="ui-grid" th:classappend="${activePage == 'ui-grid' ? 'active' : ''}">Grid</a></li>
+											<li><a href="ui-images" th:classappend="${activePage == 'ui-images' ? 'active' : ''}">Images</a></li>
+											<li><a href="ui-lightbox" th:classappend="${activePage == 'ui-lightbox' ? 'active' : ''}">Lightbox</a></li>
+											<li><a href="ui-media" th:classappend="${activePage == 'ui-media' ? 'active' : ''}">Media</a></li>
+											<li><a href="ui-modals" th:classappend="${activePage == 'ui-modals' ? 'active' : ''}">Modals</a></li>
+											<li><a href="ui-offcanvas" th:classappend="${activePage == 'ui-offcanvas' ? 'active' : ''}">Offcanvas</a></li>
+											<li><a href="ui-pagination" th:classappend="${activePage == 'ui-pagination' ? 'active' : ''}">Pagination</a></li>
+											<li><a href="ui-popovers" th:classappend="${activePage == 'ui-popovers' ? 'active' : ''}">Popovers</a></li>
+											<li><a href="ui-progress" th:classappend="${activePage == 'ui-progress' ? 'active' : ''}">Progress</a></li>
+											<li><a href="ui-placeholders" th:classappend="${activePage == 'ui-placeholders' ? 'active' : ''}">Placeholders</a></li>
+											<li><a href="ui-rangeslider" th:classappend="${activePage == 'ui-rangeslider' ? 'active' : ''}">Range Slider</a></li>
+											<li><a href="ui-spinner" th:classappend="${activePage == 'ui-spinner' ? 'active' : ''}">Spinner</a></li>
+											<li><a href="ui-sweetalerts" th:classappend="${activePage == 'ui-sweetalerts' ? 'active' : ''}">Sweet Alerts</a></li>
+											<li><a href="ui-nav-tabs" th:classappend="${activePage == 'ui-nav-tabs' ? 'active' : ''}">Tabs</a></li>
+											<li><a href="ui-toasts" th:classappend="${activePage == 'ui-toasts' ? 'active' : ''}">Toasts</a></li>
+											<li><a href="ui-tooltips" th:classappend="${activePage == 'ui-tooltips' ? 'active' : ''}">Tooltips</a></li>
+											<li><a href="ui-typography" th:classappend="${activePage == 'ui-typography' ? 'active' : ''}">Typography</a></li>
+											<li><a href="ui-video" th:classappend="${activePage == 'ui-video' ? 'active' : ''}">Video</a></li>
+											<li><a href="ui-sortable" th:classappend="${activePage == 'ui-sortable' ? 'active' : ''}">Sortable</a></li>
+											<li><a href="ui-swiperjs" th:classappend="${activePage == 'ui-swiperjs' ? 'active' : ''}">Swiperjs</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'advancedui' ? 'active' : ''}">
+											<span>Advanced UI</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="ui-ribbon" th:classappend="${activePage == 'ui-ribbon' ? 'active' : ''}">Ribbon</a></li>
+											<li><a href="ui-clipboard" th:classappend="${activePage == 'ui-clipboard' ? 'active' : ''}">Clipboard</a></li>
+											<li><a href="ui-drag-drop" th:classappend="${activePage == 'ui-drag-drop' ? 'active' : ''}">Drag & Drop</a></li>
+											<li><a href="ui-rangeslider" th:classappend="${activePage == 'ui-rangeslider' ? 'active' : ''}">Range Slider</a></li>
+											<li><a href="ui-rating" th:classappend="${activePage == 'ui-rating' ? 'active' : ''}">Rating</a></li>
+											<li><a href="ui-text-editor" th:classappend="${activePage == 'ui-text-editor' ? 'active' : ''}">Text Editor</a></li>
+											<li><a href="ui-counter" th:classappend="${activePage == 'ui-counter' ? 'active' : ''}">Counter</a></li>
+											<li><a href="ui-scrollbar" th:classappend="${activePage == 'ui-scrollbar' ? 'active' : ''}">Scrollbar</a></li>
+											<li><a href="ui-stickynote" th:classappend="${activePage == 'ui-stickynote' ? 'active' : ''}">Sticky Note</a></li>
+											<li><a href="ui-timeline" th:classappend="${activePage == 'ui-timeline' ? 'active' : ''}">Timeline</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'charts' ? 'active' : ''}">
+											<span>Charts</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="chart-apex" th:classappend="${activePage == 'chart-apex' ? 'active' : ''}">Apex Charts</a></li>
+											<li><a href="chart-c3" th:classappend="${activePage == 'chart-c3' ? 'active' : ''}">Chart C3</a></li>
+											<li><a href="chart-js" th:classappend="${activePage == 'chart-js' ? 'active' : ''}">Chart Js</a></li>
+											<li><a href="chart-morris" th:classappend="${activePage == 'chart-morris' ? 'active' : ''}">Morris Charts</a></li>
+											<li><a href="chart-flot" th:classappend="${activePage == 'chart-flot' ? 'active' : ''}">Flot Charts</a></li>
+											<li><a href="chart-peity" th:classappend="${activePage == 'chart-peity' ? 'active' : ''}">Peity Charts</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'icons' ? 'active' : ''}">
+											<span>Icons</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="icon-fontawesome" th:classappend="${activePage == 'icon-fontawesome' ? 'active' : ''}">Fontawesome Icons</a></li>
+											<li><a href="icon-feather" th:classappend="${activePage == 'icon-feather' ? 'active' : ''}">Feather Icons</a></li>
+											<li><a href="icon-ionic" th:classappend="${activePage == 'icon-ionic' ? 'active' : ''}">Ionic Icons</a></li>
+											<li><a href="icon-material" th:classappend="${activePage == 'icon-material' ? 'active' : ''}">Material Icons</a></li>
+											<li><a href="icon-pe7" th:classappend="${activePage == 'icon-pe7' ? 'active' : ''}">Pe7 Icons</a></li>
+											<li><a href="icon-simpleline" th:classappend="${activePage == 'icon-simpleline' ? 'active' : ''}">Simpleline Icons</a></li>
+											<li><a href="icon-themify" th:classappend="${activePage == 'icon-themify' ? 'active' : ''}">Themify Icons</a></li>
+											<li><a href="icon-weather" th:classappend="${activePage == 'icon-weather' ? 'active' : ''}">Weather Icons</a></li>
+											<li><a href="icon-typicon" th:classappend="${activePage == 'icon-typicon' ? 'active' : ''}">Typicon Icons</a></li>
+											<li><a href="icon-flag" th:classappend="${activePage == 'icon-flag' ? 'active' : ''}">Flag Icons</a></li>
+											<li><a href="icon-tabler" th:classappend="${activePage == 'icon-tabler' ? 'active' : ''}">Tabler Icons</a></li>
+											<li><a href="icon-bootstrap" th:classappend="${activePage == 'icon-bootstrap' ? 'active' : ''}">Bootstrap Icons</a></li>
+											<li><a href="icon-remix" th:classappend="${activePage == 'icon-remix' ? 'active' : ''}">Remix Icons</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'forms' ? 'active' : ''}">
+											<span>Forms</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two">
+												<a href="javascript:void(0);" th:classappend="${activeSubGroup == 'form-elements' ? 'active' : ''}">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="form-basic-inputs" th:classappend="${activePage == 'form-basic-inputs' ? 'active' : ''}">Basic Inputs</a></li>
+													<li><a href="form-checkbox-radios" th:classappend="${activePage == 'form-checkbox-radios' ? 'active' : ''}">Checkbox & Radios</a></li>
+													<li><a href="form-input-groups" th:classappend="${activePage == 'form-input-groups' ? 'active' : ''}">Input Groups</a></li>
+													<li><a href="form-grid-gutters" th:classappend="${activePage == 'form-grid-gutters' ? 'active' : ''}">Grid & Gutters</a></li>
+													<li><a href="form-select" th:classappend="${activePage == 'form-select' ? 'active' : ''}">Form Select</a></li>
+													<li><a href="form-mask" th:classappend="${activePage == 'form-mask' ? 'active' : ''}">Input Masks</a></li>
+													<li><a href="form-fileupload" th:classappend="${activePage == 'form-fileupload' ? 'active' : ''}">File Uploads</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two">
+												<a href="javascript:void(0);" th:classappend="${activeSubGroup == 'form-layouts' ? 'active' : ''}">Layouts<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="form-horizontal" th:classappend="${activePage == 'form-horizontal' ? 'active' : ''}">Horizontal Form</a></li>
+													<li><a href="form-vertical" th:classappend="${activePage == 'form-vertical' ? 'active' : ''}">Vertical Form</a></li>
+													<li><a href="form-floating-labels" th:classappend="${activePage == 'form-floating-labels' ? 'active' : ''}">Floating Labels</a></li>
+												</ul>
+											</li>
+											<li><a href="form-validation" th:classappend="${activePage == 'form-validation' ? 'active' : ''}">Form Validation</a></li>
+											<li><a href="form-select2" th:classappend="${activePage == 'form-select2' ? 'active' : ''}">Select2</a></li>
+											<li><a href="form-wizard" th:classappend="${activePage == 'form-wizard' ? 'active' : ''}">Form Wizard</a></li>
+											<li><a href="form-pickers" th:classappend="${activePage == 'form-pickers' ? 'active' : ''}">Form Picker</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'tables' ? 'active' : ''}"><span>Tables</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="tables-basic" th:classappend="${activePage == 'tables-basic' ? 'active' : ''}">Basic Tables </a></li>
+											<li><a href="data-tables" th:classappend="${activePage == 'data-tables' ? 'active' : ''}">Data Table </a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" th:classappend="${activeGroup == 'maps' ? 'active' : ''}"><span>Maps</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="maps-vector" th:classappend="${activePage == 'maps-vector' ? 'active' : ''}">Vector</a></li>
+											<li><a href="maps-leaflet" th:classappend="${activePage == 'maps-leaflet' ? 'active' : ''}">Leaflet</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="tab-pane fade" id="extras">
+								<ul>
+									<li class="menu-title"><span>Help</span></li>
+									<li><a href="/documentation/springboot.html" target="_blank"><span>Documentation</span></a></li>
+									<li><a href="/documentation/changelog.html" target="_blank"><span>Changelog v2.2.3</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 1.1</a></li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 2.1</a></li>
+													<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+														<ul>
+															<li><a href="javascript:void(0);">Level 3.1</a></li>
+															<li><a href="javascript:void(0);">Level 3.2</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Two Col Sidebar -->
+    </div>
+  </body>
+</html>

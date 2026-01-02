@@ -51,8 +51,15 @@ export class Payment {
   @Column({ length: 255, nullable: true })
   provider: string; // Ex: "Viva Wallet", "Payconiq", "Stripe"
 
+  @Index()
   @Column({ length: 255, nullable: true })
   transactionId: string; // ID de transaction du fournisseur
+
+  @Column({ length: 50, nullable: true })
+  formattedTransactionId: string; // ID formaté pour affichage (ex: "#23588")
+
+  @Column({ length: 20, nullable: true })
+  tokenNumber: string; // Token associé à la commande
 
   @Column({ type: 'text', nullable: true })
   metadata: string; // JSON avec données supplémentaires

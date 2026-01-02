@@ -1,0 +1,1021 @@
+<div class="sidebar sidebar-horizontal" id="horizontal-menu">
+    <div id="sidebar-menu-3" class="sidebar-menu">
+        <div class="main-menu">
+            <ul class="nav-menu">
+                <li class="submenu">
+                    <a href="index"><i class="ti ti-layout-grid fs-16 me-2"></i><span> Main Menu</span> <span class="menu-arrow"></span></a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= (active_path === routes.admin_dashboard || active_path === routes.admin_dashboard_2 || active_path === routes.sales_dashboard ) ? 'active subdrop' : '' %>">
+                                <span>Dashboard</span> <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="index" class="<%= active_path === routes.admin_dashboard ? 'active' : '' %>">Admin Dashboard</a></li>
+                                <li><a href="admin-dashboard-2" class="<%= active_path === routes.admin_dashboard_2 ? 'active' : '' %>">Admin Dashboard 2</a></li>
+                                <li><a href="sales-dashboard" class="<%= active_path === routes.sales_dashboard ? 'active' : '' %>">Sales Dashboard</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"  class="<%= (active_path === routes.dashboard || active_path === routes.companies || active_path === routes.subscription || 
+                            active_path === routes.packages || active_path === routes.domain || active_path === routes.purchase_transaction) ? 'active subdrop' : '' %>">
+                                <span>Super Admin</span><span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="dashboard" class="<%= active_path === routes.dashboard ? 'active' : '' %>">Dashboard</a></li>
+                                <li><a href="companies" class="<%= active_path === routes.companies ? 'active' : '' %>">Companies</a></li>
+                                <li><a href="subscription" class="<%= active_path === routes.subscription ? 'active' : '' %>">Subscriptions</a></li>
+                                <li><a href="packages" class="<%= active_path === routes.packages ? 'active' : '' %>">Packages</a></li>
+                                <li><a href="domain" class="<%= active_path === routes.domain ? 'active' : '' %>">Domain</a></li>
+                                <li><a href="purchase-transaction" class="<%= active_path === routes.purchase_transaction ? 'active' : '' %>">Purchase Transaction</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= (active_path === routes.chat || active_path === routes.video_call || active_path === routes.audio_call || 
+                            active_path === routes.call_history || active_path === routes.calendar || active_path === routes.contacts ||
+                            active_path === routes.email || active_path === routes.todo || active_path === routes.notes || active_path === routes.file_manager ||
+                            active_path === routes.projects || active_path === routes.products || active_path === routes.orders || active_path === routes.customers ||
+                            active_path === routes.cart || active_path === routes.checkout || active_path === routes.wishlist|| active_path === routes.reviews || 
+                            active_path === routes.social_feed || active_path === routes.search_list ) ? 'active subdrop' : '' %>">
+                                <span>Application</span><span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="chat" class="<%= active_path === routes.chat ? 'active' : '' %>">Chat</a></li>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.video_call || active_path === routes.audio_call || active_path === routes.call_history ? 'active subdrop' : '' %>">
+                                        Call
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="video-call" class="<%= active_path === routes.video_call ? 'active' : '' %>">Video Call</a></li>
+                                        <li><a href="audio-call" class="<%= active_path === routes.audio_call ? 'active' : '' %>">Audio Call</a></li>
+                                        <li><a href="call-history" class="<%= active_path === routes.call_history ? 'active' : '' %>"> Call History</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="calendar" class="<%= active_path === routes.calendar ? 'active' : '' %>">Calendar</a></li>
+                                <li><a href="contacts" class="<%= active_path === routes.contacts ? 'active' : '' %>">Contacts</a></li>
+                                <li><a href="email" class="<%= active_path === routes.email ? 'active' : '' %>">Email</a></li>
+                                <li><a href="todo" class="<%= active_path === routes.todo ? 'active' : '' %>">To Do</a></li>
+                                <li><a href="notes" class="<%= active_path === routes.notes ? 'active' : '' %>">Notes</a></li>
+                                <li><a href="file-manager" class="<%= active_path === routes.file_manager ? 'active' : '' %>">File Manager</a></li>
+                                <li><a href="projects" class="<%= active_path === routes.projects ? 'active' : '' %>">Projects</a></li>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);"
+                                        class="<%= active_path === routes.products || active_path === routes.orders || active_path === routes.customers ||
+                                        active_path === routes.cart || active_path === routes.checkout || active_path === routes.wishlist|| active_path === routes.reviews
+                                        ? 'active subdrop' : '' %>"
+                                    >
+                                        Ecommerce
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="products" class="<%= active_path === routes.projects ? 'active' : '' %>">Products</a></li>
+                                        <li><a href="orders" class="<%= active_path === routes.orders ? 'active' : '' %>">Orders</a></li>
+                                        <li><a href="customers" class="<%= active_path === routes.customers ? 'active' : '' %>">Customers</a></li>
+                                        <li><a href="cart" class="<%= active_path === routes.cart ? 'active' : '' %>">Cart</a></li>
+                                        <li><a href="checkout" class="<%= active_path === routes.checkout ? 'active' : '' %>">Checkout</a></li>
+                                        <li><a href="wishlist" class="<%= active_path === routes.wishlist ? 'active' : '' %>">Wishlist</a></li>
+                                        <li><a href="reviews" class="<%= active_path === routes.reviews ? 'active' : '' %>">Reviews</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="social-feed" class="<%= active_path === routes.social_feed ? 'active' : '' %>">Social Feed</a></li>
+                                <li><a href="search-list" class="<%= active_path === routes.search_list ? 'active' : '' %>">Search List</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.layout_horizontal || active_path === routes.layout_detached || active_path === routes.layout_two_column ||
+                            active_path === routes.layout_hovered || active_path === routes.layout_boxed || active_path === routes.layout_rtl || 
+                            active_path === routes.layout_dark  ? 'active subdrop' : '' %>">
+                                <span>Layouts</span><span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="layout-horizontal" class="<%= active_path === routes.layout_horizontal ? 'active' : '' %>">Horizontal</a></li>
+                                <li><a href="layout-detached" class="<%= active_path === routes.layout_detached ? 'active' : '' %>">Detached</a></li>
+                                <li><a href="layout-two-column" class="<%= active_path === routes.layout_two_column ? 'active' : '' %>">Two Column</a></li>
+                                <li><a href="layout-hovered" class="<%= active_path === routes.layout_hovered ? 'active' : '' %>">Hovered</a></li>
+                                <li><a href="layout-boxed" class="<%= active_path === routes.layout_boxed ? 'active' : '' %>">Boxed</a></li>
+                                <li><a href="layout-rtl" class="<%= active_path === routes.layout_rtl ? 'active' : '' %>">RTL</a></li>
+                                <li><a href="layout-dark" class="<%= active_path === routes.layout_dark ? 'active' : '' %>">Dark</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path === routes.product_list || active_path === routes.edit_product || active_path === routes.add_product || active_path === routes.expired_products ||
+                    active_path === routes.low_stocks || active_path === routes.category_list || active_path === routes.sub_categories || active_path === routes.brand_list ||
+                    active_path === routes.units || active_path === routes.varriant_attributes || active_path === routes.warranty || active_path === routes.barcode || 
+                    active_path === routes.qrcode ? 'active subdrop' : '' %>">
+                        <i class="ti ti-brand-unity fs-16 me-2"></i>
+                        <span> Inventory </span> 
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="<%= active_path === routes.product_list || active_path === routes.edit_product ? 'active' : '' %>"><a href="product-list"><i data-feather="box"></i><span>Products</span></a></li>
+                        <li class="<%= active_path === routes.add_product ? 'active' : '' %>"><a href="add-product"><i class="ti ti-table-plus fs-16 me-2"></i><span>Create Product</span></a></li>
+                        <li class="<%= active_path === routes.expired_products ? 'active' : '' %>"><a href="expired-products"><i class="ti ti-progress-alert fs-16 me-2"></i><span>Expired Products</span></a></li>
+                        <li class="<%= active_path === routes.low_stocks ? 'active' : '' %>"><a href="low-stocks"><i class="ti ti-trending-up-2 fs-16 me-2"></i><span>Low Stocks</span></a></li>
+                        <li class="<%= active_path === routes.category_list ? 'active' : '' %>"><a href="category-list"><i class="ti ti-list-details fs-16 me-2"></i><span>Category</span></a></li>
+                        <li class="<%= active_path === routes.sub_categories ? 'active' : '' %>"><a href="sub-categories"><i class="ti ti-carousel-vertical fs-16 me-2"></i><span>Sub Category</span></a></li>
+                        <li class="<%= active_path === routes.brand_list ? 'active' : '' %>"><a href="brand-list"><i class="ti ti-triangles fs-16 me-2"></i><span>Brands</span></a></li>
+                        <li class="<%= active_path === routes.units ? 'active' : '' %>"><a href="units"><i class="ti ti-brand-unity fs-16 me-2"></i><span>Units</span></a></li>
+                        <li class="<%= active_path === routes.varriant_attributes ? 'active' : '' %>"><a href="varriant-attributes"><i class="ti ti-checklist fs-16 me-2"></i><span>Variant Attributes</span></a></li>
+                        <li class="<%= active_path === routes.warranty ? 'active' : '' %>"><a href="warranty"><i class="ti ti-certificate fs-16 me-2"></i><span>Warranties</span></a></li>
+                        <li class="<%= active_path === routes.barcode ? 'active' : '' %>"><a href="barcode"><i class="ti ti-barcode fs-16 me-2"></i><span>Print Barcode</span></a></li>
+                        <li class="<%= active_path === routes.qrcode ? 'active' : '' %>"><a href="qrcode"><i class="ti ti-qrcode fs-16 me-2"></i><span>Print QR Code</span></a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path === routes.manage_stocks || active_path === routes.stock_adjustment || active_path === routes.stock_transfer ||
+                        active_path === routes.online_orders || active_path === routes.pos_orders || active_path === routes.invoice || active_path === routes.sales_returns ||
+                        active_path === routes.quotation_list || active_path === routes.pos || active_path === routes.pos_2 || active_path === routes.pos_3 ||
+                        active_path === routes.pos_4 || active_path === routes.pos_5 || active_path === routes.coupons || active_path === routes.gift_cards || active_path === routes.discount_plan ||
+                        active_path === routes.discount || active_path === routes.purchase_list || active_path === routes.purchase_order_report || active_path === routes.purchase_returns ||
+                        active_path === routes.expense_list || active_path === routes.expense_category || active_path === routes.income || active_path === routes.incomeCategory || 
+                        active_path === routes.accountList || active_path === routes.money_transfer || active_path === routes.balanceSheet || active_path === routes.trialBalance ||
+                        active_path === routes.cashFlow || active_path === routes.account_statement ? 'active subdrop' : '' %>">
+                        <i class="ti ti-layout-grid fs-16 me-2"></i>
+                        <span>Sales &amp; Purchase</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.manage_stocks || active_path === routes.stock_adjustment || active_path === routes.stock_transfer ? 'active subdrop' : '' %>">
+                                <span>Stock</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="manage-stocks" class="<%= active_path === routes.manage_stocks ? 'active' : '' %>"><span>Manage Stock</span></a></li>
+                                <li><a href="stock-adjustment" class="<%= active_path === routes.stock_adjustment ? 'active' : '' %>"><span>Stock Adjustment</span></a></li>
+                                <li><a href="stock-transfer" class="<%= active_path === routes.stock_transfer ? 'active' : '' %>"><span>Stock Transfer</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.online_orders || active_path === routes.pos_orders || active_path === routes.invoice || 
+                            active_path === routes.sales_returns || active_path === routes.quotation_list || active_path === routes.pos || active_path === routes.pos_2 || active_path === routes.pos_3 ||
+                            active_path === routes.pos_4 || active_path === routes.pos_5 ? 'active subdrop' : '' %>">
+                                <span>Sales</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.online_orders || active_path === routes.pos_orders ? 'active subdrop' : '' %>">
+                                        <span>Sales</span><span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="online-orders" class="<%= active_path === routes.online_orders ? 'active' : '' %>">Online Orders</a></li>
+                                        <li><a href="pos-orders" class="<%= active_path === routes.pos_orders ? 'active' : '' %>">POS Orders</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="invoice" class="<%= active_path === routes.invoice ? 'active' : '' %>"><span>Invoices</span></a></li>
+                                <li><a href="sales-returns" class="<%= active_path === routes.sales_returns ? 'active' : '' %>"><span>Sales Return</span></a></li>
+                                <li><a href="quotation-list" class="<%= active_path === routes.quotation_list ? 'active' : '' %>"><span>Quotation</span></a></li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.pos || active_path === routes.pos_2 || active_path === routes.pos_3 ||
+                                    active_path === routes.pos_4 || active_path === routes.pos_5 ? 'active subdrop' : '' %>">
+                                        <span>POS</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="pos" class="<%= active_path === routes.pos ? 'active' : '' %>">POS 1</a></li>
+                                        <li><a href="pos-2" class="<%= active_path === routes.pos_2 ? 'active' : '' %>">POS 2</a></li>
+                                        <li><a href="pos-3" class="<%= active_path === routes.pos_3 ? 'active' : '' %>">POS 3</a></li>
+                                        <li><a href="pos-4" class="<%= active_path === routes.pos_4 ? 'active' : '' %>">POS 4</a></li>
+                                        <li><a href="pos-5" class="<%= active_path === routes.pos_5 ? 'active' : '' %>">POS 5</a></li>
+                                        <li><a href="https://nodejs.dreamstechnologies.com/food-pos/template/index" class="<%= active_path === routes.pos_5 ? 'active' : '' %>" target="_blank">POS 6</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.coupons || active_path === routes.gift_cards || active_path === routes.discount_plan ||
+                                active_path === routes.discount ? 'active subdrop' : '' %>">
+                                <span>Promo</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="coupons" class="<%= active_path === routes.coupons ? 'active' : '' %>"><span>Coupons</span></a></li>
+                                <li><a href="gift-cards" class="<%= active_path === routes.gift_cards ? 'active' : '' %>"><span>Gift Cards</span></a></li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.discount_plan || active_path === routes.discount ? 'active subdrop' : '' %>">
+                                        <span>Discount</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="discount-plan" class="<%= active_path === routes.discount_plan ? 'active' : '' %>">Discount Plan</a></li>
+                                        <li><a href="discount" class="<%= active_path === routes.discount ? 'active' : '' %>">Discount</a></li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.purchase_list || active_path === routes.purchase_order_report || active_path === routes.purchase_returns ? 'active subdrop' : '' %>">
+                                <span>Purchase</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="purchase-list" class="<%= active_path === routes.purchase_list ? 'active' : '' %>"><span>Purchases</span></a></li>
+                                <li><a href="purchase-order-report" class="<%= active_path === routes.purchase_order_report ? 'active' : '' %>"><span>Purchase Order</span></a></li>
+                                <li><a href="purchase-returns" class="<%= active_path === routes.purchase_returns ? 'active' : '' %>"><span>Purchase Return</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.expenseList || active_path === routes.expenseCategory ? 'active subdrop' : '' %>">
+                                <span>Expenses</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="expense-list" class="<%= active_path === routes.expenseList ? 'active' : '' %>">Expenses</a></li>
+                                <li><a href="expense-category" class="<%= active_path === routes.expenseCategory ? 'active' : '' %>">Expense Category</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.income || active_path === routes.incomeCategory ? 'active subdrop' : '' %>">
+                                <span>Income</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="income" class="<%= active_path === routes.income ? 'active' : '' %>">Income</a></li>
+                                <li><a href="income-category" class="<%= active_path === routes.incomeCategory ? 'active' : '' %>">Income Category</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="account-list" class="<%= active_path === routes.accountList ? 'active' : '' %>"><span>Bank Accounts</span></a></li>
+                        <li><a href="money-transfer" class="<%= active_path === routes.moneyTransfer ? 'active' : '' %>"><span>Money Transfer</span></a></li>
+                        <li><a href="balance-sheet" class="<%= active_path === routes.balanceSheet ? 'active' : '' %>"><span>Balance Sheet</span></a></li>
+                        <li><a href="trial-balance" class="<%= active_path === routes.trialBalance ? 'active' : '' %>"><span>Trial Balance</span></a></li>
+                        <li><a href="cash-flow" class="<%= active_path === routes.cashFlow ? 'active' : '' %>"><span>Cash Flow</span></a></li>
+                        <li><a href="account-statement" class="<%= active_path === routes.accountStatement ? 'active' : '' %>"><span>Account Statement</span></a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path == routes.ui_alerts || active_path == routes.ui_accordion || active_path == routes.ui_avatar || active_path == routes.ui_badges || active_path == routes.ui_borders || active_path == routes.ui_buttons || 
+                    active_path == routes.ui_buttons_group || active_path == routes.ui_breadcrumb || active_path == routes.ui_cards || active_path == routes.ui_carousel || active_path == routes.ui_colors || active_path == routes.ui_dropdowns || 
+                    active_path == routes.ui_grid || active_path == routes.ui_images || active_path == routes.ui_lightbox || active_path == routes.ui_media || active_path == routes.ui_modals || active_path == routes.ui_offcanvas || 
+                    active_path == routes.ui_pagination || active_path == routes.ui_popovers || active_path == routes.ui_progress || active_path == routes.ui_placeholders || active_path == routes.ui_spinner || active_path == routes.ui_sweetalerts || 
+                    active_path == routes.ui_nav_tabs || active_path == routes.ui_toasts || active_path == routes.ui_tooltips || active_path == routes.ui_typography || active_path == routes.ui_video || active_path == routes.ui_sortable || active_path == routes.ui_swiperjs ||
+                    active_path == routes.ui_ribbon || active_path == routes.ui_clipboard || active_path == routes.ui_drag_drop || active_path == routes.ui_rangeslider || active_path == routes.ui_rating || 
+                    active_path == routes.ui_text_editor || active_path == routes.ui_counter || active_path == routes.ui_scrollbar || active_path == routes.ui_stickynote || active_path == routes.ui_timeline ||
+                    active_path == routes.chart_apex || active_path == routes.chart_c3 || active_path == routes.chart_js || active_path == routes.chart_morris ||
+                    active_path == routes.chart_flot || active_path == routes.chart_peity || active_path == routes.icon_fontawesome || active_path == routes.icon_tabler || active_path == routes.icon_bootstrap ||
+                    active_path == routes.icon_remix || active_path == routes.icon_feather || active_path == routes.icon_material || active_path == routes.icon_ionic || active_path == routes.icon_pe7 ||
+                    active_path == routes.icon_simpleline || active_path == routes.icon_themify || active_path == routes.icon_weather || active_path == routes.icon_typicon || active_path == routes.icon_flag ||
+                    active_path == routes.form_basic_inputs || active_path == routes.form_checkbox_radios || active_path == routes.form_input_groups || 
+                    active_path == routes.form_grid_gutters || active_path == routes.form_select || active_path == routes.form_mask || active_path == routes.form_fileUpload || active_path == routes.form_horizontal || 
+                    active_path == routes.form_vertical || active_path == routes.form_floating_labels || active_path == routes.form_validation || active_path == routes.form_formSelected2 || active_path == routes.form_wizard || 
+                    active_path == routes.form_pickers || active_path == routes.tables_basic || active_path == routes.data_tables || active_path == routes.maps_vector || active_path == routes.maps_leaflet
+                    ? 'active subdrop' : '' %>">
+                        <i class="ti ti-users-group fs-16 me-2"></i>
+                        <span>UI Interface</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.ui_alerts || active_path == routes.ui_accordion || active_path == routes.ui_avatar || active_path == routes.ui_badges || active_path == routes.ui_borders || active_path == routes.ui_buttons || 
+                            active_path == routes.ui_buttons_group || active_path == routes.ui_breadcrumb || active_path == routes.ui_cards || active_path == routes.ui_carousel || active_path == routes.ui_colors || active_path == routes.ui_dropdowns || 
+                            active_path == routes.ui_grid || active_path == routes.ui_images || active_path == routes.ui_lightbox || active_path == routes.ui_media || active_path == routes.ui_modals || active_path == routes.ui_offcanvas || 
+                            active_path == routes.ui_pagination || active_path == routes.ui_popovers || active_path == routes.ui_progress || active_path == routes.ui_placeholders || active_path == routes.ui_spinner || active_path == routes.ui_sweetalerts || 
+                            active_path == routes.ui_nav_tabs || active_path == routes.ui_toasts || active_path == routes.ui_tooltips || active_path == routes.ui_typography || active_path == routes.ui_video || active_path == routes.ui_sortable || active_path == routes.ui_swiperjs
+                            ? 'active subdrop' : '' %>">
+                                <span>Base UI</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                    <a href="ui-alerts" class="<%= active_path == routes.ui_alerts ? 'active' : '' %>">Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="ui-accordion" class="<%= active_path == routes.ui_accordion ? 'active' : '' %>">Accordion</a>
+                                </li>
+                                <li>
+                                    <a href="ui-avatar" class="<%= active_path == routes.ui_avatar ? 'active' : '' %>">Avatar</a>
+                                </li>
+                                <li>
+                                    <a href="ui-badges" class="<%= active_path == routes.ui_badges ? 'active' : '' %>">Badges</a>
+                                </li>
+                                <li>
+                                    <a href="ui-borders" class="<%= active_path == routes.ui_borders ? 'active' : '' %>">Border</a>
+                                </li>
+                                <li>
+                                    <a href="ui-buttons" class="<%= active_path == routes.ui_buttons ? 'active' : '' %>">Buttons</a>
+                                </li>
+                                <li>
+                                    <a href="ui-buttons-group" class="<%= active_path == routes.ui_buttons_group ? 'active' : '' %>">Button Group</a>
+                                </li>
+                                <li>
+                                    <a href="ui-breadcrumb" class="<%= active_path == routes.ui_breadcrumb ? 'active' : '' %>">Breadcrumb</a>
+                                </li>
+                                <li>
+                                <a href="ui-cards" class="<%= active_path == routes.ui_cards ? 'active' : '' %>">Card</a>
+                                </li>
+                                <li>
+                                    <a href="ui-carousel" class="<%= active_path == routes.ui_carousel ? 'active' : '' %>">Carousel</a>
+                                </li>
+                                <li>
+                                    <a href="ui-colors" class="<%= active_path == routes.ui_colors ? 'active' : '' %>">Colors</a>
+                                </li>
+                                <li>
+                                    <a href="ui-dropdowns" class="<%= active_path == routes.ui_dropdowns ? 'active' : '' %>">Dropdowns</a>
+                                </li>
+                                <li>
+                                    <a href="ui-grid" class="<%= active_path == routes.ui_grid ? 'active' : '' %>">Grid</a>
+                                </li>
+                                <li>
+                                    <a href="ui-images" class="<%= active_path == routes.ui_images ? 'active' : '' %>">Images</a>
+                                </li>
+                                <li>
+                                    <a href="ui-lightbox" class="<%= active_path == routes.ui_lightbox ? 'active' : '' %>">Lightbox</a>
+                                </li>
+                                <li>
+                                    <a href="ui-media" class="<%= active_path == routes.ui_media ? 'active' : '' %>">Media</a>
+                                </li>
+                                <li>
+                                    <a href="ui-modals" class="<%= active_path == routes.ui_modals ? 'active' : '' %>">Modals</a>
+                                </li>
+                                <li>
+                                    <a href="ui-offcanvas" class="<%= active_path == routes.ui_offcanvas ? 'active' : '' %>">Offcanvas</a>
+                                </li>
+                                <li>
+                                    <a href="ui-pagination" class="<%= active_path == routes.ui_pagination ? 'active' : '' %>">Pagination</a>
+                                </li>
+                                <li>
+                                    <a href="ui-popovers" class="<%= active_path == routes.ui_popovers ? 'active' : '' %>">Popovers</a>
+                                </li>
+                                <li>
+                                    <a href="ui-progress" class="<%= active_path == routes.ui_progress ? 'active' : '' %>">Progress</a>
+                                </li>
+                                <li>
+                                    <a href="ui-placeholders" class="<%= active_path == routes.ui_placeholders ? 'active' : '' %>">Placeholders</a>
+                                </li>
+                                <li>
+                                    <a href="ui-spinner" class="<%= active_path == routes.ui_spinner ? 'active' : '' %>">Spinner</a>
+                                </li>
+                                <li>
+                                    <a href="ui-sweetalerts" class="<%= active_path == routes.ui_sweetalerts ? 'active' : '' %>">Sweet Alerts</a>
+                                </li>
+                                <li>
+                                    <a href="ui-nav-tabs" class="<%= active_path == routes.ui_nav_tabs ? 'active' : '' %>">Tabs</a>
+                                </li>
+                                <li>
+                                    <a href="ui-toasts" class="<%= active_path == routes.ui_toasts ? 'active' : '' %>">Toasts</a>
+                                </li>
+                                <li>
+                                    <a href="ui-tooltips" class="<%= active_path == routes.ui_tooltips ? 'active' : '' %>">Tooltips</a>
+                                </li>
+                                <li>
+                                    <a href="ui-typography" class="<%= active_path == routes.ui_typography ? 'active' : '' %>">Typography</a>
+                                </li>
+                                <li>
+                                    <a href="ui-video" class="<%= active_path == routes.ui_video ? 'active' : '' %>">Video</a>
+                                </li>
+                                <li>
+                                    <a href="ui-sortable" class="<%= active_path == routes.ui_sortable ? 'active' : '' %>">Sortable</a>
+                                </li>
+                                <li>
+                                    <a href="ui-swiperjs" class="<%= active_path == routes.ui_swiperjs ? 'active' : '' %>">Swiperjs</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= ( active_path == routes.ui_ribbon || active_path == routes.ui_clipboard || active_path == routes.ui_drag_drop || active_path == routes.ui_rangeslider || active_path == routes.ui_rating || 
+                            active_path == routes.ui_text_editor || active_path == routes.ui_counter || active_path == routes.ui_scrollbar || active_path == routes.ui_stickynote || active_path == routes.ui_timeline 
+                            ) ? 'active subdrop' : '' %>">
+                                <span>Advanced UI</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                  <a href="ui-ribbon" class="<%= active_path == routes.ui_ribbon ? 'active' : '' %>">Ribbon</a>
+                                </li>
+                                <li>
+                                  <a href="ui-clipboard" class="<%= active_path == routes.ui_clipboard ? 'active' : '' %>">Clipboard</a>
+                                </li>
+                                <li>
+                                  <a href="ui-drag-drop" class="<%= active_path == routes.ui_drag_drop ? 'active' : '' %>">Drag & Drop</a>
+                                </li>
+                                <li>
+                                  <a href="ui-rangeslider" class="<%= active_path == routes.ui_rangeslider ? 'active' : '' %>">Range Slider</a>
+                                </li>
+                                <li>
+                                  <a href="ui-rating" class="<%= active_path == routes.ui_rating ? 'active' : '' %>">Rating</a>
+                                </li>
+                                <li>
+                                  <a href="ui-text-editor" class="<%= active_path == routes.ui_text_editor ? 'active' : '' %>">Text Editor</a>
+                                </li>
+                                <li>
+                                  <a href="ui-counter" class="<%= active_path == routes.ui_counter ? 'active' : '' %>">Counter</a>
+                                </li>
+                                <li>
+                                  <a href="ui-scrollbar" class="<%= active_path == routes.ui_scrollbar ? 'active' : '' %>">Scrollbar</a>
+                                </li>
+                                <li>
+                                  <a href="ui-stickynote" class="<%= active_path == routes.ui_stickynote ? 'active' : '' %>">Sticky Note</a>
+                                </li>
+                                <li>
+                                  <a href="ui-timeline" class="<%= active_path == routes.ui_timeline ? 'active' : '' %>">Timeline</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.chart_apex || active_path == routes.chart_c3 || active_path == routes.chart_js || active_path == routes.chart_morris ||
+                            active_path == routes.chart_flot || active_path == routes.chart_peity ? 'active subdrop' : '' %>">
+                                <span>Charts</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                  <a href="chart-apex" class="<%= active_path == routes.chart_apex ? 'active' : '' %>">Apex Charts</a>
+                                </li>
+                                <li>
+                                  <a href="chart-c3" class="<%= active_path == routes.chart_c3 ? 'active' : '' %>">Chart C3</a>
+                                </li>
+                                <li>
+                                  <a href="chart-js" class="<%= active_path == routes.chart_js ? 'active' : '' %>">Chart Js</a>
+                                </li>
+                                <li>
+                                  <a href="chart-morris" class="<%= active_path == routes.chart_morris ? 'active' : '' %>">Morris Charts</a>
+                                </li>
+                                <li>
+                                  <a href="chart-flot" class="<%= active_path == routes.chart_flot ? 'active' : '' %>">Flot Charts</a>
+                                </li>
+                                <li>
+                                  <a href="chart-peity" class="<%= active_path == routes.chart_peity ? 'active' : '' %>">Peity Charts</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.icon_fontawesome || active_path == routes.icon_tabler || active_path == routes.icon_bootstrap ||
+                            active_path == routes.icon_remix || active_path == routes.icon_feather || active_path == routes.icon_material || active_path == routes.icon_ionic || active_path == routes.icon_pe7 ||
+                            active_path == routes.icon_simpleline || active_path == routes.icon_themify || active_path == routes.icon_weather || active_path == routes.icon_typicon || active_path == routes.icon_flag
+                            ? 'active subdrop' : '' %>">
+                                <span>Icons</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                  <a href="icon-fontawesome" class="<%= active_path == routes.icon_fontawesome ? 'active' : '' %>">Fontawesome Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-tabler" class="<%= active_path == routes.icon_tabler ? 'active' : '' %>">Tabler Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-bootstrap" class="<%= active_path == routes.icon_bootstrap ? 'active' : '' %>">Bootstrap Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-remix" class="<%= active_path == routes.icon_remix ? 'active' : '' %>">Remix Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-feather" class="<%= active_path == routes.icon_feather ? 'active' : '' %>">Feather Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-ionic" class="<%= active_path == routes.icon_ionic ? 'active' : '' %>">Ionic Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-material" class="<%= active_path == routes.icon_material ? 'active' : '' %>">Material Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-pe7" class="<%= active_path == routes.icon_pe7 ? 'active' : '' %>">Pe7 Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-simpleline" class="<%= active_path == routes.icon_simpleline ? 'active' : '' %>">Simpleline Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-themify" class="<%= active_path == routes.icon_themify ? 'active' : '' %>">Themify Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-weather" class="<%= active_path == routes.icon_weather ? 'active' : '' %>">Weather Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-typicon" class="<%= active_path == routes.icon_typicon ? 'active' : '' %>">Typicon Icons</a>
+                                </li>
+                                <li>
+                                  <a href="icon-flag" class="<%= active_path == routes.icon_flag ? 'active' : '' %>">Flag Icons</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.form_basic_inputs || active_path == routes.form_checkbox_radios || active_path == routes.form_input_groups || 
+                                active_path == routes.form_grid_gutters || active_path == routes.form_select || active_path == routes.form_mask || active_path == routes.form_fileUpload || active_path == routes.form_horizontal || 
+                                active_path == routes.form_vertical || active_path == routes.form_floating_labels || active_path == routes.form_validation || active_path == routes.form_formSelected2 || active_path == routes.form_wizard || 
+                                active_path == routes.form_pickers ? 'active subdrop' : '' %>">
+                                <span> Forms</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path == routes.form_basic_inputs || active_path == routes.form_checkbox_radios || active_path == routes.form_input_groups || 
+                                        active_path == routes.form_grid_gutters || active_path == routes.form_select || active_path == routes.form_mask || active_path == routes.form_fileUpload
+                                        ? 'active subdrop' : '' %>">
+                                        <span>Form Elements</span>
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                          <a href="form-basic-inputs" class="<%= active_path == routes.form_basic_inputs ? 'active' : '' %>">Basic Inputs</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-checkbox-radios" class="<%= active_path == routes.form_checkbox_radios ? 'active' : '' %>">Checkbox & Radios</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-input-groups" class="<%= active_path == routes.form_input_groups ? 'active' : '' %>">Input Groups</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-grid-gutters" class="<%= active_path == routes.form_grid_gutters ? 'active' : '' %>">Grid & Gutters</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-select" class="<%= active_path == routes.form_select ? 'active' : '' %>">Form Select</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-mask" class="<%= active_path == routes.form_mask ? 'active' : '' %>">Input Masks</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-fileupload" class="<%= active_path == routes.form_fileUpload ? 'active' : '' %>">File Uploads</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path == routes.form_horizontal || active_path == routes.form_vertical || active_path == routes.form_floating_labels ? 'active subdrop' : '' %>">
+                                        <span> Layouts</span>
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li>
+                                          <a href="form-horizontal" class="<%= active_path == routes.form_horizontal ? 'active' : '' %>">Horizontal Form</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-vertical" class="<%= active_path == routes.form_vertical ? 'active' : '' %>">Vertical Form</a>
+                                        </li>
+                                        <li>
+                                          <a href="form-floating-labels" class="<%= active_path == routes.form_floating_labels ? 'active' : '' %>">Floating Labels</a>
+                                        </li>
+                                    </ul>
+                                </li>
+                                <li>
+                                    <a href="form-validation" class="<%= active_path == routes.form_validation ? 'active' : '' %>">Form Validation</a>
+                                </li>                                
+                                <li>
+                                    <a href="form-select2" class="<%= active_path == routes.form_formSelected2 ? 'active' : '' %>">Select2</a>
+                                </li>
+                                <li>
+                                    <a href="form-wizard" class="<%= active_path == routes.form_wizard ? 'active' : '' %>">Form Wizard</a>
+                                </li>
+                                <li>
+                                    <a href="form-pickers" class="<%= active_path == routes.form_pickers ? 'active' : '' %>">Form Pickers</a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.tables_basic || active_path == routes.data_tables ? 'active subdrop' : '' %>">
+                                <span>Tables</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                  <a href="tables-basic" class="<%= active_path == routes.tables_basic ? 'active' : '' %>">Basic Tables </a>
+                                </li>
+                                <li>
+                                  <a href="data-tables" class="<%= active_path == routes.data_tables ? 'active' : '' %>">Data Table </a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li  class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.maps_vector || active_path == routes.maps_leaflet ? 'active subdrop' : '' %>">
+                                <span>Maps</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li>
+                                  <a href="maps-vector" class="<%= active_path == routes.maps_vector ? 'active' : '' %>">Vector</a>
+                                </li>
+                                <li>
+                                  <a href="maps-leaflet" class="<%= active_path == routes.maps_leaflet ? 'active' : '' %>">Leaflet</a>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path == routes.profile || active_path == routes.blank_page || active_path == routes.pricing ||
+                        active_path == routes.pages || active_path == routes.allBlog || active_path == routes.blogTag || active_path == routes.blogCategories ||
+                        active_path == routes.blogComments || active_path == routes.countries || active_path == routes.states || active_path == routes.cities || active_path == routes.testimonials ||
+                        active_path == routes.faq || active_path == routes.employeesGrid || active_path == routes.employeesList || active_path == routes.employeeDetails || active_path == routes.departmentGrid || active_path == routes.designation ||
+                        active_path == routes.shift || active_path == routes.attendanceEmployee || active_path == routes.attendanceAdmin || active_path == routes.leavesAdmin || active_path == routes.leavesEmployee ||
+                        active_path == routes.leaveTypes || active_path == routes.holidays || active_path == routes.employeeSalary || active_path == routes.payslip
+                         ? 'active subdrop' : '' %>">
+                        <i class="ti ti-page-break fs-16 me-2"></i>
+                        <span>Pages</span> 
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li><a href="profile" class="<%= active_path == routes.profile ? 'active' : '' %>"><span>Profile</span></a></li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+                            <ul>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="signin">Cover</a></li>
+                                        <li><a href="signin-2">Illustration</a></li>
+                                        <li><a href="signin-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="register">Cover</a></li>
+                                        <li><a href="register-2">Illustration</a></li>
+                                        <li><a href="register-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="forgot-password">Cover</a></li>
+                                        <li><a href="forgot-password-2">Illustration</a></li>
+                                        <li><a href="forgot-password-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="reset-password">Cover</a></li>
+                                        <li><a href="reset-password-2">Illustration</a></li>
+                                        <li><a href="reset-password-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="email-verification">Cover</a></li>
+                                        <li><a href="email-verification-2">Illustration</a></li>
+                                        <li><a href="email-verification-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two"><a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+                                    <ul>
+                                        <li><a href="two-step-verification">Cover</a></li>
+                                        <li><a href="two-step-verification-2">Illustration</a></li>
+                                        <li><a href="two-step-verification-3">Basic</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="lock-screen">Lock Screen</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><span>Error</span><span class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="error-404">404 Error </a></li>
+                                <li><a href="error-500">500 Error </a></li>
+                            </ul>
+                        </li>
+                        <li><a href="blank-page" class="<%= active_path == routes.blank_page ? 'active' : '' %>"><span>Blank Page</span> </a></li>
+                        <li><a href="pricing" class="<%= active_path == routes.pricing ? 'active' : '' %>"><span>Pricing</span> </a></li>
+                        <li><a href="coming-soon"><span>Coming Soon</span> </a></li>
+                        <li><a href="under-maintenance"><span>Under Maintenance</span> </a></li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.pages || active_path == routes.allBlog || active_path == routes.blogTag || active_path == routes.blogCategories ||
+                            active_path == routes.blogComments || active_path == routes.countries || active_path == routes.states || active_path == routes.cities || active_path == routes.testimonials ||
+                            active_path == routes.faq ? 'active subdrop' : '' %>">
+                                <span>Content</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path == routes.pages ? 'active subdrop' : '' %>">
+                                        <span>Pages</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="pages" class="<%= active_path == routes.pages ? 'active' : '' %>">Pages</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path == routes.allBlog || active_path == routes.blogTag || active_path == routes.blogCategories ||
+                                    active_path == routes.blogComments ? 'active subdrop' : '' %>"><span>Blog</span><span class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="all-blog" class="<%= active_path == routes.allBlog ? 'active' : '' %>">All Blog</a></li>
+                                        <li><a href="blog-tag" class="<%= active_path == routes.blogTag ? 'active' : '' %>">Blog Tags</a></li>
+                                        <li><a href="blog-categories" class="<%= active_path == routes.blogCategories ? 'active' : '' %>">Categories</a></li>
+                                        <li><a href="blog-comments" class="<%= active_path == routes.blogComments ? 'active' : '' %>">Blog Comments</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);" class="<%= active_path == routes.countries || active_path == routes.states || active_path == routes.cities ? 'active subdrop' : '' %>">
+                                        <span>Location</span>
+                                        <span class="menu-arrow"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="countries" class="<%= active_path == routes.countries ? 'active' : '' %>">Countries</a></li>
+                                        <li><a href="states" class="<%= active_path == routes.states ? 'active' : '' %>">States</a></li>
+                                        <li><a href="cities" class="<%= active_path == routes.cities ? 'active' : '' %>">Cities</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="testimonials" class="<%= active_path == routes.testimonials ? 'active' : '' %>"><span>Testimonials</span></a></li>
+                                <li><a href="faq" class="<%= active_path == routes.faq ? 'active' : '' %>"><span>FAQ</span></a></li>
+
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.employeesGrid || active_path == routes.employeesList || active_path == routes.employeeDetails || active_path == routes.departmentGrid || active_path == routes.designation ||
+                            active_path == routes.shift ? 'active subdrop' : '' %>">
+                                <span>Employees</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="employees-grid" class="<%= active_path == routes.employeesGrid || active_path == routes.employeesList || active_path == routes.employeeDetails ? 'active' : '' %>"><span>Employees</span></a></li>
+                                <li><a href="department-grid" class="<%= active_path == routes.departmentGrid ? 'active' : '' %>"><span>Departments</span></a></li>
+                                <li><a href="designation" class="<%= active_path == routes.designation ? 'active' : '' %>"><span>Designation</span></a></li>
+                                <li><a href="shift" class="<%= active_path == routes.shift ? 'active' : '' %>"><span>Shifts</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.attendanceEmployee || active_path == routes.attendanceAdmin ? 'active subdrop' : '' %>">
+                                <span>Attendence</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="attendance-employee" class="<%= active_path == routes.attendanceEmployee ? 'active' : '' %>">Employee Attendence</a></li>
+                                <li><a href="attendance-admin" class="<%= active_path == routes.attendanceAdmin ? 'active' : '' %>">Admin Attendence</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path == routes.leavesAdmin || active_path == routes.leavesEmployee || active_path == routes.leaveTypes ||
+                            active_path == routes.holidays ? 'active subdrop' : '' %>">
+                                <span>Leaves &amp; Holidays</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="leaves-admin" class="<%= active_path == routes.leavesAdmin ? 'active' : '' %>">Admin Leaves</a></li>
+                                <li><a href="leaves-employee" class="<%= active_path == routes.leavesEmployee ? 'active' : '' %>">Employee Leaves</a></li>
+                                <li><a href="leave-types" class="<%= active_path == routes.leaveTypes ? 'active' : '' %>">Leave Types</a></li>
+                                <li><a href="holidays" class="<%= active_path == routes.holidays ? 'active' : '' %>"><span>Holidays</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="employee-salary" class="<%= active_path == routes.employeeSalary || active_path == routes.payslip ? 'active subdrop' : '' %>">
+                                <span>Payroll</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="employee-salary" class="<%= active_path == routes.employeeSalary ? 'active' : '' %>">Employee Salary</a></li>
+                                <li><a href="payslip" class="<%= active_path == routes.payslip ? 'active' : '' %>">Payslip</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path === routes.salesReport || active_path === routes.bestSeller || active_path === routes.purchaseReport ||
+                    active_path === routes.inventoryReport || active_path === routes.stockHistory || active_path === routes.soldStock || active_path === routes.invoiceReport || 
+                    active_path === routes.supplierReport  || active_path === routes.supplierdueReport || active_path === routes.customerReport || active_path === routes.customerdueReport ||
+                    active_path === routes.productReport || active_path === routes.productexpiryReport || active_path === routes.productquantityAlert || active_path === routes.expenseReport ||
+                    active_path === routes.incomeReport || active_path === routes.taxReports || active_path === routes.profitAndLoss || active_path === routes.annualReport 
+                     ? 'active subdrop' : '' %>">
+                        <i class="ti ti-chart-bar fs-16 me-2"></i>
+                        <span>Reports</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.salesReport || active_path === routes.bestSeller ? 'active subdrop' : '' %>">
+                                <span>Sales Report</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="sales-report" class="<%= active_path === routes.salesReport ? 'active' : '' %>">Sales Report</a></li>
+                                <li><a href="best-seller" class="<%= active_path === routes.bestSeller ? 'active' : '' %>">Best Seller</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="purchase-report" class="<%= active_path === routes.purchaseReport ? 'active' : '' %>"><span>Purchase report</span></a></li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.inventoryReport || active_path === routes.stockHistory || active_path === routes.soldStock ? 'active subdrop' : '' %>">
+                                <span>Inventory Report</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="inventory-report" class="<%= active_path === routes.inventoryReport ? 'active' : '' %>">Inventory Report</a></li>
+                                <li><a href="stock-history" class="<%= active_path === routes.stockHistory ? 'active' : '' %>">Stock History</a></li>
+                                <li><a href="sold-stock" class="<%= active_path === routes.soldStock ? 'active' : '' %>">Sold Stock</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="invoice-report" class="<%= active_path === routes.invoiceReport ? 'active' : '' %>"><span>Invoice Report</span></a></li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.supplierReport || active_path === routes.supplierdueReport ? 'active subdrop' : '' %>">
+                                <span>Supplier Report</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="supplier-report" class="<%= active_path === routes.supplierReport ? 'active' : '' %>">Supplier Report</a></li>
+                                <li><a href="supplier-due-report" class="<%= active_path === routes.supplierdueReport ? 'active' : '' %>">Supplier Due Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.customerReport || active_path === routes.customerdueReport ? 'active subdrop' : '' %>">
+                                <span>Customer Report</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="customer-report" class="<%= active_path === routes.customerReport ? 'active' : '' %>">Customer Report</a></li>
+                                <li><a href="customer-due-report" class="<%= active_path === routes.customerdueReport ? 'active' : '' %>">Customer Due Report</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.productReport || active_path === routes.productexpiryReport || active_path === routes.productquantityAlert ? 'active subdrop' : '' %>">
+                                <span>Product Report</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="product-report" class="<%= active_path === routes.productReport ? 'active' : '' %>">Product Report</a></li>
+                                <li><a href="product-expiry-report" class="<%= active_path === routes.productexpiryReport ? 'active' : '' %>">Product Expiry Report</a></li>
+                                <li><a href="product-quantity-alert" class="<%= active_path === routes.productquantityAlert ? 'active' : '' %>">Product Quantity Alert</a></li>
+                            </ul>
+                        </li>
+                        <li><a href="expense-report" class="<%= active_path === routes.expenseReport ? 'active' : '' %>"><i class="ti ti-file-vector fs-16 me-2"></i><span>Expense Report</span></a></li>
+                        <li><a href="income-report" class="<%= active_path === routes.incomeReport ? 'active' : '' %>"><i class="ti ti-chart-ppf fs-16 me-2"></i><span>Income Report</span></a></li>
+                        <li><a href="tax-reports" class="<%= active_path === routes.taxReports ? 'active' : '' %>"><i class="ti ti-chart-dots-2 fs-16 me-2"></i><span>Tax Report</span></a></li>
+                        <li><a href="profit-and-loss" class="<%= active_path === routes.profitAndLoss ? 'active' : '' %>"><i class="ti ti-chart-donut fs-16 me-2"></i><span>Profit & Loss</span></a></li>
+                        <li><a href="annual-report" class="<%= active_path === routes.annualReport ? 'active' : '' %>"><i class="ti ti-report-search fs-16 me-2"></i><span>Annual Report</span></a></li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path === routes.generalSettings || active_path === routes.securitySettings || active_path === routes.notification ||
+                        active_path === routes.connectedApps || active_path === routes.systemSettings || active_path === routes.companySettings || active_path === routes.localizationSettings || 
+                        active_path === routes.prefixes || active_path === routes.preference || active_path === routes.appearance || active_path === routes.socialAuthentication || 
+                        active_path === routes.languageSettings || active_path === routes.invoiceSettings || active_path === routes.invoiceTemplates || active_path === routes.printerSettings ||
+                        active_path === routes.posSettings || active_path === routes.customFields || active_path === routes.emailSettings || active_path === routes.emailTemplates || 
+                        active_path === routes.smsTemplates || active_path === routes.smsSettings || active_path === routes.otpSettings || active_path === routes.gdprSettings ||
+                        active_path === routes.paymentGatewaySettings || active_path === routes.bankSettingsGrid || active_path === routes.taxRates || 
+                        active_path === routes.currencySettings ||active_path === routes.storageSettings || active_path === routes.banIpAddress ? 'active subdrop' : '' %>">
+                        <i class="ti ti-settings fs-16 me-2"></i>
+                        <span>Settings</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.generalSettings || active_path === routes.securitySettings || active_path === routes.notification ||
+                            active_path === routes.connectedApps ? 'active subdrop' : '' %>">
+                                <span>General Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="general-settings" class="<%= active_path === routes.generalSettings ? 'active' : '' %>">Profile</a></li>
+                                <li><a href="security-settings" class="<%= active_path === routes.securitySettings ? 'active' : '' %>">Security</a></li>
+                                <li><a href="notification" class="<%= active_path === routes.notification ? 'active' : '' %>">Notifications</a></li>
+                                <li><a href="connected-apps" class="<%= active_path === routes.connectedApps ? 'active' : '' %>">Connected Apps</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.systemSettings || active_path === routes.companySettings || active_path === routes.localizationSettings || 
+                            active_path === routes.prefixes || active_path === routes.preference || active_path === routes.appearance || active_path === routes.socialAuthentication || 
+                            active_path === routes.languageSettings ? 'active subdrop' : '' %>">
+                                <span>Website Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="system-settings" class="<%= active_path === routes.systemSettings ? 'active' : '' %>">System Settings</a></li>
+                                <li><a href="company-settings" class="<%= active_path === routes.companySettings ? 'active' : '' %>">Company Settings </a></li>
+                                <li><a href="localization-settings" class="<%= active_path === routes.localizationSettings ? 'active' : '' %>">Localization</a></li>
+                                <li><a href="prefixes" class="<%= active_path === routes.prefixes ? 'active' : '' %>">Prefixes</a></li>
+                                <li><a href="preference" class="<%= active_path === routes.preference ? 'active' : '' %>">Preference</a></li>
+                                <li><a href="appearance" class="<%= active_path === routes.appearance ? 'active' : '' %>">Appearance</a></li>
+                                <li><a href="social-authentication" class="<%= active_path === routes.socialAuthentication ? 'active' : '' %>">Social Authentication</a></li>
+                                <li><a href="language-settings" class="<%= active_path === routes.languageSettings ? 'active' : '' %>">Language</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.invoiceSettings || active_path === routes.invoiceTemplates || active_path === routes.printerSettings ||
+                            active_path === routes.posSettings || active_path === routes.customFields ? 'active subdrop' : '' %>">
+                                <span>App Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.invoiceSettings || active_path === routes.invoiceTemplates ? 'active subdrop' : '' %>">
+                                        Invoice
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="invoice-settings" class="<%= active_path === routes.invoiceSettings ? 'active' : '' %>">Invoice Settings</a></li>
+                                        <li><a href="invoice-templates" class="<%= active_path === routes.invoiceTemplates ? 'active' : '' %>">Invoice Template</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="printer-settings" class="<%= active_path === routes.printerSettings ? 'active' : '' %>">Printer</a></li>
+                                <li><a href="pos-settings" class="<%= active_path === routes.posSettings ? 'active' : '' %>">POS</a></li>
+                                <li><a href="custom-fields" class="<%= active_path === routes.customFields ? 'active' : '' %>">Custom Fields</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.emailSettings || active_path === routes.emailTemplates || active_path === routes.smsTemplates || 
+                            active_path === routes.smsSettings || active_path === routes.otpSettings || active_path === routes.gdprSettings ? 'active subdrop' : '' %>">
+                                <span>System Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.emailSettings || active_path === routes.emailTemplates ? 'active subdrop' : '' %>">
+                                        Email
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="email-settings" class="<%= active_path === routes.emailSettings ? 'active' : '' %>">Email Settings</a></li>
+                                        <li><a href="email-templates" class="<%= active_path === routes.emailTemplates ? 'active' : '' %>">Email Template</a></li>
+                                    </ul>
+                                </li>
+                                <li class="submenu submenu-two">
+                                    <a href="javascript:void(0);" class="<%= active_path === routes.smsTemplates || active_path === routes.smsSettings ? 'active subdrop' : '' %>">
+                                        SMS
+                                        <span class="menu-arrow inside-submenu"></span>
+                                    </a>
+                                    <ul>
+                                        <li><a href="sms-settings" class="<%= active_path === routes.smsTemplates ? 'active' : '' %>">SMS Settings</a></li>
+                                        <li><a href="sms-templates" class="<%= active_path === routes.smsSettings ? 'active' : '' %>">SMS Template</a></li>
+                                    </ul>
+                                </li>
+                                <li><a href="otp-settings" class="<%= active_path === routes.otpSettings ? 'active' : '' %>">OTP</a></li>
+                                <li><a href="gdpr-settings" class="<%= active_path === routes.gdprSettings ? 'active' : '' %>">GDPR Cookies</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.paymentGatewaySettings || active_path === routes.bankSettingsGrid || active_path === routes.taxRates || 
+                            active_path === routes.currencySettings ? 'active subdrop' : '' %>">
+                                <span>Financial Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="payment-gateway-settings" class="<%= active_path === routes.paymentGatewaySettings ? 'active' : '' %>">Payment Gateway</a></li>
+                                <li><a href="bank-settings-grid" class="<%= active_path === routes.bankSettingsGrid ? 'active' : '' %>">Bank Accounts</a></li>
+                                <li><a href="tax-rates" class="<%= active_path === routes.taxRates ? 'active' : '' %>">Tax Rates</a></li>
+                                <li><a href="currency-settings" class="<%= active_path === routes.currencySettings ? 'active' : '' %>">Currencies</a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.storageSettings || active_path === routes.banIpAddress ? 'active subdrop' : '' %>">
+                                <span>Other Settings</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="storage-settings" class="<%= active_path === routes.storageSettings ? 'active' : '' %>">Storage</a></li>
+                                <li><a href="ban-ip-address" class="<%= active_path === routes.banIpAddress ? 'active' : '' %>">Ban IP Address</a></li>
+                            </ul>
+                        </li>
+                        <li>
+                            <a href="signin"><span>Logout</span> </a>
+                        </li>
+                    </ul>
+                </li>
+                <li class="submenu">
+                    <a href="javascript:void(0);" class="<%= active_path === routes.customers || active_path === routes.billers || active_path === routes.suppliers ||
+                    active_path === routes.storeList || active_path === routes.warehouse || active_path === routes.users || active_path === routes.roles_permissions || 
+                    active_path === routes.delete_account ? 'active subdrop' : '' %>">
+                        <i class="ti ti-circle-plus fs-16 me-2"></i>
+                        <span>More</span>
+                        <span class="menu-arrow"></span>
+                    </a>
+                    <ul>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.customers || active_path === routes.billers || active_path === routes.suppliers ||
+                                active_path === routes.storeList || active_path === routes.warehouse ? 'active subdrop' : '' %>">
+                                <span>People</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="customers" class="<%= active_path === routes.customers ? 'active' : '' %>"><i class="ti ti-users-group fs-16 me-2"></i><span>Customers</span></a></li>
+                                <li><a href="billers" class="<%= active_path === routes.billers ? 'active' : '' %>"><i class="ti ti-user-up fs-16 me-2"></i><span>Billers</span></a></li>
+                                <li><a href="suppliers" class="<%= active_path === routes.suppliers ? 'active' : '' %>"><i class="ti ti-user-dollar fs-16 me-2"></i><span>Suppliers</span></a></li>
+                                <li><a href="store-list" class="<%= active_path === routes.storeList ? 'active' : '' %>"><i class="ti ti-home-bolt fs-16 me-2"></i><span>Stores</span></a></li>
+                                <li><a href="warehouse" class="<%= active_path === routes.warehouse ? 'active' : '' %>"><i class="ti ti-archive fs-16 me-2"></i><span>Warehouses</span></a>
+                                </li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);" class="<%= active_path === routes.users || active_path === routes.roles_permissions || active_path === routes.delete_account ? 'active subdrop' : '' %>">
+                                <span>User Management</span>
+                                <span class="menu-arrow"></span>
+                            </a>
+                            <ul>
+                                <li><a href="users" class="<%= active_path === routes.users ? 'active' : '' %>"><i class="ti ti-shield-up fs-16 me-2"></i><span>Users</span></a></li>
+                                <li><a href="roles-permissions" class="<%= active_path === routes.roles_permissions ? 'active' : '' %>"><i class="ti ti-jump-rope fs-16 me-2"></i><span>Roles & Permissions</span></a></li>
+                                <li><a href="delete-account" class="<%= active_path === routes.delete_account ? 'active' : '' %>"><i class="ti ti-trash-x fs-16 me-2"></i><span>Delete Account Request</span></a></li>
+                            </ul>
+                        </li>
+                        <li class="submenu">
+                            <a href="javascript:void(0);"><span>Help</span><span class="menu-arrow"></span></a>
+                            <ul>
+                                <li><a href="https://dreamspos.dreamstechnologies.com/documentation/nodejs.html" target="_blank"><span>Documentation</span></a></li>
+                                <li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html" target="_blank"><span>Changelog v2.2.3</span></a></li>
+                                <li class="submenu">
+                                    <a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+                                    <ul>
+                                        <li><a href="javascript:void(0);">Level 1.1</a></li>
+                                        <li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+                                            <ul>
+                                                <li><a href="javascript:void(0);">Level 2.1</a></li>
+                                                <li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+                                                    <ul>
+                                                        <li><a href="javascript:void(0);">Level 3.1</a></li>
+                                                        <li><a href="javascript:void(0);">Level 3.2</a></li>
+                                                    </ul>
+                                                </li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</div>

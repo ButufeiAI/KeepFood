@@ -1,0 +1,7 @@
+
+
+<div class="quantity-control">
+    <button type="button" class="minus-btn" (click)="decrementQuantity()"><i class="icon-minus"></i></button>
+    <input type="text" class="quantity-input" aria-label="Quantity" [(ngModel)]="quantity" name="quantity" (input)="validateQuantity($event)">
+    <button type="button" class="add-btn" (click)="incrementQuantity()"><i class="icon-plus"></i></button>
+</div>

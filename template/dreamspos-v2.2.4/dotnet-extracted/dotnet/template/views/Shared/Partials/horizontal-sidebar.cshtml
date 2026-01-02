@@ -1,0 +1,643 @@
+@{
+}
+
+@functions {
+	private string GetNormalizedPage()
+	{
+		var path = Context?.Request?.Path.Value ?? string.Empty;
+		var fileName = System.IO.Path.GetFileName(path);
+		var pageNoExt = string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName);
+		var normalized = string.IsNullOrEmpty(pageNoExt) ? "index" : pageNoExt;
+		return normalized.ToLowerInvariant();
+	}
+
+	private bool IsPage(params string[] names)
+	{
+		var normalized = GetNormalizedPage();
+		foreach (var n in names)
+		{
+			var name = (n ?? string.Empty).ToLowerInvariant();
+			if (name == "/") name = "index";
+			if (name.EndsWith(".cshtml")) name = System.IO.Path.GetFileNameWithoutExtension(name);
+			if (normalized == name) return true;
+		}
+		return false;
+	}
+
+	private string ActiveIf(bool condition, string classes) => condition ? classes : string.Empty;
+}
+
+	@{
+		var sidebarClass = IsPage("pos","pos-2","pos-3","pos-4","pos-5") ? "sidebar sidebar-horizontal d-none" : "sidebar sidebar-horizontal";
+	}
+	<div class="@sidebarClass" id="horizontal-menu">
+		<div id="sidebar-menu-3" class="sidebar-menu">
+			<div class="main-menu">
+				<ul class="nav-menu">
+					<li class="submenu">
+						<a href="index" class="@(ActiveIf(IsPage("index","/","admin-dashboard","sales-dashboard","dashboard","companies","subscription","packages","domain","purchase-transaction","chat","audio-call","call-history","video-call","calendar","contacts","email","email-reply","todo","todo-list","notes","file-manager","projects","products","orders","customers","cart","checkout","wishlist","reviews","social-feed","search-list","layout-horizontal","layout-detached","layout-two-column","layout-hovered","layout-boxed","layout-rtl","layout-dark"), "active subdrop"))"><i class="ti ti-layout-grid fs-16 me-2"></i><span> Main Menu</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("index","/","admin-dashboard","sales-dashboard"), "active subdrop"))"><span>Dashboard</span> <span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="index" class="@(ActiveIf(IsPage("index","/"), "active"))">Admin Dashboard</a></li>
+									<li><a href="admin-dashboard" class="@(ActiveIf(IsPage("admin-dashboard"), "active"))">Admin Dashboard 2</a></li>
+									<li><a href="sales-dashboard" class="@(ActiveIf(IsPage("sales-dashboard"), "active"))">Sales Dashboard</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("dashboard","companies","subscription","packages","domain","purchase-transaction","dashboard","companies","subscription","packages","domain","purchase-transaction"), "active subdrop")) "><span>Super Admin</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="dashboard" class="@(ActiveIf(IsPage("dashboard"), "active"))">Dashboard</a></li>
+									<li><a href="companies" class="@(ActiveIf(IsPage("companies"), "active"))">Companies</a></li>
+									<li><a href="subscription" class="@(ActiveIf(IsPage("subscription"), "active"))">Subscriptions</a></li>
+									<li><a href="packages" class="@(ActiveIf(IsPage("packages"), "active"))">Packages</a></li>
+									<li><a href="domain" class="@(ActiveIf(IsPage("domain"), "active"))">Domain</a></li>
+									<li><a href="purchase-transaction" class="@(ActiveIf(IsPage("purchase-transaction"), "active"))">Purchase Transaction</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("chat","audio-call","call-history","video-call","calendar","contacts","email","email-reply","todo","todo-list","notes","file-manager","projects","products","orders","customers","cart","checkout","wishlist","reviews","social-feed","search-list"), "active subdrop")) "><span>Application</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="chat" class="@(ActiveIf(IsPage("chat"), "active"))">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("video-call","call-history","audio-call","video-call","call-history","audio-call"), "active subdrop"))">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="video-call" class="@(ActiveIf(IsPage("video-call"), "active"))">Video Call</a></li>
+											<li><a href="audio-call" class="@(ActiveIf(IsPage("audio-call"), "active"))">Audio Call</a></li>
+											<li><a href="call-history" class="@(ActiveIf(IsPage("call-history"), "active"))">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="calendar" class="@(ActiveIf(IsPage("calendar"), "active"))">Calendar</a></li>
+									<li><a href="contacts" class="@(ActiveIf(IsPage("contacts"), "active"))">Contacts</a></li>
+									<li><a href="email" class="@(ActiveIf(IsPage("email","email-reply"), "active"))">Email</a></li>
+									<li><a href="todo" class="@(ActiveIf(IsPage("todo","todo-list"), "active"))">To Do</a></li>
+									<li><a href="notes" class="@(ActiveIf(IsPage("notes"), "active"))">Notes</a></li>
+									<li><a href="file-manager" class="@(ActiveIf(IsPage("file-manager"), "active"))">File Manager</a></li>
+									<li><a href="projects" class="@(ActiveIf(IsPage("projects"), "active"))">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("products","orders","customers","cart","checkout","wishlist","reviews"), "active subdrop"))">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="products" class="@(ActiveIf(IsPage("products"), "active"))">Products</a></li>
+											<li><a href="orders" class="@(ActiveIf(IsPage("orders"), "active"))">Orders</a></li>
+											<li><a href="customers" class="@(ActiveIf(IsPage("customers"), "active"))">Customers</a></li>
+											<li><a href="cart" class="@(ActiveIf(IsPage("cart"), "active"))">Cart</a></li>
+											<li><a href="checkout" class="@(ActiveIf(IsPage("checkout"), "active"))">Checkout</a></li>
+											<li><a href="wishlist" class="@(ActiveIf(IsPage("wishlist"), "active"))">Wishlist</a></li>
+											<li><a href="reviews" class="@(ActiveIf(IsPage("reviews"), "active"))">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="social-feed" class="@(ActiveIf(IsPage("social-feed"), "active"))">Social Feed</a></li>
+									<li><a href="search-list" class="@(ActiveIf(IsPage("search-list"), "active"))">Search List</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("layout-horizontal","layout-detached","layout-two-column","layout-hovered","layout-boxed","layout-rtl","layout-dark"), "active subdrop"))"><span>Layouts</span><span class="menu-arrow inside-submenu"></span></a>
+								<ul>
+									<li><a href="layout-horizontal" class="@(ActiveIf(IsPage("layout-horizontal"), "active"))">Horizontal</a></li>
+									<li><a href="layout-detached" class="@(ActiveIf(IsPage("layout-detached"), "active"))">Detached</a></li>
+									<li><a href="layout-two-column" class="@(ActiveIf(IsPage("layout-two-column"), "active"))">Two Column</a></li>
+									<li><a href="layout-hovered" class="@(ActiveIf(IsPage("layout-hovered"), "active"))">Hovered</a></li>
+									<li><a href="layout-boxed" class="@(ActiveIf(IsPage("layout-boxed"), "active"))">Boxed</a></li>
+									<li><a href="layout-rtl" class="@(ActiveIf(IsPage("layout-rtl"), "active"))">RTL</a></li>
+									<li><a href="layout-dark" class="@(ActiveIf(IsPage("layout-dark"), "active"))">Dark</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("product-list","edit-product","product-details","add-product","expired-products","low-stocks","category-list","sub-categories","brand-list","varriant-attributes","units","warranty","barcode","qrcode"), "active subdrop"))"><i class="ti ti-brand-unity fs-16 me-2"></i></i><span> Inventory
+							</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li><a href="product-list" class="@(ActiveIf(IsPage("product-list","product-details","edit-product"), "active"))">Products</a></li>
+							<li><a href="add-product" class="@(ActiveIf(IsPage("add-product"), "active"))">Create Product</a></li>
+							<li><a href="expired-products" class="@(ActiveIf(IsPage("expired-products"), "active"))">Expired Products</a></li>
+							<li><a href="low-stocks" class="@(ActiveIf(IsPage("low-stocks"), "active"))">Low Stocks</a></li>
+							<li><a href="category-list" class="@(ActiveIf(IsPage("category-list"), "active"))">Category</a></li>
+							<li><a href="sub-categories" class="@(ActiveIf(IsPage("sub-categories"), "active"))">Sub Category</a></li>
+							<li><a href="brand-list" class="@(ActiveIf(IsPage("brand-list"), "active"))">Brands</a></li>
+							<li><a href="units" class="@(ActiveIf(IsPage("units"), "active"))">Units</a></li>
+							<li><a href="varriant-attributes" class="@(ActiveIf(IsPage("varriant-attributes"), "active"))">Variant Attributes</a></li>
+							<li><a href="warranty" class="@(ActiveIf(IsPage("warranty"), "active"))">Warranties</a></li>
+							<li><a href="barcode" class="@(ActiveIf(IsPage("barcode"), "active"))">Print Barcode</a></li>
+							<li><a href="qrcode" class="@(ActiveIf(IsPage("qrcode"), "active"))">Print QR Code</a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("manage-stocks","stock-adjustment","stock-transfer","online-orders","pos-orders","invoice","invoice-details","sales-returns","quotation-list","pos","pos-2","pos-3","pos-4","pos-5","coupons","gift-cards","discount-plan","discount"), "active subdrop"))"><i class="ti ti-layout-grid fs-16 me-2"></i><span>Sales &amp; Purchase</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("manage-stocks","stock-adjustment","stock-transfer"), "active subdrop"))"><span>Stock</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="manage-stocks" class="@(ActiveIf(IsPage("manage-stocks"), "active"))">Manage Stock</a></li>
+									<li><a href="stock-adjustment" class="@(ActiveIf(IsPage("stock-adjustment"), "active"))">Stock Adjustment</a></li>
+									<li><a href="stock-transfer" class="@(ActiveIf(IsPage("stock-transfer"), "active"))">Stock Transfer</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("online-orders","pos-orders","invoice","invoice-details","sales-returns","quotation-list","pos","pos-2","pos-3","pos-4","pos-5"), "active subdrop"))"><span>Sales</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("online-orders","pos-orders"), "active subdrop"))"><span>Sales</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="online-orders" class="@(ActiveIf(IsPage("online-orders"), "active"))">Online Orders</a></li>
+											<li><a href="pos-orders" class="@(ActiveIf(IsPage("pos-orders"), "active"))">POS Orders</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice" class="@(ActiveIf(IsPage("invoice","invoice-details"), "active"))">Invoices</a></li>
+									<li><a href="sales-returns" class="@(ActiveIf(IsPage("sales-returns"), "active"))">Sales Return</a></li>
+									<li><a href="quotation-list" class="@(ActiveIf(IsPage("quotation-list"), "active"))">Quotation</a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("pos","pos-2","pos-3","pos-4","pos-5"), "active subdrop"))"><span>POS</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pos" class="@(ActiveIf(IsPage("pos"), "active"))">POS 1</a></li>
+											<li><a href="pos-2" class="@(ActiveIf(IsPage("pos-2"), "active"))">POS 2</a></li>
+											<li><a href="pos-3" class="@(ActiveIf(IsPage("pos-3"), "active"))">POS 3</a></li>
+											<li><a href="pos-4" class="@(ActiveIf(IsPage("pos-4"), "active"))">POS 4</a></li>
+											<li><a href="pos-5" class="@(ActiveIf(IsPage("pos-5"), "active"))">POS 5</a></li>
+											<li><a href="https://dreamspos.dreamstechnologies.com/food-pos/dotnet/template/index" target="_blank">POS 6</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("coupons","gift-cards","discount-plan","discount"), "active subdrop"))"><span>Promo</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="coupons" class="@(ActiveIf(IsPage("coupons"), "active"))"><span>Coupons</span></a></li>
+									<li><a href="gift-cards" class="@(ActiveIf(IsPage("gift-cards"), "active"))"><span>Gift Cards</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("discount-plan","discount"), "active subdrop"))"><span>Discount</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="discount-plan" class="@(ActiveIf(IsPage("discount-plan"), "active"))">Discount Plan</a></li>
+											<li><a href="discount" class="@(ActiveIf(IsPage("discount"), "active"))">Discount</a></li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("purchase-list","purchase-order-report","purchase-returns"), "active subdrop"))"><span>Purchase</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="purchase-list" class="@(ActiveIf(IsPage("purchase-list"), "active"))"><span>Purchases</span></a></li>
+									<li><a href="purchase-order-report" class="@(ActiveIf(IsPage("purchase-order-report"), "active"))"><span>Purchase Order</span></a></li>
+									<li><a href="purchase-returns" class="@(ActiveIf(IsPage("purchase-returns"), "active"))"><span>Purchase Return</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("expense-list","expense-category"), "active subdrop"))"><span>Expenses</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="expense-list" class="@(ActiveIf(IsPage("expense-list"), "active"))">Expenses</a></li>
+									<li><a href="expense-category" class="@(ActiveIf(IsPage("expense-category"), "active"))">Expense Category</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("income","income-category"), "active subdrop"))"><span>Income</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="income" class="@(ActiveIf(IsPage("income"), "active"))">Income</a></li>
+									<li><a href="income-category" class="@(ActiveIf(IsPage("income-category"), "active"))">Income Category</a></li>
+								</ul>
+							</li>
+							<li><a href="account-list" class="@(ActiveIf(IsPage("account-list"), "active"))"><span>Bank Accounts</span></a></li>
+							<li><a href="money-transfer" class="@(ActiveIf(IsPage("money-transfer"), "active"))"><span>Money Transfer</span></a></li>
+							<li><a href="balance-sheet" class="@(ActiveIf(IsPage("balance-sheet"), "active"))"><span>Balance Sheet</span></a></li>
+							<li><a href="trial-balance" class="@(ActiveIf(IsPage("trial-balance"), "active"))"><span>Trial Balance</span></a></li>
+							<li><a href="cash-flow" class="@(ActiveIf(IsPage("cash-flow"), "active"))"><span>Cash Flow</span></a></li>
+							<li><a href="account-statement" class="@(ActiveIf(IsPage("account-statement"), "active"))"><span>Account Statement</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("ui-alerts","ui-accordion","ui-avatar","ui-badges","ui-borders","ui-buttons","ui-buttons-group","ui-breadcrumb","ui-cards","ui-carousel","ui-colors","ui-dropdowns","ui-grid","ui-images","ui-lightbox","ui-media","ui-modals","ui-offcanvas","ui-pagination","ui-popovers","ui-progress","ui-placeholders","ui-rangeslider","ui-spinner","ui-sweetalerts","ui-nav-tabs","ui-toasts","ui-tooltips","ui-typography","ui-video","ui-sortable","ui-swiperjs","ui-ribbon","ui-clipboard","ui-drag-drop","ui-rating","ui-text-editor","ui-counter","ui-scrollbar","ui-stickynote","ui-timeline","chart-apex","chart-c3","chart-js","chart-morris","chart-flot","chart-peity","icon-fontawesome","icon-feather","icon-ionic","icon-material","icon-pe7","icon-simpleline","icon-themify","icon-weather","icon-typicon","icon-flag","icon-tabler","icon-bootstrap","icon-remix","form-basic-inputs","form-checkbox-radios","form-input-groups","form-grid-gutters","form-select","form-fileupload","form-mask","form-horizontal","form-vertical","form-floating-labels","form-validation","form-select2","form-wizard","form-pickers"), "active subdrop"))"><i class="ti ti-users-group fs-16 me-2"></i><span>UI Interface</span> <span class="menu-arrow"></span></a>
+						<ul>																
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("ui-alerts","ui-accordion","ui-avatar","ui-badges","ui-borders","ui-buttons","ui-buttons-group","ui-breadcrumb","ui-cards","ui-carousel","ui-colors","ui-dropdowns","ui-grid","ui-images","ui-lightbox","ui-media","ui-modals","ui-offcanvas","ui-pagination","ui-popovers","ui-progress","ui-placeholders","ui-rangeslider","ui-spinner","ui-sweetalerts","ui-nav-tabs","ui-toasts","ui-tooltips","ui-typography","ui-video","ui-sortable","ui-swiperjs","ui-ribbon","ui-clipboard","ui-drag-drop","ui-rating","ui-text-editor","ui-counter","ui-scrollbar","ui-stickynote","ui-timeline","chart-apex","chart-c3","chart-js","chart-morris","chart-flot","chart-peity","icon-fontawesome","icon-feather","icon-ionic","icon-material","icon-pe7","icon-simpleline","icon-themify","icon-weather","icon-typicon","icon-flag","icon-tabler","icon-bootstrap","icon-remix","form-basic-inputs","form-checkbox-radios","form-input-groups","form-grid-gutters","form-select","form-fileupload","form-mask","form-horizontal","form-vertical","form-floating-labels","form-validation","form-select2","form-wizard","form-pickers"), "active subdrop"))"><span>Base UI</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="ui-alerts" class="@(ActiveIf(IsPage("ui-alerts"), "active"))">Alerts</a></li>
+									<li><a href="ui-accordion" class="@(ActiveIf(IsPage("ui-accordion"), "active"))">Accordion</a></li>
+									<li><a href="ui-avatar" class="@(ActiveIf(IsPage("ui-avatar"), "active"))">Avatar</a></li>
+									<li><a href="ui-badges" class="@(ActiveIf(IsPage("ui-badges"), "active"))">Badges</a></li>
+									<li><a href="ui-borders" class="@(ActiveIf(IsPage("ui-borders"), "active"))">Border</a></li>
+									<li><a href="ui-buttons" class="@(ActiveIf(IsPage("ui-buttons"), "active"))">Buttons</a></li>
+									<li><a href="ui-buttons-group" class="@(ActiveIf(IsPage("ui-buttons-group"), "active"))">Button Group</a></li>
+									<li><a href="ui-breadcrumb" class="@(ActiveIf(IsPage("ui-breadcrumb"), "active"))">Breadcrumb</a></li>
+									<li><a href="ui-cards" class="@(ActiveIf(IsPage("ui-cards"), "active"))">Card</a></li>
+									<li><a href="ui-carousel" class="@(ActiveIf(IsPage("ui-carousel"), "active"))">Carousel</a></li>
+									<li><a href="ui-colors" class="@(ActiveIf(IsPage("ui-colors"), "active"))">Colors</a></li>
+									<li><a href="ui-dropdowns" class="@(ActiveIf(IsPage("ui-dropdowns"), "active"))">Dropdowns</a></li>
+									<li><a href="ui-grid" class="@(ActiveIf(IsPage("ui-grid"), "active"))">Grid</a></li>
+									<li><a href="ui-images" class="@(ActiveIf(IsPage("ui-images"), "active"))">Images</a></li>
+									<li><a href="ui-lightbox" class="@(ActiveIf(IsPage("ui-lightbox"), "active"))">Lightbox</a></li>
+									<li><a href="ui-media" class="@(ActiveIf(IsPage("ui-media"), "active"))">Media</a></li>
+									<li><a href="ui-modals" class="@(ActiveIf(IsPage("ui-modals"), "active"))">Modals</a></li>
+									<li><a href="ui-offcanvas" class="@(ActiveIf(IsPage("ui-offcanvas"), "active"))">Offcanvas</a></li>
+									<li><a href="ui-pagination" class="@(ActiveIf(IsPage("ui-pagination"), "active"))">Pagination</a></li>
+									<li><a href="ui-popovers" class="@(ActiveIf(IsPage("ui-popovers"), "active"))">Popovers</a></li>
+									<li><a href="ui-progress" class="@(ActiveIf(IsPage("ui-progress"), "active"))">Progress</a></li>
+									<li><a href="ui-placeholders" class="@(ActiveIf(IsPage("ui-placeholders"), "active"))">Placeholders</a></li>
+									<li><a href="ui-rangeslider" class="@(ActiveIf(IsPage("ui-rangeslider"), "active"))">Range Slider</a></li>
+									<li><a href="ui-spinner" class="@(ActiveIf(IsPage("ui-spinner"), "active"))">Spinner</a></li>
+									<li><a href="ui-sweetalerts" class="@(ActiveIf(IsPage("ui-sweetalerts"), "active"))">Sweet Alerts</a></li>
+									<li><a href="ui-nav-tabs" class="@(ActiveIf(IsPage("ui-nav-tabs"), "active"))">Tabs</a></li>
+									<li><a href="ui-toasts" class="@(ActiveIf(IsPage("ui-toasts"), "active"))">Toasts</a></li>
+									<li><a href="ui-tooltips" class="@(ActiveIf(IsPage("ui-tooltips"), "active"))">Tooltips</a></li>
+									<li><a href="ui-typography" class="@(ActiveIf(IsPage("ui-typography"), "active"))">Typography</a></li>
+									<li><a href="ui-video" class="@(ActiveIf(IsPage("ui-video"), "active"))">Video</a></li>
+									<li><a href="ui-sortable" class="@(ActiveIf(IsPage("ui-sortable"), "active"))">Sortable</a></li>
+									<li><a href="ui-swiperjs" class="@(ActiveIf(IsPage("ui-swiperjs"), "active"))">Swiperjs</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("ui-ribbon","ui-clipboard","ui-drag-drop","ui-rangeslider","ui-rating","ui-text-editor","ui-counter","ui-scrollbar","ui-stickynote","ui-timeline"), "active subdrop"))"><span>Advanced UI</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="ui-ribbon" class="@(ActiveIf(IsPage("ui-ribbon"), "active"))">Ribbon</a></li>
+									<li><a href="ui-clipboard" class="@(ActiveIf(IsPage("ui-clipboard"), "active"))">Clipboard</a></li>
+									<li><a href="ui-drag-drop" class="@(ActiveIf(IsPage("ui-drag-drop"), "active"))">Drag & Drop</a></li>
+									<li><a href="ui-rangeslider" class="@(ActiveIf(IsPage("ui-rangeslider"), "active"))">Range Slider</a></li>
+									<li><a href="ui-rating" class="@(ActiveIf(IsPage("ui-rating"), "active"))">Rating</a></li>
+									<li><a href="ui-text-editor" class="@(ActiveIf(IsPage("ui-text-editor"), "active"))">Text Editor</a></li>
+									<li><a href="ui-counter" class="@(ActiveIf(IsPage("ui-counter"), "active"))">Counter</a></li>
+									<li><a href="ui-scrollbar" class="@(ActiveIf(IsPage("ui-scrollbar"), "active"))">Scrollbar</a></li>
+									<li><a href="ui-stickynote" class="@(ActiveIf(IsPage("ui-stickynote"), "active"))">Sticky Note</a></li>
+									<li><a href="ui-timeline" class="@(ActiveIf(IsPage("ui-timeline"), "active"))">Timeline</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("chart-apex","chart-c3","chart-js","chart-morris","chart-flot","chart-peity"), "active subdrop"))"><span>Charts</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="chart-apex" class="@(ActiveIf(IsPage("chart-apex"), "active"))">Apex Charts</a></li>
+									<li><a href="chart-c3" class="@(ActiveIf(IsPage("chart-c3"), "active"))">Chart C3</a></li>
+									<li><a href="chart-js" class="@(ActiveIf(IsPage("chart-js"), "active"))">Chart Js</a></li>
+									<li><a href="chart-morris" class="@(ActiveIf(IsPage("chart-morris"), "active"))">Morris Charts</a></li>
+									<li><a href="chart-flot" class="@(ActiveIf(IsPage("chart-flot"), "active"))">Flot Charts</a></li>
+									<li><a href="chart-peity" class="@(ActiveIf(IsPage("chart-peity"), "active"))">Peity Charts</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("icon-fontawesome","icon-feather","icon-ionic","icon-material","icon-pe7","icon-simpleline","icon-themify","icon-weather","icon-typicon","icon-flag","icon-tabler","icon-bootstrap","icon-remix"), "active subdrop"))"><span>Icons</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="icon-fontawesome" class="@(ActiveIf(IsPage("icon-fontawesome"), "active"))">Fontawesome Icons</a></li>
+									<li><a href="icon-feather" class="@(ActiveIf(IsPage("icon-feather"), "active"))">Feather Icons</a></li>
+									<li><a href="icon-ionic" class="@(ActiveIf(IsPage("icon-ionic"), "active"))">Ionic Icons</a></li>
+									<li><a href="icon-material" class="@(ActiveIf(IsPage("icon-material"), "active"))">Material Icons</a></li>
+									<li><a href="icon-pe7" class="@(ActiveIf(IsPage("icon-pe7"), "active"))">Pe7 Icons</a></li>
+									<li><a href="icon-simpleline" class="@(ActiveIf(IsPage("icon-simpleline"), "active"))">Simpleline Icons</a></li>
+									<li><a href="icon-themify" class="@(ActiveIf(IsPage("icon-themify"), "active"))">Themify Icons</a></li>
+									<li><a href="icon-weather" class="@(ActiveIf(IsPage("icon-weather"), "active"))">Weather Icons</a></li>
+									<li><a href="icon-typicon" class="@(ActiveIf(IsPage("icon-typicon"), "active"))">Typicon Icons</a></li>
+									<li><a href="icon-flag" class="@(ActiveIf(IsPage("icon-flag"), "active"))">Flag Icons</a></li>
+									<li><a href="icon-tabler" class="@(ActiveIf(IsPage("icon-tabler"), "active"))">Tabler Icons</a></li>
+									<li><a href="icon-bootstrap" class="@(ActiveIf(IsPage("icon-bootstrap"), "active"))">Bootstrap Icons</a></li>
+									<li><a href="icon-remix" class="@(ActiveIf(IsPage("icon-remix"), "active"))">Remix Icons</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("form-basic-inputs","form-checkbox-radios","form-input-groups","form-grid-gutters","form-select","form-fileupload","form-mask","form-horizontal","form-vertical","form-floating-labels","form-validation","form-select2","form-wizard","form-pickers"), "active subdrop"))"><span> Forms</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("form-basic-inputs","form-checkbox-radios","form-input-groups","form-grid-gutters","form-select","form-fileupload","form-mask","form-basic-inputs","form-checkbox-radios","form-input-groups","form-grid-gutters","form-select","form-fileupload","form-mask"), "active subdrop"))"><span>Form Elements</span><span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="form-basic-inputs" class="@(ActiveIf(IsPage("form-basic-inputs"), "active"))">Basic Inputs</a></li>
+											<li><a href="form-checkbox-radios" class="@(ActiveIf(IsPage("form-checkbox-radios"), "active"))">Checkbox & Radios</a></li>
+											<li><a href="form-input-groups" class="@(ActiveIf(IsPage("form-input-groups"), "active"))">Input Groups</a></li>
+											<li><a href="form-grid-gutters" class="@(ActiveIf(IsPage("form-grid-gutters"), "active"))">Grid & Gutters</a></li>
+											<li><a href="form-select" class="@(ActiveIf(IsPage("form-select"), "active"))">Form Select</a></li>
+											<li><a href="form-mask" class="@(ActiveIf(IsPage("form-mask"), "active"))">Input Masks</a></li>
+											<li><a href="form-fileupload" class="@(ActiveIf(IsPage("form-fileupload"), "active"))">File Uploads</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("form-horizontal","form-vertical","form-floating-labels"), "active subdrop"))"><span> Layouts</span><span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="form-horizontal" class="@(ActiveIf(IsPage("form-horizontal"), "active"))">Horizontal Form</a></li>
+											<li><a href="form-vertical" class="@(ActiveIf(IsPage("form-vertical"), "active"))">Vertical Form</a></li>
+											<li><a href="form-floating-labels" class="@(ActiveIf(IsPage("form-floating-labels"), "active"))">Floating Labels</a></li>
+										</ul>
+									</li>
+									<li><a href="form-validation" class="@(ActiveIf(IsPage("form-validation"), "active"))">Form Validation</a></li>
+									<li><a href="form-select2" class="@(ActiveIf(IsPage("form-select2"), "active"))">Select2</a></li>
+									<li><a href="form-wizard" class="@(ActiveIf(IsPage("form-wizard"), "active"))">Form Wizard</a></li>
+									<li><a href="form-pickers" class="@(ActiveIf(IsPage("form-pickers"), "active"))">Form Picker</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("tables-basic","data-tables"), "active subdrop"))"><span>Tables</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="tables-basic" class="@(ActiveIf(IsPage("tables-basic"), "active"))">Basic Tables </a></li>
+									<li><a href="data-tables" class="@(ActiveIf(IsPage("data-tables"), "active"))">Data Table </a></li>
+								</ul>
+							</li>
+							<li  class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("maps-vector","maps-leaflet"), "active subdrop"))"><span>Maps</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="maps-vector" class="@(ActiveIf(IsPage("maps-vector"), "active"))">Vector</a></li>
+									<li><a href="maps-leaflet" class="@(ActiveIf(IsPage("maps-leaflet"), "active"))">Leaflet</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","blank-page","pricing","pages","all-blog","blog-details","blog-tag","blog-categories","blog-comments","countries","states","cities","testimonials","faq","employees-grid","department-grid","designation","shift","attendance-employee","attendance-admin","leaves-admin","leaves-employee","leave-types","holidays","employee-salary","payslip","add-employee","edit-employee","employee-details","employees-list","department-list"), "active subdrop"))"><i class="ti ti-page-break fs-16 me-2"></i><span>Pages</span> <span class="menu-arrow"></span></a>
+						<ul>
+							<li><a href="profile" class="@(ActiveIf(IsPage("profile"), "active"))"><span>Profile</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3"), "active subdrop"))"><span>Authentication</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("signin","signin-2","signin-3","signin","signin-2","signin-3"), "active subdrop"))">Login<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="signin" class="@(ActiveIf(IsPage("signin"), "active"))">Cover</a></li>
+											<li><a href="signin-2" class="@(ActiveIf(IsPage("signin-2"), "active"))">Illustration</a></li>
+											<li><a href="signin-3" class="@(ActiveIf(IsPage("signin-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("register","register-2","register-3"), "active subdrop"))">Register<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="register" class="@(ActiveIf(IsPage("register"), "active"))">Cover</a></li>
+											<li><a href="register-2" class="@(ActiveIf(IsPage("register-2"), "active"))">Illustration</a></li>
+											<li><a href="register-3" class="@(ActiveIf(IsPage("register-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("forgot-password","forgot-password-2","forgot-password-3"), "active subdrop"))">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="forgot-password" class="@(ActiveIf(IsPage("forgot-password"), "active"))">Cover</a></li>
+											<li><a href="forgot-password-2" class="@(ActiveIf(IsPage("forgot-password-2"), "active"))">Illustration</a></li>
+											<li><a href="forgot-password-3" class="@(ActiveIf(IsPage("forgot-password-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("reset-password","reset-password-2","reset-password-3"), "active subdrop"))">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="reset-password" class="@(ActiveIf(IsPage("reset-password"), "active"))">Cover</a></li>
+											<li><a href="reset-password-2" class="@(ActiveIf(IsPage("reset-password-2"), "active"))">Illustration</a></li>
+											<li><a href="reset-password-3" class="@(ActiveIf(IsPage("reset-password-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("email-verification","email-verification-2","email-verification-3"), "active subdrop"))">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="email-verification" class="@(ActiveIf(IsPage("email-verification"), "active"))">Cover</a></li>
+											<li><a href="email-verification-2" class="@(ActiveIf(IsPage("email-verification-2"), "active"))">Illustration</a></li>
+											<li><a href="email-verification-3" class="@(ActiveIf(IsPage("email-verification-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("two-step-verification","two-step-verification-2","two-step-verification-3"), "active subdrop"))">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="two-step-verification" class="@(ActiveIf(IsPage("two-step-verification"), "active"))">Cover</a></li>
+											<li><a href="two-step-verification-2" class="@(ActiveIf(IsPage("two-step-verification-2"), "active"))">Illustration</a></li>
+											<li><a href="two-step-verification-3" class="@(ActiveIf(IsPage("two-step-verification-3"), "active"))">Basic</a></li>
+										</ul>
+									</li>
+									<li><a href="lock-screen" class="@(ActiveIf(IsPage("lock-screen"), "active"))">Lock Screen</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("error-404","error-500"), "active subdrop"))"><span>Error</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="error-404" class="@(ActiveIf(IsPage("error-404"), "active"))">404 Error </a></li>
+									<li><a href="error-500" class="@(ActiveIf(IsPage("error-500"), "active"))">500 Error </a></li>
+								</ul>
+							</li>
+							<li><a href="blank-page" class="@(ActiveIf(IsPage("blank-page"), "active"))"><span>Blank Page</span> </a></li>
+							<li><a href="pricing" class="@(ActiveIf(IsPage("pricing"), "active"))"><span>Pricing</span> </a></li>
+							<li><a href="coming-soon" class="@(ActiveIf(IsPage("coming-soon"), "active"))"><span>Coming Soon</span> </a></li>
+							<li><a href="under-maintenance" class="@(ActiveIf(IsPage("under-maintenance"), "active"))"><span>Under Maintenance</span> </a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("pages","all-blog","blog-details","blog-tag","blog-categories","blog-comments","countries","states","cities","testimonials","faq"), "active subdrop"))"><span>Content</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("pages"), "active subdrop"))"><span>Pages</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pages" class="@(ActiveIf(IsPage("pages"), "active"))">Pages</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("all-blog","blog-details","blog-tag","blog-categories","blog-comments"), "active subdrop"))"><span>Blog</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="all-blog" class="@(ActiveIf(IsPage("all-blog"), "active"))">All Blog</a></li>
+											<li><a href="blog-tag" class="@(ActiveIf(IsPage("blog-tag"), "active"))">Blog Tags</a></li>
+											<li><a href="blog-categories" class="@(ActiveIf(IsPage("blog-categories"), "active"))">Categories</a></li>
+											<li><a href="blog-comments" class="@(ActiveIf(IsPage("blog-comments"), "active"))">Blog Comments</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);" class="@(ActiveIf(IsPage("countries","states","cities"), "active subdrop"))"><span>Location</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="countries" class="@(ActiveIf(IsPage("countries"), "active"))">Countries</a></li>
+											<li><a href="states" class="@(ActiveIf(IsPage("states"), "active"))">States</a></li>
+											<li><a href="cities" class="@(ActiveIf(IsPage("cities"), "active"))">Cities</a></li>
+										</ul>
+									</li>
+									<li><a href="testimonials" class="@(ActiveIf(IsPage("testimonials"), "active"))"><span>Testimonials</span></a></li>
+									<li><a href="faq" class="@(ActiveIf(IsPage("faq"), "active"))"><span>FAQ</span></a></li>
+			
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("employees-grid","add-employee","edit-employee","employee-details","employees-list","department-grid","designation","shift","department-list"), "active subdrop"))"><span>Employees</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="employees-grid" class="@(ActiveIf(IsPage("employees-grid"), "active"))"><span>Employees</span></a></li>
+									<li><a href="department-grid" class="@(ActiveIf(IsPage("department-grid"), "active"))"><span>Departments</span></a></li>
+									<li><a href="designation" class="@(ActiveIf(IsPage("designation"), "active"))"><span>Designation</span></a></li>
+									<li><a href="shift" class="@(ActiveIf(IsPage("shift"), "active"))"><span>Shifts</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("attendance-employee","attendance-admin"), "active subdrop"))"><span>Attendence</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="attendance-employee" class="@(ActiveIf(IsPage("attendance-employee"), "active"))">Employee</a></li>
+									<li><a href="attendance-admin" class="@(ActiveIf(IsPage("attendance-admin"), "active"))">Admin</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("leaves-admin","leaves-employee","leave-types","holidays"), "active subdrop"))"><span>Leaves &amp; Holidays</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="leaves-admin" class="@(ActiveIf(IsPage("leaves-admin"), "active"))">Admin Leaves</a></li>
+									<li><a href="leaves-employee" class="@(ActiveIf(IsPage("leaves-employee"), "active"))">Employee Leaves</a></li>
+									<li><a href="leave-types" class="@(ActiveIf(IsPage("leave-types"), "active"))">Leave Types</a></li>
+									<li><a href="holidays" class="@(ActiveIf(IsPage("holidays"), "active"))"><span>Holidays</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("employee-salary","payslip"), "active subdrop"))"><span>Payroll</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="employee-salary" class="@(ActiveIf(IsPage("employee-salary"), "active"))">Employee Salary</a></li>
+									<li><a href="payslip" class="@(ActiveIf(IsPage("payslip"), "active"))">Payslip</a></li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("sales-report","best-seller","inventory-report","stock-history","sold-stock","supplier-report","supplier-due-report","customer-report","customer-due-report","product-report","product-expiry-report","product-quantity-alert","invoice-report","expense-report","income-report","tax-reports","sales-tax","profit-and-loss","annual-report"), "active subdrop"))"><i class="ti ti-chart-bar fs-16 me-2"></i><span>Reports</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("sales-report","best-seller"), "active subdrop"))"><span>Sales Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="sales-report" class="@(ActiveIf(IsPage("sales-report"), "active"))">Sales Report</a></li>
+									<li><a href="best-seller" class="@(ActiveIf(IsPage("best-seller"), "active"))">Best Seller</a></li>
+								</ul>
+							</li>
+							<li><a href="purchase-report" class="@(ActiveIf(IsPage("purchase-report"), "active"))"><span>Purchase report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("inventory-report","stock-history","sold-stock"), "active subdrop"))"><span>Inventory Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="inventory-report" class="@(ActiveIf(IsPage("inventory-report"), "active"))">Inventory Report</a></li>
+									<li><a href="stock-history" class="@(ActiveIf(IsPage("stock-history"), "active"))">Stock History</a></li>
+									<li><a href="sold-stock" class="@(ActiveIf(IsPage("sold-stock"), "active"))">Sold Stock</a></li>
+								</ul>
+							</li>
+							<li><a href="invoice-report" class="@(ActiveIf(IsPage("invoice-report"), "active"))"><span>Invoice Report</span></a></li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("supplier-report","supplier-due-report"), "active subdrop"))"><span>Supplier Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="supplier-report" class="@(ActiveIf(IsPage("supplier-report"), "active"))">Supplier Report</a></li>
+									<li><a href="supplier-due-report" class="@(ActiveIf(IsPage("supplier-due-report"), "active"))">Supplier Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("customer-report","customer-due-report"), "active subdrop"))"><span>Customer Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="customer-report" class="@(ActiveIf(IsPage("customer-report"), "active"))">Customer Report</a></li>
+									<li><a href="customer-due-report" class="@(ActiveIf(IsPage("customer-due-report"), "active"))">Customer Due Report</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("product-report","product-expiry-report","product-quantity-alert"), "active subdrop"))"><span>Product Report</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="product-report" class="@(ActiveIf(IsPage("product-report"), "active"))">Product Report</a></li>
+									<li><a href="product-expiry-report" class="@(ActiveIf(IsPage("product-expiry-report"), "active"))">Product Expiry Report</a></li>
+									<li><a href="product-quantity-alert" class="@(ActiveIf(IsPage("product-quantity-alert"), "active"))">Product Quantity Alert</a></li>
+								</ul>
+							</li>
+							<li><a href="expense-report" class="@(ActiveIf(IsPage("expense-report"), "active"))"><span>Expense Report</span></a></li>
+							<li><a href="income-report" class="@(ActiveIf(IsPage("income-report"), "active"))"><span>Income Report</span></a></li>
+							<li><a href="tax-reports" class="@(ActiveIf(IsPage("tax-reports","sales-tax"), "active"))"><span>Tax Report</span></a></li>
+							<li><a href="profit-and-loss" class="@(ActiveIf(IsPage("profit-and-loss"), "active"))"><span>Profit & Loss</span></a></li>
+							<li><a href="annual-report" class="@(ActiveIf(IsPage("annual-report"), "active"))"><span>Annual Report</span></a></li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);" class="@(ActiveIf(IsPage("general-settings","security-settings","notification","activities","connected-apps","system-settings","company-settings","localization-settings","prefixes","preference","appearance","social-authentication","language-settings","invoice-settings","language-settings-web","invoice-templates","printer-settings","pos-settings","signatures","custom-fields","email-settings","email-templates","sms-settings","sms-templates","otp-settings","gdpr-settings","payment-gateway-settings","bank-settings-grid","bank-settings-list","tax-rates","currency-settings","storage-settings","ban-ip-address"), "active subdrop"))"><i class="ti ti-settings fs-16 me-2"></i><span>Settings</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("general-settings","security-settings","notification","activities","connected-apps"), "active subdrop"))"><span>General Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="general-settings" class="@(ActiveIf(IsPage("general-settings"), "active"))">Profile</a></li>
+									<li><a href="security-settings" class="@(ActiveIf(IsPage("security-settings"), "active"))">Security</a></li>
+									<li><a href="notification" class="@(ActiveIf(IsPage("notification","activities"), "active"))">Notifications</a></li>
+									<li><a href="connected-apps" class="@(ActiveIf(IsPage("connected-apps"), "active"))">Connected Apps</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("system-settings","company-settings","localization-settings","prefixes","preference","appearance","social-authentication","language-settings","language-settings-web"), "active subdrop"))"><span>Website Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="system-settings" class="@(ActiveIf(IsPage("system-settings"), "active"))">System Settings</a></li>
+									<li><a href="company-settings" class="@(ActiveIf(IsPage("company-settings"), "active"))">Company Settings </a></li>
+									<li><a href="localization-settings" class="@(ActiveIf(IsPage("localization-settings"), "active"))">Localization</a></li>
+									<li><a href="prefixes" class="@(ActiveIf(IsPage("prefixes"), "active"))">Prefixes</a></li>
+									<li><a href="preference" class="@(ActiveIf(IsPage("preference"), "active"))">Preference</a></li>
+									<li><a href="appearance" class="@(ActiveIf(IsPage("appearance"), "active"))">Appearance</a></li>
+									<li><a href="social-authentication" class="@(ActiveIf(IsPage("social-authentication"), "active"))">Social Authentication</a></li>
+									<li><a href="language-settings" class="@(ActiveIf(IsPage("language-settings","language-settings-web"), "active"))">Language</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("invoice-settings","invoice-templates","printer-settings","pos-settings","signatures","custom-fields"), "active subdrop"))"><span>App Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("invoice-settings","invoice-templates"), "active subdrop"))">Invoice<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+										<li><a href="invoice-settings" class="@(ActiveIf(IsPage("invoice-settings"), "active"))">Invoice Settings</a></li>
+										<li><a href="invoice-templates" class="@(ActiveIf(IsPage("invoice-templates"), "active"))">Invoice Template</a></li>
+										</ul>
+									</li>
+										<li><a href="printer-settings" class="@(ActiveIf(IsPage("printer-settings"), "active"))">Printer</a></li>
+										<li><a href="pos-settings" class="@(ActiveIf(IsPage("pos-settings"), "active"))">POS</a></li>
+										<li><a href="signatures" class="@(ActiveIf(IsPage("signatures"), "active"))">Signatures</a></li>
+										<li><a href="custom-fields" class="@(ActiveIf(IsPage("custom-fields"), "active"))">Custom Fields</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("email-settings","email-templates","sms-settings","sms-templates","otp-settings","gdpr-settings"), "active subdrop"))"><span>System Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("email-settings","email-templates"), "active subdrop"))">Email<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="email-settings" class="@(ActiveIf(IsPage("email-settings"), "active"))">Email Settings</a></li>
+											<li><a href="email-templates" class="@(ActiveIf(IsPage("email-templates"), "active"))">Email Template</a></li>
+										</ul>
+									</li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);" class="@(ActiveIf(IsPage("sms-settings","sms-templates"), "active subdrop"))">SMS<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="sms-settings" class="@(ActiveIf(IsPage("sms-settings"), "active"))">SMS Settings</a></li>
+											<li><a href="sms-templates" class="@(ActiveIf(IsPage("sms-templates"), "active"))">SMS Template</a></li>
+										</ul>
+									</li>
+									<li><a href="otp-settings" class="@(ActiveIf(IsPage("otp-settings"), "active"))">OTP</a></li>
+									<li><a href="gdpr-settings" class="@(ActiveIf(IsPage("gdpr-settings"), "active"))">GDPR Cookies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("payment-gateway-settings","bank-settings-grid","bank-settings-list","tax-rates","currency-settings"), "active subdrop"))"><span>Financial Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="payment-gateway-settings" class="@(ActiveIf(IsPage("payment-gateway-settings"), "active"))">Payment Gateway</a></li>
+									<li><a href="bank-settings-grid" class="@(ActiveIf(IsPage("bank-settings-grid","bank-settings-list"), "active"))">Bank Accounts</a></li>
+									<li><a href="tax-rates" class="@(ActiveIf(IsPage("tax-rates"), "active"))">Tax Rates</a></li>
+									<li><a href="currency-settings" class="@(ActiveIf(IsPage("currency-settings"), "active"))">Currencies</a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("storage-settings","ban-ip-address"), "active subdrop"))"><span>Other Settings</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="storage-settings" class="@(ActiveIf(IsPage("storage-settings"), "active"))">Storage</a></li>
+									<li><a href="ban-ip-address" class="@(ActiveIf(IsPage("ban-ip-address"), "active"))">Ban IP Address</a></li>
+								</ul>
+							</li>
+							<li>
+								<a href="signin" class="@(ActiveIf(IsPage("signin"), "active"))"><span>Logout</span> </a>
+							</li>
+						</ul>
+					</li>
+					<li class="submenu">
+						<a href="javascript:void(0);"  class="@(ActiveIf(IsPage("billers","suppliers","store-list","warehouse"), "active subdrop"))"><i class="ti ti-circle-plus fs-16 me-2"></i><span>More</span><span class="menu-arrow"></span></a>
+						<ul>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("billers","suppliers","store-list","warehouse"), "active subdrop"))"><span>People</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="customers"><span>Customers</span></a></li>
+									<li><a href="billers" class="@(ActiveIf(IsPage("billers"), "active"))"><span>Billers</span></a></li>
+									<li><a href="suppliers" class="@(ActiveIf(IsPage("suppliers"), "active"))"><span>Suppliers</span></a></li>
+									<li><a href="store-list" class="@(ActiveIf(IsPage("store-list"), "active"))"><span>Stores</span></a></li>
+									<li><a href="warehouse" class="@(ActiveIf(IsPage("warehouse"), "active"))"><span>Warehouses</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);" class="@(ActiveIf(IsPage("users","roles-permissions","permissions","delete-account"), "active subdrop"))"><span>User Management</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="users" class="@(ActiveIf(IsPage("users"), "active"))"><span>Users</span></a></li>
+									<li><a href="roles-permissions" class="@(ActiveIf(IsPage("roles-permissions"), "active"))"><span>Roles & Permissions</span></a></li>
+									<li><a href="delete-account" class="@(ActiveIf(IsPage("delete-account"), "active"))"><span>Delete Account Request</span></a></li>
+								</ul>
+							</li>
+							<li class="submenu">
+								<a href="javascript:void(0);"><span>Help</span><span class="menu-arrow"></span></a>
+								<ul>
+									<li><a href="https://dreamspos.dreamstechnologies.com/documentation/dotnet.html
+"><span>Documentation</span></a></li>
+									<li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html
+"><span>Changelog v2.2.4</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 1.1</a></li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 2.1</a></li>
+													<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+														<ul>
+															<li><a href="javascript:void(0);">Level 3.1</a></li>
+															<li><a href="javascript:void(0);">Level 3.2</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</li>
+						</ul>
+					</li>
+				</ul>
+			</div>
+		</div>
+	</div>

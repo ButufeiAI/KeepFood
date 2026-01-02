@@ -1,0 +1,1213 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = template
+build_property.RootNamespace = template
+build_property.ProjectDir = C:\projects\New folder\dreamspos\dotnet\template\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\projects\New folder\dreamspos\dotnet\template
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/account-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWNjb3VudC1saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/account-statement.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWNjb3VudC1zdGF0ZW1lbnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/activities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWN0aXZpdGllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/add-employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWRkLWVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/add-product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWRkLXByb2R1Y3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/admin-dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWRtaW4tZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/all-blog.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWxsLWJsb2cuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/annual-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYW5udWFsLXJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/appearance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYXBwZWFyYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/attendance-admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYXR0ZW5kYW5jZS1hZG1pbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/attendance-employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYXR0ZW5kYW5jZS1lbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/audio-call.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYXVkaW8tY2FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/balance-sheet-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmFsYW5jZS1zaGVldC12Mi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/balance-sheet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmFsYW5jZS1zaGVldC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ban-ip-address.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmFuLWlwLWFkZHJlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/bank-settings-grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmFuay1zZXR0aW5ncy1ncmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/barcode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmFyY29kZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/best-seller.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmVzdC1zZWxsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/billers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmlsbGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/blank-page.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmxhbmstcGFnZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/blog-categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmxvZy1jYXRlZ29yaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/blog-comments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmxvZy1jb21tZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/blog-details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmxvZy1kZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/blog-tag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYmxvZy10YWcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/brand-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYnJhbmQtbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/calendar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2FsZW5kYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/call-history.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2FsbC1oaXN0b3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/cart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2FydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/cash-flow-v2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2FzaC1mbG93LXYyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/cash-flow.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2FzaC1mbG93LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/category-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2F0ZWdvcnktbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-apex.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtYXBleC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-c3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtYzMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-flot.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtZmxvdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-js.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtanMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-morris.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtbW9ycmlzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chart-peity.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhcnQtcGVpdHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/chat.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hhdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/checkout.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2hlY2tvdXQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/cities.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2l0aWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/coming-soon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY29taW5nLXNvb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/companies.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY29tcGFuaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/company-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY29tcGFueS1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/connected-apps.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY29ubmVjdGVkLWFwcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/contacts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY29udGFjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/countries.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY291bnRyaWVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/coupons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY291cG9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/currency-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VycmVuY3ktc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/custom-fields.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tLWZpZWxkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/customer-due-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tZXItZHVlLXJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/customer-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tZXItcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/customers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/data-tables.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGF0YS10YWJsZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/delete-account.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGVsZXRlLWFjY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/department-grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGVwYXJ0bWVudC1ncmlkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/department-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGVwYXJ0bWVudC1saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/designation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGVzaWduYXRpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/discount-plan.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGlzY291bnQtcGxhbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/discount.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGlzY291bnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/domain.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZG9tYWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/edit-employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZWRpdC1lbXBsb3llZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/edit-product.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZWRpdC1wcm9kdWN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-reply.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtcmVwbHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-templates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtdGVtcGxhdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-verification-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtdmVyaWZpY2F0aW9uLTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-verification-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtdmVyaWZpY2F0aW9uLTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email-verification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtdmVyaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/email.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/employee-details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1wbG95ZWUtZGV0YWlscy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/employee-salary.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1wbG95ZWUtc2FsYXJ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/employees-grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1wbG95ZWVzLWdyaWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/employees-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1wbG95ZWVzLWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/error-404.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXJyb3ItNDA0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/error-500.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXJyb3ItNTAwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/expense-category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXhwZW5zZS1jYXRlZ29yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/expense-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXhwZW5zZS1saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/expense-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXhwZW5zZS1yZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/expired-products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZXhwaXJlZC1wcm9kdWN0cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/faq.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZmFxLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/file-manager.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZmlsZS1tYW5hZ2VyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/forgot-password-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9yZ290LXBhc3N3b3JkLTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/forgot-password-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9yZ290LXBhc3N3b3JkLTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/forgot-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9yZ290LXBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-basic-inputs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1iYXNpYy1pbnB1dHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-checkbox-radios.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1jaGVja2JveC1yYWRpb3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-elements.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1lbGVtZW50cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-fileupload.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1maWxldXBsb2FkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-floating-labels.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1mbG9hdGluZy1sYWJlbHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-grid-gutters.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1ncmlkLWd1dHRlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-horizontal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1ob3Jpem9udGFsLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-input-groups.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1pbnB1dC1ncm91cHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-mask.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1tYXNrLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-pickers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1waWNrZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-select.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1zZWxlY3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-select2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS1zZWxlY3QyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-validation.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS12YWxpZGF0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-vertical.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS12ZXJ0aWNhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/form-wizard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9ybS13aXphcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/gdpr-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZ2Rwci1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/general-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZ2VuZXJhbC1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/gift-cards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZ2lmdC1jYXJkcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/holidays.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaG9saWRheXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-bootstrap.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1ib290c3RyYXAuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-feather.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1mZWF0aGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-flag.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1mbGFnLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-fontawesome.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1mb250YXdlc29tZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-ionic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1pb25pYy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-material.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1tYXRlcmlhbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-pe7.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1wZTcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-remix.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1yZW1peC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-simpleline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi1zaW1wbGVsaW5lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-tabler.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi10YWJsZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-themify.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi10aGVtaWZ5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-typicon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi10eXBpY29uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/icon-weather.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaWNvbi13ZWF0aGVyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/income-category.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5jb21lLWNhdGVnb3J5LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/income-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5jb21lLXJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/income.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5jb21lLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/inventory-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52ZW50b3J5LXJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/invoice-details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS1kZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/invoice-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS1yZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/invoice-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/invoice-templates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS10ZW1wbGF0ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/invoice.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/language-settings-web.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGFuZ3VhZ2Utc2V0dGluZ3Mtd2ViLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/language-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGFuZ3VhZ2Utc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-boxed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LWJveGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-dark.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LWRhcmsuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-detached.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LWRldGFjaGVkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-horizontal.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LWhvcml6b250YWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-hovered.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LWhvdmVyZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-rtl.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LXJ0bC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/layout-two-column.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGF5b3V0LXR3by1jb2x1bW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/leave-types.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGVhdmUtdHlwZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/leaves-admin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGVhdmVzLWFkbWluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/leaves-employee.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbGVhdmVzLWVtcGxveWVlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/localization-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbG9jYWxpemF0aW9uLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/lock-screen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbG9jay1zY3JlZW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/low-stocks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbG93LXN0b2Nrcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/manage-stocks.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbWFuYWdlLXN0b2Nrcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/maps-leaflet.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbWFwcy1sZWFmbGV0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/maps-vector.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbWFwcy12ZWN0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/money-transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbW9uZXktdHJhbnNmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/notes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncbm90ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/notification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncbm90aWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/online-orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb25saW5lLW9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/otp-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb3RwLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/packages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGFja2FnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pages.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGFnZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/payment-gateway-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGF5bWVudC1nYXRld2F5LXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/payslip.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGF5c2xpcC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/permissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGVybWlzc2lvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-4.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLTQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-5.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLTUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLW9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/preference.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJlZmVyZW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/prefixes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJlZml4ZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/pricing.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJpY2luZy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/printer-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJpbnRlci1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/product-details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdC1kZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/product-expiry-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdC1leHBpcnktcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/product-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdC1saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/product-quantity-alert.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdC1xdWFudGl0eS1hbGVydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/product-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdC1yZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/products.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZHVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/profile.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZmlsZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/profit-and-loss.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvZml0LWFuZC1sb3NzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/projects.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJvamVjdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/purchase-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHVyY2hhc2UtbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/purchase-order-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHVyY2hhc2Utb3JkZXItcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/purchase-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHVyY2hhc2UtcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/purchase-returns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHVyY2hhc2UtcmV0dXJucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/purchase-transaction.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHVyY2hhc2UtdHJhbnNhY3Rpb24uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/qrcode.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccXJjb2RlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/quotation-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccXVvdGF0aW9uLWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/register-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVnaXN0ZXItMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/register-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVnaXN0ZXItMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/reset-password-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVzZXQtcGFzc3dvcmQtMi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/reset-password-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVzZXQtcGFzc3dvcmQtMy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/reset-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVzZXQtcGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/reviews.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmV2aWV3cy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/roles-permissions.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Nccm9sZXMtcGVybWlzc2lvbnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sales-dashboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2FsZXMtZGFzaGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sales-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2FsZXMtcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sales-returns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2FsZXMtcmV0dXJucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sales-tax.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2FsZXMtdGF4LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/search-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2VhcmNoLWxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/security-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2VjdXJpdHktc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/auth-base.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXGF1dGgtYmFzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/base.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXGJhc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/horizontal-sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXGhvcml6b250YWwtc2lkZWJhci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/main-wrapper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXG1haW4td3JhcHBlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/modal-popup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXG1vZGFsLXBvcHVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/theme-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXHRoZW1lLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/twocolumn-sidebar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXHR3b2NvbHVtbi1zaWRlYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_BasePathScript.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9CYXNlUGF0aFNjcmlwdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_Footer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_FooterScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXJTY3JpcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_HeadCss.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9IZWFkQ3NzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_PageTitle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9QYWdlVGl0bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_Sidenav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9TaWRlbmF2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_TitleMeta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9UaXRsZU1ldGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/Shared/Partials/_Topbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Ub3BiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/shift.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2hpZnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/signatures.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2lnbmF0dXJlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/signin-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2lnbmluLTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/signin-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2lnbmluLTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/signin.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2lnbmluLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sms-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc21zLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sms-templates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc21zLXRlbXBsYXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/social-authentication.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc29jaWFsLWF1dGhlbnRpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/social-feed.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc29jaWFsLWZlZWQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sold-stock.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc29sZC1zdG9jay5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/states.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RhdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/stock-adjustment.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvY2stYWRqdXN0bWVudC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/stock-history.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvY2staGlzdG9yeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/stock-transfer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvY2stdHJhbnNmZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/storage-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvcmFnZS1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/store-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvcmUtbGlzdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/sub-categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3ViLWNhdGVnb3JpZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/subscription.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3Vic2NyaXB0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/success-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VjY2Vzcy0yLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/success-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VjY2Vzcy0zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/success.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VjY2Vzcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/supplier-due-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VwcGxpZXItZHVlLXJlcG9ydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/supplier-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VwcGxpZXItcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/suppliers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3VwcGxpZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/system-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3lzdGVtLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/tables-basic.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGFibGVzLWJhc2ljLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/tax-rates.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGF4LXJhdGVzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/tax-reports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGF4LXJlcG9ydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/testimonials.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGVzdGltb25pYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/todo-list.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdG9kby1saXN0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/todo.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdG9kby5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/trial-balance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdHJpYWwtYmFsYW5jZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/two-step-verification-2.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdHdvLXN0ZXAtdmVyaWZpY2F0aW9uLTIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/two-step-verification-3.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdHdvLXN0ZXAtdmVyaWZpY2F0aW9uLTMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/two-step-verification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdHdvLXN0ZXAtdmVyaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-accordion.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYWNjb3JkaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-alerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYWxlcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-avatar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYXZhdGFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-badges.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYmFkZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-borders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYm9yZGVycy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-breadcrumb.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYnJlYWRjcnVtYi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-buttons-group.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYnV0dG9ucy1ncm91cC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-buttons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktYnV0dG9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-cards.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktY2FyZHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-carousel.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktY2Fyb3VzZWwuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-clipboard.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktY2xpcGJvYXJkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-colors.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktY29sb3JzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-counter.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktY291bnRlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-drag-drop.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktZHJhZy1kcm9wLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-dropdowns.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktZHJvcGRvd25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-grid.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktZ3JpZC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-images.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktaW1hZ2VzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-lightbox.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktbGlnaHRib3guY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-media.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktbWVkaWEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-modals.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktbW9kYWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-nav-tabs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktbmF2LXRhYnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-offcanvas.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktb2ZmY2FudmFzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-pagination.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcGFnaW5hdGlvbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-placeholders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcGxhY2Vob2xkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-popovers.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcG9wb3ZlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-progress.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcHJvZ3Jlc3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-rangeslider.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcmFuZ2VzbGlkZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-rating.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcmF0aW5nLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-ribbon.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktcmliYm9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-scrollbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc2Nyb2xsYmFyLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-sortable.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc29ydGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-spinner.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc3Bpbm5lci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-stickynote.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc3RpY2t5bm90ZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-sweetalerts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc3dlZXRhbGVydHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-swiperjs.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktc3dpcGVyanMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-text-editor.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdGV4dC1lZGl0b3IuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-timeline.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdGltZWxpbmUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-toasts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdG9hc3RzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-tooltips.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdG9vbHRpcHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-typography.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdHlwb2dyYXBoeS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/ui-video.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdWktdmlkZW8uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/under-maintenance.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdW5kZXItbWFpbnRlbmFuY2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/units.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdW5pdHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/varriant-attributes.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdmFycmlhbnQtYXR0cmlidXRlcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/video-call.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdmlkZW8tY2FsbC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/warehouse.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncd2FyZWhvdXNlLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/warranty.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncd2FycmFudHkuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/wishlist.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncd2lzaGxpc3QuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/dotnet/template/views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

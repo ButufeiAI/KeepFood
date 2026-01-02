@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout" 
+th:data-layout="${activePage == 'layout-horizontal' ? 'horizontal' : ''}">
+
+<head>
+    <div th:replace="partials/title-meta :: title-meta"></div>
+
+    <th:block layout:fragment="styles" />
+
+    <div th:replace="~{partials/head-css :: head-css}"></div>
+</head>
+
+<body th:classappend="${activePage == 'layout-horizontal' ? 'menu-horizontal' : ''}">
+<div id="global-loader" >
+			<div class="whirly-loader"> </div>
+		</div>
+    <div class="main-wrapper">
+
+        <div th:replace="~{partials/sidebar :: sidebar}"></div>
+        
+        <div th:replace="~{partials/horizontal-sidebar :: horizontal-sidebar}"></div>
+        
+        <div th:replace="~{partials/two-column-sidebar :: two-column-sidebar}"></div>
+
+        <div th:replace="~{partials/header :: header}"></div>
+
+        <div class="page-wrapper" th:classappend="${activePage == 'notes' ? 'notes-page-wrapper' : ''}">
+
+            <div class="content" th:classappend="${activePage == 'email' or activePage=='email-reply' or activePage=='social-feed' ? 'p-0' : ''}">
+
+
+                <th:block layout:fragment="content" th:remove="tag"></th:block>
+
+            </div>
+
+            <div th:replace="~{partials/footer :: footer}"></div>
+
+        </div>
+
+    </div>
+
+    <div th:replace="~{partials/footer-script :: footer-script}"></div>
+
+    <th:block layout:fragment="javascripts" />
+
+</body>
+
+</html>

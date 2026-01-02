@@ -1,0 +1,213 @@
+is_global = true
+build_property.TargetFramework = net9.0
+build_property.TargetPlatformMinVersion = 
+build_property.UsingMicrosoftNETSdkWeb = true
+build_property.ProjectTypeGuids = 
+build_property.InvariantGlobalization = 
+build_property.PlatformNeutralAssembly = 
+build_property.EnforceExtendedAnalyzerRules = 
+build_property._SupportedPlatformList = Linux,macOS,Windows
+build_property.RootNamespace = template
+build_property.RootNamespace = template
+build_property.ProjectDir = C:\projects\New folder\dreamspos\food-pos\dotnet\template\
+build_property.EnableComHosting = 
+build_property.EnableGeneratedComInterfaceComImportInterop = 
+build_property.RazorLangVersion = 9.0
+build_property.SupportLocalizedComponentNames = 
+build_property.GenerateRazorMetadataSourceChecksumAttributes = 
+build_property.MSBuildProjectDirectory = C:\projects\New folder\dreamspos\food-pos\dotnet\template
+build_property._RazorSourceGeneratorDebug = 
+build_property.EffectiveAnalysisLevelStyle = 9.0
+build_property.EnableCodeStyleSeverity = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/addons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYWRkb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/audit-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcYXVkaXQtcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/categories.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY2F0ZWdvcmllcy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/coupons.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY291cG9ucy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/customer-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tZXItcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/customer.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcY3VzdG9tZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/delivery-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZGVsaXZlcnktc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/earning-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZWFybmluZy1yZXBvcnQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/email-verification.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZW1haWwtdmVyaWZpY2F0aW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/forgot-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcZm9yZ290LXBhc3N3b3JkLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/index.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW5kZXguY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/integrations-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW50ZWdyYXRpb25zLXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/invoice-details.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZS1kZXRhaWxzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/invoices.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaW52b2ljZXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/items.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcaXRlbXMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/kanban-view.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Nca2FuYmFuLXZpZXcuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/kitchen.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Nca2l0Y2hlbi5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/login.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcbG9naW4uY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/notifications-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncbm90aWZpY2F0aW9ucy1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/order-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb3JkZXItcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/orders.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb3JkZXJzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/otp.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncb3RwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/payment-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGF5bWVudC1zZXR0aW5ncy5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/payments.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccGF5bWVudHMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/pos.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccG9zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/print-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccHJpbnQtc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/register.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVnaXN0ZXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/reservations.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVzZXJ2YXRpb25zLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/reset-password.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NccmVzZXQtcGFzc3dvcmQuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/role-permission.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Nccm9sZS1wZXJtaXNzaW9uLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/sales-report.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc2FsZXMtcmVwb3J0LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/auth-base.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXGF1dGgtYmFzZS5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/base.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXGJhc2UuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/main-wrapper.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXG1haW4td3JhcHBlci5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/modal-popup.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXG1vZGFsLXBvcHVwLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_BasePathScript.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9CYXNlUGF0aFNjcmlwdC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_FooterScripts.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Gb290ZXJTY3JpcHRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_HeadCss.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9IZWFkQ3NzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_PageTitle.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9QYWdlVGl0bGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_Sidenav.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9TaWRlbmF2LmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_TitleMeta.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9UaXRsZU1ldGEuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/Shared/Partials/_Topbar.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcU2hhcmVkXFBhcnRpYWxzXF9Ub3BiYXIuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/store-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3Ncc3RvcmUtc2V0dGluZ3MuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/table.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGFibGUuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/tax-settings.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdGF4LXNldHRpbmdzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/users.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcdXNlcnMuY3NodG1s
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/_ViewImports.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcX1ZpZXdJbXBvcnRzLmNzaHRtbA==
+build_metadata.AdditionalFiles.CssScope = 
+
+[C:/projects/New folder/dreamspos/food-pos/dotnet/template/views/_ViewStart.cshtml]
+build_metadata.AdditionalFiles.TargetPath = dmlld3NcX1ZpZXdTdGFydC5jc2h0bWw=
+build_metadata.AdditionalFiles.CssScope = 

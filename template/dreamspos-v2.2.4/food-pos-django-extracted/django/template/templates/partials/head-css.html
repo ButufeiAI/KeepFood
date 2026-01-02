@@ -1,0 +1,52 @@
+{% load static %}
+
+<!-- Favicon -->
+<link rel="shortcut icon" href="{% static 'assets/img/favicon.png' %}">
+
+<!-- Apple Icon -->
+<link rel="apple-touch-icon" href="{% static 'assets/img/apple-icon.png' %}">
+
+<!-- Bootstrap CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/bootstrap.min.css' %}">
+
+{% if '/login' not in request.path and '/register' not in request.path and '/reset-password' not in request.path and '/email-verification' not in request.path and '/forgot-password' not in request.path and '/otp' not in request.path %}
+<!-- Theme Script -->
+<script src="{% static 'assets/js/theme-script.js' %}"></script>
+{% endif %}
+
+<!-- Lucide Icon CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/lucide/lucide.css' %}">
+
+{% if '/login' not in request.path and '/register' not in request.path and '/reset-password' not in request.path and '/email-verification' not in request.path and '/forgot-password' not in request.path and '/otp' not in request.path %}
+<!-- Simplebar CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/simplebar/simplebar.min.css' %}">
+{% endif %}
+
+{% if '/addons' in request.path or '/coupons' in request.path or '/index' in request.path or '/invoices' in request.path or '/kanban-view' in request.path or '/payments' in request.path or '/role-permission' in request.path or '/users' in request.path %}
+<!-- Daterangepikcer CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/daterangepicker/daterangepicker.css' %}">
+{% endif %}
+
+{% if '/addons' in request.path or '/audit-report' in request.path or '/categories' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/integrations-settings' in request.path or '/invoices' in request.path or '/items' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/payment-settings' in request.path or '/payments' in request.path or '/print-settings' in request.path or '/role-permission' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path or '/users' in request.path %}
+<!-- Datatable CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/datatables/dataTables.bootstrap5.min.css' %}">
+{% endif %}
+
+{% if '/audit-report' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/integrations-settings' in request.path or '/kitchen' in request.path or '/pos' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/orders' in request.path or '/payment-settings' in request.path or '/print-settings' in request.path or '/reservations' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path %}
+<!-- Flatpickr CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/flatpickr/flatpickr.min.css' %}">
+{% endif %}
+
+{% if '/pos' in request.path %}
+<!-- Slick CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/slick/slick.css' %}">
+<link rel="stylesheet" href="{% static 'assets/plugins/slick/slick-theme.css' %}">
+{% endif %}
+
+{% if '/addons' in request.path or '/audit-report' in request.path or '/categories' in request.path or '/coupons' in request.path or '/report-customer' in request.path or '/customer' in request.path or '/delivery-settings' in request.path or '/earning-report' in request.path or '/index' in request.path or '/integrations-settings' in request.path or '/invoices' in request.path or '/items' in request.path or '/kitchen' in request.path or '/pos' in request.path or '/notifications-settings' in request.path or '/order-report' in request.path or '/orders' in request.path or '/payment-settings' in request.path or '/payments' in request.path or '/print-settings' in request.path or '/reservations' in request.path or '/role-permission' in request.path or '/sales-report' in request.path or '/store-settings' in request.path or '/table' in request.path or '/tax-settings' in request.path or '/users' in request.path %}
+<!-- Select2 CSS -->
+<link rel="stylesheet" href="{% static 'assets/plugins/select2/css/select2.min.css' %}">
+{% endif %}
+
+<!-- Main CSS -->
+<link rel="stylesheet" href="{% static 'assets/css/style.css' %}">

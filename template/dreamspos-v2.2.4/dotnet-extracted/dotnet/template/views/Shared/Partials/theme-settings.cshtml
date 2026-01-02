@@ -1,0 +1,20 @@
+@{
+	var path = Context?.Request?.Path.Value ?? string.Empty;
+	var fileName = System.IO.Path.GetFileName(path);
+	var pageNoExt = string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName);
+	var page = string.IsNullOrEmpty(pageNoExt) ? "index" : pageNoExt.ToLowerInvariant();
+
+	var extraAttrs = page switch
+	{
+		"layout-horizontal" => " data-layout=\"horizontal\"",
+		"layout-detached" => " data-layout=\"detached\"",
+		"layout-modern" => " data-layout=\"modern\"",
+		"layout-two-column" => " data-layout=\"twocolumn\"",
+		"layout-hovered" => " data-layout=\"layout-hovered\"",
+		"layout-boxed" => " data-layout=\"default\" data-width=\"box\"",
+		"layout-rtl" => " data-layout-mode=\"light_mode\"",
+		"layout-dark" => " data-theme=\"dark\"",
+		_ => string.Empty
+	};
+}
+<html lang="en"@Html.Raw(extraAttrs)>

@@ -12,7 +12,7 @@ interface Message {
 }
 
 export function ChatSupport() {
-  const toast = useToast();
+  // const toast = useToast(); // Non utilisé pour l'instant
   const isMobile = useIsMobile();
   const [isOpen, setIsOpen] = useState(false);
   const [messages, setMessages] = useState<Message[]>([]);

@@ -1,0 +1,701 @@
+<!-- Start Content -->
+<div class="content">
+  <!-- Page Header -->
+  <div
+    class="d-flex align-items-sm-center justify-content-between flex-sm-row flex-column flex-wrap gap-3 mb-4"
+  >
+    <div>
+      <h3 class="mb-0">
+        Kitchen
+        <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"
+          ><i class="icon-refresh-ccw"></i
+        ></a>
+      </h3>
+    </div>
+    <div class="d-flex align-items-center justify-content-center gap-3 flex-wrap">
+      <!-- Item 1 -->
+      <div
+        class="d-inline-flex align-items-center justify-content-between rounded-pill bg-white ps-2 pe-3 py-2 gap-3 border"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <div class="avatar avatar-sm rounded-circle bg-gray">
+            <i class="icon-newspaper fs-14"></i>
+          </div>
+          <p class="mb-0 text-dark fw-medium">New Order</p>
+        </div>
+        <h5 class="fs-18px fw-semibold mb-0">02</h5>
+      </div>
+
+      <!-- Item 2 -->
+      <div
+        class="d-inline-flex align-items-center justify-content-between rounded-pill bg-white ps-2 pe-3 py-2 gap-3 border"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <div class="avatar avatar-sm rounded-circle bg-secondary">
+            <i class="icon-package-2 fs-14"></i>
+          </div>
+          <p class="mb-0 text-dark fw-medium">In Kitchen</p>
+        </div>
+        <h5 class="fs-18px fw-semibold mb-0">03</h5>
+      </div>
+
+      <!-- Item 3 -->
+      <div
+        class="d-inline-flex align-items-center justify-content-between rounded-pill bg-white ps-2 pe-3 py-2 gap-3 border"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <div class="avatar avatar-sm rounded-circle bg-danger">
+            <i class="icon-clock-alert fs-14"></i>
+          </div>
+          <p class="mb-0 text-dark fw-medium">Delayed</p>
+        </div>
+        <h5 class="fs-18px fw-semibold mb-0">01</h5>
+      </div>
+
+      <!-- Item 4 -->
+      <div
+        class="d-inline-flex align-items-center justify-content-between rounded-pill bg-white ps-2 pe-3 py-2 gap-3 border"
+      >
+        <div class="d-flex align-items-center gap-2">
+          <div class="avatar avatar-sm rounded-circle bg-success">
+            <i class="icon-check-check fs-14"></i>
+          </div>
+          <p class="mb-0 text-dark fw-medium">Completed</p>
+        </div>
+        <h5 class="fs-18px fw-semibold mb-0">02</h5>
+      </div>
+    </div>
+    <div class="gap-3 d-flex align-items-center flex-wrap">
+      <div class="page-search">
+        <input type="search" class="form-control form-control-sm" placeholder="Search" />
+        <i class="icon-search fs-14"></i>
+      </div>
+    </div>
+  </div>
+  <!-- End Page Header -->
+
+  <!-- start row -->
+  <div class="row g-4">
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-gray">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Jennifer Brooks
+                <span class="fs-13 fw-normal d-block mt-1">Dine In</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#14751</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">31</span></h6>
+            <p class="mb-0 fw-normal text-dark">15 Nov 2025, 06:00 PM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot success"></span>Mediterranean Salad - Regular</p>
+                <p class="text-dark">×1</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mb-3 pb-3 border-bottom-dashed">
+              <p><span class="dot success"></span>Lobster Thermidor</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot success"></span>Caesar Salad</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 10%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 20:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-light w-100 timer-btn"
+            (click)="toggleTimer(0)"
+          >
+            <i class="me-2" [class]="running[0] ? 'icon-pause' : 'icon-play'"></i>
+            <span class="label">{{ running[0] ? 'Pause' : 'Play' }}</span>
+            <span class="ps-1 fw-semibold time">{{ getTime(0) }}</span>
+          </a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#cooking_started_modal"
+          >
+            <i class="icon-check-check me-2"></i>
+            <span>Mark Done</span>
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-secondary">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Elijah Thompson
+                <span class="fs-13 fw-normal d-block mt-1">Take Away</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#14351</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">11</span></h6>
+            <p class="mb-0 fw-normal text-dark">19 Nov 2025, 03:25 PM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot"></span>Chicken Skewers</p>
+                <p class="text-dark">×1</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mb-3 pb-3 border-bottom-dashed">
+              <p><span class="dot"></span>Chicken Roll</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot"></span>Chicken Taco</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 50%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 50:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-light w-100 timer-btn"
+            (click)="toggleTimer(1)"
+          >
+            <i class="me-2" [class]="running[1] ? 'icon-pause' : 'icon-play'"></i>
+            <span class="label">{{ running[1] ? 'Pause' : 'Play' }}</span>
+            <span class="ps-1 fw-semibold time">{{ getTime(1) }}</span>
+          </a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#cooking_started_modal"
+          >
+            <i class="icon-check-check me-2"></i>
+            <span>Mark Done</span>
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-warning">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Walk in Customer
+                <span class="fs-13 fw-normal d-block mt-1">Dine In</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#23896</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">07</span></h6>
+            <p class="mb-0 fw-normal text-dark">15 Nov 2025, 05:15 PM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot Chicken"></span>Margherita Pizza - Regular</p>
+                <p class="text-dark">×1</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Add More Onion, with extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mb-3 pb-3 border-bottom-dashed">
+              <p><span class="dot Chicken"></span>Caesar Salad</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot Chicken"></span>Apple Pie</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 5%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 15:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-light w-100 timer-btn"
+            (click)="toggleTimer(2)"
+          >
+            <i class="me-2" [class]="running[2] ? 'icon-pause' : 'icon-play'"></i>
+            <span class="label">{{ running[2] ? 'Pause' : 'Play' }}</span>
+            <span class="ps-1 fw-semibold time">{{ getTime(2) }}</span>
+          </a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#cooking_started_modal"
+          >
+            <i class="icon-check-check me-2"></i>
+            <span>Mark Done</span>
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-danger">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Walk in Customer
+                <span class="fs-13 fw-normal d-block mt-1">Dine In</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#23896</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">42</span></h6>
+            <p class="mb-0 fw-normal text-dark">15 Nov 2025, 03:22 PM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot Chicken"></span>Pesto Pasta</p>
+                <p class="text-dark">×2</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Need extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mborder-bottom-dashed mb-3 pb-3">
+              <p><span class="dot Chicken"></span>Basil pesto, pine nuts</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot Chicken"></span>Lemon Tart</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <p
+            class="text-center text-danger mb-3 d-flex align-items-center justify-content-center fw-medium"
+          >
+            <i class="icon-clock-alert me-1"></i> Delayed By 5 Mins
+          </p>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 75%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 15:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-light w-100 timer-btn"
+            (click)="toggleTimer(3)"
+          >
+            <i class="me-2" [class]="running[1] ? 'icon-pause' : 'icon-play'"></i>
+            <span class="label">{{ running[3] ? 'Pause' : 'Play' }}</span>
+            <span class="ps-1 fw-semibold time">{{ getTime(3) }}</span>
+          </a>
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#cooking_started_modal"
+          >
+            <i class="icon-check-check me-2"></i>
+            <span>Mark Done</span>
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-success">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Morgan Evans
+                <span class="fs-13 fw-normal d-block mt-1">Dine In</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#74758</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">30</span></h6>
+            <p class="mb-0 fw-normal text-dark">15 Nov 2025, 02:45 PM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot"></span>Spicy Tofu Stir-Fry</p>
+                <p class="text-dark">×1</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Add More Onion, with extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mb-3 pb-3 border-bottom-dashed">
+              <p><span class="dot"></span>Grilled Chicken</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot"></span>Chicken Soup</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <p
+            class="text-center text-danger mb-3 d-flex align-items-center justify-content-center fw-medium"
+          >
+            <i class="icon-clock-alert me-1"></i> 25:15 Mins - Served Before 5 Mins
+          </p>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 85%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 12:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#print_order"
+          >
+            <i class="icon-printer me-2"></i>
+            Print Order
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+
+    <!-- start col -->
+    <div class="col-xl-4 col-lg-6 col-md-6 d-flex">
+      <!-- start card -->
+      <div class="card flex-fill mb-0">
+        <div class="card-header bg-success">
+          <div class="d-flex align-items-center justify-content-between flex-wrap gap-2">
+            <div class="d-flex align-items-center gap-2">
+              <div class="avatar rounded-circle bg-white">
+                <i class="icon-hand-platter fs-24 text-dark"></i>
+              </div>
+              <p class="mb-0 text-white fw-semibold fs-14px">
+                Walk in Customer
+                <span class="fs-13 fw-normal d-block mt-1">Delivery</span>
+              </p>
+            </div>
+            <span class="badge bg-white text-center text-dark">#35658</span>
+          </div>
+        </div>
+        <div class="card-body border-bottom">
+          <div class="d-flex align-items-center justify-content-between gap-2 flex-wrap">
+            <h6 class="mb-0 fw-normal fs-14">Token No : <span class="fw-semibold">40</span></h6>
+            <p class="mb-0 fw-normal text-dark">14 Nov 2025, 09:12 AM</p>
+          </div>
+        </div>
+
+        <div class="card-body">
+          <div class="orders-list mb-4">
+            <div class="border-bottom-dashed mb-3 pb-3">
+              <div class="orders text-dark mb-2">
+                <p><span class="dot success"></span>Cheesecake</p>
+                <p class="text-dark">×2</p>
+              </div>
+              <div class="bg-light rounded py-1 px-2">
+                <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                  <i class="icon-badge-info me-1"></i> Notes : Add More Cheese, with extra Spicy
+                </p>
+              </div>
+            </div>
+            <div class="orders text-dark mb-3 pb-3 border-bottom-dashed">
+              <p><span class="dot success"></span>Creamy, graham</p>
+              <p class="text-dark">×1</p>
+            </div>
+            <div class="orders text-dark mb-0">
+              <p><span class="dot success"></span>Chicken Lollipop</p>
+              <p class="text-dark">×1</p>
+            </div>
+          </div>
+          <p
+            class="text-center text-danger mb-3 d-flex align-items-center justify-content-center fw-medium"
+          >
+            <i class="icon-clock-alert me-1"></i> 25:15 Mins - Served Before 10 Mins
+          </p>
+          <div class="d-flex align-items-center justify-content-between gap-3">
+            <div class="progress-item">
+              <div class="progress-bar bg-success" style="width: 90%"></div>
+            </div>
+            <p class="mb-0 fw-normal d-flex align-items-center">
+              <i class="icon-clock me-1"></i> 40:00
+            </p>
+          </div>
+        </div>
+
+        <div
+          class="card-footer d-flex align-items-center justify-content-between gap-2 pt-0 border-0 flex-wrap flex-xl-nowrap"
+        >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-outline-light w-100"
+            data-bs-toggle="modal"
+            data-bs-target="#print_order"
+          >
+            <i class="icon-printer me-2"></i>
+            Print Order
+          </a>
+        </div>
+      </div>
+      <!-- end card -->
+    </div>
+    <!-- end col -->
+  </div>
+  <!-- end row -->
+</div>
+<!-- End Content -->
+
+<!-- Print details modal -->
+<div class="modal fade" id="print_order">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0">
+        <h4 class="modal-title">Print Reciept</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <div class="modal-body">
+        <!-- Item 1 -->
+        <div class="mb-3 pb-3 border-bottom">
+          <h5 class="mb-3 fs-16">Order Info</h5>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            Date & Time <span class="fw-medium text-dark">25/11/2025 - 08:45 PM</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            Order No <span class="fw-medium text-dark"> #54654</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            Token No <span class="fw-medium text-dark"> 20</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            No of Items <span class="fw-medium text-dark"> 4</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-0">
+            Order Type<span class="fw-medium text-dark"> Dine In (TabIe 4) </span>
+          </h6>
+        </div>
+
+        <!-- Item 2 -->
+        <div class="mb-3 pb-3 border-bottom">
+          <h5 class="mb-3 fs-16">Ordered Menus</h5>
+          <h6
+            class="fs-14 fw-normal d-flex align-items-start justify-content-between mb-3 flex-column gap-2"
+          >
+            Grilled Chicken ×1
+            <div class="bg-light rounded py-1 px-2">
+              <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                <i class="icon-badge-info me-1"></i> Notes : Extra Spicy, With extra Pepperoni
+              </p>
+            </div>
+          </h6>
+          <h6
+            class="fs-14 fw-normal d-flex align-items-start justify-content-between mb-3 flex-column gap-2"
+          >
+            Chicken Taco ×2
+          </h6>
+          <h6
+            class="fs-14 fw-normal d-flex align-items-start justify-content-between mb-3 flex-column gap-2"
+          >
+            Lobster Thermidor ×1
+            <div class="bg-light rounded py-1 px-2">
+              <p class="mb-0 fw-medium d-flex align-items-center text-dark">
+                <i class="icon-badge-info me-1"></i> Notes : Extra Spicy, Remove Scalp
+              </p>
+            </div>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-0">
+            Grilled Chicken ×1
+          </h6>
+        </div>
+
+        <!-- Item 3 -->
+        <div class="mb-3 pb-3 border-bottom">
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            Sub Total<span class="fw-medium text-dark">$267</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-3">
+            Tax (10%)<span class="fw-medium text-dark"> $268</span>
+          </h6>
+          <h6 class="fs-14 fw-normal d-flex align-items-center justify-content-between mb-0">
+            Service Charge <span class="fw-medium text-dark"> $15</span>
+          </h6>
+        </div>
+        <h5 class="mb-0 d-flex align-items-center justify-content-between">
+          Total <span>$274</span>
+        </h5>
+      </div>
+
+      <div class="modal-footer d-flex align-items-center justify-content-between flex-nowrap gap-2">
+        <button type="button" class="btn btn-light w-100 m-0" data-bs-dismiss="modal">Close</button>
+        <button type="button" class="btn btn-primary w-100 m-0">Print</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- Start Modal  -->
+<div class="modal fade" id="cooking_started_modal">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <div class="mb-4">
+          <span class="avatar avatar-xxl rounded-circle bg-success-subtle">
+            <img
+              src="assets/img/icons/checked-img.svg"
+              alt="trash"
+              class="img-fluid w-auto h-auto"
+            />
+          </span>
+        </div>
+        <h4 class="mb-1">Cooking Started</h4>
+        <p class="mb-4">Vegetarian Lasagna Cooking has begun in the kitchen.</p>
+        <div class="d-flex justify-content-between gap-2">
+          <a href="javascript:void(0);" class="btn btn-primary w-100">Close</a>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal  -->

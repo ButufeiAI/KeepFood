@@ -1,0 +1,26 @@
+{
+  "name": "dreamspos",
+  "version": "2.2.1",
+  "description": "Dreams POS - Inventory Management & Admin Dashboard Template",
+  "main": "gulpfile.js",
+  "scripts": {
+    "dev": "gulp",
+    "build": "gulp build",
+    "watch": "gulp watch"
+  },
+  "keywords": [
+    "pos",
+    "ecommerce",
+    "dashboard"
+  ],
+  "author": "dreamstechnologies",
+  "license": "MIT",
+  "devDependencies": {
+    "gulp": "^5.0.1",
+    "gulp-autoprefixer": "^10.0.0",
+    "gulp-clean-css": "^4.3.0",
+    "gulp-rename": "^2.1.0",
+    "gulp-sass": "^6.0.1",
+    "sass": "^1.93.3"
+  }
+}

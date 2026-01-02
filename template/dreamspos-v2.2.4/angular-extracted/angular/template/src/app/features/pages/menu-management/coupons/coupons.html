@@ -1,0 +1,646 @@
+<!-- Start Content -->
+<div class="content">
+  <!-- Page Header -->
+  <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+    <div class="flex-grow-1">
+      <h3 class="mb-0">
+        Coupons<a
+          href="javascript:void(0);"
+          class="btn btn-icon btn-sm btn-white rounded-circle ms-2"
+          ><i class="icon-refresh-ccw"></i
+        ></a>
+      </h3>
+    </div>
+    <div class="gap-2 d-flex align-items-center flex-wrap">
+      <div class="dropdown">
+        <a
+          href="javascript:void(0);"
+          class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+          data-bs-toggle="dropdown"
+        >
+          <i class="icon-upload me-2"></i>Export
+        </a>
+        <ul class="dropdown-menu dropdown-menu-end p-3">
+          <li>
+            <a href="javascript:void(0);" class="dropdown-item rounded">Export as PDF</a>
+          </li>
+          <li>
+            <a href="javascript:void(0);" class="dropdown-item rounded">Export as Excel</a>
+          </li>
+        </ul>
+      </div>
+      <a
+        href="javascript:void(0);"
+        class="btn btn-primary d-inline-flex align-items-center"
+        data-bs-toggle="modal"
+        data-bs-target="#add_coupon"
+        ><i class="icon-circle-plus me-1"></i>Add New</a
+      >
+    </div>
+  </div>
+  <!-- End Page Header -->
+
+  <!-- card start -->
+  <div class="card mb-0">
+    <div class="card-body">
+      <div class="d-flex align-items-center flex-wrap gap-3 justify-content-between mb-4">
+        <app-common-search
+          [totalData]="totalData()"
+          [pageSize]="pageSize()"
+          [tableDataCopy]="tableDataCopy()"
+          [serialNumberArray]="serialNumberArray()"
+          (dataChange)="updateTable($any($event))"
+        ></app-common-search>
+
+        <div class="d-flex align-items-center gap-2 flex-wrap">
+          <!-- filter -->
+          <a
+            href="javascript:void(0);"
+            class="btn btn-white d-inline-flex align-items-center"
+            data-bs-toggle="offcanvas"
+            data-bs-target="#filter-offcanvas"
+            aria-controls="filter-offcanvas"
+          >
+            <i class="icon-funnel me-2"></i>Filter
+          </a>
+
+          <!-- column -->
+          <div class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="btn btn-icon btn-white"
+              data-bs-toggle="dropdown"
+              data-bs-auto-close="outside"
+              ><i class="icon-columns-3"></i
+            ></a>
+            <div class="dropdown-menu dropdown-menu-md dropdown-menu-end p-3">
+              <h5 class="mb-3">Column</h5>
+              <div cdkDropList>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" checked />
+                    Coupon Code
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" checked />
+                    Valid Category
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" />
+                    Discount Type
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" checked />
+                    Discount Amount
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" checked />
+                    Duration
+                  </label>
+                </div>
+                <div class="mb-3" cdkDrag>
+                  <label class="d-flex align-items-center">
+                    <i class="icon-grip-vertical me-2"></i>
+                    <input class="form-check-input m-0 me-2" type="checkbox" checked />
+                    Actions
+                  </label>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <!-- sort by -->
+          <div class="dropdown">
+            <a
+              href="javascript:void(0);"
+              class="dropdown-toggle btn btn-white d-inline-flex align-items-center"
+              data-bs-toggle="dropdown"
+            >
+              Sort by : Newest
+            </a>
+            <ul class="dropdown-menu dropdown-menu-end p-3">
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Newest</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Oldest</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Ascending</a>
+              </li>
+              <li>
+                <a href="javascript:void(0);" class="dropdown-item rounded-1">Descending</a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+
+      <!-- table start -->
+      <div class="table-responsive table-nowrap">
+        <table
+          matSort
+          (matSortChange)="sortData($any($event))"
+          class="table mb-0 border datatable dataTable"
+        >
+          <thead>
+            <tr>
+              <th mat-sort-header="coupon">Coupon Code</th>
+              <th>Valid Category</th>
+              <th>Discount Type</th>
+              <th>Discount Amount</th>
+              <th>Duration</th>
+              <th>Status</th>
+              <th>Actions</th>
+            </tr>
+          </thead>
+          <tbody>
+            @for (data of tableData(); track $index ) {
+
+            <tr>
+              <td>{{ data.couponCode }}</td>
+              <td>{{ data.validCategory }}</td>
+              <td>{{ data.discountType }}</td>
+              <td>{{ data.discountAmount }}</td>
+              <td>{{ data.duration }}</td>
+              <td>
+                <span
+                  class="badge"
+                  [class]="data.status == 'Active' ? 'badge-soft-success' : 'badge-soft-danger'"
+                  >{{ data.status }}</span
+                >
+              </td>
+              <td>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#show_coupon"
+                  ><i class="icon-eye"></i
+                ></a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle me-2"
+                  data-bs-toggle="modal"
+                  data-bs-target="#edit_coupon"
+                  ><i class="icon-pencil-line"></i
+                ></a>
+                <a
+                  href="javascript:void(0);"
+                  class="btn btn-icon btn-sm btn-white rounded-circle"
+                  data-bs-toggle="modal"
+                  data-bs-target="#delete_modal"
+                  (click)="deleteData(data)"
+                  ><i class="icon-trash-2"></i
+                ></a>
+              </td>
+            </tr>
+            } @if(totalData() === 0){
+            <tr class="tex-center">
+              <td colspan="12" class="text-center">No Matching records found</td>
+            </tr>
+            }
+          </tbody>
+        </table>
+      </div>
+      <!-- table end -->
+      <app-custom-pagination [hidden]="totalData() === 0" />
+    </div>
+  </div>
+  <!-- card start -->
+</div>
+<!-- End Content -->
+
+<!-- Show Coupons -->
+<div class="modal fade" id="show_coupon">
+  <div class="modal-dialog modal-dialog-centered modal-md">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Coupon Code</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div
+            class="p-4 bg-light border rounded border-dashed d-flex align-items-center justify-content-between mb-3"
+          >
+            <h6 class="mb-0" id="copytext">SEAFOOD10</h6>
+            <span
+              class="copytoclipboard"
+              data-bs-toggle="tooltip"
+              data-bs-placement="top"
+              title="Copy to Clipboard"
+              (click)="showCoupon()"
+              ><i class="icon-copy fw-semibold"></i
+            ></span>
+          </div>
+          <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+            <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Show Coupons End -->
+
+<!-- Add Coupon -->
+<div class="modal fade" id="add_coupon">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Add Coupon</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div class="mb-3">
+            <label class="form-label">Coupon Code<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Valid Category<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Select">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Pizza</mat-option>
+              <mat-option value="1">Sea Food</mat-option>
+              <mat-option value="1">Salad</mat-option>
+              <mat-option value="1">Sauce</mat-option>
+              <mat-option value="1">Topping</mat-option>
+            </mat-select>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Discount Type<span class="text-danger"> *</span></label>
+                <mat-select class="select custom-mat-select" placeholder="Select">
+                  <mat-option value="1">Select</mat-option>
+                  <mat-option value="1">Percentage</mat-option>
+                  <mat-option value="1">Fixed Amount</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Discount Amount<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Start Date<span class="text-danger ms-1">*</span></label>
+                <div class="input-group w-auto input-group-flat">
+                  <p-datepicker
+                    class="form-control"
+                    [(ngModel)]="dates[3]"
+                    placeholder="dd/mm/yyyy"
+                    dateFormat="dd/mm/yy"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                  <span class="input-group-text">
+                    <i class="icon-calendar-fold"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Expiry Date<span class="text-danger ms-1">*</span></label>
+                <div class="input-group w-auto input-group-flat">
+                  <p-datepicker
+                    class="form-control"
+                    [(ngModel)]="dates[4]"
+                    placeholder="dd/mm/yyyy"
+                    dateFormat="dd/mm/yy"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                  <span class="input-group-text">
+                    <i class="icon-calendar-fold"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+            <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Add coupons End -->
+
+<!-- Edit coupons -->
+<div class="modal fade" id="edit_coupon">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content">
+      <div class="modal-header border-0 p-4 pb-3">
+        <h4 class="modal-title">Edit Coupon</h4>
+        <button
+          type="button"
+          class="btn-close btn-close-modal"
+          data-bs-dismiss="modal"
+          aria-label="Close"
+        >
+          <i class="icon-x"></i>
+        </button>
+      </div>
+      <form>
+        <div class="modal-body p-4 pt-1">
+          <div class="mb-3">
+            <label class="form-label">Coupon Code<span class="text-danger"> *</span></label>
+            <input type="text" class="form-control" value="SEAFOOD10" />
+          </div>
+          <div class="mb-3">
+            <label class="form-label">Valid Category<span class="text-danger"> *</span></label>
+            <mat-select class="select custom-mat-select" placeholder="Pizza">
+              <mat-option value="1">Select</mat-option>
+              <mat-option value="1">Pizza</mat-option>
+              <mat-option value="1">Sea Food</mat-option>
+              <mat-option value="1">Salad</mat-option>
+              <mat-option value="1">Sauce</mat-option>
+              <mat-option value="1">Topping</mat-option>
+            </mat-select>
+          </div>
+          <div class="row">
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Discount Type<span class="text-danger"> *</span></label>
+                <mat-select class="select custom-mat-select" placeholder="Percentage">
+                  <mat-option value="1">Select</mat-option>
+                  <mat-option value="1">Percentage</mat-option>
+                  <mat-option value="1">Fixed Amount</mat-option>
+                </mat-select>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Discount Amount<span class="text-danger"> *</span></label>
+                <input type="text" class="form-control" value="10%" />
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Start Date<span class="text-danger ms-1">*</span></label>
+                <div class="input-group w-auto input-group-flat">
+                  <p-datepicker
+                    class="form-control"
+                    [(ngModel)]="dates[1]"
+                    placeholder="01/05/2025"
+                    dateFormat="dd/mm/yy"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                  <span class="input-group-text">
+                    <i class="icon-calendar-fold"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+            <div class="col-lg-6">
+              <div class="mb-3">
+                <label class="form-label">Expiry Date<span class="text-danger ms-1">*</span></label>
+                <div class="input-group w-auto input-group-flat">
+                  <p-datepicker
+                    class="form-control"
+                    [(ngModel)]="dates[2]"
+                    placeholder="31/05/2025"
+                    dateFormat="dd/mm/yy"
+                    [ngModelOptions]="{ standalone: true }"
+                  />
+                  <span class="input-group-text">
+                    <i class="icon-calendar-fold"></i>
+                  </span>
+                </div>
+              </div>
+            </div>
+          </div>
+
+          <div class="d-flex align-items-center justify-content-between gap-2 pt-1">
+            <button type="button" class="btn btn-light w-100" data-bs-dismiss="modal">
+              Cancel
+            </button>
+            <button type="submit" class="btn btn-primary w-100">Save</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+</div>
+<!-- Edit coupons End -->
+
+<!-- Start Modal  -->
+<div class="modal fade" id="delete_modal">
+  <div class="modal-dialog modal-dialog-centered modal-sm">
+    <div class="modal-content">
+      <div class="modal-body text-center p-4">
+        <div class="mb-4">
+          <span class="avatar avatar-xxl rounded-circle bg-danger-subtle">
+            <img
+              src="assets/img/icons/trash-icon.svg"
+              alt="trash"
+              class="img-fluid w-auto h-auto"
+            />
+          </span>
+        </div>
+        <h4 class="mb-1">Delete Confirmation</h4>
+        <p class="mb-4">
+          Are you sure you want to delete <br /><strong>{{ selectedRowToDelete()?.Coupon }}</strong
+          >?
+        </p>
+        <div class="d-flex justify-content-center gap-2">
+          <a href="javascript:void(0);" class="btn btn-light w-100" data-bs-dismiss="modal"
+            >Close</a
+          >
+          <a
+            href="javascript:void(0);"
+            class="btn btn-danger w-100"
+            (click)="confirmDeleteData()"
+            data-bs-dismiss="modal"
+            >Delete</a
+          >
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- End Modal  -->
+
+<!-- Start Filter -->
+<div class="offcanvas offcanvas-end" tabindex="-1" id="filter-offcanvas">
+  <div class="offcanvas-header pb-0">
+    <div class="border-bottom d-flex align-items-center justify-content-between w-100 pb-3">
+      <h4 class="offcanvas-title mb-0">Filter</h4>
+      <button
+        type="button"
+        class="btn-close btn-close-modal"
+        data-bs-dismiss="offcanvas"
+        aria-label="Close"
+      >
+        <i class="icon-x"></i>
+      </button>
+    </div>
+  </div>
+  <div class="offcanvas-body d-flex flex-column pt-3">
+    <div>
+      <div class="mb-3">
+        <label class="form-label">Discount Type<span class="text-danger"> *</span></label>
+        <div class="dropdown">
+          <a
+            href="javascript:void(0);"
+            class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >
+            Select
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+            <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+            <div class="input-icon-end input-icon position-relative mb-3">
+              <span class="input-icon-addon">
+                <i class="icon-search text-dark"></i>
+              </span>
+              <input type="text" class="form-control form-control-md" placeholder="Search" />
+            </div>
+            <div class="vstack gap-2">
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Percentage
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Fixed Amount
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Valid Category<span class="text-danger"> *</span></label>
+        <div class="dropdown">
+          <a
+            href="javascript:void(0);"
+            class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >
+            Select
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+            <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+            <div class="input-icon-end input-icon position-relative mb-3">
+              <span class="input-icon-addon">
+                <i class="icon-search text-dark"></i>
+              </span>
+              <input type="text" class="form-control form-control-md" placeholder="Search" />
+            </div>
+            <div class="vstack gap-2">
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Sea Foods
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Pizza Orders
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Salads
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />All Categories
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Combo Meals
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label">Date Range<span class="text-danger"> *</span></label>
+        <app-filter-daterangepicker />
+      </div>
+      <div class="mb-0">
+        <label class="form-label">Status<span class="text-danger"> *</span></label>
+        <div class="dropdown">
+          <a
+            href="javascript:void(0);"
+            class="dropdown-toggle btn btn-white d-flex align-items-center justify-content-between"
+            data-bs-toggle="dropdown"
+            data-bs-auto-close="outside"
+          >
+            Select
+          </a>
+          <div class="dropdown-menu dropdown-menu-end p-3 w-100">
+            <h6 class="fs-14 fw-semibold mb-3">Category</h6>
+            <div class="input-icon-end input-icon position-relative mb-3">
+              <span class="input-icon-addon">
+                <i class="icon-search text-dark"></i>
+              </span>
+              <input type="text" class="form-control form-control-md" placeholder="Search" />
+            </div>
+            <div class="vstack gap-2">
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Active
+                </label>
+              </div>
+              <div>
+                <label class="d-flex align-items-center">
+                  <input class="form-check-input m-0 me-2" type="checkbox" />Expired
+                </label>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="d-flex align-items-center gap-2 mt-auto offcanvas-footer border-0">
+      <a href="javascript:void(0);" class="btn btn-light w-100">Reset</a>
+      <a href="javascript:void(0);" class="btn btn-primary w-100">Apply</a>
+    </div>
+  </div>
+</div>
+<!-- End Filter -->

@@ -1,0 +1,3 @@
+<template>
+    <HrmEditEmployee />
+</template>

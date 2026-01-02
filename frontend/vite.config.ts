@@ -33,6 +33,29 @@ export default defineConfig({
   resolve: {
     alias: {
       '@': path.resolve(__dirname, './src'),
+      'react': path.resolve(__dirname, './node_modules/react'),
+      'react-dom': path.resolve(__dirname, './node_modules/react-dom'),
+    },
+  },
+  optimizeDeps: {
+    include: ['react', 'react-dom', 'moment', 'react-select', '@fullcalendar/react', 'swiper', 'swiper/react'],
+    force: true,
+    esbuildOptions: {
+      resolveExtensions: ['.jsx', '.js', '.ts', '.tsx'],
+    },
+  },
+  cacheDir: 'node_modules/.vite',
+  build: {
+    commonjsOptions: {
+      include: [/node_modules/],
+      transformMixedEsModules: true,
+    },
+    rollupOptions: {
+      output: {
+        manualChunks: {
+          'react-vendor': ['react', 'react-dom'],
+        },
+      },
     },
   },
   server: {

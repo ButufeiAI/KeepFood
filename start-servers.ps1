@@ -52,6 +52,9 @@ Start-Sleep -Seconds 2
 $marketingProcess = Start-Server -Name "Marketing" -Path "$PSScriptRoot\marketing" -Command "npm run dev" -Port 5200
 Start-Sleep -Seconds 2
 
+$clientProcess = Start-Server -Name "Client" -Path "$PSScriptRoot\client" -Command "npm run dev" -Port 5203
+Start-Sleep -Seconds 2
+
 Write-Host ""
 Write-Host "Attente du demarrage des serveurs (20 secondes)..." -ForegroundColor Yellow
 Start-Sleep -Seconds 20
@@ -66,7 +69,8 @@ $ip = (Get-NetIPAddress -AddressFamily IPv4 | Where-Object { $_.InterfaceAlias -
 $servers = @(
     @{Name="Backend API"; Port=5201; URL="http://localhost:5201/api"},
     @{Name="Frontend"; Port=5202; URL="http://localhost:5202"},
-    @{Name="Marketing"; Port=5200; URL="http://localhost:5200"}
+    @{Name="Marketing"; Port=5200; URL="http://localhost:5200"},
+    @{Name="Client"; Port=5203; URL="http://localhost:5203"}
 )
 
 foreach ($server in $servers) {
@@ -89,17 +93,20 @@ Write-Host "URLs d'acces local:" -ForegroundColor Cyan
 Write-Host "   Marketing:  http://localhost:5200" -ForegroundColor White
 Write-Host "   Frontend:   http://localhost:5202" -ForegroundColor White
 Write-Host "   Backend:    http://localhost:5201/api" -ForegroundColor White
+Write-Host "   Client:     http://localhost:5203" -ForegroundColor White
 Write-Host ""
 Write-Host "URLs d'acces reseau local:" -ForegroundColor Cyan
 Write-Host "   Marketing:  http://$ip:5200" -ForegroundColor White
 Write-Host "   Frontend:   http://$ip:5202" -ForegroundColor White
 Write-Host "   Backend:    http://$ip:5201/api" -ForegroundColor White
+Write-Host "   Client:     http://$ip:5203" -ForegroundColor White
 Write-Host ""
 $publicIP = "91.178.47.136"
 Write-Host "URLs d'acces public (IP: $publicIP):" -ForegroundColor Cyan
 Write-Host "   Marketing:  http://$publicIP:5200" -ForegroundColor White
 Write-Host "   Frontend:   http://$publicIP:5202" -ForegroundColor White
 Write-Host "   Backend:    http://$publicIP:5201/api" -ForegroundColor White
+Write-Host "   Client:     http://$publicIP:5203" -ForegroundColor White
 Write-Host ""
 Write-Host "Pour arreter les serveurs, executez: .\stop-servers.ps1" -ForegroundColor Yellow
 Write-Host ""

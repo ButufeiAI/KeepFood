@@ -1,0 +1,3699 @@
+<!DOCTYPE html>
+<html lang="en" data-layout-mode="light_mode">
+
+<head>
+
+	<!-- Meta Tags -->
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<meta name="description" content="Dreams POS is a powerful Bootstrap based Inventory Management Admin Template designed for businesses, offering seamless invoicing, project tracking, and estimates.">
+	<meta name="keywords" content="inventory management, admin dashboard, bootstrap template, invoicing, estimates, business management, responsive admin, POS system">
+	<meta name="author" content="Dreams Technologies">
+	<meta name="robots" content="index, follow">
+	<title>Modals | Dreams POS - Inventory Management & Admin Dashboard Template</title>
+
+	<script src="assets/js/theme-script.js"></script>	
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="assets/img/apple-touch-icon.png">
+
+	<!-- Datetimepicker CSS -->
+	<link rel="stylesheet" href="assets/css/bootstrap-datetimepicker.min.css">
+
+	<!-- animation CSS -->
+	<link rel="stylesheet" href="assets/css/animate.css">
+
+	<!-- Select2 CSS -->
+	<link rel="stylesheet" href="assets/plugins/select2/css/select2.min.css">
+
+	<!-- Daterangepikcer CSS -->
+	<link rel="stylesheet" href="assets/plugins/daterangepicker/daterangepicker.css">
+
+	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" href="assets/plugins/tabler-icons/tabler-icons.min.css">
+
+	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/fontawesome.min.css">
+	<link rel="stylesheet" href="assets/plugins/fontawesome/css/all.min.css">
+
+	<!-- Color Picker Css -->
+	<link rel="stylesheet" href="assets/plugins/@simonwep/pickr/themes/nano.min.css">
+
+	<!-- Flowbite CSS -->
+	<link rel="stylesheet" href="assets/css/flowbite.min.css">
+
+	<!-- Main CSS -->
+	<link rel="stylesheet" href="../dist/style.css">
+
+</head>
+
+<body>
+	<div id="global-loader">
+		<div class="whirly-loader"> </div>
+	</div>
+	<!-- Main Wrapper -->
+	<div class="main-wrapper">
+
+		<!-- Header -->
+		<div class="header">
+			<div class="main-header h-[inherit]">
+				<!-- Logo -->
+				<div class="header-left active">
+					<a href="index.html" class="logo logo-normal">
+						<img src="assets/img/logo.svg" alt="Img">
+					</a>
+					<a href="index.html" class="logo logo-white">
+						<img src="assets/img/logo-white.svg" alt="Img">
+					</a>
+					<a href="index.html" class="logo-small">
+						<img src="assets/img/logo-small.png" alt="Img">
+					</a>
+				</div>
+				<!-- /Logo -->
+				<a id="mobile_btn" class="mobile_btn" href="#sidebar">
+					<span class="bar-icon">
+						<span></span>
+						<span></span>
+						<span></span>
+					</span>
+				</a>
+
+				<!-- Header Menu -->
+				<ul class="nav user-menu items-center justify-center relative h-full transition-all duration-[0.5s] ease-[ease] m-0 pr-6">
+
+					<!-- Search -->
+					<li class="nav-item nav-searchinputs">
+						<div class="top-nav-search">
+							<a href="javascript:void(0);" class="responsive-search hidden text-white text-xl h-[60px] leading-[60px] px-[15px]">
+								<i class="fa fa-search"></i>
+							</a>
+							<form action="#" class="dropdown relative">
+								<div class="searchinputs input-group dropdown-toggle" id="dropdownMenuClickable" data-dropdown-toggle="search-dropdown">
+									<input type="text" placeholder="Search" class="focus:border-border-color focus:ring-0">
+									<div class="search-addon">
+										<span class="flex items-center justify-center cursor-pointer text-[#A6AAAF] rounded-[5px] absolute -translate-y-2/4 z-[9] start-2 top-1/2"><i class="ti ti-search"></i></span>
+									</div>
+									<span class="input-group-text">
+										<kbd class="flex items-center bg-secondary-transparent text-[10px] font-medium text-text-title py-0.5 p-1 rounded-[5px]"><img src="assets/img/icons/command.svg" alt="img" class="me-1">K</kbd>
+									</span>
+								</div>
+								<div id="search-dropdown" class="dropdown-menu hidden search-dropdown w-[300px] h-[315px] shadow overflow-y-auto mt-0 p-5 rounded-[10px]">
+									<div class="text-sm text-text-default mt-0 mb-[15px] mx-0 pt-0 pb-[15px] px-0 border-b-border-color border-b">
+										<h6 class="flex items-center text-sm font-bold mb-[15px]"><span><i data-feather="search" class="feather-16 w-3.5 text-secondary me-1.5"></i></span>Recent Searches
+										</h6>
+										<ul class="search-tags flex items-center gap-[10px]">
+											<li><a href="javascript:void(0);" class="block text-text-default bg-secondary-transparent px-2.5 py-[5px] rounded-[50px] hover:bg-primary hover:text-white">Products</a></li>
+											<li><a href="javascript:void(0);" class="block text-text-default bg-secondary-transparent px-2.5 py-[5px] rounded-[50px] hover:bg-primary hover:text-white">Sales</a></li>
+											<li><a href="javascript:void(0);" class="block text-text-default bg-secondary-transparent px-2.5 py-[5px] rounded-[50px] hover:bg-primary hover:text-white">Applications</a></li>
+										</ul>
+									</div>
+									<div class="text-sm text-text-default mt-0 mb-[15px] mx-0 pt-0 pb-[15px] px-0 border-b-border-color border-b">
+										<h6 class="flex items-center text-sm font-bold mb-[15px]"><span><i data-feather="help-circle" class="feather-16 w-3.5 text-secondary me-1.5"></i></span>Help</h6>
+										<p class="mb-[10px]">How to Change Product Volume from 0 to 200 on Inventory management</p>
+										<p>Change Product Name</p>
+									</div>
+									<div class="text-sm text-text-default mt-0 mx-0 pt-0 px-0">
+										<h6 class="flex items-center text-sm font-bold mb-[15px]"><span><i data-feather="user" class="feather-16 w-3.5 text-secondary me-1.5"></i></span>Customers</h6>
+										<ul class="customers">
+											<li class="mb-[15px]"><a href="javascript:void(0);" class="text-text-default text-[15px] flex items-center justify-between hover:text-primary">Aron Varu<img src="assets/img/profiles/avator1.jpg" alt="Img" class="w-[30px] h-[30px] border rounded-[100%] border-border-color"></a></li>
+											<li class="mb-[15px]"><a href="javascript:void(0);" class="text-text-default text-[15px] flex items-center justify-between hover:text-primary">Jonita<img src="assets/img/profiles/avatar-01.jpg" alt="Img" class="w-[30px] h-[30px] border rounded-[100%] border-border-color"></a></li> 
+											<li><a href="javascript:void(0);" class="text-text-default text-[15px] flex items-center justify-between hover:text-primary">Aaron<img src="assets/img/profiles/avatar-10.jpg" alt="Img" class="w-[30px] h-[30px] border rounded-[100%] border-border-color"></a></li>
+										</ul>
+									</div>
+								</div>
+							</form>
+						</div>
+					</li>
+					<!-- /Search -->
+
+					<!-- Select Store -->
+					<li class="nav-item dropdown relative select-store-dropdown">
+						<a href="javascript:void(0);" class="px-[8px] py-[6px] border border-[#E6EAED] rounded-[8px] nav-link select-store"
+							data-dropdown-toggle="store-dropdown">
+							<span class="user-info flex items-center justify-center relative ">
+								<span class="w-4 h-4 me-2">
+									<img src="assets/img/store/store-01.png" alt="Store Logo" class="rounded">
+								</span>
+								<span class="user-detail">
+									<span class="text-sm font-normal text-gray-900">Freshmart</span>
+								</span>
+							</span>
+						</a>
+						<div id="store-dropdown" class="dropdown-menu p-2 hidden">
+							<a href="javascript:void(0);" class="flex items-center text-text-default text-[0.8125rem] px-[0.9375rem] py-2 whitespace-nowrap hover:bg-primary/5 hover:text-primary focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/store/store-01.png" alt="Store Logo" class="w-5 h-5 rounded me-2">Freshmart
+							</a>
+							<a href="javascript:void(0);" class="flex items-center text-text-default text-[0.8125rem] px-[0.9375rem] py-2 whitespace-nowrap hover:bg-primary/5 hover:text-primary focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/store/store-02.png" alt="Store Logo" class="w-5 h-5 rounded me-2">Grocery Apex
+							</a>
+							<a href="javascript:void(0);" class="flex items-center text-text-default text-[0.8125rem] px-[0.9375rem] py-2 whitespace-nowrap hover:bg-primary/5 hover:text-primary focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/store/store-03.png" alt="Store Logo" class="w-5 h-5 rounded me-2">Grocery Bevy
+							</a>
+							<a href="javascript:void(0);" class="flex items-center text-text-default text-[0.8125rem] px-[0.9375rem] py-2 whitespace-nowrap hover:bg-primary/5 hover:text-primary focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/store/store-04.png" alt="Store Logo" class="w-5 h-5 rounded me-2">Grocery Eden
+							</a>
+						</div>
+					</li>
+					<!-- /Select Store -->
+
+					<li class="nav-item dropdown relative link-nav">
+						<a href="javascript:void(0);" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white btn-md inline-flex items-center" data-dropdown-toggle="new-dropdown">
+							<i class="ti ti-circle-plus me-1"></i>Add New
+						</a>
+						<div id="new-dropdown" class="hidden dropdown-menu p-5 w-[600px]">
+							<div class="grid grid-cols-1 sm:grid-cols-4 md:grid-cols-6 gap-[8px]">
+								<div>
+									<a href="category-list.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-brand-codepen"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Category</p>
+									</a>
+								</div>
+								<div>
+									<a href="add-product.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-square-plus"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Product</p>
+									</a>
+								</div>
+								<div>
+									<a href="category-list.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-shopping-bag"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Purchase</p>
+									</a>
+								</div>
+								<div>
+									<a href="online-orders.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-shopping-cart"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Sale</p>
+									</a>
+								</div>
+								<div>
+									<a href="expense-list.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-file-text"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Expense</p>
+									</a>
+								</div>
+								<div>
+									<a href="quotation-list.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-device-floppy"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Quotation</p>
+									</a>
+								</div>
+								<div>
+									<a href="sales-returns.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-copy"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Return</p>
+									</a>
+								</div>
+								<div>
+									<a href="users.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-user"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">User</p>
+									</a>
+								</div>
+								<div>
+									<a href="customers.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-users"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Customer</p>
+									</a>
+								</div>
+								<div>
+									<a href="sales-report.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-shield"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Biller</p>
+									</a>
+								</div>
+								<div>
+									<a href="suppliers.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-user-check"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Supplier</p>
+									</a>
+								</div>
+								<div>
+									<a href="stock-transfer.html" class="group block text-center border border-border-color rounded-[8px] p-[10px] hover:bg-primary-100 hover:border-primary-100 transition-all">
+										<span class="w-[36px] h-[36px] rounded-[8px] mx-auto mb-2 inline-flex items-center justify-center text-secondary bg-secondary-transparent group-hover:bg-primary group-hover:text-white transition-all">
+											<i class="ti ti-truck"></i>
+										</span>
+										<p class="text-[13px] text-text-default group-hover:text-primary">Transfer</p>
+									</a>
+								</div>
+							</div>
+						</div>
+					</li>
+					
+					<li class="nav-item pos-nav">
+						<a href="pos.html" class="btn bg-dark border border-dark text-white text-center hover:bg-black hover:text-white btn-md inline-flex items-center">
+							<i class="ti ti-device-laptop me-1"></i>POS
+						</a>
+					</li>
+
+					<!-- Flag -->
+					<li class="nav-item dropdown relative flag-nav nav-item-box">
+						<a class="nav-link dropdown-toggle"  data-dropdown-toggle="flag-dropdown" href="javascript:void(0);"
+							role="button">
+							<img src="assets/img/flags/us-flag.svg" alt="Language" class="img-fluid">
+						</a>
+						<div id="flag-dropdown" class="dropdown-menu hidden dropdown-menu hidden-right">
+							<a href="javascript:void(0);" class="text-gray-500 rounded-[5px] font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/flags/english.svg" alt="Img" height="16">English
+							</a>
+							<a href="javascript:void(0);" class="text-gray-500 rounded-[5px] font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary">
+								<img src="assets/img/flags/arabic.svg" alt="Img" height="16">Arabic
+							</a>
+						</div>
+					</li>
+					<!-- /Flag -->
+
+					<li class="nav-item nav-item-box">
+						<a href="javascript:void(0);" id="btnFullscreen">
+							<i class="ti ti-maximize"></i>
+						</a>
+					</li>
+					<li class="nav-item nav-item-box">
+						<a href="email.html">
+							<i class="ti ti-mail"></i>
+							<span class="text-[11px] capitalize font-medium tracking-[0.5px] px-[0.45rem] py-[0.35rem] rounded-full leading-none rounded-pill">1</span>
+						</a>
+					</li>
+					<!-- Notifications -->
+					<li class="nav-item dropdown relative nav-item-box">
+						<a href="javascript:void(0);" class="dropdown-toggle nav-link"  data-dropdown-toggle="notification-dropdown">
+							<i class="ti ti-bell"></i>
+						</a>
+						<div id="notification-dropdown" class="dropdown-menu hidden notifications w-[350px] right-0">
+							<div class="border-b border-border-color text-center text-[12px] px-[20px] py-[15px] flex items-center justify-between">
+								<h5 class="notification-title">Notifications</h5>
+								<a href="javascript:void(0)" class="text-primary font-medium">Mark all as read</a>
+							</div>
+							<div class="noti-content">
+								<ul class="notification-list">
+									<li class="border-b border-border-color">
+										<a href="activities.html" class="block relative p-5">
+											<div class="media flex">
+												<span class="w-12 h-12 me-2 shrink-0">
+													<img alt="Img" src="assets/img/profiles/avatar-13.jpg" class="rounded-[50%]">
+												</span>
+												<div class="flex-grow-1">
+													<p class="text-text-default font-medium mb-1"><span class="text-gray-900">James Kirwin</span> confirmed his order.  Order No: #78901.Estimated delivery: 2 days</p>
+													<p class="text-text-default">4 mins ago</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="border-b border-border-color">
+										<a href="activities.html" class="block relative p-5">
+											<div class="media flex">
+												<span class="w-12 h-12 me-2 shrink-0">
+													<img alt="Img" src="assets/img/profiles/avatar-03.jpg" class="rounded-[50%]">
+												</span>
+												<div class="flex-grow-1">
+													<p class="text-text-default font-medium mb-1"><span class="text-gray-900">Leo Kelly</span> cancelled his order scheduled for  17 Jan 2025</p>
+													<p class="text-text-default">10 mins ago</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="border-b border-border-color">
+										<a href="activities.html" class="block relative p-5 recent-msg">
+											<div class="media flex">
+												<span class="w-12 h-12 me-2 shrink-0">
+													<img alt="Img" src="assets/img/profiles/avatar-17.jpg" class="rounded-[50%]">
+												</span>
+												<div class="flex-grow-1">
+													<p class="text-text-default font-medium mb-1">Payment of $50 received for Order #67890 from <span class="text-gray-900">Antonio Engle</span></p>
+													<p class="text-text-default">05 mins ago</p>
+												</div>
+											</div>
+										</a>
+									</li>
+									<li class="notification-message">
+										<a href="activities.html" class="block relative p-5 recent-msg">
+											<div class="media flex">
+												<span class="w-12 h-12 me-2 shrink-0">
+													<img alt="Img" src="assets/img/profiles/avatar-02.jpg" class="rounded-[50%]">
+												</span>
+												<div class="flex-grow-1">
+													<p class="text-text-default font-medium mb-1"><span class="text-gray-900">Andrea</span> confirmed his order.  Order No: #73401.Estimated delivery: 3 days</p>
+													<p class="text-text-default">4 mins ago</p>
+												</div>
+											</div>
+										</a>
+									</li>
+								</ul>
+							</div>
+							<div class="border-t border-border-color text-center px-[20px] py-[15px] flex items-center gap-3">
+								<a href="#" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white btn-md w-100">Cancel</a>
+								<a href="activities.html" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white btn-md w-100">View all</a>
+							</div>
+						</div>
+					</li>
+					<!-- /Notifications -->
+
+					<li class="nav-item nav-item-box">
+						<a href="general-settings.html"><i class="ti ti-settings"></i></a>
+					</li>
+					<li class="nav-item dropdown relative profile-nav">
+						<a href="javascript:void(0);" class="nav-link userset" data-dropdown-toggle="profile-dropdown">
+							<span class="user-info p-0">
+								<span class="user-letter flex items-center justify-center text-white w-8 h-8 font-semibold text-[15px] rounded-[10px]">
+									<img src="assets/img/profiles/avator1.jpg" alt="Img" class="img-fluid">
+								</span>
+							</span>
+						</a>
+						<div id="profile-dropdown" class="dropdown-menu menu-drop-user hidden">
+							<div class="bg-light mb-2 p-4 rounded-[5px] flex items-center">
+								<span class="user-img me-2">
+									<img src="assets/img/profiles/avator1.jpg" alt="Img" class="w-10 h-10 shrink-0 rounded-[50%]">
+								</span>
+								<div>
+									<h6 class="font-medium">John Smilga</h6>
+									<p>Admin</p>
+								</div>
+							</div>
+							<a class="dropdown-item flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="profile.html"><i class="ti ti-user-circle me-2"></i>My Profile</a>
+							<a class="dropdown-item flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="sales-report.html"><i class="ti ti-file-text me-2"></i>Reports</a>
+							<a class="dropdown-item flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="general-settings.html"><i class="ti ti-settings-2 me-2"></i>Settings</a>
+							<hr class="my-2">
+							<a class="dropdown-item flex items-center font-medium text-danger px-4 py-2 hover:text-danger-hover hover:bg-primary/5 focus:bg-primary/5 focus:text-danger-hover active:bg-primary/5 active:text-danger-hover" href="signin.html"><i class="ti ti-logout me-2"></i>Logout</a>
+						</div>
+					</li>
+				</ul>
+				<!-- /Header Menu -->
+
+				<!-- Mobile Menu -->
+				<div class="dropdown mobile-user-menu">
+					<a href="javascript:void(0);" class="nav-link dropdown-toggle" data-dropdown-toggle="mobile-dropdown"><i class="fa fa-ellipsis-v"></i></a>
+					<div class="dropdown-menu hidden dropdown-menu hidden-right" id="mobile-dropdown">
+						<a class="flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="profile.html">My Profile</a>
+						<a class="flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="general-settings.html">Settings</a>
+						<a class="flex items-center font-medium px-4 py-2 hover:text-primary hover:bg-primary/5 focus:bg-primary/5 focus:text-primary active:bg-primary/5 active:text-primary" href="signin.html">Logout</a>
+					</div>
+				</div>
+				<!-- /Mobile Menu -->
+			</div>
+		</div>
+		<!-- /Header -->
+
+		<!-- Sidebar -->
+		<div class="sidebar" id="sidebar">
+			<!-- Logo -->
+			<div class="sidebar-logo items-center active">
+				<a href="index.html" class="logo logo-normal">
+					<img src="assets/img/logo.svg" alt="Img">
+				</a>
+				<a href="index.html" class="logo logo-white">
+					<img src="assets/img/logo-white.svg" alt="Img">
+				</a>
+				<a href="index.html" class="logo-small">
+					<img src="assets/img/logo-small.png" alt="Img">
+				</a>
+				<a id="toggle_btn" href="javascript:void(0);" class="flex items-center justify-center absolute end-[-13px] w-[25px] h-[25px] bg-primary text-white rounded-full opacity-100 cursor-pointer transition-all duration-300 hover:bg-primary-hover">
+					<i data-feather="chevrons-left" class="feather-16"></i>
+				</a>
+			</div>
+			<!-- /Logo -->
+			<div class="modern-profile p-4 pb-0">
+				<div class="text-center rounded bg-light p-4 mb-6 user-profile">
+					<div class="relative size-[45px] mx-auto mb-4">
+						<img src="assets/img/customer/customer15.jpg" alt="Img" class="img-fluid rounded-full">
+						<span class="bottom-0 end-0 absolute  size-3.5 bg-success border-2 border-white rounded-full"></span>
+					</div>
+					<h6 class="text-sm font-bold mb-1">Adrian Herman</h6>
+					<p class="text-xs mb-0">System Admin</p>
+				</div>
+				<div class="sidebar-nav mb-4">
+					<ul class="nav nav-tabs nav-tabs-solid nav-tabs-rounded nav-justified bg-transparent" role="tablist">
+						<li class="nav-item"><a class="nav-link active border-0" href="#">Menu</a></li>
+						<li class="nav-item"><a class="nav-link border-0" href="chat.html">Chats</a></li>
+						<li class="nav-item"><a class="nav-link border-0" href="email.html">Inbox</a></li>
+					</ul>
+				</div>
+			</div>
+			<div class="sidebar-header p-4 pb-0 pt-2">
+				<div class="text-center rounded bg-light p-2 mb-6 sidebar-profile flex items-center">
+					<div class="size-8 onlin">
+						<img src="assets/img/customer/customer15.jpg" alt="Img" class="img-fluid rounded-full">
+					</div>
+					<div class="text-start sidebar-profile-info ms-2">
+						<h6 class="text-sm font-bold mb-1">Adrian Herman</h6>
+						<p class="text-xs">System Admin</p>
+					</div>
+				</div>
+				<div class="flex items-center justify-between menu-item mb-4">
+					<div>
+						<a href="index.html" class="btn btn-sm btn-icon bg-light">
+							<i class="ti ti-layout-grid-remove"></i>
+						</a>
+					</div>
+					<div>
+						<a href="chat.html" class="btn btn-sm btn-icon bg-light">
+							<i class="ti ti-brand-hipchat"></i>
+						</a>
+					</div>
+					<div>
+						<a href="email.html" class="btn btn-sm btn-icon bg-light relative">
+							<i class="ti ti-message"></i>
+						</a>
+					</div>
+					<div class="notification-item">
+						<a href="activities.html" class="btn btn-sm btn-icon bg-light relative">
+							<i class="ti ti-bell"></i>
+							<span class="notification-status-dot"></span>
+						</a>
+					</div>
+					<div class="me-0">
+						<a href="general-settings.html" class="btn btn-sm btn-icon bg-light">
+							<i class="ti ti-settings"></i>
+						</a>
+					</div>
+				</div>
+			</div>
+			<div class="sidebar-inner slimscroll">
+				<div id="sidebar-menu" class="sidebar-menu">
+					<ul>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Main</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-layout-grid text-[16px] me-2"></i><span>Dashboard</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="index.html" class=" flex items-center">Admin Dashboard</a></li>
+										<li><a href="admin-dashboard.html" class="flex items-center">Admin Dashboard 2</a></li>
+										<li><a href="sales-dashboard.html" class="flex items-center">Sales Dashboard</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-user-edit text-[16px] me-2"></i><span>Super Admin</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="dashboard.html" class="flex items-center">Dashboard</a></li>
+										<li><a href="companies.html" class="flex items-center">Companies</a></li>
+										<li><a href="subscription.html" class="flex items-center">Subscriptions</a></li>
+										<li><a href="packages.html" class="flex items-center">Packages</a></li>
+										<li><a href="domain.html" class="flex items-center">Domain</a></li>
+										<li><a href="purchase-transaction.html" class="flex items-center">Purchase Transaction</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-brand-apple-arcade text-[16px] me-2"></i><span>Application</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="chat.html" class="flex items-center">Chat</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);" class="flex items-center">Call<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="video-call.html" class="flex items-center">Video Call</a></li>
+												<li><a href="audio-call.html" class="flex items-center">Audio Call</a></li>
+												<li><a href="call-history.html" class="flex items-center">Call History</a></li>
+											</ul>
+										</li>
+										<li><a href="calendar.html" class="flex items-center">Calendar</a></li>
+										<li><a href="contacts.html" class="flex items-center">Contacts</a></li>
+										<li><a href="email.html" class="flex items-center">Email</a></li>
+										<li><a href="todo.html" class="flex items-center">To Do</a></li>
+										<li><a href="notes.html" class="flex items-center">Notes</a></li>
+										<li><a href="file-manager.html" class="flex items-center">File Manager</a></li>
+										<li><a href="projects.html" class="flex items-center">Projects</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);" class="flex items-center">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="products.html" class="flex items-center">Products</a></li>
+												<li><a href="orders.html" class="flex items-center">Orders</a></li>
+												<li><a href="customers.html" class="flex items-center">Customers</a></li>
+												<li><a href="cart.html" class="flex items-center">Cart</a></li>
+												<li><a href="checkout.html" class="flex items-center">Checkout</a></li>
+												<li><a href="wishlist.html" class="flex items-center">Wishlist</a></li>
+												<li><a href="reviews.html" class="flex items-center">Reviews</a></li>
+											</ul>
+										</li>
+										<li><a href="social-feed.html" class="flex items-center">Social Feed</a></li>
+										<li><a href="search-list.html" class="flex items-center">Search List</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-layout-sidebar-right-collapse text-[16px] me-2"></i><span>Layouts</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="layout-horizontal.html" class="flex items-center">Horizontal</a></li>
+										<li><a href="layout-detached.html" class="flex items-center">Detached</a></li>
+										<li><a href="layout-two-column.html" class="flex items-center">Two Column</a></li>
+										<li><a href="layout-hovered.html" class="flex items-center">Hovered</a></li>
+										<li><a href="layout-boxed.html" class="flex items-center">Boxed</a></li>
+										<li><a href="layout-rtl.html" class="flex items-center">RTL</a></li>
+										<li><a href="layout-dark.html" class="flex items-center">Dark</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Inventory</h6>
+							<ul>
+								<li><a href="product-list.html" class="flex items-center"><i data-feather="box"></i><span>Products</span></a></li>
+								<li><a href="add-product.html" class="flex items-center"><i class="ti ti-table-plus text-[16px] me-2"></i><span>Create Product</span></a></li>
+								<li><a href="expired-products.html" class="flex items-center"><i class="ti ti-progress-alert text-[16px] me-2"></i><span>Expired Products</span></a></li>
+								<li><a href="low-stocks.html" class="flex items-center"><i class="ti ti-trending-up-2 text-[16px] me-2"></i><span>Low Stocks</span></a></li>
+								<li><a href="category-list.html" class="flex items-center"><i class="ti ti-list-details text-[16px] me-2"></i><span>Category</span></a></li>
+								<li><a href="sub-categories.html" class="flex items-center"><i class="ti ti-carousel-vertical text-[16px] me-2"></i><span>Sub Category</span></a></li>
+								<li><a href="brand-list.html" class="flex items-center"><i class="ti ti-triangles text-[16px] me-2"></i><span>Brands</span></a></li>
+								<li><a href="units.html" class="flex items-center"><i class="ti ti-brand-unity text-[16px] me-2"></i><span>Units</span></a></li>
+								<li><a href="varriant-attributes.html" class="flex items-center"><i class="ti ti-checklist text-[16px] me-2"></i><span>Variant Attributes</span></a></li>
+								<li><a href="warranty.html" class="flex items-center"><i class="ti ti-certificate text-[16px] me-2"></i><span>Warranties</span></a></li>
+								<li><a href="barcode.html" class="flex items-center"><i class="ti ti-barcode text-[16px] me-2"></i><span>Print Barcode</span></a></li>
+								<li><a href="qrcode.html" class="flex items-center"><i class="ti ti-qrcode text-[16px] me-2"></i><span>Print QR Code</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Stock</h6>
+							<ul>
+								<li><a href="manage-stocks.html" class="flex items-center"><i class="ti ti-stack-3 text-[16px] me-2"></i><span>Manage Stock</span></a></li>
+								<li><a href="stock-adjustment.html" class="flex items-center"><i class="ti ti-stairs-up text-[16px] me-2"></i><span>Stock Adjustment</span></a></li>
+								<li><a href="stock-transfer.html" class="flex items-center"><i class="ti ti-stack-pop text-[16px] me-2"></i><span>Stock Transfer</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Sales</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-layout-grid text-[16px] me-2"></i><span>Sales</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="online-orders.html" class="flex items-center">Online Orders</a></li>
+										<li><a href="pos-orders.html" class="flex items-center">POS Orders</a></li>
+									</ul>
+								</li>
+								<li><a href="invoice.html" class="flex items-center"><i class="ti ti-file-invoice text-[16px] me-2"></i><span>Invoices</span></a></li>
+								<li><a href="sales-returns.html" class="flex items-center"><i class="ti ti-receipt-refund text-[16px] me-2"></i><span>Sales Return</span></a></li>
+								<li><a href="quotation-list.html" class="flex items-center"><i class="ti ti-files text-[16px] me-2"></i><span>Quotation</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-device-laptop text-[16px] me-2"></i><span>POS</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="pos.html" class="flex items-center">POS 1</a></li>
+										<li><a href="pos-2.html" class="flex items-center">POS 2</a></li>
+										<li><a href="pos-3.html" class="flex items-center">POS 3</a></li>
+										<li><a href="pos-4.html" class="flex items-center">POS 4</a></li>
+										<li><a href="pos-5.html" class="flex items-center">POS 5</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Promo</h6>
+							<ul>
+								<li><a href="coupons.html" class="flex items-center"><i class="ti ti-ticket text-[16px] me-2"></i><span>Coupons</span></a></li>
+								<li><a href="gift-cards.html" class="flex items-center"><i class="ti ti-cards text-[16px] me-2"></i><span>Gift Cards</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-file-percent text-[16px] me-2"></i><span>Discount</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="discount-plan.html" class="flex items-center">Discount Plan</a></li>
+										<li><a href="discount.html" class="flex items-center">Discount</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Purchases</h6>
+							<ul>
+								<li><a href="purchase-list.html" class="flex items-center"><i class="ti ti-shopping-bag text-[16px] me-2"></i><span>Purchases</span></a></li>
+								<li><a href="purchase-order-report.html" class="flex items-center"><i class="ti ti-file-unknown text-[16px] me-2"></i><span>Purchase Order</span></a></li>
+								<li><a href="purchase-returns.html" class="flex items-center"><i class="ti ti-file-upload text-[16px] me-2"></i><span>Purchase Return</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Finance & Accounts</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-file-stack text-[16px] me-2"></i><span>Expenses</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="expense-list.html" class="flex items-center">Expenses</a></li>
+										<li><a href="expense-category.html" class="flex items-center">Expense Category</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="flex items-center"><i class="ti ti-file-pencil text-[16px] me-2"></i><span>Income</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="income.html">Income</a></li>
+										<li><a href="income-category.html">Income Category</a></li>
+									</ul>
+								</li>
+								<li><a href="account-list.html"><i class="ti ti-building-bank text-[16px] me-2"></i><span>Bank Accounts</span></a></li>
+								<li><a href="money-transfer.html"><i class="ti ti-moneybag text-[16px] me-2"></i><span>Money Transfer</span></a></li>
+								<li><a href="balance-sheet.html"><i class="ti ti-report-money text-[16px] me-2"></i><span>Balance Sheet</span></a></li>
+								<li><a href="trial-balance.html"><i class="ti ti-alert-circle text-[16px] me-2"></i><span>Trial Balance</span></a></li>
+								<li><a href="cash-flow.html"><i class="ti ti-zoom-money text-[16px] me-2"></i><span>Cash Flow</span></a></li>
+								<li><a href="account-statement.html"><i class="ti ti-file-infinity text-[16px] me-2"></i><span>Account Statement</span></a></li>
+
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Peoples</h6>
+							<ul>
+								<li><a href="customers.html"><i class="ti ti-users-group text-[16px] me-2"></i><span>Customers</span></a></li>
+								<li><a href="billers.html"><i class="ti ti-user-up text-[16px] me-2"></i><span>Billers</span></a></li>
+								<li><a href="suppliers.html"><i class="ti ti-user-dollar text-[16px] me-2"></i><span>Suppliers</span></a></li>
+								<li><a href="store-list.html"><i class="ti ti-home-bolt text-[16px] me-2"></i><span>Stores</span></a></li>
+								<li><a href="warehouse.html"><i class="ti ti-archive text-[16px] me-2"></i><span>Warehouses</span></a>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">HRM</h6>
+							<ul>
+								<li><a href="employees-grid.html"><i class="ti ti-user text-[16px] me-2"></i><span>Employees</span></a></li>
+								<li><a href="department-grid.html"><i class="ti ti-compass text-[16px] me-2"></i><span>Departments</span></a></li>
+								<li><a href="designation.html"><i class="ti ti-git-merge text-[16px] me-2"></i><span>Designation</span></a></li>
+								<li><a href="shift.html"><i class="ti ti-arrows-shuffle text-[16px] me-2"></i><span>Shifts</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-user-cog text-[16px] me-2"></i><span>Attendence</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="attendance-employee.html">Employee</a></li>
+										<li><a href="attendance-admin.html">Admin</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-calendar text-[16px] me-2"></i><span>Leaves</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="leaves-admin.html">Admin Leaves</a></li>
+										<li><a href="leaves-employee.html">Employee Leaves</a></li>
+										<li><a href="leave-types.html">Leave Types</a></li>
+									</ul>
+								</li>
+								<li><a href="holidays.html"><i class="ti ti-calendar-share text-[16px] me-2"></i><span>Holidays</span></a>
+								</li>
+								<li class="submenu">
+									<a href="employee-salary.html"><i class="ti ti-file-dollar text-[16px] me-2"></i><span>Payroll</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="employee-salary.html">Employee Salary</a></li>
+										<li><a href="payslip.html">Payslip</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Reports</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-chart-bar text-[16px] me-2"></i><span>Sales Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="sales-report.html">Sales Report</a></li>
+										<li><a href="best-seller.html">Best Seller</a></li>
+									</ul>
+								</li>
+								<li><a href="purchase-report.html"><i class="ti ti-chart-pie-2 text-[16px] me-2"></i><span>Purchase report</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-triangle-inverted text-[16px] me-2"></i><span>Inventory Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="inventory-report.html">Inventory Report</a></li>
+										<li><a href="stock-history.html">Stock History</a></li>
+										<li><a href="sold-stock.html">Sold Stock</a></li>
+									</ul>
+								</li>
+								<li><a href="invoice-report.html"><i class="ti ti-businessplan text-[16px] me-2"></i><span>Invoice Report</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-user-star text-[16px] me-2"></i><span>Supplier Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="supplier-report.html">Supplier Report</a></li>
+										<li><a href="supplier-due-report.html">Supplier Due Report</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-report text-[16px] me-2"></i><span>Customer Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="customer-report.html">Customer Report</a></li>
+										<li><a href="customer-due-report.html">Customer Due Report</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-report-analytics text-[16px] me-2"></i><span>Product Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="product-report.html">Product Report</a></li>
+										<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
+										<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
+									</ul>
+								</li>
+								<li><a href="expense-report.html"><i class="ti ti-file-vector text-[16px] me-2"></i><span>Expense Report</span></a></li>
+								<li><a href="income-report.html"><i class="ti ti-chart-ppf text-[16px] me-2"></i><span>Income Report</span></a></li>
+								<li><a href="tax-reports.html"><i class="ti ti-chart-dots-2 text-[16px] me-2"></i><span>Tax Report</span></a></li>
+								<li><a href="profit-and-loss.html"><i class="ti ti-chart-donut text-[16px] me-2"></i><span>Profit & Loss</span></a></li>
+								<li><a href="annual-report.html"><i class="ti ti-report-search text-[16px] me-2"></i><span>Annual Report</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Content (CMS)</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-page-break text-[16px] me-2"></i><span>Pages</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="pages.html">Pages</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-wallpaper text-[16px] me-2"></i><span>Blog</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="all-blog.html">All Blog</a></li>
+										<li><a href="blog-tag.html">Blog Tags</a></li>
+										<li><a href="blog-categories.html">Categories</a></li>
+										<li><a href="blog-comments.html">Blog Comments</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-map-pin text-[16px] me-2"></i><span>Location</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="countries.html">Countries</a></li>
+										<li><a href="states.html">States</a></li>
+										<li><a href="cities.html">Cities</a></li>
+									</ul>
+								</li>
+								<li><a href="testimonials.html"><i class="ti ti-star text-[16px] me-2"></i><span>Testimonials</span></a></li>
+								<li><a href="faq.html"><i class="ti ti-help-circle text-[16px] me-2"></i><span>FAQ</span></a></li>
+
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">User Management</h6>
+							<ul>
+								<li><a href="users.html"><i class="ti ti-shield-up text-[16px] me-2"></i><span>Users</span></a></li>
+								<li><a href="roles-permissions.html"><i class="ti ti-jump-rope text-[16px] me-2"></i><span>Roles & Permissions</span></a></li>
+								<li><a href="delete-account.html"><i class="ti ti-trash-x text-[16px] me-2"></i><span>Delete Account Request</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Pages</h6>
+							<ul>
+								<li><a href="profile.html"><i class="ti ti-user-circle text-[16px] me-2"></i><span>Profile</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-shield text-[16px] me-2"></i><span>Authentication</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="signin.html">Cover</a></li>
+												<li><a href="signin-2.html">Illustration</a></li>
+												<li><a href="signin-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="register.html">Cover</a></li>
+												<li><a href="register-2.html">Illustration</a></li>
+												<li><a href="register-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="forgot-password.html">Cover</a></li>
+												<li><a href="forgot-password-2.html">Illustration</a></li>
+												<li><a href="forgot-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="reset-password.html">Cover</a></li>
+												<li><a href="reset-password-2.html">Illustration</a></li>
+												<li><a href="reset-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="email-verification.html">Cover</a></li>
+												<li><a href="email-verification-2.html">Illustration</a></li>
+												<li><a href="email-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="two-step-verification.html">Cover</a></li>
+												<li><a href="two-step-verification-2.html">Illustration</a></li>
+												<li><a href="two-step-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li><a href="lock-screen.html">Lock Screen</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-file-x text-[16px] me-2"></i><span>Error Pages</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="error-404.html">404 Error </a></li>
+										<li><a href="error-500.html">500 Error </a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="blank-page.html"><i class="ti ti-file text-[16px] me-2"></i><span>Blank Page</span> </a>
+								</li>
+								<li>
+									<a href="pricing.html"><i class="ti ti-currency-dollar text-[16px] me-2"></i><span>Pricing</span> </a>
+								</li>
+								<li>
+									<a href="coming-soon.html"><i class="ti ti-send text-[16px] me-2"></i><span>Coming Soon</span> </a>
+								</li>
+								<li>
+									<a href="under-maintenance.html"><i class="ti ti-alert-triangle text-[16px] me-2"></i><span>Under Maintenance</span> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Settings</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-settings text-[16px] me-2"></i><span>General Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="general-settings.html">Profile</a></li>
+										<li><a href="security-settings.html">Security</a></li>
+										<li><a href="notification.html">Notifications</a></li>
+										<li><a href="connected-apps.html">Connected Apps</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-world text-[16px] me-2"></i><span>Website Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="system-settings.html">System Settings</a></li>
+										<li><a href="company-settings.html">Company Settings </a></li>
+										<li><a href="localization-settings.html">Localization</a></li>
+										<li><a href="prefixes.html">Prefixes</a></li>
+										<li><a href="preference.html">Preference</a></li>
+										<li><a href="appearance.html">Appearance</a></li>
+										<li><a href="social-authentication.html">Social Authentication</a></li>
+										<li><a href="language-settings.html">Language</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-device-mobile text-[16px] me-2"></i>
+										<span>App Settings</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Invoice<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="invoice-settings.html">Invoice Settings</a></li>
+												<li><a href="invoice-template.html">Invoice Template</a></li>
+											</ul>
+										</li>
+										<li><a href="printer-settings.html">Printer</a></li>
+										<li><a href="pos-settings.html">POS</a></li>
+										<li><a href="custom-fields.html">Custom Fields</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-device-desktop text-[16px] me-2"></i>
+										<span>System Settings</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="email-settings.html">Email Settings</a></li>
+												<li><a href="email-template.html">Email Template</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">SMS<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="sms-settings.html">SMS Settings</a></li>
+												<li><a href="sms-template.html">SMS Template</a></li>
+											</ul>
+										</li>
+										<li><a href="otp-settings.html">OTP</a></li>
+										<li><a href="gdpr-settings.html">GDPR Cookies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-settings-dollar text-[16px] me-2"></i>
+										<span>Financial Settings</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="payment-gateway-settings.html">Payment Gateway</a></li>
+										<li><a href="bank-settings-grid.html">Bank Accounts</a></li>
+										<li><a href="tax-rates.html">Tax Rates</a></li>
+										<li><a href="currency-settings.html">Currencies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-settings-2 text-[16px] me-2"></i>
+										<span>Other Settings</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="storage-settings.html">Storage</a></li>
+										<li><a href="ban-ip-address.html">Ban IP Address</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="signin.html"><i class="ti ti-logout text-[16px] me-2"></i><span>Logout</span> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">UI Interface</h6>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="active subdrop">
+										<i class="ti ti-vector-bezier text-[16px] me-2"></i><span>Base UI</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="ui-alerts.html">Alerts</a></li>
+										<li><a href="ui-accordion.html">Accordion</a></li>
+										<li><a href="ui-avatar.html">Avatar</a></li>
+										<li><a href="ui-badges.html">Badges</a></li>
+										<li><a href="ui-buttons.html">Buttons</a></li>
+										<li><a href="ui-buttons-group.html">Button Group</a></li>
+										<li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
+										<li><a href="ui-cards.html">Card</a></li>
+										<li><a href="ui-carousel.html">Carousel</a></li>
+										<li><a href="ui-collapse.html">Collapse</a></li>
+										<li><a href="ui-dropdowns.html">Dropdowns</a></li>
+										<li><a href="ui-grid.html">Grid</a></li>
+										<li><a href="ui-images.html">Images</a></li>
+										<li><a href="ui-lightbox.html">Lightbox</a></li>
+										<li><a href="ui-links.html">Links</a></li>
+										<li><a href="ui-list-group.html">List Group</a></li>
+										<li><a href="ui-modals.html" class="active">Modals</a></li>
+										<li><a href="ui-offcanvas.html">Offcanvas</a></li>
+										<li><a href="ui-pagination.html">Pagination</a></li>
+										<li><a href="ui-popovers.html">Popovers</a></li>
+										<li><a href="ui-progress.html">Progress</a></li>
+										<li><a href="ui-rangeslider.html">Range Slider</a></li>
+										<li><a href="ui-spinner.html">Spinner</a></li>
+										<li><a href="ui-sweetalerts.html">Sweet Alerts</a></li>
+										<li><a href="ui-nav-tabs.html">Tabs</a></li>
+										<li><a href="ui-typography.html">Typography</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i data-feather="layers"></i><span>Advanced UI</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="ui-dragula.html">Dragula</a></li>
+										<li><a href="ui-clipboard.html">Clipboard</a></li>
+										<li><a href="ui-ratio.html">Ratio</a></li>
+										<li><a href="ui-rangeslider.html">Range Slider</a></li>
+										<li><a href="ui-rating.html">Rating</a></li>
+										<li><a href="ui-scrollbar.html">Scrollbar</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-chart-infographic text-[16px] me-2"></i>
+										<span>Charts</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="chart-apex.html">Apex Charts</a></li>
+										<li><a href="chart-c3.html">Chart C3</a></li>
+										<li><a href="chart-js.html">Chart Js</a></li>
+										<li><a href="chart-morris.html">Morris Charts</a></li>
+										<li><a href="chart-flot.html">Flot Charts</a></li>
+										<li><a href="chart-peity.html">Peity Charts</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-icons text-[16px] me-2"></i>
+										<span>Icons</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
+										<li><a href="icon-feather.html">Feather Icons</a></li>
+										<li><a href="icon-ionic.html">Ionic Icons</a></li>
+										<li><a href="icon-material.html">Material Icons</a></li>
+										<li><a href="icon-pe7.html">Pe7 Icons</a></li>
+										<li><a href="icon-simpleline.html">Simpleline Icons</a></li>
+										<li><a href="icon-themify.html">Themify Icons</a></li>
+										<li><a href="icon-weather.html">Weather Icons</a></li>
+										<li><a href="icon-typicon.html">Typicon Icons</a></li>
+										<li><a href="icon-flag.html">Flag Icons</a></li>
+										<li><a href="icon-tabler.html">Tabler Icons</a></li>
+										<li><a href="icon-bootstrap.html">Bootstrap Icons</a></li>
+										<li><a href="icon-remix.html">Remix Icons</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);">
+										<i class="ti ti-input-search text-[16px] me-2"></i><span>Forms</span><span class="menu-arrow"></span>
+									</a>
+									<ul>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="form-basic-inputs.html">Basic Inputs</a></li>
+												<li><a href="form-checkbox-radios.html">Checkbox & Radios</a></li>
+												<li><a href="form-input-groups.html">Input Groups</a></li>
+												<li><a href="form-grid-gutters.html">Grid & Gutters</a></li>
+												<li><a href="form-select.html">Form Select</a></li>
+												<li><a href="form-mask.html">Input Masks</a></li>
+												<li><a href="form-fileupload.html">File Uploads</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);">Layouts<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="form-horizontal.html">Horizontal Form</a></li>
+												<li><a href="form-vertical.html">Vertical Form</a></li>
+												<li><a href="form-floating-labels.html">Floating Labels</a></li>
+											</ul>
+										</li>
+										<li><a href="form-validation.html">Form Validation</a></li>
+										<li><a href="form-editors.html">Form Editor</a></li>
+										<li><a href="form-pickers.html">Form Picker</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-table text-[16px] me-2"></i><span>Tables</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="tables-basic.html">Basic Tables </a></li>
+										<li><a href="data-tables.html">Data Table </a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-map-pin-pin text-[16px] me-2"></i><span>Maps</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="maps-vector.html">Vector</a></li>
+										<li><a href="maps-leaflet.html">Leaflet</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu-open">
+							<h6 class="font-bold text-xs text-[#092C4C] mt-0 mb-2">Help</h6>
+							<ul>
+								<li><a href="https://dreamspos.dreamstechnologies.com/documentation/index.html" target="_blank"><i class="ti ti-file-text text-[16px] mr-2"></i><span>Documentation</span></a></li>
+								<li><a href="https://dreamspos.dreamstechnologies.com/documentation/changelog.html" target="_blank"><i class="ti ti-exchange text-[16px] me-2"></i><span>Changelog </span><span class="text-[11px] capitalize font-medium tracking-[0.5px] px-[0.45rem] py-[0.35rem] rounded-[5px] leading-none bg-primary text-[10px] leading-[18px] px-[5px] py-0 text-white text-[10px] ms-2">v2.2.3</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><i class="ti ti-menu-2 text-[16px] me-2"></i><span>Multi Level</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="javascript:void(0);">Level 1.1</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="javascript:void(0);">Level 2.1</a></li>
+												<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+													<ul>
+														<li><a href="javascript:void(0);">Level 3.1</a></li>
+														<li><a href="javascript:void(0);">Level 3.2</a></li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Sidebar -->
+
+		<!-- Horizontal Sidebar -->
+		<div class="sidebar sidebar-horizontal" id="horizontal-menu">
+			<div id="sidebar-menu-3" class="sidebar-menu">
+				<div class="main-menu">
+					<ul class="nav-menu">
+						<li class="submenu">
+							<a href="index.html"><i class="ti ti-layout-grid text-[16px] me-2"></i><span> Main Menu</span> <span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Dashboard</span> <span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="index.html">Admin Dashboard</a></li>
+										<li><a href="admin-dashboard.html">Admin Dashboard 2</a></li>
+										<li><a href="sales-dashboard.html">Sales Dashboard</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Super Admin</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="dashboard.html">Dashboard</a></li>
+										<li><a href="companies.html">Companies</a></li>
+										<li><a href="subscription.html">Subscriptions</a></li>
+										<li><a href="packages.html">Packages</a></li>
+										<li><a href="domain.html">Domain</a></li>
+										<li><a href="purchase-transaction.html">Purchase Transaction</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Application</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="chat.html">Chat</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Call<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="video-call.html">Video Call</a></li>
+												<li><a href="audio-call.html">Audio Call</a></li>
+												<li><a href="call-history.html">Call History</a></li>
+											</ul>
+										</li>
+										<li><a href="calendar.html">Calendar</a></li>
+										<li><a href="contacts.html">Contacts</a></li>
+										<li><a href="email.html">Email</a></li>
+										<li><a href="todo.html">To Do</a></li>
+										<li><a href="notes.html">Notes</a></li>
+										<li><a href="file-manager.html">File Manager</a></li>
+										<li><a href="projects.html">Projects</a></li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="products.html">Products</a></li>
+												<li><a href="orders.html">Orders</a></li>
+												<li><a href="customers.html">Customers</a></li>
+												<li><a href="cart.html">Cart</a></li>
+												<li><a href="checkout.html">Checkout</a></li>
+												<li><a href="wishlist.html">Wishlist</a></li>
+												<li><a href="reviews.html">Reviews</a></li>
+											</ul>
+										</li>
+										<li><a href="social-feed.html">Social Feed</a></li>
+										<li><a href="search-list.html">Search List</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Layouts</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="layout-horizontal.html">Horizontal</a></li>
+										<li><a href="layout-detached.html">Detached</a></li>
+										<li><a href="layout-two-column.html">Two Column</a></li>
+										<li><a href="layout-hovered.html">Hovered</a></li>
+										<li><a href="layout-boxed.html">Boxed</a></li>
+										<li><a href="layout-rtl.html">RTL</a></li>
+										<li><a href="layout-dark.html">Dark</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-brand-unity text-[16px] me-2"></i><span> Inventory
+								</span> <span class="menu-arrow"></span></a>
+							<ul>
+								<li><a href="product-list.html"><span>Products</span></a></li>
+								<li><a href="add-product.html"><span>Create Product</span></a></li>
+								<li><a href="expired-products.html"><span>Expired Products</span></a></li>
+								<li><a href="low-stocks.html"><span>Low Stocks</span></a></li>
+								<li><a href="category-list.html"><span>Category</span></a></li>
+								<li><a href="sub-categories.html"><span>Sub Category</span></a></li>
+								<li><a href="brand-list.html"><span>Brands</span></a></li>
+								<li><a href="units.html"><span>Units</span></a></li>
+								<li><a href="varriant-attributes.html"><span>Variant Attributes</span></a></li>
+								<li><a href="warranty.html"><span>Warranties</span></a></li>
+								<li><a href="barcode.html"><span>Print Barcode</span></a></li>
+								<li><a href="qrcode.html"><span>Print QR Code</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-layout-grid text-[16px] me-2"></i><span>Sales &amp; Purchase</span> <span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Stock</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="manage-stocks.html"><span>Manage Stock</span></a></li>
+										<li><a href="stock-adjustment.html"><span>Stock Adjustment</span></a></li>
+										<li><a href="stock-transfer.html"><span>Stock Transfer</span></a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Sales</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Sales</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="online-orders.html">Online Orders</a></li>
+												<li><a href="pos-orders.html">POS Orders</a></li>
+											</ul>
+										</li>
+										<li><a href="invoice.html"><span>Invoices</span></a></li>
+										<li><a href="sales-returns.html"><span>Sales Return</span></a></li>
+										<li><a href="quotation-list.html"><span>Quotation</span></a></li>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>POS</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="pos.html">POS 1</a></li>
+												<li><a href="pos-2.html">POS 2</a></li>
+												<li><a href="pos-3.html">POS 3</a></li>
+												<li><a href="pos-4.html">POS 4</a></li>
+												<li><a href="pos-5.html">POS 5</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Promo</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="coupons.html"><span>Coupons</span></a></li>
+										<li><a href="gift-cards.html"><span>Gift Cards</span></a></li>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Discount</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="discount-plan.html">Discount Plan</a></li>
+												<li><a href="discount.html">Discount</a></li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Purchase</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="purchase-list.html"><span>Purchases</span></a></li>
+										<li><a href="purchase-order-report.html"><span>Purchase Order</span></a></li>
+										<li><a href="purchase-returns.html"><span>Purchase Return</span></a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Expenses</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="expense-list.html">Expenses</a></li>
+										<li><a href="expense-category.html">Expense Category</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Income</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="income.html">Income</a></li>
+										<li><a href="income-category.html">Income Category</a></li>
+									</ul>
+								</li>
+								<li><a href="account-list.html"><span>Bank Accounts</span></a></li>
+								<li><a href="money-transfer.html"><span>Money Transfer</span></a></li>
+								<li><a href="balance-sheet.html"><span>Balance Sheet</span></a></li>
+								<li><a href="trial-balance.html"><span>Trial Balance</span></a></li>
+								<li><a href="cash-flow.html"><span>Cash Flow</span></a></li>
+								<li><a href="account-statement.html"><span>Account Statement</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-users-group text-[16px] me-2"></i><span>UI Interface</span> <span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);" class="active subdrop"><span>Base UI</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="ui-alerts.html">Alerts</a></li>
+										<li><a href="ui-accordion.html">Accordion</a></li>
+										<li><a href="ui-avatar.html">Avatar</a></li>
+										<li><a href="ui-badges.html">Badges</a></li>
+										<li><a href="ui-buttons.html">Buttons</a></li>
+										<li><a href="ui-buttons-group.html">Button Group</a></li>
+										<li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
+										<li><a href="ui-cards.html">Card</a></li>
+										<li><a href="ui-carousel.html">Carousel</a></li>
+										<li><a href="ui-collapse.html">Collapse</a></li>
+										<li><a href="ui-dropdowns.html">Dropdowns</a></li>
+										<li><a href="ui-grid.html">Grid</a></li>
+										<li><a href="ui-images.html">Images</a></li>
+										<li><a href="ui-lightbox.html">Lightbox</a></li>
+										<li><a href="ui-links.html">Links</a></li>
+										<li><a href="ui-list-group.html">List Group</a></li>
+										<li><a href="ui-modals.html" class="active">Modals</a></li>
+										<li><a href="ui-offcanvas.html">Offcanvas</a></li>
+										<li><a href="ui-pagination.html">Pagination</a></li>
+										<li><a href="ui-popovers.html">Popovers</a></li>
+										<li><a href="ui-progress.html">Progress</a></li>
+										<li><a href="ui-rangeslider.html">Range Slider</a></li>
+										<li><a href="ui-spinner.html">Spinner</a></li>
+										<li><a href="ui-sweetalerts.html">Sweet Alerts</a></li>
+										<li><a href="ui-nav-tabs.html">Tabs</a></li>
+										<li><a href="ui-typography.html">Typography</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Advanced UI</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="ui-dragula.html">Dragula</a></li>
+										<li><a href="ui-clipboard.html">Clipboard</a></li>
+										<li><a href="ui-ratio.html">Ratio</a></li>
+										<li><a href="ui-rangeslider.html">Range Slider</a></li>
+										<li><a href="ui-rating.html">Rating</a></li>
+										<li><a href="ui-scrollbar.html">Scrollbar</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Charts</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="chart-apex.html">Apex Charts</a></li>
+										<li><a href="chart-c3.html">Chart C3</a></li>
+										<li><a href="chart-js.html">Chart Js</a></li>
+										<li><a href="chart-morris.html">Morris Charts</a></li>
+										<li><a href="chart-flot.html">Flot Charts</a></li>
+										<li><a href="chart-peity.html">Peity Charts</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Icons</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
+										<li><a href="icon-feather.html">Feather Icons</a></li>
+										<li><a href="icon-ionic.html">Ionic Icons</a></li>
+										<li><a href="icon-material.html">Material Icons</a></li>
+										<li><a href="icon-pe7.html">Pe7 Icons</a></li>
+										<li><a href="icon-simpleline.html">Simpleline Icons</a></li>
+										<li><a href="icon-themify.html">Themify Icons</a></li>
+										<li><a href="icon-weather.html">Weather Icons</a></li>
+										<li><a href="icon-typicon.html">Typicon Icons</a></li>
+										<li><a href="icon-flag.html">Flag Icons</a></li>
+										<li><a href="icon-tabler.html">Tabler Icons</a></li>
+										<li><a href="icon-bootstrap.html">Bootstrap Icons</a></li>
+										<li><a href="icon-remix.html">Remix Icons</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span> Forms</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);"><span>Form Elements</span><span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="form-basic-inputs.html">Basic Inputs</a></li>
+												<li><a href="form-checkbox-radios.html">Checkbox & Radios</a></li>
+												<li><a href="form-input-groups.html">Input Groups</a></li>
+												<li><a href="form-grid-gutters.html">Grid & Gutters</a></li>
+												<li><a href="form-select.html">Form Select</a></li>
+												<li><a href="form-mask.html">Input Masks</a></li>
+												<li><a href="form-fileupload.html">File Uploads</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two">
+											<a href="javascript:void(0);"><span> Layouts</span><span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="form-horizontal.html">Horizontal Form</a></li>
+												<li><a href="form-vertical.html">Vertical Form</a></li>
+												<li><a href="form-floating-labels.html">Floating Labels</a></li>
+											</ul>
+										</li>
+										<li><a href="form-validation.html">Form Validation</a></li>
+										<li><a href="form-select2.html">Select2</a></li>
+										<li><a href="form-pickers.html">Form Picker</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Tables</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="tables-basic.html">Basic Tables </a></li>
+										<li><a href="data-tables.html">Data Table </a></li>
+									</ul>
+								</li>
+								<li  class="submenu">
+									<a href="javascript:void(0);"><span>Maps</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="maps-vector.html">Vector</a></li>
+										<li><a href="maps-leaflet.html">Leaflet</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-page-break text-[16px] me-2"></i><span>Pages</span> <span class="menu-arrow"></span></a>
+							<ul>
+								<li><a href="profile.html"><span>Profile</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="signin.html">Cover</a></li>
+												<li><a href="signin-2.html">Illustration</a></li>
+												<li><a href="signin-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="register.html">Cover</a></li>
+												<li><a href="register-2.html">Illustration</a></li>
+												<li><a href="register-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="forgot-password.html">Cover</a></li>
+												<li><a href="forgot-password-2.html">Illustration</a></li>
+												<li><a href="forgot-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="reset-password.html">Cover</a></li>
+												<li><a href="reset-password-2.html">Illustration</a></li>
+												<li><a href="reset-password-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="email-verification.html">Cover</a></li>
+												<li><a href="email-verification-2.html">Illustration</a></li>
+												<li><a href="email-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="two-step-verification.html">Cover</a></li>
+												<li><a href="two-step-verification-2.html">Illustration</a></li>
+												<li><a href="two-step-verification-3.html">Basic</a></li>
+											</ul>
+										</li>
+										<li><a href="lock-screen.html">Lock Screen</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Error</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="error-404.html">404 Error </a></li>
+										<li><a href="error-500.html">500 Error </a></li>
+									</ul>
+								</li>
+								<li><a href="blank-page.html"><span>Blank Page</span> </a></li>
+								<li><a href="pricing.html"><span>Pricing</span> </a></li>
+								<li><a href="coming-soon.html"><span>Coming Soon</span> </a></li>
+								<li><a href="under-maintenance.html"><span>Under Maintenance</span> </a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Content</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Pages</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="pages.html">Pages</a></li>
+											</ul>
+										</li>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Blog</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="all-blog.html">All Blog</a></li>
+												<li><a href="blog-tag.html">Blog Tags</a></li>
+												<li><a href="blog-categories.html">Categories</a></li>
+												<li><a href="blog-comments.html">Blog Comments</a></li>
+											</ul>
+										</li>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Location</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="countries.html">Countries</a></li>
+												<li><a href="states.html">States</a></li>
+												<li><a href="cities.html">Cities</a></li>
+											</ul>
+										</li>
+										<li><a href="testimonials.html"><span>Testimonials</span></a></li>
+										<li><a href="faq.html"><span>FAQ</span></a></li>
+		
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Employees</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="employees-grid.html"><span>Employees</span></a></li>
+										<li><a href="department-grid.html"><span>Departments</span></a></li>
+										<li><a href="designation.html"><span>Designation</span></a></li>
+										<li><a href="shift.html"><span>Shifts</span></a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Attendence</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="attendance-employee.html">Employee Attendence</a></li>
+										<li><a href="attendance-admin.html">Admin Attendence</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Leaves &amp; Holidays</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="leaves-admin.html">Admin Leaves</a></li>
+										<li><a href="leaves-employee.html">Employee Leaves</a></li>
+										<li><a href="leave-types.html">Leave Types</a></li>
+										<li><a href="holidays.html"><span>Holidays</span></a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="employee-salary.html"><span>Payroll</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="employee-salary.html">Employee Salary</a></li>
+										<li><a href="payslip.html">Payslip</a></li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-chart-bar text-[16px] me-2"></i><span>Reports</span><span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Sales Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="sales-report.html">Sales Report</a></li>
+										<li><a href="best-seller.html">Best Seller</a></li>
+									</ul>
+								</li>
+								<li><a href="purchase-report.html"><span>Purchase report</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Inventory Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="inventory-report.html">Inventory Report</a></li>
+										<li><a href="stock-history.html">Stock History</a></li>
+										<li><a href="sold-stock.html">Sold Stock</a></li>
+									</ul>
+								</li>
+								<li><a href="invoice-report.html"><span>Invoice Report</span></a></li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Supplier Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="supplier-report.html">Supplier Report</a></li>
+										<li><a href="supplier-due-report.html">Supplier Due Report</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Customer Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="customer-report.html">Customer Report</a></li>
+										<li><a href="customer-due-report.html">Customer Due Report</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Product Report</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="product-report.html">Product Report</a></li>
+										<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
+										<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
+									</ul>
+								</li>
+								<li><a href="expense-report.html"><span>Expense Report</span></a></li>
+								<li><a href="income-report.html"><span>Income Report</span></a></li>
+								<li><a href="tax-reports.html"><span>Tax Report</span></a></li>
+								<li><a href="profit-and-loss.html"><span>Profit & Loss</span></a></li>
+								<li><a href="annual-report.html"><span>Annual Report</span></a></li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-settings text-[16px] me-2"></i><span>Settings</span><span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>General Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="general-settings.html">Profile</a></li>
+										<li><a href="security-settings.html">Security</a></li>
+										<li><a href="notification.html">Notifications</a></li>
+										<li><a href="connected-apps.html">Connected Apps</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Website Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="system-settings.html">System Settings</a></li>
+										<li><a href="company-settings.html">Company Settings </a></li>
+										<li><a href="localization-settings.html">Localization</a></li>
+										<li><a href="prefixes.html">Prefixes</a></li>
+										<li><a href="preference.html">Preference</a></li>
+										<li><a href="appearance.html">Appearance</a></li>
+										<li><a href="social-authentication.html">Social Authentication</a></li>
+										<li><a href="language-settings.html">Language</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>App Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Invoice<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="invoice-settings.html">Invoice Settings</a></li>
+												<li><a href="invoice-template.html">Invoice Template</a></li>
+											</ul>
+										</li>
+										<li><a href="printer-settings.html">Printer</a></li>
+										<li><a href="pos-settings.html">POS</a></li>
+										<li><a href="custom-fields.html">Custom Fields</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>System Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">Email<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="email-settings.html">Email Settings</a></li>
+												<li><a href="email-template.html">Email Template</a></li>
+											</ul>
+										</li>
+										<li class="submenu submenu-two"><a href="javascript:void(0);">SMS<span class="menu-arrow inside-submenu"></span></a>
+											<ul>
+												<li><a href="sms-settings.html">SMS Settings</a></li>
+												<li><a href="sms-template.html">SMS Template</a></li>
+											</ul>
+										</li>
+										<li><a href="otp-settings.html">OTP</a></li>
+										<li><a href="gdpr-settings.html">GDPR Cookies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Financial Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="payment-gateway-settings.html">Payment Gateway</a></li>
+										<li><a href="bank-settings-grid.html">Bank Accounts</a></li>
+										<li><a href="tax-rates.html">Tax Rates</a></li>
+										<li><a href="currency-settings.html">Currencies</a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Other Settings</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="storage-settings.html">Storage</a></li>
+										<li><a href="ban-ip-address.html">Ban IP Address</a></li>
+									</ul>
+								</li>
+								<li>
+									<a href="signin.html"><span>Logout</span> </a>
+								</li>
+							</ul>
+						</li>
+						<li class="submenu">
+							<a href="javascript:void(0);"><i class="ti ti-circle-plus text-[16px] me-2"></i><span>More</span><span class="menu-arrow"></span></a>
+							<ul>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>People</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="customers.html"><span>Customers</span></a></li>
+										<li><a href="billers.html"><span>Billers</span></a></li>
+										<li><a href="suppliers.html"><span>Suppliers</span></a></li>
+										<li><a href="store-list.html"><span>Stores</span></a></li>
+										<li><a href="warehouse.html"><span>Warehouses</span></a>
+										</li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>User Management</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="users.html"><span>Users</span></a></li>
+										<li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
+										<li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
+									</ul>
+								</li>
+								<li class="submenu">
+									<a href="javascript:void(0);"><span>Help</span><span class="menu-arrow"></span></a>
+									<ul>
+										<li><a href="javascript:void(0);"><span>Documentation</span></a></li>
+										<li><a href="javascript:void(0);"><span>Changelog v2.1.4</span></a></li>
+										<li class="submenu">
+											<a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+											<ul>
+												<li><a href="javascript:void(0);">Level 1.1</a></li>
+												<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+													<ul>
+														<li><a href="javascript:void(0);">Level 2.1</a></li>
+														<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+															<ul>
+																<li><a href="javascript:void(0);">Level 3.1</a></li>
+																<li><a href="javascript:void(0);">Level 3.2</a></li>
+															</ul>
+														</li>
+													</ul>
+												</li>
+											</ul>
+										</li>
+									</ul>
+								</li>
+							</ul>
+						</li>
+					</ul>
+				</div>
+			</div>
+		</div>
+		<!-- /Horizontal Sidebar -->
+
+		<!-- Two Col Sidebar -->
+		<div class="two-col-sidebar" id="two-col-sidebar">
+			<div class="sidebar sidebar-twocol">
+				<div class="twocol-mini">
+					<div class="sidebar-left slimscroll">
+						<div class="nav flex flex-col items-center nav-pills" id="sidebar-tabs" data-tabs-toggle="#sidebar-tab" aria-orientation="vertical" role="tablist" data-tabs-inactive-classes="text-[var(--sidebar-menu-item)]!" data-tabs-active-classes="bg-primary-100 text-[var(--sidebar-col-active-item)]!">
+							<a href="#" class="nav-link" title="Dashboard" role="tab" data-tabs-target="#dashboard">
+								<i class="ti ti-smart-home"></i>
+							</a>
+							<a href="#" class="nav-link " title="Super Admin" role="tab" data-tabs-target="#super-admin">
+								<i class="ti ti-user-star"></i>
+							</a>
+							<a href="#" class="nav-link " title="Apps" role="tab" data-tabs-target="#application">
+								<i class="ti ti-layout-grid-add"></i>
+							</a>
+							<a href="#" class="nav-link" title="Layout" role="tab" data-tabs-target="#layout">
+								<i class="ti ti-layout-board-split"></i>
+							</a>
+							<a href="#" class="nav-link" title="Inventory" role="tab" data-tabs-target="#inventory">
+								<i class="ti ti-table-plus"></i>
+							</a>
+							<a href="#" class="nav-link" title="Stock" role="tab" data-tabs-target="#stock">
+								<i class="ti ti-stack-3"></i>
+							</a>
+							<a href="#" class="nav-link" title="Sales" role="tab" data-tabs-target="#sales">
+								<i class="ti ti-device-laptop"></i>
+							</a>
+							<a href="#" class="nav-link" title="Finance" role="tab" data-tabs-target="#finance">
+								<i class="ti ti-shopping-cart-dollar"></i>
+							</a>
+							<a href="#" class="nav-link" title="Hrm" role="tab" data-tabs-target="#hrm">
+								<i class="ti ti-cash"></i>
+							</a>
+							<a href="#" class="nav-link" title="Reports" role="tab" data-tabs-target="#reports">
+								<i class="ti ti-license"></i>
+							</a>
+							<a href="#" class="nav-link" title="Pages" role="tab" data-tabs-target="#pages">
+								<i class="ti ti-page-break"></i>
+							</a>
+							<a href="#" class="nav-link" title="Settings" role="tab" data-tabs-target="#settings">
+								<i class="ti ti-lock-check"></i>
+							</a>
+							<a href="#" class="nav-link active" title="UI Elements" role="tab" data-tabs-target="#ui-elements">
+								<i class="ti ti-ux-circle"></i>
+							</a>
+							<a href="#" class="nav-link" title="Extras" role="tab" data-tabs-target="#extras">
+								<i class="ti ti-vector-triangle"></i>
+							</a>
+						</div>
+					</div>
+				</div>
+				<div class="sidebar-right">
+					<!-- Logo -->
+					<div class="sidebar-logo">
+						<a href="index.html" class="logo logo-normal">
+							<img src="assets/img/logo.svg" alt="Img">
+						</a>
+						<a href="index.html" class="logo logo-white">
+							<img src="assets/img/logo-white.svg" alt="Img">
+						</a>
+						<a href="index.html" class="logo-small">
+							<img src="assets/img/logo-small.png" alt="Img">
+						</a>
+					</div>
+					<!-- /Logo -->
+					<div class="sidebar-scroll">
+						<div class="text-center rounded bg-light p-4 mb-4 border">
+							<div class="relative size-[45px] mx-auto mb-4">
+								<img src="assets/img/customer/customer15.jpg" alt="Img" class="img-fluid rounded-full">
+								<span class="bottom-0 end-0 absolute  size-3.5 bg-success border-2 border-white rounded-full"></span>
+							</div>
+							<h6 class="text-sm font-bold mb-1">Adrian Herman</h6>
+							<p class="text-xs mb-0">System Admin</p>
+						</div>
+						<div class="tab-content" id="sidebar-tab">
+							<div class="hidden tab-pane fade" id="dashboard">
+								<ul>
+									<li class="menu-title"><span>MAIN</span></li>
+									<li><a href="index.html">Admin Dashboard</a></li>
+									<li><a href="admin-dashboard.html">Admin Dashboard 2</a></li>
+									<li><a href="sales-dashboard.html">Sales Dashboard</a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="super-admin">
+								<ul>
+									<li class="menu-title"><span>SUPER ADMIN</span></li>
+									<li><a href="dashboard.html">Dashboard</a></li>
+									<li><a href="companies.html">Companies</a></li>
+									<li><a href="subscription.html">Subscriptions</a></li>
+									<li><a href="packages.html">Packages</a></li>
+									<li><a href="domain.html">Domain</a></li>
+									<li><a href="purchase-transaction.html">Purchase Transaction</a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="application">
+								<ul>
+									<li><a href="chat.html">Chat</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);">Call<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="video-call.html">Video Call</a></li>
+											<li><a href="audio-call.html">Audio Call</a></li>
+											<li><a href="call-history.html">Call History</a></li>
+										</ul>
+									</li>
+									<li><a href="calendar.html">Calendar</a></li>
+									<li><a href="contacts.html">Contacts</a></li>
+									<li><a href="email.html">Email</a></li>
+									<li><a href="todo.html">To Do</a></li>
+									<li><a href="notes.html">Notes</a></li>
+									<li><a href="file-manager.html">File Manager</a></li>
+									<li><a href="projects.html">Projects</a></li>
+									<li class="submenu submenu-two"><a href="javascript:void(0);">Ecommerce<span class="menu-arrow inside-submenu"></span></a>
+										<ul>
+											<li><a href="products.html">Products</a></li>
+											<li><a href="orders.html">Orders</a></li>
+											<li><a href="customers.html">Customers</a></li>
+											<li><a href="cart.html">Cart</a></li>
+											<li><a href="checkout.html">Checkout</a></li>
+											<li><a href="wishlist.html">Wishlist</a></li>
+											<li><a href="reviews.html">Reviews</a></li>
+										</ul>
+									</li>
+									<li><a href="social-feed.html">Social Feed</a></li>
+									<li><a href="search-list.html">Search List</a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="layout">
+								<ul>
+									<li class="menu-title"><span>LAYOUT</span></li>
+									<li><a href="layout-horizontal.html">Horizontal</a></li>
+									<li><a href="layout-detached.html">Detached</a></li>
+									<li><a href="layout-two-column.html">Two Column</a></li>
+									<li><a href="layout-hovered.html">Hovered</a></li>
+									<li><a href="layout-boxed.html">Boxed</a></li>
+									<li><a href="layout-rtl.html">RTL</a></li>
+									<li><a href="layout-dark.html">Dark</a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="inventory">
+								<ul>
+									<li class="menu-title"><span>Inventory</span></li>
+									<li><a href="product-list.html"><span>Products</span></a></li>
+									<li><a href="add-product.html"><span>Create Product</span></a></li>
+									<li><a href="expired-products.html"><span>Expired Products</span></a></li>
+									<li><a href="low-stocks.html"><span>Low Stocks</span></a></li>
+									<li><a href="category-list.html"><span>Category</span></a></li>
+									<li><a href="sub-categories.html"><span>Sub Category</span></a></li>
+									<li><a href="brand-list.html"><span>Brands</span></a></li>
+									<li><a href="units.html"><span>Units</span></a></li>
+									<li><a href="varriant-attributes.html"><span>Variant Attributes</span></a></li>
+									<li><a href="warranty.html"><span>Warranties</span></a></li>
+									<li><a href="barcode.html"><span>Print Barcode</span></a></li>
+									<li><a href="qrcode.html"><span>Print QR Code</span></a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="stock">
+								<ul>
+									<li class="menu-title"><span>Stock</span></li>
+									<li><a href="manage-stocks.html"><span>Manage Stock</span></a></li>
+									<li><a href="stock-adjustment.html"><span>Stock Adjustment</span></a></li>
+									<li><a href="stock-transfer.html"><span>Stock Transfer</span></a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="sales">
+								<ul>
+									<li class="menu-title"><span>Sales</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Sales</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="online-orders.html">Online Orders</a></li>
+											<li><a href="pos-orders.html">POS Orders</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice.html"><span>Invoices</span></a></li>
+									<li><a href="sales-returns.html"><span>Sales Return</span></a></li>
+									<li><a href="quotation-list.html"><span>Quotation</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>POS</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pos.html">POS 1</a></li>
+											<li><a href="pos-2.html">POS 2</a></li>
+											<li><a href="pos-3.html">POS 3</a></li>
+											<li><a href="pos-4.html">POS 4</a></li>
+											<li><a href="pos-5.html">POS 5</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="finance">
+								<ul>
+									<li class="menu-title"><span>FINANCE & ACCOUNTS</span></li>
+									<li><a href="coupons.html"><span>Coupons</span></a></li>
+									<li><a href="gift-cards.html"><span>Gift Cards</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Discount</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="discount-plan.html">Discount Plan</a></li>
+											<li><a href="discount.html">Discount</a></li>
+										</ul>
+									</li>
+									<li><a href="purchase-list.html"><span>Purchases</span></a></li>
+									<li><a href="purchase-order-report.html"><span>Purchase Order</span></a></li>
+									<li><a href="purchase-returns.html"><span>Purchase Return</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Expenses</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="expense-list.html">Expenses</a></li>
+											<li><a href="expense-category.html">Expense Category</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Income</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="income.html">Income</a></li>
+											<li><a href="income-category.html">Income Category</a></li>
+										</ul>
+									</li>
+									<li><a href="account-list.html"><span>Bank Accounts</span></a></li>
+									<li><a href="money-transfer.html"><span>Money Transfer</span></a></li>
+									<li><a href="balance-sheet.html"><span>Balance Sheet</span></a></li>
+									<li><a href="trial-balance.html"><span>Trial Balance</span></a></li>
+									<li><a href="cash-flow.html"><span>Cash Flow</span></a></li>
+									<li><a href="account-statement.html"><span>Account Statement</span></a></li>
+									<li><a href="customers.html"><span>Customers</span></a></li>
+									<li><a href="billers.html"><span>Billers</span></a></li>
+									<li><a href="suppliers.html"><span>Suppliers</span></a></li>
+									<li><a href="store-list.html"><span>Stores</span></a></li>
+									<li><a href="warehouse.html"><span>Warehouses</span></a></li>							
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="hrm">
+								<ul>
+									<li class="menu-title"><span>Hrm</span></li>
+									<li><a href="employees-grid.html"><span>Employees</span></a></li>
+									<li><a href="department-grid.html"><span>Departments</span></a></li>
+									<li><a href="designation.html"><span>Designation</span></a></li>
+									<li><a href="shift.html"><span>Shifts</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Attendence</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="attendance-employee.html">Employee</a></li>
+											<li><a href="attendance-admin.html">Admin</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Leaves</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="leaves-admin.html">Admin Leaves</a></li>
+											<li><a href="leaves-employee.html">Employee Leaves</a></li>
+											<li><a href="leave-types.html">Leave Types</a></li>
+										</ul>
+									</li>
+									<li><a href="holidays.html"><span>Holidays</span></a>
+									</li>
+									<li class="submenu">
+										<a href="employee-salary.html"><span>Payroll</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="employee-salary.html">Employee Salary</a></li>
+											<li><a href="payslip.html">Payslip</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="reports">
+								<ul>
+									<li class="menu-title"><span>Reports</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Sales Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="sales-report.html">Sales Report</a></li>
+											<li><a href="best-seller.html">Best Seller</a></li>
+										</ul>
+									</li>
+									<li><a href="purchase-report.html"><span>Purchase report</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Inventory Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="inventory-report.html">Inventory Report</a></li>
+											<li><a href="stock-history.html">Stock History</a></li>
+											<li><a href="sold-stock.html">Sold Stock</a></li>
+										</ul>
+									</li>
+									<li><a href="invoice-report.html"><span>Invoice Report</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Supplier Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="supplier-report.html">Supplier Report</a></li>
+											<li><a href="supplier-due-report.html">Supplier Due Report</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Customer Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="customer-report.html">Customer Report</a></li>
+											<li><a href="customer-due-report.html">Customer Due Report</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Product Report</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="product-report.html">Product Report</a></li>
+											<li><a href="product-expiry-report.html">Product Expiry Report</a></li>
+											<li><a href="product-quantity-alert.html">Product Quantity Alert</a></li>
+										</ul>
+									</li>
+									<li><a href="expense-report.html"><span>Expense Report</span></a></li>
+									<li><a href="income-report.html"><span>Income Report</span></a></li>
+									<li><a href="tax-reports.html"><span>Tax Report</span></a></li>
+									<li><a href="profit-and-loss.html"><span>Profit & Loss</span></a></li>
+									<li><a href="annual-report.html"><span>Annual Report</span></a></li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="pages">
+								<ul>
+									<li class="menu-title"><span>Pages</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Pages</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="pages.html">Pages</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Blog</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="all-blog.html">All Blog</a></li>
+											<li><a href="blog-tag.html">Blog Tags</a></li>
+											<li><a href="blog-categories.html">Categories</a></li>
+											<li><a href="blog-comments.html">Blog Comments</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Location</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="countries.html">Countries</a></li>
+											<li><a href="states.html">States</a></li>
+											<li><a href="cities.html">Cities</a></li>
+										</ul>
+									</li>
+									<li><a href="testimonials.html"><span>Testimonials</span></a></li>
+									<li><a href="faq.html"><span>FAQ</span></a></li>
+									<li><a href="users.html"><span>Users</span></a></li>
+									<li><a href="roles-permissions.html"><span>Roles & Permissions</span></a></li>
+									<li><a href="delete-account.html"><span>Delete Account Request</span></a></li>
+									<li><a href="profile.html"><span>Profile</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Authentication</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Login<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="signin.html">Cover</a></li>
+													<li><a href="signin-2.html">Illustration</a></li>
+													<li><a href="signin-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Register<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="register.html">Cover</a></li>
+													<li><a href="register-2.html">Illustration</a></li>
+													<li><a href="register-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Forgot Password<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="forgot-password.html">Cover</a></li>
+													<li><a href="forgot-password-2.html">Illustration</a></li>
+													<li><a href="forgot-password-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Reset Password<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="reset-password.html">Cover</a></li>
+													<li><a href="reset-password-2.html">Illustration</a></li>
+													<li><a href="reset-password-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Email Verification<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="email-verification.html">Cover</a></li>
+													<li><a href="email-verification-2.html">Illustration</a></li>
+													<li><a href="email-verification-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">2 Step Verification<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="two-step-verification.html">Cover</a></li>
+													<li><a href="two-step-verification-2.html">Illustration</a></li>
+													<li><a href="two-step-verification-3.html">Basic</a></li>
+												</ul>
+											</li>
+											<li><a href="lock-screen.html">Lock Screen</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Error Pages</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="error-404.html">404 Error </a></li>
+											<li><a href="error-500.html">500 Error </a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="blank-page.html"><span>Blank Page</span> </a>
+									</li>
+									<li>
+										<a href="pricing.html"><span>Pricing</span> </a>
+									</li>
+									<li>
+										<a href="coming-soon.html"><span>Coming Soon</span> </a>
+									</li>
+									<li>
+										<a href="under-maintenance.html"><span>Under Maintenance</span> </a>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="settings">
+								<ul>
+									<li class="menu-title"><span>Settings</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>General Settings</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="general-settings.html">Profile</a></li>
+											<li><a href="security-settings.html">Security</a></li>
+											<li><a href="notification.html">Notifications</a></li>
+											<li><a href="connected-apps.html">Connected Apps</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Website Settings</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="system-settings.html">System Settings</a></li>
+											<li><a href="company-settings.html">Company Settings </a></li>
+											<li><a href="localization-settings.html">Localization</a></li>
+											<li><a href="prefixes.html">Prefixes</a></li>
+											<li><a href="preference.html">Preference</a></li>
+											<li><a href="appearance.html">Appearance</a></li>
+											<li><a href="social-authentication.html">Social Authentication</a></li>
+											<li><a href="language-settings.html">Language</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>App Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Invoice<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="invoice-settings.html">Invoice Settings</a></li>
+													<li><a href="invoice-template.html">Invoice Template</a></li>
+												</ul>
+											</li>
+											<li><a href="printer-settings.html">Printer</a></li>
+											<li><a href="pos-settings.html">POS</a></li>
+											<li><a href="custom-fields.html">Custom Fields</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>System Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Email<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="email-settings.html">Email Settings</a></li>
+													<li><a href="email-template.html">Email Template</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">SMS<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="sms-settings.html">SMS Settings</a></li>
+													<li><a href="sms-template.html">SMS Template</a></li>
+												</ul>
+											</li>
+											<li><a href="otp-settings.html">OTP</a></li>
+											<li><a href="gdpr-settings.html">GDPR Cookies</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Financial Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="payment-gateway-settings.html">Payment Gateway</a></li>
+											<li><a href="bank-settings-grid.html">Bank Accounts</a></li>
+											<li><a href="tax-rates.html">Tax Rates</a></li>
+											<li><a href="currency-settings.html">Currencies</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Other Settings</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="storage-settings.html">Storage</a></li>
+											<li><a href="ban-ip-address.html">Ban IP Address</a></li>
+										</ul>
+									</li>
+									<li>
+										<a href="signin.html"><span>Logout</span> </a>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade show active" id="ui-elements">
+								<ul>
+									<li class="menu-title"><span>Ui Interface</span></li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Base UI</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="ui-alerts.html">Alerts</a></li>
+											<li><a href="ui-accordion.html">Accordion</a></li>
+											<li><a href="ui-avatar.html">Avatar</a></li>
+											<li><a href="ui-badges.html">Badges</a></li>
+											<li><a href="ui-buttons.html">Buttons</a></li>
+											<li><a href="ui-buttons-group.html">Button Group</a></li>
+											<li><a href="ui-breadcrumb.html">Breadcrumb</a></li>
+											<li><a href="ui-cards.html">Card</a></li>
+											<li><a href="ui-carousel.html">Carousel</a></li>
+											<li><a href="ui-collapse.html">Collapse</a></li>
+											<li><a href="ui-dropdowns.html">Dropdowns</a></li>
+											<li><a href="ui-grid.html">Grid</a></li>
+											<li><a href="ui-images.html">Images</a></li>
+											<li><a href="ui-lightbox.html">Lightbox</a></li>
+											<li><a href="ui-links.html">Links</a></li>
+											<li><a href="ui-list-group.html">List Group</a></li>
+											<li><a href="ui-modals.html" class="active">Modals</a></li>
+											<li><a href="ui-offcanvas.html">Offcanvas</a></li>
+											<li><a href="ui-pagination.html">Pagination</a></li>
+											<li><a href="ui-popovers.html">Popovers</a></li>
+											<li><a href="ui-progress.html">Progress</a></li>
+											<li><a href="ui-rangeslider.html">Range Slider</a></li>
+											<li><a href="ui-spinner.html">Spinner</a></li>
+											<li><a href="ui-sweetalerts.html">Sweet Alerts</a></li>
+											<li><a href="ui-nav-tabs.html">Tabs</a></li>
+											<li><a href="ui-typography.html">Typography</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Advanced UI</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="ui-dragula.html">Dragula</a></li>
+											<li><a href="ui-clipboard.html">Clipboard</a></li>
+											<li><a href="ui-ratio.html">Ratio</a></li>
+											<li><a href="ui-rangeslider.html">Range Slider</a></li>
+											<li><a href="ui-rating.html">Rating</a></li>
+											<li><a href="ui-scrollbar.html">Scrollbar</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Charts</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="chart-apex.html">Apex Charts</a></li>
+											<li><a href="chart-c3.html">Chart C3</a></li>
+											<li><a href="chart-js.html">Chart Js</a></li>
+											<li><a href="chart-morris.html">Morris Charts</a></li>
+											<li><a href="chart-flot.html">Flot Charts</a></li>
+											<li><a href="chart-peity.html">Peity Charts</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Icons</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li><a href="icon-fontawesome.html">Fontawesome Icons</a></li>
+											<li><a href="icon-feather.html">Feather Icons</a></li>
+											<li><a href="icon-ionic.html">Ionic Icons</a></li>
+											<li><a href="icon-material.html">Material Icons</a></li>
+											<li><a href="icon-pe7.html">Pe7 Icons</a></li>
+											<li><a href="icon-simpleline.html">Simpleline Icons</a></li>
+											<li><a href="icon-themify.html">Themify Icons</a></li>
+											<li><a href="icon-weather.html">Weather Icons</a></li>
+											<li><a href="icon-typicon.html">Typicon Icons</a></li>
+											<li><a href="icon-flag.html">Flag Icons</a></li>
+											<li><a href="icon-tabler.html">Tabler Icons</a></li>
+											<li><a href="icon-bootstrap.html">Bootstrap Icons</a></li>
+											<li><a href="icon-remix.html">Remix Icons</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);">
+											<span>Forms</span><span class="menu-arrow"></span>
+										</a>
+										<ul>
+											<li class="submenu submenu-two">
+												<a href="javascript:void(0);">Form Elements<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="form-basic-inputs.html">Basic Inputs</a></li>
+													<li><a href="form-checkbox-radios.html">Checkbox & Radios</a></li>
+													<li><a href="form-input-groups.html">Input Groups</a></li>
+													<li><a href="form-grid-gutters.html">Grid & Gutters</a></li>
+													<li><a href="form-select.html">Form Select</a></li>
+													<li><a href="form-mask.html">Input Masks</a></li>
+													<li><a href="form-fileupload.html">File Uploads</a></li>
+												</ul>
+											</li>
+											<li class="submenu submenu-two">
+												<a href="javascript:void(0);">Layouts<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="form-horizontal.html">Horizontal Form</a></li>
+													<li><a href="form-vertical.html">Vertical Form</a></li>
+													<li><a href="form-floating-labels.html">Floating Labels</a></li>
+												</ul>
+											</li>
+											<li><a href="form-validation.html">Form Validation</a></li>
+											<li><a href="form-select2.html">Select2</a></li>
+											<li><a href="form-wizard.html">Form Wizard</a></li>
+											<li><a href="form-pickers.html">Form Picker</a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Tables</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="tables-basic.html">Basic Tables </a></li>
+											<li><a href="data-tables.html">Data Table </a></li>
+										</ul>
+									</li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Maps</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="maps-vector.html">Vector</a></li>
+											<li><a href="maps-leaflet.html">Leaflet</a></li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+							<div class="hidden tab-pane fade" id="extras">
+								<ul>
+									<li class="menu-title"><span>Help</span></li>
+									<li><a href="javascript:void(0);"><span>Documentation</span></a></li>
+									<li><a href="javascript:void(0);"><span>Changelog v2.1.4</span></a></li>
+									<li class="submenu">
+										<a href="javascript:void(0);"><span>Multi Level</span><span class="menu-arrow"></span></a>
+										<ul>
+											<li><a href="javascript:void(0);">Level 1.1</a></li>
+											<li class="submenu submenu-two"><a href="javascript:void(0);">Level 1.2<span class="menu-arrow inside-submenu"></span></a>
+												<ul>
+													<li><a href="javascript:void(0);">Level 2.1</a></li>
+													<li class="submenu submenu-two submenu-three"><a href="javascript:void(0);">Level 2.2<span class="menu-arrow inside-submenu inside-submenu-two"></span></a>
+														<ul>
+															<li><a href="javascript:void(0);">Level 3.1</a></li>
+															<li><a href="javascript:void(0);">Level 3.2</a></li>
+														</ul>
+													</li>
+												</ul>
+											</li>
+										</ul>
+									</li>
+								</ul>
+							</div>
+						</div>
+					</div>
+				</div>
+			</div>
+		</div>
+		<!-- /Two Col Sidebar -->
+
+		<!-- Page Wrapper -->
+		<div class="page-wrapper ui-modals">
+
+			<div class="content">
+
+				<!-- Page Header -->
+				<div class="mb-7">
+					<h4 class="mb-1 text-xl font-bold flex items-center">
+						Modals
+					</h4>
+					<nav aria-label="breadcrumb">
+						<ol class="flex flex-wrap space-x-1 text-sm text-gray-500">
+							<li>
+								<a href="index.html" class="hover:underline text-gray-700">Home</a>
+								<span><i class="ti ti-chevron-right"></i></span>
+							</li>
+							<li>
+								<a href="javascript:void(0);" class="hover:underline text-gray-700">Base UI</a>
+								<span><i class="ti ti-chevron-right"></i></span>
+							</li>
+							<li class="text-dark font-medium" aria-current="page">Modals</li>
+						</ol>
+					</nav>
+				</div>
+				<!-- End Page Header -->
+
+				<div class="grid grid-cols-1 xl:grid-cols-3 gap-x-6">
+
+					<!-- Basic Modal -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Basic Modal</h5>
+							</div>
+							<div class="card-body p-4">
+
+								<div id="standard-modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" tabindex="-1" role="dialog"
+									aria-labelledby="standard-modalLabel" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="standard-modalLabel">Modal Heading</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="standard-modal">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<h6 class="mb-1">Text in a modal</h6>
+												<p class="mb-2">Duis mollis, est non commodo luctus, nisi erat porttitor ligula.</p>
+												<hr>
+												<h6 class="my-2">Overflowing text to show scroll behavior</h6>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas eget quam. Morbi leo risus, porta
+													ac consectetur ac, vestibulum at eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue laoreet rutrum faucibus dolor
+													auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl consectetur et. Donec sed odio
+													dui. Donec ullamcorper nulla non metus auctor fringilla.</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="standard-modal">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save Changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+
+								<div class="button-list">
+									<!-- Standard  modal -->
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="standard-modal"
+										data-modal-target="standard-modal">Launch Demo Modal</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Basic Modal -->
+
+					<!-- Static Backdrop -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Static Backdrop</h5>
+							</div>
+							<div class="card-body p-4 card-buttons">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="staticBackdrop"
+									data-modal-target="staticBackdrop">
+									Launch static backdrop modal
+								</button>
+
+								<!-- Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="staticBackdrop"
+								data-modal-backdrop="static" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="staticBackdropLabel">Modal title</h5>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="staticBackdrop">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												Anim pariatur cliche reprehenderit, enim eiusmod high life accusamus
+												terry richardson ad squid. 3 wolf moon officia aute,
+												non cupidatat skateboard dolor brunch. Food truck quinoa nesciunt
+												laborum eiusmod. Brunch 3 wolf moon
+												tempor, sunt aliqua put a bird on it squid single-origin coffee nulla
+												assumenda shoreditch et.
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="staticBackdrop">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Understood</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Static Backdrop -->
+
+					<!-- Scrolling Long Content -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Scrolling Long Content</h5>
+							</div>
+							<div class="card-body p-4 card-buttons">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="scrollable-modal"
+									data-modal-target="scrollable-modal">
+									Scrolling Long Content
+								</button>
+
+								<!-- Long Content Scroll Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="scrollable-modal" tabindex="-1" role="dialog" aria-labelledby="scrollableModalTitle" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-100 modal-dialog-scrollable" role="document">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h5 class="modal-title" id="scrollableModalTitle">Modal title</h5>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="scrollable-modal">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body overflow-y-auto max-h-[280px]">
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+												<p>Cras mattis consectetur purus sit amet fermentum. Cras justo odio,
+													dapibus ac facilisis in, egestas
+													eget quam. Morbi leo risus, porta ac consectetur ac, vestibulum at
+													eros.</p>
+												<p>Praesent commodo cursus magna, vel scelerisque nisl consectetur et.
+													Vivamus sagittis lacus vel augue
+													laoreet rutrum faucibus dolor auctor.</p>
+												<p>Aenean lacinia bibendum nulla sed consectetur. Praesent commodo
+													cursus magna, vel scelerisque nisl
+													consectetur et. Donec sed odio dui. Donec ullamcorper nulla non
+													metus auctor fringilla.</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2" data-modal-hide="scrollable-modal">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+							</div>
+						</div>
+					</div>
+					<!-- /Scrolling Long Content -->
+
+				</div>
+
+				<div class="grid grid-cols-1 xl:grid-cols-3 gap-x-6">
+
+					<!-- Using the Grid -->
+					<div>
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between p-4 border-b">
+								<div class="card-title">
+									<h5 class="card-title">Using the grid</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="exampleModalScrollable5"
+									data-modal-target="exampleModalScrollable5">
+									Launch demo modal
+								</button>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalScrollable5" tabindex="-1"
+									aria-labelledby="exampleModalScrollable5" data-bs-keyboard="false"
+									aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full modal-dialog-centered modal-dialog-scrollable">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="staticBackdropLabel5">Modal title
+												</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalScrollable5">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<div class="container-fluid">
+													<!-- First Row -->
+													<div class="grid grid-cols-12 gap-3">
+													<div class="col-span-4 bg-light border">.col-md-4</div>
+													<div class="col-span-4 bg-light border ms-auto ml-auto">.col-md-4 .ms-auto</div>
+													</div>
+
+													<!-- Second Row -->
+													<div class="grid grid-cols-12 gap-3 mt-3">
+													<div class="col-span-3 bg-light border ml-auto">.col-md-3 .ms-auto</div>
+													<div class="col-span-2 bg-light border ml-auto">.col-md-2 .ms-auto</div>
+													</div>
+
+													<!-- Third Row -->
+													<div class="grid grid-cols-12 gap-3 mt-3">
+													<div class="col-span-6 bg-light border ml-auto">.col-md-6 .ms-auto</div>
+													</div>
+
+													<!-- Nested Grid Example -->
+													<div class="grid grid-cols-12 gap-3 mt-3">
+													<div class="col-span-9 bg-light border p-2">
+														Level 1: .col-sm-9
+														<div class="grid grid-cols-12 gap-2 mt-2">
+														<div class="col-span-8 sm:col-span-6 bg-light border p-1">
+															Level 2: .col-8 .col-sm-6
+														</div>
+														<div class="col-span-4 sm:col-span-6 bg-light border p-1">
+															Level 2: .col-4 .col-sm-6
+														</div>
+														</div>
+													</div>
+													</div>
+
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="exampleModalScrollable5">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save
+													Changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Using the Grid -->
+
+					<!-- Toggle Between Modals -->
+					<div>
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor border-b p-4">
+								<h5 class="card-title">Toggle Between Modals</h5>
+							</div>
+							<div class="card-body p-4">
+								<!-- Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalToggle" aria-hidden="true"
+									 tabindex="-1">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full modal-dialog-centered">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">Modal 1</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalToggle">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												Show a second modal and hide this one with the button below.
+											</div>
+											<div class="modal-footer">
+												<button class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-target="exampleModalToggle2"
+													data-modal-toggle="exampleModalToggle2">Open second
+													modal</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<!-- Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalToggle2" aria-hidden="true"
+									 tabindex="-1">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full modal-dialog-centered">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">Modal 2</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalToggle2">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												Hide this modal and show the first with the button below.
+											</div>
+											<div class="modal-footer">
+												<button class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-target="exampleModalToggle"
+													data-modal-toggle="exampleModalToggle" data-modal-hide="exampleModalToggle2">Back to
+													first</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<a class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="exampleModalToggle" data-modal-target="exampleModalToggle" href="#"
+									role="button">Open first modal</a>
+
+							</div>
+						</div>
+					</div>
+					<!-- /Toggle Between Modals -->
+
+					<!-- Optional Sizes -->
+					<div>
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Optional Sizes</h5>
+							</div>
+							<div class="card-body p-4">
+
+								<!--  Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="bs-example-modal-lg" tabindex="-1" role="dialog"
+									aria-labelledby="myLargeModalLabel" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[800px] max-h-full modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="myLargeModalLabel">Large modal</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="bs-example-modal-lg">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="bs-example-modal-sm" tabindex="-1" role="dialog"
+									aria-labelledby="mySmallModalLabel" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[300px] max-h-full modal-sm">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="mySmallModalLabel">Small modal</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="bs-example-modal-sm">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<!-- Modal -->
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalLg" tabindex="-1"
+									aria-labelledby="exampleModalLgLabel" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[800px] max-h-full modal-lg">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalLgLabel">Extra Large Modal
+												</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalLg">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<div class="button-list">
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="exampleModalLg"
+										data-modal-target="exampleModalLg">Extra Large Modal</button>
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="bs-example-modal-lg"
+										data-modal-target="bs-example-modal-lg">Large Modal</button>
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="bs-example-modal-sm"
+										data-modal-target="bs-example-modal-sm">Small Modal</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Optional Sizes -->
+
+				</div>
+
+				<div class="grid grid-cols-1 xl:grid-cols-2 gap-x-6">
+
+					<!-- Modal with Pages -->
+					<div>
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Modal with Pages</h5>
+							</div>
+							<div class="card-body card-buttons p-4">
+								<!-- Modal -->
+								<div id="signup-modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" tabindex="-1" role="dialog"
+									aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full modal-lg">
+										<div class="modal-content">
+
+											<div class="modal-body">
+												<div class="text-center mt-2 mb-4">
+													<div class="auth-logo">
+														<a href="index.html" class="logo logo-dark">
+															<span class="logo-lg text-center">
+																<img src="assets/img/logo.svg" alt="Logo" height="42" class="w-[150px] mx-auto">
+															</span>
+														</a>
+													</div>
+												</div>
+
+												<form class="px-3" action="#">
+
+													<div class="mb-3">
+														<label class="block mb-1 text-sm leading-normal font-medium text-title">Last Name</label>
+														<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="Michael Zenaty">
+													</div>
+
+													<div class="mb-3">
+														<label class="block mb-1 text-sm leading-normal font-medium text-title">Email address</label>
+														<input type="text" class="bg-white border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="john@deo.com">
+													</div>
+
+													<div class="mb-3">
+														<label class="block mb-1 text-sm leading-normal font-medium text-title">Password</label>
+														<input type="password" class="bg-white border border-borderColor text-gray-900 text-sm rounded-input  block w-full py-2 px-2.5 h-[38px] placeholder:text-gray-400" placeholder="john@deo.com">
+													</div>
+
+													<div class="mb-3">
+														<div class="form-check form-check-md mb-0">
+														
+															<label class="flex items-center ">
+																<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0 me-2" type="checkbox">
+																<span>I accept Terms and Conditions</span>
+															</label>
+														</div>
+													</div>
+
+													<div class="mb-3 text-center">
+														<button class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" type="submit">Sign Up
+															Free</button>
+													</div>
+
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<!-- Modal -->
+								<div id="login-modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" tabindex="-1" role="dialog" aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full modal-lg">
+										<div class="modal-content">
+											<div class="modal-body">
+												<div class="text-center mt-2 mb-4">
+													<div class="auth-logo">
+														<a href="index.html" class="logo logo-dark">
+															<span class="logo-lg">
+																<img src="assets/img/logo.svg" alt="Logo" height="42" class="w-[150px] mx-auto">
+															</span>
+														</a>
+													</div>
+												</div>
+
+												<form action="#" class="px-3">
+
+													<div class="mb-3">
+														<label for="emailaddress1" class="form-label">Email
+															address</label>
+														<input class="form-control" type="email" id="emailaddress1"
+															required="" placeholder="john@deo.com">
+													</div>
+
+													<div class="mb-3">
+														<label for="password1" class="form-label">Password</label>
+														<input class="form-control" type="password" required=""
+															id="password1" placeholder="Enter your password">
+													</div>
+
+													<div class="mb-3">
+														<label class="flex items-center ">
+															<input class="size-4 bg-white border border-borderColor rounded text-primary focus:ring-0 me-2" type="checkbox">
+															<span>Remember me</span>
+														</label>
+													</div>
+
+													<div class="mb-2 text-center">
+														<button class="btn rounded-pill bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" type="submit">Sign
+															In</button>
+													</div>
+
+												</form>
+
+											</div>
+										</div>
+									</div>
+								</div>
+								<!-- /Modal -->
+
+								<div class="button-list">
+									<!-- Sign Up modal -->
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="signup-modal"
+										data-modal-target="signup-modal">Sign Up Modal</button>
+									<!-- Log In modal -->
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mt-1" data-modal-toggle="login-modal"
+										data-modal-target="login-modal">Log In Modal</button>
+								</div>
+
+							</div>
+						</div>
+					</div>
+					<!-- /Modal with Pages -->
+
+					<!-- Custom Modals -->
+					<div>
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor p-4 border-b">
+								<h5 class="card-title">Custom Modals</h5>
+							</div>
+							<div class="card-body p-4">
+
+								<!-- sample modal content -->
+								<div id="con-close-modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" tabindex="-1" role="dialog"
+									aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title">Modal Content is Responsive</h4>
+												<button type="button" class="btn-close" data-modal-hide="modal"
+													aria-label="Close"></button>
+											</div>
+											<div class="modal-body p-4">
+												<div class="grid grid-cols-1 xl:grid-cols-2 gap-6">
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="field-1" class="form-label">Name</label>
+															<input type="text" class="form-control" id="field-1"
+																placeholder="John">
+														</div>
+													</div>
+													<div class="col-md-6">
+														<div class="mb-3">
+															<label for="field-2" class="form-label">Surname</label>
+															<input type="text" class="form-control" id="field-2"
+																placeholder="Doe">
+														</div>
+													</div>
+												</div>
+												<div class="grid grid-cols-2 xl:grid-cols-1">
+													<div class="col-md-12">
+														<div class="mb-3">
+															<label for="field-3" class="form-label">Address</label>
+															<input type="text" class="form-control" id="field-3"
+																placeholder="Address">
+														</div>
+													</div>
+												</div>
+												<div class="grid grid-cols-1 xl:grid-cols-3 gap-6">
+													<div class="col-md-4">
+														<div class="mb-3">
+															<label for="field-4" class="form-label">City</label>
+															<input type="text" class="form-control" id="field-4"
+																placeholder="Boston">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="mb-3">
+															<label for="field-5" class="form-label">Country</label>
+															<input type="text" class="form-control" id="field-5"
+																placeholder="United States">
+														</div>
+													</div>
+													<div class="col-md-4">
+														<div class="mb-3">
+															<label for="field-6" class="form-label">Zip</label>
+															<input type="text" class="form-control" id="field-6"
+																placeholder="123456">
+														</div>
+													</div>
+												</div>
+												<div class="grid grid-cols-1 xl:grid-cols-1 gap-6">
+													<div class="col-md-12">
+														<div>
+															<label for="field-7" class="form-label">Personal
+																Info</label>
+															<textarea class="form-control" id="field-7"
+																placeholder="Write something about yourself"></textarea>
+														</div>
+													</div>
+												</div>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2 waves-effect"
+													data-modal-hide="con-close-modal">Close</button>
+												<button type="button"
+													class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white waves-effect waves-light">Save
+													changes</button>
+											</div>
+										</div>
+									</div>
+								</div><!-- /Modal -->
+
+								<div id="accordion-modal" class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" tabindex="-1" role="dialog"
+									aria-hidden="true">
+									<div class="modal-dialog w-full max-w-[500px] max-h-full">
+										<div class="modal-content p-0">
+											<div id="accordion-collapse" data-accordion="collapse" data-active-classes="bg-white text-gray-900">
+												<div class="card mb-0 p-4 border-b">
+													<h2 class="accordion-header" id="headingOne">
+														<button class="flex justify-between items-center text-sm w-full text-start text-gray-300" type="button" data-accordion-target="#collapseOne" aria-expanded="true" aria-controls="collapseOne">
+															Collapsible Group Item #1
+															
+														</button>
+													</h2>
+
+													<div id="collapseOne" class="hidden p-3 px-0" aria-labelledby="headingOne">
+														<div class="card-body">
+															Anim pariatur cliche reprehenderit, enim eiusmod high life
+															accusamus terry richardson ad squid. 3 wolf moon officia
+															aute,
+															non cupidatat skateboard dolor brunch. Food truck quinoa
+															nesciunt laborum eiusmod. Brunch 3 wolf moon
+															tempor, sunt aliqua put a bird on it squid single-origin
+															coffee nulla assumenda shoreditch et. Nihil
+															anim keffiyeh helvetica, craft beer labore wes anderson cred
+															nesciunt sapiente ea proident. Ad vegan
+															excepteur butcher vice lomo. Leggings occaecat craft beer
+															farm-to-table, raw denim aesthetic synth nesciunt
+															you probably haven't heard of them accusamus labore
+															sustainable VHS.
+														</div>
+													</div>
+												</div>
+												<div class="card mb-0 p-4 border-b">
+													<h2 class="accordion-header" id="heading2">
+														<button class="flex justify-between items-center text-sm w-full text-start text-gray-300" type="button" data-accordion-target="#collapse2" aria-expanded="true" aria-controls="collapse2">
+															Collapsible Group Item #2
+															
+														</button>
+													</h2>
+													<div id="collapse2" class="hidden p-3 px-0" aria-labelledby="heading2">
+														<div class="card-body">
+															Anim pariatur cliche reprehenderit, enim eiusmod high life
+															accusamus terry richardson ad squid. 3 wolf moon officia
+															aute,
+															non cupidatat skateboard dolor brunch. Food truck quinoa
+															nesciunt laborum eiusmod. Brunch 3 wolf moon
+															tempor, sunt aliqua put a bird on it squid single-origin
+															coffee nulla assumenda shoreditch et. Nihil
+															anim keffiyeh helvetica, craft beer labore wes anderson cred
+															nesciunt sapiente ea proident. Ad vegan
+															excepteur butcher vice lomo. Leggings occaecat craft beer
+															farm-to-table, raw denim aesthetic synth nesciunt
+															you probably haven't heard of them accusamus labore
+															sustainable VHS.
+														</div>
+													</div>
+												</div>
+												<div class="card mb-0 p-4 border-b">
+													<h2 class="accordion-header" id="heading3">
+														<button class="flex justify-between items-center text-sm w-full text-start text-gray-300" type="button" data-accordion-target="#collapse3" aria-expanded="true" aria-controls="collapse3">
+															Collapsible Group Item #3
+															
+														</button>
+													</h2>
+													<div id="collapse3" class="hidden p-3 px-0" aria-labelledby="heading3">
+														<div class="card-body">
+															Anim pariatur cliche reprehenderit, enim eiusmod high life
+															accusamus terry richardson ad squid. 3 wolf moon officia
+															aute,
+															non cupidatat skateboard dolor brunch. Food truck quinoa
+															nesciunt laborum eiusmod. Brunch 3 wolf moon
+															tempor, sunt aliqua put a bird on it squid single-origin
+															coffee nulla assumenda shoreditch et. Nihil
+															anim keffiyeh helvetica, craft beer labore wes anderson cred
+															nesciunt sapiente ea proident. Ad vegan
+															excepteur butcher vice lomo. Leggings occaecat craft beer
+															farm-to-table, raw denim aesthetic synth nesciunt
+															you probably haven't heard of them accusamus labore
+															sustainable VHS.
+														</div>
+													</div>
+												</div>
+											</div>
+										</div>
+									</div>
+								</div><!-- /Modal -->
+
+								<div class="button-list">
+									<!-- Responsive modal -->
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white waves-effect waves-light mt-1"
+										data-modal-toggle="con-close-modal" data-modal-target="con-close-modal">Responsive
+										Modal</button>
+									<!-- Accordion modal -->
+									<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white waves-effect waves-light mt-1"
+										data-modal-toggle="accordion-modal" data-modal-target="accordion-modal">Accordion in
+										Modal</button>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Custom Modals -->
+
+				</div>
+
+				<div class="grid grid-cols-1 xl:grid-cols-3 gap-x-6">
+
+					<!-- Vertically Centered Modal -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between border-b p-4">
+								<div class="card-title">
+									<h5 class="card-title">Vertically Centered Modal</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="exampleModalScrollable2"
+									data-modal-target="exampleModalScrollable2">
+									Vertically centered modal
+								</button>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalScrollable2" tabindex="-1"
+									aria-labelledby="exampleModalScrollable2" data-bs-keyboard="false"
+									aria-hidden="true">
+									<!-- Scrollable modal -->
+									<div class="modal-dialog modal-dialog-centered w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="staticBackdropLabel2">Modal title
+												</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalScrollable2">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<p>Lorem ipsum dolor sit, amet consectetur adipisicing elit.
+													Libero
+													ipsum quasi, error quibusdam debitis maiores hic eum? Vitae
+													nisi
+													ipsa maiores fugiat deleniti quis reiciendis veritatis.</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="exampleModalScrollable2">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save
+													Changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Vertically Centered Modal -->
+
+					<!-- Vertically Centered Scrollable -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between border-b p-4">
+								<div class="card-title">
+									<h5 class="card-title">Vertical Centered Scrollable</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="exampleModalScrollable3"
+									data-modal-target="exampleModalScrollable3">
+									Vertically centered scrollable modal
+								</button>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalScrollable3" tabindex="-1"
+									aria-labelledby="exampleModalScrollable3" data-bs-keyboard="false"
+									aria-hidden="true">
+									<!-- Scrollable modal -->
+									<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable w-full max-w-[500px] max-h-[500px] overflow-y-auto">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="staticBackdropLabel3">Modal title
+												</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalScrollable3">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<p>Lorem ipsum dolor sit amet consectetur, adipisicing elit. Ea
+													voluptatibus, ipsam quo est rerum modi quos expedita facere,
+													ex
+													tempore fuga similique ipsa blanditiis et accusamus
+													temporibus
+													commodi voluptas! Nobis veniam illo architecto expedita quam
+													ratione quaerat omnis. In, recusandae eos! Pariatur,
+													deleniti
+													quis ad nemo ipsam officia temporibus, doloribus fuga
+													asperiores
+													ratione distinctio velit alias hic modi praesentium aperiam
+													officiis eaque, accusamus aut. Accusantium assumenda,
+													commodi
+													nulla provident asperiores fugit inventore iste amet aut
+													placeat
+													consequatur reprehenderit. Ratione tenetur eligendi, quis
+													aperiam dolores magni iusto distinctio voluptatibus minus a
+													unde
+													at! Consequatur voluptatum in eaque obcaecati, impedit
+													accusantium ea soluta, excepturi, quasi quia commodi
+													blanditiis?
+													Qui blanditiis iusto corrupti necessitatibus dolorem fugiat
+													consequuntur quod quo veniam? Labore dignissimos reiciendis
+													accusamus recusandae est consequuntur iure.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+												<p>Lorem ipsum dolor sit amet.</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="exampleModalScrollable3">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save
+													Changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Vertically Centered Scrollable -->
+
+					<!-- Tooltips and popovers -->
+					<div class="col-xl-4">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between border-b p-4">
+								<div class="card-title">
+									<h5 class="card-title">Tooltips and popovers</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white" data-modal-toggle="exampleModalScrollable4"
+									data-modal-target="exampleModalScrollable4">
+									Launch demo modal
+								</button>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalScrollable4" tabindex="-1"
+									aria-labelledby="exampleModalScrollable4" data-bs-keyboard="false"
+									aria-hidden="true">
+									<!-- Scrollable modal -->
+									<div class="modal-dialog modal-dialog-centered modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="staticBackdropLabel4">Modal title
+												</h4>
+												<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalScrollable4">
+													<i class="ti ti-x"></i>
+													<span class="sr-only">Close modal</span>
+												</button>
+											</div>
+											<div class="modal-body">
+												<h5>Popover in a modal</h5>
+												<p>This <a href="#" role="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white mb-4"
+														data-bs-toggle="popover" title="Popover title"
+														data-bs-content="Popover body content is set in this attribute.">button</a>
+													triggers a popover on click.</p>
+												
+												<h5>Tooltips in a modal</h5>
+												<p><a href="#" class="text-primary" data-bs-toggle="tooltip"
+														title="Tooltip">This
+														link</a> and <a href="#" class="text-primary"
+														data-bs-toggle="tooltip" title="Tooltip">that link</a> have
+													tooltips on hover.
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2"
+													data-modal-hide="exampleModalScrollable4">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save
+													Changes</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Tooltips and popovers -->
+
+				</div>
+
+				<div class="grid gdid-cols-1">
+
+					<!-- Fullscreen Modal -->
+					<div class="col-xl-12">
+						<div class="border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between p-4 border-b">
+								<div class="card-title">
+									<h5 class="card-title">Fullscreen Modal</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<div class="bd-example">
+									<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mb-1" data-modal-toggle="exampleModalFullscreen"
+										data-modal-target="exampleModalFullscreen">Full screen</button>
+									<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white mb-1" data-modal-toggle="exampleModalFullscreenSm"
+										data-modal-target="exampleModalFullscreenSm">Full screen below sm</button>
+									<button type="button" class="btn bg-warning border border-warning text-white text-center hover:bg-warning-900 hover:text-white mb-1" data-modal-toggle="exampleModalFullscreenMd"
+										data-modal-target="exampleModalFullscreenMd">Full screen below md</button>
+									<button type="button" class="btn bg-info border border-info text-white text-center hover:bg-info-hover hover:text-white mb-1" data-modal-toggle="exampleModalFullscreenLg"
+										data-modal-target="exampleModalFullscreenLg">Full screen below lg</button>
+									<button type="button" class="btn bg-success border border-success text-white text-center hover:bg-success-900 hover:text-white mb-1" data-modal-toggle="exampleModalFullscreenXl"
+										data-modal-target="exampleModalFullscreenXl">Full screen below xl</button>
+									<button type="button" class="btn bg-danger border border-danger text-white text-center hover:bg-danger-900 hover:text-white mb-1" data-modal-toggle="exampleModalFullscreenXxl"
+										data-modal-target="exampleModalFullscreenXxl">Full screen below
+										xxl</button>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreen" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen modal-dialog-scrollable w-full max-w-full h-full max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenLabel">Full
+													screen modal</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreen">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreen">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreenSm" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenSmLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen-sm-down modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenSmLabel">
+													Full
+													screen below sm</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreenSm">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreenSm">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreenMd" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenMdLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen-md-down modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenMdLabel">
+													Full
+													screen below md</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreenMd">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreenMd">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreenLg" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenLgLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen-lg-down modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenLgLabel">
+													Full
+													screen below lg</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreenLg">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreenLg">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreenXl" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenXlLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen-xl-down modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenXlLabel">
+													Full
+													screen below xl</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreenXl">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreenXl">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="exampleModalFullscreenXxl" tabindex="-1"
+									aria-labelledby="exampleModalFullscreenXxlLabel" aria-hidden="true"
+									>
+									<div class="modal-dialog modal-fullscreen-xxl-down modal-dialog-scrollable w-full max-w-full max-h-full h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalFullscreenXxlLabel">
+													Full
+													screen below xxl</h4>
+													<button type="button" class="end-2.5 text-white bg-gray-500 hover:bg-danger hover:text-white rounded-full text-xs leading-normal size-5 ms-auto inline-flex justify-center items-center" data-modal-hide="exampleModalFullscreenXxl">
+														<i class="ti ti-x"></i>
+														<span class="sr-only">Close modal</span>
+													</button>
+											</div>
+											<div class="modal-body">
+												...
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white"
+													data-modal-hide="exampleModalFullscreenXxl">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Fullscreen Modal -->
+
+				</div>
+
+				<div class="grid gdid-cols-1">
+
+					<!-- Varying Modal Content -->
+					<div class="col-xl-12">
+						<div class="card border-borderColor rounded-[5px] shadow-xs bg-white mb-6">
+							<div class="card-header border-borderColor justify-between border-b p-4">
+								<div class="card-title">
+									<h5 class="card-title">Varying Modal Content</h5>
+								</div>
+							</div>
+							<div class="card-body p-4">
+								<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white mb-1" data-modal-toggle="formmodal"
+									data-modal-target="formmodal" data-modal-whatever="@mdo">Open modal for
+									@mdo</button>
+								<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white mb-1" data-modal-toggle="formmodal"
+									data-modal-target="formmodal" data-modal-whatever="@fat">Open modal for
+									@fat</button>
+								<button type="button" class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark mb-1" data-modal-toggle="formmodal"
+									data-modal-target="formmodal" data-modal-whatever="@getbootstrap">Open modal for
+									@getbootstrap</button>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="formmodal" tabindex="-1" aria-labelledby="exampleModalLabel"
+									aria-hidden="true">
+									<div class="modal-dialog modal-dialog-scrollable w-full max-w-[500px] max-h-full">
+										<div class="modal-content">
+											<div class="modal-header">
+												<h4 class="modal-title" id="exampleModalLabel">New message</h4>
+												<button type="button" class="btn-close" data-modal-hide="formmodal"
+													aria-label="Close"></button>
+											</div>
+											<div class="modal-body">
+												<form>
+													<div class="mb-3">
+														<label for="recipient-name"
+															class="col-form-label">Recipient:</label>
+														<input type="text" class="form-control" id="recipient-name">
+													</div>
+													<div class="mb-3">
+														<label for="message-text"
+															class="col-form-label">Message:</label>
+														<textarea class="form-control" id="message-text"></textarea>
+													</div>
+												</form>
+											</div>
+											<div class="modal-footer">
+												<button type="button" class="btn bg-secondary border border-secondary text-white text-center hover:bg-secondary-hover hover:text-white me-2"
+													data-modal-hide="formmodal">Close</button>
+												<button type="button" class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Send
+													message</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Varying Modal Content -->
+
+				</div>
+
+				<div class="row hidden">
+
+					<!-- Modal Animation Effects -->
+					<div class="col-xl-12">
+						<div class="card">
+							<div class="card-header border-borderColor justify-between">
+								<div class="card-title">
+									<h5 class="card-title">Modal Animation Effects</h5>
+								</div>
+							</div>
+							<div class="card-body pb-1">
+								<div class="row ">
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-scale" data-modal-toggle="modaldemo8"
+											href="#modaldemo8">Scale</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-slide-in-right" data-modal-toggle="modaldemo8"
+											href="#modaldemo8">Slide In Right</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-slide-in-bottom" data-bs-toggle="modal"
+											href="#modaldemo8">Slide In Bottom</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-newspaper" data-bs-toggle="modal"
+											href="#modaldemo8">Newspaper</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3" data-bs-effect="effect-fall"
+											data-bs-toggle="modal" href="#modaldemo8">Fall</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-flip-horizontal" data-bs-toggle="modal"
+											href="#modaldemo8">Flip Horizontal</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-flip-vertical" data-bs-toggle="modal"
+											href="#modaldemo8">Flip Vertical</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-super-scaled" data-bs-toggle="modal"
+											href="#modaldemo8">Super Scaled</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3" data-bs-effect="effect-sign"
+											data-bs-toggle="modal" href="#modaldemo8">Sign</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-rotate-bottom" data-bs-toggle="modal"
+											href="#modaldemo8">Rotate Bottom</a>
+									</div>
+									<div class="col-sm-6 col-md-4 col-xl-3">
+										<a class="modal-effect btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white d-grid mb-3"
+											data-bs-effect="effect-rotate-left" data-bs-toggle="modal"
+											href="#modaldemo8">Rotate Left</a>
+									</div>
+								</div>
+								<div class="hidden overflow-y-auto overflow-x-hidden fixed top-0 right-0 left-0 z-[1055] justify-center items-center flex-wrap w-full md:inset-0 h-[calc(100%-1rem)] max-h-full transition-all duration-300 ease-in-out p-4" id="modaldemo8">
+									<div class="modal-dialog modal-dialog-centered text-center modal-dialog-scrollable w-full max-w-[500px] max-h-full" role="document">
+										<div class="modal-content modal-content-demo">
+											<div class="modal-header">
+												<h4 class="modal-title">Message Preview</h4><button aria-label="Close"
+													class="btn-close" data-bs-dismiss="modal"></button>
+											</div>
+											<div class="modal-body text-start">
+												<h6>Why We Use Electoral College, Not Popular Vote</h6>
+												<p class="text-muted mb-0">It is a long established fact that a reader
+													will be distracted by the readable content of a page when looking at
+													its layout. The point of using Lorem Ipsum is that it has a
+													more-or-less normal distribution of letters, as opposed to using
+													'Content here, content here', making it look like readable English.
+												</p>
+											</div>
+											<div class="modal-footer">
+												<button class="btn bg-primary border border-primary text-white text-center hover:bg-primary-hover hover:text-white">Save changes</button> <button
+													class="btn bg-light border border-light text-dark text-center hover:bg-light-900 hover:text-dark me-2" data-bs-dismiss="modal">Close</button>
+											</div>
+										</div>
+									</div>
+								</div>
+							</div>
+						</div>
+					</div>
+					<!-- /Modal Animation Effects -->
+
+				</div>
+
+			</div>
+
+			<div class="copyright-footer flex items-center justify-between border-t bg-white gap-3 flex-wrap">
+				<p class="text-[13px] text-gray-900mb-0">2014 - 2025 © DreamsPOS. All Right Reserved</p>
+				<p>Designed &amp; Developed By <a href="javascript:void(0);" class="text-primary">Dreams</a></p>
+			</div>
+
+		</div>
+		<!-- /Page Wrapper -->	
+
+	</div>
+	<!-- /Main Wrapper -->
+
+	<!-- jQuery -->
+	<script src="assets/js/jquery-3.7.1.min.js"></script>
+
+	<!-- Flowbite JS -->
+	<script src="assets/js/flowbite.min.js"></script>
+
+	<!-- Feather Icon JS -->
+	<script src="assets/js/feather.min.js"></script>
+
+	<!-- Slimscroll JS -->
+	<script src="assets/js/jquery.slimscroll.min.js"></script>
+
+	<!-- Custom JS -->
+	<script src="assets/js/script.js"></script>
+
+</body>
+
+</html>

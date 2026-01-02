@@ -1,0 +1,30 @@
+
+{% load static %}
+
+{% load sidebar_tags %}
+{% if request.path|normalize_path == '/layout-horizontal' %}
+    <html lang="en" data-layout="horizontal">
+{% elif request.path|normalize_path == '/layout-detached' %}
+    <html lang="en" data-layout="detached">
+{% elif request.path|normalize_path == '/layout-modern' %}
+    <html lang="en" data-layout="modern">
+{% elif request.path|normalize_path == '/layout-two-column' %}
+    <html lang="en" data-layout="twocolumn">
+{% elif request.path|normalize_path == '/layout-hovered' %}
+    <html lang="en" data-layout="layout-hovered">
+{% elif request.path|normalize_path == '/layout-boxed' %}
+    <html lang="en" data-layout="default" data-width="box">
+{% elif request.path|normalize_path == '/layout-rtl' %}
+    <html lang="en" data-layout-mode="light_mode">
+{% elif request.path|normalize_path == '/layout-dark' %}
+    <html lang="en" data-theme="dark">
+{% else %}
+    <html lang="en">
+{% endif %}
+
+
+
+{% if request.path|normalize_path != '/signin' and request.path|normalize_path != '/signin-2' and request.path|normalize_path != '/signin-3' and request.path|normalize_path != '/register' and request.path|normalize_path != '/register-2' and request.path|normalize_path != '/register-3' and request.path|normalize_path != '/forgot-password' and request.path|normalize_path != '/forgot-password-2' and request.path|normalize_path != '/forgot-password-3' and request.path|normalize_path != '/reset-password' and request.path|normalize_path != '/reset-password-2' and request.path|normalize_path != '/reset-password-3' and request.path|normalize_path != '/email-verification' and request.path|normalize_path != '/email-verification-2' and request.path|normalize_path != '/email-verification-3' and request.path|normalize_path != '/two-step-verification' and request.path|normalize_path != '/two-step-verification-2' and request.path|normalize_path != '/two-step-verification-3' and request.path|normalize_path != '/lock-screen' and request.path|normalize_path != '/error-404' and request.path|normalize_path != '/error-500' and request.path|normalize_path != '/coming-soon' and request.path|normalize_path != '/under-maintenance' and request.path|normalize_path != '/layout-horizontal' and request.path|normalize_path != '/layout-detached' and request.path|normalize_path != '/layout-modern' and request.path|normalize_path != '/layout-two-column' and request.path|normalize_path != '/layout-hovered' and request.path|normalize_path != '/layout-boxed' and request.path|normalize_path != '/layout-dark' and request.path|normalize_path != '/layout-rtl' and request.path|normalize_path != '/success' and request.path|normalize_path != '/success-2' and request.path|normalize_path != '/success-3' %}
+<!-- Theme Script JS -->
+<script src="{% static 'assets/js/theme-script.js' %}"></script>
+{% endif %}

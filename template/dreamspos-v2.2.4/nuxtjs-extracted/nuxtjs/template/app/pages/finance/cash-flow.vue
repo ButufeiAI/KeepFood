@@ -1,0 +1,3 @@
+<template>
+    <FinanceCashFlow />
+</template>

@@ -1,0 +1,156 @@
+<!-- Base Path URL Rewriter -->
+<script>
+    (function() {
+        var basePathMeta = document.querySelector('meta[name="base-path"]');
+        var basePath = basePathMeta ? basePathMeta.getAttribute('content') : '';
+        
+        if (!basePath || basePath === '/') {
+            return; // No base path to apply
+        }
+        
+        // Ensure base path ends with /
+        if (!basePath.endsWith('/')) {
+            basePath = basePath + '/';
+        }
+        
+        // Function to check if URL should be skipped
+        function shouldSkipUrl(url) {
+            if (!url || url === '') return true;
+            
+            // Skip absolute URLs, protocols, anchors, and special schemes
+            return url.startsWith('http://') || 
+                   url.startsWith('https://') || 
+                   url.startsWith('//') ||
+                   url.startsWith('javascript:') || 
+                   url === '#' ||
+                   url.startsWith('#') ||
+                   url.startsWith('mailto:') ||
+                   url.startsWith('tel:') ||
+                   url.startsWith('data:') ||
+                   url.startsWith(basePath);
+        }
+        
+        // Function to normalize and prepend base path to a URL
+        function prependBasePath(url) {
+            if (!url || shouldSkipUrl(url)) return url;
+            
+            // If it's a relative path starting with /, prepend base path
+            if (url.startsWith('/')) {
+                return basePath + url.substring(1);
+            }
+            
+            // For relative paths without leading slash, they should work as-is
+            // because they're relative to current location which already includes base path
+            return url;
+        }
+        
+        // Function to rewrite URL attributes (href, action)
+        function rewriteUrls() {
+            // Rewrite href attributes in anchor tags
+            var links = document.querySelectorAll('a[href]');
+            links.forEach(function(link) {
+                if (link.dataset.basePathProcessed) return;
+                
+                var href = link.getAttribute('href');
+                if (href && href.startsWith('/') && !shouldSkipUrl(href)) {
+                    var newHref = prependBasePath(href);
+                    if (newHref !== href) {
+                        link.setAttribute('href', newHref);
+                        link.dataset.basePathProcessed = 'true';
+                    }
+                }
+            });
+            
+            // Rewrite form action attributes to include base path
+            var forms = document.querySelectorAll('form');
+            forms.forEach(function(form) {
+                if (form.dataset.basePathProcessed) return;
+                
+                var action = form.getAttribute('action');
+                
+                // If form has no action or empty action, it will submit to current URL
+                // which already includes base path, so no change needed
+                if (!action || action === '' || action === '#') {
+                    form.dataset.basePathProcessed = 'true';
+                    return;
+                }
+                
+                // If action is absolute (starts with /) and doesn't have base path
+                if (action && action.startsWith('/') && !shouldSkipUrl(action)) {
+                    // Check if it already has the base path
+                    if (!action.startsWith(basePath)) {
+                        var newAction = prependBasePath(action);
+                        if (newAction && newAction !== action) {
+                            form.setAttribute('action', newAction);
+                        }
+                    }
+                    form.dataset.basePathProcessed = 'true';
+                } else if (action && !action.startsWith('/') && !shouldSkipUrl(action)) {
+                    // Relative path without leading slash - these work relative to current URL
+                    // which already includes base path, so they should work as-is
+                    form.dataset.basePathProcessed = 'true';
+                } else {
+                    // Action is skipped (javascript:, mailto:, etc.) or already processed
+                    form.dataset.basePathProcessed = 'true';
+                }
+            });
+        }
+        
+        // Function to initialize URL rewriting
+        function initializeUrlRewriting() {
+            rewriteUrls();
+            
+            // Also run after a short delay to catch any late-loading content
+            setTimeout(rewriteUrls, 100);
+            setTimeout(rewriteUrls, 500);
+        }
+        
+        // Run on page load
+        if (document.readyState === 'loading') {
+            document.addEventListener('DOMContentLoaded', initializeUrlRewriting);
+        } else {
+            // DOM is already loaded
+            initializeUrlRewriting();
+        }
+        
+        // Use MutationObserver to handle dynamically added forms and links
+        if (window.MutationObserver) {
+            var observer = new MutationObserver(function(mutations) {
+                var shouldRewrite = false;
+                mutations.forEach(function(mutation) {
+                    if (mutation.addedNodes.length > 0) {
+                        mutation.addedNodes.forEach(function(node) {
+                            if (node.nodeType === 1) { // Element node
+                                if (node.tagName === 'FORM' || node.tagName === 'A' ||
+                                    (node.querySelector && (node.querySelector('form') || node.querySelector('a')))) {
+                                    shouldRewrite = true;
+                                }
+                            }
+                        });
+                    }
+                });
+                if (shouldRewrite) {
+                    setTimeout(rewriteUrls, 50);
+                }
+            });
+            
+            // Start observing once body is available
+            if (document.body) {
+                observer.observe(document.body, {
+                    childList: true,
+                    subtree: true
+                });
+            } else {
+                document.addEventListener('DOMContentLoaded', function() {
+                    if (document.body) {
+                        observer.observe(document.body, {
+                            childList: true,
+                            subtree: true
+                        });
+                    }
+                });
+            }
+        }
+    })();
+</script>
+

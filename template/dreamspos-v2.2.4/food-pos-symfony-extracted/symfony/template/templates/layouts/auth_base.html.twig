@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    {% include 'partials/title-meta.html.twig' %}
+
+    {% include 'partials/head-css.html.twig' %}
+
+</head>
+
+{% include 'partials/body.html.twig' %}
+
+    <!-- Start Main Wrapper -->
+    {% include 'partials/main-wrapper.html.twig' %}
+
+        {% block content %} {% endblock %}
+
+    </div>
+    <!-- End Main Wrapper -->
+
+    {% include 'partials/vendor-scripts.html.twig' %}
+
+</body>
+
+</html>

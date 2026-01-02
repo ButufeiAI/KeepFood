@@ -171,7 +171,7 @@ export function StepByStepOrder() {
   const currentCategory = steps[currentStep] ? menu.find((c) => c.id === steps[currentStep]?.categoryId) : null;
 
   if (loading) {
-    return <LoadingSpinner fullscreen message="Chargement du menu..." />;
+    return <LoadingSpinner fullScreen message="Chargement du menu..." />;
   }
 
   if (!restaurant || menu.length === 0 || steps.length === 0) {

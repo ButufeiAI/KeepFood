@@ -45,7 +45,10 @@ export function Orders() {
       setFormData({ items: [{ productId: '', quantity: 1 }] });
       loadData();
     } catch (error: any) {
-      alert(error.response?.data?.message || 'Erreur lors de la création');
+      const errorMessage = error.response?.data?.message || error.message || 'Erreur lors de la création';
+      console.error('Erreur lors de la création de la commande:', error);
+      // TODO: Remplacer par un système de notification toast
+      alert(errorMessage);
     }
   };
 

@@ -1,0 +1,3 @@
+<template>
+    <ModulesAuthenticationRegister />
+</template>

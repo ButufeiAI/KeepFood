@@ -1,0 +1,3 @@
+<template>
+    <ReportsProfitAndLoss />
+</template>

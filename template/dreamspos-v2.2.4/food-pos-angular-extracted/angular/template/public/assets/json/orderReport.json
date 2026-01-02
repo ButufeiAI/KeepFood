@@ -1,0 +1,115 @@
+{
+    "data":[
+  {
+    "id": 1,
+    "Ids": "#23588",
+    "Date": "01 Nov 2025",
+    "Customer": "Walk-in Customer",
+    "TokenNo": "16",
+    "Type": "Dine In",
+    "Menus": "3",
+    "GrandTotal": "$34.50",
+    "Status": "Paid"
+  },
+  {
+    "id": 2,
+    "Ids": "#23587",
+    "Date": "01 Nov 2025",
+    "Customer": "Sue Allen",
+    "TokenNo": "15",
+    "Type": "Take Away",
+    "Menus": "7",
+    "GrandTotal": "$78.20",
+    "Status": "Paid"
+  },
+  {
+    "id": 3,
+    "Ids": "#23586",
+    "Date": "01 Nov 2025",
+    "Customer": "Frank Barrett",
+    "TokenNo": "14",
+    "Type": "Dine In",
+    "Menus": "4",
+    "GrandTotal": "$45.10",
+    "Status": "Paid"
+  },
+  {
+    "id": 4,
+    "Ids": "#23585",
+    "Date": "01 Nov 2025",
+    "Customer": "Kelley Davis",
+    "TokenNo": "13",
+    "Type": "Take Away",
+    "Menus": "9",
+    "GrandTotal": "$92.80",
+    "Status": "Paid"
+  },
+  {
+    "id": 5,
+    "Ids": "#23584",
+    "Date": "01 Nov 2025",
+    "Customer": "Jim Vickers",
+    "TokenNo": "12",
+    "Type": "Dine In",
+    "Menus": "6",
+    "GrandTotal": "$61.40",
+    "Status": "Paid"
+  },
+  {
+    "id": 6,
+    "Ids": "#23583",
+    "Date": "01 Nov 2025",
+    "Customer": "Nancy Chapman",
+    "TokenNo": "11",
+    "Type": "Take Away",
+    "Menus": "5",
+    "GrandTotal": "$57.20",
+    "Status": "Paid"
+  },
+  {
+    "id": 7,
+    "Ids": "#23582",
+    "Date": "31 Oct 2025",
+    "Customer": "Ron Jude",
+    "TokenNo": "10",
+    "Type": "Take Away",
+    "Menus": "4",
+    "GrandTotal": "$45.30",
+    "Status": "Paid"
+  },
+  {
+    "id": 8,
+    "Ids": "#23581",
+    "Date": "31 Oct 2025",
+    "Customer": "Andrea Aponte",
+    "TokenNo": "09",
+    "Type": "Take Away",
+    "Menus": "7",
+    "GrandTotal": "$72.60",
+    "Status": "Paid"
+  },
+  {
+    "id": 9,
+    "Ids": "#23580",
+    "Date": "31 Oct 2025",
+    "Customer": "David Belcher",
+    "TokenNo": "08",
+    "Type": "Take Away",
+    "Menus": "3",
+    "GrandTotal": "$32.10",
+    "Status": "Paid"
+  },
+  {
+    "id": 10,
+    "Ids": "#23579",
+    "Date": "31 Oct 2025",
+    "Customer": "Julie Kangas",
+    "TokenNo": "07",
+    "Type": "Take Away",
+    "Menus": "4",
+    "GrandTotal": "$40.30",
+    "Status": "Paid"
+  }
+],
+"totalData":10
+}

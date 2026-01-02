@@ -1,0 +1,27 @@
+
+# Visual Studio
+.vs/
+*.user
+*.suo
+
+# Rider
+.idea/
+
+# VS Code
+.vscode/
+*.nupkg
+project.lock.json
+
+# Node.js
+node_modules/
+npm-debug.log
+
+# OS files
+.DS_Store
+Thumbs.db
+
+# User-specific config
+appsettings.Development.json
+
+# Logs
+*.log

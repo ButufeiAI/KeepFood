@@ -1,0 +1,516 @@
+{% extends 'partials/base.html' %}
+{% load static %}
+{% block title %}Tables{% endblock %}
+{% block content %}
+
+    <!-- ========================
+        Start Page Content
+    ========================= -->
+        
+    <div class="page-wrapper">
+
+        <!-- Start Content -->
+        <div class="content">
+
+            <!-- Page Header -->
+            <div class="d-flex align-items-sm-center flex-sm-row flex-column gap-3 mb-4">
+                <div class="flex-grow-1">
+                    <h3 class="mb-0">Tables <a href="javascript:void(0);" class="btn btn-icon btn-sm btn-white rounded-circle ms-2"><i class="icon-refresh-ccw"></i></a></h3>
+                </div>
+                <div class="gap-2 d-flex align-items-center flex-wrap">
+                    <div class="input-group input-group-flat w-auto">
+                        <input type="text" class="form-control" placeholder="Search">
+                        <span class="input-group-text">
+                            <i class="icon-search text-dark"></i>
+                        </span>
+                    </div>
+                    <a href="#" class="btn btn-primary d-inline-flex align-items-center" data-bs-toggle="modal" data-bs-target="#add_table"><i class="icon-circle-plus me-1"></i>Add New</a>
+                </div>
+            </div>
+            <!-- End Page Header -->
+
+            <!-- Row start -->
+            <div class="row">
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 1</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-02.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 2</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 4</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 3</a> <span class="badge badge-soft-danger fw-medium fs-10 mb-0">Booked</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-04.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 4</a> <span class="badge badge-soft-danger fw-medium fs-10 mb-0">Booked</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-05.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 5</a> <span class="badge badge-soft-danger fw-medium fs-10 mb-0">Booked</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#"> 
+                                    <img src="{% static 'assets/img/tables/tables-06.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 6</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 7</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 8</a> <span class="badge badge-soft-danger fw-medium fs-10 mb-0">Booked</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 1st</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 9</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 2nd</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-01.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 10</a> <span class="badge badge-soft-danger fw-medium fs-10 mb-0">Booked</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 2nd</span><span class="ms-2">Capacity : 6</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-02.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 11</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 2nd</span><span class="ms-2">Capacity : 4</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-06.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 12</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 2nd</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-02.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 13</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 3rd</span><span class="ms-2">Capacity : 4</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-14.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 14</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 3rd</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-02.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 15</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 3rd</span><span class="ms-2">Capacity : 4</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="col-lg-3 col-md-4 col-sm-6">
+                    <div class="card">
+                        <div class="card-body">
+                            <div class="bg-light rounded mb-3 tables-img">
+                                <a href="#">
+                                    <img src="{% static 'assets/img/tables/tables-06.svg' %}" alt="item" class="img-fluid w-100 custom-line-img">
+                                </a>
+                            </div>
+                            <div class="d-flex align-items-center justify-content-between">
+                                <div>
+                                    <h6 class="fs-14 fw-semibold"><a href="#" class="me-1">Table 16</a> <span class="badge badge-soft-success fw-medium fs-10 mb-0">Available</span></h6>
+                                    <div class="d-flex align-items-center">
+                                        <p class="mb-0"><span class="border-end pe-2">Floor : 3rd</span><span class="ms-2">Capacity : 10</span></p>
+                                    </div> 
+                                </div>
+                                <div>
+                                    <a href="#" class="table-menu" data-bs-toggle="dropdown">
+                                        <i class="icon-ellipsis-vertical" ></i>
+                                    </a>
+                                    <ul class="dropdown-menu dropdown-menu-split">
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#edit_table"><i class="icon-pencil-line me-2"></i>Edit</a></li>
+                                        <li><a href="#" class="dropdown-item" data-bs-toggle="modal" data-bs-target="#delete_modal"><i class="icon-trash-2 me-2"></i>Delete</a></li>
+                                    </ul>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <!-- Row end -->
+
+            <!-- Pagination start -->
+            <nav class="pagination-nav">
+                <ul class="pagination justify-content-center">
+                    <li class="page-item">
+                        <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                            <span aria-hidden="true" class="me-1"><i class="icon-chevron-left"></i></span>
+                            Pre
+                        </a>
+                    </li>
+                    <li class="page-item active"><a class="page-link" href="javascript:void(0);">1</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">2</a></li>
+                    <li class="page-item"><a class="page-link" href="javascript:void(0);">3</a></li>
+                    <li class="page-item">
+                        <a class="page-link d-flex align-items-center" href="javascript:void(0);" aria-label="Previous">
+                            Next
+                            <span aria-hidden="true" class="ms-1"><i class="icon-chevron-right"></i></span>
+                        </a>
+                    </li>
+                </ul>
+            </nav>
+            <!-- Pagination end -->
+                            
+        </div>
+        <!-- End Content -->  
+
+    </div>
+
+    <!-- ========================
+        End Page Content
+    ========================= -->
+
+{% endblock %}

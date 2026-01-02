@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceBaseuiUiDropdowns />
+</template>

@@ -64,6 +64,7 @@ export class Order {
   @JoinColumn({ name: 'serverId' })
   server: User;
 
+  @Index()
   @Column({
     type: 'enum',
     enum: OrderStatus,
@@ -81,9 +82,18 @@ export class Order {
   @Column({ type: 'text', nullable: true })
   notes: string; // Remarques du client
 
+  @Index()
+  @Column({ length: 50, nullable: true })
+  orderNumber: string; // Numéro de commande formaté (ex: "#23588")
+
+  @Index()
+  @Column({ length: 20, nullable: true })
+  tokenNumber: string; // Token/Numéro de commande pour affichage (ex: "16")
+
   @Column({ type: 'decimal', precision: 10, scale: 2 })
   totalAmount: number;
 
+  @Index()
   @Column({ type: 'boolean', default: false })
   isPaid: boolean;
 
@@ -93,6 +103,7 @@ export class Order {
   @OneToMany(() => Payment, (payment) => payment.order)
   payments: Payment[];
 
+  @Index()
   @CreateDateColumn()
   createdAt: Date;
 

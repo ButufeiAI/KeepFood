@@ -108,4 +108,10 @@ export class ClientsService {
 
     return client;
   }
+
+  async getClientByIdentifier(restaurantId: string, clientIdentifier: string): Promise<Client | null> {
+    return await this.clientRepository.findOne({
+      where: { restaurantId, identifier: clientIdentifier },
+    });
+  }
 }

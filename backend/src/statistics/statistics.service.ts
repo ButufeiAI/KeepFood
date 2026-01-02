@@ -31,45 +31,45 @@ export class StatisticsService {
   ) {}
 
   async getDashboardStats(restaurantId: string, user: any) {
-    // Vérifier les permissions
-    if (user.role !== UserRole.SUPER_ADMIN && user.restaurantId !== restaurantId) {
-      throw new ForbiddenException('Access denied');
-    }
+    try {
+      // Vérifier les permissions
+      if (user.role !== UserRole.SUPER_ADMIN && user.restaurantId !== restaurantId) {
+        throw new ForbiddenException('Access denied');
+      }
 
-    if (!restaurantId) {
-      throw new BadRequestException('Restaurant ID is required');
-    }
+      if (!restaurantId) {
+        throw new BadRequestException('Restaurant ID is required');
+      }
 
-    const now = new Date();
-    const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
-    const weekAgo = new Date(today);
-    weekAgo.setDate(weekAgo.getDate() - 7);
-    const monthAgo = new Date(today);
-    monthAgo.setMonth(monthAgo.getMonth() - 1);
+      // Vérifier que le restaurant existe
+      const restaurant = await this.restaurantsRepository.findOne({
+        where: { id: restaurantId }
+      });
 
-    // Revenus
-    const totalRevenue = await this.ordersRepository
+      if (!restaurant) {
+        throw new BadRequestException('Restaurant not found');
+      }
+
+      const now = new Date();
+      const today = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+      const weekAgo = new Date(today);
+      weekAgo.setDate(weekAgo.getDate() - 7);
+      const monthAgo = new Date(today);
+      monthAgo.setMonth(monthAgo.getMonth() - 1);
+
+    // Revenus - Requête optimisée combinant toutes les périodes
+    const revenueQuery = this.ordersRepository
       .createQueryBuilder('order')
-      .select('COALESCE(SUM(order.totalAmount), 0)', 'total')
+      .select('COALESCE(SUM(CASE WHEN order.isPaid = true THEN order.totalAmount ELSE 0 END), 0)', 'total')
+      .addSelect('COALESCE(SUM(CASE WHEN order.isPaid = true AND order.createdAt >= :today THEN order.totalAmount ELSE 0 END), 0)', 'today')
+      .addSelect('COALESCE(SUM(CASE WHEN order.isPaid = true AND order.createdAt >= :weekAgo THEN order.totalAmount ELSE 0 END), 0)', 'week')
       .where('order.restaurantId = :restaurantId', { restaurantId })
-      .andWhere('order.isPaid = :isPaid', { isPaid: true })
-      .getRawOne();
+      .setParameters({ today, weekAgo });
 
-    const todayRevenue = await this.ordersRepository
-      .createQueryBuilder('order')
-      .select('COALESCE(SUM(order.totalAmount), 0)', 'total')
-      .where('order.restaurantId = :restaurantId', { restaurantId })
-      .andWhere('order.isPaid = :isPaid', { isPaid: true })
-      .andWhere('order.createdAt >= :today', { today })
-      .getRawOne();
-
-    const weekRevenue = await this.ordersRepository
-      .createQueryBuilder('order')
-      .select('COALESCE(SUM(order.totalAmount), 0)', 'total')
-      .where('order.restaurantId = :restaurantId', { restaurantId })
-      .andWhere('order.isPaid = :isPaid', { isPaid: true })
-      .andWhere('order.createdAt >= :weekAgo', { weekAgo })
-      .getRawOne();
+    const revenueData = await revenueQuery.getRawOne();
+    const totalRevenue = { total: revenueData?.total || '0' };
+    const todayRevenue = { total: revenueData?.today || '0' };
+    const weekRevenue = { total: revenueData?.week || '0' };
 
     // Commandes
     const totalOrders = await this.ordersRepository.count({
@@ -127,27 +127,31 @@ export class StatisticsService {
     const topProducts = await this.orderItemsRepository
       .createQueryBuilder('item')
       .select('item.productId', 'productId')
-      .addSelect('SUM(item.quantity)', 'totalQuantity')
+      .addSelect('SUM(item.quantity)', 'total')
       .innerJoin('item.order', 'order')
       .where('order.restaurantId = :restaurantId', { restaurantId })
       .andWhere('order.isPaid = :isPaid', { isPaid: true })
       .groupBy('item.productId')
-      .orderBy('totalQuantity', 'DESC')
+      .orderBy('total', 'DESC')
       .limit(5)
       .getRawMany();
 
     const productIds = topProducts.map((p) => p.productId);
-    const products = await this.productsRepository
-      .createQueryBuilder('product')
-      .where('product.id IN (:...ids)', { ids: productIds })
-      .getMany();
+    
+    let products = [];
+    if (productIds.length > 0) {
+      products = await this.productsRepository
+        .createQueryBuilder('product')
+        .where('product.id IN (:...ids)', { ids: productIds })
+        .getMany();
+    }
 
     const topProductsWithNames = topProducts.map((tp) => {
       const product = products.find((p) => p.id === tp.productId);
       return {
         productId: tp.productId,
         name: product?.name || 'Produit inconnu',
-        quantity: parseInt(tp.totalQuantity),
+        quantity: parseInt(tp.total || '0'),
       };
     });
 
@@ -227,6 +231,10 @@ export class StatisticsService {
       revenueByDay,
       ordersByStatus,
     };
+    } catch (error) {
+      console.error('Error in getDashboardStats:', error);
+      throw new BadRequestException('Error fetching dashboard statistics: ' + error.message);
+    }
   }
 
   async getSuperAdminStats() {
@@ -509,6 +517,216 @@ export class StatisticsService {
         totalRevenue: parseFloat(stat.totalRevenue || '0'),
       };
     });
+  }
+
+  async getEmployeeStats(
+    restaurantId: string,
+    employeeId: string,
+    startDate?: Date,
+    endDate?: Date,
+  ) {
+    const where: any = {
+      restaurantId,
+      serverId: employeeId,
+      isPaid: true,
+    };
+
+    if (startDate && endDate) {
+      where.createdAt = Between(startDate, endDate);
+    } else if (startDate) {
+      where.createdAt = MoreThanOrEqual(startDate);
+    }
+
+    // Total des commandes
+    const totalOrders = await this.ordersRepository.count({ where });
+
+    // Revenu total
+    const revenueResult = await this.ordersRepository
+      .createQueryBuilder('order')
+      .select('SUM(order.totalAmount)', 'total')
+      .where(where)
+      .getRawOne();
+    const totalRevenue = parseFloat(revenueResult?.total || '0');
+
+    // Nombre moyen d'articles par commande
+    const avgItemsResult = await this.orderItemsRepository
+      .createQueryBuilder('orderItem')
+      .select('AVG(orderItem.quantity)', 'avg')
+      .leftJoin('orderItem.order', 'order')
+      .where('order.serverId = :employeeId', { employeeId })
+      .andWhere('order.restaurantId = :restaurantId', { restaurantId })
+      .andWhere('order.isPaid = true')
+      .getRawOne();
+    const avgItemsPerOrder = parseFloat(avgItemsResult?.avg || '0');
+
+    // Montant moyen par commande
+    const avgOrderAmount = totalOrders > 0 ? totalRevenue / totalOrders : 0;
+
+    // Produits les plus vendus par cet employé
+    const topProducts = await this.orderItemsRepository
+      .createQueryBuilder('orderItem')
+      .select('product.name', 'name')
+      .addSelect('SUM(orderItem.quantity)', '"totalQuantity"')
+      .addSelect('SUM(orderItem.price * orderItem.quantity)', 'revenue')
+      .leftJoin('orderItem.product', 'product')
+      .leftJoin('orderItem.order', 'order')
+      .where('order.serverId = :employeeId', { employeeId })
+      .andWhere('order.restaurantId = :restaurantId', { restaurantId })
+      .andWhere('order.isPaid = true')
+      .groupBy('product.id')
+      .addGroupBy('product.name')
+      .orderBy('"totalQuantity"', 'DESC')
+      .limit(5)
+      .getRawMany();
+
+    return {
+      employeeId,
+      totalOrders,
+      totalRevenue: Math.round(totalRevenue * 100) / 100,
+      avgOrderAmount: Math.round(avgOrderAmount * 100) / 100,
+      avgItemsPerOrder: Math.round(avgItemsPerOrder * 10) / 10,
+      topProducts: topProducts.map((p) => ({
+        name: p.name,
+        quantity: parseInt(p.totalQuantity || '0'),
+        revenue: Math.round(parseFloat(p.revenue || '0') * 100) / 100,
+      })),
+    };
+  }
+
+  async getAllEmployeesStats(
+    restaurantId: string,
+    period: 'day' | 'week' | 'month' | 'year' = 'month',
+  ) {
+    const now = new Date();
+    let startDate: Date;
+
+    switch (period) {
+      case 'day':
+        startDate = new Date(now.getFullYear(), now.getMonth(), now.getDate());
+        break;
+      case 'week':
+        startDate = new Date(now);
+        startDate.setDate(startDate.getDate() - 7);
+        break;
+      case 'month':
+        startDate = new Date(now);
+        startDate.setMonth(startDate.getMonth() - 1);
+        break;
+      case 'year':
+        startDate = new Date(now);
+        startDate.setFullYear(startDate.getFullYear() - 1);
+        break;
+      default:
+        startDate = new Date(0);
+    }
+
+    const employeeStats = await this.ordersRepository
+      .createQueryBuilder('order')
+      .select('order.serverId', 'serverId')
+      .addSelect('user.firstName', 'firstName')
+      .addSelect('user.lastName', 'lastName')
+      .addSelect('user.role', 'role')
+      .addSelect('COUNT(order.id)', 'orderCount')
+      .addSelect('COALESCE(SUM(order.totalAmount), 0)', 'totalRevenue')
+      .addSelect('COALESCE(AVG(order.totalAmount), 0)', 'avgOrderAmount')
+      .leftJoin('order.server', 'user')
+      .where('order.restaurantId = :restaurantId', { restaurantId })
+      .andWhere('order.isPaid = true')
+      .andWhere('order.serverId IS NOT NULL')
+      .andWhere('order.createdAt >= :startDate', { startDate })
+      .groupBy('order.serverId')
+      .addGroupBy('user.firstName')
+      .addGroupBy('user.lastName')
+      .addGroupBy('user.role')
+      .orderBy('totalRevenue', 'DESC')
+      .getRawMany();
+
+    return employeeStats.map((stat) => ({
+      serverId: stat.serverId,
+      serverName: `${stat.firstName || ''} ${stat.lastName || ''}`.trim() || 'Serveur inconnu',
+      role: stat.role || 'SERVER',
+      orderCount: parseInt(stat.orderCount || '0'),
+      totalRevenue: Math.round(parseFloat(stat.totalRevenue || '0') * 100) / 100,
+      avgOrderAmount: Math.round(parseFloat(stat.avgOrderAmount || '0') * 100) / 100,
+    }));
+  }
+
+  async getRestaurantEvolution(
+    restaurantId: string,
+    period: 'week' | 'month' | 'year' = 'month',
+    metric: 'revenue' | 'orders' | 'avg' = 'revenue',
+  ) {
+    const now = new Date();
+    let startDate: Date;
+    let groupByFormat: string;
+    let dateLabels: string[];
+
+    switch (period) {
+      case 'week':
+        startDate = new Date(now);
+        startDate.setDate(startDate.getDate() - 7);
+        groupByFormat = 'YYYY-MM-DD';
+        dateLabels = [];
+        for (let i = 6; i >= 0; i--) {
+          const d = new Date(now);
+          d.setDate(d.getDate() - i);
+          dateLabels.push(d.toISOString().split('T')[0]);
+        }
+        break;
+      case 'month':
+        startDate = new Date(now);
+        startDate.setMonth(startDate.getMonth() - 1);
+        groupByFormat = 'YYYY-MM-DD';
+        dateLabels = [];
+        for (let i = 29; i >= 0; i--) {
+          const d = new Date(now);
+          d.setDate(d.getDate() - i);
+          dateLabels.push(d.toISOString().split('T')[0]);
+        }
+        break;
+      case 'year':
+        startDate = new Date(now);
+        startDate.setFullYear(startDate.getFullYear() - 1);
+        groupByFormat = 'YYYY-MM';
+        dateLabels = [];
+        for (let i = 11; i >= 0; i--) {
+          const d = new Date(now);
+          d.setMonth(d.getMonth() - i);
+          dateLabels.push(`${d.getFullYear()}-${String(d.getMonth() + 1).padStart(2, '0')}`);
+        }
+        break;
+      default:
+        startDate = new Date(now);
+        startDate.setMonth(startDate.getMonth() - 1);
+        groupByFormat = 'YYYY-MM-DD';
+        dateLabels = [];
+    }
+
+    const queryBuilder = this.ordersRepository
+      .createQueryBuilder('order')
+      .select(`TO_CHAR(order.createdAt, '${groupByFormat}')`, 'date')
+      .where('order.restaurantId = :restaurantId', { restaurantId })
+      .andWhere('order.isPaid = true')
+      .andWhere('order.createdAt >= :startDate', { startDate })
+      .groupBy('date')
+      .orderBy('date', 'ASC');
+
+    if (metric === 'revenue') {
+      queryBuilder.addSelect('COALESCE(SUM(order.totalAmount), 0)', 'value');
+    } else if (metric === 'orders') {
+      queryBuilder.addSelect('COUNT(order.id)', 'value');
+    } else {
+      queryBuilder.addSelect('COALESCE(AVG(order.totalAmount), 0)', 'value');
+    }
+
+    const results = await queryBuilder.getRawMany();
+
+    const dataMap = new Map(results.map((r) => [r.date, parseFloat(r.value || '0')]));
+
+    return dateLabels.map((label) => ({
+      date: label,
+      value: Math.round((dataMap.get(label) || 0) * 100) / 100,
+    }));
   }
 }
 

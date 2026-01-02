@@ -48,23 +48,23 @@ export class AuthService {
   }
 
   async login(loginDto: LoginDto): Promise<AuthResponseDto> {
-    console.log('=== TENTATIVE DE CONNEXION ===');
-    console.log('Email:', loginDto.email);
-    console.log('Password length:', loginDto.password?.length || 0);
-    
     // Mode développement : permettre connexion avec mot de passe provisoire "test123"
     // Par défaut, on considère qu'on est en développement sauf si NODE_ENV est explicitement "production"
     const isDevelopment = process.env.NODE_ENV !== 'production';
     const isProvisionalPassword = isDevelopment && loginDto.password === 'test123';
     
-    console.log('isDevelopment:', isDevelopment);
-    console.log('isProvisionalPassword:', isProvisionalPassword);
+    if (isDevelopment) {
+      console.log('=== TENTATIVE DE CONNEXION ===');
+      console.log('Email:', loginDto.email);
+    }
     
     let user = await this.usersService.findByEmail(loginDto.email);
     
     // Si utilisateur n'existe pas et qu'on utilise le mot de passe provisoire, créer un compte de test
     if (!user && isProvisionalPassword) {
-      console.log('🔓 Mode développement : création d\'un compte de test');
+      if (isDevelopment) {
+        console.log('🔓 Mode développement : création d\'un compte de test');
+      }
       try {
         user = await this.usersService.create({
           email: loginDto.email,
@@ -73,7 +73,9 @@ export class AuthService {
           lastName: 'User',
           role: UserRole.CLIENT,
         });
-        console.log('✅ Compte de test créé:', user.id);
+        if (isDevelopment) {
+          console.log('✅ Compte de test créé:', user.id);
+        }
       } catch (error: any) {
         console.error('❌ Erreur lors de la création du compte de test:', error?.message);
         // Si l'utilisateur existe déjà (conflit), réessayer de le récupérer
@@ -82,29 +84,39 @@ export class AuthService {
     }
     
     if (!user) {
-      console.log('❌ Utilisateur non trouvé avec cet email');
+      if (isDevelopment) {
+        console.log('❌ Utilisateur non trouvé avec cet email');
+      }
       throw new UnauthorizedException('Invalid credentials');
     }
 
-    console.log('✅ Utilisateur trouvé:', {
-      id: user.id,
-      email: user.email,
-      isActive: user.isActive,
-      restaurantId: user.restaurantId,
-    });
+    if (isDevelopment) {
+      console.log('✅ Utilisateur trouvé:', {
+        id: user.id,
+        email: user.email,
+        isActive: user.isActive,
+        restaurantId: user.restaurantId,
+      });
+    }
     
     let isPasswordValid = false;
     if (isProvisionalPassword) {
       // En mode dev, accepter "test123" comme mot de passe provisoire pour n'importe quel utilisateur
-      console.log('🔓 Mode développement : utilisation du mot de passe provisoire - ACCEPTÉ');
+      if (isDevelopment) {
+        console.log('🔓 Mode développement : utilisation du mot de passe provisoire - ACCEPTÉ');
+      }
       isPasswordValid = true;
     } else {
-      console.log('🔐 Validation du mot de passe normal');
+      if (isDevelopment) {
+        console.log('🔐 Validation du mot de passe normal');
+      }
       isPasswordValid = await this.usersService.validatePassword(
         user,
         loginDto.password,
       );
-      console.log('Résultat validation:', isPasswordValid);
+      if (isDevelopment) {
+        console.log('Résultat validation:', isPasswordValid);
+      }
     }
     
     if (!isPasswordValid) {

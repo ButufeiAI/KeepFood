@@ -1,0 +1,511 @@
+<template>
+    <!-- Navbar Header -->
+    <div class="header">
+        <div class="container-fluid">
+            <div class="header-menu">
+                <div class="header-logo">
+                    <router-link to="/main-menu/dashboard" class="logo-dark"> <img src="@/assets/img/logo.svg" alt="logo" class="img-fluid"></router-link>
+                    <router-link to="/main-menu/dashboard" class="logo-light"> <img src="@/assets/img/logo-white.svg" alt="logo" class="img-fluid"></router-link>
+                </div>
+                <div class="navbar-header">
+                    <router-link to="/main-menu/dashboard" class="toggle-btn me-2"><i class="icon-grip"></i></router-link>
+                    
+                    <!-- Search -->
+                    <div class="header-links d-lg-flex d-none">
+                        <router-link to="/main-menu/pos" class="d-inline-flex align-items-center"><i class="icon-hand-platter me-1"></i>POS</router-link>
+                        <router-link to="/main-menu/orders" class="d-inline-flex align-items-center"><i class="icon-list-todo me-1"></i>Orders</router-link>
+                        <router-link to="/main-menu/kitchen" class="d-inline-flex align-items-center"><i class="icon-drumstick me-1"></i>Kitchen</router-link>
+                        <router-link to="/main-menu/reservations" class="d-inline-flex align-items-center"><i class="icon-file-clock me-1"></i>Reservation</router-link>
+                        <router-link to="/operations/table" class="d-inline-flex align-items-center"><i class="icon-concierge-bell me-1"></i>Table</router-link>
+                    </div>
+                    
+                    <ul class="header-notification">
+                        <li class="d-none d-sm-flex">
+                            <router-link to="/administration/customer-report" class="btn btn-icon"><i class="icon-chart-column-stacked"></i></router-link>
+                        </li>
+                        
+                        <!-- Light/Dark Mode Button -->
+                        <li class="header-item d-flex">
+                            <button
+                                class="btn btn-icon light-dark-mode"
+                                type="button" @click="toggleDarkMode"
+                            >
+                                <i class="fs-16" :class="[isDarkMode ? 'icon-sun' : 'icon-moon']"></i>
+                            </button>
+                        </li>
+
+                        <li>
+                            <div>
+                                <button class="btn-icon btn notification" type="button" data-bs-toggle="dropdown"  data-bs-auto-close="outside" aria-haspopup="true" aria-expanded="false" aria-label="Notifications"><i class="icon-bell"></i></button>
+                                <div class="dropdown-menu dropdown-menu-xl notification-dropdown">
+                                    <div class="d-flex align-items-center justify-content-between mb-3 pb-3 border-bottom">
+                                        <h5 class="mb-0">Notifications</h5>
+                                        <a href="#" class="link-primary">Mark all as unread</a>
+                                    </div>
+                                    <simplebar id="scrollbar" ref="scrollbar" class="notification-body h-100" data-simplebar>
+
+                                        <ul class="nav nav-tabs p-1 bg-light rounded border-0 nav-solid-white mb-3">
+                                            <li class="nav-item">
+                                                <a href="#all-notification" data-bs-toggle="tab" aria-expanded="true" class="nav-link active d-flex align-items-center py-1 px-2">
+                                                    All
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#unread-notification" data-bs-toggle="tab" aria-expanded="false" class="nav-link d-flex align-items-center py-1 px-2">
+                                                    Unread <span class="badge-icon ms-1">4</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#inbox-notification" data-bs-toggle="tab" aria-expanded="false" class="nav-link d-flex align-items-center py-1 px-2">
+                                                    Inbox
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#kitchen-notification" data-bs-toggle="tab" aria-expanded="false" class="nav-link d-flex align-items-center py-1 px-2">
+                                                    Kitchen <span class="badge-icon ms-1">5</span>
+                                                </a>
+                                            </li>
+                                            <li class="nav-item">
+                                                <a href="#order-notification" data-bs-toggle="tab" aria-expanded="false" class="nav-link d-flex align-items-center py-1 px-2">
+                                                    Orders
+                                                </a>
+                                            </li>
+                                        </ul>
+                                        
+                                        <div class="tab-content">
+                                            <div class="tab-pane fade show active" id="all-notification">
+
+                                                <div class="notification-list">                                            
+                                                    <h6 class="fs-14 fw-semibold mb-3">Today</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-secondary border border-secondary">
+                                                                <i class="icon-cooking-pot"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New order from <span class="text-dark fw-medium">Table #12</span>  (3 items) pending.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>20 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-orange border border-orange">
+                                                                <i class="icon-shopping-cart"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">Order #124</span> confirmed and sent to the kitchen.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>35 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-success border border-success">
+                                                                <i class="icon-badge-dollar-sign"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">$850</span> received via UPI for <span class="text-dark fw-medium">Order #124.</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>40 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-success border border-success">
+                                                                <i class="icon-square-pen"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New  order has been created <span class="text-dark fw-medium">Dine</span> in  for <span class="text-dark fw-medium">Table 1</span> total <span class="text-dark fw-medium">20 Items</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>45 Min Ago</p>
+                                                                <div class="d-flex align-items-center gap-2 mt-2">
+                                                                    <button type="button" class="btn btn-sm btn-primary">Accept</button>
+                                                                    <button type="button" class="btn btn-sm btn-white">Decline</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="notification-list">
+                                                    <h6 class="fs-14 fw-semibold mb-3">Yesterday</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-danger border border-danger">
+                                                                <i class="icon-info"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">Low stock: Cheese <span class="text-dark fw-medium">(5 units left).</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>10 Hrs Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-indigo border border-indigo">
+                                                                <i class="icon-calendar-fold"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">Table reservation for Andrew Merkel at <span class="text-dark fw-medium">7:30 PM.</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>40 Hrs Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane fade" id="unread-notification">
+
+                                                <div class="notification-list">                                            
+                                                    <h6 class="fs-14 fw-semibold mb-3">Today</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-secondary border border-secondary">
+                                                                <i class="icon-cooking-pot"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New order from <span class="text-dark fw-medium">Table #12</span>  (3 items) pending.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>20 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-orange border border-orange">
+                                                                <i class="icon-shopping-cart"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">Order #124</span> confirmed and sent to the kitchen.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>35 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="notification-list">
+                                                    <h6 class="fs-14 fw-semibold mb-3">Yesterday</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-danger border border-danger">
+                                                                <i class="icon-info"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">Low stock: Cheese <span class="text-dark fw-medium">(5 units left).</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>10 Hrs Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-indigo border border-indigo">
+                                                                <i class="icon-calendar-fold"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">Table reservation for Andrew Merkel at <span class="text-dark fw-medium">7:30 PM.</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>40 Hrs Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane fade" id="inbox-notification">
+
+                                                <div class="notification-list">                                            
+                                                    <h6 class="fs-14 fw-semibold mb-3">Today</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-success border border-success">
+                                                                <i class="icon-badge-dollar-sign"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">$850</span> received via UPI for <span class="text-dark fw-medium">Order #124.</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>40 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-success border border-success">
+                                                                <i class="icon-square-pen"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New  order has been created <span class="text-dark fw-medium">Dine</span> in  for <span class="text-dark fw-medium">Table 1</span> total <span class="text-dark fw-medium">20 Items</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>45 Min Ago</p>
+                                                                <div class="d-flex align-items-center gap-2 mt-2">
+                                                                    <button type="button" class="btn btn-sm btn-primary">Accept</button>
+                                                                    <button type="button" class="btn btn-sm btn-white">Decline</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane fade" id="kitchen-notification">
+
+                                                <div class="notification-list">                                            
+                                                    <h6 class="fs-14 fw-semibold mb-3">Today</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-orange border border-orange">
+                                                                <i class="icon-shopping-cart"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">Order #124</span> confirmed and sent to the kitchen.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>35 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-secondary border border-secondary">
+                                                                <i class="icon-cooking-pot"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New order from <span class="text-dark fw-medium">Table #12</span>  (3 items) pending.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>20 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+                                                </div>
+                                                <div class="notification-list">
+                                                    <h6 class="fs-14 fw-semibold mb-3">Yesterday</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-indigo border border-indigo">
+                                                                <i class="icon-calendar-fold"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">Table reservation for Andrew Merkel at <span class="text-dark fw-medium">7:30 PM.</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>40 Hrs Ago</p>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+
+                                            <div class="tab-pane fade" id="order-notification">
+
+                                                <div class="notification-list">                                            
+                                                    <h6 class="fs-14 fw-semibold mb-3">Today</h6>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-secondary border border-secondary">
+                                                                <i class="icon-cooking-pot"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New order from <span class="text-dark fw-medium">Table #12</span>  (3 items) pending.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>20 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-orange border border-orange">
+                                                                <i class="icon-shopping-cart"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1"><span class="text-dark fw-medium">Order #124</span> confirmed and sent to the kitchen.</p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>35 Min Ago</p>
+                                                            </div>
+                                                        </div>
+                                                        <div class="notification-action">
+                                                            <a href="javascript:void(0);" class="notification-read rounded-circle bg-success" data-bs-toggle="tooltip" title="" data-bs-original-title="Make as Read" aria-label="Make as Read"></a>
+                                                        </div>
+                                                    </div>
+
+                                                    <!-- Item-->
+                                                    <div class="notification-item">
+                                                        <div class="d-flex">
+                                                            <div class="me-2 avatar avatar-rounded flex-shrink-0 badge-soft-success border border-success">
+                                                                <i class="icon-square-pen"></i>
+                                                            </div>
+                                                            <div class="flex-grow-1">
+                                                                <p class="mb-1">New  order has been created <span class="text-dark fw-medium">Dine</span> in  for <span class="text-dark fw-medium">Table 1</span> total <span class="text-dark fw-medium">20 Items</span></p>
+                                                                <p class="mb-0 d-inline-flex align-items-center"><i class="icon-clock me-1"></i>45 Min Ago</p>
+                                                                <div class="d-flex align-items-center gap-2 mt-2">
+                                                                    <button type="button" class="btn btn-sm btn-primary">Accept</button>
+                                                                    <button type="button" class="btn btn-sm btn-white">Decline</button>
+                                                                </div>
+                                                            </div>
+                                                        </div>
+                                                    </div>
+                                                </div>
+
+                                            </div>
+                                        </div>
+
+                                    </simplebar>
+                                </div>
+                            </div>
+                        </li>
+                        <li>
+                            <router-link to="/settings/tax-settings" class="btn btn-icon"><i class="icon-cog"></i></router-link>
+                        </li>
+                        <li>
+                            <div>
+                                <button class="btn-icon profile-icon" type="button" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false" aria-label="Actions">
+                                    <img src="@/assets/img/users/user-01.jpg" alt="img-fluid img-1">
+                                </button>
+                                <div class="dropdown-menu p-0 dropdown-menu-end dropdown-menu-md mt-2">
+                                    <div class="dropdown-header border-bottom p-3">
+                                        <div class="d-flex align-items-center justify-content-between gap-3">
+                                            <div class="d-flex align-items-center">
+                                                <div class="avatar avatar-lg avatar-rounded border border-success">
+                                                    <img src="@/assets/img/profiles/avatar-27.jpg" class="rounded-circle" alt="user">
+                                                </div>
+                                                <div class="ms-2">
+                                                    <h5 class="mb-1 fs-14 fw-semibold">Adrian James</h5>
+                                                    <span class="d-block fs-13">Administrator</span>
+                                                </div>
+                                            </div>
+                                            <span class="badge badge-soft-success">Pro</span>
+                                        </div>
+                                    </div>
+                                    <div class="p-3">
+
+                                        <!-- Item-->
+                                        <router-link to="/settings/store-settings" class="dropdown-item">
+                                            <i class="icon-warehouse me-2 fs-16 align-middle"></i>
+                                            <span class="align-middle">Store Settings</span>
+                                        </router-link>
+
+                                        <!-- Item-->
+                                        <router-link to="/administration/role-permission" class="dropdown-item">
+                                            <i class="icon-shield-ellipsis me-2 fs-16 align-middle"></i>
+                                            <span class="align-middle">Roles & Permisisons</span>
+                                        </router-link>
+
+                                        <!-- Item-->
+                                        <router-link to="/administration/audit-report" class="dropdown-item">
+                                            <i class="icon-clock-arrow-down me-2 fs-16 align-middle"></i>
+                                            <span class="align-middle">Audit Logs</span>
+                                        </router-link>
+
+                                        <!-- Item-->
+                                        <router-link to="/administration/users" class="dropdown-item">
+                                            <i class="icon-user-pen me-2 fs-16 align-middle"></i>
+                                            <span class="align-middle">Manage Staffs</span>
+                                        </router-link>
+
+                                    </div>
+                                    <div class="p-3 border-top">
+                                        <router-link to="/login" class="btn btn-white btn-sm w-100">
+                                            <i class="icon-log-in me-1"></i>Logout
+                                        </router-link>
+                                    </div>
+                                
+                                </div>
+                            </div>
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+    </div>
+    <!-- Navbar Header -->
+</template>
+
+
+<script>
+import { ref, onMounted } from "vue";
+import simplebar from "simplebar-vue";
+import "simplebar-vue/dist/simplebar.min.css";
+
+export default {
+    components: {
+        simplebar,
+    },
+    data(){
+        return{
+
+        }
+    },
+    setup() {
+        const isDarkMode = ref(false);
+
+        const setThemeAttribute = (enabled) => {
+            document.documentElement.setAttribute("data-bs-theme", enabled ? "dark" : "light");
+        };
+
+        const toggleDarkMode = () => {
+            isDarkMode.value = !isDarkMode.value;
+            localStorage.setItem("dark", isDarkMode.value ? "enabled" : "disabled");
+            setThemeAttribute(isDarkMode.value);
+        };
+
+        const initializeDarkMode = () => {
+            const darkMode = localStorage.getItem("dark");
+            isDarkMode.value = darkMode === "enabled";
+            setThemeAttribute(isDarkMode.value);
+        };
+
+        onMounted(() => {
+            initializeDarkMode();
+        });
+
+        return {
+            isDarkMode,
+            toggleDarkMode,
+        };
+    },
+}
+</script>

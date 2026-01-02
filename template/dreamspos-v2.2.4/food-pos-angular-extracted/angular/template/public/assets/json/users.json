@@ -1,0 +1,85 @@
+{
+ "data":[
+  {
+    "id":1,
+    "Image": "user-01.jpg",
+    "Name": "John Smith",
+    "Role": "Admin / Owner",
+    "PhoneNumber": "+1 23456 78901",
+    "Status": "Active"
+  },
+  { 
+    "id":2,
+    "Image": "user-02.jpg",
+    "Name": "Emily Johnson",
+    "Role": "Supervisor",
+    "PhoneNumber": "+1 34567 89012",
+    "Status": "Active"
+  },
+  {
+    "id":3,
+    "Image": "user-03.jpg",
+    "Name": "David Williams",
+    "Role": "Cashier",
+    "PhoneNumber": "+1 45678 90123",
+    "Status": "Active"
+  },
+  {
+    "id":4,
+    "Image": "user-04.jpg",
+    "Name": "Ashley Brown",
+    "Role": "Chef",
+    "PhoneNumber": "+1 56789 01234",
+    "Status": "Active"
+  },
+  {
+    "id":5,
+    "Image": "user-05.jpg",
+    "Name": "Michael Davis",
+    "Role": "Waiter",
+    "PhoneNumber": "+1 67890 12345",
+    "Status": "Active"
+  },
+  {
+    "id":6,
+    "Image": "user-06.jpg",
+    "Name": "Brittany Miller",
+    "Role": "Delivery",
+    "PhoneNumber": "+1 78901 23456",
+    "Status": "Active"
+  },
+  {
+    "id":7,
+    "Image": "user-07.jpg",
+    "Name": "Christopher Wilson",
+    "Role": "Accountant",
+    "PhoneNumber": "+1 89012 34567",
+    "Status": "Active"
+  },
+  {
+    "id":8,
+    "Image": "user-08.jpg",
+    "Name": "Jessica Moore",
+    "Role": "System Operator",
+    "PhoneNumber": "+1 90123 45678",
+    "Status": "Active"
+  },
+  {
+      "id":9,
+    "Image": "user-09.jpg",
+    "Name": "Matthew Taylor",
+    "Role": "Chef",
+    "PhoneNumber": "+1 01234 56789",
+    "Status": "Active"
+  },
+  {
+    "id":10,
+    "Image": "user-10.jpg",
+    "Name": "Sarah Anderson",
+    "Role": "Chef",
+    "PhoneNumber": "+1 12345 67890",
+    "Status": "Active"
+  }
+],
+"totalData": 10
+}

@@ -19,6 +19,7 @@ export class Product {
   @PrimaryGeneratedColumn('uuid')
   id: string;
 
+  @Index()
   @Column({ type: 'uuid' })
   categoryId: string;
 

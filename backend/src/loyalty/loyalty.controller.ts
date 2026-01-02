@@ -74,10 +74,11 @@ export class LoyaltyController {
   @Get('account')
   async getMyAccount(@Request() req, @Query('clientIdentifier') clientIdentifier: string) {
     if (!clientIdentifier) {
-      throw new Error('clientIdentifier est requis');
+      // Si pas d'identifiant, retourner un compte vide
+      return { points: 0, totalPointsEarned: 0, totalPointsSpent: 0, transactions: [] };
     }
     const account = await this.loyaltyService.getAccountByClientIdentifier(
-      req.user.restaurantId,
+      req.user?.restaurantId || req.body?.restaurantId,
       clientIdentifier,
     );
     if (!account) {

@@ -1,0 +1,3 @@
+<template>
+    <CallHistory />
+</template>

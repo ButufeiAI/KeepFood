@@ -1,0 +1,3 @@
+<template>
+    <UiInterfaceBaseuiUiGrid />
+</template>

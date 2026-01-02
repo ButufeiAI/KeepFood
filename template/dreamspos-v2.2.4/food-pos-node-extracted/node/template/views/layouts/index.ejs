@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en"
+    data-layout="<%= active_path === routes.layout_horizontal && 'horizontal' ||
+      active_path === routes.layout_detached && 'detached' ||
+      active_path === routes.layout_two_column && 'twocolumn' ||
+      active_path === routes.layout_hovered && 'layout-hovered' ||
+      active_path === routes.layout_boxed && 'default' 
+    %>"
+    data-width="<%= active_path === routes.layout_boxed && 'box' %>"
+    data-layout-mode="<%= active_path === routes.light_mode && 'box' %>"
+    data-theme="<%= active_path === routes.layout_dark && 'dark' %>"
+  >
+
+  <%- include ('./head') %>
+
+  <body class=" <%= active_path === routes.layout_horizontal && 'menu-horizontal' ||
+    active_path === routes.layout_hovered && 'mini-sidebar expand-menu' || 
+    active_path === routes.layout_boxed && 'mini-sidebar layout-box-mode' ||
+    active_path === routes.layout_rtl && 'layout-mode-rtl'
+    %>" >
+
+    <div id="global-loader">
+      <div class="whirly-loader"> </div>
+    </div>
+
+    <!-- Main Wrapper -->
+    <div class="main-wrapper">
+
+      <!-- Header -->
+      <%- include ('./header') %>
+      <!-- /Header -->
+
+      <!-- Sidebar -->
+      <%- include ('./sidebar') %>
+      <!-- /Sidebar -->
+
+      <!-- Page Wrapper -->
+      <div class="page-wrapper" >
+        <%- include('../pages/'+page_path) %>
+      </div>
+      <!-- /Page Wrapper -->
+    </div>
+    <!-- /Main Wrapper -->
+
+    <%- include ('./script') %>
+
+  </body>
+</html>

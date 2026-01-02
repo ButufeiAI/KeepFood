@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+<head>
+    <div th:replace="partials/title-meta :: title-meta">
+
+    </div>
+    <!-- Bootstrap CSS -->
+	<link rel="stylesheet" th:href="@{/css/bootstrap.min.css}">
+    	<!-- Tabler Icon CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/tabler-icons/tabler-icons.min.css}">
+
+     	<!-- Feather CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/icons/feather/feather.css}">
+
+    	<!-- Fontawesome CSS -->
+	<link rel="stylesheet" th:href="@{/plugins/fontawesome/css/fontawesome.min.css}">
+	<link rel="stylesheet" th:href="@{/plugins/fontawesome/css/all.min.css}">
+    <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body class="account-page">
+    <div class="main-wrapper">
+       <th:block layout:fragment="auth-page" th:remove="tag"></th:block>
+    </div>
+
+    <div th:replace="~{partials/footer-script :: footer-script}"></div>
+</body> 
+
+</html>

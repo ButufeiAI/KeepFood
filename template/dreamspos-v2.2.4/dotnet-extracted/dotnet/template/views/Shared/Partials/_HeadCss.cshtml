@@ -1,0 +1,252 @@
+@{
+	var path = Context?.Request?.Path.Value ?? string.Empty;
+	var fileName = System.IO.Path.GetFileName(path);
+	var pageNoExt = (string.IsNullOrEmpty(fileName) ? string.Empty : System.IO.Path.GetFileNameWithoutExtension(fileName)).ToLowerInvariant();
+
+	bool IsPage(params string[] names)
+	{
+		if (string.IsNullOrEmpty(pageNoExt)) return false;
+		foreach (var n in names)
+		{
+			var name = (n ?? string.Empty).ToLowerInvariant();
+			if (name.EndsWith(".cshtml")) name = System.IO.Path.GetFileNameWithoutExtension(name);
+			if (pageNoExt == name) return true;
+		}
+		return false;
+	}
+
+	bool IsNotAny(params string[] names) => !IsPage(names);
+
+	string[] excludedSimplePages = new[] {
+		"signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","layout-horizontal","layout-detached","layout-modern","layout-two-column","layout-hovered","layout-boxed","layout-dark","layout-rtl","success","success-2","success-3"
+	};
+}
+
+	<!-- Favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="~/assets/img/favicon.png">
+
+	<!-- Apple Touch Icon -->
+	<link rel="apple-touch-icon" sizes="180x180" href="~/assets/img/apple-touch-icon.png">
+
+@if (IsNotAny(excludedSimplePages)) {
+	<!-- Theme Script JS -->
+	<script src="~/assets/js/theme-script.js"></script>
+}
+
+@if (IsNotAny("layout-rtl")) {
+    <!-- Bootstrap CSS -->
+    <link rel = 'stylesheet' href ="assets/css/bootstrap.min.css">
+}
+
+@if (IsPage("layout-rtl")) {
+    <!-- Bootstrap RTL CSS -->
+    <link rel="stylesheet" href="~/assets/css/bootstrap.rtl.min.css">
+}  
+
+@if (IsNotAny("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","success","success-2","success-3")) {
+    <!-- animation CSS -->
+    <link rel = 'stylesheet' href="~/assets/css/animate.css">
+} 
+
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/tabler-icons/tabler-icons.min.css">
+
+    <!-- Fontawesome CSS -->
+    <link rel = 'stylesheet' href = "assets/plugins/fontawesome/css/fontawesome.min.css">
+    <link rel = 'stylesheet' href = "assets/plugins/fontawesome/css/all.min.css">
+
+@if (IsPage("add-product","audio-call","edit-product","domain","form-vertical","packages","product-list","purchase-transaction","reviews","subscription","tables-basic","ui-alerts","ui-nav-tabs","video-call")) {
+    <!-- Feathericon CSS -->
+    <link rel="stylesheet" href="~/assets/css/feather.css">
+}  
+
+@if (IsPage("icon-feather","icon-ionic")) {
+<!-- Feathericon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/feather/feather.css">
+}
+
+@if (IsNotAny("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","success","success-2","success-3")) {
+    <!-- Datatable CSS -->
+    <link rel = 'stylesheet' href="~/assets/css/dataTables.bootstrap5.min.css">
+
+    <!-- Quill CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/quill/quill.snow.css">
+}
+
+@if (IsPage("icon-tabler","projects")) {
+    <!-- Tabler Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/tabler-icons/tabler-icons.css">
+}
+         
+@if (IsNotAny("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","success","success-2","success-3")) {
+    <!-- Datetimepicker CSS -->
+    <link rel = 'stylesheet' href = "assets/css/bootstrap-datetimepicker.min.css">
+}
+
+@if (IsPage("audio-call","pos","pos-2","pos-3","pos-4","pos-5","product-details","video-call")) {
+    <link rel = 'stylesheet' href = "assets/plugins/owlcarousel/owl.carousel.min.css">
+    <link rel = 'stylesheet' href = "assets/plugins/owlcarousel/owl.theme.default.min.css">
+}  
+
+@if (IsPage("barcode","file-manager","notes","plugin","qrcode","social-feed","todo-list","todo")) {
+    <!-- Owl Carousel CSS -->
+    <link rel = "stylesheet" href="~/assets/css/owl.carousel.min.css">
+}  
+
+@if (IsPage("file-manager")) {
+    <!-- Player CSS -->
+    <link rel="stylesheet" href="~/assets/css/plyr.css">
+}
+
+@if (IsNotAny("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","success","success-2","success-3")) {
+    <!-- Select2 CSS -->
+    <link rel = 'stylesheet' href="~/assets/plugins/select2/css/select2.min.css">
+}
+
+@if (IsPage("icon-flag")) {
+    <!-- Flag Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/flags/flags.css">
+}
+
+@if (IsPage("icon-ionic")) {
+	<!-- Ionic CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/ionic/ionicons.css">
+}    
+
+@if (IsPage("icon-material")) {
+    <!-- Material CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/material/materialdesignicons.css">
+} 
+
+@if (IsPage("icon-pe7")) {
+    <!-- Pe7 CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/pe7/pe-icon-7.css">       
+} 
+
+@if (IsPage("icon-simpleline")) {
+    <!-- Simpleline Icons CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/simpleline/simple-line-icons.css">
+}   
+
+@if (IsPage("icon-themify")) {
+    <!-- Themify Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/themify/themify.css">
+} 
+
+@if (IsPage("icon-typicon")) {
+    <!-- Typicon icons CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/typicons/typicons.css">
+} 
+
+@if (IsPage("icon-weather")) {
+    <!-- Weather CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/weather/weathericons.css">
+}   
+
+@if (IsPage("form-wizard")) {
+    <!-- Wizard CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/twitter-bootstrap-wizard/form-wizard.css">
+}
+
+@if (IsPage("audio-call","call-history","chat","video-call")) {
+    <!-- Boxicons CSS -->
+    <link rel = 'stylesheet' href="~/assets/plugins/boxicons/css/boxicons.min.css">
+}
+
+@if (IsPage("billers","blog-comments","chat","contacts","customers","expired-products","security-settings","warehouse","form-mask")) {
+    <!-- Mobile CSS-->
+    <link rel="stylesheet" href="~/assets/plugins/intltelinput/css/intlTelInput.css">
+    <link rel="stylesheet" href="~/assets/plugins/intltelinput/css/demo.css">
+}
+
+@if (IsPage("add-product","all-blog","blog-tag","domain","edit-product","email-reply","localization-settings","otp-settings","packages","product-list","purchase-transaction","reviews","subscription","varriant-attributes")) {
+    <!-- Bootstrap Tagsinput CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap-tagsinput/bootstrap-tagsinput.css">
+}
+
+@if (IsPage("dashboard","sales-dashboard")) {
+    <!-- Map CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/jvectormap/jquery-jvectormap-2.0.5.css">
+}
+
+@if (IsPage("all-blog","blog-categories","blog-tag","best-seller","calendar","companies","customer-due-report","customer-report","dashboard","expense-report","form-pickers","income-report","index","inventory-report","invoice-report","layout-boxed","layout-dark","layout-detached","layout-rtl","layout-horizontal","layout-two-column","layout-hovered","notes","pos","pos-2","pos-3","pos-4","pos-5","product-expiry-report","product-quantity-alert","product-report","profit-and-loss","projects","purchase-report","sales-dashboard","sales-report","sales-tax","search-list","sold-stock","stock-history","supplier-due-report","supplier-report","tax-reports","todo-list","todo")) {
+    <!-- Daterangepikcer CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/daterangepicker/daterangepicker.css">
+}
+
+@if (IsPage("ui-rangeslider","ui-ratings")) {
+    <!-- Rangeslider CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/ion-rangeslider/css/ion.rangeSlider.min.css">
+}
+
+@if (IsPage("ui-drag-drop","ui-clipboard","ui-sortable")) {
+    <!-- Dragula CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/dragula/css/dragula.min.css">
+}
+
+@if (IsPage("ui-lightbox")) {
+    <!-- Lightbox CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/lightbox/glightbox.min.css">
+}
+
+@if (IsPage("ui-scrollbar")) {
+    <!-- Scrollbar CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/scrollbar/scroll.min.css">
+}
+
+@if (IsPage("ui-toasts")) {
+    <!-- Toatr CSS -->      
+    <link rel="stylesheet" href="~/assets/plugins/toastr/toatr.css">
+}
+
+@if (IsPage("ui-swiperjs","chat","video-call")) {
+    <!-- Swiper CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/swiper/swiper-bundle.min.css">
+}
+
+@if (IsPage("ui-stickynote","ui-timeline")) {
+    <!-- Sticky CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/stickynote/sticky.css">
+}
+
+@if (IsPage("icon-bootstrap")) {
+    <!-- Bootstrap Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/bootstrap/bootstrap-icons.min.css">
+}
+
+@if (IsPage("icon-remix")) {
+    <!-- Remix Icon CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/icons/remix/fonts/remixicon.css">
+}
+
+@if (IsPage("form-pickers")) {
+    <!-- Form Date PIckers CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/flatpickr/flatpickr.css">
+    <link rel="stylesheet" href="~/assets/plugins/bootstrap-datepicker/bootstrap-datepicker.css">
+    <link rel="stylesheet" href="~/assets/plugins/jquery-timepicker/jquery-timepicker.css">
+    <link rel="stylesheet" href="~/assets/plugins/pickr/pickr-themes.css">
+}
+
+@if (IsPage("maps-vector")) {
+    <!-- Jsvector Maps -->
+    <link rel="stylesheet" href="~/assets/plugins/jsvectormap/css/jsvectormap.min.css">
+}
+
+@if (IsPage("maps-leaflet")) {
+    <!-- Leaflet Maps CSS -->
+    <link rel="stylesheet" href="~/assets/plugins/leaflet/leaflet.css">
+}
+
+@if (IsPage("chat","email-reply","social-feed","search-list")) {
+    <!-- Fancybox -->
+    <link rel="stylesheet" href="~/assets/plugins/fancybox/jquery.fancybox.min.css">
+}
+
+@if (IsNotAny("signin","signin-2","signin-3","register","register-2","register-3","forgot-password","forgot-password-2","forgot-password-3","reset-password","reset-password-2","reset-password-3","email-verification","email-verification-2","email-verification-3","two-step-verification","two-step-verification-2","two-step-verification-3","lock-screen","error-404","error-500","coming-soon","under-maintenance","success","success-2","success-3")) {
+    <!-- Color Picker Css -->
+    <link rel="stylesheet" href="~/assets/plugins/@@simonwep/pickr/themes/nano.min.css">
+}
+
+    <!-- Main CSS -->
+    <link rel="stylesheet" href="~/assets/css/style.css">
+	

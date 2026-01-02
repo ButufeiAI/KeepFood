@@ -1,0 +1,3 @@
+<template>
+    <EcommerceCart />
+</template>

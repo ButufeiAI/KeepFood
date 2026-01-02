@@ -1,0 +1,3 @@
+<template>
+    <HrmShift />
+</template>
